@@ -1,0 +1,23 @@
+\addvspace {10pt}
+\contentsline {figure}{\numberline {1}{\ignorespaces The BlueFoot Quadruped Robot: single-camera configuration \emph {(left)}; stereo-camera configuration \emph {(right)}}}{1}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {2}{\ignorespaces Root section of trunk. Call-out in top-right shows main-switch access through the bottom of the root module.}}{5}
+\contentsline {figure}{\numberline {3}{\ignorespaces Main section of trunk. Call-out in the top-right shows how the ODROID-XU and AutoPilot computers fit within the module.}}{6}
+\contentsline {figure}{\numberline {4}{\ignorespaces Head section of trunk. Monocular camera configuration with Hokuyo-URG \emph {(left)}; and Stereo configuration with PLDS \emph {(right)}. }}{7}
+\contentsline {figure}{\numberline {5}{\ignorespaces Closeup of BlueFoot's leg. \emph {(left)} shows effective link lengths and the location of defined joint positions.}}{7}
+\contentsline {figure}{\numberline {6}{\ignorespaces Series elastic brackets.}}{8}
+\contentsline {figure}{\numberline {7}{\ignorespaces BlueFoot device networking diagram.}}{13}
+\contentsline {figure}{\numberline {8}{\ignorespaces BlueFoot power routing.}}{14}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {9}{\ignorespaces BlueFoot's main processes and their relationships.}}{18}
+\contentsline {figure}{\numberline {10}{\ignorespaces Communication flow between processors on the BlueFoot Platform.}}{21}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {11}{\ignorespaces Coordinate frame setup.}}{25}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {12}{\ignorespaces Virtual foothold representaion. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.}}{36}
+\contentsline {figure}{\numberline {13}{\ignorespaces Quadruped tipping about planted feet. }}{40}
+\contentsline {figure}{\numberline {14}{\ignorespaces Parallel NARX-network model with a linear output layer.}}{42}
+\contentsline {figure}{\numberline {15}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.}}{45}
+\contentsline {figure}{\numberline {16}{\ignorespaces \textbf {a)} Trunk orientation during 80 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$; \textbf {b)} Trunk orientation during 100 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$; \textbf {c)} NARX Network MSE convergence for trial shown in \textbf {(b)}. }}{46}
+\addvspace {10pt}
+\addvspace {10pt}

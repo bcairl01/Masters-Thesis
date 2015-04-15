@@ -1,0 +1,62 @@
+\contentsline {chapter}{VITA}{ii}
+\contentsline {chapter}{LIST OF FIGURES}{iii}
+\contentsline {chapter}{LIST OF TABLES}{iv}
+\contentsline {chapter}{\numberline {I. }Introduction}{1}
+\contentsline {chapter}{\numberline {II. }Hardware and Design}{3}
+\contentsline {section}{\numberline {2.1}Overview and Design Goals}{3}
+\contentsline {section}{\numberline {2.2}Robot Structure}{4}
+\contentsline {subsection}{\numberline {2.2.1}Main Body (Trunk) Design}{4}
+\contentsline {subsubsection}{The Root Module}{5}
+\contentsline {subsubsection}{The Main Module}{5}
+\contentsline {subsubsection}{The Head Module}{6}
+\contentsline {subsection}{\numberline {2.2.2}Leg Designs}{7}
+\contentsline {section}{\numberline {2.3}Computational and Sensory Hardware}{9}
+\contentsline {subsection}{\numberline {2.3.1}Device Descriptions}{9}
+\contentsline {subsubsection}{AutoPilot}{9}
+\contentsline {subsubsection}{ODROID-XU}{10}
+\contentsline {subsubsection}{Logitech 9000 Web Cameras}{10}
+\contentsline {subsubsection}{Laser Distance Sensors (PLDS and Hokuyo-URG)}{10}
+\contentsline {subsubsection}{Foot Contact Sensors}{11}
+\contentsline {subsubsection}{Dynamixel AX12a Smart Serial Servos}{11}
+\contentsline {subsubsection}{XBEE Wireless Radio}{12}
+\contentsline {subsection}{\numberline {2.3.2}Device Networking}{12}
+\contentsline {section}{\numberline {2.4}System Power}{12}
+\contentsline {subsection}{\numberline {2.4.1}Power Routing}{12}
+\contentsline {subsection}{\numberline {2.4.2}Energy Requirements and Runtime}{14}
+\contentsline {chapter}{\numberline {III. }Software}{16}
+\contentsline {section}{\numberline {3.1}System Software Architecture}{16}
+\contentsline {subsection}{\numberline {3.1.1}Processor Tasks Descriptions}{17}
+\contentsline {subsubsection}{TM4C (Lower Brain)}{17}
+\contentsline {subsubsection}{RM48 (Lower Brain)}{19}
+\contentsline {subsubsection}{ODROID-XU (Upper Brain)}{19}
+\contentsline {subsection}{\numberline {3.1.2}Inter-processor Communication}{20}
+\contentsline {section}{\numberline {3.2}Ground Station}{23}
+\contentsline {chapter}{\numberline {IV. }System Modeling}{24}
+\contentsline {section}{\numberline {4.1}Kinematic Model}{24}
+\contentsline {subsection}{\numberline {4.1.1}Forward Position Kinematics}{24}
+\contentsline {subsection}{\numberline {4.1.2}Inverse Position Kinematics}{27}
+\contentsline {subsection}{\numberline {4.1.3}Velocity Kinematics}{27}
+\contentsline {section}{\numberline {4.2}Dynamical Model}{28}
+\contentsline {subsection}{\numberline {4.2.1}System State Vector and General-Form Dynamics}{28}
+\contentsline {subsection}{\numberline {4.2.2}Joint-Servo Dynamics}{29}
+\contentsline {subsection}{\numberline {4.2.3}Single Leg Dynamics}{30}
+\contentsline {section}{\numberline {4.3}BlueFoot Simulator}{30}
+\contentsline {chapter}{\numberline {V. }Gaiting and Gait-Stability Control}{32}
+\contentsline {section}{\numberline {5.1}Overview}{32}
+\contentsline {section}{\numberline {5.2}Central Pattern Generator (CPG) Based Gaiting}{32}
+\contentsline {subsection}{\numberline {5.2.1}Reflexive Gait Adaptations}{33}
+\contentsline {section}{\numberline {5.3}Foot Placement Control}{35}
+\contentsline {section}{\numberline {5.4}ZMP Based Trunk-Placement Control}{37}
+\contentsline {section}{\numberline {5.5}Trunk Leveling NARX-Network Learning Approach}{39}
+\contentsline {subsection}{\numberline {5.5.1}NARX-Neural Network}{40}
+\contentsline {subsection}{\numberline {5.5.2}NARX-NN Training Regimen}{42}
+\contentsline {subsection}{\numberline {5.5.3}Compensator Output}{44}
+\contentsline {chapter}{\numberline {VI. }Perception and Navigation}{47}
+\contentsline {section}{\numberline {6.1}Potential-Fields Navigation with Camera-based Goal Tracking}{47}
+\contentsline {subsection}{\numberline {6.1.1}LIDAR-based Potential-Fields Algorithm}{47}
+\contentsline {subsection}{\numberline {6.1.2}Camera-based goal tracking incorporation}{47}
+\contentsline {section}{\numberline {6.2}3D Surface mapping}{47}
+\contentsline {subsection}{\numberline {6.2.1}3D Point-cloud composition}{47}
+\contentsline {subsection}{\numberline {6.2.2}Surface reconstruction}{47}
+\contentsline {section}{\numberline {6.3}Rough Terrain Foot-placement planning}{47}
+\contentsline {chapter}{\numberline {VII. }Concluding Remarks}{48}
