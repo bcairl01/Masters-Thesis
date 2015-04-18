@@ -30,58 +30,62 @@
 \newlabel{eq::K_two_pace}{{(5.5)}{36}}
 \newlabel{eq::K_four_pace}{{(5.6)}{36}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.3}Foot Placement Control}{36}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces CPG output state, $y_{2}$, over two gait cycles.}}{37}}
+\newlabel{fig::cpg_phase80}{{13}{37}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces CPG state phase portrait over two gait cycles; depicts the effects of feedback-modulation on the CPG's limit cycles.}}{37}}
+\newlabel{fig::cpg_phase80}{{14}{37}}
 \newlabel{eq::virtual_foothold_control}{{(5.7)}{37}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces  Virtual foothold representaion. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.}}{37}}
-\newlabel{fig::virtial_foothold}{{13}{37}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces  Virtual foothold representaion. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.}}{38}}
+\newlabel{fig::virtial_foothold}{{15}{38}}
+\newlabel{eq::FootControl}{{(5.8)}{38}}
 \citation{Kajita2003}
 \citation{Katie2009}
 \citation{Takanishi1989}
 \citation{Kurazume2003}
 \citation{Kurazume2003}
-\newlabel{eq::FootControl}{{(5.8)}{38}}
-\newlabel{eq::FootControl}{{(5.9)}{38}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}ZMP Based Trunk-Placement Control}{38}}
-\newlabel{eq::NetMoment}{{(5.10)}{39}}
-\newlabel{eq::Levers}{{(5.11)}{39}}
-\newlabel{eq::cog_estimate}{{(5.11)}{39}}
+\newlabel{eq::FootControl}{{(5.9)}{39}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}ZMP Based Trunk-Placement Control}{39}}
+\newlabel{eq::NetMoment}{{(5.10)}{40}}
+\newlabel{eq::Levers}{{(5.11)}{40}}
+\newlabel{eq::cog_estimate}{{(5.11)}{40}}
 \newlabel{eq::ZMPFromMoment}{{(5.12)}{40}}
 \newlabel{eq::ZMPController}{{(5.13)}{40}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}Trunk Leveling NARX-Network Learning Approach}{40}}
 \citation{Tsungnan1996}
 \citation{ChenBillings1990}
 \citation{Hihi1996}
 \citation{Billings2013}
 \citation{Nelles2001}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces  Quadruped tipping about planted feet. }}{41}}
-\newlabel{fig::quadruped_walking}{{14}{41}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}NARX-Neural Network}{41}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Trunk Leveling NARX-Network Learning Approach}{41}}
 \citation{Rumelhart1988}
 \citation{Rumelhart1995}
 \citation{Rojas1996ch7}
-\newlabel{eq::bp_weight_update}{{(5.14)}{42}}
-\newlabel{eq::bp_error}{{5.5.1}{42}}
-\newlabel{eq::bp_error}{{5.5.1}{42}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Parallel NARX-network model with a linear output layer.}}{43}}
-\newlabel{fig::narx_net}{{15}{43}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces  Quadruped tipping about planted feet. }}{42}}
+\newlabel{fig::quadruped_walking}{{16}{42}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}NARX-Neural Network}{42}}
+\newlabel{eq::bp_weight_update}{{(5.14)}{43}}
+\newlabel{eq::bp_error}{{5.5.1}{43}}
+\newlabel{eq::bp_error}{{5.5.1}{43}}
 \newlabel{eq::bp_sigmoid_deriv}{{(5.15)}{43}}
-\newlabel{eq::narx_model}{{(5.16)}{43}}
-\citation{Battiti1992}
-\citation{Magoulas1999}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Parallel NARX-network model with a linear output layer.}}{44}}
+\newlabel{fig::narx_net}{{17}{44}}
+\newlabel{eq::narx_model}{{(5.16)}{44}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}NARX-NN Training Regimen}{44}}
 \newlabel{eq::training_signal}{{(5.17)}{44}}
-\newlabel{eq::training}{{(5.19)}{44}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.3}Compensator Output}{45}}
-\newlabel{eq::sub_dynamics}{{(5.22)}{45}}
-\newlabel{eq::psuedo_torque}{{(5.24)}{45}}
+\citation{Battiti1992}
+\citation{Magoulas1999}
+\newlabel{eq::training}{{(5.19)}{45}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.3}Compensator Output}{46}}
+\newlabel{eq::sub_dynamics}{{(5.22)}{46}}
+\newlabel{eq::psuedo_torque}{{(5.24)}{46}}
 \newlabel{eq::psuedo_torque_k}{{(5.25)}{46}}
-\newlabel{eq::correction_equation}{{(5.26)}{46}}
-\newlabel{eq::correction_application}{{(5.27)}{46}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.}}{47}}
-\newlabel{fig::sys_diagram}{{16}{47}}
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces  \textbf  {a)} Trunk orientation during 80 $\frac  {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$; \textbf  {b)} Trunk orientation during 100 $\frac  {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$; \textbf  {c)} NARX Network MSE convergence for trial shown in \textbf  {(b)}. }}{47}}
-\newlabel{fig::fast}{{17}{47}}
+\newlabel{eq::correction_equation}{{(5.26)}{47}}
+\newlabel{eq::correction_application}{{(5.27)}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.}}{47}}
+\newlabel{fig::sys_diagram}{{18}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces  \textbf  {a)} Trunk orientation during 80 $\frac  {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$; \textbf  {b)} Trunk orientation during 100 $\frac  {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$; \textbf  {c)} NARX Network MSE convergence for trial shown in \textbf  {(b)}. }}{48}}
+\newlabel{fig::fast}{{19}{48}}
 \@setckpt{ch5_gaitcontrol}{
-\setcounter{page}{48}
+\setcounter{page}{49}
 \setcounter{equation}{27}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
@@ -97,7 +101,7 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{17}
+\setcounter{figure}{19}
 \setcounter{table}{9}
 \setcounter{parentequation}{0}
 \setcounter{theorem}{0}

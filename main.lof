@@ -15,10 +15,12 @@
 \addvspace {10pt}
 \contentsline {figure}{\numberline {12}{\ignorespaces Coordinate frame setup.}}{26}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {13}{\ignorespaces Virtual foothold representaion. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.}}{37}
-\contentsline {figure}{\numberline {14}{\ignorespaces Quadruped tipping about planted feet. }}{41}
-\contentsline {figure}{\numberline {15}{\ignorespaces Parallel NARX-network model with a linear output layer.}}{43}
-\contentsline {figure}{\numberline {16}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.}}{47}
-\contentsline {figure}{\numberline {17}{\ignorespaces \textbf {a)} Trunk orientation during 80 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$; \textbf {b)} Trunk orientation during 100 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$; \textbf {c)} NARX Network MSE convergence for trial shown in \textbf {(b)}. }}{47}
+\contentsline {figure}{\numberline {13}{\ignorespaces CPG output state, $y_{2}$, over two gait cycles.}}{37}
+\contentsline {figure}{\numberline {14}{\ignorespaces CPG state phase portrait over two gait cycles; depicts the effects of feedback-modulation on the CPG's limit cycles.}}{37}
+\contentsline {figure}{\numberline {15}{\ignorespaces Virtual foothold representaion. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.}}{38}
+\contentsline {figure}{\numberline {16}{\ignorespaces Quadruped tipping about planted feet. }}{42}
+\contentsline {figure}{\numberline {17}{\ignorespaces Parallel NARX-network model with a linear output layer.}}{44}
+\contentsline {figure}{\numberline {18}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.}}{47}
+\contentsline {figure}{\numberline {19}{\ignorespaces \textbf {a)} Trunk orientation during 80 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$; \textbf {b)} Trunk orientation during 100 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$; \textbf {c)} NARX Network MSE convergence for trial shown in \textbf {(b)}. }}{48}
 \addvspace {10pt}
 \addvspace {10pt}
