@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  18 APR 2015 04:36
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  18 APR 2015 18:08
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -255,6 +255,11 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen139
 \l_MT_below_shortintertext_sep=\dimen140
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cite\cite.sty"
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 373.
+Package: cite 2010/09/10  v 5.3
+)
 (C:\Users\Brian\Desktop\Masters-Thesis\preamble.tex)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\epsf\epsf.tex"
 This is `epsf.tex' v2.7.4 <14 February 2011>
@@ -288,8 +293,14 @@ LaTeX Warning: Label `fig::dev_diagram' multiply defined.
 
 LaTeX Warning: Label `fig::comm_flow' multiply defined.
 
-) (C:\Users\Brian\Desktop\Masters-Thesis\ch4_modeling.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.aux
+) (C:\Users\Brian\Desktop\Masters-Thesis\ch4_modeling.aux
+
+LaTeX Warning: Label `eq::world_joint_positions' multiply defined.
+
+
+LaTeX Warning: Label `fig::narx_net' multiply defined.
+
+) (C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.aux
 
 LaTeX Warning: Label `fig::cpg_phase80' multiply defined.
 
@@ -364,7 +375,7 @@ ra-tion \OT1/cmr/m/it/12 (left)\OT1/cmr/m/n/12 ; stereo-
  []
 
 
-Overfull \hbox (3.8173pt too wide) in paragraph at lines 20--20
+Overfull \hbox (3.8173pt too wide) in paragraph at lines 21--21
  [][] []\OT1/cmr/m/n/12 Virtual foothold rep-re-sen-taion. Blue ar-rows rep-re-
 sent an at-trac-tive ``force" 
  []
@@ -392,7 +403,7 @@ Package pdftex.def Info: robot_selfies.png used on input line 8.
 (pdftex.def)             Requested size: 433.62pt x 216.81168pt.
 
 
-LaTeX Warning: Citation `Kolter2008 ' on page 1 undefined on input line 19.
+LaTeX Warning: Citation `Kolter2008' on page 1 undefined on input line 19.
 
 [1
 
@@ -484,17 +495,7 @@ File: comm_flow.png Graphic file (type png)
  <use comm_flow.png>
 Package pdftex.def Info: comm_flow.png used on input line 94.
 (pdftex.def)             Requested size: 433.62pt x 281.85518pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[20] [21 <C:/Users/Brian/Desktop/Masters-Thesis/comm_flow.png>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+ [20] [21 <C:/Users/Brian/Desktop/Masters-Thesis/comm_flow.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -502,13 +503,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 CHAPTER 4
 
 LaTeX Warning: Reference `fig::coordinate_frames' on page 25 undefined on input
- line 18.
+ line 19.
 
 <coordinate_frames.png, id=128, 722.7pt x 361.35pt>
 File: coordinate_frames.png Graphic file (type png)
 
 <use coordinate_frames.png>
-Package pdftex.def Info: coordinate_frames.png used on input line 22.
+Package pdftex.def Info: coordinate_frames.png used on input line 23.
 (pdftex.def)             Requested size: 325.215pt x 162.60599pt.
 
 
@@ -519,47 +520,52 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 ] [26 <C:/Users/Brian/Desktop/Masters-Thesis/coordinate_frames.png>]
-[27] [28] [29] [30] [31]) [32]
+[27] [28] [29] [30] [31]
+File: coordinate_frames.png Graphic file (type png)
+ <use coordinate_frames.png>
+Package pdftex.def Info: coordinate_frames.png used on input line 269.
+(pdftex.def)             Requested size: 325.215pt x 162.60599pt.
+ [32]) [33]
 (C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.tex
 CHAPTER 5
-[33
+[34
 
 
 
 ]
 
-LaTeX Warning: Citation `Li2014 ' on page 34 undefined on input line 26.
-
-[34]
-
-LaTeX Warning: Reference `eq:CPGModulation' on page 35 undefined on input line 
-59.
+LaTeX Warning: Citation `Li2014' on page 35 undefined on input line 26.
 
 [35]
 
-LaTeX Warning: Reference `fig:CPGInPhase' on page 36 undefined on input line 73
+LaTeX Warning: Reference `eq:CPGModulation' on page 36 undefined on input line 
+59.
+
+[36]
+
+LaTeX Warning: Reference `fig:CPGInPhase' on page 37 undefined on input line 73
 .
 
 
-LaTeX Warning: Reference `fig:CPGInTime' on page 36 undefined on input line 73.
+LaTeX Warning: Reference `fig:CPGInTime' on page 37 undefined on input line 73.
 
 
 
-LaTeX Warning: Reference `eq:CPGMain' on page 36 undefined on input line 73.
+LaTeX Warning: Reference `eq:CPGMain' on page 37 undefined on input line 73.
 
 
-LaTeX Warning: Reference `eq:CPGModulation' on page 36 undefined on input line 
+LaTeX Warning: Reference `eq:CPGModulation' on page 37 undefined on input line 
 73.
 
 
-LaTeX Warning: Reference `fig::CPGInPhase' on page 36 undefined on input line 1
+LaTeX Warning: Reference `fig::CPGInPhase' on page 37 undefined on input line 1
 00.
 
 
-LaTeX Warning: Reference `fig::CPGInTime' on page 36 undefined on input line 10
+LaTeX Warning: Reference `fig::CPGInTime' on page 37 undefined on input line 10
 0.
 
-<cpg_time80.png, id=167, 578.16pt x 433.62pt>
+<cpg_time80.png, id=172, 578.16pt x 433.62pt>
 File: cpg_time80.png Graphic file (type png)
  <use cpg_time80.png>
 Package pdftex.def Info: cpg_time80.png used on input line 106.
@@ -568,7 +574,7 @@ Package pdftex.def Info: cpg_time80.png used on input line 106.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<cpg_phase80.png, id=168, 578.16pt x 433.62pt>
+<cpg_phase80.png, id=173, 578.16pt x 433.62pt>
 File: cpg_phase80.png Graphic file (type png)
  <use cpg_phase80.png>
 Package pdftex.def Info: cpg_phase80.png used on input line 112.
@@ -578,22 +584,22 @@ Package pdftex.def Info: cpg_phase80.png used on input line 112.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `eq:CPGMain' on page 36 undefined on input line 123.
+LaTeX Warning: Reference `eq:CPGMain' on page 37 undefined on input line 123.
 
-[36] [37 <C:/Users/Brian/Desktop/Masters-Thesis/cpg_time80.png> <C:/Users/Brian
+[37] [38 <C:/Users/Brian/Desktop/Masters-Thesis/cpg_time80.png> <C:/Users/Brian
 /Desktop/Masters-Thesis/cpg_phase80.png>]
-<virtual_foothold.png, id=178, 722.7pt x 361.35pt>
+<virtual_foothold.png, id=182, 722.7pt x 361.35pt>
 File: virtual_foothold.png Graphic file (type png)
  <use virtual_foothold.png>
 Package pdftex.def Info: virtual_foothold.png used on input line 135.
 (pdftex.def)             Requested size: 325.215pt x 162.60599pt.
 
-[38 <C:/Users/Brian/Desktop/Masters-Thesis/virtual_foothold.png>] [39]
+[39 <C:/Users/Brian/Desktop/Masters-Thesis/virtual_foothold.png>] [40]
 
-LaTeX Warning: Reference `eq::net_moment' on page 40 undefined on input line 20
+LaTeX Warning: Reference `eq::net_moment' on page 41 undefined on input line 20
 0.
 
-[40] <tipping_robot.png, id=189, 650.43pt x 433.62pt>
+[41] <tipping_robot.png, id=193, 650.43pt x 433.62pt>
 File: tipping_robot.png Graphic file (type png)
  <use tipping_robot.png>
 Package pdftex.def Info: tipping_robot.png used on input line 231.
@@ -602,18 +608,18 @@ Package pdftex.def Info: tipping_robot.png used on input line 231.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[41]
+[42]
 
-LaTeX Warning: Citation `Rojas1996ch7' on page 42 undefined on input line 247.
+LaTeX Warning: Citation `Rojas1996ch7' on page 43 undefined on input line 247.
 
-[42 <C:/Users/Brian/Desktop/Masters-Thesis/tipping_robot.png>]
-<narx_network_diagram.png, id=197, 650.43pt x 433.62pt>
+[43 <C:/Users/Brian/Desktop/Masters-Thesis/tipping_robot.png>]
+<narx_network_diagram.png, id=201, 650.43pt x 433.62pt>
 File: narx_network_diagram.png Graphic file (type png)
 
 <use narx_network_diagram.png>
 Package pdftex.def Info: narx_network_diagram.png used on input line 290.
 (pdftex.def)             Requested size: 325.215pt x 216.81609pt.
- [43] [44 <C:/Users/Brian/Desktop/Masters-Thesis/narx_network_diagram.png>]
+ [44] [45 <C:/Users/Brian/Desktop/Masters-Thesis/narx_network_diagram.png>]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 335.
 
 
@@ -622,36 +628,36 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 335.
- [45]
+ [46]
 
-LaTeX Warning: Reference `eq::joint_dynamics' on page 46 undefined on input lin
+LaTeX Warning: Reference `eq::joint_dynamics' on page 47 undefined on input lin
 e 386.
 
-[46] <controller_diagram.png, id=211, 650.43pt x 433.62pt>
+[47] <controller_diagram.png, id=215, 650.43pt x 433.62pt>
 File: controller_diagram.png Graphic file (type png)
 
 <use controller_diagram.png>
 Package pdftex.def Info: controller_diagram.png used on input line 401.
 (pdftex.def)             Requested size: 325.215pt x 216.81609pt.
- [47 <C:/Users/Brian/Desktop/Masters-Thesis/controller_diagram.png>]
+ [48 <C:/Users/Brian/Desktop/Masters-Thesis/controller_diagram.png>]
 
-LaTeX Warning: Reference `fig::alpha_tests' on page 48 undefined on input line 
+LaTeX Warning: Reference `fig::alpha_tests' on page 49 undefined on input line 
 432.
 
 
-LaTeX Warning: Reference `fig::alpha_tests' on page 48 undefined on input line 
+LaTeX Warning: Reference `fig::alpha_tests' on page 49 undefined on input line 
 432.
 
-) [48] (C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.tex
+) [49] (C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.tex
 CHAPTER 6
-[49
+[50
 
 
 
-] [50] [51]) [52]
+] [51] [52]) [53]
 (C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.tex
 CHAPTER 7
-) [53
+) [54
 
 
 
@@ -663,14 +669,14 @@ Missing character: There is no Ñ in font cmr12!
 Missing character: There is no ‚ in font cmti12!
 Missing character: There is no Ä in font cmti12!
 Missing character: There is no ì in font cmti12!
- [54
+ [55
 
 ]
 Missing character: There is no ≈ in font cmr12!
 Missing character: There is no ô in font cmr12!
 Missing character: There is no ƒ in font cmr12!
 Missing character: There is no ç in font cmr12!
- [55] [56]) [57]
+ [56] [57]) [58]
 (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
 (C:\Users\Brian\Desktop\Masters-Thesis\vita.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\publications.aux)
@@ -691,13 +697,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3138 strings out of 493921
- 45367 string characters out of 3144877
- 117292 words of memory out of 3000000
- 6298 multiletter control sequences out of 15000+200000
+ 3235 strings out of 493921
+ 46629 string characters out of 3144877
+ 118217 words of memory out of 3000000
+ 6392 multiletter control sequences out of 15000+200000
  13313 words of font info for 49 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 35i,16n,23p,1441b,249s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,16n,23p,1441b,247s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/
@@ -707,12 +713,13 @@ m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x8
 6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (64 pages, 3132898 bytes).
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on main.pdf (65 pages, 3144020 bytes).
 PDF statistics:
- 287 PDF objects out of 1000 (max. 8388607)
+ 294 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  86 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -11,10 +11,11 @@
 	
 	\section{Kinematic Model}
 
-		The kinematic model of the BlueFoot platform is paramount for foot/body trajectory planning, localization, and adaptation. In particular, inverse position and velocity solutions are used to perscribe joint-space commands from particular foot trajectories perscribed in the world frame. Foward kinematic solutions are utilized to localize the position of each foot using a combination of localized trunk position/orientation and joint position feedbback. This section will detail the foward and inverse kinematic models which describe the BlueFoot platform and are used in motion planning and control tasks.
+		The kinematic model of the BlueFoot platform is paramount for foot/body trajectory planning, localization, and adaptation. In particular, inverse position and velocity solutions are used to perscribe joint-space commands from particular foot trajectories planned within the world coordinate frame. Additionally, foward kinematic solutions are utilized to localize the position of each foot using a combination of localized trunk position/orientation and joint position feedbback. This section will fully describe the foward and inverse kinematic models which describe the BlueFoot platform and are how these models are used in motion planning and control tasks.
 
 		\subsection{Forward Position Kinematics}
 		\label{ch::system_modeling_pos_kin}
+
 			To formulate the kinematics model, a set of coordinate systems have been defined and are described by \ref{fig::coordinate_frames}. Note that the frame $O_{0}$ represents the world coordinate frame; and $O_{b}$ is the coordinate frame, centered at  ${p}_{b}$ attached to the platform and is always aligned with $O_{0}$. $O_{b}$ represents a body frame rigidly attached to the center of the trunk. The orientation and position of the trunk are defined by vectors of $\theta_{b}\InRe{3}$ and ${p}_{b}\InRe{3}$, which relate the frame $O_{b}$ to the world frame $O_{0}$. Coordinate frames $O_{i,0}$ are attached to the first joint of each \Ith leg.
 %
 				\begin{figure}[h!]
@@ -132,15 +133,20 @@
 			The position of joints 2-4 of leg \emph{i}, may now be computed with respect to frame $O_{0}$ by:
 				\begin{equation}
 					{p}_{i,j} \equiv E_{p} H_{0}^{i,0} {H}^{i,0}_{i,(j-1)} e_{p}. \Sep \forall \Sep j\in{2,3,4}
+					\label{eq::world_joint_positions}
 				\end{equation}
 			Finally, the position of the end-effector (foot) of \Ith leg. ${p}_{i,e}$, is achieved as follows:
 				\begin{equation}
 					{p}_{i,e} \equiv E_{p} H_{0}^{i,0} {H}^{i,0}_{i,4} e_{p}.
+					\label{eq::world_feed_positions}
 				\end{equation}
 
+			\subsubsection{A Note about Foot Localization in World and Robot-Relative Frames}
 
-		
+			Using the previously defined forward kinematics model and the relationships defined in \label{eq::world_joint_positions} and \label{eq::world_feet_positions}, the position of each joint and foot can be computed assuming the $p_{b}$ and $\theta_{b}$ are known (or can be estimated) in the frame $O_{0}$. Provided inertial feedback, trunk orientation, $\theta_{b}$, can be estimated by the use of a Extended Kalman Filter (EKF), or one of many other orientation estimation methods (\IE complimentary filter, etc.). $p_{b}$, however, requires more sophisticate localization measures, such as a Simultaneous Localization and Mapping (SLAM) scheme or absolute positioning via overhead camera or GPS. In lieu of an implementation for such a localization routine, it is often convenient to generate foot positions estimate in a \emph{robot-relative} frame, $O_{b}^{'}$. This frame is not rigidly attached to the robot but moves with the robot in $O_{0}$. Additionally, this frame has its own position, relative to $O_{0}$, defined by the translation $p_{b}^{'}$. $O_{b}^{'}$ is constantly aligned with respect to $O_{0}$, which fixed the rotation of $O_{b}^{'}$ with respect to $O_{0}$ as the identity matrix.
 
+			In this frame, the trunk position is regarded as an offset from the origin of $O_{b}^{'}$, $p_{b,rel}^{'}$. Since there is zero rotation between $O_{0}$ and $O_{b}^{'}$, the trunk rotation vector $\theta_{b,re;}^{'}$ is directly equivalent to $\theta_{b}$ in $O_{0}$. Using these translation and rotation definitions in place of their world frame counterparts, the robot-relative joint and foot-positions, ${p}_{i,j}^{'}$ and ${p}_{i,e}^{'}$ of each \Ith leg can be computed. These values are particularly useful for planning foot and body-placements which depend directly on the location other foot positions and the relative body location, but do not necessarily depend on the position of the robot in the world coordinate frame.
+ 
 
 
 
