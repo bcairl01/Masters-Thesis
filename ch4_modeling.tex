@@ -16,14 +16,14 @@
 		\subsection{Forward Position Kinematics}
 		\label{ch::system_modeling_pos_kin}
 			To formulate the kinematics model, a set of coordinate systems have been defined and are described by \ref{fig::coordinate_frames}. Note that the frame $O_{0}$ represents the world coordinate frame; and $O_{b}$ is the coordinate frame, centered at  ${p}_{b}$ attached to the platform and is always aligned with $O_{0}$. $O_{b}$ represents a body frame rigidly attached to the center of the trunk. The orientation and position of the trunk are defined by vectors of $\theta_{b}\InRe{3}$ and ${p}_{b}\InRe{3}$, which relate the frame $O_{b}$ to the world frame $O_{0}$. Coordinate frames $O_{i,0}$ are attached to the first joint of each \Ith leg.
-
+%
 				\begin{figure}[h!]
 					\centering
 					\fbox{\includegraphics[width=0.75\textwidth]{coordinate_frames.png}}
 					\caption{Coordinate frame setup.}
 					\label{fig::narx_net}
 				\end{figure}
-
+%
 			The \Jth joint position of each \Ith leg is represented  by the points ${p}_{i,j}$ in the frame $O_{0}$. These spatial locations are generated from a combination of the body orientation, $\theta_{b}$, and joint positions for each \Ith leg, $q_{i} = [q_{i,1}, q_{i,2}, q_{i,3}, q_{i,4}]^T$. $q_{i,1}$ represents the position of the hip-joint (joint closest to the center platform), which rotates in the direction of the transverse body plane. The joint variables $q_{i,2}, q_{i,3}$ and $q_{i,4}$ represent the lateral-hip, knee and ankle joint rotations, respectively.
 
 			The coordinate transformation between world coordinate frame, $O_{0}$, and the zeroth Denavit-Hartenberg (DH) coordinate frame of leg \emph{i}, $O_{i,0}$ (located at the origin of joint-1), is given by
@@ -257,6 +257,14 @@
 
 	\section{BlueFoot Simulator}
 
+%
+		\begin{figure}[h!]
+			\centering
+			\fbox{\includegraphics[width=0.75\textwidth]{coordinate_frames.png}}
+			\caption{Coordinate frame setup.}
+			\label{fig::narx_net}
+		\end{figure}
+%
 		The BlueFoot platform is comprised of 17 rigid bodies, 16 of which are linkages between joints; and a main platform. Since each limb is formed from four revolute joints, the system has a total of 22 DOF, 16 of which are actuated. The main platform's configuration is generated through particular configurations of the legs. Furthermore, because each linkage is constrained to a rotation about a single axis, the rigid-body dynamic model of the BlueFoot quadruped is represented by 44 states. These states represent the position and velocity of each joint, $q_{i}$ and $\dot{q}_{i}$, respectively. Additionally, foot contact states are represented by binary scalars, $\mu_{i} \in \wrap{0,1}$, which describes whether the foot is not in contact or in contact, respectively.
 
 		The dynamics of this system are somewhat complex because the quadruped's legs continuously make and break contact with the ground during gaiting. Additionally, the surface attributes and contact effects may vary significantly during gaiting and for various environments. A numerical dynamics engine, Open Dynamics Engine (ODE) \cite{ODE_Website}, has been utilized to implement a dynamics simulator for the BlueFoot platform. The simulator allows for various reconfigurations of environmental parameters, such as contact friction and physical obstacles. 
