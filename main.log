@@ -1,19 +1,19 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.5.2)  14 APR 2015 19:27
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  17 APR 2015 16:40
 entering extended mode
-**C:/Users/brian/Google*Drive/Masters*Thesis/main.tex
-("C:/Users/brian/Google Drive/Masters Thesis/main.tex"
+**main.tex
+(C:\Users\Brian\Desktop\Masters-Thesis\main.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
-vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
-an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
-romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
-sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
-senglishmax, welsh, loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\latex209.def"
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latex209.def"
 File: latex209.def 1998/05/13 v0.52 Standard LaTeX file
 
 
@@ -46,7 +46,7 @@ File: latex209.def 1998/05/13 v0.52 Standard LaTeX file
 \@cla=\count79
 \@clb=\count80
 \mscount=\count81
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\tracefnt.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\tracefnt.sty"
 Package: tracefnt 1997/05/29 v3.0j Standard LaTeX package (font tracing)
 \tracingfonts=\count82
 LaTeX Info: Redefining \selectfont on input line 101.
@@ -63,7 +63,7 @@ LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 295.
 LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 301.
 LaTeX Info: Redefining \em on input line 311.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\latexsym.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latexsym.sty"
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup10
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
@@ -75,9 +75,9 @@ LaTeX Font Info:    Redeclaring math delimiter \bracevert on input line 379.
 )
 Compatibility mode: loading poly3.sty rather than poly3.cls.
 
-("C:\Users\brian\Google Drive\Masters Thesis\poly3.sty"
+(C:\Users\Brian\Desktop\Masters-Thesis\poly3.sty
 Document Style 'eethesis', version 1.0, Released 16 May 1986
-("C:\Users\brian\Google Drive\Masters Thesis\eecommands.sty")
+(C:\Users\Brian\Desktop\Masters-Thesis\eecommands.sty)
 \descriptionmargin=\dimen105
 \c@subequation=\count83
 \c@part=\count84
@@ -90,7 +90,7 @@ Document Style 'eethesis', version 1.0, Released 16 May 1986
 \c@figure=\count91
 \c@table=\count92
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\eepic\epic.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eepic\epic.sty"
 Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
 \@@multicnt=\count93
 \d@lta=\count94
@@ -108,49 +108,49 @@ Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
 \num@segments=\count99
 \num@segmentsi=\count100
 \@datafile=\read1
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\eepic\eepic.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eepic\eepic.sty"
 Extension to Epic and LaTeX. Version 1.1e - Released Dec 21, 1999
 \@gphlinewidth=\count101
 \@eepictcnt=\count102
 \@tempdimc=\dimen112
 \maxovaldiam=\dimen113
 \@filltype=\box27
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count103
 ))
 \Gin@req@height=\dimen114
 \Gin@req@width=\dimen115
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
 Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen116
 \extrarowheight=\dimen117
@@ -166,10 +166,10 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \TX@cols=\count104
 \TX@ftn=\toks16
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\mh\mathtools.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mh\mathtools.sty"
 Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count105
 \calc@Bcount=\count106
@@ -182,27 +182,27 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count107
 \calc@Cskip=\skip45
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\mh\mhsetup.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mh\mhsetup.sty"
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen125
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen126
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count108
@@ -255,8 +255,8 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen139
 \l_MT_below_shortintertext_sep=\dimen140
 )
-("C:\Users\brian\Google Drive\Masters Thesis\preamble.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\epsf\epsf.tex"
+(C:\Users\Brian\Desktop\Masters-Thesis\preamble.tex)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\epsf\epsf.tex"
 This is `epsf.tex' v2.7.4 <14 February 2011>
 \epsffilein=\read2
 \epsfframemargin=\dimen141
@@ -274,27 +274,33 @@ This is `epsf.tex' v2.7.4 <14 February 2011>
 \c@remark=\count124
 \c@example=\count125
 \c@assumption=\count126
- ("C:\Users\brian\Google Drive\Masters Thesis\main.aux"
-("C:\Users\brian\Google Drive\Masters Thesis\vita.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\publications.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\acknowledgements.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\abstract.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\ch1_introduction.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\ch2_hardware.aux"
+ (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
+(C:\Users\Brian\Desktop\Masters-Thesis\vita.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\publications.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\acknowledgements.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\abstract.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\ch1_introduction.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\ch2_hardware.aux
 
 LaTeX Warning: Label `fig::dev_diagram' multiply defined.
 
-) ("C:\Users\brian\Google Drive\Masters Thesis\ch3_software.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\ch4_modeling.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\ch5_gaitcontrol.aux"
+) (C:\Users\Brian\Desktop\Masters-Thesis\ch3_software.aux
+
+LaTeX Warning: Label `fig::comm_flow' multiply defined.
+
+) (C:\Users\Brian\Desktop\Masters-Thesis\ch4_modeling.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.aux
 
 LaTeX Warning: Label `eq::FootControl' multiply defined.
 
 
+LaTeX Warning: Label `eq::bp_error' multiply defined.
+
+
 LaTeX Warning: Label `fig::narx_net' multiply defined.
 
-) ("C:\Users\brian\Google Drive\Masters Thesis\ch6_navigation.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\ch7_closing_remarks.aux"))
+) (C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
@@ -308,7 +314,7 @@ LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count127
 \scratchdimen=\dimen149
@@ -324,17 +330,17 @@ LaTeX Font Info:    ... okay on input line 30.
 ) [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-("C:\Users\brian\Google Drive\Masters Thesis\vita.tex") [2
+(C:\Users\Brian\Desktop\Masters-Thesis\vita.tex) [2
 
 
 ]
 No file publications.tex.
 No file acknowledgements.tex.
 No file abstract.tex.
-("C:\Users\brian\Google Drive\Masters Thesis\main.toc"
+(C:\Users\Brian\Desktop\Masters-Thesis\main.toc
 LaTeX Font Info:    Try loading font information for U+lasy on input line 6.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 ) [1
 
@@ -348,14 +354,14 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 ])
 \tf@toc=\write3
  [2]
-("C:\Users\brian\Google Drive\Masters Thesis\main.lof"
+(C:\Users\Brian\Desktop\Masters-Thesis\main.lof
 Overfull \hbox (8.05205pt too wide) in paragraph at lines 2--2
  [][] []\OT1/cmr/m/n/12 The Blue-Foot Quadruped Robot: single-camera con-fig-u-
 ra-tion \OT1/cmr/m/it/12 (left)\OT1/cmr/m/n/12 ; stereo- 
  []
 
 
-Overfull \hbox (3.8173pt too wide) in paragraph at lines 17--17
+Overfull \hbox (3.8173pt too wide) in paragraph at lines 18--18
  [][] []\OT1/cmr/m/n/12 Virtual foothold rep-re-sen-taion. Blue ar-rows rep-re-
 sent an at-trac-tive ``force" 
  []
@@ -364,7 +370,7 @@ sent an at-trac-tive ``force"
 \tf@lof=\write4
  [3
 
-] ("C:\Users\brian\Google Drive\Masters Thesis\main.lot"
+] (C:\Users\Brian\Desktop\Masters-Thesis\main.lot
 Overfull \hbox (21.53992pt too wide) in paragraph at lines 4--4
  [][] []\OT1/cmr/m/n/12 System com-mu-ni-ca-tion port-pairs and cor-re-spond-in
 g data trans-fer rate$[]$Refers 
@@ -374,7 +380,7 @@ g data trans-fer rate$[]$Refers
 \tf@lot=\write5
  [4
 
-] ("C:\Users\brian\Google Drive\Masters Thesis\ch1_introduction.tex"
+] (C:\Users\Brian\Desktop\Masters-Thesis\ch1_introduction.tex
 CHAPTER 1
 <robot_selfies.png, id=26, 722.7pt x 361.35pt>
 File: robot_selfies.png Graphic file (type png)
@@ -388,8 +394,8 @@ LaTeX Warning: Citation `Kolter2008 ' on page 1 undefined on input line 19.
 [1
 
 
- <C:/Users/brian/Google Drive/Masters Thesis/robot_selfies.png>]) [2]
-("C:\Users\brian\Google Drive\Masters Thesis\ch2_hardware.tex"
+ <C:/Users/Brian/Desktop/Masters-Thesis/robot_selfies.png>]) [2]
+(C:\Users\Brian\Desktop\Masters-Thesis\ch2_hardware.tex
 CHAPTER 2
 [3
 
@@ -406,7 +412,7 @@ File: main_full.png Graphic file (type png)
  <use main_full.png>
 Package pdftex.def Info: main_full.png used on input line 68.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
- [5 <C:/Users/brian/Google Drive/Masters Thesis/root_full.png>]
+ [5 <C:/Users/Brian/Desktop/Masters-Thesis/root_full.png>]
 <head_full.png, id=49, 1084.05pt x 361.35pt>
 File: head_full.png Graphic file (type png)
  <use head_full.png>
@@ -416,21 +422,19 @@ Package pdftex.def Info: head_full.png used on input line 82.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6 <C:/Users/brian/Google Drive/Masters Thesis/main_full.png>]
+[6 <C:/Users/Brian/Desktop/Masters-Thesis/main_full.png>]
 <leg.png, id=54, 1084.05pt x 361.35pt>
 File: leg.png Graphic file (type png)
  <use leg.png>
 Package pdftex.def Info: leg.png used on input line 93.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
- [7 <C:/Users/brian/Google Drive/Masters Thesis/head_full.png> <C:/Users/brian/
-Google Drive/Masters Thesis/leg.png>] <sea_full.jpg, id=61, 1129.21875pt x 368.
-1253pt>
+ [7 <C:/Users/Brian/Desktop/Masters-Thesis/head_full.png> <C:/Users/Brian/Deskt
+op/Masters-Thesis/leg.png>] <sea_full.jpg, id=61, 1129.21875pt x 368.1253pt>
 File: sea_full.jpg Graphic file (type jpg)
  <use sea_full.jpg>
 Package pdftex.def Info: sea_full.jpg used on input line 102.
 (pdftex.def)             Requested size: 433.62pt x 141.36075pt.
-
-[8 <C:/Users/brian/Google Drive/Masters Thesis/sea_full.jpg>] [9] [10] [11]
+ [8 <C:/Users/Brian/Desktop/Masters-Thesis/sea_full.jpg>] [9] [10] [11]
 <device_diagram.png, id=75, 1084.05pt x 722.7pt>
 File: device_diagram.png Graphic file (type png)
  <use device_diagram.png>
@@ -453,9 +457,9 @@ Package pdftex.def Info: power_diagram.png used on input line 221.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[13 <C:/Users/brian/Google Drive/Masters Thesis/device_diagram.png>] [14 <C:/Us
-ers/brian/Google Drive/Masters Thesis/power_diagram.png>]) [15]
-("C:\Users\brian\Google Drive\Masters Thesis\ch3_software.tex"
+[13 <C:/Users/Brian/Desktop/Masters-Thesis/device_diagram.png>] [14 <C:/Users/B
+rian/Desktop/Masters-Thesis/power_diagram.png>]) [15]
+(C:\Users\Brian\Desktop\Masters-Thesis\ch3_software.tex
 CHAPTER 3
 [16
 
@@ -471,8 +475,8 @@ Package pdftex.def Info: process_diagram.png used on input line 57.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[17] [18 <C:/Users/brian/Google Drive/Masters Thesis/process_diagram.png>]
-[19] <comm_flow.png, id=107, 722.7pt x 469.755pt>
+[17] [18 <C:/Users/Brian/Desktop/Masters-Thesis/process_diagram.png>] [19]
+<comm_flow.png, id=107, 722.7pt x 469.755pt>
 File: comm_flow.png Graphic file (type png)
  <use comm_flow.png>
 Package pdftex.def Info: comm_flow.png used on input line 94.
@@ -481,20 +485,23 @@ Package pdftex.def Info: comm_flow.png used on input line 94.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20] [21 <C:/Users/brian/Google Drive/Masters Thesis/comm_flow.png>]
+[20] [21 <C:/Users/Brian/Desktop/Masters-Thesis/comm_flow.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [22] [23] ("C:\Users\brian\Google Drive\Masters Thesis\ch4_modeling.tex"
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[22] [23]) [24] (C:\Users\Brian\Desktop\Masters-Thesis\ch4_modeling.tex
 CHAPTER 4
 
-LaTeX Warning: Reference `fig::coordinate_frames' on page 24 undefined on input
+LaTeX Warning: Reference `fig::coordinate_frames' on page 25 undefined on input
  line 18.
 
-<coordinate_frames.png, id=121, 722.7pt x 361.35pt>
+<coordinate_frames.png, id=124, 722.7pt x 361.35pt>
 File: coordinate_frames.png Graphic file (type png)
 
 <use coordinate_frames.png>
@@ -504,67 +511,66 @@ Package pdftex.def Info: coordinate_frames.png used on input line 22.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[24
+[25
 
 
 
-] [25 <C:/Users/brian/Google Drive/Masters Thesis/coordinate_frames.png>]
-[26] [27] [28] [29] [30]) [31]
-("C:\Users\brian\Google Drive\Masters Thesis\ch5_gaitcontrol.tex"
+] [26 <C:/Users/Brian/Desktop/Masters-Thesis/coordinate_frames.png>]
+[27] [28] [29] [30] [31]) [32]
+(C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.tex
 CHAPTER 5
-[32
+[33
 
 
 
 ]
 
-LaTeX Warning: Citation `Li2014 ' on page 33 undefined on input line 26.
-
-[33]
-
-LaTeX Warning: Reference `eq:CPGModulation' on page 34 undefined on input line 
-59.
+LaTeX Warning: Citation `Li2014 ' on page 34 undefined on input line 26.
 
 [34]
 
-LaTeX Warning: Reference `fig:CPGInPhase' on page 35 undefined on input line 73
+LaTeX Warning: Reference `eq:CPGModulation' on page 35 undefined on input line 
+59.
+
+[35]
+
+LaTeX Warning: Reference `fig:CPGInPhase' on page 36 undefined on input line 73
 .
 
 
-LaTeX Warning: Reference `fig:CPGInTime' on page 35 undefined on input line 73.
+LaTeX Warning: Reference `fig:CPGInTime' on page 36 undefined on input line 73.
 
 
 
-LaTeX Warning: Reference `eq:CPGMain' on page 35 undefined on input line 73.
+LaTeX Warning: Reference `eq:CPGMain' on page 36 undefined on input line 73.
 
 
-LaTeX Warning: Reference `eq:CPGModulation' on page 35 undefined on input line 
+LaTeX Warning: Reference `eq:CPGModulation' on page 36 undefined on input line 
 73.
 
 
-LaTeX Warning: Reference `fig::CPGInPhase' on page 35 undefined on input line 1
+LaTeX Warning: Reference `fig::CPGInPhase' on page 36 undefined on input line 1
 00.
 
 
-LaTeX Warning: Reference `fig::CPGInTime' on page 35 undefined on input line 10
+LaTeX Warning: Reference `fig::CPGInTime' on page 36 undefined on input line 10
 0.
 
 
-LaTeX Warning: Reference `eq:CPGMain' on page 35 undefined on input line 126.
+LaTeX Warning: Reference `eq:CPGMain' on page 36 undefined on input line 126.
 
-[35] <virtual_foothold.png, id=164, 722.7pt x 361.35pt>
+[36] <virtual_foothold.png, id=167, 722.7pt x 361.35pt>
 File: virtual_foothold.png Graphic file (type png)
 
 <use virtual_foothold.png>
 Package pdftex.def Info: virtual_foothold.png used on input line 138.
 (pdftex.def)             Requested size: 325.215pt x 162.60599pt.
- [36 <C:/Users/brian/Google Drive/Masters Thesis/virtual_foothold.png>] [37] [3
-8]
+ [37 <C:/Users/Brian/Desktop/Masters-Thesis/virtual_foothold.png>] [38] [39]
 
-LaTeX Warning: Reference `eq::net_moment' on page 39 undefined on input line 20
+LaTeX Warning: Reference `eq::net_moment' on page 40 undefined on input line 20
 3.
 
-<tipping_robot.png, id=176, 650.43pt x 433.62pt>
+<tipping_robot.png, id=179, 650.43pt x 433.62pt>
 File: tipping_robot.png Graphic file (type png)
  <use tipping_robot.png>
 Package pdftex.def Info: tipping_robot.png used on input line 234.
@@ -573,60 +579,66 @@ Package pdftex.def Info: tipping_robot.png used on input line 234.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[39] [40 <C:/Users/brian/Google Drive/Masters Thesis/tipping_robot.png>]
-<narx_network_diagram.png, id=183, 650.43pt x 433.62pt>
+[40] [41 <C:/Users/Brian/Desktop/Masters-Thesis/tipping_robot.png>]
+
+LaTeX Warning: Citation `Rojas1996ch7' on page 42 undefined on input line 250.
+
+[42] <narx_network_diagram.png, id=189, 650.43pt x 433.62pt>
 File: narx_network_diagram.png Graphic file (type png)
 
 <use narx_network_diagram.png>
-Package pdftex.def Info: narx_network_diagram.png used on input line 273.
+Package pdftex.def Info: narx_network_diagram.png used on input line 293.
 (pdftex.def)             Requested size: 325.215pt x 216.81609pt.
- [41] [42 <C:/Users/brian/Google Drive/Masters Thesis/narx_network_diagram.png>
-]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 318.
+ [43 <C:/Users/Brian/Desktop/Masters-Thesis/narx_network_diagram.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 338.
 
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 318.
- [43]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 338.
+ [44] [45]
 
-LaTeX Warning: Reference `eq::joint_dynamics' on page 44 undefined on input lin
-e 369.
+LaTeX Warning: Reference `eq::joint_dynamics' on page 46 undefined on input lin
+e 389.
 
-[44] <controller_diagram.png, id=198, 650.43pt x 433.62pt>
+<controller_diagram.png, id=201, 650.43pt x 433.62pt>
 File: controller_diagram.png Graphic file (type png)
 
 <use controller_diagram.png>
-Package pdftex.def Info: controller_diagram.png used on input line 384.
+Package pdftex.def Info: controller_diagram.png used on input line 404.
 (pdftex.def)             Requested size: 325.215pt x 216.81609pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `fig::alpha_tests' on page 45 undefined on input line 
-415.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `fig::alpha_tests' on page 45 undefined on input line 
-415.
+LaTeX Warning: Reference `fig::alpha_tests' on page 46 undefined on input line 
+435.
 
-) [45 <C:/Users/brian/Google Drive/Masters Thesis/controller_diagram.png>]
-[46] ("C:\Users\brian\Google Drive\Masters Thesis\ch6_navigation.tex"
+
+LaTeX Warning: Reference `fig::alpha_tests' on page 46 undefined on input line 
+435.
+
+) [46] [47 <C:/Users/Brian/Desktop/Masters-Thesis/controller_diagram.png>]
+(C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.tex
 CHAPTER 6
-) [47
+[48
 
 
 
-] ("C:\Users\brian\Google Drive\Masters Thesis\ch7_closing_remarks.tex"
+] [49] [50]) [51]
+(C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.tex
 CHAPTER 7
-) [48
+) [52
 
 
 
-] ("C:\Users\brian\Google Drive\Masters Thesis\main.bbl"
+] (C:\Users\Brian\Desktop\Masters-Thesis\main.bbl
 Missing character: There is no ≈ in font cmr12!
 Missing character: There is no Ñ in font cmr12!
 Missing character: There is no ≈ in font cmr12!
@@ -634,26 +646,26 @@ Missing character: There is no Ñ in font cmr12!
 Missing character: There is no ‚ in font cmti12!
 Missing character: There is no Ä in font cmti12!
 Missing character: There is no ì in font cmti12!
- [49
+ [53
 
 ]
 Missing character: There is no ≈ in font cmr12!
 Missing character: There is no ô in font cmr12!
 Missing character: There is no ƒ in font cmr12!
 Missing character: There is no ç in font cmr12!
- [50]
-[51]) [52] ("C:\Users\brian\Google Drive\Masters Thesis\main.aux"
-("C:\Users\brian\Google Drive\Masters Thesis\vita.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\publications.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\acknowledgements.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\abstract.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\ch1_introduction.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\ch2_hardware.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\ch3_software.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\ch4_modeling.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\ch5_gaitcontrol.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\ch6_navigation.aux")
-("C:\Users\brian\Google Drive\Masters Thesis\ch7_closing_remarks.aux"))
+ [54] [55]) [56]
+(C:\Users\Brian\Desktop\Masters-Thesis\main.aux
+(C:\Users\Brian\Desktop\Masters-Thesis\vita.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\publications.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\acknowledgements.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\abstract.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\ch1_introduction.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\ch2_hardware.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\ch3_software.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\ch4_modeling.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -662,27 +674,28 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3116 strings out of 494045
- 44980 string characters out of 3148388
- 116949 words of memory out of 3000000
- 6277 multiletter control sequences out of 15000+200000
+ 3127 strings out of 493921
+ 45166 string characters out of 3144877
+ 117282 words of memory out of 3000000
+ 6289 multiletter control sequences out of 15000+200000
  13313 words of font info for 49 fonts, out of 3000000 for 9000
- 715 hyphenation exceptions out of 8191
- 35i,16n,23p,1484b,249s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (58 pages, 3069387 bytes).
+ 841 hyphenation exceptions out of 8191
+ 35i,16n,23p,1441b,249s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on main.pdf (62 pages, 3088843 bytes).
 PDF statistics:
- 264 PDF objects out of 1000 (max. 8388607)
+ 277 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

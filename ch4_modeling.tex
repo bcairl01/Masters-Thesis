@@ -14,7 +14,7 @@
 		The kinematic model of the BlueFoot platform is paramount for foot/body trajectory planning, localization, and adaptation. In particular, inverse position and velocity solutions are used to perscribe joint-space commands from particular foot trajectories perscribed in the world frame. Foward kinematic solutions are utilized to localize the position of each foot using a combination of localized trunk position/orientation and joint position feedbback. This section will detail the foward and inverse kinematic models which describe the BlueFoot platform and are used in motion planning and control tasks.
 
 		\subsection{Forward Position Kinematics}
-
+		\label{ch::system_modeling_pos_kin}
 			To formulate the kinematics model, a set of coordinate systems have been defined and are described by \ref{fig::coordinate_frames}. Note that the frame $O_{0}$ represents the world coordinate frame; and $O_{b}$ is the coordinate frame, centered at  ${p}_{b}$ attached to the platform and is always aligned with $O_{0}$. $O_{b}$ represents a body frame rigidly attached to the center of the trunk. The orientation and position of the trunk are defined by vectors of $\theta_{b}\InRe{3}$ and ${p}_{b}\InRe{3}$, which relate the frame $O_{b}$ to the world frame $O_{0}$. Coordinate frames $O_{i,0}$ are attached to the first joint of each \Ith leg.
 
 				\begin{figure}[h!]

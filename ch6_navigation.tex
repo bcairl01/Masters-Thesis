@@ -7,16 +7,58 @@
 \label{ch::navigation}
 
 
-	\section{Potential-Fields Navigation with Camera-based Goal Tracking}
+	\section{Flatland navigation and Goal Tracking}
+	
+		The BlueFoot is administered flatland navigation controls using two main command parameters, $v_{c}$ and $\omega_{c}$, which represent foward and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. This section will detail a potential-feilds and goal trackin algorithms used to guide the BlueFoot platform through flatland enviroments using these two command parameters.
 
 		\subsection{LIDAR-based Potential-Fields Algorithm}
+		BlueFoot's fundemental navigation and obstacle avoidance algorithm involves a potential fields-based approach which fuses LIDAR data and features from processed camera images. This algorithm is essentially used as a ``wandering" mechanism which would normally be employed as a first-level navigation meaure in an unknown environment when no information (\EG map data) is known about the environment \emph{apriori}. This navigation approach uses only 2D LIDAR data (does not take into account features of terrain) and is thus most fit for navigation over flatland.
 
+		The LIDAR-base portion of this alogrithm takes sequential, planar LIDAR scans as an input and generates an output in the form of a vectored navigation command, $\vec{V}_{c}^{L}\in \Re^{3}$, relative to the world frame, $O_{0}$, as defined in Section \ref{ch::system_modeling_pos_kin}. Each point from a new LIDAR scan-frame is mapped to a cooresponding scalar \emph{potential} which is used to influence the direction of the newly generated command. Given a lidar scan $S$ with 2D scan points, $x_{i}^{L}\in\emph{S}^{L}$, relative to the LIDARs local coordinate frame $O_{L}$, an output command vector is generated using a potential function $\{ f(x) : \Re^{3}\rightarrow \Re^{1} \}$, and a biasing function, $\{ g(x,\psi) : \Re^{3}\rightarrow \Re^{1} \}$, as follows:
+%
+	\begin{eqnarray}
+	x_{i}  &=& P_{ \vec{z} } \wrap{ H_{b}^{0} H_{L}^{b} \Gamma_{L} x_{i}^{L} } \nonumber \\
+	\vec{V}_{c} &=& \alpha_{c} \wrap{\sum_{x_{i}\in \emph{S}} |f( x_{i}-p_{b})|_{1}}^{-1}  \wrap{ \sum_{x_{i} \in \emph{S}} g( x_{i}-p_{b},\psi)  f( x_{i}-p_{b} ) \frac{x_{i}-p_{b}}{\norm{x_{i}-p_{b}}} }
+	\end{eqnarray}
+	where $H_{b}^{0}$ defines a homogeneous transformation between $O_{0}$ and $O_{b}$; $H_{L}^{b}$ defines a homogeneous transformation which relates the LIDAR sensors pose to the frame $O_{b}$; $\emph{S}\subset \Re^{3}$ is the set of newly transformed points, $x_{i} \in \emph{S}$ which respect the current LIDAR scan in the world coordinate system; $\alpha_{c}$ is a scalar tuning parameter; and 
+	\begin{equation*}
+		\Gamma_{L} = \sbrack{ I_{2\times2}, 0_{2\times1} }^{T}.
+	\end{equation*}
+Since we are assuming navigation over flat ground, the operator $P_{ \vec{z} }\wrap{*}$ is used to project each transformed LIDAR scan-point onto the plane defined by the $z$-axis unit vector in the frame $O_{0}$.
 
-		\subsection{Camera-based goal tracking incorporation}
+The potential function, defined in \ref{eq::min_dis_potential_function}, used in BlueFoot's navigation scheme is tailored to ``repel" the platform from objects which are at some minimum distance, $d_{min}$ from the trunk, and attract toward objects that are further away. Thus, this potential function tends to draw the robot towards long aperuatures, such as long corridors or openings, and away from close-by obstructions. This \emph{minimum-distance} potential function is as follows:
+	\begin{equation}
+		f(x) = \lambda_{c,1}\wrap{\norm{x}-d_{min}} \wrap{ 1  - e^{ -  \lambda_{c,2} { \wrap{\norm{x}-d_{min}} }^{2} } }
+	\label{eq::min_dis_potential_function}
+	\end{equation}
+where $\lambda_{c,1}>0$ and $\lambda_{c,2}>0$ are tuning paramters for potential function output magnitude and sensitivity with respect to $\wrap{\norm{x}-d_{min}}$, repsectively. It can be observed that this potential function exhbits $f(x)<0$ when $\norm{x} < d_{min}$ and vice-verse, thus achieving the desired attractive/repulsive characteristics.
 
+The biasing function $g(x,\psi)$ is used to weight the effect of individual scan-point potentials, $f(x_{i}-p_{b})$, on the final navigation output, with respect to the angular-window parameter $\psi>0$. A simple masking-type biasing function is used in BlueFoot's navgiation function, which is formally defined as follows:
+	\begin{equation}
+		g(x,\psi) = 
+		\begin{cases}
+		1	& \tan^{-1}\wrap{ \frac{x_{2}}{x_{1}} } < \psi \\
+		0 	& \text{otherwise}.
+		\end{cases}
+	\end{equation}
+where $x_{1}$ and $x_{2}$ are the first and second elements of the vector argument $x\in\Re^{3}$. This function is used to give priority to ``foward" points within an angular window $\psi$ and serves to reduce the potential for getting stuck in local minima. In the event that the robot does get stuck in a potential minima, a ``stuck" dectection algorihtm has been implmented. As the name suggests, this algorihtm first detects if the robot is stuck in a local minima of the potential field based on a window of command histories.
 
+Finally, the command vector $\vec{V}_{c}^{L}$ is transformed into scalar foward and turning rate commands, $v_{c}$ and $\omega_{c}$, repspectively, by the following propotional control scheme:
+	\begin{eqnarray}
+	\dot{v}_{c} 		&=& \beta_{v} \wrap{ \norm{ \vec{V}_{c}^{L} } - v_{c} } \nonumber \\
+	\dot{\omega}_{c} &=& \beta_{\omega} \wrap{  \wrap{ \tan^{-1}\wrap{ \frac{\vec{V}_{c,2}^{L}}{\vec{V}_{c,1}^{L}} } - \theta_{b,z} } - \omega_{c} }
+	\end{eqnarray}
+where $\beta_{v}$ and $\beta_{\omega}$ are proportional-gain tuning parameters; and $\theta_{b,z}$ is the platforms yaw in $O_{0}$. The parameters $\beta_{v}$ and $\beta_{\omega}$ can be viewed as ``update-inertias," as they directly effect the influence of the effect of instaneous commands on the foward velocity and turning rate of the robot. Furthermore, these gains can be used to low-pass navigation updates to remove jitter cause by command outliers generated from degenerate sensor readings.
 
+		\subsection{Incorperation of Camera-based Feature-Tracking}
+		
+		Camera-based goal tracking is used in conjunction with the aformentioned potential fields navigation scheme to move the platform through an enviroment while seeking or tracking a particualar target. In this case, targets take the the form of features extracted from processed camera data. The robot is guided towards these features using a simple visual-serving approach. 
 
+Trackable camera features can be generated in a variety of ways. For the purpose of BlueFoot's navigation, objects with distinct shapes or color have been chosen for tracking so that shape and blob detection algorithms can be employed to detect thier positions relative to BlueFoot's camera view range. The positions of each detected feature with respect to the 2D camera-viewing frame, are mapped into forward rate and turning commands. These camera-based commands are then mixed with the outputs of the potential-fields navigation controller to form a hybrid navigaton control law.
+
+In this visual-servoing approach, features are used to control the robot in away that is agnostic of the type of feature being tracked. Namely, this approach relies on the relative position of the center of each features, represented as a pixel-position, $p_{Im} = [u,v]^{T} \in Z^{2}$ in the 2D image frame, $O^{Im}$, and a relative size, $r$, measured in pixels. In the case of circular features, for example, $r$ is represent the radius of the detected circle. For color-blob features, $r$ represents the radius of a circle which fully inscribes the colored object. 
+
+For the purpose of tracking or reaching a goal, it is desired that the robot's foward speed be controlled such that is proportional to $r$. Namely, it is desired that the robot stop when it becomes close to the target object, and move faster when the feature is in sight but the robot is further away. The position of the feature center will be used to control the robot's turning rate, as well as a the pitch of the robot's trunk. Articulating the trunk is an importantly manuerver during this sort of feature tracking routing, as is aid in keepin the target object centered in the image frame, and thus in sight, during motion.
 	\section{3D Surface mapping}
 
 

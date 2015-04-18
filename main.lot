@@ -5,12 +5,12 @@
 \contentsline {table}{\numberline {3}{\ignorespaces Power consumption summary by device (for single-camera with Hokuyo-URG).}}{14}
 \contentsline {table}{\numberline {4}{\ignorespaces Battery power supply and estimated runtime summary, assuming low regulator losses.}}{15}
 \addvspace {10pt}
-\contentsline {table}{\numberline {5}{\ignorespaces Packets sent from Ground-Station to TM4C.}}{21}
-\contentsline {table}{\numberline {6}{\ignorespaces Packets sent from the TM4C to the Ground-Station.}}{22}
-\contentsline {table}{\numberline {7}{\ignorespaces Packets sent from the RM48 to the ODROID.}}{23}
-\contentsline {table}{\numberline {8}{\ignorespaces Packets sent from the ODROID to the RM48.}}{23}
+\contentsline {table}{\numberline {5}{\ignorespaces Structure of the packets sent from Ground-Station to TM4C.}}{21}
+\contentsline {table}{\numberline {6}{\ignorespaces Structure of the packets sent from the TM4C to the Ground-Station.}}{22}
+\contentsline {table}{\numberline {7}{\ignorespaces Structure of the packets sent from the RM48 to the ODROID.}}{23}
+\contentsline {table}{\numberline {8}{\ignorespaces Structure of the packets sent from the ODROID to the RM48.}}{23}
 \addvspace {10pt}
-\contentsline {table}{\numberline {9}{\ignorespaces DH parameters for all legs.}}{25}
+\contentsline {table}{\numberline {9}{\ignorespaces DH parameters for all legs.}}{26}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
