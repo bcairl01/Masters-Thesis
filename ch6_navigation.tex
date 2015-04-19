@@ -9,12 +9,12 @@
 
 	\section{Flatland navigation and Goal Tracking}
 	
-		The BlueFoot has been outfitted with flatland navigation controls for obstacle avoidance and camera-based goal-tracking over flatland. Platform naviagtion is goverened by two main command parameters, $v_{c}$ and $\omega_{c}$, which represent foward and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. During navigation, the pitch and yaw of the trunk, $\theta_{b,x}$ and $\theta_{b,z}$, respectively, are also controlled via thier respective reference signals, $\theta_{b,x}^{r}$ and $\theta_{b,z}^{r}$. This control over trunk pose allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head. 
+		The BlueFoot has been outfitted with flatland navigation controls for obstacle avoidance and camera-based goal-tracking over flatland. Platform navigation is governed by two main command parameters, $v^{r}$ and $\omega^{r}$, which represent forward and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. During navigation, the pitch of the trunk, $\theta_{b,x}$ and $\theta_{b,z}$ is also controlled via its respective reference signal, $\theta_{b,x}^{r}$. This control over trunk pose allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head. 
 
 		\subsection{LIDAR-based Potential-Fields Algorithm}
-		BlueFoot's fundemental navigation and obstacle avoidance algorithm involves a potential fields-based approach which fuses LIDAR data and features from processed camera images. This algorithm is essentially used as a ``wandering" mechanism which would normally be employed as a first-level navigation meaure in an unknown environment when no information (\EG map data) is known about the environment \emph{apriori}. This navigation approach uses only 2D LIDAR data (does not take into account features of terrain) and is thus most fit for navigation over flatland.
+		BlueFoot's base navigation and obstacle avoidance algorithm involves a potential fields-based approach which fuses LIDAR data and features from processed camera images. This algorithm is essentially used as a ``wandering" mechanism which would normally be employed as a first-level navigation measure in an unknown environment when no information (\EG map data) is known about the environment \emph{apriori}. This navigation approach uses only 2D LIDAR data (does not take into account features of terrain) and is thus most fit for navigation over flatland.
 
-		The LIDAR-base portion of this alogrithm takes sequential, planar LIDAR scans as an input and generates an output in the form of a vectored navigation command, $\vec{V}_{c}^{L}\in \Re^{3}$, relative to the world frame, $O_{0}$, as defined in Section \ref{ch::system_modeling_pos_kin}. Each point from a new LIDAR scan-frame is mapped to a cooresponding scalar \emph{potential} which is used to influence the direction of the newly generated command. Given a lidar scan $S$ with 2D scan points, $x_{i}^{L}\in\emph{S}^{L}$, relative to the LIDARs local coordinate frame $O_{L}$, an output command vector is generated using a potential function $\{ f(x) : \Re^{3}\rightarrow \Re^{1} \}$, and a biasing function, $\{ g(x,\psi) : \Re^{3}\rightarrow \Re^{1} \}$, as follows:
+		The LIDAR-base portion of this algorithm takes sequential, planar LIDAR scans as an input and generates an output in the form of a vectored navigation command, $\vec{V}_{L}^{r}\in \Re^{3}$, relative to the world frame, $O_{0}$, as defined in Section~\ref{ch::system_modeling_pos_kin}. Each point from a LIDAR scan is mapped to a corresponding scalar \emph{potential} which is used to influence the direction of the newly generated command. Given a LIDAR scan $S$ with 2D scan points, $x_{i}^{L}\in\emph{S}^{L}$, relative to the LIDARs local coordinate frame $O_{L}$, an output command vector is generated using a potential function $\{ f(x) : \Re^{3}\rightarrow \Re^{1} \}$, and a biasing function, $\{ g(x,\psi) : \Re^{3}\rightarrow \Re^{1} \}$, as follows:
 %
 	\begin{eqnarray}
 	x_{i}  &=& P_{ \vec{z} } \wrap{ H_{b}^{0} H_{L}^{b} \Gamma_{L} x_{i}^{L} } \nonumber \\
@@ -26,14 +26,14 @@
 	\end{equation*}
 Since we are assuming navigation over flat ground, the operator $P_{ \vec{z} }\wrap{*}$ is used to project each transformed LIDAR scan-point onto the plane defined by the $z$-axis unit vector in the frame $O_{0}$.
 
-The potential function, defined in \ref{eq::min_dis_potential_function}, used in BlueFoot's navigation scheme is tailored to ``repel" the platform from objects which are at some minimum distance, $d_{min}$ from the trunk, and attract toward objects that are further away. Thus, this potential function tends to draw the robot towards long aperuatures, such as long corridors or openings, and away from close-by obstructions. This \emph{minimum-distance} potential function is as follows:
+The potential function, defined in \ref{eq::min_dis_potential_function}, used in BlueFoot's navigation scheme is tailored to ``repel" the platform from objects which are at some minimum distance, $d_{min}$ from the trunk, and attract toward objects that are further away. Thus, this potential function tends to draw the robot towards long apertures, such as corridors or openings, and away from close-by obstructions. This \emph{minimum-distance} potential function is as follows:
 	\begin{equation}
 		f(x) = \lambda_{c,1}\wrap{\norm{x}-d_{min}} \wrap{ 1  - e^{ -  \lambda_{c,2} { \wrap{\norm{x}-d_{min}} }^{2} } }
 	\label{eq::min_dis_potential_function}
 	\end{equation}
-where $\lambda_{c,1}>0$ and $\lambda_{c,2}>0$ are tuning paramters for potential function output magnitude and sensitivity with respect to $\wrap{\norm{x}-d_{min}}$, repsectively. It can be observed that this potential function exhbits $f(x)<0$ when $\norm{x} < d_{min}$ and vice-verse, thus achieving the desired attractive/repulsive characteristics.
+where $\lambda_{c,1}>0$ and $\lambda_{c,2}>0$ are tuning parameters sued to specify the output range and sensitivity of the potential function output with respect to $\wrap{\norm{x}-d_{min}}$, respectively. It can be observed that this potential function exhibits $f(x)<0$ when $\norm{x} < d_{min}$ and vice-verse, thus achieving the desired attractive/repulsive characteristics.
 
-The biasing function $g(x,\psi)$ is used to weight the effect of individual scan-point potentials, $f(x_{i}-p_{b})$, on the final navigation output, with respect to the angular-window parameter $\psi>0$. A simple masking-type biasing function is used in BlueFoot's navgiation function, which is formally defined as follows:
+The biasing function $g(x,\psi)$ is used to weight the effect of individual scan-point potentials, $f(x_{i}-p_{b})$, on the final navigation output, with respect to the angular-window parameter $\psi>0$. A simple masking-type biasing function is used in BlueFoot's navigation function, which is formally defined as follows:
 	\begin{equation}
 		g(x,\psi) = 
 		\begin{cases}
@@ -41,34 +41,116 @@ The biasing function $g(x,\psi)$ is used to weight the effect of individual scan
 		0 	& \text{otherwise}.
 		\end{cases}
 	\end{equation}
-where $x_{1}$ and $x_{2}$ are the first and second elements of the vector argument $x\in\Re^{3}$. This function is used to give priority to ``foward" points within an angular window $\psi$ and serves to reduce the potential for getting stuck in local minima. In the event that the robot does get stuck in a potential minima, a ``stuck" dectection algorihtm has been implmented. As the name suggests, this algorihtm first detects if the robot is stuck in a local minima of the potential field based on a window of command histories.
+where $x_{1}$ and $x_{2}$ are the first and second elements of the vector argument $x\in\Re^{3}$. This function is used to give priority to ``foward" points within an angular window $\psi$ and serves to reduce the potential for getting stuck in local minima. In the event that the robot does get stuck in a potential minima, a ``stuck" detection algorithm has been implemented. As the name suggests, this algorithm first detects if the robot is stuck in a local minima of the potential field based on a window of command histories.
 
-Finally, the command vector $\vec{V}_{c}^{L}$ is transformed into scalar foward and turning rate commands, $v_{c}$ and $\omega_{c}$, repspectively, by the following propotional control scheme:
+Finally, the command vector $\vec{V}_{L}^{r}$ is transformed into scalar forward and turning rate commands, ${v}_{L}^{r}$ and $\omega_{L}^{r}$, respectively, by the following proportional control scheme:
 	\begin{eqnarray}
-	\dot{v}_{c} 		&=& \beta_{v} \wrap{ \norm{ \vec{V}_{c}^{L} } - v_{c} } \nonumber \\
-	\dot{\omega}_{c} &=& \beta_{\omega} \wrap{  \wrap{ \tan^{-1}\wrap{ \frac{\vec{V}_{c,2}^{L}}{\vec{V}_{c,1}^{L}} } - \theta_{b,z} } - \omega_{c} }
+	\dot{v}_{L}^{r} 		&=& \beta_{v} \wrap{ \norm{ \vec{V}_{L}^{r} } - v_{L}^{r} } \nonumber \\
+	\dot{\omega}_{L}^{r} 	&=& \beta_{\omega} \wrap{  \omega_{L}^{r,max} \wrap{ { \tan^{-1}\wrap{ \frac{\vec{V}_{c,2}^{L}}{\vec{V}_{c,1}^{L}} } } - \theta_{b,z} }{\pi}^{-1} - \omega_{L}^{r} }
 	\end{eqnarray}
-where $\beta_{v}$ and $\beta_{\omega}$ are proportional-gain tuning parameters; and $\theta_{b,z}$ is the platforms yaw in $O_{0}$. The parameters $\beta_{v}$ and $\beta_{\omega}$ can be viewed as ``update-inertias," as they directly effect the influence of the effect of instaneous commands on the foward velocity and turning rate of the robot. Furthermore, these gains can be used to low-pass navigation updates to remove jitter cause by command outliers generated from degenerate sensor readings.
+where $\beta_{v}$ and $\beta_{\omega}$ are proportional-gain tuning parameters; and $\theta_{b,z}$ is the platforms yaw in $O_{0}$. The parameters $\beta_{v}$ and $\beta_{\omega}$ can be viewed as ``update-inertias," as they directly effect the influence of the effect of instantaneous commands on the forward velocity and turning rate of the robot. Furthermore, these gains can be used to low-pass navigation updates to remove jitter cause by command outliers generated from degenerate sensor readings.
 
-		\subsection{Incorperation of Camera-based Feature-Tracking}
+		\subsection{Incorporation of Camera-based Feature-Tracking}
 		
-		Camera-based goal tracking is used in conjunction with the aformentioned potential fields navigation scheme to move the platform through an enviroment while seeking or tracking a particualar target. In this case, targets take the the form of features extracted from processed camera data. The robot is guided towards these features using a simple visual-serving approach. 
+		Camera-based goal tracking is used in conjunction with the aforementioned potential fields navigation scheme to move the platform through an environment while seeking or tracking a particular target. In this case, targets take the the form of features extracted from processed camera data. The robot is guided towards these features using a simple visual-serving approach. 
 
-Trackable camera features can be generated in a variety of ways. For the purpose of BlueFoot's navigation, objects with distinct shapes or color have been chosen for tracking so that shape and blob detection algorithms can be employed to detect thier positions relative to BlueFoot's camera view range. The positions of each detected feature with respect to the 2D camera-viewing frame, are mapped into forward rate and turning commands. These camera-based commands are then mixed with the outputs of the potential-fields navigation controller to form a hybrid navigaton control law.
+Trackable camera features can be generated in a variety of ways. For the purpose of BlueFoot's navigation, objects with distinct shapes or color have been chosen for tracking so that shape and blob detection algorithms can be employed to detect their positions relative to BlueFoot's camera view range. Namely, Bluefoot's image processing routines make use of the Hough Transform-based shape detection and standard color-blob detection algorithms available from the Open Computer Vision (OpenCV) libraries [Need Hough Ref, Need OpenCV Ref]. Once detected, center-positions of each feature, represented with respect to the 2D camera-viewing frame, are mapped into forward rate and turning commands to control the robot towards the relative location of the feature. These camera-based commands are then mixed with the outputs of the potential-fields navigation controller to form a hybrid navigation control law.
 
-In this visual-servoing approach, features are used to control the robot in away that is agnostic of the type of feature being tracked. Namely, this approach relies on the relative position of the center of each features, represented as a pixel-position, $p_{Im} = [u,v]^{T} \in Z^{2}$ in the 2D image frame, $O_{Im}$, and a relative size, $r$, measured in pixels. In the case of circular features, for example, $r$ is represent the radius of the detected circle. For color-blob features, $r$ represents the radius of a circle which fully inscribes the colored object. 
+In this visual-servoing approach, features are used to control the robot in a way that is agnostic of the type of feature being tracked. Namely, this approach relies on the relative position of the center of each features, represented as a pixel-position, $p_{Im} = [u,v]^{T} \in Z^{2}$ in the 2D image frame, $O_{Im}$, and a relative size, $r$, measured in pixels. In the case of circular features, for example, $r$ is represent the radius of the detected circle. For color-blob features, $r$ represents the radius of a circle which fully inscribes the colored object.
 
-For the purpose of tracking or reaching a goal, it is desired that the robot's foward speed be controlled such that is proportional to $r$. Namely, it is desired that the robot stop when it becomes close to the target object, and move faster when the feature is in sight but the robot is further away. The position of the feature's center us used to control the robot's turning rate, as well as the commanded pitch of the robot's trunk, $\theta_{b,x}^{r}$. Articulating the trunk is an importantly manuerver during this sort of feature tracking routing as it aids in keeping the tracked-target objects centered in the image frame. Provided that the target is moving slower than the what the system can achieve, this whill ensure the target remains in sight at all times
-	\section{3D Surface mapping}
+For the purpose of target tracking, it is desired that the robot's forward speed be controlled such that is proportional to $r$. Namely, it is desired that the robot stop when it becomes close to the target object, and move faster when the feature is in sight but the robot is further away. The position of the feature's center us used to control the robot's turning rate, as well as the commanded pitch of the robot's trunk, $\theta_{b,x}^{r}$. Trunk articulation important during feature tracking routing as it aids in keeping the tracked-target objects centered in the image frame. Provided that the target is moving slower than the what the system can achieve, this will ensure the target remains in sight at all times.
+
+A separate set of navigation commands, $v_{C}^{r}$ and $\omega_{C}^{r}$; and an additional body-pitching command, $\theta_{b,x}^{r}$,  are generated from an extracted feature location, $p_{Im} = [u,v]^{T}$ as follows: 
+	\begin{eqnarray}
+		v_{C}^{r} 			& = & v_{C}^{r,max} \wrap{ 1 - e^{ -c_{r} \wrap{ r-r_{min} }^{2} } } 	\nonumber 	\\
+		\omega_{C}^{r} 	& = & \omega_{C}^{r,max} \wrap{\frac{ w_{Im} - 2 u  }{ w_{Im} } }		\nonumber 	\\
+		\theta_{b,x}^{r}	& = & \theta_{b,x}^{r,max} \wrap{ \frac{ 2 v - h_{Im} }{ h_{Im} } } 		
+	\end{eqnarray}
+	where $v_{C}^{r,max}$, $\omega_{C}^{r,max}$ and $\theta_{b,x}^{r,max}$ are the maximum magnitude of forward velocity, turning rate, and body-pitching commands, respectively; $c_{r}$ is a sensitivity parameter; $r_{min}$ defines a minmum feature size which will result in the administration of a zero velocity command to the platform (and thus the distance from the feature at which to halt forward motion); and $w_{Im}$ and $h_{Im}$ define the width and height, respectively, of the image being processed. Having now established a formulation for how a single, distinct, feature is used to guide the platform towards a target, a means of fusing the LIDAR-based command signals and the camera-based command signals will be defined.
+
+	The composition of this hybrid command technique is motivated by two key subtasks: to use the potential fields algorithm during a wandering phase, when a target object is not in sight; and to guide the robot towards the goal once in sight, allowing the camera-based tracking commands to have a greater influence on system navigation (through the variables $v^{r}$ and $\omega^{r}$) as the platform becomes closer to the desired target. A straight-forward way to achieve this is to use the relative size. $r$, of tracked target features in the image frame. With this in mind, a simple command mixture scheme has been defined as follows:
+	\begin{eqnarray}
+		v(r) &\equiv&  1 - e^{ -c_{mix} \wrap{ r - r_{mix}}^{2} } 								\nonumber \\
+				\left[\begin{array}{c} v^{r} 	\\ \omega^{r} 		\end{array} \right] &=& 	
+		v(r)	\left[\begin{array}{c} v^{r}_{C}\\ \omega^{r}_{C} 	\end{array} \right] + 
+		(1-v(r))\left[\begin{array}{c} v^{r}_{L}\\ \omega^{r}_{L} 	\end{array} \right] 
+	\end{eqnarray}
+	where $c_{mix}$ is a sensitivity parameter; and $r_{mix}$ defines the processed-feature size which will grant full navigation control to the camera-based navigation scheme. The reasoning for such a scheme involves a heuristic approach to obstacle aversion, which assumes that when the platform is further away from a goal, there is a higher probability that it will encounter an obstacle. Conversely, when the goal becomes closer to the platform, it assumed that the number of obstacles between the robot and the target decreases, making it safe to shift full priority to reaching the goal from the current position.
 
 
-		\subsection{3D Point-cloud composition}
-
-
-		\subsection{Surface reconstruction}
+	\subsection{Hybrid Potential-Fields Navigation Results}
+	*NEED RESULTS*
 
 
 
-	\section{Rough Terrain Foot-placement planning}
+	\section{Rough Terrain Navigation}
+
+		\subsection{Terrain Mapping with 3D Point-clouds}
+			
+			\subsubsection{3D Point Cloud generation from 2D scans}
+				\begin{figure}[h!]
+					\centering
+					\caption{Need sensor sweep diagram.}
+					\label{fig::sensor_sweep}
+				\end{figure}
+				The BlueFoot platform has the ability to compose 3D point clouds from a series of swept 2D LIDAR scans in conjunction with a trunk orientation estimates, $\hat{\theta}_{b}$, which is generated using an EKF. LIDAR articulation is achieved by slowly pitching the trunk over some angular range while keeping the platform's feet ridgedly planted. Sweeping range is limited by the kinematic-feasibility of each trunk pose that must be reached during a sweep. Given a particular set of foot and body location, kinematic feasibility is validated using the inverse kinematics solution described in Section \ref{sec::inverse_position_kinematics}. A single 2D scan is taken at each pose within the body-sweep trajectory. The newly acquired scan is transformed from the LIDAR sensor frame, $O_{L}$, to the world frame by a homogeneous transformation $H^{L}_{0}$ which is defined as follows
+					\begin{equation}
+						H^{L}_{0} = H^{L}_{b} H^{b}_{0}
+						\label{eq::world_to_sensor}
+					\end{equation}
+				where $H^{b}_{0}$ is a transformation from $O_{0}$ to the trunk frame $O_{b}$, as defined in Chapter \ref{ch::system_modeling}; and $H^{L}_{b}$ defines a transformation from the frame $O_{b}$ to the LIDAR frame, $H^{L}_{b}$. $H^{L}_{b}$ is necessary for knowing the position of the LIDAR head with respect world frame, as the sensor itself has some offset and rotation relative to the robot's body. Each 2D point from $x_{i} \in \emph{S}$ from the initial scan, $\emph{S}\subset \Re^{2}$, can then be transformed into a 3D scan segment, $\bar{S}_{j}$, in $O_{0}$ by:
+					\begin{equation}
+						\left[
+							\begin{array}{c}
+								y_{i,j} \\ 1
+							\end{array}
+						\right]
+					 = H^{L}_{b} H^{b}_{0}	
+						\left[
+							\begin{array}{c}
+								x_{i} \\ 0 \\ 1
+							\end{array}
+						\right] \forall x_{i} \in \emph{S}
+						\label{eq::scan_to_segment}
+					\end{equation}
+				where $y_{i,j} \in \bar{S}_{j}$ is a point withing the 3D \Jth scan segment $\bar{S}_{j} \subset \Re^{3}$. After the sweeping routine is complete, 3D scan segements are composed into a final point cloud, $\bar{S}$ by:
+				\begin{equation}
+					\bar{S} = \cup_{j=1}^{N_{s}} \bar{S}_{j}
+				\end{equation}
+				where $N_{s}$ defines the number of scans taken during the sweeping routine.
+				For the sake of simplicity, it is assumed that the trunk's position, $p_{b}$, is fixed (system is completely ridged) during a swept-scan routine. In the results to be presented, this seems to be a reasonable assumption given that the platform is at rest and the trunk is pitched sufficiently slowly over the angular sweeping range. A slow sweep rate ensures that perturbations caused by vibrations incurred by trunk rotation and foot-slip are small, and thus does not cause for significant deviations in LIDAR scan points.
+					\begin{figure}[h!]
+						\centering
+						\fbox{\includegraphics[width=\textwidth]{terrain_pcd3_cleaned.png}}
+						\caption{Original 3D point-cloud of terrain patch.}
+						\label{fig::pointcloud_terrain_patch}
+					\end{figure}
+
+
+			\subsubsection{Height-map from 3D point cloud}
+				
+				3D point clouds can be transformed into height-map representations. These representations are convenient for use in planning as they can be converted into discrete cost-maps in a straightforward way. These height-maps are generated by populating the elements of a matrix  $M\in \Re^{n\times m}$ with the $z$ components of points which exist within discretized $W\times D$ region within the original 3D point cloud. The location and size of this regions would have to be determined with some auxillary detection process which 1) determines that the area has high terrain variation, and 2) determines the bounding region where this patch of rough-terrain exits. Once this regions is determined, the 3D cloud is divided into $n\times m$ sub-divisions, each of which covers a $(W/m) \times (D/n)$ area. Each \Ith, \Jth element of $M$ is then populated with the highest point (larger  $z$ component) within each  \Ith, \Jth subdivision. Depending on the density of the 3D point cloud, this process has the potential to produce relatively sparse heighmap. To deal with this, a dialation and smoothing routine is used to complete the hieghtmap conversion process. During dilation, each non-zero height element within the map is expanded into a region around the exiting element until. This process is perfomed until a semi-uniform map is produced with minimal gaps betweenn non-zero height elements. Finally, a median filter is applied to the dilated heighmap to produce smooth transitions between height elements.
+				\begin{figure}[t!]
+					\centering
+					\fbox{\includegraphics[width=\textwidth]{terrain_grad_crop.png}}
+					\caption{Relative height-map \emph{(left)} and its corresponding gradient \emph{(right)}.}
+					\label{fig::heightmap_terrain_patch}
+				\end{figure}
+				\begin{figure}[h!]
+					\centering
+					\fbox{\includegraphics[width=\textwidth]{terrain_4545.png}}
+					\caption{Height-map showing terrain variation in the $z_{hm}$ direction.}
+					\label{fig::heightmap_terrain_patch_ortho}
+				\end{figure}							
+			
+			The full 3D point cloud-to-heightmap conversion algorithm is summarized as follows:
+
+
+			\subsubsection{Surface Reconstruction}
+
+
+		\subsection{Proposed Methods for determining the existence of Rough Terrain}
+
+		\subsection{Foot-placement planning}
 
 

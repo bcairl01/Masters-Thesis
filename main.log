@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  18 APR 2015 18:30
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  19 APR 2015 06:53
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -260,25 +260,105 @@ LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+
+Package subfig Warning: Your document class has a bad definition
+ of \endfigure, most likely
+ \let\endfigure=\end@float
+ which has now been changed to
+ \def\endfigure{\end@float}
+ because otherwise subsequent changes to \end@float
+ (like done by several packages changing float behaviour)
+ can't take effect on \endfigure.
+ Please complain to your document class author.
+
+
+Package subfig Warning: Your document class has a bad definition
+ of \endtable, most likely
+ \let\endtable=\end@float
+ which has now been changed to
+ \def\endtable{\end@float}
+ because otherwise subsequent changes to \end@float
+ (like done by several packages changing float behaviour)
+ can't take effect on \endtable.
+ Please complain to your document class author.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen141
+\captionmargin@=\dimen142
+\captionwidth=\dimen143
+\caption@tempdima=\dimen144
+\caption@indent=\dimen145
+\caption@parindent=\dimen146
+\caption@hangindent=\dimen147
+\abovecaptionskip=\skip50
+\belowcaptionskip=\skip51
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2-> \vskip 10pt \setbox \@
+tempboxa \hbox {#1: #2} \ifdim \wd \@tempboxa >\hsize #1: \small \renewcommand 
+{\baselinestretch }{1}\normalsize \centering #2 \par \else \hbox to\hsize {\hfi
+l \box \@tempboxa \hfil } \fi .
+\c@ContinuedFloat=\count121
+)
+\c@KVtest=\count122
+\sf@farskip=\skip52
+\sf@captopadj=\dimen148
+\sf@capskip=\skip53
+\sf@nearskip=\skip54
+\c@subfigure=\count123
+\c@subfigure@save=\count124
+\c@lofdepth=\count125
+\c@subtable=\count126
+\c@subtable@save=\count127
+\c@lotdepth=\count128
+\sf@top=\skip55
+\sf@bottom=\skip56
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithmic.sty"
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@ALC@unique=\count129
+\c@ALC@line=\count130
+\c@ALC@rem=\count131
+\c@ALC@depth=\count132
+\ALC@tlm=\skip57
+\algorithmicindent=\skip58
+)
 (C:\Users\Brian\Desktop\Masters-Thesis\preamble.tex)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\epsf\epsf.tex"
 This is `epsf.tex' v2.7.4 <14 February 2011>
 \epsffilein=\read2
-\epsfframemargin=\dimen141
-\epsfframethickness=\dimen142
-\epsfrsize=\dimen143
-\epsftmp=\dimen144
-\epsftsize=\dimen145
-\epsfxsize=\dimen146
-\epsfysize=\dimen147
-\pspoints=\dimen148
+\epsfframemargin=\dimen149
+\epsfframethickness=\dimen150
+\epsfrsize=\dimen151
+\epsftmp=\dimen152
+\epsftsize=\dimen153
+\epsfxsize=\dimen154
+\epsfysize=\dimen155
+\pspoints=\dimen156
 )
-\c@theorem=\count121
-\c@definition=\count122
-\c@lemma=\count123
-\c@remark=\count124
-\c@example=\count125
-\c@assumption=\count126
+\c@theorem=\count133
+\c@definition=\count134
+\c@lemma=\count135
+\c@remark=\count136
+\c@example=\count137
+\c@assumption=\count138
  (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
 (C:\Users\Brian\Desktop\Masters-Thesis\vita.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\publications.aux)
@@ -333,18 +413,22 @@ LaTeX Font Info:    ... okay on input line 30.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count127
-\scratchdimen=\dimen149
+\scratchcounter=\count139
+\scratchdimen=\dimen157
 \scratchbox=\box30
-\nofMPsegments=\count128
-\nofMParguments=\count129
+\nofMPsegments=\count140
+\nofMParguments=\count141
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count130
-\MPscratchDim=\dimen150
-\MPnumerator=\count131
-\makeMPintoPDFobject=\count132
+\MPscratchCnt=\count142
+\MPscratchDim=\dimen158
+\MPnumerator=\count143
+\makeMPintoPDFobject=\count144
 \everyMPtoPDFconversion=\toks23
-) [1
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+ [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 (C:\Users\Brian\Desktop\Masters-Thesis\vita.tex) [2
@@ -383,11 +467,11 @@ Overfull \hbox (3.8173pt too wide) in paragraph at lines 21--21
 sent an at-trac-tive ``force" 
  []
 
-)
-\tf@lof=\write4
- [3
+[3
 
-] [4] (C:\Users\Brian\Desktop\Masters-Thesis\main.lot
+])
+\tf@lof=\write4
+ [4] (C:\Users\Brian\Desktop\Masters-Thesis\main.lot
 Overfull \hbox (21.53992pt too wide) in paragraph at lines 4--4
  [][] []\OT1/cmr/m/n/12 System com-mu-ni-ca-tion port-pairs and cor-re-spond-in
 g data trans-fer rate$[]$Refers 
@@ -451,7 +535,11 @@ File: sea_full.jpg Graphic file (type jpg)
  <use sea_full.jpg>
 Package pdftex.def Info: sea_full.jpg used on input line 102.
 (pdftex.def)             Requested size: 433.62pt x 141.36075pt.
- [8 <C:/Users/Brian/Desktop/Masters-Thesis/sea_full.jpg>] [9] [10] [11]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8 <C:/Users/Brian/Desktop/Masters-Thesis/sea_full.jpg>] [9] [10] [11]
 <device_diagram.png, id=78, 1084.05pt x 722.7pt>
 File: device_diagram.png Graphic file (type png)
  <use device_diagram.png>
@@ -470,12 +558,14 @@ File: power_diagram.png Graphic file (type png)
 Package pdftex.def Info: power_diagram.png used on input line 221.
 (pdftex.def)             Requested size: 433.62pt x 289.07487pt.
 
-[12]
+[12] [13 <C:/Users/Brian/Desktop/Masters-Thesis/device_diagram.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[13 <C:/Users/Brian/Desktop/Masters-Thesis/device_diagram.png>] [14 <C:/Users/B
-rian/Desktop/Masters-Thesis/power_diagram.png>]) [15]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [14 <C:/Users/Brian/Desktop/Masters-Thesis/power_diagram.png>] [15]
 (C:\Users\Brian\Desktop\Masters-Thesis\ch3_software.tex
 CHAPTER 3
 [16
@@ -526,7 +616,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [27] [28] [29] [30] [31]
 File: coordinate_frames.png Graphic file (type png)
  <use coordinate_frames.png>
-Package pdftex.def Info: coordinate_frames.png used on input line 281.
+Package pdftex.def Info: coordinate_frames.png used on input line 282.
 (pdftex.def)             Requested size: 325.215pt x 162.60599pt.
  [32]) [33]
 (C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.tex
@@ -571,96 +661,181 @@ LaTeX Warning: Reference `fig::CPGInTime' on page 37 undefined on input line 10
 <cpg_time80.png, id=172, 578.16pt x 433.62pt>
 File: cpg_time80.png Graphic file (type png)
  <use cpg_time80.png>
-Package pdftex.def Info: cpg_time80.png used on input line 106.
-(pdftex.def)             Requested size: 216.80946pt x 162.6071pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Package pdftex.def Info: cpg_time80.png used on input line 103.
+(pdftex.def)             Requested size: 346.89731pt x 260.17401pt.
 
 <cpg_phase80.png, id=173, 578.16pt x 433.62pt>
 File: cpg_phase80.png Graphic file (type png)
  <use cpg_phase80.png>
-Package pdftex.def Info: cpg_phase80.png used on input line 112.
-(pdftex.def)             Requested size: 216.80946pt x 162.6071pt.
+Package pdftex.def Info: cpg_phase80.png used on input line 109.
+(pdftex.def)             Requested size: 346.89731pt x 260.17401pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `eq:CPGMain' on page 37 undefined on input line 123.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[37] [38 <C:/Users/Brian/Desktop/Masters-Thesis/cpg_time80.png> <C:/Users/Brian
-/Desktop/Masters-Thesis/cpg_phase80.png>]
+
+LaTeX Warning: Reference `eq:CPGMain' on page 37 undefined on input line 119.
+
+[37]
+
+LaTeX Warning: Text page 38 contains only floats.
+
+[38 <C:/Users/Brian/Desktop/Masters-Thesis/cpg_time80.png> <C:/Users/Brian/Desk
+top/Masters-Thesis/cpg_phase80.png>]
 <virtual_foothold.png, id=182, 722.7pt x 361.35pt>
 File: virtual_foothold.png Graphic file (type png)
  <use virtual_foothold.png>
-Package pdftex.def Info: virtual_foothold.png used on input line 135.
+Package pdftex.def Info: virtual_foothold.png used on input line 131.
 (pdftex.def)             Requested size: 325.215pt x 162.60599pt.
 
-[39 <C:/Users/Brian/Desktop/Masters-Thesis/virtual_foothold.png>] [40]
+[39 <C:/Users/Brian/Desktop/Masters-Thesis/virtual_foothold.png>] [40] [41]
 
-LaTeX Warning: Reference `eq::net_moment' on page 41 undefined on input line 20
-0.
+LaTeX Warning: Reference `eq::net_moment' on page 42 undefined on input line 19
+6.
 
-[41] <tipping_robot.png, id=193, 650.43pt x 433.62pt>
+[42] <tipping_robot.png, id=197, 650.43pt x 433.62pt>
 File: tipping_robot.png Graphic file (type png)
  <use tipping_robot.png>
-Package pdftex.def Info: tipping_robot.png used on input line 231.
-(pdftex.def)             Requested size: 325.215pt x 216.81609pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[42]
-
-LaTeX Warning: Citation `Rojas1996ch7' on page 43 undefined on input line 247.
+Package pdftex.def Info: tipping_robot.png used on input line 230.
+(pdftex.def)             Requested size: 346.89731pt x 231.26651pt.
 
 [43 <C:/Users/Brian/Desktop/Masters-Thesis/tipping_robot.png>]
-<narx_network_diagram.png, id=201, 650.43pt x 433.62pt>
+
+LaTeX Warning: Citation `Rojas1996ch7' on page 44 undefined on input line 246.
+
+[44] <narx_network_diagram.png, id=204, 650.43pt x 433.62pt>
 File: narx_network_diagram.png Graphic file (type png)
 
 <use narx_network_diagram.png>
-Package pdftex.def Info: narx_network_diagram.png used on input line 290.
+Package pdftex.def Info: narx_network_diagram.png used on input line 289.
 (pdftex.def)             Requested size: 325.215pt x 216.81609pt.
- [44] [45 <C:/Users/Brian/Desktop/Masters-Thesis/narx_network_diagram.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 335.
+ [45 <C:/Users/Brian/Desktop/Masters-Thesis/narx_network_diagram.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 333.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 335.
- [46]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 333.
+ [46] [47]
 
-LaTeX Warning: Reference `eq::joint_dynamics' on page 47 undefined on input lin
-e 386.
+LaTeX Warning: Reference `eq::joint_dynamics' on page 48 undefined on input lin
+e 384.
 
-[47] <controller_diagram.png, id=215, 650.43pt x 433.62pt>
+<controller_diagram.png, id=215, 650.43pt x 433.62pt>
 File: controller_diagram.png Graphic file (type png)
 
 <use controller_diagram.png>
-Package pdftex.def Info: controller_diagram.png used on input line 401.
-(pdftex.def)             Requested size: 325.215pt x 216.81609pt.
- [48 <C:/Users/Brian/Desktop/Masters-Thesis/controller_diagram.png>]
-
-LaTeX Warning: Reference `fig::alpha_tests' on page 49 undefined on input line 
-433.
+Package pdftex.def Info: controller_diagram.png used on input line 399.
+(pdftex.def)             Requested size: 433.62pt x 289.0881pt.
 
 
-LaTeX Warning: Reference `fig::alpha_tests' on page 49 undefined on input line 
-433.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [49] (C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.tex
+[48] [49 <C:/Users/Brian/Desktop/Masters-Thesis/controller_diagram.png>]
+<aux_V_100mms_nN_50_nL_2_nns.png, id=223, 578.16pt x 433.62pt>
+File: aux_V_100mms_nN_50_nL_2_nns.png Graphic file (type png)
+
+<use aux_V_100mms_nN_50_nL_2_nns.png>
+Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_nns.png used on input line 411
+.
+(pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
+
+<alpha0125_V_60mms_nN_50_nL_2_pos.png, id=224, 578.16pt x 433.62pt>
+File: alpha0125_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
+
+<use alpha0125_V_60mms_nN_50_nL_2_pos.png>
+Package pdftex.def Info: alpha0125_V_60mms_nN_50_nL_2_pos.png used on input lin
+e 417.
+(pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
+
+<alpha0250_V_60mms_nN_50_nL_2_pos.png, id=225, 578.16pt x 433.62pt>
+File: alpha0250_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
+
+<use alpha0250_V_60mms_nN_50_nL_2_pos.png>
+Package pdftex.def Info: alpha0250_V_60mms_nN_50_nL_2_pos.png used on input lin
+e 423.
+(pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
+
+<alpha0350_V_60mms_nN_50_nL_2_pos.png, id=226, 578.16pt x 433.62pt>
+File: alpha0350_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
+
+<use alpha0350_V_60mms_nN_50_nL_2_pos.png>
+Package pdftex.def Info: alpha0350_V_60mms_nN_50_nL_2_pos.png used on input lin
+e 429.
+(pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
+
+<aux_V_80mms_nN_50_nL_2_pos.png, id=227, 578.16pt x 433.62pt>
+File: aux_V_80mms_nN_50_nL_2_pos.png Graphic file (type png)
+
+<use aux_V_80mms_nN_50_nL_2_pos.png>
+Package pdftex.def Info: aux_V_80mms_nN_50_nL_2_pos.png used on input line 435.
+
+(pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<aux_V_100mms_nN_50_nL_2_pos.png, id=228, 578.16pt x 433.62pt>
+File: aux_V_100mms_nN_50_nL_2_pos.png Graphic file (type png)
+
+<use aux_V_100mms_nN_50_nL_2_pos.png>
+Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_pos.png used on input line 441
+.
+(pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [50 <C:/Users/Brian/Desktop/Masters-Thesis/aux_V_100mms_nN_50_nL_2_nns.png (P
+NG copy)>] [51 <C:/Users/Brian/Desktop/Masters-Thesis/alpha0125_V_60mms_nN_50_n
+L_2_pos.png (PNG copy)> <C:/Users/Brian/Desktop/Masters-Thesis/alpha0250_V_60mm
+s_nN_50_nL_2_pos.png (PNG copy)>] [52 <C:/Users/Brian/Desktop/Masters-Thesis/al
+pha0350_V_60mms_nN_50_nL_2_pos.png (PNG copy)> <C:/Users/Brian/Desktop/Masters-
+Thesis/aux_V_80mms_nN_50_nL_2_pos.png (PNG copy)>] [53 <C:/Users/Brian/Desktop/
+Masters-Thesis/aux_V_100mms_nN_50_nL_2_pos.png (PNG copy)>]
+(C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.tex
 CHAPTER 6
-[50
+[54
 
 
 
-] [51] [52]) [53]
+] [55] [56] [57] [58]
+<terrain_pcd3_cleaned.png, id=257, 757.32938pt x 723.20187pt>
+File: terrain_pcd3_cleaned.png Graphic file (type png)
+
+<use terrain_pcd3_cleaned.png>
+Package pdftex.def Info: terrain_pcd3_cleaned.png used on input line 124.
+(pdftex.def)             Requested size: 433.62pt x 414.08325pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<terrain_grad_crop.png, id=258, 514.3215pt x 263.3037pt>
+File: terrain_grad_crop.png Graphic file (type png)
+
+<use terrain_grad_crop.png>
+Package pdftex.def Info: terrain_grad_crop.png used on input line 135.
+(pdftex.def)             Requested size: 433.62pt x 221.98917pt.
+ <terrain_4545.png, id=259, 578.16pt x 433.62pt>
+File: terrain_4545.png Graphic file (type png)
+
+<use terrain_4545.png>
+Package pdftex.def Info: terrain_4545.png used on input line 141.
+(pdftex.def)             Requested size: 433.62pt x 325.2142pt.
+ [59] [60 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_pcd3_cleaned.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [61 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_grad_crop.png>] [62 <C:/Us
+ers/Brian/Desktop/Masters-Thesis/terrain_4545.png (PNG copy)>]
 (C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.tex
 CHAPTER 7
-) [54
+) [63
 
 
 
@@ -672,14 +847,14 @@ Missing character: There is no Ñ in font cmr12!
 Missing character: There is no ‚ in font cmti12!
 Missing character: There is no Ä in font cmti12!
 Missing character: There is no ì in font cmti12!
- [55
+ [64
 
 ]
 Missing character: There is no ≈ in font cmr12!
 Missing character: There is no ô in font cmr12!
 Missing character: There is no ƒ in font cmr12!
 Missing character: There is no ç in font cmr12!
- [56] [57]) [58]
+ [65] [66]) [67]
 (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
 (C:\Users\Brian\Desktop\Masters-Thesis\vita.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\publications.aux)
@@ -700,13 +875,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3235 strings out of 493921
- 46617 string characters out of 3144877
- 118218 words of memory out of 3000000
- 6392 multiletter control sequences out of 15000+200000
+ 4643 strings out of 493921
+ 71732 string characters out of 3144877
+ 147513 words of memory out of 3000000
+ 7774 multiletter control sequences out of 15000+200000
  13313 words of font info for 49 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 35i,16n,23p,1441b,247s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,16n,42p,1549b,277s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/
@@ -720,9 +895,9 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (65 pages, 3144773 bytes).
+Output written on main.pdf (74 pages, 3831753 bytes).
 PDF statistics:
- 294 PDF objects out of 1000 (max. 8388607)
+ 335 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 131 words of extra memory for PDF output out of 10000 (max. 10000000)
 

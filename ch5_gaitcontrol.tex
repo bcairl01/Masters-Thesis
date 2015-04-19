@@ -97,23 +97,19 @@
 						\label{eq::K_four_pace}
 				\end{equation}
 
-			The output state of each \Ith oscillator is shown in \ref{fig::CPGInPhase} as a function of time, whereas \ref{fig::CPGInTime} depicts a phase portrait for each \Ith oscillator.  
-
-			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			The output state of each \Ith oscillator is shown in \ref{fig::CPGInPhase} as a function of time, whereas \ref{fig::CPGInTime} depicts a phase portrait for each \Ith oscillator.  	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 			\begin{figure}[h!]
-				\vspace{-4mm}
 				\centering
-				\fbox{\includegraphics[scale=0.375]{cpg_time80.png}}
+				\fbox{\includegraphics[width=0.80\textwidth]{cpg_time80.png}}
 				\caption{CPG output state, $y_{2}$, over two gait cycles.}
 				\label{fig::cpg_phase80}
 			\end{figure}
 			\begin{figure}[h!]
 				\centering
-				\fbox{\includegraphics[scale=0.375]{cpg_phase80.png}}
+				\fbox{\includegraphics[width=0.80\textwidth]{cpg_phase80.png}}
 				\caption{CPG state phase portrait over two gait cycles; depicts the effects of feedback-modulation on the CPG's limit cycles.}
 				\label{fig::cpg_phase80}
-			\end{figure}
-			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\end{figure}	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -129,14 +125,14 @@
 		\end{eqnarray}
 		where $\vec{h}_P$ is a unit vector that is orthogonal and pointed outward from the surface beneath the robot and 
 		$\Skew{\omega_{c}\vec{h}_P}\text{ }\in \Real^{3\times3}$ forms a skew-symmetric matrix from the vector argument $\omega_{c}\vec{h}_P$. The virtual foothold dynamics progress the target footholds at a commanded translational (forward) and rotational velocity, $v_{c}$ and $\omega_{c}$, respectively. The robot follows the virtual model at nearly the same velocities with minimal lag so long as system bandwidth is not exceeded. Using this virtual-foothold method is convenient as it allows for foot-placement planning to be independent of foot-trajectory planning. For example, terrain adaptation can be incorporated by modifying the location of virtual foot positions such that they conform to an upcoming surface. The robot's gait will then track these adaptations without any explicit modification of foot trajectories. In the event of contact with unperceived terrain, virtual-foothold positions will reset with respect to the position of the contact.
-
+%
 			\begin{figure}[h!]
 				\centering
 				\fbox{\includegraphics[width=0.75\textwidth]{virtual_foothold.png}}
 				\caption{ Virtual foothold representaion. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.}
 				\label{fig::virtial_foothold}
 			\end{figure}
-
+%
 		The full foothold controller represented by $\dot{p}_{i,e} = \dot{\tilde{p}}_{i,e}^{v} + \dot{\tilde{p}}_{i}^{y}, \SSep i = 1,...,4$ , is a composite of a foot-repositioning and step-height controller which are formulated in terms of the dynamics of the signals $\dot{\tilde{p}}_{i,e}^{v}$ and $\dot{\tilde{p}}_{i}^{y}$, respectively. Each foot is treated as a point mass attracted to their corresponding virtual foothold by an over-damped mass-attractor system. $\dot{\tilde{p}}_{i,e}^{v}$ is defined by
 			\begin{equation}
 				\label{eq::FootControl}
@@ -223,12 +219,15 @@
 
 	\section{Trunk Leveling NARX-Network Learning Approach}
 
-		Disturbance rejection from the trunk sub-system of a legged platform has practical significance when carrying a payload (such as cameras, optical systems, armaments, etc.) rigidly fixed to their main body. Disturbances are imparted upon the trunk during gaiting in two main ways: 1) instantaneous changes in force distribution when feet make and break contact with the ground, and 2) under-actuation that occurs during certain dynamic gaits. During dynamic gaits, such as trot gaits, the state of contact between the feet and the ground is changed often so as to prevent the walking robot from tipping past a recoverable configuration. Additionally, these gaits feature the utilization of two or fewer legs to support the trunk at any given time, causing the 
-		system to enter an under-actuated state where the body is free to rock about the planted feet, as shown in Figure \ref{fig::quadruped_walking}.
+		Disturbance rejection from the trunk sub-system of a legged platform has practical significance when carrying a payload (such as cameras, optical systems, armaments, etc.) rigidly fixed to their main body. Disturbances are imparted upon the trunk during gaiting in two main ways: 
+\begin{enumerate}
+\item instantaneous changes in force distribution when feet make and break contact with the ground \item under-actuation that occurs during certain dynamic gaits. During dynamic gaits, such as trot gaits, the state of contact between the feet and the ground is changed often so as to prevent the walking robot from tipping past a recoverable configuration. 
+\end{enumerate}
+Additionally, these gaits feature the utilization of two or fewer legs to support the trunk at any given time, causing the system to enter an under-actuated state where the body is free to rock about the planted feet, as shown in Figure \ref{fig::quadruped_walking}.
 
 			\begin{figure}[h!]
 			\centering
-				\fbox{\includegraphics[width=0.75\textwidth]{tipping_robot.png}}
+				\fbox{\includegraphics[width=0.80\textwidth]{tipping_robot.png}}
 				\caption{ Quadruped tipping about planted feet. }
 				\label{fig::quadruped_walking}
 			\end{figure}
@@ -311,7 +310,6 @@ The success of this learning mechanism, as it applies to the presented controlle
 		\subsection{NARX-NN Training Regimen}
 			
 			The  NARX-NN training signal is formulated to estimate $\Phi_{k}$ from the system dynamics. By \ref{eq::sampled_dynamics}, it can be seen that $\Phi_{k}$ can be estimated if ${z}_{2,k+1}$ can be predicted. We consider the following target network prediction output, $\psi_{k+1}$,  defined by:
-				\vspace{-2mm}
 				\begin{equation}
 					\psi_{k+1} = \tau_{k} - \hat{M}_{1,k}({z}_{2,k+1} - {z}_{2,k})\Delta_{s}^{-1} = \Phi_{k} - {e}_{2,k}^{\Delta_{s}} \text{ .}
 					\label{eq::training_signal}
@@ -398,36 +396,49 @@ The success of this learning mechanism, as it applies to the presented controlle
 
 				\begin{figure}[h!]
 					\centering
-					\fbox{\includegraphics[width=0.75\textwidth]{controller_diagram.png}}
+					\fbox{\includegraphics[width=1.00\textwidth]{controller_diagram.png}}
 					\caption{Full system diagram with NARX-NN compensator mechanism.}
 					\label{fig::sys_diagram}
 				\end{figure}
 
 		\subsection{NARX-NN Compensator Results}
-			The NARX-NN compensator has been tested, exclusively, in simulation and has been applied to applied to the quadruped as it executes a stable CPG-driven trot gait depicted in Figure~\ref{fig::quadruped_walking}. In these trials, gaiting frequency is adjusted accordingly to achieve particular forward speeds. NARX-NN parameters are fixed for all trials with learning-rate  parameters set to $\beta=0.0001$, $\zeta=0.0005$ and $\lambda = 0.01$. The NARX-Network is configured with two hidden layers containing 50 neurons each. Each input and hidden-layer neuron is modeled using a symmetric sigmoid activation function. Output layer neurons are modeled using linear activation functions to  avoid output-scaling saturation issues. Figure~\ref{fig::fast} exemplifies the convergence of the NARX-NN prediction error when the platform executes a gait at  100~$\frac{mm}{s}$ with $\alpha = 0.35$.
-%
-			\begin{figure}[h!]
-				\centering
-				%\begin{subfigure}{0.475\textwidth}
-					%\centering
-					%\SetImage{\ImageWidthRatioSub}{aux_V_80mms_nN_50_nL_2_pos.png}
-					%\caption{ }
-				%\end{subfigure}
-				%\begin{subfigure}{0.475\textwidth}
-					%\centering
-					%\SetImage{\ImageWidthRatioSub}{aux_V_100mms_nN_50_nL_2_pos.png}
-					%\caption{ } 
-				%\end{subfigure}
-				%\begin{subfigure}{0.475\textwidth}
-					%\centering
-					%\SetImage{\ImageWidthRatioSub}{aux_V_100mms_nN_50_nL_2_nns.png}
-					%\caption{ } 
-				%\end{subfigure}
-				\caption{ 
-					\textbf{a)} Trunk orientation during 80 $\frac{mm}{s}$ gait with mixing  parameter set to $\alpha = 0.35$; \textbf{b)} Trunk orientation during 100 $\frac{mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$; \textbf{c)} NARX Network MSE convergence for trial shown in \textbf{(b)}.
-				}
-				\label{fig::fast}
-				%\PostImageCloseSpace
-			\end{figure}
+			The NARX-NN compensator has been tested, exclusively, in simulation and has been applied to applied to the quadruped as it executes a stable CPG-driven trot gait depicted in Figure~\ref{fig::quadruped_walking}. In these trials, gaiting frequency is adjusted accordingly to achieve particular forward speeds. NARX-NN parameters are fixed for all trials with learning-rate  parameters set to $\beta=0.0001$, $\zeta=0.0005$ and $\lambda = 0.01$. The NARX-Network is configured with two hidden layers containing 50 neurons each. Each input and hidden-layer neuron is modeled using a symmetric sigmoid activation function. Output layer neurons are modeled using linear activation functions to  avoid output-scaling saturation issues. Figure~\ref{fig::narx100_a35_nne} exemplifies the convergence of the NARX-NN prediction error when the platform executes a gait at  100~$\frac{mm}{s}$ with $\alpha = 0.35$.
 
-			All simulated trials are performed over a period of 60 seconds each. During the first 10 seconds of each simulation, the robot moves from sitting position to a standing position and initiates walking. During each simulation period, the NARX-NN compensator is activated (not training)  and deactivated (training)  every 10 seconds. Figure~\ref{fig::alpha_tests} depicts initial set of simulation results showing the effect of varying  the mixing parameter $\alpha\in\{0.125, 0.25, 0.35\}$. For all such trials, the robot performs a trot-gait which achieves a forward speed of 60 $\frac{mm}{s}$. We expect that as $\alpha$ increases, the compensator will have greater authority over trunk stabilization. From these results, we observe that for all $\alpha$, disturbance magnitude is decreased to some extent. However, for smaller $\alpha$, the compensator is less effectual due to the fact that it has less authority over joint reference signals.  From the results in Figure~\ref{fig::alpha_tests} \textbf{c)}, we see that the compensator improves pitch stability by more than roughly 50\% and roll stability by more than 60\%. Figure~\ref{fig::fast} shows the compensator's performance at higher gaiting speeds of 80 $\frac{mm}{s}$ and 100 $\frac{mm}{s}$. Here the controller improves both pitch and roll by nearly 50\% and 40\% of the  uncompensated signal magnitude, respectively.
+			All simulated trials are performed over a period of 60 seconds each. During the first 10 seconds of each simulation, the robot moves from sitting position to a standing position and initiates walking. During each simulation period, the NARX-NN compensator is activated (not training)  and deactivated (training)  every 10 seconds. Figures~\ref{fig::narx60_a125_nne}, \ref{fig::narx60_a250_nne} and \ref{fig::narx60_a350_nne} depict an initial set of simulation results showing the effect of varying  the mixing parameter $\alpha\in\{0.125, 0.25, 0.35\}$. For all such trials, the robot performs a trot-gait which achieves a forward speed of 60 $\frac{mm}{s}$. It is expected that as $\alpha$ increases, the compensator will have greater authority over trunk stabilization. From these results, we observe that for all $\alpha$, disturbance magnitude is decreased to some extent. However, for smaller $\alpha$, the compensator is less effectual due to the fact that it has less authority over joint reference signals.  From the results in Figure~\ref{fig::narx60_a250_nne}, it is shown that the compensator improves pitch stability by more than roughly 50\% and roll stability by more than 60\%. Figure~\ref{fig::narx80_a35} shows the compensator's performance at higher gaiting speeds of 80 $\frac{mm}{s}$ and 100 $\frac{mm}{s}$. Here the controller improves both pitch and roll by nearly 50\% and 40\% of the  uncompensated signal magnitude, respectively.
+
+				\begin{figure}[!h]
+					\centering
+					\fbox{\includegraphics[width=0.85\textwidth]{aux_V_100mms_nN_50_nL_2_nns.png}}
+					\caption{NARX Network MSE convergence for trial shown in Figure \ref{fig::narx100_a35}} 
+					\label{fig::narx100_a35_nne}
+				\end{figure}
+				\begin{figure}
+					\centering
+					\fbox{ \includegraphics[width=0.85\textwidth]{alpha0125_V_60mms_nN_50_nL_2_pos.png} }
+					\caption{Trunk orientation during 60 $\frac{mm}{s}$ gait with mixing parameter set to $\alpha = 0.125$.}
+					\label{fig::narx60_a125_nne}
+				\end{figure}
+				\begin{figure}
+					\centering
+					\fbox{ \includegraphics[width=0.85\textwidth]{alpha0250_V_60mms_nN_50_nL_2_pos.png} }
+					\caption{Trunk orientation during 60 $\frac{mm}{s}$ gait with mixing parameter set to $\alpha = 0.250$.}
+					\label{fig::narx60_a250_nne}
+				\end{figure}
+				\begin{figure}
+					\centering
+					\fbox{ \includegraphics[width=0.85\textwidth]{alpha0350_V_60mms_nN_50_nL_2_pos.png} }
+					\caption{Trunk orientation during 60 $\frac{mm}{s}$ gait with mixing parameter set to $\alpha = 0.350$.}
+					\label{fig::narx60_a350_nne}
+				\end{figure}
+				\begin{figure}[!h]
+					\centering
+					\fbox{\includegraphics[width=0.85\textwidth]{aux_V_80mms_nN_50_nL_2_pos.png}}
+					\caption{Trunk orientation during 80 $\frac{mm}{s}$ gait with mixing  parameter set to $\alpha = 0.35$}
+					\label{fig::narx80_a35}
+				\end{figure}
+				\begin{figure}[!h]
+					\centering
+					\fbox{\includegraphics[width=0.85\textwidth]{aux_V_100mms_nN_50_nL_2_pos.png}}
+					\caption{Trunk orientation during 100 $\frac{mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$} 
+					\label{fig::narx100_a35}
+				\end{figure}
