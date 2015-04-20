@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  20 APR 2015 06:17
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  20 APR 2015 06:25
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -804,35 +804,43 @@ CHAPTER 6
 
 
 
-] [55] [56] [57] [58]
-<terrain_pcd3_cleaned.png, id=257, 757.32938pt x 723.20187pt>
+] <potential_function.png, id=245, 578.16pt x 433.62pt>
+File: potential_function.png Graphic file (type png)
+
+<use potential_function.png>
+Package pdftex.def Info: potential_function.png used on input line 51.
+(pdftex.def)             Requested size: 433.62pt x 325.2142pt.
+ [55] [56 <C:/Users/Brian/Desktop/Masters-Thesis/potential_function.png (PNG co
+py)>] [57] [58] [59]
+<terrain_pcd3_cleaned.png, id=261, 757.32938pt x 723.20187pt>
 File: terrain_pcd3_cleaned.png Graphic file (type png)
 
 <use terrain_pcd3_cleaned.png>
-Package pdftex.def Info: terrain_pcd3_cleaned.png used on input line 136.
+Package pdftex.def Info: terrain_pcd3_cleaned.png used on input line 143.
 (pdftex.def)             Requested size: 433.62pt x 414.08325pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<terrain_grad_crop.png, id=258, 514.3215pt x 263.3037pt>
+<terrain_grad_crop.png, id=262, 514.3215pt x 263.3037pt>
 File: terrain_grad_crop.png Graphic file (type png)
 
 <use terrain_grad_crop.png>
-Package pdftex.def Info: terrain_grad_crop.png used on input line 147.
+Package pdftex.def Info: terrain_grad_crop.png used on input line 154.
 (pdftex.def)             Requested size: 433.62pt x 221.98917pt.
- <terrain_4545.png, id=259, 578.16pt x 433.62pt>
+ <terrain_4545.png, id=263, 578.16pt x 433.62pt>
 File: terrain_4545.png Graphic file (type png)
 
 <use terrain_4545.png>
-Package pdftex.def Info: terrain_4545.png used on input line 153.
+Package pdftex.def Info: terrain_4545.png used on input line 160.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
- [59] [60 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_pcd3_cleaned.png>]
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [61 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_grad_crop.png>] [62 <C:/Us
-ers/Brian/Desktop/Masters-Thesis/terrain_4545.png (PNG copy)>]
+[60]) [61 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_pcd3_cleaned.png>]
+[62 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_grad_crop.png> <C:/Users/Bri
+an/Desktop/Masters-Thesis/terrain_4545.png (PNG copy)>]
 (C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.tex
 CHAPTER 7
 ) [63
@@ -875,10 +883,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4643 strings out of 493921
- 71732 string characters out of 3144877
- 147513 words of memory out of 3000000
- 7774 multiletter control sequences out of 15000+200000
+ 4649 strings out of 493921
+ 71883 string characters out of 3144877
+ 147523 words of memory out of 3000000
+ 7779 multiletter control sequences out of 15000+200000
  13313 words of font info for 49 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  46i,16n,42p,1549b,277s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -895,9 +903,9 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (74 pages, 3832351 bytes).
+Output written on main.pdf (74 pages, 3923329 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
+ 336 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -29,8 +29,9 @@
 \contentsline {figure}{\numberline {24}{\ignorespaces Trunk orientation during 80 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{52}
 \contentsline {figure}{\numberline {25}{\ignorespaces Trunk orientation during 100 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{53}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {26}{\ignorespaces Need sensor sweep diagram.\relax }}{58}
-\contentsline {figure}{\numberline {27}{\ignorespaces Original 3D point-cloud of terrain patch.\relax }}{60}
-\contentsline {figure}{\numberline {28}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{61}
-\contentsline {figure}{\numberline {29}{\ignorespaces Height-map showing terrain variation in the $z_{hm}$ direction.\relax }}{62}
+\contentsline {figure}{\numberline {26}{\ignorespaces Composite potential field, $f(x)g(x,\psi )$.\relax }}{56}
+\contentsline {figure}{\numberline {27}{\ignorespaces Need sensor sweep diagram.\relax }}{59}
+\contentsline {figure}{\numberline {28}{\ignorespaces Original 3D point-cloud of terrain patch.\relax }}{61}
+\contentsline {figure}{\numberline {29}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{62}
+\contentsline {figure}{\numberline {30}{\ignorespaces Height-map showing terrain variation in the $z_{hm}$ direction.\relax }}{62}
 \addvspace {10pt}

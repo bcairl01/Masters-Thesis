@@ -35,7 +35,7 @@ The piecewise-continuous potential function, defined in \ref{eq::min_dis_potenti
 		\end{cases}
 	\label{eq::min_dis_potential_function}
 	\end{equation}
-where $\lambda_{c,1}>0$ and $\lambda_{c,2}>0$ are tuning parameters sued to specify the output range and sensitivity of the potential function output with respect to $\wrap{\norm{x}-d_{min}}$, respectively. It can be observed that this potential function exhibits $f(x)<0$ when $\norm{x} < d_{min}$ and vice-verse, thus achieving the desired attractive/repulsive characteristics.
+where $\lambda_{c,1}>0$ and $\lambda_{c,2}>0$ are tuning parameters sued to specify the output range and sensitivity of the potential function output with respect to $\wrap{\norm{x}-d_{min}}$, respectively. It can be observed that this potential function exhibits $f(x)<0$ when $\norm{x} < d_{min}$ and vice-verse, thus achieving the desired attractive/repulsive characteristics. 
 
 The biasing function $g(x,\psi)$ is used to weight the effect of individual scan-point potentials, $f(x_{i}-p_{b})$, on the final navigation output, with respect to the angular-window parameter $\psi>0$. A simple masking-type biasing function is used in BlueFoot's navigation function, which is formally defined as follows:
 	\begin{equation}
@@ -45,7 +45,14 @@ The biasing function $g(x,\psi)$ is used to weight the effect of individual scan
 		0 	& \text{otherwise}.
 		\end{cases}
 	\end{equation}
-where $x_{1}$ and $x_{2}$ are the first and second elements of the vector argument $x\in\Re^{3}$. This function is used to give priority to ``foward" points within an angular window $\psi$ and serves to reduce the potential for getting stuck in local minima. In the event that the robot does get stuck in a potential minima, a ``stuck" detection algorithm has been implemented. As the name suggests, this algorithm first detects if the robot is stuck in a local minima of the potential field based on a window of command histories.
+where $x_{1}$ and $x_{2}$ are the first and second elements of the vector argument $x\in\Re^{3}$. This function is used to give priority to ``foward" points within an angular window $\psi$ and serves to reduce the potential for getting stuck in local minima. A visualization of  the composite pontential field, $f(x)g(x,\psi)$, with $\psi=\pi/2$ is shown in Figure \ref{fig::potential_field} fot a $2$-by-$2$ meter area about the robot.
+				\begin{figure}[t!]
+					\centering
+					\fbox{\includegraphics[width=\textwidth]{potential_function.png}}
+					\caption{Composite potential field, $f(x)g(x,\psi)$.}
+					\label{fig::potential_field}
+				\end{figure}
+%In the event that the robot does get stuck in a potential minima, a ``stuck" detection algorithm has been implemented. As the name suggests, this algorithm first detects if the robot is stuck in a local minima of the potential field based on a window of command histories.
 
 Finally, the command vector $\vec{V}_{L}^{r}$ is transformed into scalar forward and turning rate commands, ${v}_{L}^{r}$ and $\omega_{L}^{r}$, respectively, by the following proportional control scheme:
 	\begin{eqnarray}
