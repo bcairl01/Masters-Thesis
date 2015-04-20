@@ -3659,7 +3659,8 @@ $\OML/cmm/m/it/10 p[]$
 
 
 Overfull \hbox (8.50659pt too wide) in paragraph at lines 169--170
-$\OML/cmm/m/it/10 []$
+$\OML/cmm/m/it/10 
+[]$
  []
 
 
@@ -3669,7 +3670,8 @@ $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 p[]; []\OMS/cmsy/m/n/10 g$
 
 
 Overfull \hbox (37.48068pt too wide) in paragraph at lines 169--170
-$\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 p[]; []\OMS/cmsy/m/n/10 g$
+$\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 p[]; 
+[]\OMS/cmsy/m/n/10 g$
  []
 
 
@@ -4027,7 +4029,8 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no . in font nullfont!
 
 Overfull \hbox (8.50659pt too wide) in paragraph at lines 202--204
-         $\OML/cmm/m/it/10 []$
+         $\OML/cmm/m/it/10 
+[]$
  []
 
 ! Undefined control sequence.
@@ -11466,7 +11469,7 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no , in font nullfont!
 ! Undefined control sequence.
 l.319 ...o the desired velocity of the system, \IE
-                                                   $\omega_{s} = a_{v}v_{c}$.
+                                                   $\omega_{s} = a_{v}v_{r}$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -14230,7 +14233,8 @@ $[]$
 
 
 Overfull \hbox (5.73285pt too wide) in paragraph at lines 377--378
-$\OML/cmm/m/it/10 $
+$\OML/cmm/m/it/10 
+$
  []
 
 
@@ -17243,17 +17247,20 @@ Missing character: There is no s in font nullfont!
 Missing character: There is no : in font nullfont!
 
 Overfull \hbox (31.10155pt too wide) in paragraph at lines 428--430
- $\OML/cmm/m/it/10 [] <$
+ $\OML/cmm/m/it/10 
+[] <$
  []
 
 
 Overfull \hbox (16.28836pt too wide) in paragraph at lines 428--430
-$\OML/cmm/m/it/10  <$
+$\OML/cmm/m/it/10 
+ <$
  []
 
 
 Overfull \hbox (21.6458pt too wide) in paragraph at lines 428--430
-$\OML/cmm/m/it/10 []$
+$\OML/cmm/m/it/10 
+[]$
  []
 
 
@@ -17278,7 +17285,8 @@ Overfull \hbox (5.43053pt too wide) in paragraph at lines 428--430
 
 
 Overfull \hbox (5.73285pt too wide) in paragraph at lines 428--430
-$\OML/cmm/m/it/10 $
+$\OML/cmm/m/it/10 
+$
  []
 
 
@@ -17303,22 +17311,26 @@ $\OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1)$
 
 
 Overfull \hbox (5.73285pt too wide) in paragraph at lines 428--430
-$\OML/cmm/m/it/10 $
+$\OML/cmm/m/it/10 
+$
  []
 
 
 Overfull \hbox (20.54604pt too wide) in paragraph at lines 428--430
-$\OML/cmm/m/it/10 []$
+$\OML/cmm/m/it/10 
+[]$
  []
 
 
 Overfull \hbox (21.6458pt too wide) in paragraph at lines 428--430
-$\OML/cmm/m/it/10 []$
+$\OML/cmm/m/it/10 
+[]$
  []
 
 
 Overfull \hbox (5.73285pt too wide) in paragraph at lines 428--430
-$\OML/cmm/m/it/10 $
+$\OML/cmm/m/it/10 
+$
  []
 
 
@@ -17333,7 +17345,8 @@ $\OML/cmm/m/it/10 MSE[]$
 
 
 Overfull \hbox (5.73285pt too wide) in paragraph at lines 428--430
-$\OML/cmm/m/it/10 $
+$\OML/cmm/m/it/10 
+$
  []
 
 ! Misplaced alignment tab character &.
@@ -17376,8 +17389,10 @@ and I'll forget about whatever was undefined.
 
 
 Overfull \hbox (244.5752pt too wide) detected at line 436
-\OML/cmm/m/it/10  \OMS/cmsy/m/n/10   [] \OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10   
-\OML/cmm/m/it/10 \OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 MSE[] > MSE[][] \OT1/cmr
+\OML/cmm/m/it/10 
+ \OMS/cmsy/m/n/10   [] \OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10   
+\OML/cmm/m/it/10 \OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 MSE[] > MSE[][] 
+\OT1/cmr
 /m/n/10 (1 + \OML/cmm/m/it/10 \OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; []:
  []
 

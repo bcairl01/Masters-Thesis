@@ -42,7 +42,11 @@
 
 			Feedback-based corrections to the CPG aid in tracking a specified body orientation $\theta_{b}^{r}$ during gaiting. To achieve higher system velocities, it is often necessary to perform a gait wherein multiple legs leave contact with the ground. Configurations such as these would cause a quadruped robot to tip in the direction of the non-planted legs, thus disturbing $\theta_{b}$. These disturbances are counteracted, in part, by adjusting the CPG such that the amount of torque applied on the main body by legs in flight is actively limited. This is done by adjusting stepping height and time-of-flight according to a measure of disturbance (essentially, the amount and rate of tipping). These adjustments have been formulated to mimic reflexive behaviors that might be performed by a biological system.
 
-			When the robot's body begins to fall in particular direction (\IE is disturbed by legs in-flight during gaiting), the disturbance signal $\dot{\epsilon}_{\theta} = {R}_{z_{b}}\wrap{\frac{\pi}{2}}\wrap{\dot{\hat{\theta}}_{b} - \dot{\theta}_{b}^{r}}$ is non-zero. $\dot{\epsilon}_{\theta}$ represents a measure of translational drift recovered from gyroscopic sensor measurements. ${R}_{z_{b}}{\frac{\pi}{2}}$ represents a rotation by $\frac{\pi}{2}$ about the z-axis of the body frame $O_{b}$. $\dot{\epsilon}_{\theta}$ is mapped to the parameters $\Psi_{\omega}$ and $\Psi_{M}$ by
+			When the robot's body begins to fall in particular direction (\IE is disturbed by legs in-flight during gaiting), the disturbance signal 
+		\begin{equation}
+			\dot{\epsilon}_{\theta} = {R}_{z_{b}}\wrap{\frac{\pi}{2}}\wrap{\dot{\hat{\theta}}_{b} - \dot{\theta}_{b}^{r}}
+		\end{equation}
+is non-zero. $\dot{\epsilon}_{\theta}$ represents a measure of translational drift recovered from gyroscopic sensor measurements. ${R}_{z_{b}}{\frac{\pi}{2}}$ represents a rotation by $\frac{\pi}{2}$ about the z-axis of the body frame $O_{b}$. $\dot{\epsilon}_{\theta}$ is mapped to the parameters $\Psi_{\omega}$ and $\Psi_{M}$ by
 				\begin{eqnarray}
 					\psi_{i} 			&=& \Sig{  w_{i} \emph{T}_{i} - w_{i} c_{i} } {\mu}_{i} 	\nonumber\\
 					\Psi_{\omega} 		&=& I + A_{\omega}\DiagMat{ \psi_{i} } 						\nonumber\\
@@ -192,33 +196,33 @@
 				m_{T} = m_{b} + \sum_{i=1}^{4} \wrap{m_{i,e} + \sum_{j=1}^{4} \wrap{  m_{i,j}^{J} +  m_{i,j}^{L} } }
 			\end{equation}
 
-		Setting $\tau_{net}=0$, (\ref{eq::NetMoment}) is manipulated to a derived solution for the ZMP as follows:
+		Setting $\tau_{net}=0$, \ref{eq::NetMoment} is manipulated to a derived solution for the ZMP as follows:
 			\begin{equation}
 				{p}_{ZMP}^{b'} = R_{z_P} \wrap{\frac{\pi}{2}}  \wrap{ \norm{g}/m_{P}} \tau_{legs} + \hat{p}_{COG}^{b'}.
 				\label{eq::ZMPFromMoment}
 			\end{equation}
 
-		Using ${p}_{ZMP}$, the platform's posture is then updated using a virtual-force controller. Moreover, ${p}_{b}$ is to be controlled through  ${p}_{b}^{r}$ such that it is smoothly attracted to ${p}_{ZMP}$. The controller is given by
+		Using ${p}_{ZMP}^{b'}$, the platform's posture is then updated using a virtual-force controller. Moreover, ${p}_{b}^{b'}$ is to be controlled through  ${p}_{b}^{r}$ such that it is smoothly attracted to ${p}_{ZMP}$. The controller is given by
 			\begin{equation}
-				\dot{p}_{b}^{r} 	= \frac{1}{m_{P}} \int^{t} {P}_{\vec{h}_{i}} \wrap{K_{ZMP}	( {p}_{ZMP} - {p}_{b} )  
+				\dot{p}_{b}^{r} 	= \frac{1}{m_{P}} \int^{t} {P}_{\vec{h}_{i}} \wrap{K_{ZMP}	( {p}_{ZMP}^{b'} - {p}_{b}^{b'} )  
 				+ F_{r} } d\alpha
 				\label{eq::ZMPController}
 			\end{equation}	
 		where
 			\begin{eqnarray*}
-				F_{r} 	& = &  \Sum{i}{1}{4} \exp \wrap{k_{l} \wrap{r_{min} -  \norm{r_{i}}}} + \exp \wrap{k_{l} \wrap{ \norm{r_{i}} - r_{max}}} \nonumber \\
+				F_{r} 	& = &  \Sum{i}{1}{4}  e^{\wrap{ k_{l} \wrap{r_{min} -  \norm{r_{i}} } } } + e^{ \wrap{ k_{l} \wrap{ \norm{ r_{i} } - r_{max} } } } \nonumber \\
 				r_{i}	& = & {p}_{i,e}^{b'}- {p}_{b}^{b'} \nonumber
 			\end{eqnarray*}
 %%
-		and $K_{ZMP}, K_{c}, K_{\epsilon}, k_{l} > 0$ and $\dot{p}_{b}^{r}$ is the reference body velocity. $F_{r}$ is a boundary force added to ensure that the workspace of each manipulator, defined by the radii $r_{min}$ and $r_{max}$, is not exceeded when the body is repositioned. $k_{l}$ is picked to be adequately large such that this force is nearly zero when the body and foot positions comply with the local workspace of each leg, and large when the workspace is nearly compromised, forcing the placement of the body to comply with each leg workspace.
+		and $K_{ZMP}, K_{c}, K_{\epsilon}, k_{l} > 0$ and $\dot{p}_{b}^{b',r}$ is the reference body velocity. $F_{r}$ is a boundary force added to ensure that the workspace of each manipulator, defined by the radii $r_{min}$ and $r_{max}$, is not exceeded when the body is repositioned. $k_{l}$ is picked to be adequately large such that this force is nearly zero when the body and foot positions comply with the local workspace of each leg, and large when the workspace is nearly compromised, forcing the placement of the body to comply with each leg workspace.
 
 
 
 
 
-	\section{Trunk Leveling NARX-Network Learning Approach}
+	\section{Trunk Leveling via NARX-Network Learning Approach}
 
-		Disturbance rejection from the trunk sub-system of a legged platform has practical significance when carrying a payload (such as cameras, optical systems, armaments, etc.) rigidly fixed to their main body. Disturbances are imparted upon the trunk during gaiting in two main ways: 
+		Supressing distrubances which enter a quadruped system is a realtively complex matter, given the the general dynamical complexity of both the robot and its iteractions with the its enviroment. This complexity can be handled, at least in part, by a learning-based approach. This section will focus on the formulation of a learning controller used to reject distrubances from the orientation states of the trunk of a legged robot. Disturbance rejection from the trunk sub-system of a legged platform has practical significance when carrying a payload (such as cameras, optical systems, armaments, etc.) rigidly fixed to their main body. Disturbances are imparted upon the trunk during gaiting in two main ways: 
 		\begin{enumerate}
 			\item instantaneous changes in force distribution when feet make and break contact with the ground 
 			\item under-actuation that occurs during certain dynamic gaits. During dynamic gaits, such as trot gaits, the state of contact between the feet and the ground is changed often so as to prevent the walking robot from tipping past a recoverable configuration. 
