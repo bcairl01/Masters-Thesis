@@ -10,8 +10,9 @@
 	%Analysis and control of the BlueFoot quadruped requires the utilization of both kinematic and dynamical system models.
 	
 	\section{Kinematic Model}
+	\label{sec::system_kinematics}
 
-		The kinematic model of the BlueFoot platform is paramount for foot/body trajectory planning, localization, and adaptation. In particular, inverse position and velocity solutions are used to perscribe joint-space commands from particular foot trajectories planned within the world coordinate frame. Additionally, foward kinematic solutions are utilized to localize the position of each foot using a combination of localized trunk position/orientation and joint position feedbback. This section will fully describe the foward and inverse kinematic models which describe the BlueFoot platform and are how these models are used in motion planning and control tasks.
+		The kinematic model of the BlueFoot platform is paramount for foot/body trajectory planning, localization, and adaptation. In particular, inverse position and velocity solutions are used to prescribe joint-space commands from particular foot trajectories planned within the world coordinate frame. Additionally, forward kinematic solutions are utilized to localize the position of each foot using a combination of localized trunk position/orientation and joint position feedback. This section will fully describe the forward and inverse kinematic models which describe the BlueFoot platform and are how these models are used in motion planning and control tasks.
 
 		\subsection{Forward Position Kinematics}
 		\label{ch::system_modeling_pos_kin}
@@ -69,7 +70,6 @@
 			
 			\noindent
 			Using these DH parameters, the transformations $H^{i,0}_{i,1}$, $H^{i,0}_{i,2}$, $H^{i,0}_{i,3}$, and $H^{i,0}_{i,4}$ can be computed explicitly as follows:
-
 				%% Manipulator Base to Frame 1 %%
 				\begin{equation} 
 					H^{i,0}_{i,1} =\left[ 
@@ -81,8 +81,6 @@
 					\end{array} 
 					\right]
 				\end{equation}
-
-
 				%% Manipulator Base to Frame 2 %%
 				\begin{equation}
 					H^{i,0}_{i,2} =\left[ 
@@ -94,8 +92,6 @@
 					\end{array} 
 					\right]
 				\end{equation}
-
-
 				%% Manipulator Base to Frame 3 %%
 				\begin{equation}
 					H^{i,0}_{i,3} =\left[ 
@@ -107,7 +103,6 @@
 					\end{array} 
 					\right]
 				\end{equation}
-
 				%% Manipulator Base to Frame 4 %%
 				\begin{equation}
 					H^{i,0}_{i,4} =\left[ 
@@ -143,25 +138,22 @@
 
 			\subsubsection{A Note about Foot Localization in World and Robot-Relative Frames}
 
-			Using the previously defined forward kinematics model and the relationships defined in \label{eq::world_joint_positions} and \label{eq::world_feet_positions}, the position of each joint and foot can be computed assuming the $p_{b}$ and $\theta_{b}$ are known (or can be estimated) in the frame $O_{0}$. Provided inertial feedback, trunk orientation, $\theta_{b}$, can be estimated by the use of a Extended Kalman Filter (EKF), or one of many other orientation estimation methods (\IE complimentary filter, etc.). $p_{b}$, however, requires more sophisticate localization measures, such as a Simultaneous Localization and Mapping (SLAM) scheme or absolute positioning via overhead camera or GPS. In lieu of an implementation for such a localization routine, it is often convenient to generate foot positions estimate in a \emph{robot-relative} frame, $O_{b}^{'}$. This frame is not rigidly attached to the robot but moves with the robot in $O_{0}$. Additionally, this frame has its own position, relative to $O_{0}$, defined by the translation $p_{b}^{'}$. $O_{b}^{'}$ is constantly aligned with respect to $O_{0}$, which fixed the rotation of $O_{b}^{'}$ with respect to $O_{0}$ as the identity matrix.
+			Using the previously defined forward kinematics model and the relationships defined in \label{eq::world_joint_positions} and \label{eq::world_feet_positions}, the position of each joint and foot can be computed assuming the $p_{b}$ and $\theta_{b}$ are known (or can be estimated) in the frame $O_{0}$. Provided inertial feedback, trunk orientation, $\theta_{b}$, can be estimated by the use of a Extended Kalman Filter (EKF), or one of many other orientation estimation methods (\IE complimentary filter, etc.). $p_{b}$, however, requires more sophisticated localization measures, such as a Simultaneous Localization and Mapping (SLAM) scheme or absolute positioning via overhead camera or GPS. In lieu of an implementation for such a localization routine, it is often convenient to generate foot positions estimate in a \emph{robot-relative} frame, $O_{b^{'}}$. This frame is not rigidly attached to the robot but moves with the robot in $O_{0}$ according to the commanded translational velocity administered to prescribe the system's. Moreover, this frame has its own position relative to $O_{0}$, defined by the translation $p_{0}^{b'}$. $O_{b^{'}}$ is constantly aligned to $O_{0}$, with respect to rotation, making the rotation matrix which relate $O_{b^{'}}$ to $O_{0}$ the identity matrix.
 
-			In this frame, the trunk position is regarded as an offset from the origin of $O_{b}^{'}$, $p_{b,rel}^{'}$. Since there is zero rotation between $O_{0}$ and $O_{b}^{'}$, the trunk rotation vector $\theta_{b,re;}^{'}$ is directly equivalent to $\theta_{b}$ in $O_{0}$. Using these translation and rotation definitions in place of their world frame counterparts, the robot-relative joint and foot-positions, ${p}_{i,j}^{'}$ and ${p}_{i,e}^{'}$ of each \Ith leg can be computed by defining a transformation from the robot relative frame to the first DH-frame for each leg, as follows:
+			In this frame, the trunk position is regarded as an offset from the origin of $O_{b^{'}}$, $p_{b}^{b'}$. Since there is zero rotation between $O_{0}$ and $O_{b^{'}}$, the trunk rotation vector $\theta_{b}^{b'}$ is directly equivalent to $\theta_{b}$ in $O_{0}$. Using these translation and rotation definitions in place of their world frame counterparts, the robot-relative joint and foot-positions, ${p}_{i,j}^{b'}$ and ${p}_{i,e}^{b'}$ of each \Ith leg can be computed by defining a transformation from the robot relative frame to the first DH-frame for each leg, as follows:
 				\begin{equation}
 					H_{b^{'}}^{i,0} = 
 					\left[ 
 					\begin{array}{c|c}
-						R_{zyx}(\theta_{b}) R_{z}(\sigma_{i})	&R_{zyx}(\theta_{b}) \nu + {p}_{b}^{'} 	\\ \hline
+						R_{zyx}(\theta_{b}) R_{z}(\sigma_{i})	&R_{zyx}(\theta_{b}) \nu + {p}_{b}^{b'} 	\\ \hline
 						0										&	1												\\
 					\end{array} 
 					\right]
 					\label{eq::rr_to_dh}
 				\end{equation}
 			which follows the same definitions in \ref{eq::world_to_dh}.
-			The transformation defined in \ref{eq::rr_to_dh} is used as a direct replacement for the matrix $H_{0}^{i,0}$ in \ref{eq::world_joint_positions} and \ref{eq::world_feet_positions} in computing the corresponding enitities, ${p}_{i,j}^{'}$ and ${p}_{i,e}^{'}$. Knowledge of ${p}_{i,e}^{'}$ and ${p}_{i,j}^{'}$ is particularly useful for planning foot and body-placements which depend directly on the location other foot positions and the relative body location, but do not necessarily depend on the position of the robot in the world coordinate frame.
+			The transformation defined in \ref{eq::rr_to_dh} is used as a direct replacement for the matrix $H_{0}^{i,0}$ in \ref{eq::world_joint_positions} and \ref{eq::world_feet_positions} in computing the corresponding particles, ${p}_{i,j}^{b'}$ and ${p}_{i,e}^{b'}$. Knowledge of the position of each respective particle is useful for planning foot and body-placements which depend directly on the location other foot positions and the relative body location, but do not necessarily depend on the position of the robot in the world coordinate frame.
  
-
-
-
 		\subsection{Inverse Position Kinematics}
 			\label{sec::inverse_position_kinematics}
 			
@@ -283,7 +275,6 @@ where $\lambda_{J}>0$ is a weighting that is typically chosen to be much less th
 
 
 	\section{BlueFoot Simulator}
-
 %
 		\begin{figure}[h!]
 			\centering
@@ -300,5 +291,15 @@ where $\lambda_{J}>0$ is a weighting that is typically chosen to be much less th
 		
 		The BlueFoot simulator utilizes a dynamical model of the platform which consists of purely rectangular bodies. To match the dynamics of the true system, the individual mass and inertia parameters of each rigid body have been generated using a 3D model analysis software. This software takes into account geometric irregularities and variation of materials when computing the inertia of each body. The simulator also contains IMU and LIDAR sensor models for gathering feedback from the simulated environment. Each sensor is modeled with appropriate measurement noise so as to more closely match the performances of the actual IMU and LIDAR sensors on-board the BlueFoot platform.
 
-		Careful, manual tuning was performed on simulated robot parameters, including joint update gains, joint-friction and surface-friction model coefficients to achieve closer matches between simulated results and the actual robot motions. A performance comparison can be seen in [NEED FIG], which shows joint position outputs for all joints of the front-right leg of the actual and simulated robot while performing a forward gait at $0.080$ m/s. It can be seen in [NEED COMPARISON FIGURE] that the simulator matches true system performance for most of each joint trajectory. The discrepancies between the two data sets occur at the minima of each series when the robot makes contact with the ground after a step. These differences can be attributed to ground-contact model inaccuracies. Work is still left to be done in improving the simulator's contact model, but this is more the fault of the simulation software libraries being used, namely in its low-order contact models. These contact models are very simplistic for the sake of simulation speed. Contact models could certainly be improved such that they more closely matches the effects of real-world surfaces. All of the other simulated leg joints exhibited similar results to the actual motions.
+		Careful, manual tuning was performed on simulated robot parameters, including joint update gains, joint-friction and surface-friction model coefficients to achieve closer matches between simulated results and the actual robot motions. A performance comparison can be seen in \ref{fig::sim_performance_comparison}, which shows joint position outputs for all joints of the front-right leg of the actual and simulated robot while performing a forward gait at $0.060$ m/s. It can be seen in  that the simulator provides and approximate respresention true system performance within some margin of error. The discrepancies between the two data sets can be seen to usually occur at the minima of each series when the robot makes contact with the ground after a step. These differences can be attributed to ground-contact model inaccuracies. Work is still left to be done in improving the simulator's contact model, but this is more the fault of the simulation software libraries being used, namely in its low-order contact models. These contact models are very simplistic for the sake of simulation speed. Contact models could certainly be improved such that they more closely matches the effects of real-world surfaces. Additionally, discrepancies could also be attributed to the low-order joint model being used to represent the system's servo motors at each joint, as shown in Figure \ref{eq::servo_control_dynamics}. This model neglects the effects of higher-order frictional effects which modify the rotation profile at each joint. All of the other simulated leg joints exhibited similar results to the actual motions.
+%	
+	\begin{figure}[!t]
+		\centering
+		\fbox{\includegraphics[width=1.00\textwidth]{sim_comparison.png}}
+		\caption{Joint position comparison between the simulated and real quadruped while performing a gait which achieves a forward velocity of $60\frac{mm}{s}$}
+		\label{fig::sim_performance_comparison}
+	\end{figure}
+%
+	Despite these discrepancies, this simulation platform has proven to be adequate for use in testing gaiting and control algorithms which have been implemented on the real system. Moreover, all motion control algorithms which were first developed in this simulated environment have been ported to the real robot platform and performed in a highly comparable manner.
 
+	The simulator has also been utilized to model BlueFoot's on-board LIDAR unit for use in testing navigation and terrain mapping algorithms and associated motion routines. Laser hits are modeled as force-less collisions between a ray-type geometry, used to represent the laser beam of the LIDAR, and environmental elements. Because the ray geometry can penetrate environmental elements in multiple places, or even multiple elements within the environment at a single instance, some post processing is performed on collision point returned by the simulator such that the point \emph{closest} to the robot is taken as a laser-beam hit. Additionally, sensor realism is imposed by limiting the data access frequency to buffered laser data by control routines operating the simulated robot to a rate of 10 Hz, which matches the scan rate of BlueFoot's on-board LIDAR. The angular velocity of the spinning laser head and the depth of each laser beam return are corrupted by zero-mean Gaussian random noise with variances close to respective parameters which describe the physical LIDAR unit.
