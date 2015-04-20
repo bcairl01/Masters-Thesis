@@ -25,16 +25,16 @@
 \contentsline {figure}{\numberline {20}{\ignorespaces Parallel NARX-network model with a linear output layer.\relax }}{47}
 \contentsline {figure}{\numberline {21}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.\relax }}{51}
 \contentsline {figure}{\numberline {22}{\ignorespaces NARX Network MSE convergence for trial shown in Figure 27\hbox {}\relax }}{52}
-\contentsline {figure}{\numberline {23}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.125$.\relax }}{53}
+\contentsline {figure}{\numberline {23}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.125$.\relax }}{52}
 \contentsline {figure}{\numberline {24}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.250$.\relax }}{53}
-\contentsline {figure}{\numberline {25}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.350$.\relax }}{54}
+\contentsline {figure}{\numberline {25}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.350$.\relax }}{53}
 \contentsline {figure}{\numberline {26}{\ignorespaces Trunk orientation during 80 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{54}
-\contentsline {figure}{\numberline {27}{\ignorespaces Trunk orientation during 100 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{55}
+\contentsline {figure}{\numberline {27}{\ignorespaces Trunk orientation during 100 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{54}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {28}{\ignorespaces Composite potential field, $f(x)g(x,\psi )$.\relax }}{59}
-\contentsline {figure}{\numberline {29}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential fields navigation scheme.\relax }}{60}
-\contentsline {figure}{\numberline {30}{\ignorespaces Need sensor sweep diagram.\relax }}{62}
-\contentsline {figure}{\numberline {31}{\ignorespaces Original 3D point-cloud of terrain patch.\relax }}{64}
-\contentsline {figure}{\numberline {32}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{65}
-\contentsline {figure}{\numberline {33}{\ignorespaces Height-map showing terrain variation in the $z_{hm}$ direction.\relax }}{65}
+\contentsline {figure}{\numberline {28}{\ignorespaces Composite potential field, $f(x)g(x,\psi )$.\relax }}{58}
+\contentsline {figure}{\numberline {29}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential fields navigation scheme.\relax }}{59}
+\contentsline {figure}{\numberline {30}{\ignorespaces Need sensor sweep diagram.\relax }}{61}
+\contentsline {figure}{\numberline {31}{\ignorespaces Original 3D point-cloud of terrain patch.\relax }}{63}
+\contentsline {figure}{\numberline {32}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{64}
+\contentsline {figure}{\numberline {33}{\ignorespaces Height-map showing terrain variation in the $z_{hm}$ direction.\relax }}{64}
 \addvspace {10pt}
