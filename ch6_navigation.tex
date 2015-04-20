@@ -9,10 +9,10 @@
 
 	\section{Flatland navigation and Goal Tracking}
 	
-		The BlueFoot has been outfitted with flatland navigation controls for obstacle avoidance and camera-based goal-tracking over flatland. Platform navigation is governed by two main command parameters, $v^{r}$ and $\omega^{r}$, which represent forward and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. During navigation, the pitch of the trunk, $\theta_{b,x}$ and $\theta_{b,z}$ is also controlled via its respective reference signal, $\theta_{b,x}^{r}$. This control over trunk pose allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head. 
+		The BlueFoot robot has been navigated using potnetial field-based control-schemes for obstacle avoidance and camera-based goal-tracking over flatland. Platform navigation is governed by two main command parameters, $v^{r}$ and $\omega^{r}$, which represent forward and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. During navigation, the pitch of the trunk, $\theta_{b,x}$ is also controlled via its respective reference signal, $\theta_{b,x}^{r}$. This control over trunk pose allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head. 
 
 		\subsection{LIDAR-based Potential-Fields Algorithm}
-		BlueFoot's base navigation and obstacle avoidance algorithm involves a potential fields-based approach which fuses LIDAR data and features from processed camera images. This algorithm is essentially used as a ``wandering" mechanism which would normally be employed as a first-level navigation measure in an unknown environment when no information (\EG map data) is known about the environment \emph{apriori}. This navigation approach uses only 2D LIDAR data (does not take into account features of terrain) and is thus most fit for navigation over flatland.
+		BlueFoot's base navigation and obstacle avoidance algorithm involves a potential fields-based approach which fuses LIDAR data and features from processed camera images. This algorithm is essentially used as a ``wandering" mechanism which would normally be employed as a first-level navigation measure in an unknown environment when no information (\EG map data) is known by the robot \emph{apriori}. This navigation approach uses only 2D LIDAR data (does not take into account features of terrain) and is thus most fit for navigation over flatland.
 
 		The LIDAR-base portion of this algorithm takes sequential, planar LIDAR scans as an input and generates an output in the form of a vectored navigation command, $\vec{V}_{L}^{r}\in \Re^{3}$, relative to the world frame, $O_{0}$, as defined in Section~\ref{ch::system_modeling_pos_kin}. Each point from a LIDAR scan is mapped to a corresponding scalar \emph{potential} which is used to influence the direction of the newly generated command. Given a LIDAR scan $S$ with 2D scan points, $x_{i}^{L}\in\emph{S}^{L}$, relative to the LIDARs local coordinate frame $O_{L}$, an output command vector is generated using a potential function $\{ f(x) : \Re^{3}\rightarrow \Re^{1} \}$, and a biasing function, $\{ g(x,\psi) : \Re^{3}\rightarrow \Re^{1} \}$, as follows:
 %
@@ -60,6 +60,12 @@ Finally, the command vector $\vec{V}_{L}^{r}$ is transformed into scalar forward
 	\dot{\omega}_{L}^{r} 	&=& \beta_{\omega} \wrap{  \omega_{L}^{r,max} \wrap{ { \tan^{-1}\wrap{ \frac{\vec{V}_{c,2}^{L}}{\vec{V}_{c,1}^{L}} } } - \theta_{b,z} }{\pi}^{-1} - \omega_{L}^{r} }
 	\end{eqnarray}
 where $\beta_{v}$ and $\beta_{\omega}$ are proportional-gain tuning parameters; and $\theta_{b,z}$ is the platforms yaw in $O_{0}$. The parameters $\beta_{v}$ and $\beta_{\omega}$ can be viewed as ``update-inertias," as they directly effect the influence of the effect of instantaneous commands on the forward velocity and turning rate of the robot. Furthermore, these gains can be used to low-pass navigation updates to remove jitter cause by command outliers generated from degenerate sensor readings.
+				\begin{figure}[t!]
+					\centering
+					\fbox{\includegraphics[width=\textwidth]{potential_field_full.png}}
+					\caption{Path taken by robot through a simulated set of rooms and halls using the LIDAR-based potential fields navigation scheme.}
+					\label{fig::potential_field_results}
+				\end{figure}
 
 		\subsection{Results of LIDAR-based potential field navigation from simulation}
 

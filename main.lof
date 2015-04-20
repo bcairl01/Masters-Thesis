@@ -1,20 +1,20 @@
 \addvspace {10pt}
-\contentsline {figure}{\numberline {1}{\ignorespaces The BlueFoot Quadruped Robot: single-camera configuration \emph {(left)}; stereo-camera configuration \emph {(right)}\relax }}{1}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {2}{\ignorespaces Root section of trunk. Call-out in top-right shows main-switch access through the bottom of the root module.\relax }}{5}
-\contentsline {figure}{\numberline {3}{\ignorespaces Main section of trunk. Call-out in the top-right shows how the ODROID-XU and AutoPilot computers fit within the module.\relax }}{6}
-\contentsline {figure}{\numberline {4}{\ignorespaces Head section of trunk. Monocular camera configuration with Hokuyo-URG \emph {(left)}; and Stereo configuration with PLDS \emph {(right)}. \relax }}{7}
+\contentsline {figure}{\numberline {1}{\ignorespaces The BlueFoot Quadruped Robot: single-camera configuration \emph {(left)}; stereo-camera configuration \emph {(right)}\relax }}{2}
+\contentsline {figure}{\numberline {2}{\ignorespaces Root section of trunk. Call-out in top-right shows main-switch access through the bottom of the root module.\relax }}{4}
+\contentsline {figure}{\numberline {3}{\ignorespaces Main section of trunk. Call-out in the top-right shows how the ODROID-XU and AutoPilot computers fit within the module.\relax }}{5}
+\contentsline {figure}{\numberline {4}{\ignorespaces Head section of trunk. Monocular camera configuration with Hokuyo-URG \emph {(left)}; and Stereo configuration with PLDS \emph {(right)}. \relax }}{6}
 \contentsline {figure}{\numberline {5}{\ignorespaces Closeup of BlueFoot's leg. \emph {(left)} shows effective link lengths and the location of defined joint positions.\relax }}{7}
 \contentsline {figure}{\numberline {6}{\ignorespaces Series elastic brackets.\relax }}{8}
-\contentsline {figure}{\numberline {7}{\ignorespaces BlueFoot device networking diagram.\relax }}{13}
+\contentsline {figure}{\numberline {7}{\ignorespaces BlueFoot device networking diagram.\relax }}{12}
 \contentsline {figure}{\numberline {8}{\ignorespaces BlueFoot power routing.\relax }}{14}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {9}{\ignorespaces BlueFoot's main processes and their relationships.\relax }}{18}
-\contentsline {figure}{\numberline {10}{\ignorespaces Communication flow between processors on the BlueFoot Platform.\relax }}{21}
-\contentsline {figure}{\numberline {11}{\ignorespaces The BlueFoot ground-station GUI.\relax }}{23}
+\contentsline {figure}{\numberline {9}{\ignorespaces BlueFoot's main processes and their relationships.\relax }}{17}
+\contentsline {figure}{\numberline {10}{\ignorespaces Communication flow between processors on the BlueFoot Platform.\relax }}{20}
+\contentsline {figure}{\numberline {11}{\ignorespaces The BlueFoot ground-station GUI.\relax }}{22}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {12}{\ignorespaces Coordinate frame setup.\relax }}{26}
-\contentsline {figure}{\numberline {13}{\ignorespaces Coordinate frame setup.\relax }}{32}
+\contentsline {figure}{\numberline {12}{\ignorespaces A visualization of BlueFoot's coordinate frame configuration.\relax }}{25}
+\contentsline {figure}{\numberline {13}{\ignorespaces Coordinate frame setup.\relax }}{31}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {14}{\ignorespaces CPG output state, $y_{2}$, over two gait cycles.\relax }}{38}
 \contentsline {figure}{\numberline {15}{\ignorespaces CPG state phase portrait over two gait cycles; depicts the effects of feedback-modulation on the CPG's limit cycles.\relax }}{38}
@@ -30,8 +30,9 @@
 \contentsline {figure}{\numberline {25}{\ignorespaces Trunk orientation during 100 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{53}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {26}{\ignorespaces Composite potential field, $f(x)g(x,\psi )$.\relax }}{56}
-\contentsline {figure}{\numberline {27}{\ignorespaces Need sensor sweep diagram.\relax }}{59}
-\contentsline {figure}{\numberline {28}{\ignorespaces Original 3D point-cloud of terrain patch.\relax }}{61}
-\contentsline {figure}{\numberline {29}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{62}
-\contentsline {figure}{\numberline {30}{\ignorespaces Height-map showing terrain variation in the $z_{hm}$ direction.\relax }}{62}
+\contentsline {figure}{\numberline {27}{\ignorespaces Path taken by robot through a simulated set of rooms and halls using the LIDAR-based potential fields navigation scheme.\relax }}{57}
+\contentsline {figure}{\numberline {28}{\ignorespaces Need sensor sweep diagram.\relax }}{60}
+\contentsline {figure}{\numberline {29}{\ignorespaces Original 3D point-cloud of terrain patch.\relax }}{61}
+\contentsline {figure}{\numberline {30}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{62}
+\contentsline {figure}{\numberline {31}{\ignorespaces Height-map showing terrain variation in the $z_{hm}$ direction.\relax }}{63}
 \addvspace {10pt}
