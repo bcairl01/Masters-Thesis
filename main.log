@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  20 APR 2015 05:28
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  20 APR 2015 06:17
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -809,7 +809,7 @@ CHAPTER 6
 File: terrain_pcd3_cleaned.png Graphic file (type png)
 
 <use terrain_pcd3_cleaned.png>
-Package pdftex.def Info: terrain_pcd3_cleaned.png used on input line 124.
+Package pdftex.def Info: terrain_pcd3_cleaned.png used on input line 136.
 (pdftex.def)             Requested size: 433.62pt x 414.08325pt.
 
 
@@ -819,13 +819,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: terrain_grad_crop.png Graphic file (type png)
 
 <use terrain_grad_crop.png>
-Package pdftex.def Info: terrain_grad_crop.png used on input line 135.
+Package pdftex.def Info: terrain_grad_crop.png used on input line 147.
 (pdftex.def)             Requested size: 433.62pt x 221.98917pt.
  <terrain_4545.png, id=259, 578.16pt x 433.62pt>
 File: terrain_4545.png Graphic file (type png)
 
 <use terrain_4545.png>
-Package pdftex.def Info: terrain_4545.png used on input line 141.
+Package pdftex.def Info: terrain_4545.png used on input line 153.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
  [59] [60 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_pcd3_cleaned.png>]
 
@@ -895,7 +895,7 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (74 pages, 3831874 bytes).
+Output written on main.pdf (74 pages, 3832351 bytes).
 PDF statistics:
  335 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

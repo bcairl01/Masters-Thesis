@@ -26,9 +26,13 @@
 	\end{equation*}
 Since we are assuming navigation over flat ground, the operator $P_{ \vec{z} }\wrap{*}$ is used to project each transformed LIDAR scan-point onto the plane defined by the $z$-axis unit vector in the frame $O_{0}$.
 
-The potential function, defined in \ref{eq::min_dis_potential_function}, used in BlueFoot's navigation scheme is tailored to ``repel" the platform from objects which are at some minimum distance, $d_{min}$ from the trunk, and attract toward objects that are further away. Thus, this potential function tends to draw the robot towards long apertures, such as corridors or openings, and away from close-by obstructions. This \emph{minimum-distance} potential function is as follows:
+The piecewise-continuous potential function, defined in \ref{eq::min_dis_potential_function}, used in BlueFoot's navigation scheme is dsigned to ``repel" the platform from objects which are at some minimum distance, $d_{min}$ from the trunk, and attract toward objects that are further away. As a result, this function tends to draw the robot towards long apertures, such as corridors or openings, and away from close-by obstructions. It is written as follows:
 	\begin{equation}
-		f(x) = \lambda_{c,1}\wrap{\norm{x}-d_{min}} \wrap{ 1  - e^{ -  \lambda_{c,2} { \wrap{\norm{x}-d_{min}} }^{2} } }
+		f(x) = 
+		\begin{cases}	
+		 	\wrap{\norm{x}-d_{min}} \lambda_{c,1}	&  \text{if } \norm{x}-d_{min} < 0 \\
+							\wrap{\norm{x}-d_{min}} \wrap{ 1  - e^{ -  \lambda_{c,2} { \wrap{\norm{x}-d_{min}} }^{2} } } 	&  \text{else}
+		\end{cases}
 	\label{eq::min_dis_potential_function}
 	\end{equation}
 where $\lambda_{c,1}>0$ and $\lambda_{c,2}>0$ are tuning parameters sued to specify the output range and sensitivity of the potential function output with respect to $\wrap{\norm{x}-d_{min}}$, respectively. It can be observed that this potential function exhibits $f(x)<0$ when $\norm{x} < d_{min}$ and vice-verse, thus achieving the desired attractive/repulsive characteristics.
@@ -50,6 +54,9 @@ Finally, the command vector $\vec{V}_{L}^{r}$ is transformed into scalar forward
 	\end{eqnarray}
 where $\beta_{v}$ and $\beta_{\omega}$ are proportional-gain tuning parameters; and $\theta_{b,z}$ is the platforms yaw in $O_{0}$. The parameters $\beta_{v}$ and $\beta_{\omega}$ can be viewed as ``update-inertias," as they directly effect the influence of the effect of instantaneous commands on the forward velocity and turning rate of the robot. Furthermore, these gains can be used to low-pass navigation updates to remove jitter cause by command outliers generated from degenerate sensor readings.
 
+		\subsection{Results of LIDAR-based potential field navigation from simulation}
+
+
 		\subsection{Incorporation of Camera-based Feature-Tracking}
 		
 		Camera-based goal tracking is used in conjunction with the aforementioned potential fields navigation scheme to move the platform through an environment while seeking or tracking a particular target. In this case, targets take the the form of features extracted from processed camera data. The robot is guided towards these features using a simple visual-serving approach. 
@@ -70,7 +77,12 @@ A separate set of navigation commands, $v_{C}^{r}$ and $\omega_{C}^{r}$; and an 
 
 	The composition of this hybrid command technique is motivated by two key subtasks: to use the potential fields algorithm during a wandering phase, when a target object is not in sight; and to guide the robot towards the goal once in sight, allowing the camera-based tracking commands to have a greater influence on system navigation (through the variables $v^{r}$ and $\omega^{r}$) as the platform becomes closer to the desired target. A straight-forward way to achieve this is to use the relative size. $r$, of tracked target features in the image frame. With this in mind, a simple command mixture scheme has been defined as follows:
 	\begin{eqnarray}
-		v(r) &\equiv&  1 - e^{ -c_{mix} \wrap{ r - r_{mix}}^{2} } 								\nonumber \\
+		v(r) &\equiv&
+		\begin{cases}
+		e^{ -c_{mix} \wrap{ r - r_{mix}}^{2} } 	& \text{if } r < r_{mix}	\\
+		1											& \text{else}
+		\end{cases}
+						\nonumber \\
 				\left[\begin{array}{c} v^{r} 	\\ \omega^{r} 		\end{array} \right] &=& 	
 		v(r)	\left[\begin{array}{c} v^{r}_{C}\\ \omega^{r}_{C} 	\end{array} \right] + 
 		(1-v(r))\left[\begin{array}{c} v^{r}_{L}\\ \omega^{r}_{L} 	\end{array} \right] 
