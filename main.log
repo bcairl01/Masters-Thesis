@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  19 APR 2015 06:53
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  19 APR 2015 22:17
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -711,7 +711,7 @@ File: narx_network_diagram.png Graphic file (type png)
 
 <use narx_network_diagram.png>
 Package pdftex.def Info: narx_network_diagram.png used on input line 289.
-(pdftex.def)             Requested size: 325.215pt x 216.81609pt.
+(pdftex.def)             Requested size: 433.62pt x 289.0881pt.
  [45 <C:/Users/Brian/Desktop/Masters-Thesis/narx_network_diagram.png>]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 333.
 
@@ -895,7 +895,7 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (74 pages, 3831753 bytes).
+Output written on main.pdf (74 pages, 3831818 bytes).
 PDF statistics:
  335 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
