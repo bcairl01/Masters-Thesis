@@ -68,6 +68,24 @@ Simon Rutishauser, A~Sprowitz, L.~Righetti, and A.J. Ijspeert.
   {G}enerators for locomotion control.
 \newblock pages 710--715, Oct 2008.
 
+\bibitem{Squirrel_website}
+Alberto Demichelis.
+\newblock {S}quirrel, the programming language, 2011.
+
+\bibitem{opencv_library}
+G.~Bradski.
+\newblock {\em Dr. Dobb's Journal of Software Tools}.
+
+\bibitem{openpcl_library}
+Radu~Bogdan Rusu and Steve Cousins.
+\newblock {3D is here: Point Cloud Library (PCL)}.
+\newblock In {\em {IEEE International Conference on Robotics and Automation
+  (ICRA)}}, Shanghai, China, May 9-13 2011.
+
+\bibitem{WX_Website}
+wx{W}idgets, {C}ross-{P}latform {GUI} {L}ibrary, 2015.
+\newblock [Online; https://www.wxwidgets.org/].
+
 \bibitem{Wieber2006}
 P.-B. Wieber.
 \newblock Holonomy and nonholonomy in the dynamics of articulated motion.
@@ -77,7 +95,8 @@ P.-B. Wieber.
 
 \bibitem{ODE_Website}
 Russel Smith.
-\newblock {\em {O}pen {D}ynamics {E}ngine, http://www.ode.org/}.
+\newblock {O}pen {D}ynamics {E}ngine, 2008.
+\newblock [Online; http://www.ode.org/].
 
 \bibitem{Matsuoka1985}
 Kiyotoshi Matsuoka.
@@ -237,5 +256,11 @@ G.~D. Magoulas, M.~N. Vrahatis, and G.~S. Androulakis.
 \newblock Improving the convergence of the backpropagation algorithm using
   learning rate adaptation methods.
 \newblock {\em Neural Comput.}, 11(7):1769--1796, oct 1999.
+
+\bibitem{ArambulaCosio2004}
+F.~Arambula Cosío and M.A.~Padilla Castañeda.
+\newblock Autonomous robot navigation using adaptive potential fields.
+\newblock {\em Mathematical and Computer Modelling}, 40(9–10):1141 -- 1156,
+  2004.
 
 \end{thebibliography}

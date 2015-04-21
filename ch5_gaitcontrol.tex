@@ -320,8 +320,18 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 				\setwrap{ \sigma^{i}(y^{i}) = \sbrack{ \sigma_{1}^{i}(y_{1}^{i}),...,\sigma_{N_{I}^{i}}^{i}(y_{N_{I}^{i}}^{i}) }^{T} \hspace{2mm} : \hspace{2mm} \Re^{N_{I}^{i}} \rightarrow \Re^{N_{I}^{i}}}
 			\end{equation*}
 For the trunk-leveling controller being described, a symmetric sigmoid actiavtion function is used, making each $\sigma_{j}^{i}(y_{j}^{i}) \equiv \tanh(y_{j}^{i}) \in [-1,1]$. Hence the gradient $\nabla_{y} \sigma^{i}(y^{i})$ is defined as follows: 
+			\newcommand{\acti}[1]{\sigma^{#1}_{1}(y^{i})}
 			\begin{equation}
-				\nabla_{y} \sigma^{i}(y^{i})  = \text{diag}\wrap{\sigma^{i}(y^{i})} \wrap{\vec{1}_{N_{I}^{i}\times1} - \sigma^{i}\wrap{y^{i} } }
+				\nabla_{y} \sigma^{i}(y^{i})  =
+				\left[
+				\begin{array}{cccc}
+					\acti{1}	&	0		&	\ldots 		&	0 			\\	
+					0			&	\acti{2}&	0			& 	\vdots 		\\
+					\vdots 		&	0		& 	\ddots 		& 	0			\\
+ 					0			&	\ldots	&	0			& 	\acti{N_{I}^{i}}
+				\end{array}
+				\right]
+				\wrap{\vec{1}_{N_{I}^{i}\times1} - \sigma^{i}\wrap{y^{i} } }
 				\label{eq::bp_sigmoid_deriv}
 			\end{equation} 
 			given the derivative properties of the $\tanh\wrap{*}$ function.
