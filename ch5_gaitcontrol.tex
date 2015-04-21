@@ -26,17 +26,53 @@
 		}. 
 		CPG-driven gait controllers are convenient as they allow for continuous transitioning between gaiting patterns through the modification of oscillator coupling. Reflexes are built into the oscillators which use IMU measurements to modulate the CPGs unit oscillators, as will be outlined later in this section.
 
-		The CPG implemented on BlueFoot consists of four modified two-state ($y_{1,i},y_{2,i}$) Hopf Oscillators connected through a coupling matrix $K$.  The oscillator output vector, $y_{2,i}$, parameterize the trajectories of each \Ith foot. The resulting reflexive CPG system is described by
+		The CPG implemented on BlueFoot consists of four modified two-state Hopf Oscillators connected through a coupling matrix $K$. The states of each \Ith unit Hopf Oscillator are designated by the pair $\{y_{1,i},y_{2,i}\}$. These oscillator states are stacked into the vectors $y_{1}\in \Re^{4}$ and $y_{2}\in \Re^{4}$, which are composed as follows:
+	\begin{eqnarray*}
+		y_{1} &=& \sbrack{y_{1,1},y_{1,2},y_{1,3},y_{1,4}}^{T}\nonumber\\
+		y_{2} &=& \sbrack{y_{2,1},y_{2,2},y_{2,3},y_{2,4}}^{T}
+	\end{eqnarray*}
+The oscillator output vector $y_{2}$, parameterizes the trajectories of each \Ith foot. The resulting reflexive CPG system, written which respect to the stacked-state vectors $y_{1}$ and $y_{2}$, is described by
 		\begin{eqnarray}
-			\dot{y}_{1} &=& A_{1}\wrap{ \Psi_{M} M - \Gamma}{y}_{1} + \Psi_{\omega} W {y}_{2} 			\nonumber\\
-			\dot{y}_{2} &=& A_{2}\wrap{ \Psi_{M} M - \Gamma}{y}_{2} - \Psi_{\omega} W {y}_{1} + K {y}_{2}	%\nonumber
-			\label{eq::CPGMain}
+			\dot{y}_{1} &=& A_{1}\wrap{ \Psi_{M} M\wrap{y_{1},y_{2}} - \Gamma}{y}_{1} + \Psi_{\omega} W {y}_{2} 			\nonumber\\
+			\dot{y}_{2} &=& A_{2}\wrap{ \Psi_{M} M\wrap{y_{1},y_{2}} - \Gamma}{y}_{2} - \Psi_{\omega} W {y}_{1} + K {y}_{2}	%\nonumber
+			\label{eq::cpg_ss_def}
 		\end{eqnarray}
-		where $M$ is a diagonal matrix  in $\Real^{4\times4}$ with diagonal elements $m_{i,i}=y_{1,i}^{2}+y_{2,i}^{2} \Sep \forall i = \{1,2,3,4\}$, $\wrap{A_{1},A_{2}, \Psi_{M}, \Psi_{\omega}} \InRe{4\times4}$, $  \{y_{1}, y_{2}\}  \InRe{4\times1}$, and $\Gamma$ and $W$ are diagonal matrices in $\Real^{4\times4}$ which represent nominal oscillator amplitudes and frequencies, respectively.
+		where $M\wrap{y_{1},y_{2}} \in \Re^{4\times4}$ is define as
+		\newcommand{\yy}[1]{y_{1,#1}^{2} + y_{2,#1}^{2}}
+		\begin{equation*}
+			M\wrap{y_{1},y_{2}} = \left[
+			\begin{array}{cccc}
+			\yy{1} 	& 	0 		& 	0 		& 	0 		\\ 
+			0		& 	\yy{2}  & 	0 		& 	0 		\\ 
+			0 		& 	0 		& 	\yy{3}  & 	0 		\\ 
+			0 		& 	0 		& 	0 		& 	\yy{4}  \\ 
+			\end{array}
+			\right],
+		\end{equation*}
+${A_{1},A_{2}, \Psi_{M}, \Psi_{\omega}} \InRe{4\times4}$ are constant oscilattor gain matrices; and $\Gamma$ and $W$ are diagonal matrices, defined by
+		\begin{equation*}
+			\Gamma = \left[
+			\begin{array}{cccc}
+			\gamma_{1} 	& 	0 				& 	0 				& 	0 		\\ 
+			0				& 	\gamma_{2} 	& 	0 				& 	0 		\\ 
+			0 				& 	0 				& 	\gamma_{3} 	& 	0 		\\ 
+			0 				& 	0 				& 	0 				& 	\gamma_{4}  \\ 
+			\end{array}
+			\right],
+			\Sep
+			W = \left[
+			\begin{array}{cccc}
+			\omega_{1} 	& 	0 				& 	0 				& 	0 		\\ 
+			0				& 	\omega_{2} 	& 	0 				& 	0 		\\ 
+			0 				& 	0 				& 	\omega_{3} 	& 	0 		\\ 
+			0 				& 	0 				& 	0 				& 	\omega_{4}  \\ 
+			\end{array}
+			\right],
+		\end{equation*}
+which define the peak-to-peak output amplitude, $\gamma_{i}$, and frequency, $\omega_{i}$, of each \Ith unit oscillator in the CPG network.
 
 
 		\subsection{Reflexive Gait Adaptations}
-
 
 			Feedback signals are incorporated into the CPG through the frequency modulation matrix $\Psi_{\omega}$ and amplitude modulation matrix $\Psi_{M}$. These modulation parameters are generated using state estimates of the platform's orientation and angular rate. The platform orientation state-estimate, $\hat{\theta}_{b}$, is supplied to the controller from an Extended Kalman Filter utilizing inertial measurement and magnetometer feedback (which are separately calibrated). The platform's angular rate is output by an angular rate-gyro sensor.
 
@@ -46,11 +82,12 @@
 		\begin{equation}
 			\dot{\epsilon}_{\theta} = {R}_{z_{b}}\wrap{\frac{\pi}{2}}\wrap{\dot{\hat{\theta}}_{b} - \dot{\theta}_{b}^{r}}
 		\end{equation}
-is non-zero. $\dot{\epsilon}_{\theta}$ represents a measure of translational drift recovered from gyroscopic sensor measurements. ${R}_{z_{b}}{\frac{\pi}{2}}$ represents a rotation by $\frac{\pi}{2}$ about the z-axis of the body frame $O_{b}$. $\dot{\epsilon}_{\theta}$ is mapped to the parameters $\Psi_{\omega}$ and $\Psi_{M}$ by
+			is non-zero. $\dot{\epsilon}_{\theta}$ represents a measure of translational drift recovered from gyroscopic sensor measurements. ${R}_{z_{b}}{\frac{\pi}{2}}$ represents a rotation by $\frac{\pi}{2}$ about the z-axis of the body frame $O_{b}$. $\dot{\epsilon}_{\theta}$ is mapped to the parameters $\Psi_{\omega}$ and $\Psi_{M}$ by
 				\begin{eqnarray}
 					\psi_{i} 			&=& \Sig{  w_{i} \emph{T}_{i} - w_{i} c_{i} } {\mu}_{i} 	\nonumber\\
 					\Psi_{\omega} 		&=& I + A_{\omega}\DiagMat{ \psi_{i} } 						\nonumber\\
 					\Psi_{M}			&=& I - A_{\mu} \DiagMat{  \psi_{i} } 
+					\label{eq::cpg_modulations}
 				\end{eqnarray}
 			where
 				\begin{eqnarray}
@@ -60,7 +97,7 @@ is non-zero. $\dot{\epsilon}_{\theta}$ represents a measure of translational dri
 			with $\{w_{i}, c_{i}\} \InRe{}$ and $\{A_{\mu}, A_{\omega}\}   \InRe{4\times4}.$ $\Sig{*}$ represents the standard
 			sigmoid step function. The signal $\emph{T}_{i}$ represents a projection of $\dot{\epsilon}_{\theta}$ into the unit-vector emanating from ${p}_{b}$ to each \Ith foot. This projection delegates the level of adjustment to each \Ith oscillator as a result of $\dot{\epsilon}_{\theta}$. 		
 
-			Adjusting $\Psi_{\omega}$ by the method delineated in (\ref{eq:CPGModulation}) serves to shorten the stepping period of a leg in-flight given greater values of $\dot{\epsilon}_{\theta}$. Likewise, $\Psi_{M}$ is adjusted to decrease the height of each foot in-flight. 
+			Adjusting $\Psi_{\omega}$ by the method delineated in (\ref{eq:cpg_modulations}) serves to shorten the stepping period of a leg in-flight given greater values of $\dot{\epsilon}_{\theta}$. Likewise, $\Psi_{M}$ is adjusted to decrease the height of each foot in-flight. 
 
 			The frequency of a full gaiting cycle is prescribed via $\omega_{s}$ and duty-factor $\alpha \in \sbrack{0,1}$ \cite{Matos2010}. The matrix $W$ is formed from  $\omega_{s}$ and $\alpha$ as a diagonal matrix with diagonal elements 
 				\begin{equation}
@@ -74,7 +111,7 @@ is non-zero. $\dot{\epsilon}_{\theta}$ represents a measure of translational dri
 
 			In BlueFoot's CPG implementation, the coupling matrix $K$ takes on the values $k_{i,j} \in \sbrack{-1,1}$. Each element of the coupling matrix, $k_{i,j}$, is utilized to adjust the phase offsets between the unit-oscillators.Furthermore, setting $k_{i,j}=1$ causes the \Jth oscillator to attract the \Ith oscillator  towards a  positive peak, and vice-versa. Setting $k_{i,j}=0$ effectively disconnects \Ith and \Jth oscillators. 
 
-			Figures~\ref{fig:CPGInPhase} and \ref{fig:CPGInTime} correspond to the output of the oscillator dynamics, $y_{2,i}$, given by (\ref{eq:CPGMain}) with the feedback mechanism given in (\ref{eq:CPGModulation})  used during simulations of BlueFoot's default two-pace trotting gait. The associated $K$ matrix prescribing this gaiting pattern is a modified version of $K$ for a 2-pace trot gait presented in \cite{Rutishauser2008}, since this generates a more effective and fluid gait when applied to BlueFoot's gait controller
+			Figures~\ref{fig::cpg_phase2_45} and \ref{fig::cpg_phase4_45} depict the CPG output, $y_{2}$, and corresponding unit-oscillator phase portraits of the oscillator dynamics, given by \ref{eq::cpg_ss_def} with the feedback mechanism given in \ref{eq::cpg_modulations} used during simulations of BlueFoot's default two-pace trotting and four-pace walkiing gaits, repsectively. The associated $K$ matrix prescribing this gaiting pattern is a modified version of $K$ for a 2-pace trot gait presented in \cite{Rutishauser2008}, since this generates a more effective and fluid gait when applied to BlueFoot's gait controller
 				\begin{equation}
 						K\equiv 
 						\left[ 
@@ -87,7 +124,7 @@ is non-zero. $\dot{\epsilon}_{\theta}$ represents a measure of translational dri
 						\right].
 						\label{eq::K_two_pace}
 				\end{equation}
-			A comparable four-pace gait can be achieved by a slight modification of \ref{eq::K_two_pace}, which yields \ref{eq::K_four_pace} as follows:
+			A comparable four-pace \emph{walking} gait can be achieved by a slight sign modifications on the elemtents of  \ref{eq::K_two_pace}, which yields \ref{eq::K_four_pace} as follows:
 				\begin{equation}
 						K\equiv 
 						\left[ 
@@ -100,8 +137,8 @@ is non-zero. $\dot{\epsilon}_{\theta}$ represents a measure of translational dri
 						\right].
 						\label{eq::K_four_pace}
 				\end{equation}
-
-			The output state, $y_{i}$ and phase portrait form from $x_{i},y_{i}$ of each \Ith oscillator are shown in Figures \ref{fig::cpg_phase2_45} and \ref{fig::cpg_phase3_45} for a two-paced and four-paced gait, respectively. The two-paced gait was produced using the coupling matrix defined in\ref{eq::K_two_pace} and the four-paced gait was produced using the coupling matrix defined in \ref{eq::K_four_pace}. Figure \ref{fig::cpg_transition} shows the change in output state patterns during a transition from a four-paced to a two-paced gait.	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			%The output state, $y_{i}$ and phase portrait form from $x_{i},y_{i}$ of each \Ith oscillator are shown in Figures \ref{fig::cpg_phase2_45} and \ref{fig::cpg_phase3_45} for a two-paced and four-paced gait, respectively. The two-paced gait was produced using the coupling matrix defined in\ref{eq::K_two_pace} and the four-paced gait was produced using the coupling matrix defined in \ref{eq::K_four_pace}. 
+Figure \ref{fig::cpg_transition} shows the change in output state patterns during a transition from a four-paced to a two-paced gait.	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 			\begin{figure}[h!]
 				\centering
 				\fbox{\includegraphics[width=1.00\textwidth]{cpg_phase2_45.png}}
@@ -282,7 +319,7 @@ is non-zero. $\dot{\epsilon}_{\theta}$ represents a measure of translational dri
 			\begin{equation*}
 				\setwrap{ \sigma^{i}(y^{i}) = \sbrack{ \sigma_{1}^{i}(y_{1}^{i}),...,\sigma_{N_{I}^{i}}^{i}(y_{N_{I}^{i}}^{i}) }^{T} \hspace{2mm} : \hspace{2mm} \Re^{N_{I}^{i}} \rightarrow \Re^{N_{I}^{i}}}
 			\end{equation*}
-For the control approach being described, each $\sigma_{j}^{i}(y_{j}^{i}) \equiv \tanh(y_{j}^{i}) \in [-1,1]$. Hence the gradient $\nabla_{y} \sigma^{i}(y^{i})$ is defined as follows: 
+For the trunk-leveling controller being described, a symmetric sigmoid actiavtion function is used, making each $\sigma_{j}^{i}(y_{j}^{i}) \equiv \tanh(y_{j}^{i}) \in [-1,1]$. Hence the gradient $\nabla_{y} \sigma^{i}(y^{i})$ is defined as follows: 
 			\begin{equation}
 				\nabla_{y} \sigma^{i}(y^{i})  = \text{diag}\wrap{\sigma^{i}(y^{i})} \wrap{\vec{1}_{N_{I}^{i}\times1} - \sigma^{i}\wrap{y^{i} } }
 				\label{eq::bp_sigmoid_deriv}

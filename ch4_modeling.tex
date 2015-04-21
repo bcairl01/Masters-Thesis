@@ -138,7 +138,7 @@
 
 			\subsubsection{A Note about Foot Localization in World and Robot-Relative Frames}
 
-			Using the previously defined forward kinematics model and the relationships defined in \label{eq::world_joint_positions} and \label{eq::world_feet_positions}, the position of each joint and foot can be computed assuming the $p_{b}$ and $\theta_{b}$ are known (or can be estimated) in the frame $O_{0}$. Provided inertial feedback, trunk orientation, $\theta_{b}$, can be estimated by the use of a Extended Kalman Filter (EKF), or one of many other orientation estimation methods (\IE complimentary filter, etc.). $p_{b}$, however, requires more sophisticated localization measures, such as a Simultaneous Localization and Mapping (SLAM) scheme or absolute positioning via overhead camera or GPS. In lieu of an implementation for such a localization routine, it is often convenient to generate foot positions estimate in a \emph{robot-relative} frame, $O_{b^{'}}$. This frame is not rigidly attached to the robot but moves with the robot in $O_{0}$ according to the commanded translational velocity administered to prescribe the system's. Moreover, this frame has its own position relative to $O_{0}$, defined by the translation $p_{0}^{b'}$. $O_{b^{'}}$ is constantly aligned to $O_{0}$, with respect to rotation, making the rotation matrix which relate $O_{b^{'}}$ to $O_{0}$ the identity matrix.
+			Using the previously defined forward kinematics model and the relationships defined in \ref{eq::world_joint_positions} and \ref{eq::world_feet_positions}, the position of each joint and foot can be computed assuming the $p_{b}$ and $\theta_{b}$ are known (or can be estimated) in the frame $O_{0}$. Provided inertial feedback, trunk orientation, $\theta_{b}$, can be estimated by the use of a Extended Kalman Filter (EKF), or one of many other orientation estimation methods (\IE complimentary filter, etc.). $p_{b}$, however, requires more sophisticated localization measures, such as a Simultaneous Localization and Mapping (SLAM) scheme or absolute positioning via overhead camera or GPS. In lieu of an implementation for such a localization routine, it is often convenient to generate foot positions estimate in a \emph{robot-relative} frame, $O_{b^{'}}$. This frame is not rigidly attached to the robot but moves along with the robot in $O_{0}$ according to the commanded translational velocity, $v^{r}$, and turning rate. $\omega^{r}$, administered to navigate the system. These values will be described in more detail in Chapter \ref{ch::navigation}. Moreover, this frame has its own position relative to $O_{0}$, defined by the translation $p_{0}^{b'}$. $O_{b^{'}}$ is constantly aligned to $O_{0}$, with respect to rotation, making the rotation matrix which relate $O_{b^{'}}$ to $O_{0}$ the identity matrix.
 
 			In this frame, the trunk position is regarded as an offset from the origin of $O_{b^{'}}$, $p_{b}^{b'}$. Since there is zero rotation between $O_{0}$ and $O_{b^{'}}$, the trunk rotation vector $\theta_{b}^{b'}$ is directly equivalent to $\theta_{b}$ in $O_{0}$. Using these translation and rotation definitions in place of their world frame counterparts, the robot-relative joint and foot-positions, ${p}_{i,j}^{b'}$ and ${p}_{i,e}^{b'}$ of each \Ith leg can be computed by defining a transformation from the robot relative frame to the first DH-frame for each leg, as follows:
 				\begin{equation}
@@ -190,6 +190,52 @@
 			It is important to note that the ankle specification,  $\gamma_{i}$, adds extra constraints on the system kinematics and, thus, reduces the number of inverse kinematics solutions per foot position to two.
 
 
+		\subsubsection{Range of Motion}
+			The range of articulation of BlueFoot's main body has been characterized with respect to a set of imposed joint limits (see \ref{tab::JointLimits}) and has been performed with all feet fixed in a default stance (see \ref{tab::DefaultStance}). These limits have been selected according to the range of feasible angular position outputs of inverse position kinematics solution.
+			\begin{table}[h]
+				\centering
+				\begin{tabularx}{\textwidth}{|C{0.25}|C{0.1875}|C{0.1875}|C{0.1875}|C{0.1875}|} \hline
+					Joint Var.	&	${\theta_{i,1}}_{}$, rad		&		${\theta_{i,2}}_{}$, rad		&		${\theta_{i,3}}_{}$, rad		&		${\theta_{i,4}}_{}$, rad 	\\ \hline \hline
+					Max Range	&	45$^o$				&		90$^o$				&		90$^o$				&		90$^o$			\\ \hline
+					Min Range	&  -45$^o$				&	   -90$^o$				&	   -90$^o$				&	   -90$^o$			\\ \hline
+				\end{tabularx}
+				\caption{Imposed joint limits.}
+				\label{tab::JointLimits}
+			\end{table}
+			
+			It should be noted that the imposed joint limits are soft limits that have been chosen because of the
+			typical range of motion executed by each joint during locomotion. Physical joint limits are tabulated in \ref{tab::HardJointLimits}.
+			\begin{table}[h]
+				\centering
+				\begin{tabularx}{\textwidth}{|C{0.25}|C{0.1875}|C{0.1875}|C{0.1875}|C{0.1875}|} \hline
+					Joint Var.	&	${q_{i,1}}_{}$, rad					&		${q_{i,2}}_{}$, rad		&		${q_{i,3}}_{}$, rad		&		${q_{i,4}}_{}$, rad 	\\ \hline \hline
+					Max Range	&	82$^o$				&	102$^o$				&	102$^o$								&	102$^o$				\\ \hline
+					Min Range	&  -69$^o$				&	-102$^o$			&	-102$^o$							&	-102$^o$			\\ \hline
+				\end{tabularx}
+				\caption{Physical joint limits.}
+				\label{tab::HardJointLimits}
+			\end{table}
+			\begin{table}[h]
+				\centering
+				\begin{tabularx}{\textwidth}{|C{0.25}|C{0.15}|C{0.15}|C{0.15}|C{0.15}|C{0.15}|} \hline
+							& 	$p_{b}^{b'}$	&	$p_{1,e}^{b'}$ 	& 	$p_{2,e}^{b'}$ 	&	$p_{3,e}^{b'}$	&	$p_{4,e}^{b'}$ 	\\ \hline \hline
+					x (m)	&	*			&	 	0.165	&	-0.165		&	-0.165		&	0.165		\\ \hline
+					y (m)	&	*			&		0.165	&	0.165		&	-0.165		&	-0.165		\\ \hline
+					z (m)	&	0.115		&		 0		&		0		&		0		&	0			\\ \hline
+				\end{tabularx}
+				\caption{Locations for the platform and feet when in the default stance, written with respect to the frame $O_{b'}$.}
+				\label{tab::DefaultStance}
+			\end{table}
+
+			Figures \ref{fig::pos_and_ori_rom} depicts the maximum pitch and roll and region of planar motion that the main body can reach while in the default stance. The blue shaded region of each figure (labeled \emph{Region of Failure}) depicts points at which joint positions exceed the imposed limits.
+			\begin{figure}[h!]
+				\centering
+				\fbox{\includegraphics[width=0.495\textwidth]{pos_rom.png}}
+				\fbox{\includegraphics[width=0.495\textwidth]{ori_rom.png}}
+				\caption{Range of motion for body's planar position (\emph{left}) and body pitch and roll (\emph{right}) while in the default stance.}
+				\label{fig::pos_and_ori_rom}
+			\end{figure}
+			It can be seen from Figures \ref{fig::pos_and_ori_rom} that the platform can achieve a maximum pitch and roll of  $\pm37^o$ and a total displacement of $\pm 1.4 \text{ cm}$ along the \emph{x} and \emph{y} axis of $O_{b'}$.
 
 
 		\subsection{Velocity Kinematics}
@@ -207,22 +253,29 @@ with $\dot{x}^{i,0}_{i,e} \InRe{6}$ being stacked vector of translational and ro
 				\end{equation}
 			where $\vec{o}_{\nu} = [\nu,0,0]^{T}$, $R^{0}_{i,0}$ is the rotation-matrix component of the transformation $H^{0}_{i,0}$ defined in \ref{eq::world_to_dh}, and $\Skew{*}$ is the standard skew-symmetric matrix operator, which takes a $3\times1$ vector input. The corresponding rotational velocity of each \Ith foot  can be computed with respect to $O_{i,0}$ by:
 				\begin{equation}
-					\wrap{ R^{0}_{i,0} }^{T} \Skew{ \dot{\theta}_{i,e} - \dot{\theta}_{b} } R^{0}_{i,0}  = \Skew{ \dot{\theta}^{i,0}_{i,e} }
+					\Theta^{i} \equiv \wrap{ R^{0}_{i,0} }^{T} \Skew{ \dot{\theta}_{i,e} - \dot{\theta}_{b} } R^{0}_{i,0}  = \Skew{ \dot{\theta}^{i,0}_{i,e} }
+				\label{eq::velocity_skew}
 				\end{equation}
-			where the rotational velocity vector $\dot{\theta}^{i,0}_{i,e}$ is recovered by:
+			where the rotational velocity of each foot, described by $\dot{\theta}^{i,0}_{i,e}$, is recovered by:
 				\begin{equation}
 					\dot{\theta}^{i,0}_{i,e} \equiv \sbrack{ 
-						-\sbrack{\Skew{ \dot{\theta}^{i,0}_{i,e} }}_{1,2},
-						 \sbrack{\Skew{ \dot{\theta}^{i,0}_{i,e} }}_{1,3},
-						-\sbrack{\Skew{ \dot{\theta}^{i,0}_{i,e} }}_{2,3}
-					}^{T}.
+						-\Theta^{i}_{1,2},
+						 \Theta^{i}_{1,3},
+						-\Theta^{i}_{2,3}
+					}^{T}
 				\end{equation}
+			with $\Theta^{i}_{i,j}$ being the (\Ith, \Jth) element of the skew symmetric matrix $\Theta^{i}$ which results from \ref{eq::velocity_skew}.
 
-			Joint velocities required to attain $\dot{x}^{i,0}_{i,e}$ can be computed using $J^{i,0}_{i,e}$. However, since each of BlueFoot's of legs had 4 degrees of freedom, $J^{i,0}_{i,e}$ is rank deficient and $\dot{q}_{i}$ cannot be obtained by direct inversion. Instead, $\dot{q}_{i}$ can be approximated from $\dot{x}^{i,0}_{i,e}$ by a weighted, Perose-Moore psuedo-inverse of $J^{i,0}_{i,e}$, which is defined as follows:
-		\begin{equation}
-			\dot{q}_{i} \approx \wrap{ \wrap{J^{i,0}_{i,e}}^{T}J^{i,0}_{i,e} + \lambda_{J}I }^{-1} \wrap{J^{i,0}_{i,e}}^{T}\dot{x}^{i,0}_{i,e}
-		\end{equation}
-where $\lambda_{J}>0$ is a weighting that is typically chosen to be much less than 1.
+			Joint velocities required to attain $\dot{x}^{i,0}_{i,e}$ can be computed using $J^{i,0}_{i,e}$. However, since each of BlueFoot's of legs had 4 degrees of freedom, $J^{i,0}_{i,e}$ is rank deficient and $\dot{q}_{i}$ cannot be obtained by direct inversion. Instead, $\dot{q}_{i}$ can be approximated from $\dot{x}^{i,0}_{i,e}$ by a weighted, Penrose-Moore psuedo-inverse of $J^{i,0}_{i,e}$, which is defined as follows:
+		\begin{eqnarray}
+			\dot{q}_{i} &\approx& \sbrack{J^{i,0}_{i,e}}_{\Lambda_{j}}^{\dagger} \dot{x}^{i,0}_{i,e} \nonumber \\
+			\dot{q}_{i} &\approx& \wrap{ \wrap{J^{i,0}_{i,e}}^{T}J^{i,0}_{i,e} + \Lambda_{J} }^{-1} \wrap{J^{i,0}_{i,e}}^{T}\dot{x}^{i,0}_{i,e}
+		\end{eqnarray}
+where $\Lambda_{J}$ is a strictly positive definite weighting that is typically chosen to have 
+		\begin{equation*}
+			\text{det}(\Lambda_{J}) \ll 1.
+		\end{equation*}
+The operator $\sbrack{*}_{\Lambda_{j}}^{\dagger}$ defines a weighted pseudo-inversion off a matrix argument $*$ given a positive-definite weighting matrix $\Lambda_{j}$. A weighted pseudo-inversion is chosen over direct pseuedo-inversion to avoid a non-smooth set of solutions $\dot{q}_{i}$. Degenerate solutions for $\dot{q}_{i}$ for particlar manipulator configurations at which manipulator singularities exist and, thus, $\wrap{\wrap{J^{i,0}_{i,e}}^{T}J^{i,0}_{i,e}}$ is non-invertible.
 
 
 

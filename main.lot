@@ -11,6 +11,9 @@
 \contentsline {table}{\numberline {8}{\ignorespaces Structure of the packets sent from the ODROID to the RM48.\relax }}{22}
 \addvspace {10pt}
 \contentsline {table}{\numberline {9}{\ignorespaces DH parameters for all legs.\relax }}{25}
+\contentsline {table}{\numberline {10}{\ignorespaces Imposed joint limits.\relax }}{29}
+\contentsline {table}{\numberline {11}{\ignorespaces Physical joint limits.\relax }}{29}
+\contentsline {table}{\numberline {12}{\ignorespaces Locations for the platform and feet when in the default stance, written with respect to the frame $O_{b'}$.\relax }}{29}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

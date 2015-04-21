@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  20 APR 2015 16:53
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  21 APR 2015 10:02
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -373,14 +373,8 @@ LaTeX Warning: Label `fig::dev_diagram' multiply defined.
 
 LaTeX Warning: Label `fig::comm_flow' multiply defined.
 
-) (C:\Users\Brian\Desktop\Masters-Thesis\ch4_modeling.aux
-
-LaTeX Warning: Label `eq::world_joint_positions' multiply defined.
-
-
-LaTeX Warning: Label `eq::world_feet_positions' multiply defined.
-
-) (C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.aux
+) (C:\Users\Brian\Desktop\Masters-Thesis\ch4_modeling.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.aux
 
 LaTeX Warning: Label `eq::FootControl' multiply defined.
 
@@ -471,48 +465,12 @@ g data trans-fer rate$[]$Refers
 
 ] (C:\Users\Brian\Desktop\Masters-Thesis\ch1_introduction.tex
 CHAPTER 1
-
-LaTeX Warning: Citation `McGhee1965' on page 1 undefined on input line 11.
-
-
-LaTeX Warning: Citation `Hodgins1991' on page 1 undefined on input line 11.
-
-
-LaTeX Warning: Citation `Altendorfer2001' on page 1 undefined on input line 11.
-
-
-
-LaTeX Warning: Citation `Kolter2008' on page 1 undefined on input line 11.
-
-
-LaTeX Warning: Citation `Fukuoka2003' on page 1 undefined on input line 12.
-
-
-LaTeX Warning: Citation `Estremera2006' on page 1 undefined on input line 12.
-
-
-LaTeX Warning: Citation `BigDog2008' on page 1 undefined on input line 12.
-
-
-LaTeX Warning: Citation `Semini2010_PHD' on page 1 undefined on input line 12.
-
-
-LaTeX Warning: Citation `Rebula2007' on page 1 undefined on input line 14.
-
-
-LaTeX Warning: Citation `Ajallooeian2013' on page 1 undefined on input line 14.
-
-
-
-LaTeX Warning: Citation `Rutishauser2008' on page 1 undefined on input line 14.
-
-
 ) [1
 
 
 ] (C:\Users\Brian\Desktop\Masters-Thesis\ch2_hardware.tex
 CHAPTER 2
-<robot_selfies.png, id=33, 722.7pt x 361.35pt>
+<robot_selfies.png, id=34, 722.7pt x 361.35pt>
 File: robot_selfies.png Graphic file (type png)
  <use robot_selfies.png>
 Package pdftex.def Info: robot_selfies.png used on input line 21.
@@ -522,31 +480,31 @@ Package pdftex.def Info: robot_selfies.png used on input line 21.
 
 
  <C:/Users/Brian/Desktop/Masters-Thesis/robot_selfies.png>] [3]
-<root_full.png, id=43, 1084.05pt x 361.35pt>
+<root_full.png, id=44, 1084.05pt x 361.35pt>
 File: root_full.png Graphic file (type png)
  <use root_full.png>
 Package pdftex.def Info: root_full.png used on input line 60.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
  [4 <C:/Users/Brian/Desktop/Masters-Thesis/root_full.png>]
-<main_full.png, id=48, 1084.05pt x 361.35pt>
+<main_full.png, id=49, 1084.05pt x 361.35pt>
 File: main_full.png Graphic file (type png)
  <use main_full.png>
 Package pdftex.def Info: main_full.png used on input line 73.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
  [5 <C:/Users/Brian/Desktop/Masters-Thesis/main_full.png>]
-<head_full.png, id=53, 1084.05pt x 361.35pt>
+<head_full.png, id=54, 1084.05pt x 361.35pt>
 File: head_full.png Graphic file (type png)
  <use head_full.png>
 Package pdftex.def Info: head_full.png used on input line 87.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
  [6 <C:/Users/Brian/Desktop/Masters-Thesis/head_full.png>]
-<leg.png, id=59, 1084.05pt x 361.35pt>
+<leg.png, id=60, 1084.05pt x 361.35pt>
 File: leg.png Graphic file (type png)
  <use leg.png>
 Package pdftex.def Info: leg.png used on input line 98.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
 
-<sea_full.jpg, id=60, 1129.21875pt x 368.1253pt>
+<sea_full.jpg, id=61, 1129.21875pt x 368.1253pt>
 File: sea_full.jpg Graphic file (type jpg)
  <use sea_full.jpg>
 Package pdftex.def Info: sea_full.jpg used on input line 107.
@@ -557,7 +515,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [7 <C:/Users/Brian/Desktop/Masters-Thesis/leg.png>] [8 <C:/Users/Brian/Desktop/
 Masters-Thesis/sea_full.jpg>] [9] [10] [11]
-<device_diagram.png, id=78, 1084.05pt x 722.7pt>
+<device_diagram.png, id=79, 1084.05pt x 722.7pt>
 File: device_diagram.png Graphic file (type png)
  <use device_diagram.png>
 Package pdftex.def Info: device_diagram.png used on input line 193.
@@ -566,7 +524,7 @@ Package pdftex.def Info: device_diagram.png used on input line 193.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<power_diagram.png, id=79, 1084.05pt x 722.7pt>
+<power_diagram.png, id=80, 1084.05pt x 722.7pt>
 File: power_diagram.png Graphic file (type png)
  <use power_diagram.png>
 Package pdftex.def Info: power_diagram.png used on input line 226.
@@ -589,7 +547,7 @@ CHAPTER 3
 
 
 
-] <process_diagram.png, id=95, 867.24pt x 621.07031pt>
+] <process_diagram.png, id=96, 867.24pt x 621.07031pt>
 File: process_diagram.png Graphic file (type png)
 
 <use process_diagram.png>
@@ -600,7 +558,7 @@ Package pdftex.def Info: process_diagram.png used on input line 57.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [16] [17 <C:/Users/Brian/Desktop/Masters-Thesis/process_diagram.png>] [18]
-<comm_flow.png, id=107, 722.7pt x 469.755pt>
+<comm_flow.png, id=108, 722.7pt x 469.755pt>
 File: comm_flow.png Graphic file (type png)
  <use comm_flow.png>
 Package pdftex.def Info: comm_flow.png used on input line 94.
@@ -611,7 +569,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [21] [22]) [23] (C:\Users\Brian\Desktop\Masters-Thesis\ch4_modeling.tex
 CHAPTER 4
-<coordinate_frames.png, id=124, 722.7pt x 361.35pt>
+<coordinate_frames.png, id=125, 722.7pt x 361.35pt>
 File: coordinate_frames.png Graphic file (type png)
 
 <use coordinate_frames.png>
@@ -626,133 +584,67 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 ] [25 <C:/Users/Brian/Desktop/Masters-Thesis/coordinate_frames.png>]
-[26] [27] [28]
+[26] [27]
 
-LaTeX Warning: Citation `Wieber2006' on page 29 undefined on input line 240.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[29] [30]
+[28] <pos_rom.png, id=144, 578.16pt x 433.62pt>
+File: pos_rom.png Graphic file (type png)
+ <use pos_rom.png>
+Package pdftex.def Info: pos_rom.png used on input line 233.
+(pdftex.def)             Requested size: 214.63977pt x 160.97943pt.
+
+<ori_rom.png, id=145, 578.16pt x 433.62pt>
+File: ori_rom.png Graphic file (type png)
+ <use ori_rom.png>
+Package pdftex.def Info: ori_rom.png used on input line 234.
+(pdftex.def)             Requested size: 214.63977pt x 160.97943pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[29] [30 <C:/Users/Brian/Desktop/Masters-Thesis/pos_rom.png> <C:/Users/Brian/De
+sktop/Masters-Thesis/ori_rom.png>] [31] [32]
 File: coordinate_frames.png Graphic file (type png)
  <use coordinate_frames.png>
-Package pdftex.def Info: coordinate_frames.png used on input line 281.
+Package pdftex.def Info: coordinate_frames.png used on input line 334.
 (pdftex.def)             Requested size: 325.215pt x 162.60599pt.
- [31]
 
-LaTeX Warning: Citation `ODE_Website' on page 32 undefined on input line 288.
-
-<sim_comparison.png, id=155, 578.16pt x 433.62pt>
+[33] <sim_comparison.png, id=165, 578.16pt x 433.62pt>
 File: sim_comparison.png Graphic file (type png)
- <use sim_comparison.png>
-Package pdftex.def Info: sim_comparison.png used on input line 298.
+
+<use sim_comparison.png>
+Package pdftex.def Info: sim_comparison.png used on input line 351.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
-
-[32]) [33] [34 <C:/Users/Brian/Desktop/Masters-Thesis/sim_comparison.png (PNG c
-opy)>] (C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.tex
+ [34]) [35 <C:/Users/Brian/Desktop/Masters-Thesis/sim_comparison.png (PNG copy)
+>] [36]
+(C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.tex
 CHAPTER 5
-
-LaTeX Warning: Citation `Matsuoka1985' on page 35 undefined on input line 8.
-
-
-LaTeX Warning: Citation `Collins1993' on page 35 undefined on input line 8.
-
-
-LaTeX Warning: Citation `Endo2004' on page 35 undefined on input line 8.
-
-
-LaTeX Warning: Citation `Righetti2006' on page 35 undefined on input line 8.
-
-
-LaTeX Warning: Citation `Ijspeert2008' on page 35 undefined on input line 8.
-
-
-LaTeX Warning: Citation `Matos2010' on page 35 undefined on input line 8.
-
-
-LaTeX Warning: Citation `Ajallooeian2013' on page 35 undefined on input line 8.
+[37
 
 
 
-LaTeX Warning: Citation `Park2014' on page 35 undefined on input line 8.
+] [38] [39]
 
+LaTeX Warning: Reference `eq:cpg_modulations' on page 40 undefined on input lin
+e 100.
 
-LaTeX Warning: Citation `Fukuoka2015' on page 35 undefined on input line 8.
-
-
-LaTeX Warning: Citation `Wieber2015' on page 35 undefined on input line 8.
-
-
-LaTeX Warning: Citation `Fukuoka2003' on page 35 undefined on input line 10.
-
-
-LaTeX Warning: Citation `Endo2004' on page 35 undefined on input line 10.
-
-
-LaTeX Warning: Citation `Ijspeert2008' on page 35 undefined on input line 19.
-
-
-LaTeX Warning: Citation `Collins1993' on page 35 undefined on input line 19.
-
-[35
-
-
-
-]
-
-LaTeX Warning: Citation `Righetti2006' on page 36 undefined on input line 26.
-
-
-LaTeX Warning: Citation `Castro2008' on page 36 undefined on input line 26.
-
-
-LaTeX Warning: Citation `Li2014' on page 36 undefined on input line 26.
-
-[36]
-
-LaTeX Warning: Reference `eq:CPGModulation' on page 37 undefined on input line 
-63.
-
-
-LaTeX Warning: Citation `Matos2010' on page 37 undefined on input line 65.
-
-[37]
-
-LaTeX Warning: Reference `fig:CPGInPhase' on page 38 undefined on input line 77
-.
-
-
-LaTeX Warning: Reference `fig:CPGInTime' on page 38 undefined on input line 77.
-
-
-
-LaTeX Warning: Reference `eq:CPGMain' on page 38 undefined on input line 77.
-
-
-LaTeX Warning: Reference `eq:CPGModulation' on page 38 undefined on input line 
-77.
-
-
-LaTeX Warning: Citation `Rutishauser2008' on page 38 undefined on input line 77
-.
-
-
-LaTeX Warning: Reference `fig::cpg_phase3_45' on page 38 undefined on input lin
-e 104.
-
-<cpg_phase2_45.png, id=176, 867.24pt x 433.62pt>
+[40] <cpg_phase2_45.png, id=189, 867.24pt x 433.62pt>
 File: cpg_phase2_45.png Graphic file (type png)
  <use cpg_phase2_45.png>
-Package pdftex.def Info: cpg_phase2_45.png used on input line 107.
+Package pdftex.def Info: cpg_phase2_45.png used on input line 144.
 (pdftex.def)             Requested size: 433.62pt x 216.80946pt.
 
-<cpg_phase4_45.png, id=177, 867.24pt x 433.62pt>
+<cpg_phase4_45.png, id=190, 867.24pt x 433.62pt>
 File: cpg_phase4_45.png Graphic file (type png)
  <use cpg_phase4_45.png>
-Package pdftex.def Info: cpg_phase4_45.png used on input line 113.
+Package pdftex.def Info: cpg_phase4_45.png used on input line 150.
 (pdftex.def)             Requested size: 433.62pt x 216.80946pt.
 
-<cpg_transition.png, id=178, 578.16pt x 433.62pt>
+<cpg_transition.png, id=191, 578.16pt x 433.62pt>
 File: cpg_transition.png Graphic file (type png)
  <use cpg_transition.png>
-Package pdftex.def Info: cpg_transition.png used on input line 119.
+Package pdftex.def Info: cpg_transition.png used on input line 156.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
 
 
@@ -762,210 +654,154 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Reference `eq:CPGMain' on page 41 undefined on input line 166.
 
+[41 <C:/Users/Brian/Desktop/Masters-Thesis/cpg_phase2_45.png (PNG copy)>]
 
-LaTeX Warning: Reference `eq:CPGMain' on page 38 undefined on input line 129.
+LaTeX Warning: Text page 42 contains only floats.
 
-[38] [39 <C:/Users/Brian/Desktop/Masters-Thesis/cpg_phase2_45.png (PNG copy)> <
-C:/Users/Brian/Desktop/Masters-Thesis/cpg_phase4_45.png (PNG copy)>]
-<virtual_foothold.png, id=185, 722.7pt x 361.35pt>
+[42 <C:/Users/Brian/Desktop/Masters-Thesis/cpg_phase4_45.png (PNG copy)> <C:/Us
+ers/Brian/Desktop/Masters-Thesis/cpg_transition.png (PNG copy)>]
+<virtual_foothold.png, id=199, 722.7pt x 361.35pt>
 File: virtual_foothold.png Graphic file (type png)
  <use virtual_foothold.png>
-Package pdftex.def Info: virtual_foothold.png used on input line 140.
+Package pdftex.def Info: virtual_foothold.png used on input line 177.
 (pdftex.def)             Requested size: 325.215pt x 162.60599pt.
-
-[40 <C:/Users/Brian/Desktop/Masters-Thesis/cpg_transition.png (PNG copy)>]
-[41 <C:/Users/Brian/Desktop/Masters-Thesis/virtual_foothold.png>]
-
-LaTeX Warning: Citation `Kajita2003' on page 42 undefined on input line 170.
-
-
-LaTeX Warning: Citation `Katie2009' on page 42 undefined on input line 170.
-
-
-LaTeX Warning: Citation `Takanishi1989' on page 42 undefined on input line 170.
-
-
-
-LaTeX Warning: Citation `Kurazume2003' on page 42 undefined on input line 170.
-
-
-LaTeX Warning: Citation `Kurazume2003' on page 42 undefined on input line 172.
-
-[42]
-
-LaTeX Warning: Reference `sec::system_linematics' on page 43 undefined on input
- line 190.
-
-[43] <tipping_robot.png, id=200, 650.43pt x 433.62pt>
-File: tipping_robot.png Graphic file (type png)
- <use tipping_robot.png>
-Package pdftex.def Info: tipping_robot.png used on input line 240.
-(pdftex.def)             Requested size: 346.89731pt x 231.26651pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[44]
+[43] [44 <C:/Users/Brian/Desktop/Masters-Thesis/virtual_foothold.png>]
 
-LaTeX Warning: Citation `Tsungnan1996' on page 45 undefined on input line 250.
+LaTeX Warning: Reference `sec::system_linematics' on page 45 undefined on input
+ line 227.
 
+[45] [46] <tipping_robot.png, id=213, 650.43pt x 433.62pt>
+File: tipping_robot.png Graphic file (type png)
 
-LaTeX Warning: Citation `ChenBillings1990' on page 45 undefined on input line 2
-50.
-
-
-LaTeX Warning: Citation `Hihi1996' on page 45 undefined on input line 250.
-
-
-LaTeX Warning: Citation `Billings2013' on page 45 undefined on input line 250.
-
-
-LaTeX Warning: Citation `Nelles2001' on page 45 undefined on input line 250.
-
-[45 <C:/Users/Brian/Desktop/Masters-Thesis/tipping_robot.png>]
-
-LaTeX Warning: Citation `Rumelhart1988' on page 46 undefined on input line 254.
-
-
-
-LaTeX Warning: Citation `Rumelhart1995' on page 46 undefined on input line 254.
-
-
-
-LaTeX Warning: Citation `Rojas1996ch7' on page 46 undefined on input line 254.
-
-[46] <narx_network_diagram.png, id=210, 650.43pt x 433.62pt>
+<use tipping_robot.png>
+Package pdftex.def Info: tipping_robot.png used on input line 277.
+(pdftex.def)             Requested size: 346.89731pt x 231.26651pt.
+ [47 <C:/Users/Brian/Desktop/Masters-Thesis/tipping_robot.png>] [48] <narx_netw
+ork_diagram.png, id=221, 650.43pt x 433.62pt>
 File: narx_network_diagram.png Graphic file (type png)
 
 <use narx_network_diagram.png>
-Package pdftex.def Info: narx_network_diagram.png used on input line 297.
+Package pdftex.def Info: narx_network_diagram.png used on input line 334.
 (pdftex.def)             Requested size: 433.62pt x 289.0881pt.
- [47 <C:/Users/Brian/Desktop/Masters-Thesis/narx_network_diagram.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 341.
+ [49] [50 <C:/Users/Brian/Desktop/Masters-Thesis/narx_network_diagram.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 378.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 341.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 378.
+ [51]
 
+LaTeX Warning: Reference `eq::joint_dynamics' on page 52 undefined on input lin
+e 429.
 
-LaTeX Warning: Citation `Battiti1992' on page 48 undefined on input line 346.
-
-
-LaTeX Warning: Citation `Magoulas1999' on page 48 undefined on input line 346.
-
-[48] [49]
-
-LaTeX Warning: Reference `eq::joint_dynamics' on page 50 undefined on input lin
-e 392.
-
-<controller_diagram.png, id=222, 650.43pt x 433.62pt>
+[52] <controller_diagram.png, id=235, 650.43pt x 433.62pt>
 File: controller_diagram.png Graphic file (type png)
 
 <use controller_diagram.png>
-Package pdftex.def Info: controller_diagram.png used on input line 407.
+Package pdftex.def Info: controller_diagram.png used on input line 444.
 (pdftex.def)             Requested size: 433.62pt x 289.0881pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[50] <aux_V_100mms_nN_50_nL_2_nns.png, id=226, 578.16pt x 433.62pt>
+ [53 <C:/Users/Brian/Desktop/Masters-Thesis/controller_diagram.png>]
+<aux_V_100mms_nN_50_nL_2_nns.png, id=239, 578.16pt x 433.62pt>
 File: aux_V_100mms_nN_50_nL_2_nns.png Graphic file (type png)
 
 <use aux_V_100mms_nN_50_nL_2_nns.png>
-Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_nns.png used on input line 419
+Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_nns.png used on input line 456
 .
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<alpha0125_V_60mms_nN_50_nL_2_pos.png, id=227, 578.16pt x 433.62pt>
+<alpha0125_V_60mms_nN_50_nL_2_pos.png, id=240, 578.16pt x 433.62pt>
 File: alpha0125_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use alpha0125_V_60mms_nN_50_nL_2_pos.png>
 Package pdftex.def Info: alpha0125_V_60mms_nN_50_nL_2_pos.png used on input lin
-e 425.
+e 462.
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
-<alpha0250_V_60mms_nN_50_nL_2_pos.png, id=228, 578.16pt x 433.62pt>
+<alpha0250_V_60mms_nN_50_nL_2_pos.png, id=241, 578.16pt x 433.62pt>
 File: alpha0250_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use alpha0250_V_60mms_nN_50_nL_2_pos.png>
 Package pdftex.def Info: alpha0250_V_60mms_nN_50_nL_2_pos.png used on input lin
-e 431.
+e 468.
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
-<alpha0350_V_60mms_nN_50_nL_2_pos.png, id=229, 578.16pt x 433.62pt>
+<alpha0350_V_60mms_nN_50_nL_2_pos.png, id=242, 578.16pt x 433.62pt>
 File: alpha0350_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use alpha0350_V_60mms_nN_50_nL_2_pos.png>
 Package pdftex.def Info: alpha0350_V_60mms_nN_50_nL_2_pos.png used on input lin
-e 437.
+e 474.
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
-<aux_V_80mms_nN_50_nL_2_pos.png, id=230, 578.16pt x 433.62pt>
+<aux_V_80mms_nN_50_nL_2_pos.png, id=243, 578.16pt x 433.62pt>
 File: aux_V_80mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use aux_V_80mms_nN_50_nL_2_pos.png>
-Package pdftex.def Info: aux_V_80mms_nN_50_nL_2_pos.png used on input line 443.
+Package pdftex.def Info: aux_V_80mms_nN_50_nL_2_pos.png used on input line 480.
 
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<aux_V_100mms_nN_50_nL_2_pos.png, id=231, 578.16pt x 433.62pt>
+<aux_V_100mms_nN_50_nL_2_pos.png, id=244, 578.16pt x 433.62pt>
 File: aux_V_100mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use aux_V_100mms_nN_50_nL_2_pos.png>
-Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_pos.png used on input line 449
+Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_pos.png used on input line 486
 .
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [51 <C:/Users/Brian/Desktop/Masters-Thesis/controller_diagram.png>] [52 <C:/U
-sers/Brian/Desktop/Masters-Thesis/aux_V_100mms_nN_50_nL_2_nns.png (PNG copy)> <
-C:/Users/Brian/Desktop/Masters-Thesis/alpha0125_V_60mms_nN_50_nL_2_pos.png (PNG
- copy)>] [53 <C:/Users/Brian/Desktop/Masters-Thesis/alpha0250_V_60mms_nN_50_nL_
-2_pos.png (PNG copy)> <C:/Users/Brian/Desktop/Masters-Thesis/alpha0350_V_60mms_
-nN_50_nL_2_pos.png (PNG copy)>] [54 <C:/Users/Brian/Desktop/Masters-Thesis/aux_
-V_80mms_nN_50_nL_2_pos.png (PNG copy)> <C:/Users/Brian/Desktop/Masters-Thesis/a
-ux_V_100mms_nN_50_nL_2_pos.png (PNG copy)>]
+) [54] [55 <C:/Users/Brian/Desktop/Masters-Thesis/aux_V_100mms_nN_50_nL_2_nns.p
+ng (PNG copy)> <C:/Users/Brian/Desktop/Masters-Thesis/alpha0125_V_60mms_nN_50_n
+L_2_pos.png (PNG copy)>] [56 <C:/Users/Brian/Desktop/Masters-Thesis/alpha0250_V
+_60mms_nN_50_nL_2_pos.png (PNG copy)> <C:/Users/Brian/Desktop/Masters-Thesis/al
+pha0350_V_60mms_nN_50_nL_2_pos.png (PNG copy)>] [57 <C:/Users/Brian/Desktop/Mas
+ters-Thesis/aux_V_80mms_nN_50_nL_2_pos.png (PNG copy)> <C:/Users/Brian/Desktop/
+Masters-Thesis/aux_V_100mms_nN_50_nL_2_pos.png (PNG copy)>]
 (C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.tex
 CHAPTER 6
-[55
+[58
 
 
 
 ]
 
-LaTeX Warning: Citation `ArambulaCosio2004' on page 56 undefined on input line 
+LaTeX Warning: Citation `ArambulaCosio2004' on page 59 undefined on input line 
 30.
 
-[56] <potential_function.png, id=251, 578.16pt x 433.62pt>
+[59] <potential_function.png, id=264, 578.16pt x 433.62pt>
 File: potential_function.png Graphic file (type png)
 
 <use potential_function.png>
 Package pdftex.def Info: potential_function.png used on input line 53.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
 
-<potential_field_full.png, id=252, 1084.05pt x 903.375pt>
+<potential_field_full.png, id=265, 1084.05pt x 903.375pt>
 File: potential_field_full.png Graphic file (type png)
 
 <use potential_field_full.png>
 Package pdftex.def Info: potential_field_full.png used on input line 68.
 (pdftex.def)             Requested size: 433.62pt x 361.3436pt.
- [57] [58 <C:/Users/Brian/Desktop/Masters-Thesis/potential_function.png (PNG co
-py)>] [59 <C:/Users/Brian/Desktop/Masters-Thesis/potential_field_full.png>] [60
-] [61]
-<terrain_pcd3_cleaned.png, id=270, 757.32938pt x 723.20187pt>
+ [60] [61 <C:/Users/Brian/Desktop/Masters-Thesis/potential_function.png (PNG co
+py)>] [62 <C:/Users/Brian/Desktop/Masters-Thesis/potential_field_full.png>] [63
+] [64]
+<terrain_pcd3_cleaned.png, id=283, 757.32938pt x 723.20187pt>
 File: terrain_pcd3_cleaned.png Graphic file (type png)
 
 <use terrain_pcd3_cleaned.png>
@@ -975,33 +811,47 @@ Package pdftex.def Info: terrain_pcd3_cleaned.png used on input line 151.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<terrain_grad_crop.png, id=271, 514.3215pt x 263.3037pt>
+<terrain_grad_crop.png, id=284, 514.3215pt x 263.3037pt>
 File: terrain_grad_crop.png Graphic file (type png)
 
 <use terrain_grad_crop.png>
 Package pdftex.def Info: terrain_grad_crop.png used on input line 162.
 (pdftex.def)             Requested size: 433.62pt x 221.98917pt.
- <terrain_4545.png, id=272, 578.16pt x 433.62pt>
+ <terrain_4545.png, id=285, 578.16pt x 433.62pt>
 File: terrain_4545.png Graphic file (type png)
 
 <use terrain_4545.png>
 Package pdftex.def Info: terrain_4545.png used on input line 168.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
- [62]
+ [65]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [63 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_pcd3_cleaned.png>]
-[64 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_grad_crop.png> <C:/Users/Bri
+) [66 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_pcd3_cleaned.png>]
+[67 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_grad_crop.png> <C:/Users/Bri
 an/Desktop/Masters-Thesis/terrain_4545.png (PNG copy)>]
 (C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.tex
 CHAPTER 7
-) [65
+) [68
 
 
 
-]
-No file main.bbl.
+] (C:\Users\Brian\Desktop\Masters-Thesis\main.bbl
+Missing character: There is no Å in font cmr12!
+Missing character: There is no „ in font cmr12!
+Missing character: There is no Å in font cmr12!
+Missing character: There is no „ in font cmr12!
+Missing character: There is no â in font cmti12!
+Missing character: There is no € in font cmti12!
+Missing character: There is no “ in font cmti12!
+ [69
+
+] [70]
+Missing character: There is no Å in font cmr12!
+Missing character: There is no ™ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no  in font cmr12!
+ [71]) [72]
 (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
 (C:\Users\Brian\Desktop\Masters-Thesis\vita.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\publications.aux)
@@ -1022,10 +872,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4668 strings out of 493921
- 72335 string characters out of 3144877
- 148468 words of memory out of 3000000
- 7797 multiletter control sequences out of 15000+200000
+ 4685 strings out of 493921
+ 72661 string characters out of 3144877
+ 151682 words of memory out of 3000000
+ 7810 multiletter control sequences out of 15000+200000
  13313 words of font info for 49 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  46i,16n,42p,1687b,277s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1042,9 +892,9 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (72 pages, 6589117 bytes).
+Output written on main.pdf (79 pages, 6640648 bytes).
 PDF statistics:
- 330 PDF objects out of 1000 (max. 8388607)
+ 358 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 151 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
