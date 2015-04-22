@@ -14,13 +14,14 @@
 		BlueFoot's base navigation and obstacle avoidance algorithm involves a potential fields-based approach which fuses LIDAR data and features from processed camera images. This algorithm is essentially used as a ``wandering" mechanism which would normally be employed as a first-level navigation measure in an unknown environment when no information (\EG map data) is known by the robot \emph{apriori}. Camera features are used in conjunction with LIDAR scans for the purpose of assigning trackable targets, which are particularly useful for the purpose of avoid local minima faced with navigating via a potential-fields approach alone. These targets are used to \emph{attract} the robot platform towards the target location. Notably, the total navigation approach to be described uses only 2D LIDAR data (does not take into account features of terrain) and is thus most fit for navigation over flatland.
 
 		\subsection{LIDAR-based Potential-Fields Algorithm}
-			The LIDAR-base portion of this algorithm takes sequential, planar LIDAR scans as an input and generates an output in the form of a vectored navigation command, $\vec{V}_{L}^{r}\in \Re^{3}$, relative to the world frame, $O_{0}$, as defined in Section~\ref{ch::system_modeling_pos_kin}. Each point from a LIDAR scan is mapped to a corresponding scalar \emph{potential} which is used to influence the direction of the newly generated command. Given a LIDAR scan $S$ with 2D scan points, $x_{i}^{L}\in\emph{S}^{L}$, relative to the LIDARs local coordinate frame $O_{L}$, an output command vector is generated using a potential function $\{ f(x) : \Re^{3}\rightarrow \Re^{1} \}$, and a biasing function, $\{ g(x,\psi) : \Re^{3}\rightarrow \Re^{1} \}$, as follows:
+			The LIDAR-base portion of this algorithm takes sequential, planar LIDAR scans as an input and generates a set of navigation outputs, $\vec{u}^{r}_{L} \in \Re^{3}$, which represents a direction of travel relative to the world frame, $O_{0}$, and $p_{L}$, which represents a total positive potential . Each point from a LIDAR scan is mapped to a corresponding scalar \emph{potential} which is used to influence the direction of the newly generated command. Given a LIDAR scan $S$ with 2D scan points, $x_{i}^{L}\in\emph{S}^{L}$, relative to the LIDARs local coordinate frame $O_{L}$, an output command vector is generated using a potential function $\{ f(x) : \Re^{3}\rightarrow \Re^{1} \}$, and a biasing function, $\{ g(x,\psi) : \Re^{3}\rightarrow \Re^{1} \}$, as follows:
 				\begin{eqnarray}
 				x_{i}  &=& P_{ \vec{z} } \wrap{ H_{b}^{0} H_{L}^{b} \Gamma_{L} x_{i}^{L} } \nonumber\\
 				\bar{x}_{b,i} &=&  x_{i}-p_{b} \nonumber \\
-				\vec{V}_{c} &=& \alpha_{c} \wrap{\sum_{x_{i}\in \emph{S}} |f(\bar{x}_{b,i})|_{1}}^{-1}  \wrap{ \sum_{x_{i} \in \emph{S}} g( \bar{x}_{b,i},\psi)  f( \bar{x}_{b,i} ) \frac{\bar{x}_{b,i}}{\norm{\bar{x}_{b,i}}} }
+				\vec{u}^{r}_{L} &=&  \wrap{ \sum_{x_{i} \in \emph{S}} g( \bar{x}_{b,i},\psi)  f( \bar{x}_{b,i} ) \frac{\bar{x}_{b,i}}{\norm{\bar{x}_{b,i}}} } \nonumber \\
+				p_{L} & = & \alpha_{p}\sum_{x_{i} \in \emph{S}} g( \bar{x}_{b,i},\psi)  f( \bar{x}_{b,i} ) U\wrap{f( \bar{x}_{b,i} )}
 				\end{eqnarray}
-			where $H_{b}^{0}$ defines a homogeneous transformation between $O_{0}$ and $O_{b}$; $H_{L}^{b}$ defines a homogeneous transformation which relates the LIDAR sensors pose to the frame $O_{b}$; $\emph{S}\subset \Re^{3}$ is the set of newly transformed points, $x_{i} \in \emph{S}$ which respect the current LIDAR scan in the world coordinate system; $\alpha_{c}$ is a scalar tuning parameter; and 
+			where $H_{b}^{0}$ defines a homogeneous transformation between $O_{0}$ and $O_{b}$; $H_{L}^{b}$ defines a homogeneous transformation which relates the LIDAR sensors pose to the frame $O_{b}$; $\emph{S}\subset \Re^{3}$ is the set of newly transformed points, $x_{i} \in \emph{S}$ which respect the current LIDAR scan in the world coordinate system; $\alpha_{p}$ is a scalar tuning parameter; and 
 				\begin{equation*}
 					\Gamma_{L} = \sbrack{ I_{2\times2}, 0_{2\times1} }^{T}.
 				\end{equation*}
@@ -31,12 +32,12 @@
 					\Delta d &\equiv& \norm{x}-d_{min} \nonumber \\
 					f(x) &=& 
 					\begin{cases}	
-					 	\wrap{\Delta d} \lambda_{c,1} - f_{bias}	&  \text{if } \Delta d < 0 \\
+					 	 -\lambda_{c,1} \wrap{\Delta d}^{2} &  \text{if } \Delta d < 0 \\
 						\wrap{\Delta d} \wrap{ 1  - e^{ -  \lambda_{c,2} { \wrap{\Delta d} }^{2} } } 	&  \text{else}
 					\end{cases}
 				\label{eq::min_dis_potential_function}
 				\end{eqnarray}
-			where $\lambda_{c,1}>0$ and $\lambda_{c,2}>0$ are tuning parameters used to specify the output range and sensitivity of the potential function output with respect to $\Delta d$, respectively; and $f_{bias}>0$ is a constant biasing force employed when the potential function is working in the repulsive range (\IE $\Delta d < 0$). It can be observed that this potential function exhibits $f(x)<0$ when $\norm{x} < d_{min}$ and vice-verse, thus achieves the desired attractive/repulsive characteristics. Namely, this potential function favors points which are generally much further away from the robot, and applies \emph{strong} repulsive forces only when obstacles come within a close range with the platform. These characteristics offer a higher propensity for exploration when the area being navigated is very spacious with few obstacles in view (but at mid range), while encouraging \emph{tight} navigation around potential obstacles. This typically advantageous when obstacles are close together, such as a floating object near a wall, as the robot is less likely to move toward another obstacle in the process of averting another.  
+			where $\lambda_{c,1}>0$ and $\lambda_{c,2}>0$ are tuning parameters used to specify the output range and sensitivity of the potential function output with respect to $\Delta d$, respectively. It can be observed that this potential function exhibits $f(x)<0$ when $\norm{x} < d_{min}$ and vice-verse, thus achieves the desired attractive/repulsive characteristics. Namely, this potential function favors points which are generally much further away from the robot, and applies \emph{strong} repulsive forces only when obstacles come within a close range with the platform. These characteristics offer a higher propensity for exploration when the area being navigated is very spacious with few obstacles in view (but at mid range), while encouraging \emph{tight} navigation around potential obstacles. This typically advantageous when obstacles are close together, such as a floating object near a wall, as the robot is less likely to move toward another obstacle in the process of averting another.  
 
 			The biasing function $g(x,\psi)$ is used to weight the effect of individual scan-point potentials, $f(x_{i}-p_{b})$, on the final navigation output, with respect to the angular-window parameter $\psi>0$. A simple masking-type biasing function is used in BlueFoot's navigation function, which is formally defined as follows:
 				\begin{equation}
@@ -57,8 +58,8 @@
 
 			Finally, the command vector $\vec{V}_{L}^{r}$ is transformed into scalar forward and turning rate commands, ${v}_{L}^{r}$ and $\omega_{L}^{r}$, respectively, by the following proportional control scheme:
 				\begin{eqnarray}
-					\theta_{L}^{r} 			&=& \tan^{-1}\wrap{ \frac{\vec{V}_{c,2}^{L} }{\vec{V}_{c,1}^{L}} } \nonumber\\
-					\dot{v}_{L}^{r} 			&=& \beta_{v} \wrap{ \norm{ \vec{V}_{L}^{r} } - v_{L}^{r} } \nonumber \\
+					\theta_{L}^{r} 			&=& \tan^{-1}\wrap{ \frac{(\vec{u}^{r}_{L})_{2} }{(\vec{u}^{r}_{L})_{1}} } \nonumber\\
+					\dot{v}_{L}^{r} 			&=& \beta_{v} \wrap{ p_{L} - v_{L}^{r} } \nonumber \\
 					\dot{\omega}_{L}^{r} 	&=& \beta_{\omega} \wrap{ \wrap{ \frac{ \omega_{L}^{r,max} }{\pi} } \wrap{  \theta_{L}^{r} - \theta_{b,z} } - \omega_{L}^{r} }
 				\end{eqnarray}
 			where $\beta_{v}$ and $\beta_{\omega}$ are proportional-gain tuning parameters; and $\theta_{b,z}$ is the platforms yaw in $O_{0}$. The parameters $\beta_{v}$ and $\beta_{\omega}$ can be viewed as ``update-inertias," as they directly effect the influence of the effect of instantaneous commands on the forward velocity and turning rate of the robot. Furthermore, these gains can be used to low-pass navigation updates to remove jitter cause by command outliers generated from degenerate sensor readings.

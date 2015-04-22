@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  22 APR 2015 13:21
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  22 APR 2015 16:02
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -478,12 +478,7 @@ ra-tion \OT1/cmr/m/it/12 (left)\OT1/cmr/m/n/12 ; stereo-
 
 [3
 
-]
-
-LaTeX Warning: Reference `fig::narx100_a35' on page 56 undefined on input line 
-29.
-
-)
+])
 \tf@lof=\write4
  [4] (C:\Users\Brian\Desktop\Masters-Thesis\main.lot
 Overfull \hbox (21.53992pt too wide) in paragraph at lines 4--4
@@ -823,14 +818,14 @@ CHAPTER 6
 File: potential_function.png Graphic file (type png)
 
 <use potential_function.png>
-Package pdftex.def Info: potential_function.png used on input line 52.
+Package pdftex.def Info: potential_function.png used on input line 53.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
 
 <potential_field_full.png, id=275, 1084.05pt x 903.375pt>
 File: potential_field_full.png Graphic file (type png)
 
 <use potential_field_full.png>
-Package pdftex.def Info: potential_field_full.png used on input line 71.
+Package pdftex.def Info: potential_field_full.png used on input line 72.
 (pdftex.def)             Requested size: 433.62pt x 361.3436pt.
 
 
@@ -845,20 +840,20 @@ y)>] [64 <C:/Users/Brian/Desktop/Masters-Thesis/potential_field_full.png>]
 File: terrain_pcd3_cleaned.png Graphic file (type png)
 
 <use terrain_pcd3_cleaned.png>
-Package pdftex.def Info: terrain_pcd3_cleaned.png used on input line 161.
+Package pdftex.def Info: terrain_pcd3_cleaned.png used on input line 162.
 (pdftex.def)             Requested size: 433.62pt x 414.08325pt.
  [67]
 <terrain_grad_crop.png, id=297, 514.3215pt x 263.3037pt>
 File: terrain_grad_crop.png Graphic file (type png)
 
 <use terrain_grad_crop.png>
-Package pdftex.def Info: terrain_grad_crop.png used on input line 172.
+Package pdftex.def Info: terrain_grad_crop.png used on input line 173.
 (pdftex.def)             Requested size: 433.62pt x 221.98917pt.
  <terrain_4545.png, id=298, 578.16pt x 433.62pt>
 File: terrain_4545.png Graphic file (type png)
 
 <use terrain_4545.png>
-Package pdftex.def Info: terrain_4545.png used on input line 178.
+Package pdftex.def Info: terrain_4545.png used on input line 179.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
  [68 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_pcd3_cleaned.png>]
 
@@ -958,7 +953,7 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (86 pages, 10932291 bytes).
+Output written on main.pdf (86 pages, 10931849 bytes).
 PDF statistics:
  383 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
