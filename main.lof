@@ -1,43 +1,43 @@
 \addvspace {10pt}
 \contentsline {figure}{\numberline {1}{\ignorespaces The BlueFoot Quadruped Robot\relax }}{1}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {2}{\ignorespaces The BlueFoot Quadruped Robot: single-camera configuration \emph {(left)}; stereo-camera configuration \emph {(right)}\relax }}{3}
-\contentsline {figure}{\numberline {3}{\ignorespaces Root section of trunk. Call-out in top-right shows main-switch access through the bottom of the root module.\relax }}{5}
-\contentsline {figure}{\numberline {4}{\ignorespaces Main section of trunk. Call-out in the top-right shows how the ODROID-XU and AutoPilot computers fit within the module.\relax }}{6}
-\contentsline {figure}{\numberline {5}{\ignorespaces Head section of trunk. Monocular camera configuration with Hokuyo-URG \emph {(left)}; and Stereo configuration with PLDS \emph {(right)}. \relax }}{7}
-\contentsline {figure}{\numberline {6}{\ignorespaces Closeup of BlueFoot's leg. \emph {(left)} shows effective link lengths and the location of defined joint positions.\relax }}{8}
-\contentsline {figure}{\numberline {7}{\ignorespaces Series elastic brackets.\relax }}{9}
-\contentsline {figure}{\numberline {8}{\ignorespaces BlueFoot device networking diagram.\relax }}{13}
-\contentsline {figure}{\numberline {9}{\ignorespaces BlueFoot power routing.\relax }}{15}
+\contentsline {figure}{\numberline {2}{\ignorespaces The BlueFoot Quadruped Robot: single-camera configuration \emph {(left)}; stereo-camera configuration \emph {(right)}\relax }}{5}
+\contentsline {figure}{\numberline {3}{\ignorespaces Root section of trunk. Call-out in top-right shows main-switch access through the bottom of the root module.\relax }}{7}
+\contentsline {figure}{\numberline {4}{\ignorespaces Main section of trunk. Call-out in the top-right shows how the ODROID-XU and AutoPilot computers fit within the module.\relax }}{8}
+\contentsline {figure}{\numberline {5}{\ignorespaces Head section of trunk. Monocular camera configuration with Hokuyo-URG \emph {(left)}; and Stereo configuration with PLDS \emph {(right)}. \relax }}{9}
+\contentsline {figure}{\numberline {6}{\ignorespaces Closeup of BlueFoot's leg. \emph {(left)} shows effective link lengths and the location of defined joint positions.\relax }}{10}
+\contentsline {figure}{\numberline {7}{\ignorespaces Series elastic brackets.\relax }}{11}
+\contentsline {figure}{\numberline {8}{\ignorespaces BlueFoot device networking diagram.\relax }}{15}
+\contentsline {figure}{\numberline {9}{\ignorespaces BlueFoot power routing.\relax }}{17}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {10}{\ignorespaces BlueFoot's main processes and their relationships.\relax }}{18}
-\contentsline {figure}{\numberline {11}{\ignorespaces Communication flow between processors on the BlueFoot Platform.\relax }}{21}
-\contentsline {figure}{\numberline {12}{\ignorespaces BlueFoot ground-station GUI\relax }}{24}
+\contentsline {figure}{\numberline {10}{\ignorespaces BlueFoot's main processes and their relationships.\relax }}{20}
+\contentsline {figure}{\numberline {11}{\ignorespaces Communication flow between processors on the BlueFoot Platform.\relax }}{23}
+\contentsline {figure}{\numberline {12}{\ignorespaces BlueFoot ground-station GUI\relax }}{26}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {13}{\ignorespaces A visualization of BlueFoot's coordinate frame configuration.\relax }}{26}
-\contentsline {figure}{\numberline {14}{\ignorespaces Range of motion for body's planar position (\emph {left}) and body pitch and roll (\emph {right}) while in the default stance.\relax }}{31}
-\contentsline {figure}{\numberline {15}{\ignorespaces Coordinate frame setup.\relax }}{34}
-\contentsline {figure}{\numberline {16}{\ignorespaces Joint position comparison between the simulated and real quadruped while performing a gait which achieves a forward velocity of $60\frac {mm}{s}$\relax }}{36}
+\contentsline {figure}{\numberline {13}{\ignorespaces A visualization of BlueFoot's coordinate frame configuration.\relax }}{28}
+\contentsline {figure}{\numberline {14}{\ignorespaces Range of motion for body's planar position (\emph {left}) and body pitch and roll (\emph {right}) while in the default stance.\relax }}{33}
+\contentsline {figure}{\numberline {15}{\ignorespaces Coordinate frame setup.\relax }}{36}
+\contentsline {figure}{\numberline {16}{\ignorespaces Joint position comparison between the simulated and real quadruped while performing a gait which achieves a forward velocity of $60\frac {mm}{s}$\relax }}{38}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {17}{\ignorespaces CPG output and phase plots for a two-paced gait over two gait cycles.\relax }}{42}
-\contentsline {figure}{\numberline {18}{\ignorespaces CPG output and phase plots for a two-paced gait over two gait cycles.\relax }}{43}
-\contentsline {figure}{\numberline {19}{\ignorespaces CPG output transition during four-pace to two-pace gait switch.\relax }}{43}
-\contentsline {figure}{\numberline {20}{\ignorespaces Virtual foothold representation. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.\relax }}{45}
-\contentsline {figure}{\numberline {21}{\ignorespaces Quadruped tipping about planted feet. \relax }}{48}
-\contentsline {figure}{\numberline {22}{\ignorespaces Parallel NARX-network model with a linear output layer.\relax }}{51}
-\contentsline {figure}{\numberline {23}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.\relax }}{55}
-\contentsline {figure}{\numberline {24}{\ignorespaces NARX Network MSE convergence for trial shown in Figure 29\hbox {}\relax }}{56}
-\contentsline {figure}{\numberline {25}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.125$.\relax }}{57}
-\contentsline {figure}{\numberline {26}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.250$.\relax }}{57}
-\contentsline {figure}{\numberline {27}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.350$.\relax }}{58}
-\contentsline {figure}{\numberline {28}{\ignorespaces Trunk orientation during 80 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{58}
-\contentsline {figure}{\numberline {29}{\ignorespaces Trunk orientation during 100 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{59}
+\contentsline {figure}{\numberline {17}{\ignorespaces CPG output and phase plots for a two-paced gait over two gait cycles.\relax }}{44}
+\contentsline {figure}{\numberline {18}{\ignorespaces CPG output and phase plots for a two-paced gait over two gait cycles.\relax }}{45}
+\contentsline {figure}{\numberline {19}{\ignorespaces CPG output transition during four-pace to two-pace gait switch.\relax }}{45}
+\contentsline {figure}{\numberline {20}{\ignorespaces Virtual foothold representation. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.\relax }}{47}
+\contentsline {figure}{\numberline {21}{\ignorespaces Quadruped tipping about planted feet. \relax }}{50}
+\contentsline {figure}{\numberline {22}{\ignorespaces Parallel NARX-network model with a linear output layer.\relax }}{53}
+\contentsline {figure}{\numberline {23}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.\relax }}{57}
+\contentsline {figure}{\numberline {24}{\ignorespaces NARX Network MSE convergence for trial shown in Figure 29\hbox {}\relax }}{58}
+\contentsline {figure}{\numberline {25}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.125$.\relax }}{59}
+\contentsline {figure}{\numberline {26}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.250$.\relax }}{59}
+\contentsline {figure}{\numberline {27}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.350$.\relax }}{60}
+\contentsline {figure}{\numberline {28}{\ignorespaces Trunk orientation during 80 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{60}
+\contentsline {figure}{\numberline {29}{\ignorespaces Trunk orientation during 100 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{61}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {30}{\ignorespaces Composite potential field, $f(x)g(x,\psi )$.\relax }}{63}
-\contentsline {figure}{\numberline {31}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential fields navigation scheme.\relax }}{64}
-\contentsline {figure}{\numberline {32}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms with additional obstacles.\relax }}{64}
-\contentsline {figure}{\numberline {33}{\ignorespaces Need sensor sweep diagram.\relax }}{67}
-\contentsline {figure}{\numberline {34}{\ignorespaces Original 3D point-cloud of terrain patch.\relax }}{68}
-\contentsline {figure}{\numberline {35}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{69}
-\contentsline {figure}{\numberline {36}{\ignorespaces Height-map showing terrain variation in the $z_{hm}$ direction.\relax }}{70}
+\contentsline {figure}{\numberline {30}{\ignorespaces Composite potential field, $f(x)g(x,\psi )$.\relax }}{65}
+\contentsline {figure}{\numberline {31}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential fields navigation scheme.\relax }}{66}
+\contentsline {figure}{\numberline {32}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and obstacles.\relax }}{67}
+\contentsline {figure}{\numberline {33}{\ignorespaces Need sensor sweep diagram.\relax }}{69}
+\contentsline {figure}{\numberline {34}{\ignorespaces Original 3D point-cloud of terrain patch.\relax }}{71}
+\contentsline {figure}{\numberline {35}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{72}
+\contentsline {figure}{\numberline {36}{\ignorespaces Height-map showing terrain variation in the $z_{hm}$ direction.\relax }}{73}
 \addvspace {10pt}
