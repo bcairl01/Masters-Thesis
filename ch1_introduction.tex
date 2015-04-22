@@ -24,7 +24,9 @@
 
 		Because CPG-based gaits are inherently open-loop gait routines, a combination of axillary mechanisms must be used in concert with said routine to ensure gaiting and overall system stability. The aforementioned incorporation of feedback signals to modified CPG parameters is one such way this is \emph{partially} achieved on the BlueFoot robot, specifically to achieve stable gaits. While usually sufficient for stable walking over flat to moderately-uneven terrains, this method, alone, would require careful parametric tuning to work under a larger variety of environmental conditions. Thus, other means of stabilization have been incorporated into BlueFoot's gaiting routine to aid in stability.
 
-		In particular, BlueFoot's stabilization routines make use of a concept called \emph{artificial synergy sythesis} in which gaiting is carried out independently of a stabilization routine, which is performed primarly by restricted set of the robot's degrees of freedom \cite{Vuko1972}
+		In particular, BlueFoot's stabilization routines make use of a concept called \emph{artificial synergy sythesis} in which gaiting is carried out independently of a stabilization routine, which is performed primarly by restricted set of the robot's degrees of freedom \cite{Vuko1972,Yamaguchi1993}. As performed in \cite{Yamaguchi1993}, adaptions to trunk motion are utilized to stabilize the overall motion of the robot utilizing a ZMP-based approach.
+
+		Another approach to stabilization is approach has been studied with is generally opposite to those aforementioned. This approach involves a neuro-learning mechanism which is used to counter act disturbances to the quadruped system on the level of joint control so as to level the robot's top platform.
 			
 
-		This report will detail the specific implementations of each of the aforementioned control techniques
+		This report will detail the specific implementations of each of the aforementioned control techniques		}
