@@ -1,7 +1,6 @@
 \chapter{Gaiting and Gait-Stability Control}
-\label{ch::gait_control}
-
-
+	\label{ch::gait_control}
+	
 
 	\section{Overview}
 
@@ -69,7 +68,7 @@ ${A_{1},A_{2}, \Psi_{M}, \Psi_{\omega}} \InRe{4\times4}$ are constant oscilattor
 			\end{array}
 			\right],
 		\end{equation*}
-which define the peak-to-peak output amplitude, $\gamma_{i}$, and frequency, $\omega_{i}$, of each \Ith unit oscillator in the CPG network.
+which define the peak-to-peak output amplitude, $\gamma_{i}$, and frequency, $\omega_{i}$, of each \Ith unit oscillator in the CPG network. A more specific design of the matrix $W$, with respect to a gait frequency parameter, $\omega_{s}$, is provided in \ref{eq::cpg_W_matrix_def}.
 
 
 		\subsection{Reflexive Gait Adaptations}
@@ -97,21 +96,35 @@ which define the peak-to-peak output amplitude, $\gamma_{i}$, and frequency, $\o
 			with $\{w_{i}, c_{i}\} \InRe{}$ and $\{A_{\mu}, A_{\omega}\}   \InRe{4\times4}.$ $\Sig{*}$ represents the standard
 			sigmoid step function. The signal $\emph{T}_{i}$ represents a projection of $\dot{\epsilon}_{\theta}$ into the unit-vector emanating from ${p}_{b}$ to each \Ith foot. This projection delegates the level of adjustment to each \Ith oscillator as a result of $\dot{\epsilon}_{\theta}$. 		
 
-			Adjusting $\Psi_{\omega}$ by the method delineated in (\ref{eq:cpg_modulations}) serves to shorten the stepping period of a leg in-flight given greater values of $\dot{\epsilon}_{\theta}$. Likewise, $\Psi_{M}$ is adjusted to decrease the height of each foot in-flight. 
+			Adjusting $\Psi_{\omega}$ by the method delineated in \ref{eq::cpg_modulations} serves to shorten the stepping period of a leg in-flight given greater values of $\dot{\epsilon}_{\theta}$. Likewise, $\Psi_{M}$ is adjusted to decrease the height of each foot in-flight. 
 
-			The frequency of a full gaiting cycle is prescribed via $\omega_{s}$ and duty-factor $\alpha \in \sbrack{0,1}$ \cite{Matos2010}. The matrix $W$ is formed from  $\omega_{s}$ and $\alpha$ as a diagonal matrix with diagonal elements 
+			The frequency of a full gaiting cycle is prescribed via $\omega_{s}$ and duty-factor $\alpha \in \sbrack{0,1}$ \cite{Matos2010}. The matrix $W$ is formed from  $\omega_{s}$ and $\alpha$ as a follows:
+				\newcommand{\Wel}[1]{\frac{1}{1+e^{#1}}}
 				\begin{equation}
-						w_{ii} = 	{ 
-								   	\frac{\alpha \omega_{s}}{	1+e^{+\zeta y_{2,i}}	}	+
-									\frac{(1-	\alpha)\omega_{s}}{	1+e^{-\zeta y_{2,i}}	} 
-								}, \SSep i = 1,...,4 	
-					\label{eq::CPGMatrices}
+						W = 
+						\omega_{s}\alpha 
+						\left[	
+							\begin{array}{ccc}
+								\Wel{\zeta y_{2,1}} 		& 0 			& 0  \\
+								0 							& \ddots 		& 0  \\
+								0							& 0		 		& \Wel{\zeta y_{2,4}}
+							\end{array}
+						\right] + 
+						\omega_{s}(1-\alpha) 
+						\left[	
+							\begin{array}{cccc}
+								\Wel{-\zeta y_{2,1}} 		& 0 			& 0  \\
+								0 							& \ddots 		& 0  \\
+								0							& 0		 		& \Wel{-\zeta y_{2,4}}
+							\end{array}
+						\right]
+					\label{eq::cpg_W_matrix_def}
 				\end{equation}
 			and $\zeta$ being a sensitivity tuning parameter. A linear mapping between commanded platform velocity, $v^{r}$, and $\omega_{s}$ is prescribed such that stepping-cycle frequency is adjusted proportionally with respect to the desired velocity of the system, \IE $\omega_{s} = a_{v}v^{r}$.
 
 			In BlueFoot's CPG implementation, the coupling matrix $K$ takes on the values $k_{i,j} \in \sbrack{-1,1}$. Each element of the coupling matrix, $k_{i,j}$, is utilized to adjust the phase offsets between the unit-oscillators.Furthermore, setting $k_{i,j}=1$ causes the \Jth oscillator to attract the \Ith oscillator  towards a  positive peak, and vice-versa. Setting $k_{i,j}=0$ effectively disconnects \Ith and \Jth oscillators. 
 
-			Figures~\ref{fig::cpg_phase2_45} and \ref{fig::cpg_phase4_45} depict the CPG output, $y_{2}$, and corresponding unit-oscillator phase portraits of the oscillator dynamics, given by \ref{eq::cpg_ss_def} with the feedback mechanism given in \ref{eq::cpg_modulations} used during simulations of BlueFoot's default two-pace trotting and four-pace walkiing gaits, repsectively. The associated $K$ matrix prescribing this gaiting pattern is a modified version of $K$ for a 2-pace trot gait presented in \cite{Rutishauser2008}, since this generates a more effective and fluid gait when applied to BlueFoot's gait controller
+			Figures~\ref{fig::cpg_phase2_45} and \ref{fig::cpg_phase4_45} depict the CPG output, $y_{2}$, and corresponding unit-oscillator phase portraits of the oscillator dynamics, given by \ref{eq::cpg_ss_def} with the feedback mechanism given in \ref{eq::cpg_modulations} used during simulations of BlueFoot's default two-pace trotting and four-pace walking gaits, respectively. The associated $K$ matrix prescribing this gaiting pattern is a modified version of $K$ for a 2-pace trot gait presented in \cite{Rutishauser2008}, since this generates a more effective and fluid gait when applied to BlueFoot's gait controller
 				\begin{equation}
 						K\equiv 
 						\left[ 
@@ -124,7 +137,7 @@ which define the peak-to-peak output amplitude, $\gamma_{i}$, and frequency, $\o
 						\right].
 						\label{eq::K_two_pace}
 				\end{equation}
-			A comparable four-pace \emph{walking} gait can be achieved by a slight sign modifications on the elemtents of  \ref{eq::K_two_pace}, which yields \ref{eq::K_four_pace} as follows:
+			A comparable four-pace \emph{walking} gait can be achieved by a slight sign modifications on the elements of  \ref{eq::K_two_pace}, which yields \ref{eq::K_four_pace} as follows:
 				\begin{equation}
 						K\equiv 
 						\left[ 
@@ -163,7 +176,7 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 	\section{Foot Placement Control}
 
 
-		A foot placement controller has been implemented which utilizes CPG outputs (defined in equation \ref{eq:CPGMain}) in concert with a virtual-force controller. This controller is designed such that each foothold of the robot tracks the foot positions of a virtual robot generated through a model reference. The virtual robot is described by the foot positions, $\tilde{p}_{i,e}$, a virtual reference configuration corresponding to the position, $\tilde{p}_{c}$, and orientation, $\tilde{\theta}_{c}$, of the main body in $O_{0}$. The robot follows the foot placement of the virtual robot to achieve a commanded ground velocity $v^{r} \InRe{3} $; and turning velocity $\omega^{r} \InRe{}$. Each virtual point is updated by:
+		A foot placement controller has been implemented which utilizes CPG outputs (defined in equation \ref{eq::cpg_ss_def}) in concert with a virtual-force controller. This controller is designed such that each foothold of the robot tracks the foot positions of a virtual robot generated through a model reference. The virtual robot is described by the foot positions, $\tilde{p}_{i,e}$, a virtual reference configuration corresponding to the position, $\tilde{p}_{c}$, and orientation, $\tilde{\theta}_{c}$, of the main body in $O_{0}$. The robot follows the foot placement of the virtual robot to achieve a commanded ground velocity $v^{r} \InRe{3} $; and turning velocity $\omega^{r} \InRe{}$. Each virtual point is updated by:
 		\begin{eqnarray}
 			\dot{\tilde{\theta}}_{c}	& = & \omega^{r} 	\nonumber\\
 			\dot{\tilde{p}}_{c}			& = & v^{r}			\nonumber\\
@@ -179,7 +192,11 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 				\label{fig::virtial_foothold}
 			\end{figure}
 %
-		The full foothold controller represented by $\dot{p}_{i,e} = \dot{\tilde{p}}_{i,e}^{v} + \dot{\tilde{p}}_{i}^{y}, \SSep i = 1,...,4$ , is a composite of a foot-repositioning and step-height controller which are formulated in terms of the dynamics of the signals $\dot{\tilde{p}}_{i,e}^{v}$ and $\dot{\tilde{p}}_{i}^{y}$, respectively. Each foot is treated as a point mass attracted to their corresponding virtual foothold by an over-damped mass-attractor system. $\dot{\tilde{p}}_{i,e}^{v}$ is defined by
+		The full foothold controller represented by 
+			\begin{equation}
+				\dot{p}_{i,e} = \dot{\tilde{p}}_{i,e}^{v} + \dot{\tilde{p}}_{i,e}^{y}, \SSep i = 1,...,4
+			\end{equation} 
+		is a composite of a foot-repositioning and step-height controller which are formulated in terms of the dynamics of the signals $\dot{\tilde{p}}_{i,e}^{v}$ and $\dot{\tilde{p}}_{i,e}^{y}$, respectively. Each foot is treated as a point mass attracted to their corresponding virtual foothold by an over-damped mass-attractor system. $\dot{\tilde{p}}_{i,e}^{v}$ is defined by
 			\begin{equation}
 				\label{eq::FootControl}
 				\dot{\tilde{p}}_{i,e}^{v} 		= \frac{1}{m_{i}} \int^t{{P}_{\vec{h}_{i}} \wrap{ F_{s,i}  -b_{c} \dot{p}_{i,e} + F_{\epsilon,i} } d\tau}
@@ -204,7 +221,7 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 
 	\section{ZMP Based Trunk-Placement Control}
 
-		A  modified Zero-Moment-Point (ZMP) based controller is utilized in positioning BlueFoot's body during gaiting. In this context, the ZMP of the system is a set of state values for which the net-torque exerted upon the system, about the COG, is zero \cite{Kajita2003},\cite{Katie2009}. Unlike \cite{Takanishi1989,Kurazume2003}, which address ZMP-based control by considering the robot's body as point-mass with massless limbs, this method takes into account the torque contribution of each non-supporting leg. Each leg in flight is considered as a series of point masses whose locations are computed using joint position feedback and trunk orientation estimates, in concert with robot's forward kinematic model.
+		A  modified Zero-Moment-Point (ZMP) based controller is utilized in positioning BlueFoot's body during gaiting. In this context, the ZMP of the system is a set of state values for which the net-torque exerted upon the system, about the COG, is zero \cite{Kajita2003,Katie2009}. Unlike \cite{Takanishi1989,Kurazume2003}, which address ZMP-based control by considering the robot's body as point-mass with massless limbs, this method takes into account the torque contribution of each non-supporting leg. Each leg in flight is considered as a series of point masses whose locations are computed using joint position feedback and trunk orientation estimates, in concert with robot's forward kinematic model.
 		
 		The ZMP approach is used to first calculate static ZMP configurations ( \IE $\ddot{p}_{COG}\approx0$) at each time instance. The distance between the robot's COG and associated ZMP is incrementally minimized on-line by treating the ZMP as a  mass-attractor and ``pulling" a reference body position, ${p}_{b}^{b',r}$, towards the ZMP point at each update. This differs from approaches similar to \cite{Kurazume2003} because these routines feature off-line, trunk trajectory design which aim to minimize deviations between the robot's COG and ZMP by creating an appropriate limit-cycle motion for the robot's trunk. These approaches typically utilize simplified, linearized models of the actual system about marginally-stable equilibrium points. To realize an adjustment of the robot's COG, towards the ZMP, BlueFoot's trunk position is modified during the execution of a gait. The trunk is controlled (and not individual feet) as it contributes most of the system's total mass and, thus, has the greatest influence over the location of the platform's COG. Restricting adjustments to the trunks translational states allow pre-planned foot trajectories to remain unmodified by the ZMP-control module during gait execution, thus decoupling foot-placement and body-placement control.
 
@@ -219,8 +236,8 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 					d_{i,j}^{J} 	& = & {{p}_{i,j}^{b'}-\hat{p}_{COG}^{b'}.} \nonumber \\														
 					d_{i,j}^{L} 	& = &
 					\begin{cases}
-					{ 0.5  \wrap{{p}_{i,j+1}^{b'}-{p}_{i,j}^{b'}} + {p}_{i,j}^{b'} - \hat{p}_{COG}^{b'}} 	& \If j < 4 \\
-					{ 0.5  \wrap{{p}_{i,e}^{b'}-{p}_{i,j}^{b'}} + {p}_{i,j}^{b'} - \hat{p}_{COG}^{b'}} 		& \If j = 4
+					{ 0.5  \wrap{{p}_{i,j+1}^{b'}-{p}_{i,j}^{b'}} + {p}_{i,j}^{b'} - \hat{p}_{COG}^{b'}} 	&\text{if } j < 4 \\
+					{ 0.5  \wrap{{p}_{i,e}^{b'}-{p}_{i,j}^{b'}} + {p}_{i,j}^{b'} - \hat{p}_{COG}^{b'}} 		&\text{if } j = 4
 					\end{cases} \nonumber
 				\label{eq::Levers}
 			\end{eqnarray*}
@@ -229,8 +246,8 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 				\hat{p}_{COG} 	& = & \frac{1}{m_{T}}\wrap{ m_{b}p_{b}^{b'} + \sum_{i=1}^{4} \wrap{m_{i,e}{p}_{i,e}^{b'} + \sum_{j=1}^{4} \wrap{  m_{i,j}^{J}{p}_{i,j}^{b'} +  m_{i,j}^{L}{p}_{i,j}^{b',L} } }} 	\nonumber \\
 				{p}_{i,j}^{L} 	& = & 
 					\begin{cases}
-					{ 0.5  \wrap{{p}_{i,j+1}^{b'}-{p}_{i,j}^{b'}} + {p}_{i,j}^{b'} } 	& \If j < 4 \\
-					{ 0.5  \wrap{{p}_{i,e}^{b'}-{p}_{i,j}^{b'}} + {p}_{i,j}^{b'} } 		& \If j = 4
+					{ 0.5  \wrap{{p}_{i,j+1}^{b'}-{p}_{i,j}^{b'}} + {p}_{i,j}^{b'} } 	&\text{if } j < 4 \\
+					{ 0.5  \wrap{{p}_{i,e}^{b'}-{p}_{i,j}^{b'}} + {p}_{i,j}^{b'} } 		&\text{if } j = 4
 					\end{cases} \nonumber
 				\label{eq::cog_estimate}
 			\end{eqnarray*}
@@ -436,7 +453,7 @@ The success of this learning mechanism, as it applies to the presented controlle
 			where ${\theta}_{b,k}$ and $\dot{\theta}_{b,k}$ are samples of angular trunk position and rate, respectively.
 
 
-			Using the joint controller dynamics presented in \ref{eq::joint_dynamics} and the estimate $\hat{\tau}_{q,k}$, we can formulate a reference-trajectory correction  which is used to alter the joint reference positions, ${q}_{k}^{r}$. Moreover, the corrected reference position, ${q}_{1,k}^{r,*}$ is generated such that the estimated output torque $\hat{\tau}_{q,k}$ is attained by each joint controller. This joint-reference compensator output is defined using 
+			Using the joint controller dynamics presented in \ref{eq::servo_control_dynamics} and the estimate $\hat{\tau}_{q,k}$, we can formulate a reference-trajectory correction  which is used to alter the joint reference positions, ${q}_{k}^{r}$. Moreover, the corrected reference position, ${q}_{1,k}^{r,*}$ is generated such that the estimated output torque $\hat{\tau}_{q,k}$ is attained by each joint controller. This joint-reference compensator output is defined using 
 			\ref{eq::psuedo_torque_k} as follows:
 				\begin{equation}
 				 	{q}_{1,k}^{r,*} 	= k_{s}^{-1}  \left(  \hat{\tau}_{q,k}  \right) +  {q}_{1,k}.

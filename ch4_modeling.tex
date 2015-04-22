@@ -180,7 +180,7 @@
 							1 				\\ 	
 						\end{array}
 					\right]	\nonumber\\																						\nonumber\\
-					\psi_{i} 	&\equiv&	\tan^{-1}\wrap{ ({p}_{i,e}^{i,0})_{2}/({p}_{i,e}^{i,0})_{1} }												\nonumber\\
+					\psi_{i} 	&\equiv&	\tan^{-1}\wrap{ \frac{({p}_{i,e}^{i,0})_{2}}{({p}_{i,e}^{i,0})_{1} } }												\nonumber\\
 					\zeta_{i,x} &\equiv& 	({p}_{i,e}^{i,0})_{2} \sin(\psi_{i}) + ({p}_{i,e}^{i,0})_{1} \cos(\psi_{i}) - a_{4} \cos(\gamma_{i}) - a_{1} 						\nonumber\\
 					\zeta_{i,y} &\equiv& 	({p}_{i,e}^{i,0})_{2} \cos(\psi_{i}) - ({p}_{i,e}^{i,0})_{1} \sin(\psi_{i}) 											\nonumber\\
 					\zeta_{i,z}	&\equiv&  	({p}_{i,e}^{i,0})_{3} - a_{4} \sin(\gamma_{i}) .
@@ -235,17 +235,17 @@
 				\caption{Range of motion for body's planar position (\emph{left}) and body pitch and roll (\emph{right}) while in the default stance.}
 				\label{fig::pos_and_ori_rom}
 			\end{figure}
-			It can be seen from Figures \ref{fig::pos_and_ori_rom} that the platform can achieve a maximum pitch and roll of  $\pm37^o$ and a total displacement of $\pm 1.4 \text{ cm}$ along the \emph{x} and \emph{y} axis of $O_{b'}$.
+			It can be seen from Figures \ref{fig::pos_and_ori_rom} that the platform can achieve a maximum pitch and roll of  $\pm37^o$and a total displacement of $\pm 1.4 \text{ cm}$ along the \emph{x} and \emph{y} axis of $O_{b'}$.
 
 
 		\subsection{Velocity Kinematics}
 
 			Using the DH-coordinate transformation, ${H}^{i,0}_{i,4}$, the velocity kinematics of each \Ith leg are derived as the Jacobian $J^{i,0}_{i,e} \InRe{6\times4}$ where 
-	\begin{equation}
-		\dot{x}^{i,0}_{i,e} = J^{i,0}_{i,e}  \dot{q}_{i}
-		\label{eq::leg_jacobian}
-	\end{equation}
-with $\dot{x}^{i,0}_{i,e} \InRe{6}$ being stacked vector of translational and rotational velocities, $\dot{p}_{i,e}^{i,0} \InRe{3}$ and $\dot{\theta}_{i,e}^{i,0}\InRe{3}$, respectively, of each \Ith foot with respect to frame $O_{i,0}$. The matrix $J^{i,0}_{i,e}$ is defined explicitly in Appendix [B].
+				\begin{equation}
+					\dot{x}^{i,0}_{i,e} = J^{i,0}_{i,e}  \dot{q}_{i}
+					\label{eq::leg_jacobian}
+				\end{equation}
+			with $\dot{x}^{i,0}_{i,e} \InRe{6}$ being stacked vector of translational and rotational velocities, $\dot{p}_{i,e}^{i,0} \InRe{3}$ and $\dot{\theta}_{i,e}^{i,0}\InRe{3}$, respectively, of each \Ith foot with respect to frame $O_{i,0}$. The matrix $J^{i,0}_{i,e}$ is defined explicitly in Appendix [B].
 
 			Assuming the translational and rotational velocity of the trunk, $\dot{p}_{b}$ and $\dot{\theta}_{b}$, respectively; and the translational and rotational of each \Ith foot, $\dot{p}_{i,e} \InRe{3}$ and $\dot{\theta}_{i,e} \InRe{3}$, respectively, are known, the translation velocity of each \Ith foot can be written with respect to frame $O_{i,0}$ by:
 				\begin{equation}

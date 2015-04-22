@@ -12,32 +12,32 @@
 \addvspace {10pt}
 \contentsline {figure}{\numberline {10}{\ignorespaces BlueFoot's main processes and their relationships.\relax }}{18}
 \contentsline {figure}{\numberline {11}{\ignorespaces Communication flow between processors on the BlueFoot Platform.\relax }}{21}
-\contentsline {figure}{\numberline {12}{\ignorespaces Version 1 of BlueFoot ground-station GUI, implemented in GUIDE\relax }}{23}
-\contentsline {figure}{\numberline {13}{\ignorespaces Version 2 of the BlueFoot ground-station GUI, implemented with \emph {wxWidgets}\relax }}{24}
+\contentsline {figure}{\numberline {12}{\ignorespaces BlueFoot ground-station GUI\relax }}{24}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {14}{\ignorespaces A visualization of BlueFoot's coordinate frame configuration.\relax }}{26}
-\contentsline {figure}{\numberline {15}{\ignorespaces Range of motion for body's planar position (\emph {left}) and body pitch and roll (\emph {right}) while in the default stance.\relax }}{31}
-\contentsline {figure}{\numberline {16}{\ignorespaces Coordinate frame setup.\relax }}{34}
-\contentsline {figure}{\numberline {17}{\ignorespaces Joint position comparison between the simulated and real quadruped while performing a gait which achieves a forward velocity of $60\frac {mm}{s}$\relax }}{36}
+\contentsline {figure}{\numberline {13}{\ignorespaces A visualization of BlueFoot's coordinate frame configuration.\relax }}{26}
+\contentsline {figure}{\numberline {14}{\ignorespaces Range of motion for body's planar position (\emph {left}) and body pitch and roll (\emph {right}) while in the default stance.\relax }}{31}
+\contentsline {figure}{\numberline {15}{\ignorespaces Coordinate frame setup.\relax }}{34}
+\contentsline {figure}{\numberline {16}{\ignorespaces Joint position comparison between the simulated and real quadruped while performing a gait which achieves a forward velocity of $60\frac {mm}{s}$\relax }}{36}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {18}{\ignorespaces CPG output and phase plots for a two-paced gait over two gait cycles.\relax }}{42}
-\contentsline {figure}{\numberline {19}{\ignorespaces CPG output and phase plots for a two-paced gait over two gait cycles.\relax }}{43}
-\contentsline {figure}{\numberline {20}{\ignorespaces CPG output transition during four-pace to two-pace gait switch.\relax }}{43}
-\contentsline {figure}{\numberline {21}{\ignorespaces Virtual foothold representation. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.\relax }}{45}
-\contentsline {figure}{\numberline {22}{\ignorespaces Quadruped tipping about planted feet. \relax }}{48}
-\contentsline {figure}{\numberline {23}{\ignorespaces Parallel NARX-network model with a linear output layer.\relax }}{51}
-\contentsline {figure}{\numberline {24}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.\relax }}{54}
-\contentsline {figure}{\numberline {25}{\ignorespaces NARX Network MSE convergence for trial shown in Figure 30\hbox {}\relax }}{56}
-\contentsline {figure}{\numberline {26}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.125$.\relax }}{56}
-\contentsline {figure}{\numberline {27}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.250$.\relax }}{57}
-\contentsline {figure}{\numberline {28}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.350$.\relax }}{57}
-\contentsline {figure}{\numberline {29}{\ignorespaces Trunk orientation during 80 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{58}
-\contentsline {figure}{\numberline {30}{\ignorespaces Trunk orientation during 100 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{58}
+\contentsline {figure}{\numberline {17}{\ignorespaces CPG output and phase plots for a two-paced gait over two gait cycles.\relax }}{42}
+\contentsline {figure}{\numberline {18}{\ignorespaces CPG output and phase plots for a two-paced gait over two gait cycles.\relax }}{43}
+\contentsline {figure}{\numberline {19}{\ignorespaces CPG output transition during four-pace to two-pace gait switch.\relax }}{43}
+\contentsline {figure}{\numberline {20}{\ignorespaces Virtual foothold representation. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.\relax }}{45}
+\contentsline {figure}{\numberline {21}{\ignorespaces Quadruped tipping about planted feet. \relax }}{48}
+\contentsline {figure}{\numberline {22}{\ignorespaces Parallel NARX-network model with a linear output layer.\relax }}{51}
+\contentsline {figure}{\numberline {23}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.\relax }}{55}
+\contentsline {figure}{\numberline {24}{\ignorespaces NARX Network MSE convergence for trial shown in Figure 29\hbox {}\relax }}{56}
+\contentsline {figure}{\numberline {25}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.125$.\relax }}{56}
+\contentsline {figure}{\numberline {26}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.250$.\relax }}{57}
+\contentsline {figure}{\numberline {27}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.350$.\relax }}{57}
+\contentsline {figure}{\numberline {28}{\ignorespaces Trunk orientation during 80 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{58}
+\contentsline {figure}{\numberline {29}{\ignorespaces Trunk orientation during 100 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{58}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {31}{\ignorespaces Composite potential field, $f(x)g(x,\psi )$.\relax }}{62}
-\contentsline {figure}{\numberline {32}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential fields navigation scheme.\relax }}{63}
+\contentsline {figure}{\numberline {30}{\ignorespaces Composite potential field, $f(x)g(x,\psi )$.\relax }}{62}
+\contentsline {figure}{\numberline {31}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential fields navigation scheme.\relax }}{63}
+\contentsline {figure}{\numberline {32}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms with additional obstacles.\relax }}{63}
 \contentsline {figure}{\numberline {33}{\ignorespaces Need sensor sweep diagram.\relax }}{65}
 \contentsline {figure}{\numberline {34}{\ignorespaces Original 3D point-cloud of terrain patch.\relax }}{67}
 \contentsline {figure}{\numberline {35}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{68}
-\contentsline {figure}{\numberline {36}{\ignorespaces Height-map showing terrain variation in the $z_{hm}$ direction.\relax }}{68}
+\contentsline {figure}{\numberline {36}{\ignorespaces Height-map showing terrain variation in the $z_{hm}$ direction.\relax }}{69}
 \addvspace {10pt}

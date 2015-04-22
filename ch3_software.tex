@@ -13,7 +13,7 @@
 	
 	\section{System Software Architecture}
 	
-	BlueFoot is controlled using a multi-processor software architecture which incorporates several independent control-software cores. Each software core handles specific subsets of operations essential to the macro-system. This distributed system architecture allows independent tasks (such as actuator command/feedback handling, battery monitoring, etc.) to be decoupled from more computationally heavy tasks by offloading them to physically separate computing modules. Therefore, each control unit handles an assigned task set in an independent control loop which contribute updates to the overall macro-system in an asynchronous fashion. System control tasks are divided into four main categories, which can be summarized as follows:
+	BlueFoot is controlled using a multi-processor software architecture which incorporates several independent core programs which handle system control cooperatively. Each of these processors handles specific subsets of operations essential to the macro-system. This distribution of system tasks across several core operating units allows for low-level tasks, such as actuator command/feedback handling, battery monitoring, etc., to be decoupled from more computationally heavy tasks, such as high-level planning and navigation. With task-decoupling in mind, BlueFoot's software architecture was designed such that core programs could be readily offloaded to physically separate computing modules. Each of these control modules could then handled thier own assigned task-set in independent control loops, which forward updates to the overall macro-system in an asynchronous fashion. System control tasks essential to BlueFoot's overall operation are divided into four main categories, which can be summarized as follows:
 		\begin{itemize}
 			\item{
 			\emph{Low-Level Control} : 
@@ -24,14 +24,13 @@
 				script parsing and evaluation
 			}
 			\item{
-			\emph{Motion/Motor Control} : 
+			\emph{Locomotion Control} : 
 				gait planning, 
 				gait adaptation, 
 				trunk pose adaptation
 			}
 			\item{
 			\emph{High-Level Control} : 
-				vision sensor handling,
 				perception, 
 				motion planning, 
 				surface reconstruction, 
@@ -44,7 +43,7 @@
 				scripting commands
 			}
 		\end{itemize}
-	As previously mentioned in Chapter \ref{ch::hardware_and_design}, low-level and motor/motion control tasks are handled, exclusively, by the Lower Brain (LB), which is comprised of a software collective spanning over the RM48 and TM4C processors on-board the AutoPilot. High-level control tasks are handled by the Upper Brain (UB), which is the software-core which runs on the ODROID-XU module. Lastly, a human operator can interface with the system wirelessly from a personal computer running ground-station software. This ground station software which communicates directly with the TM4C processor. The ground-station also interfaces with the UB over an SSH connection. This secondary wireless connection is used, mainly, for on-board data-logging configurations.
+	Low-level and locomotion control tasks are handled, exclusively, by the \emph{Lower Brain} (LB), which designates the software collective spanning over the RM48 and TM4C processors on-board the AutoPilot. High-level control tasks are handled by the Upper Brain (UB), which is a collection of software which runs on the ODROID-XU (ODROID) module. Lastly, a human operator can interface with the system wirelessly from a personal computer running ground-station software. The ground station  communicates with the system through communication lines which enter the TM4C processor and the ODROID computer. The ground-station also interfaces with the UB over an SSH connection. This secondary wireless connection is used, mainly, for on-board data-logging configurations.
 
 	Since this software architecture is distributed over several separate computational units, an integral part of this control architecture is an efficient, reconfigurable interprocessor communication protocol. Namely, BlueFoot utilizes data packets transfered over serial lines to update system states between processors. These data packets are formatted using a binary-XML protocol, called EXI. This protocol facilitates a highly customizable packeting structure for asynchronous inter-module communication and utilizes robust packet-error checking routines. This sections will detail the specifics of BlueFoot's interprocessor communication protocol, namely the composition of packets transferred between processor. 
 
@@ -161,18 +160,16 @@ Packets sent form the ODROID to the RM48 contain command items, such as forward 
 		\begin{figure}[h!]
 			\centering
 			\fbox{\includegraphics[width=\textwidth]{terminal.png}}
-			\caption{Version 1 of BlueFoot ground-station GUI, implemented in GUIDE}
+			\caption{BlueFoot ground-station GUI}
 			\label{fig::comm_flow}
 		\end{figure}
-		\begin{figure}[h!]
-			\centering
-			%\fbox{\includegraphics[width=\textwidth]{wxTerminal.jpg}}
-			\caption{Version 2 of the BlueFoot ground-station GUI, implemented with \emph{wxWidgets}}
-			\label{fig::comm_flow}
-		\end{figure}
-
-
-	Ground-station software used for controlling the BlueFoot platform is generated in C++ using an open-source graphical user interface design library called \emph{wxWidgets} \cite{WX_Website} A previous version of the ground station was implimented in MATLAB's GUI Developement Environement (GUIDE) and is shown for comparison. \emph{wxWidgets} is used, primarily, for the ground-station's front-end design. Namely, the ground-station code is designed such that that its UI design is reconfigurable via an XML-based design specification file. Furthermote, this allows for UI reconfigurations without the need to change internal, back-end processes. In terms of the GUI backend, \emph{wxWidgets} handles general UI signal processing, and allows for easy registration of user callbacks on events such as button presses. Additionally, \emph{wxWidgets} provides an interface for collective joystick inputs, which are interpretted and sent to the BlueFoot as remote-control commands. \emph{Boost}, a C++ utility library, is utilized to provide socket and serial-port IO handling. This library is particularly important for use with the ground-station's wireless radio, which transmits information to the robot from data sent to the radio module over USB.  
+		%\begin{figure}[h!]
+		%	\centering
+		%	%\fbox{\includegraphics[width=\textwidth]{wxTerminal.jpg}}
+		%	\caption{Version 2 of the BlueFoot ground-station GUI, implemented with \emph{wxWidgets}}
+		%	\label{fig::comm_flow}
+		%\end{figure}s
+	Ground-station software used for controlling the BlueFoot platform is generated in C++ using an open-source graphical user interface design library called \emph{wxWidgets} \cite{WX_Website}. \emph{wxWidgets} is used, primarily, for the ground-station's front-end design. Namely, the ground-station code is designed such that that its UI design is reconfigurable via an XML-based design specification file. Furthermote, this allows for UI reconfigurations without the need to change internal, back-end processes. In terms of the GUI backend, \emph{wxWidgets} handles general UI signal processing, and allows for easy registration of user callbacks on events such as button presses. Additionally, \emph{wxWidgets} provides an interface for collective joystick inputs, which are interpretted and sent to the BlueFoot as remote-control commands. \emph{Boost}, a C++ utility library, is utilized to provide socket and serial-port IO handling. This library is particularly important for use with the ground-station's wireless radio, which transmits information to the robot from data sent to the radio module over USB.  
 
 	 The ground station is composed of several main UI sections which allow for system master-state, opterating-state and power toggling; administering system commands and script. Basic system state controls are used to periodically populate a fixed-structure, robot-command packet, shown in Table \ref{tab::gs_to_tm4c_packet}. This packet is used to refresh the robot operating state and manually-set navigation commands, and is sent to the platform rate of 25 Hz using the an XBEE radio module. BlueFoot replies to each ground-station update with a packet of internal configurations, as shown in Table \ref{tab::tm4c_to_gs_packet}, which is then used to ensure that system updates and command are being adminstered properly and that the system is live.
 
