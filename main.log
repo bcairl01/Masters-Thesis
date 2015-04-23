@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  22 APR 2015 21:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  23 APR 2015 01:03
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -425,6 +425,20 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count144
+\scratchdimen=\dimen157
+\scratchbox=\box32
+\nofMPsegments=\count145
+\nofMParguments=\count146
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count147
+\MPscratchDim=\dimen158
+\MPnumerator=\count148
+\makeMPintoPDFobject=\count149
+\everyMPtoPDFconversion=\toks26
+)
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
@@ -848,7 +862,7 @@ sers/Brian/Desktop/Masters-Thesis/potential_field_full_obstacles.png>] [68]
 File: terrain_pcd3_cleaned.png Graphic file (type png)
 
 <use terrain_pcd3_cleaned.png>
-Package pdftex.def Info: terrain_pcd3_cleaned.png used on input line 162.
+Package pdftex.def Info: terrain_pcd3_cleaned.png used on input line 161.
 (pdftex.def)             Requested size: 433.62pt x 414.08325pt.
 
 
@@ -858,13 +872,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: terrain_grad_crop.png Graphic file (type png)
 
 <use terrain_grad_crop.png>
-Package pdftex.def Info: terrain_grad_crop.png used on input line 173.
+Package pdftex.def Info: terrain_grad_crop.png used on input line 172.
 (pdftex.def)             Requested size: 433.62pt x 221.98917pt.
  <terrain_4545.png, id=306, 578.16pt x 433.62pt>
 File: terrain_4545.png Graphic file (type png)
 
 <use terrain_4545.png>
-Package pdftex.def Info: terrain_4545.png used on input line 179.
+Package pdftex.def Info: terrain_4545.png used on input line 178.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
  [70]
 
@@ -952,13 +966,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4905 strings out of 493921
- 77021 string characters out of 3144877
- 157221 words of memory out of 3000000
- 8012 multiletter control sequences out of 15000+200000
+ 5199 strings out of 493921
+ 80941 string characters out of 3144877
+ 161037 words of memory out of 3000000
+ 8303 multiletter control sequences out of 15000+200000
  13313 words of font info for 49 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 46i,16n,42p,1696b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,16n,42p,1795b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/
@@ -972,7 +986,7 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (89 pages, 12585660 bytes).
+Output written on main.pdf (89 pages, 12586673 bytes).
 PDF statistics:
  394 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
