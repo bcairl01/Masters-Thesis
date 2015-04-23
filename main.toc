@@ -41,7 +41,6 @@
 \contentsline {section}{\numberline {4.2}Dynamical Model}{34}
 \contentsline {subsection}{\numberline {4.2.1}System State Vector and General-Form Dynamics}{34}
 \contentsline {subsection}{\numberline {4.2.2}Joint-Servo Dynamics}{35}
-\contentsline {subsection}{\numberline {4.2.3}Single Leg Dynamics}{36}
 \contentsline {section}{\numberline {4.3}BlueFoot Simulator}{36}
 \contentsline {chapter}{\numberline {V. }Gaiting and Gait-Stability Control}{40}
 \contentsline {section}{\numberline {5.1}Overview}{40}
@@ -68,4 +67,4 @@
 \contentsline {subsection}{\numberline {6.2.2}Proposed Methods for determining the existence of Rough Terrain}{71}
 \contentsline {subsection}{\numberline {6.2.3}Foot-placement planning}{71}
 \contentsline {chapter}{\numberline {VII. }Concluding Remarks}{74}
-\contentsline {chapter}{Appendix B}{75}
+\contentsline {chapter}{\numberline {A. }Leg Jacobian with respect to frame $O_{i,0}$}{75}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  23 APR 2015 01:03
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  23 APR 2015 08:48
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -6,10 +6,10 @@ LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
 ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
  lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
@@ -166,8 +166,8 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \TX@cols=\count104
 \TX@ftn=\toks16
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mathtools\mathtools.sty"
-Package: mathtools 2014/07/16 v1.15 mathematical typesetting tools
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mh\mathtools.sty"
+Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
@@ -182,44 +182,44 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count107
 \calc@Cskip=\skip45
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mathtools\mhsetup.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mh\mhsetup.sty"
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
-Package: amsmath 2013/01/14 v2.14 AMS math features
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen125
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen126
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count108
-LaTeX Info: Redefining \frac on input line 210.
+LaTeX Info: Redefining \frac on input line 211.
 \uproot@=\count109
 \leftroot@=\count110
-LaTeX Info: Redefining \overline on input line 306.
+LaTeX Info: Redefining \overline on input line 307.
 \classnum@=\count111
 \DOTSCASE@=\count112
-LaTeX Info: Redefining \ldots on input line 378.
-LaTeX Info: Redefining \dots on input line 381.
-LaTeX Info: Redefining \cdots on input line 466.
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
 \Mathstrutbox@=\box28
 \strutbox@=\box29
 \big@size=\dimen127
-LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \macc@depth=\count113
 \c@MaxMatrixCols=\count114
 \dotsspace@=\muskip10
@@ -240,8 +240,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \multlinegap=\skip47
 \multlinetaggap=\skip48
 \mathdisplay@stack=\toks21
-LaTeX Info: Redefining \[ on input line 2665.
-LaTeX Info: Redefining \] on input line 2666.
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
 )
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
@@ -257,8 +257,8 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cite\cite.sty"
 LaTeX Info: Redefining \cite on input line 302.
-LaTeX Info: Redefining \nocite on input line 332.
-Package: cite 2015/02/27  v 5.5
+LaTeX Info: Redefining \nocite on input line 373.
+Package: cite 2010/09/10  v 5.3
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
 Package: subfig 2005/06/28 ver: 1.3 subfig package
@@ -327,13 +327,19 @@ l \box \@tempboxa \hfil } \fi .
 \c@lotdepth=\count128
 \sf@top=\skip55
 \sf@bottom=\skip56
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\appendix\appendix.sty"
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count129
+\c@@ppsavesec=\count130
+\c@@ppsaveapp=\count131
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count129
+\c@float@type=\count132
 \float@exts=\toks22
 \float@box=\box30
 \@float@everytoks=\toks23
@@ -343,21 +349,21 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks24
-\c@algorithm=\count130
+\c@algorithm=\count133
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithmicx\algorithmicx.sty"
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count131
-\c@ALG@rem=\count132
-\c@ALG@nested=\count133
+\c@ALG@line=\count134
+\c@ALG@rem=\count135
+\c@ALG@nested=\count136
 \ALG@tlm=\skip57
 \ALG@thistlm=\skip58
-\c@ALG@Lnr=\count134
-\c@ALG@blocknr=\count135
-\c@ALG@storecount=\count136
-\c@ALG@tmpcounter=\count137
+\c@ALG@Lnr=\count137
+\c@ALG@blocknr=\count138
+\c@ALG@storecount=\count139
+\c@ALG@tmpcounter=\count140
 \ALG@tmplength=\skip59
 ) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithmicx\algpseudocode.sty"
 Package: algpseudocode 
@@ -375,12 +381,12 @@ This is `epsf.tex' v2.7.4 <14 February 2011>
 \epsfysize=\dimen155
 \pspoints=\dimen156
 )
-\c@theorem=\count138
-\c@definition=\count139
-\c@lemma=\count140
-\c@remark=\count141
-\c@example=\count142
-\c@assumption=\count143
+\c@theorem=\count141
+\c@definition=\count142
+\c@lemma=\count143
+\c@remark=\count144
+\c@example=\count145
+\c@assumption=\count146
  (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
 (C:\Users\Brian\Desktop\Masters-Thesis\vita.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\publications.aux)
@@ -408,7 +414,7 @@ LaTeX Warning: Label `fig::narx_net' multiply defined.
 
 ) (C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\appendix_b.aux
+(C:\Users\Brian\Desktop\Masters-Thesis\appendix_a.aux
 
 LaTeX Warning: Label `eq::leg_jacobian' multiply defined.
 
@@ -427,16 +433,16 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count144
+\scratchcounter=\count147
 \scratchdimen=\dimen157
 \scratchbox=\box32
-\nofMPsegments=\count145
-\nofMParguments=\count146
+\nofMPsegments=\count148
+\nofMParguments=\count149
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count147
+\MPscratchCnt=\count150
 \MPscratchDim=\dimen158
-\MPnumerator=\count148
-\makeMPintoPDFobject=\count149
+\MPnumerator=\count151
+\makeMPintoPDFobject=\count152
 \everyMPtoPDFconversion=\toks26
 )
 Package caption Info: Begin \AtBeginDocument code.
@@ -445,7 +451,7 @@ Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  [1
 
-{C:/Users/Brian/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 (C:\Users\Brian\Desktop\Masters-Thesis\vita.tex) [2
 
 
@@ -492,7 +498,7 @@ g data trans-fer rate$[]$Refers
 
 ] (C:\Users\Brian\Desktop\Masters-Thesis\ch1_introduction.tex
 CHAPTER 1
-<on_the_rocks2.jpg, id=31, 5267.68pt x 2963.07pt>
+<on_the_rocks2.jpg, id=32, 5267.68pt x 2963.07pt>
 File: on_the_rocks2.jpg Graphic file (type jpg)
  <use on_the_rocks2.jpg>
 Package pdftex.def Info: on_the_rocks2.jpg used on input line 9.
@@ -513,7 +519,7 @@ LaTeX Warning: Citation `Billard2000' on page 3 undefined on input line 21.
 
 [3]) [4] (C:\Users\Brian\Desktop\Masters-Thesis\ch2_hardware.tex
 CHAPTER 2
-<robot_selfies.png, id=44, 722.7pt x 361.35pt>
+<robot_selfies.png, id=45, 722.7pt x 361.35pt>
 File: robot_selfies.png Graphic file (type png)
  <use robot_selfies.png>
 Package pdftex.def Info: robot_selfies.png used on input line 21.
@@ -523,31 +529,31 @@ Package pdftex.def Info: robot_selfies.png used on input line 21.
 
 
  <C:/Users/Brian/Desktop/Masters-Thesis/robot_selfies.png>] [6]
-<root_full.png, id=55, 1084.05pt x 361.35pt>
+<root_full.png, id=56, 1084.05pt x 361.35pt>
 File: root_full.png Graphic file (type png)
  <use root_full.png>
 Package pdftex.def Info: root_full.png used on input line 60.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
  [7 <C:/Users/Brian/Desktop/Masters-Thesis/root_full.png>]
-<main_full.png, id=60, 1084.05pt x 361.35pt>
+<main_full.png, id=61, 1084.05pt x 361.35pt>
 File: main_full.png Graphic file (type png)
  <use main_full.png>
 Package pdftex.def Info: main_full.png used on input line 73.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
  [8 <C:/Users/Brian/Desktop/Masters-Thesis/main_full.png>]
-<head_full.png, id=65, 1084.05pt x 361.35pt>
+<head_full.png, id=66, 1084.05pt x 361.35pt>
 File: head_full.png Graphic file (type png)
  <use head_full.png>
 Package pdftex.def Info: head_full.png used on input line 87.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
  [9 <C:/Users/Brian/Desktop/Masters-Thesis/head_full.png>]
-<leg.png, id=70, 1084.05pt x 361.35pt>
+<leg.png, id=71, 1084.05pt x 361.35pt>
 File: leg.png Graphic file (type png)
  <use leg.png>
 Package pdftex.def Info: leg.png used on input line 98.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
 
-<sea_full.jpg, id=71, 1129.21875pt x 368.1253pt>
+<sea_full.jpg, id=72, 1129.21875pt x 368.1253pt>
 File: sea_full.jpg Graphic file (type jpg)
  <use sea_full.jpg>
 Package pdftex.def Info: sea_full.jpg used on input line 107.
@@ -657,13 +663,16 @@ Package pdftex.def Info: ori_rom.png used on input line 234.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [32] [33 <C:/Users/Brian/Desktop/Masters-Thesis/pos_rom.png> <C:/Users/Brian/De
-sktop/Masters-Thesis/ori_rom.png>] [34] [35]
+sktop/Masters-Thesis/ori_rom.png>] [34]
 File: coordinate_frames.png Graphic file (type png)
  <use coordinate_frames.png>
 Package pdftex.def Info: coordinate_frames.png used on input line 334.
 (pdftex.def)             Requested size: 325.215pt x 162.60599pt.
 
-[36] <sim_comparison.png, id=178, 578.16pt x 433.62pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[35] [36] <sim_comparison.png, id=178, 578.16pt x 433.62pt>
 File: sim_comparison.png Graphic file (type png)
 
 <use sim_comparison.png>
@@ -899,15 +908,13 @@ CHAPTER 7
 
 
 
-] (C:\Users\Brian\Desktop\Masters-Thesis\appendix_b.tex [75
+] (C:\Users\Brian\Desktop\Masters-Thesis\appendix_a.tex
+Appendix 1
+[75
 
 
 
-]
-Overfull \vbox (3.9593pt too high) has occurred while \output is active []
-
-
-[76]) (C:\Users\Brian\Desktop\Masters-Thesis\main.bbl
+]) [76] (C:\Users\Brian\Desktop\Masters-Thesis\main.bbl
 Missing character: There is no Å in font cmr12!
 Missing character: There is no „ in font cmr12!
 Missing character: There is no Å in font cmr12!
@@ -957,7 +964,7 @@ Missing character: There is no “ in font cmr12!
 (C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\appendix_b.aux))
+(C:\Users\Brian\Desktop\Masters-Thesis\appendix_a.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -966,10 +973,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5199 strings out of 493921
- 80941 string characters out of 3144877
- 161037 words of memory out of 3000000
- 8303 multiletter control sequences out of 15000+200000
+ 5294 strings out of 493921
+ 82188 string characters out of 3144877
+ 162792 words of memory out of 3000000
+ 8395 multiletter control sequences out of 15000+200000
  13313 words of font info for 49 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  46i,16n,42p,1795b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -986,7 +993,7 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (89 pages, 12586673 bytes).
+Output written on main.pdf (89 pages, 12586593 bytes).
 PDF statistics:
  394 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
