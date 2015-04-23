@@ -172,6 +172,18 @@ J.-I. Yamaguchi, A.~Takanishi, and I.~Kato.
   the 1993 IEEE/RSJ International Conference on}, volume~1, pages 561--566
   vol.1, Jul 1993.
 
+\bibitem{Sardain2004}
+P.~Sardain and G.~Bessonnet.
+\newblock Forces acting on a biped robot. center of pressure-zero moment point.
+\newblock {\em Trans. Sys. Man Cyber. Part A}, 34(5):630--637, September 2004.
+
+\bibitem{Goswami1999}
+A.~Goswami.
+\newblock Foot rotation indicator (fri) point: a new gait planning tool to
+  evaluate postural stability of biped robots.
+\newblock In {\em Robotics and Automation, 1999. Proceedings. 1999 IEEE
+  International Conference on}, volume~1, pages 47--52 vol.1, 1999.
+
 \bibitem{Squirrel_website}
 Alberto Demichelis.
 \newblock {S}quirrel, the programming language, 2011.

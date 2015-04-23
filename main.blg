@@ -27,23 +27,23 @@ Repeated entry---line 533 of file refs.bib
  : @article{Ajallooeian2013
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 587 of file refs.bib
+Repeated entry---line 597 of file refs.bib
  : @article{Righetti2006
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 597 of file refs.bib
+Repeated entry---line 607 of file refs.bib
  : @article{Rutishauser2008
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 606 of file refs.bib
+Repeated entry---line 616 of file refs.bib
  : @article{Ijspeert2008
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 618 of file refs.bib
+Repeated entry---line 628 of file refs.bib
  : @inproceedings{Matos2010
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 644 of file refs.bib
+Repeated entry---line 654 of file refs.bib
  : @inproceedings{Fukuoka2003
  :                           ,
 I'm skipping whatever remains of this entry
@@ -61,45 +61,45 @@ while executing---line 944 of file unsrt.bst
 Warning--empty journal in Park2014
 Warning--empty booktitle in Rumelhart1988
 Warning--empty booktitle in Rumelhart1995
-You've used 55 entries,
+You've used 57 entries,
             1791 wiz_defined-function locations,
-            851 strings with 14870 characters,
-and the built_in function-call counts, 16325 in all, are:
-= -- 1480
-> -- 590
-< -- 40
-+ -- 217
-- -- 162
-* -- 1096
-:= -- 2297
-add.period$ -- 175
-call.type$ -- 55
-change.case$ -- 52
+            865 strings with 15288 characters,
+and the built_in function-call counts, 16924 in all, are:
+= -- 1538
+> -- 602
+< -- 42
++ -- 222
+- -- 165
+* -- 1138
+:= -- 2377
+add.period$ -- 181
+call.type$ -- 57
+change.case$ -- 54
 chr.to.int$ -- 0
-cite$ -- 63
-duplicate$ -- 797
-empty$ -- 1642
-format.name$ -- 162
-if$ -- 3890
+cite$ -- 65
+duplicate$ -- 825
+empty$ -- 1707
+format.name$ -- 165
+if$ -- 4032
 int.to.chr$ -- 0
-int.to.str$ -- 55
-missing$ -- 50
-newline$ -- 276
-num.names$ -- 66
-pop$ -- 221
+int.to.str$ -- 57
+missing$ -- 52
+newline$ -- 286
+num.names$ -- 68
+pop$ -- 227
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 502
+skip$ -- 520
 stack$ -- 0
-substring$ -- 1270
-swap$ -- 318
-text.length$ -- 40
+substring$ -- 1333
+swap$ -- 329
+text.length$ -- 42
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 8
-while$ -- 128
-width$ -- 57
-write$ -- 615
+while$ -- 134
+width$ -- 59
+write$ -- 638
 (There were 10 error messages)

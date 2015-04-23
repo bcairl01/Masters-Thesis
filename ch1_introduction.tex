@@ -16,7 +16,9 @@
 
 		The BlueFoot platform inherently demands a variety of control routines to achieve locomotion and system stability, making this robot an ample platform for studies related to gait design and motion planning. In particular, BlueFoot's controller considers the systems kinematic model; and involves open-loop gait design and stabilization for the purpose of achieving dynamic locomotion control. In particular, BlueFoot is gaited via a central pattern generator (CPG) based gaiting technique which is augmented with a foothold controller along the same lines as \cite{Ajallooeian2013} and \cite{Rutishauser2008}. Additionally, active platform stabilization is performed via a zero-moment point (ZMP) based body placement controller which stabilizes the system during arbitrary gaiting sequences. The controllers presented here make use of virtual-forces to drive system reference commands and make significant use of the system's forward kinematic model for the purpose estimating the positions of the robot's joints and feet. Finally, outer-loop control routines are implemented to supply commands and corrections used in system navigation control. Among these controllers are a potential fields navigation controller which incorporates image features as target-points to track; and 3D point-cloud processing routines for surface reconstruction and foot-hold planning.
 
-		As previously mentioned, BlueFoot's core gaiting routine relies on the utilization of artificial CPG's, which are inspired from biological neural networks which generate rhythmic motions \cite{Ijspeert2008}. \cite{Arena2000} decribes CPGs as a form of self-organizing cellular neural network, and also explains the a the role of limited feedback in CPG's. Infact, a key feature of these networks is that they can act without explicit feedback inputs, or even without directions from a higher-level command unit, such as a brain. Instead, signals emanating from independent motor units and feedback gathered from sensory neurons are utilized to trigger or inhibit a sequence of successive, self-coordinated motor operations. The activation sequences performed by a series of neural unit combine in phase-locked loops create cyclic motion patterns. In robotics, biological CPG's have inspired an artificial counterpart in which neural units are represented by multi-state unit-oscillator. The dynamics of these unit oscillators are coupled with other oscillators within the artificial CPG network. Typically, the CPG network is implemented on a controller, which numerically integrates the dynamics each neural oscillators. The output states of each unit-oscillator are used to drive selected degrees of freedom of a robot system through actuator reference-command signals. Oscillator outputs could also be used for planning periodic motions in the robot's task space, which are then translated into the joint-space via an inverse kinematics mapping, as is done in BlueFoot's gait control routine. The motions produced using the dynamical outputs of each unit-oscillator are usually coordinated through the careful tuning of oscillator coupling, which incurs particular phase offsets between the individual limit-cycles. This stable coordination between oscillators is what allows the CPG to be applied to the performance of a higher-level motor task, such as walking.
+		\subsubsection{Central Pattern Generators for Gait Control}
+
+		As previously mentioned, BlueFoot's core gaiting routine relies on the utilization of artificial CPG's, which are inspired from biological neural networks which generate rhythmic motions \cite{Ijspeert2008}. \cite{Arena2000} describes CPGs as a form of self-organizing cellular neural network, and also explains the a the role of limited feedback in CPG's. Infact, a key feature of these networks is that they can act without explicit feedback inputs, or even without directions from a higher-level command unit, such as a brain. Instead, signals emanating from independent motor units and feedback gathered from sensory neurons are utilized to trigger or inhibit a sequence of successive, self-coordinated motor operations. The activation sequences performed by a series of neural unit combine in phase-locked loops create cyclic motion patterns. In robotics, biological CPG's have inspired an artificial counterpart in which neural units are represented by multi-state unit-oscillator. The dynamics of these unit oscillators are coupled with other oscillators within the artificial CPG network. Typically, the CPG network is implemented on a controller, which numerically integrates the dynamics each neural oscillators. The output states of each unit-oscillator are used to drive selected degrees of freedom of a robot system through actuator reference-command signals. Oscillator outputs could also be used for planning periodic motions in the robot's task space, which are then translated into the joint-space via an inverse kinematics mapping, as is done in BlueFoot's gait control routine. The motions produced using the dynamical outputs of each unit-oscillator are usually coordinated through the careful tuning of oscillator coupling, which incurs particular phase offsets between the individual limit-cycles. This stable coordination between oscillators is what allows the CPG to be applied to the performance of a higher-level motor task, such as walking.
 
 		Studies dealing specifically the application of CPG's to multi-legged robot gaiting (specifically quadruped, hexapods and octopodal robots) have been carried out by \cite{Arena2001,Klaassen2002,Arena2004,Inagaki2003,Inagaki2006,Billard2000,Brambilla2006,Buchli2006,Tsujita2001,Tsujita2004}.  In particular, \cite{Ijspeert2008} states that the attractiveness of CPG's in the control of legged robot locomotion lies in a resulting ability to decouple robot motor control, \IE walking, from higher-level planning. Additionally, CPG's offer an effective way for smoothly switching between gaiting patterns, \EG walking, trotting, or pacing, by simply modifying only a few control parameters. As a result, the use of CPG's greatly reduces the dimensionality of the gaiting control problem by generating coordinated motions which can be modified to yield different overall motion patterns without explicit modification of each degree of freedom employed in gait execution.
 
@@ -26,8 +28,60 @@
 		
 		Additionally this method would require very careful parametric tuning to work robustly under a larger variety of terrain conditions. Thus, other means of stabilization have been incorporated into BlueFoot's gaiting routine to aid in stability. In particular, BlueFoot's core stabilization routines make use of a concept formally named \emph{artificial synergy synthesis} in which gaiting is carried out independently of a stabilization control. Namely, body stabilization is performed by a restricted set of the robot's degrees of freedom while gaiting is carried out independently by the remaining \cite{Vuko1972,Yamaguchi1993}. In an original implementation of this technique, adaptations to trunk motion are utilized to stabilize the overall motion of the robot utilizing a ZMP-based approach, as is done here, while gaiting is controlled by a fixed-motion routine. Here, body and foot-placement are both controlled dynamically, but still independently. The outputs of each controller, which specify body and foot placement in the robot task space, respectively, are combined using the robot's inverse kinematics solution, which generates a final set of joint references.
 
+		\subsubsection{Zero Moment Point Body Placement Control}
 
-		Another approach to stabilization is approach has been studied with is generally opposite to those aforementioned. This approach involves a neuro-learning mechanism which is used to counteract disturbances to the quadruped system on the level of joint control so as to level the robot's top platform.
+		The zero-moment point (ZMP), which is equivalent to the center of pressure (CoP), is formally defined as the point on the ground beneath a walking system at which the net moment acting upon the trunk (referred to as the tipping moment) is zero \cite{Sardain2004}. The concept of ZMP and its application to legged robotics was originally introduced by \cite{Vuko1972} and expanded upon in \cite{Goswami1999}, both of which describe ZMP theory towards use in biped robotics.
+
+		Formally, the ZMP, $p_{ZMP}$, can be defined using a formulation for the CoP wherein the moments about $\tau_{x}$ and $\tau_{y}$, the tipping-moments applied to the robot's body in the world frame, are equal to zero. The solution for $p_{ZMP}\in\Re^{3}$, with respect to a set of $N$ foot contact points $p_{i,e}\in\Re^{3}$ and $N$ associated applied foot-contact forces $f_{i,e}\in\Re^{3}$, arises as a bounded set of solutions to the equation
+			\begin{equation}
+				\sum^{N}_{i=1}\wrap{p_{i,e}-p_{ZMP}}\times f_{i,e} 
+				= 
+				\left[
+					\begin{array}{c}
+						\tau_{x}	\\
+						\tau_{y}	\\
+						\tau_{z}
+					\end{array}
+				\right]
+				=
+				\left[
+					\begin{array}{c}
+						0			\\
+						0			\\
+						*
+					\end{array}
+				\right]
+			\end{equation}
+		where $z$-coordinate of $p_{ZMP}$, $\zcomp{p_{ZMP}}$, is strictly zero, as shown in \cite{Wieber2015}. This expression is derived from an inspection of the dynamics which govern the total angular momentum, $\dot{L}$, about the legged system's center of gravity (COG), $p_{COG}$:
+			\begin{equation}
+				\dot{L} = \sum_{i=1}^{N} p_{i,e}\times f_{i,e} - m_{T} p_{COG} \times \wrap{ \ddot{p}_{COG} + \vec{g} }
+			\end{equation}
+		where $m_{T}$ is the total mass of the legged system and $\vec{g}$ is the standard gravity vector. Assuming that all foot-contacts exist on a flat plane, \IE $\zcomp{p_{i,e}}=0\SSep \forall i=[1,...,N]$, and all contact force, $f_{i,e}$ are pointing upward, the $p_{ZMP}$ of the system can be written as
+			\begin{equation}
+				p_{ZMP} 
+				= 
+				\frac{ \sum_{i=1}^{N} \wrap{ p_{i,e} \times f_{i,e} } }{ \sbrack{\sum_{i=1}^{N} f_{i,e}}_{z} }
+				= 
+				\frac{ 	p_{COG} \times \wrap{ \ddot{p}_{COG} + \vec{g} } + \dot{L}m_{T}^{-1} }{ \zcomp{ \ddot{p}_{COG} + \vec{g} }}
+				\in \emph{C}_{ZMP} 
+			\end{equation}
+		where
+			\begin{equation}
+				\emph{C}_{ZMP} = \convhull{p_{1,e},p_{2,e}...,p_{N,e}}
+			\end{equation}
+		with $\text{conv}(*)$ defining a convex hull from the  input points, $(*)$, and is used to represent the solution space of $p_{ZMP}$. Moreover, $\emph{C}_{ZMP}$ places a bound on the angular momentum $\dot{L}$ which results from contact variations presented through $p_{i,e}$ and $f_{i,e}$. Setting $\dot{L}=0$, we defined a condition for zero tipping. For BlueFoot's ZMP controller formulation, it is also assumed that the acceleration of the COG is sufficiently small, \IE $\ddot{p}_{COG}\approx0$ which yields the following, intuitive stability condition:
+			\begin{equation}
+				\norm{p_{ZMP} - p_{COG}} < \epsilon
+			\end{equation}
+		where $\epsilon\ll1$ is a small bounding constant. Thus, the general idea of this ZMP-based controller is to compute an approximate ZMP location and place the center of the robot's trunk (described by the translation $p_{b}$) such that the platform's COG approaches its associated ZMP for some arbitrary kinematic configuration, thus minimizing $\norm{\dot{L}}$ so as to avoid tipping.
+
+
+		\subsubsection{Trunk stabilization}
+
+		In addition to the aforementioned task-space controllers, the use of a learning controller, which features the use of a NARX neural network is used to aid in trunk stability by administering adaptations to joint position controls.
 			
+
+		\subsubsection{Navigation and 3D Reconstruction}
+
 
 		This report will detail the specific implementations of each of the aforementioned control techniques
