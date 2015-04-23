@@ -47,9 +47,9 @@
 \contentsline {section}{\numberline {5.2}Central Pattern Generator (CPG) Based Gaiting}{40}
 \contentsline {subsection}{\numberline {5.2.1}Reflexive Gait Adaptations}{42}
 \contentsline {section}{\numberline {5.3}Foot Placement Control}{44}
-\contentsline {section}{\numberline {5.4}ZMP Based Trunk-Placement Control}{47}
+\contentsline {section}{\numberline {5.4}ZMP Based Trunk-Placement Control}{48}
 \contentsline {section}{\numberline {5.5}Trunk Leveling via NARX-Network Learning Approach}{50}
-\contentsline {subsection}{\numberline {5.5.1}NARX-Neural Network}{50}
+\contentsline {subsection}{\numberline {5.5.1}NARX-Neural Network}{51}
 \contentsline {subsection}{\numberline {5.5.2}NARX-NN Training Regimen}{54}
 \contentsline {subsection}{\numberline {5.5.3}Compensator Output}{55}
 \contentsline {subsection}{\numberline {5.5.4}NARX-NN Compensator Results}{56}

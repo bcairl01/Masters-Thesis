@@ -214,8 +214,21 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 			\dot{\tilde{p}}_{i,e}^{y} 	= { \wrap{ \alpha_{v} v^{r}+\alpha_{\omega} \omega^{r} } \dot{y}_{2,i}} \vec{h}_{i} 
 			\label{eq::FootControl}
 		\end{equation}
-		where $\alpha_{v}$ and $\alpha_{\omega}$ are scalar weighting parameters. Scaling step height relative to command parameters $v^{r}$ and $\omega^{r}$ has been seen in experimental studies to be more effective than using a fixed step-height for all gait configurations. %In future work, step height will be modified on the basis of terrain observations.
-
+		where $\alpha_{v}$ and $\alpha_{\omega}$ are scalar weighting parameters. Scaling step height relative to command parameters $v^{r}$ and $\omega^{r}$ has been seen in experimental studies to be more effective than using a fixed step-height for all gait configurations. Figures \ref{fig::foot_motion2} and \ref{fig::foot_motion4} shown foot motion patterns using the aggregate virtual-force foothold controller and CPG motion outputs during two and four-paced gaits, respectively, which achieve a forward velocity of $v^{r}=60\frac{mm}{s}$, .
+%
+			\begin{figure}[h!]
+				\centering
+				%\fbox{\includegraphics[width=0.75\textwidth]{virtual_foothold.png}}
+				\caption{Foot motion generated using virtual-force foothold controller during two-pace gait sequence at $v^{r}=60\frac{mm}{s}$.}
+				\label{fig::foot_motion2}
+			\end{figure}
+			\begin{figure}[h!]
+				\centering
+				%\fbox{\includegraphics[width=0.75\textwidth]{virtual_foothold.png}}
+				\caption{Foot motion generated using virtual-force foothold controller during two-pace gait sequence at $v^{r}=60\frac{mm}{s}$.}
+				\label{fig::foot_motion4}
+			\end{figure}
+%
 
 
 
@@ -241,7 +254,7 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 					\end{cases} \nonumber
 				\label{eq::Levers}
 			\end{eqnarray*}
-		with $m_{P}$, $m_{i,j}^{J}$ and $m_{i,j}^{L}$ represent the mass of the main body; the mass of each joint; and the mass of each link, respectively. $\mu_{i}$ is included in the above formulation such that only stepping legs contribute to  $\tau_{legs}$. It should be noted that the superscript ${b'}$ denotes that each particle considered in this controller is defined with respect to the robot-relative frame $O_{b'}$ define in \ref{sec::system_linematics}. This allows the control routine to be performed without explicit knowledge of the system in space. The estimated center of gravity in $O_{b'}$, $\hat{p}_{COG}^{b'}$, is generated as follows:
+		with $m_{P}$, $m_{i,j}^{J}$ and $m_{i,j}^{L}$ represent the mass of the main body; the mass of each joint; and the mass of each link, respectively. $\mu_{i}$ is included in the above formulation such that only stepping legs contribute to  $\tau_{legs}$. It should be noted that the superscript ${b'}$ denotes that each particle considered in this controller is defined with respect to the robot-relative frame $O_{b'}$ define in Section \ref{sec::system_kinematics}. This allows the control routine to be performed without explicit knowledge of the system in space. The estimated center of gravity in $O_{b'}$, $\hat{p}_{COG}^{b'}$, is generated as follows:
 			\begin{eqnarray*}
 				\hat{p}_{COG} 	& = & \frac{1}{m_{T}}\wrap{ m_{b}p_{b}^{b'} + \sum_{i=1}^{4} \wrap{m_{i,e}{p}_{i,e}^{b'} + \sum_{j=1}^{4} \wrap{  m_{i,j}^{J}{p}_{i,j}^{b'} +  m_{i,j}^{L}{p}_{i,j}^{b',L} } }} 	\nonumber \\
 				{p}_{i,j}^{L} 	& = & 
@@ -274,15 +287,22 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 				r_{i}	& = & {p}_{i,e}^{b'}- {p}_{b}^{b'} \nonumber
 			\end{eqnarray*}
 %%
-		and $K_{ZMP}, K_{c}, K_{\epsilon}, k_{l} > 0$ and $\dot{p}_{b}^{b',r}$ is the reference body velocity. $F_{r}$ is a boundary force added to ensure that the workspace of each manipulator, defined by the radii $r_{min}$ and $r_{max}$, is not exceeded when the body is repositioned. $k_{l}$ is picked to be adequately large such that this force is nearly zero when the body and foot positions comply with the local workspace of each leg, and large when the workspace is nearly compromised, forcing the placement of the body to comply with each leg workspace.
-
+		and $K_{ZMP}, K_{c}, K_{\epsilon}, k_{l} > 0$ and $\dot{p}_{b}^{b',r}$ is the reference body velocity. $F_{r}$ is a boundary force added to ensure that the workspace of each manipulator, defined by the radii $r_{min}$ and $r_{max}$, is not exceeded when the body is repositioned. $k_{l}$ is picked to be adequately large such that this force is nearly zero when the body and foot positions comply with the local workspace of each leg, and large when the workspace is nearly compromised, forcing the placement of the body to comply with each leg workspace. Figure \ref{fig::body_motion} shows trunk reference trajectory, ${p}_{b}^{b',r}$ and actual body trajectory, ${p}_{b}^{b'}$ generated using the aforementioned ZMP-based body-placement controller during a gait which achieves a forward velocity of $v^{r}=60\frac{mm}{s}$.
+%
+			\begin{figure}[h!]
+				\centering
+				%\fbox{\includegraphics[width=0.75\textwidth]{virtual_foothold.png}}
+				\caption{Foot motion generated using virtual-force foothold controlle.}
+				\label{fig::body_motion}
+			\end{figure}
+%
 
 
 
 
 	\section{Trunk Leveling via NARX-Network Learning Approach}
 
-		Supressing distrubances which enter a quadruped system during gaiting is a matter which requires special handling, given the the general dynamical complexity of both the robot and its iteractions with the its enviroment. This complexity can be handled, at least in part, by a learning-based approach. This section will focus on the formulation of a learning controller used to reject distrubances from the orientation states of the trunk of a legged robot. Disturbance rejection from the trunk sub-system of a legged platform has practical significance when carrying a payload (such as cameras, optical systems, armaments, etc.) rigidly fixed to their main body. Disturbances are imparted upon the trunk during gaiting in two main ways: 
+		Suppressing disturbances which enter a quadruped system during gaiting is a matter which requires special handling, given the the general dynamical complexity of both the robot and its interactions with the its environment. This complexity can be handled, at least in part, by a learning-based approach. This section will focus on the formulation of a learning controller used to reject disturbances from the orientation states of the trunk of a legged robot. Disturbance rejection from the trunk sub-system of a legged platform has practical significance when carrying a payload (such as cameras, optical systems, armaments, etc.) rigidly fixed to their main body. Disturbances are imparted upon the trunk during gaiting in two main ways: 
 		\begin{enumerate}
 			\item instantaneous changes in force distribution when feet make and break contact with the ground 
 			\item under-actuation that occurs during certain dynamic gaits. During dynamic gaits, such as trot gaits, the state of contact between the feet and the ground is changed often so as to prevent the walking robot from tipping past a recoverable configuration. 

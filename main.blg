@@ -1,4 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
 A level-1 auxiliary file: vita.aux
 A level-1 auxiliary file: publications.aux
 A level-1 auxiliary file: acknowledgements.aux
@@ -10,7 +12,7 @@ A level-1 auxiliary file: ch4_modeling.aux
 A level-1 auxiliary file: ch5_gaitcontrol.aux
 A level-1 auxiliary file: ch6_navigation.aux
 A level-1 auxiliary file: ch7_closing_remarks.aux
-A level-1 auxiliary file: appendix_b.aux
+A level-1 auxiliary file: appendix_a.aux
 The style file: unsrt.bst
 Database file #1: refs.bib
 You're missing a field part---line 27 of file refs.bib
@@ -45,8 +47,6 @@ Repeated entry---line 644 of file refs.bib
  : @inproceedings{Fukuoka2003
  :                           ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Arena2001"
-Warning--I didn't find a database entry for "Klaasan2002"
 Warning--I didn't find a database entry for "Billard2000"
 Warning--I didn't find a database entry for "boost_library"
 Too many commas in name 1 of "Wieber, P.-B., Tedrake R., Kuindersma S." for entry Wieber2015
@@ -61,4 +61,45 @@ while executing---line 944 of file unsrt.bst
 Warning--empty journal in Park2014
 Warning--empty booktitle in Rumelhart1988
 Warning--empty booktitle in Rumelhart1995
+You've used 55 entries,
+            1791 wiz_defined-function locations,
+            851 strings with 14870 characters,
+and the built_in function-call counts, 16325 in all, are:
+= -- 1480
+> -- 590
+< -- 40
++ -- 217
+- -- 162
+* -- 1096
+:= -- 2297
+add.period$ -- 175
+call.type$ -- 55
+change.case$ -- 52
+chr.to.int$ -- 0
+cite$ -- 63
+duplicate$ -- 797
+empty$ -- 1642
+format.name$ -- 162
+if$ -- 3890
+int.to.chr$ -- 0
+int.to.str$ -- 55
+missing$ -- 50
+newline$ -- 276
+num.names$ -- 66
+pop$ -- 221
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 502
+stack$ -- 0
+substring$ -- 1270
+swap$ -- 318
+text.length$ -- 40
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 8
+while$ -- 128
+width$ -- 57
+write$ -- 615
 (There were 10 error messages)

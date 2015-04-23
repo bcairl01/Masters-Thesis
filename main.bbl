@@ -81,6 +81,23 @@ Auke~Jan Ijspeert.
   robots: {A} review.
 \newblock {\em Neural networks}, 21(4), 2008.
 
+\bibitem{Arena2000}
+P.~Arena.
+\newblock The central pattern generator: a paradigm for artificial locomotion.
+\newblock {\em Soft Computing}, 4(4):251--266, 2000.
+
+\bibitem{Arena2001}
+Paolo Arena.
+\newblock {A mechatronic lamprey controlled by analog circuits}.
+\newblock In {\em MED'01 9th Mediterranean Conference on Control and
+  Automation}. IEEE, June 2001.
+
+\bibitem{Klaassen2002}
+Bernhard Klaassen, Ralf Linnemann, Dirk Spenneberg, and Frank Kirchner.
+\newblock Biomimetic walking robot scorpion: Control and modeling.
+\newblock {\em Robotics and Autonomous Systems}, 41(2–3):69 -- 76, 2002.
+\newblock Ninth International Symposium on Intelligent Robotic Systems.
+
 \bibitem{Arena2004}
 P.~Arena, L.~Fortuna, M.~Frasca, and G.~Sicurella.
 \newblock An adaptive, self-organizing dynamical system for hierarchical

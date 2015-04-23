@@ -1,19 +1,12 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  23 APR 2015 08:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.19)  23 APR 2015 09:51
 entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
 **main.tex
-(C:\Users\Brian\Desktop\Masters-Thesis\main.tex
+(./main.tex
 LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
- lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
-ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
-an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
-ishmax, welsh, loaded.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latex209.def"
+Babel <3.9h> and hyphenation patterns for 2 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/latex209.def
 File: latex209.def 1998/05/13 v0.52 Standard LaTeX file
 
 
@@ -46,7 +39,7 @@ File: latex209.def 1998/05/13 v0.52 Standard LaTeX file
 \@cla=\count79
 \@clb=\count80
 \mscount=\count81
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\tracefnt.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/base/tracefnt.sty
 Package: tracefnt 1997/05/29 v3.0j Standard LaTeX package (font tracing)
 \tracingfonts=\count82
 LaTeX Info: Redefining \selectfont on input line 101.
@@ -63,7 +56,7 @@ LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 295.
 LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 301.
 LaTeX Info: Redefining \em on input line 311.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latexsym.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup10
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
@@ -74,10 +67,9 @@ LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 377.
 LaTeX Font Info:    Redeclaring math delimiter \bracevert on input line 379.
 )
 Compatibility mode: loading poly3.sty rather than poly3.cls.
-
-(C:\Users\Brian\Desktop\Masters-Thesis\poly3.sty
+ (./poly3.sty
 Document Style 'eethesis', version 1.0, Released 16 May 1986
-(C:\Users\Brian\Desktop\Masters-Thesis\eecommands.sty)
+(./eecommands.sty)
 \descriptionmargin=\dimen105
 \c@subequation=\count83
 \c@part=\count84
@@ -89,8 +81,7 @@ Document Style 'eethesis', version 1.0, Released 16 May 1986
 \c@subparagraph=\count90
 \c@figure=\count91
 \c@table=\count92
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eepic\epic.sty"
+) (/usr/share/texlive/texmf-dist/tex/latex/eepic/epic.sty
 Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
 \@@multicnt=\count93
 \d@lta=\count94
@@ -108,38 +99,38 @@ Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
 \num@segments=\count99
 \num@segmentsi=\count100
 \@datafile=\read1
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eepic\eepic.sty"
+) (/usr/share/texlive/texmf-dist/tex/latex/eepic/eepic.sty
 Extension to Epic and LaTeX. Version 1.1e - Released Dec 21, 1999
 \@gphlinewidth=\count101
 \@eepictcnt=\count102
 \@tempdimc=\dimen112
 \maxovaldiam=\dimen113
 \@filltype=\box27
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count103
@@ -147,10 +138,10 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen114
 \Gin@req@width=\dimen115
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen116
 \extrarowheight=\dimen117
@@ -166,10 +157,10 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \TX@cols=\count104
 \TX@ftn=\toks16
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mh\mathtools.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/mh/mathtools.sty
 Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count105
 \calc@Bcount=\count106
@@ -182,44 +173,44 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count107
 \calc@Cskip=\skip45
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mh\mhsetup.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/mh/mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
-Package: amsmath 2000/07/18 v2.13 AMS math features
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen125
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen126
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count108
-LaTeX Info: Redefining \frac on input line 211.
+LaTeX Info: Redefining \frac on input line 210.
 \uproot@=\count109
 \leftroot@=\count110
-LaTeX Info: Redefining \overline on input line 307.
+LaTeX Info: Redefining \overline on input line 306.
 \classnum@=\count111
 \DOTSCASE@=\count112
-LaTeX Info: Redefining \ldots on input line 379.
-LaTeX Info: Redefining \dots on input line 382.
-LaTeX Info: Redefining \cdots on input line 467.
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box28
 \strutbox@=\box29
 \big@size=\dimen127
-LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count113
 \c@MaxMatrixCols=\count114
 \dotsspace@=\muskip10
@@ -240,8 +231,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \multlinegap=\skip47
 \multlinetaggap=\skip48
 \mathdisplay@stack=\toks21
-LaTeX Info: Redefining \[ on input line 2666.
-LaTeX Info: Redefining \] on input line 2667.
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 )
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
@@ -255,12 +246,12 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen139
 \l_MT_below_shortintertext_sep=\dimen140
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cite\cite.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
 
@@ -285,10 +276,10 @@ Package subfig Warning: Your document class has a bad definition
  can't take effect on \endtable.
  Please complain to your document class author.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
 \captionmargin=\dimen141
@@ -327,17 +318,17 @@ l \box \@tempboxa \hfil } \fi .
 \c@lotdepth=\count128
 \sf@top=\skip55
 \sf@bottom=\skip56
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\appendix\appendix.sty"
+) (/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
 \c@@pps=\count129
 \c@@ppsavesec=\count130
 \c@@ppsaveapp=\count131
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count132
 \float@exts=\toks22
@@ -345,13 +336,13 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks23
 \@floatcapt=\box31
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks24
 \c@algorithm=\count133
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithmicx\algorithmicx.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
@@ -365,11 +356,11 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \c@ALG@storecount=\count139
 \c@ALG@tmpcounter=\count140
 \ALG@tmplength=\skip59
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithmicx\algpseudocode.sty"
+) (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
+
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) (C:\Users\Brian\Desktop\Masters-Thesis\preamble.tex)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\epsf\epsf.tex"
+) (./preamble.tex) (/usr/share/texlive/texmf-dist/tex/generic/epsf/epsf.tex
 This is `epsf.tex' v2.7.4 <14 February 2011>
 \epsffilein=\read2
 \epsfframemargin=\dimen149
@@ -387,22 +378,16 @@ This is `epsf.tex' v2.7.4 <14 February 2011>
 \c@remark=\count144
 \c@example=\count145
 \c@assumption=\count146
- (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
-(C:\Users\Brian\Desktop\Masters-Thesis\vita.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\publications.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\acknowledgements.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\abstract.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\ch1_introduction.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\ch2_hardware.aux
+ (./main.aux (./vita.aux) (./publications.aux) (./acknowledgements.aux)
+(./abstract.aux) (./ch1_introduction.aux) (./ch2_hardware.aux
 
 LaTeX Warning: Label `fig::dev_diagram' multiply defined.
 
-) (C:\Users\Brian\Desktop\Masters-Thesis\ch3_software.aux
+) (./ch3_software.aux
 
 LaTeX Warning: Label `fig::comm_flow' multiply defined.
 
-) (C:\Users\Brian\Desktop\Masters-Thesis\ch4_modeling.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.aux
+) (./ch4_modeling.aux) (./ch5_gaitcontrol.aux
 
 LaTeX Warning: Label `eq::FootControl' multiply defined.
 
@@ -412,13 +397,13 @@ LaTeX Warning: Label `eq::bp_error' multiply defined.
 
 LaTeX Warning: Label `fig::narx_net' multiply defined.
 
-) (C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\appendix_a.aux
+) (./ch6_navigation.aux) (./ch7_closing_remarks.aux) (./appendix_a.aux
 
 LaTeX Warning: Label `eq::leg_jacobian' multiply defined.
 
 ))
+\openout1 = `main.aux'.
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
@@ -431,7 +416,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count147
 \scratchdimen=\dimen157
@@ -444,25 +429,114 @@ LaTeX Font Info:    ... okay on input line 30.
 \MPnumerator=\count151
 \makeMPintoPDFobject=\count152
 \everyMPtoPDFconversion=\toks26
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+))
+
+! LaTeX Error: LaTeX2e command \newcommand{cmd}[args][def] in LaTeX 2.09 docume
+nt.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.219 \newcommand*{\DeclareBoolOption}[2][
+                                          false]{%
+? 
+
+! LaTeX Error: LaTeX2e command \newcommand{cmd}[args][def] in LaTeX 2.09 docume
+nt.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.329 \newcommand*{\DeclareStringOption}[2][
+                                            ]{%
+? 
+
+! LaTeX Error: LaTeX2e command \newcommand{cmd}[args][def] in LaTeX 2.09 docume
+nt.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.447 \newcommand*{\DisableKeyvalOption}[3][
+                                            ]{%
+? 
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
- [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(C:\Users\Brian\Desktop\Masters-Thesis\vita.tex) [2
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+\openout2 = `vita.aux'.
+
+ (./vita.tex) [2
 
 
 ]
-No file publications.tex.
-No file acknowledgements.tex.
-No file abstract.tex.
-(C:\Users\Brian\Desktop\Masters-Thesis\main.toc
-LaTeX Font Info:    Try loading font information for U+lasy on input line 6.
+\openout2 = `publications.aux'.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+
+No file publications.tex.
+\openout2 = `acknowledgements.aux'.
+
+No file acknowledgements.tex.
+\openout2 = `abstract.aux'.
+
+No file abstract.tex.
+(./main.toc
+LaTeX Font Info:    Try loading font information for U+lasy on input line 6.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 ) [1
 
@@ -475,8 +549,10 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 ])
 \tf@toc=\write3
- [2]
-(C:\Users\Brian\Desktop\Masters-Thesis\main.lof
+\openout3 = `main.toc'.
+
+
+[2] (./main.lof
 Overfull \hbox (8.05205pt too wide) in paragraph at lines 4--4
  [][] []\OT1/cmr/m/n/12 The Blue-Foot Quadruped Robot: single-camera con-fig-u-
 ra-tion \OT1/cmr/m/it/12 (left)\OT1/cmr/m/n/12 ; stereo- 
@@ -486,7 +562,9 @@ ra-tion \OT1/cmr/m/it/12 (left)\OT1/cmr/m/n/12 ; stereo-
 
 ])
 \tf@lof=\write4
- [4] (C:\Users\Brian\Desktop\Masters-Thesis\main.lot
+\openout4 = `main.lof'.
+
+ [4] (./main.lot
 Overfull \hbox (21.53992pt too wide) in paragraph at lines 4--4
  [][] []\OT1/cmr/m/n/12 System com-mu-ni-ca-tion port-pairs and cor-re-spond-in
 g data trans-fer rate$[]$Refers 
@@ -494,11 +572,16 @@ g data trans-fer rate$[]$Refers
 
 )
 \tf@lot=\write5
+\openout5 = `main.lot'.
+
  [5
 
-] (C:\Users\Brian\Desktop\Masters-Thesis\ch1_introduction.tex
+]
+\openout2 = `ch1_introduction.aux'.
+
+ (./ch1_introduction.tex
 CHAPTER 1
-<on_the_rocks2.jpg, id=32, 5267.68pt x 2963.07pt>
+<on_the_rocks2.jpg, id=33, 5267.68pt x 2963.07pt>
 File: on_the_rocks2.jpg Graphic file (type jpg)
  <use on_the_rocks2.jpg>
 Package pdftex.def Info: on_the_rocks2.jpg used on input line 9.
@@ -507,19 +590,16 @@ Package pdftex.def Info: on_the_rocks2.jpg used on input line 9.
 [1
 
 
- <C:/Users/Brian/Desktop/Masters-Thesis/on_the_rocks2.jpg>] [2]
-
-LaTeX Warning: Citation `Arena2001' on page 3 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Klaasan2002' on page 3 undefined on input line 21.
-
+ <./on_the_rocks2.jpg>] [2]
 
 LaTeX Warning: Citation `Billard2000' on page 3 undefined on input line 21.
 
-[3]) [4] (C:\Users\Brian\Desktop\Masters-Thesis\ch2_hardware.tex
+[3]) [4]
+\openout2 = `ch2_hardware.aux'.
+
+ (./ch2_hardware.tex
 CHAPTER 2
-<robot_selfies.png, id=45, 722.7pt x 361.35pt>
+<robot_selfies.png, id=46, 722.7pt x 361.35pt>
 File: robot_selfies.png Graphic file (type png)
  <use robot_selfies.png>
 Package pdftex.def Info: robot_selfies.png used on input line 21.
@@ -528,32 +608,31 @@ Package pdftex.def Info: robot_selfies.png used on input line 21.
 
 
 
- <C:/Users/Brian/Desktop/Masters-Thesis/robot_selfies.png>] [6]
-<root_full.png, id=56, 1084.05pt x 361.35pt>
+ <./robot_selfies.png>] [6] <root_full.png, id=57, 1084.05pt x 361.35pt>
 File: root_full.png Graphic file (type png)
- <use root_full.png>
+
+<use root_full.png>
 Package pdftex.def Info: root_full.png used on input line 60.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
- [7 <C:/Users/Brian/Desktop/Masters-Thesis/root_full.png>]
-<main_full.png, id=61, 1084.05pt x 361.35pt>
+ [7 <./root_full.png>]
+<main_full.png, id=62, 1084.05pt x 361.35pt>
 File: main_full.png Graphic file (type png)
  <use main_full.png>
 Package pdftex.def Info: main_full.png used on input line 73.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
- [8 <C:/Users/Brian/Desktop/Masters-Thesis/main_full.png>]
-<head_full.png, id=66, 1084.05pt x 361.35pt>
+ [8 <./main_full.png>] <head_full.png, id=67, 1084.05pt x 361.35pt>
 File: head_full.png Graphic file (type png)
  <use head_full.png>
 Package pdftex.def Info: head_full.png used on input line 87.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
- [9 <C:/Users/Brian/Desktop/Masters-Thesis/head_full.png>]
-<leg.png, id=71, 1084.05pt x 361.35pt>
+
+[9 <./head_full.png>] <leg.png, id=72, 1084.05pt x 361.35pt>
 File: leg.png Graphic file (type png)
  <use leg.png>
 Package pdftex.def Info: leg.png used on input line 98.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
 
-<sea_full.jpg, id=72, 1129.21875pt x 368.1253pt>
+<sea_full.jpg, id=73, 1129.21875pt x 368.1253pt>
 File: sea_full.jpg Graphic file (type jpg)
  <use sea_full.jpg>
 Package pdftex.def Info: sea_full.jpg used on input line 107.
@@ -562,9 +641,8 @@ Package pdftex.def Info: sea_full.jpg used on input line 107.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[10 <C:/Users/Brian/Desktop/Masters-Thesis/leg.png>] [11 <C:/Users/Brian/Deskto
-p/Masters-Thesis/sea_full.jpg>] [12] [13] [14]
-<device_diagram.png, id=90, 1084.05pt x 722.7pt>
+[10 <./leg.png>] [11 <./sea_full.jpg>] [12] [13] [14]
+<device_diagram.png, id=91, 1084.05pt x 722.7pt>
 File: device_diagram.png Graphic file (type png)
  <use device_diagram.png>
 Package pdftex.def Info: device_diagram.png used on input line 193.
@@ -573,13 +651,13 @@ Package pdftex.def Info: device_diagram.png used on input line 193.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<power_diagram.png, id=91, 1084.05pt x 722.7pt>
+<power_diagram.png, id=92, 1084.05pt x 722.7pt>
 File: power_diagram.png Graphic file (type png)
  <use power_diagram.png>
 Package pdftex.def Info: power_diagram.png used on input line 226.
 (pdftex.def)             Requested size: 433.62pt x 289.07487pt.
 
-[15 <C:/Users/Brian/Desktop/Masters-Thesis/device_diagram.png>]
+[15 <./device_diagram.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -589,14 +667,16 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [16] [17 <C:/Users/Brian/Desktop/Masters-Thesis/power_diagram.png>]
-(C:\Users\Brian\Desktop\Masters-Thesis\ch3_software.tex
+) [16] [17 <./power_diagram.png>]
+\openout2 = `ch3_software.aux'.
+
+ (./ch3_software.tex
 CHAPTER 3
 [18
 
 
 
-] <process_diagram.png, id=107, 867.24pt x 621.07031pt>
+] <process_diagram.png, id=108, 867.24pt x 621.07031pt>
 File: process_diagram.png Graphic file (type png)
 
 <use process_diagram.png>
@@ -606,29 +686,31 @@ Package pdftex.def Info: process_diagram.png used on input line 56.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19] [20 <C:/Users/Brian/Desktop/Masters-Thesis/process_diagram.png>] [21]
+[19] [20 <./process_diagram.png>] [21]
 
 LaTeX Warning: Citation `boost_library' on page 22 undefined on input line 85.
 
-[22] <comm_flow.png, id=121, 722.7pt x 469.755pt>
+[22] <comm_flow.png, id=122, 722.7pt x 469.755pt>
 File: comm_flow.png Graphic file (type png)
  <use comm_flow.png>
 Package pdftex.def Info: comm_flow.png used on input line 93.
 (pdftex.def)             Requested size: 433.62pt x 281.85518pt.
- [23 <C:/Users/Brian/Desktop/Masters-Thesis/comm_flow.png>] [24]
-<terminal.png, id=130, 802.49812pt x 374.14781pt>
+ [23 <./comm_flow.png>] [24] <terminal.png, id=131, 802.49812pt x 374.14781pt>
 File: terminal.png Graphic file (type png)
- <use terminal.png>
+
+<use terminal.png>
 Package pdftex.def Info: terminal.png used on input line 162.
 (pdftex.def)             Requested size: 433.62pt x 202.1681pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[25]) [26 <C:/Users/Brian/Desktop/Masters-Thesis/terminal.png>]
-(C:\Users\Brian\Desktop\Masters-Thesis\ch4_modeling.tex
+[25]) [26 <./terminal.png>]
+\openout2 = `ch4_modeling.aux'.
+
+ (./ch4_modeling.tex
 CHAPTER 4
-<coordinate_frames.png, id=138, 722.7pt x 361.35pt>
+<coordinate_frames.png, id=139, 722.7pt x 361.35pt>
 File: coordinate_frames.png Graphic file (type png)
 
 <use coordinate_frames.png>
@@ -642,18 +724,17 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-] [28 <C:/Users/Brian/Desktop/Masters-Thesis/coordinate_frames.png>]
-[29] [30]
+] [28 <./coordinate_frames.png>] [29] [30]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[31] <pos_rom.png, id=157, 578.16pt x 433.62pt>
+[31] <pos_rom.png, id=158, 578.16pt x 433.62pt>
 File: pos_rom.png Graphic file (type png)
  <use pos_rom.png>
 Package pdftex.def Info: pos_rom.png used on input line 233.
 (pdftex.def)             Requested size: 214.63977pt x 160.97943pt.
 
-<ori_rom.png, id=158, 578.16pt x 433.62pt>
+<ori_rom.png, id=159, 578.16pt x 433.62pt>
 File: ori_rom.png Graphic file (type png)
  <use ori_rom.png>
 Package pdftex.def Info: ori_rom.png used on input line 234.
@@ -662,8 +743,7 @@ Package pdftex.def Info: ori_rom.png used on input line 234.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[32] [33 <C:/Users/Brian/Desktop/Masters-Thesis/pos_rom.png> <C:/Users/Brian/De
-sktop/Masters-Thesis/ori_rom.png>] [34]
+[32] [33 <./pos_rom.png> <./ori_rom.png>] [34]
 File: coordinate_frames.png Graphic file (type png)
  <use coordinate_frames.png>
 Package pdftex.def Info: coordinate_frames.png used on input line 334.
@@ -672,33 +752,35 @@ Package pdftex.def Info: coordinate_frames.png used on input line 334.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[35] [36] <sim_comparison.png, id=178, 578.16pt x 433.62pt>
+[35] [36] <sim_comparison.png, id=179, 578.16pt x 433.62pt>
 File: sim_comparison.png Graphic file (type png)
 
 <use sim_comparison.png>
 Package pdftex.def Info: sim_comparison.png used on input line 351.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
- [37]) [38 <C:/Users/Brian/Desktop/Masters-Thesis/sim_comparison.png (PNG copy)
->] [39]
-(C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.tex
+ [37]) [38 <./sim_comparison.png (PNG copy)>] [39]
+\openout2 = `ch5_gaitcontrol.aux'.
+
+
+(./ch5_gaitcontrol.tex
 CHAPTER 5
 [40
 
 
 
-] [41] [42] [43] <cpg_phase2_45.png, id=202, 867.24pt x 433.62pt>
+] [41] [42] [43] <cpg_phase2_45.png, id=204, 867.24pt x 433.62pt>
 File: cpg_phase2_45.png Graphic file (type png)
 
 <use cpg_phase2_45.png>
 Package pdftex.def Info: cpg_phase2_45.png used on input line 157.
 (pdftex.def)             Requested size: 433.62pt x 216.80946pt.
- <cpg_phase4_45.png, id=203, 867.24pt x 433.62pt>
+ <cpg_phase4_45.png, id=205, 867.24pt x 433.62pt>
 File: cpg_phase4_45.png Graphic file (type png)
 
 <use cpg_phase4_45.png>
 Package pdftex.def Info: cpg_phase4_45.png used on input line 163.
 (pdftex.def)             Requested size: 433.62pt x 216.80946pt.
- <cpg_transition.png, id=204, 578.16pt x 433.62pt>
+ <cpg_transition.png, id=206, 578.16pt x 433.62pt>
 File: cpg_transition.png Graphic file (type png)
 
 <use cpg_transition.png>
@@ -711,13 +793,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[44 <C:/Users/Brian/Desktop/Masters-Thesis/cpg_phase2_45.png (PNG copy)>]
+[44 <./cpg_phase2_45.png (PNG copy)>]
 
 LaTeX Warning: Text page 45 contains only floats.
 
-[45 <C:/Users/Brian/Desktop/Masters-Thesis/cpg_phase4_45.png (PNG copy)> <C:/Us
-ers/Brian/Desktop/Masters-Thesis/cpg_transition.png (PNG copy)>]
-<virtual_foothold.png, id=211, 722.7pt x 361.35pt>
+[45 <./cpg_phase4_45.png (PNG copy)> <./cpg_transition.png (PNG copy)>]
+<virtual_foothold.png, id=213, 722.7pt x 361.35pt>
 File: virtual_foothold.png Graphic file (type png)
  <use virtual_foothold.png>
 Package pdftex.def Info: virtual_foothold.png used on input line 190.
@@ -726,124 +807,126 @@ Package pdftex.def Info: virtual_foothold.png used on input line 190.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[46] [47 <C:/Users/Brian/Desktop/Masters-Thesis/virtual_foothold.png>]
+[46]
 
-LaTeX Warning: Reference `sec::system_linematics' on page 48 undefined on input
- line 244.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[48] [49] <tipping_robot.png, id=226, 650.43pt x 433.62pt>
+[47 <./virtual_foothold.png>] [48] [49]
+<tipping_robot.png, id=228, 650.43pt x 433.62pt>
 File: tipping_robot.png Graphic file (type png)
-
-<use tipping_robot.png>
-Package pdftex.def Info: tipping_robot.png used on input line 294.
+ <use tipping_robot.png>
+Package pdftex.def Info: tipping_robot.png used on input line 314.
 (pdftex.def)             Requested size: 346.89731pt x 231.26651pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[50] [51 <C:/Users/Brian/Desktop/Masters-Thesis/tipping_robot.png>]
-<narx_network_diagram.png, id=233, 650.43pt x 433.62pt>
+[50] [51 <./tipping_robot.png>] [52]
+<narx_network_diagram.png, id=238, 650.43pt x 433.62pt>
 File: narx_network_diagram.png Graphic file (type png)
 
 <use narx_network_diagram.png>
-Package pdftex.def Info: narx_network_diagram.png used on input line 361.
+Package pdftex.def Info: narx_network_diagram.png used on input line 381.
 (pdftex.def)             Requested size: 433.62pt x 289.0881pt.
- [52] [53 <C:/Users/Brian/Desktop/Masters-Thesis/narx_network_diagram.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 405.
+ [53 <./narx_network_diagram.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 425.
 
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 405.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 425.
  [54] [55]
-<controller_diagram.png, id=248, 650.43pt x 433.62pt>
+<controller_diagram.png, id=250, 650.43pt x 433.62pt>
 File: controller_diagram.png Graphic file (type png)
 
 <use controller_diagram.png>
-Package pdftex.def Info: controller_diagram.png used on input line 471.
+Package pdftex.def Info: controller_diagram.png used on input line 491.
 (pdftex.def)             Requested size: 433.62pt x 289.0881pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[56] [57 <C:/Users/Brian/Desktop/Masters-Thesis/controller_diagram.png>]
-<aux_V_100mms_nN_50_nL_2_nns.png, id=255, 578.16pt x 433.62pt>
+[56] [57 <./controller_diagram.png>]
+<aux_V_100mms_nN_50_nL_2_nns.png, id=257, 578.16pt x 433.62pt>
 File: aux_V_100mms_nN_50_nL_2_nns.png Graphic file (type png)
 
 <use aux_V_100mms_nN_50_nL_2_nns.png>
-Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_nns.png used on input line 493
+Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_nns.png used on input line 513
 .
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
-<alpha0125_V_60mms_nN_50_nL_2_pos.png, id=256, 578.16pt x 433.62pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<alpha0125_V_60mms_nN_50_nL_2_pos.png, id=258, 578.16pt x 433.62pt>
 File: alpha0125_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use alpha0125_V_60mms_nN_50_nL_2_pos.png>
 Package pdftex.def Info: alpha0125_V_60mms_nN_50_nL_2_pos.png used on input lin
-e 499.
+e 519.
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
-<alpha0250_V_60mms_nN_50_nL_2_pos.png, id=257, 578.16pt x 433.62pt>
+<alpha0250_V_60mms_nN_50_nL_2_pos.png, id=259, 578.16pt x 433.62pt>
 File: alpha0250_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use alpha0250_V_60mms_nN_50_nL_2_pos.png>
 Package pdftex.def Info: alpha0250_V_60mms_nN_50_nL_2_pos.png used on input lin
-e 505.
+e 525.
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
-<alpha0350_V_60mms_nN_50_nL_2_pos.png, id=258, 578.16pt x 433.62pt>
+<alpha0350_V_60mms_nN_50_nL_2_pos.png, id=260, 578.16pt x 433.62pt>
 File: alpha0350_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use alpha0350_V_60mms_nN_50_nL_2_pos.png>
 Package pdftex.def Info: alpha0350_V_60mms_nN_50_nL_2_pos.png used on input lin
-e 511.
+e 531.
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
-<aux_V_80mms_nN_50_nL_2_pos.png, id=259, 578.16pt x 433.62pt>
+<aux_V_80mms_nN_50_nL_2_pos.png, id=261, 578.16pt x 433.62pt>
 File: aux_V_80mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use aux_V_80mms_nN_50_nL_2_pos.png>
-Package pdftex.def Info: aux_V_80mms_nN_50_nL_2_pos.png used on input line 517.
+Package pdftex.def Info: aux_V_80mms_nN_50_nL_2_pos.png used on input line 537.
 
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<aux_V_100mms_nN_50_nL_2_pos.png, id=260, 578.16pt x 433.62pt>
+<aux_V_100mms_nN_50_nL_2_pos.png, id=262, 578.16pt x 433.62pt>
 File: aux_V_100mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use aux_V_100mms_nN_50_nL_2_pos.png>
-Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_pos.png used on input line 523
+Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_pos.png used on input line 543
 .
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [58 <C:/Users/Brian/Desktop/Masters-Thesis/aux_V_100mms_nN_50_nL_2_nns.png (P
-NG copy)>] [59 <C:/Users/Brian/Desktop/Masters-Thesis/alpha0125_V_60mms_nN_50_n
-L_2_pos.png (PNG copy)> <C:/Users/Brian/Desktop/Masters-Thesis/alpha0250_V_60mm
-s_nN_50_nL_2_pos.png (PNG copy)>] [60 <C:/Users/Brian/Desktop/Masters-Thesis/al
-pha0350_V_60mms_nN_50_nL_2_pos.png (PNG copy)> <C:/Users/Brian/Desktop/Masters-
-Thesis/aux_V_80mms_nN_50_nL_2_pos.png (PNG copy)>] [61 <C:/Users/Brian/Desktop/
-Masters-Thesis/aux_V_100mms_nN_50_nL_2_pos.png (PNG copy)>]
-(C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.tex
+) [58] [59 <./aux_V_100mms_nN_50_nL_2_nns.png (PNG copy)> <./alpha0125_V_60mms_
+nN_50_nL_2_pos.png (PNG copy)>] [60 <./alpha0250_V_60mms_nN_50_nL_2_pos.png (PN
+G copy)> <./alpha0350_V_60mms_nN_50_nL_2_pos.png (PNG copy)>] [61 <./aux_V_80mm
+s_nN_50_nL_2_pos.png (PNG copy)> <./aux_V_100mms_nN_50_nL_2_pos.png (PNG copy)>
+]
+\openout2 = `ch6_navigation.aux'.
+
+ (./ch6_navigation.tex
 CHAPTER 6
 [62
 
 
 
-] [63] <potential_function.png, id=280, 578.16pt x 433.62pt>
+] [63] <potential_function.png, id=282, 578.16pt x 433.62pt>
 File: potential_function.png Graphic file (type png)
 
 <use potential_function.png>
 Package pdftex.def Info: potential_function.png used on input line 53.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
 
-<potential_field_full.png, id=281, 1084.05pt x 903.375pt>
+<potential_field_full.png, id=283, 1084.05pt x 903.375pt>
 File: potential_field_full.png Graphic file (type png)
 
 <use potential_field_full.png>
@@ -853,7 +936,7 @@ Package pdftex.def Info: potential_field_full.png used on input line 72.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<potential_field_full_obstacles.png, id=285, 1084.05pt x 505.89pt>
+<potential_field_full_obstacles.png, id=287, 1084.05pt x 505.89pt>
 File: potential_field_full_obstacles.png Graphic file (type png)
 
 <use potential_field_full_obstacles.png>
@@ -864,10 +947,9 @@ Package pdftex.def Info: potential_field_full_obstacles.png used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[65 <C:/Users/Brian/Desktop/Masters-Thesis/potential_function.png (PNG copy)>]
-[66 <C:/Users/Brian/Desktop/Masters-Thesis/potential_field_full.png>] [67 <C:/U
-sers/Brian/Desktop/Masters-Thesis/potential_field_full_obstacles.png>] [68]
-[69] <terrain_pcd3_cleaned.png, id=304, 757.32938pt x 723.20187pt>
+[65 <./potential_function.png (PNG copy)>] [66 <./potential_field_full.png>]
+[67 <./potential_field_full_obstacles.png>] [68] [69]
+<terrain_pcd3_cleaned.png, id=306, 757.32938pt x 723.20187pt>
 File: terrain_pcd3_cleaned.png Graphic file (type png)
 
 <use terrain_pcd3_cleaned.png>
@@ -877,13 +959,13 @@ Package pdftex.def Info: terrain_pcd3_cleaned.png used on input line 161.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<terrain_grad_crop.png, id=305, 514.3215pt x 263.3037pt>
+<terrain_grad_crop.png, id=307, 514.3215pt x 263.3037pt>
 File: terrain_grad_crop.png Graphic file (type png)
 
 <use terrain_grad_crop.png>
 Package pdftex.def Info: terrain_grad_crop.png used on input line 172.
 (pdftex.def)             Requested size: 433.62pt x 221.98917pt.
- <terrain_4545.png, id=306, 578.16pt x 433.62pt>
+ <terrain_4545.png, id=308, 578.16pt x 433.62pt>
 File: terrain_4545.png Graphic file (type png)
 
 <use terrain_4545.png>
@@ -899,22 +981,26 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [71 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_pcd3_cleaned.png>]
-[72 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_grad_crop.png>] [73 <C:/User
-s/Brian/Desktop/Masters-Thesis/terrain_4545.png (PNG copy)>]
-(C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.tex
+) [71 <./terrain_pcd3_cleaned.png>] [72 <./terrain_grad_crop.png>] [73 <./terra
+in_4545.png (PNG copy)>]
+\openout2 = `ch7_closing_remarks.aux'.
+
+ (./ch7_closing_remarks.tex
 CHAPTER 7
 ) [74
 
 
 
-] (C:\Users\Brian\Desktop\Masters-Thesis\appendix_a.tex
+]
+\openout2 = `appendix_a.aux'.
+
+ (./appendix_a.tex
 Appendix 1
 [75
 
 
 
-]) [76] (C:\Users\Brian\Desktop\Masters-Thesis\main.bbl
+]) [76] (./main.bbl
 Missing character: There is no ≈ in font cmr12!
 Missing character: There is no Ñ in font cmr12!
 Missing character: There is no ≈ in font cmr12!
@@ -927,6 +1013,9 @@ Missing character: There is no ì in font cmti12!
 ]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
+Missing character: There is no ì in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
 Missing character: There is no î in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
@@ -934,17 +1023,16 @@ Missing character: There is no ì in font cmr12!
  [78]
 Missing character: There is no ƒ in font cmr12!
 Missing character: There is no á in font cmr12!
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--175
+ [79]
+Underfull \hbox (badness 10000) in paragraph at lines 190--192
 []\OT1/cmr/m/n/12 wxWidgets, Cross-Platform GUI Li-brary, 2015.  [On-line;
  []
 
-[79]
 Missing character: There is no ≈ in font cmr12!
 Missing character: There is no ô in font cmr12!
 Missing character: There is no ƒ in font cmr12!
 Missing character: There is no ç in font cmr12!
- [80] [81]
+[80] [81]
 Missing character: There is no √ in font cmr12!
 Missing character: There is no ≠ in font cmr12!
 Missing character: There is no √ in font cmr12!
@@ -952,19 +1040,11 @@ Missing character: There is no ± in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ì in font cmr12!
-) [82] (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
-(C:\Users\Brian\Desktop\Masters-Thesis\vita.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\publications.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\acknowledgements.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\abstract.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\ch1_introduction.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\ch2_hardware.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\ch3_software.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\ch4_modeling.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\appendix_a.aux))
+) [82] (./main.aux (./vita.aux) (./publications.aux)
+(./acknowledgements.aux) (./abstract.aux) (./ch1_introduction.aux)
+(./ch2_hardware.aux) (./ch3_software.aux) (./ch4_modeling.aux)
+(./ch5_gaitcontrol.aux) (./ch6_navigation.aux) (./ch7_closing_remarks.aux)
+(./appendix_a.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -973,29 +1053,29 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5294 strings out of 493921
- 82188 string characters out of 3144877
- 162792 words of memory out of 3000000
- 8395 multiletter control sequences out of 15000+200000
- 13313 words of font info for 49 fonts, out of 3000000 for 9000
- 841 hyphenation exceptions out of 8191
- 46i,16n,42p,1795b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (89 pages, 12586593 bytes).
+ 5660 strings out of 495028
+ 85303 string characters out of 6181497
+ 172169 words of memory out of 5000000
+ 8645 multiletter control sequences out of 15000+600000
+ 13313 words of font info for 49 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 46i,16n,42p,2022b,329s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on main.pdf (89 pages, 12550963 bytes).
 PDF statistics:
- 394 PDF objects out of 1000 (max. 8388607)
+ 398 PDF objects out of 1000 (max. 8388607)
+ 238 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  176 words of extra memory for PDF output out of 10000 (max. 10000000)
 
