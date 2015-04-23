@@ -23,6 +23,13 @@ J.Z. Kolter, M.P. Rodgers, and A.Y. Ng.
 \newblock In {\em {IEEE} {I}nternational {C}onference on {R}obotics and
   {A}utomation}, pages 811--818, May 2008.
 
+\bibitem{Wieber2015}
+Tedrake R. Kuindersma~S. Wieber, P.-B.
+\newblock Modeling and control of legged robots.
+\newblock In Siciliano and Khatib, editors, {\em Springer Handbook of Robotics,
+  2nd Ed}, Lecture Notes in Control and Information Sciences, chapter~48.
+  Springer Berlin Heidelberg, 2015.
+
 \bibitem{Fukuoka2003}
 Y.~Fukuoka, H.~Kimura, Y.~Hada, and K.~Takase.
 \newblock Adaptive dynamic walking of a quadruped robot '{T}ekken' on irregular
@@ -68,6 +75,86 @@ Simon Rutishauser, A~Sprowitz, L.~Righetti, and A.J. Ijspeert.
   {G}enerators for locomotion control.
 \newblock pages 710--715, Oct 2008.
 
+\bibitem{Ijspeert2008}
+Auke~Jan Ijspeert.
+\newblock Central pattern generators for locomotion control in animals and
+  robots: {A} review.
+\newblock {\em Neural networks}, 21(4), 2008.
+
+\bibitem{Arena2004}
+P.~Arena, L.~Fortuna, M.~Frasca, and G.~Sicurella.
+\newblock An adaptive, self-organizing dynamical system for hierarchical
+  control of bio-inspired locomotion.
+\newblock {\em Systems, Man, and Cybernetics, Part B: Cybernetics, IEEE
+  Transactions on}, 34(4):1823--1837, Aug 2004.
+
+\bibitem{Inagaki2003}
+Shinkichi Inagaki, Hideo Yuasa, and Tamio Arai.
+\newblock \{CPG\} model for autonomous decentralized multi-legged robot
+  system—generation and transition of oscillation patterns and dynamics of
+  oscillators.
+\newblock {\em Robotics and Autonomous Systems}, 44(3–4):171 -- 179, 2003.
+\newblock Best papers presented at IAS-7.
+
+\bibitem{Inagaki2006}
+Shinkichi Inagaki, Hideo Yuasa, Takanori Suzuki, and Tamio Arai.
+\newblock Wave \{CPG\} model for autonomous decentralized multi-legged robot:
+  Gait generation and walking speed control.
+\newblock {\em Robotics and Autonomous Systems}, 54(2):118 -- 126, 2006.
+\newblock Intelligent Autonomous Systems 8th Conference on Intelligent
+  Autonomous Systems (IAS-8).
+
+\bibitem{Brambilla2006}
+Giorgio Brambilla, Jonas Buchli, and AukeJan Ijspeert.
+\newblock Adaptive four legged locomotion control based on nonlinear dynamical
+  systems.
+\newblock In Stefano Nolfi, Gianluca Baldassarre, Raffaele Calabretta, JohnC.T.
+  Hallam, Davide Marocco, Jean-Arcady Meyer, Orazio Miglino, and Domenico
+  Parisi, editors, {\em From Animals to Animats 9}, volume 4095 of {\em Lecture
+  Notes in Computer Science}, pages 138--149. Springer Berlin Heidelberg, 2006.
+
+\bibitem{Buchli2006}
+J.~Buchli, F.~Iida, and A.J. Ijspeert.
+\newblock Finding resonance: Adaptive frequency oscillators for dynamic legged
+  locomotion.
+\newblock In {\em Intelligent Robots and Systems, 2006 IEEE/RSJ International
+  Conference on}, pages 3903--3909, Oct 2006.
+
+\bibitem{Tsujita2001}
+K.~Tsujita, K.~Tsuchiya, and A.~Onat.
+\newblock Adaptive gait pattern control of a quadruped locomotion robot.
+\newblock In {\em Intelligent Robots and Systems, 2001. Proceedings. 2001
+  IEEE/RSJ International Conference on}, volume~4, pages 2318--2325 vol.4,
+  2001.
+
+\bibitem{Tsujita2004}
+K.~Tsujita, H.~Toui, and K.~Tsuchiya.
+\newblock Dynamic turning control of a quadruped robot using oscillator
+  network.
+\newblock In {\em Robotics and Automation, 2004. Proceedings. ICRA '04. 2004
+  IEEE International Conference on}, volume~3, pages 2613--2618 Vol.3, April
+  2004.
+
+\bibitem{Endo2004}
+G.~Endo, J.~Morimoto, J.~Nakanishi, and G.~Cheng.
+\newblock An empirical exploration of a neural oscillator for biped locomotion
+  control.
+\newblock In {\em Robotics and Automation, 2004. Proceedings. ICRA '04. 2004
+  IEEE Int. Conf. on}, volume~3, pages 3036--3042 Vol.3, April 2004.
+
+\bibitem{Vuko1972}
+Miomir~K. Vukobratović.
+\newblock Contribution to the study of anthropomorphic systems.
+\newblock {\em Kybernetika}, 08(5):(404)--418, 1972.
+
+\bibitem{Yamaguchi1993}
+J.-I. Yamaguchi, A.~Takanishi, and I.~Kato.
+\newblock Development of a biped walking robot compensating for three-axis
+  moment by trunk motion.
+\newblock In {\em Intelligent Robots and Systems '93, IROS '93. Proceedings of
+  the 1993 IEEE/RSJ International Conference on}, volume~1, pages 561--566
+  vol.1, Jul 1993.
+
 \bibitem{Squirrel_website}
 Alberto Demichelis.
 \newblock {S}quirrel, the programming language, 2011.
@@ -109,24 +196,11 @@ J.J. Collins and Ian Stewart.
 \newblock Hexapodal gaits and coupled nonlinear oscillator models.
 \newblock {\em {B}iological {C}ybernetics}, 68(4):287--298, 1993.
 
-\bibitem{Endo2004}
-G.~Endo, J.~Morimoto, J.~Nakanishi, and G.~Cheng.
-\newblock An empirical exploration of a neural oscillator for biped locomotion
-  control.
-\newblock In {\em Robotics and Automation, 2004. Proceedings. ICRA '04. 2004
-  IEEE Int. Conf. on}, volume~3, pages 3036--3042 Vol.3, April 2004.
-
 \bibitem{Righetti2006}
 L.~Righetti and A.J. Ijspeert.
 \newblock Programmable central pattern generators: an application to biped
   locomotion control.
 \newblock pages 1585--1590, May 2006.
-
-\bibitem{Ijspeert2008}
-Auke~Jan Ijspeert.
-\newblock Central pattern generators for locomotion control in animals and
-  robots: {A} review.
-\newblock {\em Neural networks}, 21(4), 2008.
 
 \bibitem{Matos2010}
 Vitor Matos and Cristina~P. Santos.
@@ -146,13 +220,6 @@ Y.~Fukuoka, H.~Yasushi, and F.~Takahiro.
 \newblock A simple rule for quadrupedal gait generation determined by leg
   loading feedback: a modeling study.
 \newblock {\em Sci. Rep.}, 5, 2015.
-
-\bibitem{Wieber2015}
-Tedrake R. Kuindersma~S. Wieber, P.-B.
-\newblock Modeling and control of legged robots.
-\newblock In Siciliano and Khatib, editors, {\em Springer Handbook of Robotics,
-  2nd Ed}, Lecture Notes in Control and Information Sciences, chapter~48.
-  Springer Berlin Heidelberg, 2015.
 
 \bibitem{Castro2008}
 Luiz Castro, Cristina~P. Santos, Miguel Oliveira, and Auke Ijspeert.

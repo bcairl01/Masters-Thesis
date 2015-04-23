@@ -211,10 +211,10 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 
 		The controller component $\dot{\tilde{p}}_{i,e}^{y}$ is defined from the CPG output signal $\dot{y}_{2,i}$. The height of each step is made proportional to the magnitude of desired platform velocity.
 		\begin{equation}
-			\dot{\tilde{p}}_{i,e}^{y} 	= \wrap{ \norm{v^{r}} a_{v} \dot{y}_{2,i}} \vec{h}_{i} 	\SSep ; \SSep a_{v}  \InRe{}.
+			\dot{\tilde{p}}_{i,e}^{y} 	= { \wrap{ \alpha_{v} v^{r}+\alpha_{\omega} \omega^{r} } \dot{y}_{2,i}} \vec{h}_{i} 
 			\label{eq::FootControl}
 		\end{equation}
-		Scaling step height relative to $v_c$ has been seen in experimental studies to be more effective than using a fixed step-height for all gait configurations. %In future work, step height will be modified on the basis of terrain observations.
+		where $\alpha_{v}$ and $\alpha_{\omega}$ are scalar weighting parameters. Scaling step height relative to command parameters $v^{r}$ and $\omega^{r}$ has been seen in experimental studies to be more effective than using a fixed step-height for all gait configurations. %In future work, step height will be modified on the basis of terrain observations.
 
 
 
@@ -228,7 +228,7 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 		To incrementally compute the static ZMP of the platform, a measure of net-moment on the body of the platform must be known. The net-moment due to gravitational forces, $\tau_{net}$, is approximated using the locations of each link and joints as point-mass loads. Hence, $\tau_{net}$ is calculated as follows:
 			\begin{equation}
 				\tau_{net} 	= \vec{g} m_{P}  \wrap{\bar{p}_{b}^{b'}-\hat{p}_{COG}^{b'} }	+ \tau_{legs}
-				\label{eq::NetMoment}
+				\label{eq::net_moment}
 			\end{equation}
 		where
 			\begin{eqnarray*}
@@ -256,7 +256,7 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 				m_{T} = m_{b} + \sum_{i=1}^{4} \wrap{m_{i,e} + \sum_{j=1}^{4} \wrap{  m_{i,j}^{J} +  m_{i,j}^{L} } }
 			\end{equation}
 
-		Setting $\tau_{net}=0$, \ref{eq::NetMoment} is manipulated to a derived solution for the ZMP as follows:
+		Setting $\tau_{net}=0$, \ref{eq::net_moment} is manipulated to a derived solution for the ZMP as follows:
 			\begin{equation}
 				{p}_{ZMP}^{b'} = R_{z_P} \wrap{\frac{\pi}{2}}  \wrap{ \norm{g}/m_{P}} \tau_{legs} + \hat{p}_{COG}^{b'}.
 				\label{eq::ZMPFromMoment}

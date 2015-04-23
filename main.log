@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  22 APR 2015 18:18
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.3)  22 APR 2015 20:19
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -509,28 +509,7 @@ LaTeX Warning: Citation `Arena2001' on page 3 undefined on input line 21.
 LaTeX Warning: Citation `Klaasan2002' on page 3 undefined on input line 21.
 
 
-LaTeX Warning: Citation `Arena2004' on page 3 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Inagaki2003' on page 3 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Inagaki2006' on page 3 undefined on input line 21.
-
-
 LaTeX Warning: Citation `Billard2000' on page 3 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Brambilla2006' on page 3 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Buchli2006' on page 3 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Manoonpong2007' on page 3 undefined on input line 21.
-
-
-LaTeX Warning: Citation `Tsujita2004' on page 3 undefined on input line 21.
 
 [3]) [4] (C:\Users\Brian\Desktop\Masters-Thesis\ch2_hardware.tex
 CHAPTER 2
@@ -749,8 +728,12 @@ File: tipping_robot.png Graphic file (type png)
 <use tipping_robot.png>
 Package pdftex.def Info: tipping_robot.png used on input line 294.
 (pdftex.def)             Requested size: 346.89731pt x 231.26651pt.
- [50 <C:/Users/Brian/Desktop/Masters-Thesis/tipping_robot.png>] [51] <narx_netw
-ork_diagram.png, id=233, 650.43pt x 433.62pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[50] [51 <C:/Users/Brian/Desktop/Masters-Thesis/tipping_robot.png>]
+<narx_network_diagram.png, id=233, 650.43pt x 433.62pt>
 File: narx_network_diagram.png Graphic file (type png)
 
 <use narx_network_diagram.png>
@@ -935,16 +918,26 @@ Missing character: There is no “ in font cmti12!
  [77
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 86--88
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ” in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no “ in font cmr12!
+ [78]
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ‡ in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
 []\OT1/cmr/m/n/12 wxWidgets, Cross-Platform GUI Li-brary, 2015.  [On-line;
  []
 
-[78]
+[79]
 Missing character: There is no Å in font cmr12!
 Missing character: There is no ™ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no  in font cmr12!
- [79] [80]
+ [80] [81]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ­ in font cmr12!
 Missing character: There is no Ã in font cmr12!
@@ -952,7 +945,7 @@ Missing character: There is no ± in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
-) [81] (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
+) [82] (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
 (C:\Users\Brian\Desktop\Masters-Thesis\vita.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\publications.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\acknowledgements.aux)
@@ -973,10 +966,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5192 strings out of 493921
- 80709 string characters out of 3144877
- 160676 words of memory out of 3000000
- 8296 multiletter control sequences out of 15000+200000
+ 5194 strings out of 493921
+ 80732 string characters out of 3144877
+ 160713 words of memory out of 3000000
+ 8298 multiletter control sequences out of 15000+200000
  13313 words of font info for 49 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  46i,16n,42p,1696b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -993,9 +986,9 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (88 pages, 12581512 bytes).
+Output written on main.pdf (89 pages, 12585526 bytes).
 PDF statistics:
- 391 PDF objects out of 1000 (max. 8388607)
+ 394 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  176 words of extra memory for PDF output out of 10000 (max. 10000000)
 
