@@ -9,7 +9,7 @@
 
 	\section{Flatland navigation and goal (feature) tracking}
 	
-		The BlueFoot robot is operated using potential field-based control-schemes for obstacle avoidance and camera-based goal-tracking over flatland. Platform navigation is administered by two main command parameters, $v^{r}$ and $\omega^{r}$, which represent forward and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. During navigation, the pitch of the trunk, $\theta_{b,x}$ is also controlled via its respective reference signal, $\theta_{b,x}^{r}$. Control over trunk pose allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head. 
+		The BlueFoot robot is operated using potential field-based control-schemes for obstacle avoidance and camera-based goal-tracking over flatland. Platform navigation is administered by two main command parameters, $v^{r}$ and $\omega^{r}$, which represent forward and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. During navigation, the pitch of the trunk, $\theta_{b,x}$ is also controlled via its respective reference signal, $\theta_{b,x}^{r}$. Control over trunk pose allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head (trunk). 
 
 		BlueFoot's base navigation and obstacle avoidance algorithm involves a potential fields-based approach which fuses LIDAR data and features from processed camera images. This algorithm is essentially used as a ``wandering" mechanism which would normally be employed as a first-level navigation measure in an unknown environment when no information (\EG map data) is known by the robot \emph{apriori}. Camera features are used in conjunction with LIDAR scans for the purpose of assigning trackable targets, which are particularly useful for the purpose of avoid local minima faced with navigating via a potential-fields approach alone. These targets are used to \emph{attract} the robot platform towards the target location. Notably, the total navigation approach to be described uses only 2D LIDAR data (does not take into account features of terrain) and is thus most fit for navigation over flatland.
 
@@ -21,7 +21,7 @@
 				\vec{u}^{r}_{L} &=&  { \sum_{x_{i} \in \emph{S}} g( \bar{x}_{b,i},\psi)  f( \bar{x}_{b,i} ) \frac{\bar{x}_{b,i}}{\norm{\bar{x}_{b,i}}} } \nonumber \\
 				p_{L} & = & \alpha_{p}\sum_{x_{i} \in \emph{S}} g( \bar{x}_{b,i},\psi)  f( \bar{x}_{b,i} ) U\wrap{f( \bar{x}_{b,i} )}
 				\end{eqnarray}
-			where $H_{b}^{0}$ defines a homogeneous transformation between $O_{0}$ and $O_{b}$; $H_{L}^{b}$ defines a homogeneous transformation which relates the LIDAR sensors pose to the frame $O_{b}$; $\emph{S}\subset \Re^{3}$ is the set of newly transformed points, $x_{i} \in \emph{S}$ which respect the current LIDAR scan in the world coordinate system; $\alpha_{p}$ is a scalar tuning parameter; and 
+			where $H_{b}^{0}$ defines a homogeneous transformation between $O_{0}$ and $O_{b}$; $H_{L}^{b}$ defines a homogeneous transformation which relates the LIDAR sensors pose to the frame $O_{b}$; $\emph{S}\subset \Re^{3}$ is the set of newly transformed points, $x_{i} \in \emph{S}$ which respect the current LIDAR scan in the world coordinate system; $U(*)$ is the standard unit-step function;  $\alpha_{p}$ is a scalar tuning parameter; and 
 				\begin{equation*}
 					\Gamma_{L} = \sbrack{ I_{2\times2}, 0_{2\times1} }^{T}.
 				\end{equation*}
@@ -51,12 +51,12 @@
 				\begin{figure}[t!]
 					\centering
 					\fbox{\includegraphics[width=\textwidth]{potential_function.png}}
-					\caption{Composite potential field, $f(x)g(x,\psi)$.}
+					\caption{Composite potential field, $f(x)g(x,\psi)$ with $d_{min}=0.4m$.}
 					\label{fig::potential_field}
 				\end{figure}
 			%In the event that the robot does get stuck in a potential minima, a ``stuck" detection algorithm has been implemented. As the name suggests, this algorithm first detects if the robot is stuck in a local minima of the potential field based on a window of command histories.
 
-			Finally, outputs of the potential field algo4rithm are transformed into forward and turning rate commands, ${v}_{L}^{r}$ and $\omega_{L}^{r}$, respectively, by the following proportional control scheme:
+			Finally, outputs of the potential field algorithm are transformed into forward and turning rate commands, ${v}_{L}^{r}$ and $\omega_{L}^{r}$, respectively, by the following proportional control scheme:
 				\begin{eqnarray}
 					\theta_{L}^{r} 			&=& \tan^{-1}\wrap{ \frac{(\vec{u}^{r}_{L})_{2} }{(\vec{u}^{r}_{L})_{1}} } \nonumber\\
 					\dot{v}_{L}^{r} 		&=& \beta_{v} \wrap{ p_{L} + v_{L,min}^{r} - v_{L}^{r} } \nonumber \\
@@ -114,110 +114,109 @@
 				v(r)	\left[\begin{array}{c} v^{r}_{C}\\ \omega^{r}_{C} 	\end{array} \right] + 
 				(1-v(r))\left[\begin{array}{c} v^{r}_{L}\\ \omega^{r}_{L} 	\end{array} \right] 
 			\end{eqnarray}
-			where $c_{mix}$ is a sensitivity parameter; and $r_{mix}$ defines the processed-feature size which will grant full navigation control to the camera-based navigation scheme. The reasoning for such a scheme involves a heuristic approach to obstacle aversion, which assumes that when the platform is further away from a goal, there is a higher probability that it will encounter an obstacle. Conversely, when the goal becomes closer to the platform, it assumed that the number of obstacles between the robot and the target decreases, making it safe to shift full priority to reaching the goal from the current position. It is defined that if a feature is now found withing the current view, then it is considered to be of size $r=0$.
+			where $c_{mix}$ is a sensitivity parameter; and $r_{mix}$ defines the processed-feature size which will grant full navigation control to the camera-based navigation scheme. The reasoning for such a scheme involves a heuristic approach to obstacle aversion, which assumes that when the platform is further away from a goal, there is a higher probability that it will encounter an obstacle. Conversely, when the goal becomes closer to the platform, it assumed that the number of obstacles between the robot and the target decreases, making it safe to shift full priority to reaching the goal from the current position. It is defined that if a feature is not visible within the current view of the camera, then it is considered to be of size $r=0$.
 
 		\subsection{Hybrid Potential-Fields Navigation Results}
-		*NEED RESULTS*
+		
 
 
 
-	\section{Rough Terrain Navigation}
+	\section{Towards Rough Terrain Navigation}
 
-		\subsection{Terrain Mapping with 3D Point-clouds}
-			
-			\subsubsection{3D Point Cloud generation from 2D scans}
+
+		\subsection{Terrain Mapping from 2D scans}
+			\begin{figure}[h!]
+				\centering
+				\caption{Need sensor sweep diagram.}
+				\label{fig::sensor_sweep}
+			\end{figure}
+			The BlueFoot platform has the ability to compose 3D point clouds from a series of swept 2D LIDAR scans in conjunction with a trunk orientation estimates, $\hat{\theta}_{b}$, which is generated using an EKF. LIDAR articulation is achieved by slowly pitching the trunk over some angular range while keeping the platform's feet ridgedly planted. Sweeping range is limited by the kinematic-feasibility of each trunk pose that must be reached during a sweep. Given a particular set of foot and body location, kinematic feasibility is validated using the inverse kinematics solution described in Section \ref{sec::inverse_position_kinematics}. A single 2D scan is taken at each pose within the body-sweep trajectory. The newly acquired scan is transformed from the LIDAR sensor frame, $O_{L}$, to the world frame by a homogeneous transformation $H^{L}_{0}$ which is defined as follows
+				\begin{equation}
+					H^{L}_{0} = H^{L}_{b} H^{b}_{0}
+					\label{eq::world_to_sensor}
+				\end{equation}
+			where $H^{b}_{0}$ is a transformation from $O_{0}$ to the trunk frame $O_{b}$, as defined in Chapter \ref{ch::system_modeling}; and $H^{L}_{b}$ defines a transformation from the frame $O_{b}$ to the LIDAR frame, $H^{L}_{b}$. $H^{L}_{b}$ is necessary for knowing the position of the LIDAR head with respect world frame, as the sensor itself has some offset and rotation relative to the robot's body. Each 2D point from $x_{i} \in \emph{S}$ from the initial scan, $\emph{S}\subset \Re^{2}$, can then be transformed into a 3D scan segment, $\bar{S}_{j}$, in $O_{0}$ by:
+				\begin{equation}
+					\left[
+						\begin{array}{c}
+							\bar{x}_{i,j} \\ 1
+						\end{array}
+					\right]
+				 = H^{L}_{b} H^{b}_{0}	
+					\left[
+						\begin{array}{c}
+							x_{i} \\ 0 \\ 1
+						\end{array}
+					\right] \forall x_{i} \in \emph{S}
+					\label{eq::scan_to_segment}
+				\end{equation}
+			where $\bar{x}_{i,j} \in \bar{S}_{j}$ is a point withing the 3D \Jth scan segment $\bar{S}_{j} \subset \Re^{3}$. After the sweeping routine is complete, 3D scan segments are composed into a final point cloud, $\bar{S}$ by:
+			\begin{equation}
+				\bar{S} = \bigcup_{j=1}^{N_{s}} \bar{S}_{j}
+			\end{equation}
+			where $N_{s}$ defines the number of scans taken during the sweeping routine. For the sake of simplicity, it is assumed that the trunk's position, $p_{b}$, is fixed (system is completely ridged) during a swept-scan routine. In the results to be presented, this seems to be a reasonable assumption given that the platform is at rest and the trunk is pitched sufficiently slowly over the angular sweeping range. A slow sweep rate ensures that perturbations caused by vibrations incurred by trunk rotation and foot-slip are small, and thus does not cause for significant deviations in LIDAR scan points.
 				\begin{figure}[h!]
 					\centering
-					\caption{Need sensor sweep diagram.}
-					\label{fig::sensor_sweep}
+					\fbox{\includegraphics[width=\textwidth]{terrain_pcd3_cleaned.png}}
+					\caption{Original 3D point-cloud of terrain patch.}
+					\label{fig::pointcloud_terrain_patch}
 				\end{figure}
-				The BlueFoot platform has the ability to compose 3D point clouds from a series of swept 2D LIDAR scans in conjunction with a trunk orientation estimates, $\hat{\theta}_{b}$, which is generated using an EKF. LIDAR articulation is achieved by slowly pitching the trunk over some angular range while keeping the platform's feet ridgedly planted. Sweeping range is limited by the kinematic-feasibility of each trunk pose that must be reached during a sweep. Given a particular set of foot and body location, kinematic feasibility is validated using the inverse kinematics solution described in Section \ref{sec::inverse_position_kinematics}. A single 2D scan is taken at each pose within the body-sweep trajectory. The newly acquired scan is transformed from the LIDAR sensor frame, $O_{L}$, to the world frame by a homogeneous transformation $H^{L}_{0}$ which is defined as follows
-					\begin{equation}
-						H^{L}_{0} = H^{L}_{b} H^{b}_{0}
-						\label{eq::world_to_sensor}
-					\end{equation}
-				where $H^{b}_{0}$ is a transformation from $O_{0}$ to the trunk frame $O_{b}$, as defined in Chapter \ref{ch::system_modeling}; and $H^{L}_{b}$ defines a transformation from the frame $O_{b}$ to the LIDAR frame, $H^{L}_{b}$. $H^{L}_{b}$ is necessary for knowing the position of the LIDAR head with respect world frame, as the sensor itself has some offset and rotation relative to the robot's body. Each 2D point from $x_{i} \in \emph{S}$ from the initial scan, $\emph{S}\subset \Re^{2}$, can then be transformed into a 3D scan segment, $\bar{S}_{j}$, in $O_{0}$ by:
-					\begin{equation}
-						\left[
-							\begin{array}{c}
-								\bar{x}_{i,j} \\ 1
-							\end{array}
-						\right]
-					 = H^{L}_{b} H^{b}_{0}	
-						\left[
-							\begin{array}{c}
-								x_{i} \\ 0 \\ 1
-							\end{array}
-						\right] \forall x_{i} \in \emph{S}
-						\label{eq::scan_to_segment}
-					\end{equation}
-				where $\bar{x}_{i,j} \in \bar{S}_{j}$ is a point withing the 3D \Jth scan segment $\bar{S}_{j} \subset \Re^{3}$. After the sweeping routine is complete, 3D scan segments are composed into a final point cloud, $\bar{S}$ by:
-				\begin{equation}
-					\bar{S} = \bigcup_{j=1}^{N_{s}} \bar{S}_{j}
-				\end{equation}
-				where $N_{s}$ defines the number of scans taken during the sweeping routine. For the sake of simplicity, it is assumed that the trunk's position, $p_{b}$, is fixed (system is completely ridged) during a swept-scan routine. In the results to be presented, this seems to be a reasonable assumption given that the platform is at rest and the trunk is pitched sufficiently slowly over the angular sweeping range. A slow sweep rate ensures that perturbations caused by vibrations incurred by trunk rotation and foot-slip are small, and thus does not cause for significant deviations in LIDAR scan points.
-					\begin{figure}[h!]
-						\centering
-						\fbox{\includegraphics[width=\textwidth]{terrain_pcd3_cleaned.png}}
-						\caption{Original 3D point-cloud of terrain patch.}
-						\label{fig::pointcloud_terrain_patch}
-					\end{figure}
 
 
-			\subsubsection{Height-map from 3D point cloud}
-				
-				3D point clouds can be transformed into height-map representations. These representations are convenient for use in planning as they can be converted into discrete cost-maps in a straightforward way. These height-maps are generated by populating the elements of a matrix  $M\in \Re^{n\times m}$ with the $z$ components of points which exist within discretized $w\times d$ region within the original 3D point cloud. The location and size of this regions would have to be determined with some auxiliary detection process which 1) determines that the area has high terrain variation, and 2) determines the bounding region where this patch of rough-terrain exists. We will call this patch a \emph{region of interest} (ROI). Once an ROI is determine, the 3D cloud containing only points from the ROI is isolated from $\bar{S}$ and divided into $(nm)$ sub-divisions, each of which covers a $(w/m) \times (d/n)$ area. Each (\Ith, \Jth) element of $M$, $m_{i,j}$, is then populated with the highest point (larger  $z$ component) within each  (\Ith, \Jth) subdivision. Depending on the density of the 3D point cloud, this process has the potential to produce relatively sparse height-map. To deal with this, a dilation and smoothing routine is used to complete the height-map conversion process. During dilation, each non-zero height element within the map is expanded into a region around the exiting element until. This process is performed until a semi-uniform map is produced with minimal gaps between non-zero height elements. Finally, a median filter is applied to the dilated height-map to produce smooth transitions between height elements.
-					\begin{figure}[t!]
-						\centering
-						\fbox{\includegraphics[width=\textwidth]{terrain_grad_crop.png}}
-						\caption{Relative height-map \emph{(left)} and its corresponding gradient \emph{(right)}.}
-						\label{fig::heightmap_terrain_patch}
-					\end{figure}
-					\begin{figure}[h!]
-						\centering
-						\fbox{\includegraphics[width=\textwidth]{terrain_4545.png}}
-						\caption{Height-map showing terrain variation in the $z_{hm}$ direction.}
-						\label{fig::heightmap_terrain_patch_ortho}
-					\end{figure}							
-				The full 3D point cloud to height-map conversion is summarized in Algorithm \ref{alg::hmconvert}.
-				\begin{algorithm}[!h]
-					\begin{algorithmic}
-						\State{\textbf{init} $M = \Theta, w, d, \bar{S}$}
-						\State{$\bar{S}_{ROI} = \text{isolateROI}(\bar{S})$}
-						\ForAll{$\bar{x}_{k}\in \bar{S}_{ROI}$}
-							\State{$[i,j] = \text{getBestSubdivIndex}(\bar{x}_{k,1},\bar{x}_{k,2},w,d)$}
-							\If{$\bar{x}_{k,3} > m_{i,j}$}
-								\State{$m_{i,j} \leftarrow y_{k,2}$}
-							\EndIf
-						\EndFor
-						\State{$M \leftarrow \text{dialateFeatures}(M)$}
-						\State{$M \leftarrow \text{medianFilter}(M)$}
-					\end{algorithmic}	
-					\caption{3D ROI point cloud to height-map conversion.}
-					\label{alg::hmconvert}
-				\end{algorithm}
+		\subsection{Height-map Generation from 3D point cloud}
+			
+			3D point clouds can be transformed into height-map representations. These representations are convenient for use in planning as they can be converted into discrete cost-maps in a straightforward way. These height-maps are generated by populating the elements of a matrix  $M\in \Re^{n\times m}$ with the $z$ components of points which exist within discretized $w\times d$ region within the original 3D point cloud. The location and size of this regions would have to be determined with some auxiliary detection process which 1) determines that the area has high terrain variation, and 2) determines the bounding region where this patch of rough-terrain exists. We will call this patch a \emph{region of interest} (ROI). Once an ROI is determine, the 3D cloud containing only points from the ROI is isolated from $\bar{S}$ and divided into $(nm)$ sub-divisions, each of which covers a $(w/m) \times (d/n)$ area. Each (\Ith, \Jth) element of $M$, $m_{i,j}$, is then populated with the highest point (larger  $z$ component) within each  (\Ith, \Jth) subdivision. Depending on the density of the 3D point cloud, this process has the potential to produce relatively sparse height-map. To deal with this, a dilation and smoothing routine is used to complete the height-map conversion process. During dilation, each non-zero height element within the map is expanded into a region around the exiting element until. This process is performed until a semi-uniform map is produced with minimal gaps between non-zero height elements. Finally, a median filter is applied to the dilated height-map to produce smooth transitions between height elements.
+				\begin{figure}[t!]
+					\centering
+					\fbox{\includegraphics[width=\textwidth]{terrain_grad_crop.png}}
+					\caption{Relative height-map \emph{(left)} and its corresponding gradient \emph{(right)}.}
+					\label{fig::heightmap_terrain_patch}
+				\end{figure}
+				\begin{figure}[h!]
+					\centering
+					\fbox{\includegraphics[width=\textwidth]{terrain_4545.png}}
+					\caption{Height-map showing terrain variation in the $z_{hm}$ direction.}
+					\label{fig::heightmap_terrain_patch_ortho}
+				\end{figure}							
+			The full 3D point cloud to height-map conversion is summarized in Algorithm \ref{alg::hmconvert}.
+			\begin{algorithm}[!h]
+				\begin{algorithmic}
+					\State{\textbf{init} $M = \Theta, w, d, \bar{S}$}
+					\State{$\bar{S}_{ROI} = \text{isolateROI}(\bar{S})$}
+					\ForAll{$\bar{x}_{k}\in \bar{S}_{ROI}$}
+						\State{$[i,j] = \text{getBestSubdivIndex}(\bar{x}_{k,1},\bar{x}_{k,2},w,d)$}
+						\If{$\bar{x}_{k,3} > m_{i,j}$}
+							\State{$m_{i,j} \leftarrow y_{k,2}$}
+						\EndIf
+					\EndFor
+					\State{$M \leftarrow \text{dialateFeatures}(M)$}
+					\State{$M \leftarrow \text{medianFilter}(M)$}
+				\end{algorithmic}	
+				\caption{3D ROI point cloud to height-map conversion.}
+				\label{alg::hmconvert}
+			\end{algorithm}
 
-			\subsubsection{Surface Reconstruction}
-				\begin{algorithm}[!h]
-					\begin{algorithmic}
-						\State{\textbf{init} $\bar{S},\bar{S}^{*},d,\vec{u}^{r},e,e_{max}$}
-						\State{$\hat{S} = \text{voxelGridFilter}(\bar{S},d)$}
-						\State{$\hat{S} \leftarrow \text{movingLeastSquaresFilter}(\hat{S})$}
-						\State{$\hat{N} = \text{estimateNormals}(\hat{S})$}
-						\ForAll{$\vec{n}_{i} \in N$}
-							\State{$e = (\vec{u}^{r})^{T} \vec{n}_{i}$}
-							\If{$e<e_{max}$}
-								\State{ $\bar{S}^{*} \leftarrow \bar{S}^{*} \cup \bar{x}_{i}$ }
-							\EndIf
-						\EndFor
-					\end{algorithmic}	
-					\caption{Finding good places to step from a 3D point cloud.}
-					\label{alg::goodspacestostep}
-				\end{algorithm}
+		\subsection{Surface Reconstruction}
+			\begin{algorithm}[!h]
+				\begin{algorithmic}
+					\State{\textbf{init} $\bar{S},\bar{S}^{*},d,\vec{u}^{r},e,e_{max}$}
+					\State{$\hat{S} = \text{voxelGridFilter}(\bar{S},d)$}
+					\State{$\hat{S} \leftarrow \text{movingLeastSquaresFilter}(\hat{S})$}
+					\State{$\hat{N} = \text{estimateNormals}(\hat{S})$}
+					\ForAll{$\vec{n}_{i} \in N$}
+						\State{$e = (\vec{u}^{r})^{T} \vec{n}_{i}$}
+						\If{$e<e_{max}$}
+							\State{ $\bar{S}^{*} \leftarrow \bar{S}^{*} \cup \bar{x}_{i}$ }
+						\EndIf
+					\EndFor
+				\end{algorithmic}	
+				\caption{Finding good places to step from a 3D point cloud.}
+				\label{alg::goodspacestostep}
+			\end{algorithm}
 
 
-		\subsection{Proposed Methods for determining the existence of Rough Terrain}
+	%\subsection{Proposed Methods for determining the existence of Rough Terrain}
 
-		\subsection{Foot-placement planning}
+	%\subsection{Foot-placement planning}
 
 

@@ -184,6 +184,54 @@ A.~Goswami.
 \newblock In {\em Robotics and Automation, 1999. Proceedings. 1999 IEEE
   International Conference on}, volume~1, pages 47--52 vol.1, 1999.
 
+\bibitem{Tsungnan1996}
+Tsungnan Lin, B.G. Horne, P.~Tino, and C.L. Giles.
+\newblock Learning long-term dependencies in {NARX} recurrent neural networks.
+\newblock {\em Neural Networks, IEEE Transactions on}, 7(6):1329--1338, Nov
+  1996.
+
+\bibitem{ChenBillings1990}
+Grant P.~M. Chen~S., Billings S.~A.
+\newblock Non-linear system identification using neural networks.
+\newblock In {\em Int. Journal of Control}, volume~51 of {\em Lecture Notes in
+  Control and Information Sciences}, pages 1191--1214. Taylor and Francis,
+  1990.
+
+\bibitem{Hihi1996}
+Salah~El Hihi and Yoshua Bengio.
+\newblock Hierarchical recurrent neural networks for long-term dependencies,
+  1996.
+
+\bibitem{Billings2013}
+S.~A Billings.
+\newblock {\em Nonlinear system identification : NARMAX methods in the time,
+  frequency, and spatio-temporal domains}.
+\newblock John Wiley and Sons Ltd, 2013.
+
+\bibitem{Nelles2001}
+Oliver Nelles.
+\newblock Neural networks with internal dynamics.
+\newblock In {\em Nonlinear System Identification}, pages 645--651. Springer
+  Berlin Heidelberg, 2001.
+
+\bibitem{Rumelhart1988}
+David~E. Rumelhart, Geoffrey~E. Hinton, and Ronald~J. Williams.
+\newblock Neurocomputing: Foundations of research.
+\newblock chapter Learning Representations by Back-propagating Errors, pages
+  696--699. MIT Press, Cambridge, MA, USA, 1988.
+
+\bibitem{Rumelhart1995}
+David~E. Rumelhart, Richard Durbin, Richard Golden, and Yves Chauvin.
+\newblock Backpropagation.
+\newblock chapter Backpropagation: The Basic Theory, pages 1--34. L. Erlbaum
+  Associates Inc., Hillsdale, NJ, USA, 1995.
+
+\bibitem{Rojas1996ch7}
+Ra\'{u}l Rojas.
+\newblock The backpropagation algorithm.
+\newblock In {\em Neural Networks: A Systematic Introduction}, chapter~7.
+  Springer-Verlag New York, Inc., New York, NY, USA, 1996.
+
 \bibitem{Squirrel_website}
 Alberto Demichelis.
 \newblock {S}quirrel, the programming language, 2011.
@@ -292,54 +340,6 @@ R.~Kurazume, T.~Hasegawa, and K.~Yoneda.
 \newblock The sway compensation trajectory for a biped robot.
 \newblock In {\em Robotics and Automation, 2003. Proceedings. ICRA '03. IEEE
   International Conference on}, volume~1, pages 925--931 vol.1, Sept 2003.
-
-\bibitem{Tsungnan1996}
-Tsungnan Lin, B.G. Horne, P.~Tino, and C.L. Giles.
-\newblock Learning long-term dependencies in {NARX} recurrent neural networks.
-\newblock {\em Neural Networks, IEEE Transactions on}, 7(6):1329--1338, Nov
-  1996.
-
-\bibitem{ChenBillings1990}
-Grant P.~M. Chen~S., Billings S.~A.
-\newblock Non-linear system identification using neural networks.
-\newblock In {\em Int. Journal of Control}, volume~51 of {\em Lecture Notes in
-  Control and Information Sciences}, pages 1191--1214. Taylor and Francis,
-  1990.
-
-\bibitem{Hihi1996}
-Salah~El Hihi and Yoshua Bengio.
-\newblock Hierarchical recurrent neural networks for long-term dependencies,
-  1996.
-
-\bibitem{Billings2013}
-S.~A Billings.
-\newblock {\em Nonlinear system identification : NARMAX methods in the time,
-  frequency, and spatio-temporal domains}.
-\newblock John Wiley and Sons Ltd, 2013.
-
-\bibitem{Nelles2001}
-Oliver Nelles.
-\newblock Neural networks with internal dynamics.
-\newblock In {\em Nonlinear System Identification}, pages 645--651. Springer
-  Berlin Heidelberg, 2001.
-
-\bibitem{Rumelhart1988}
-David~E. Rumelhart, Geoffrey~E. Hinton, and Ronald~J. Williams.
-\newblock Neurocomputing: Foundations of research.
-\newblock chapter Learning Representations by Back-propagating Errors, pages
-  696--699. MIT Press, Cambridge, MA, USA, 1988.
-
-\bibitem{Rumelhart1995}
-David~E. Rumelhart, Richard Durbin, Richard Golden, and Yves Chauvin.
-\newblock Backpropagation.
-\newblock chapter Backpropagation: The Basic Theory, pages 1--34. L. Erlbaum
-  Associates Inc., Hillsdale, NJ, USA, 1995.
-
-\bibitem{Rojas1996ch7}
-Ra\'{u}l Rojas.
-\newblock The backpropagation algorithm.
-\newblock In {\em Neural Networks: A Systematic Introduction}, chapter~7.
-  Springer-Verlag New York, Inc., New York, NY, USA, 1996.
 
 \bibitem{Battiti1992}
 Roberto Battiti.

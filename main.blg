@@ -53,14 +53,14 @@ Too many commas in name 1 of "Wieber, P.-B., Tedrake R., Kuindersma S." for entr
 while executing---line 944 of file unsrt.bst
 Warning--empty school in Semini2010_PHD
 Warning--empty journal in Rutishauser2008
+Warning--empty booktitle in Rumelhart1988
+Warning--empty booktitle in Rumelhart1995
 Warning--empty title in opencv_library
 Warning--empty year in opencv_library
 Warning--empty journal in Righetti2006
 Name 1 in "Park, Hae-Won, Meng Yee (Michael) Chuah, and Sangbae Kim" has a comma at the end for entry Park2014
 while executing---line 944 of file unsrt.bst
 Warning--empty journal in Park2014
-Warning--empty booktitle in Rumelhart1988
-Warning--empty booktitle in Rumelhart1995
 You've used 57 entries,
             1791 wiz_defined-function locations,
             865 strings with 15288 characters,
