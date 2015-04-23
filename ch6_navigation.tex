@@ -25,7 +25,7 @@
 				\begin{equation*}
 					\Gamma_{L} = \sbrack{ I_{2\times2}, 0_{2\times1} }^{T}.
 				\end{equation*}
-			Since we are assuming navigation over flat ground, the operator $P_{ \vec{z} }\wrap{*}$ is used to project each transformed LIDAR scan-point onto the plane defined by the $z$-axis unit vector in the frame $O_{0}$.
+			Since we are assuming navigation over flat ground, the operator $P_{ \vec{z} }\wrap{*}$ is used to project each transformed LIDAR scan-point onto the plane defined by the unit vector pointing in the direction of the $z$-axis of the frame $O_{0}$.
 
 			The piecewise potential function, defined in \ref{eq::min_dis_potential_function}, is used in BlueFoot's navigation scheme is designed to ``repel" the platform from objects which are at some minimum distance, $d_{min}$ from the trunk, and attracted toward objects that are further away. The form of this potential function is inspired by several potential function candidates for attractive/repulsive force-field functions presented in \cite{ArambulaCosio2004}. The function \ref{eq::min_dis_potential_function} tends to draw the robot towards long apertures, such as corridors or openings, and away from close-by obstructions. It is written as follows:
 				\begin{eqnarray}
@@ -37,9 +37,9 @@
 					\end{cases}
 				\label{eq::min_dis_potential_function}
 				\end{eqnarray}
-			where $\lambda_{c,1}>0$ and $\lambda_{c,2}>0$ are tuning parameters used to specify the output range and sensitivity of the potential function output with respect to $\Delta d$, respectively. It can be observed that this potential function exhibits $f(x)<0$ when $\norm{x} < d_{min}$ and vice-verse, thus achieves the desired attractive/repulsive characteristics. Namely, this potential function favors points which are generally much further away from the robot, and applies \emph{strong} repulsive forces only when obstacles come within a close range with the platform. These characteristics offer a higher propensity for exploration when the area being navigated is very spacious with few obstacles in view (but at mid range), while encouraging \emph{tight} navigation around potential obstacles. This typically advantageous when obstacles are close together, such as a floating object near a wall, as the robot is less likely to move toward another obstacle in the process of averting another.  
+			where $\lambda_{c,1}>0$ and $\lambda_{c,2}>0$ are tuning parameters used to specify the output range and sensitivity of the potential function output with respect to $\Delta d$, respectively. It can be observed that this potential function exhibits $f(x)<0$ when $\norm{x} < d_{min}$ and vice-verse, thus achieves the desired attractive and repulsive characteristics. Namely, this potential function favors points which are generally much further away from the robot, and applies \emph{strong} repulsive forces only when obstacles come within a close range with the platform. These characteristics offer a higher propensity for exploration when the area being navigated is very spacious with few obstacles in view (but at mid range), while encouraging \emph{tight} navigation away from potential obstacles. 
 
-			The biasing function $g(x,\psi)$ is used to weight the effect of individual scan-point potentials, $f(x_{i}-p_{b})$, on the final navigation output, with respect to the angular-window parameter $\psi>0$. A simple masking-type biasing function is used in BlueFoot's navigation function, which is formally defined as follows:
+			The biasing function $g(x,\psi)$ is used to weight the effect of individual points from a single scan on the final output, with respect to thier relative angular position. The biasing function is parametrized with an angular-window parameter $\psi>0$. A simple masking-type biasing function is used in BlueFoot's navigation function, which is formally defined as follows:
 				\begin{equation}
 					g(x,\psi) = 
 					\begin{cases}
@@ -47,7 +47,7 @@
 					0 	& \text{otherwise}.
 					\end{cases}
 				\end{equation}
-			where $x_{1}$ and $x_{2}$ are the first and second elements of the vector argument $x\in\Re^{3}$. This function is used to give priority to ``foward" points within an angular window $\psi$ and serves to reduce the potential for getting stuck in local minima. A visualization of  the composite potential field, $f(x)g(x,\psi)$, with $\psi=\pi/2$ is shown in Figure \ref{fig::potential_field} for a $2$-by-$2$ meter area about the robot.
+			where $x_{1}$ and $x_{2}$ are the first and second elements of the vector argument $x\in\Re^{3}$. This function is used to give priority points which exists in front for the robot and fall within an angular window $\psi$. Considering only frontward points serves to reduce the potential for getting stuck in local minima, namely when the robot moves into an area where it faces equal potential from all sides. A visualization of  the composite potential field, $f(x)g(x,\psi)$, with $\psi=\pi/2$ is shown in Figure \ref{fig::potential_field} for a $2$-by-$2$ meter area about the robot.
 				\begin{figure}[t!]
 					\centering
 					\fbox{\includegraphics[width=\textwidth]{potential_function.png}}
@@ -56,13 +56,13 @@
 				\end{figure}
 			%In the event that the robot does get stuck in a potential minima, a ``stuck" detection algorithm has been implemented. As the name suggests, this algorithm first detects if the robot is stuck in a local minima of the potential field based on a window of command histories.
 
-			Finally, the command vector $\vec{V}_{L}^{r}$ is transformed into scalar forward and turning rate commands, ${v}_{L}^{r}$ and $\omega_{L}^{r}$, respectively, by the following proportional control scheme:
+			Finally, outputs of the potential field algo4rithm are transformed into forward and turning rate commands, ${v}_{L}^{r}$ and $\omega_{L}^{r}$, respectively, by the following proportional control scheme:
 				\begin{eqnarray}
 					\theta_{L}^{r} 			&=& \tan^{-1}\wrap{ \frac{(\vec{u}^{r}_{L})_{2} }{(\vec{u}^{r}_{L})_{1}} } \nonumber\\
-					\dot{v}_{L}^{r} 			&=& \beta_{v} \wrap{ p_{L} - v_{L}^{r} } \nonumber \\
+					\dot{v}_{L}^{r} 		&=& \beta_{v} \wrap{ p_{L} + v_{L,min}^{r} - v_{L}^{r} } \nonumber \\
 					\dot{\omega}_{L}^{r} 	&=& \beta_{\omega} \wrap{ \wrap{ \frac{ \omega_{L}^{r,max} }{\pi} } \wrap{  \theta_{L}^{r} - \theta_{b,z} } - \omega_{L}^{r} }
 				\end{eqnarray}
-			where $\beta_{v}$ and $\beta_{\omega}$ are proportional-gain tuning parameters; and $\theta_{b,z}$ is the platforms yaw in $O_{0}$. The parameters $\beta_{v}$ and $\beta_{\omega}$ can be viewed as ``update-inertias," as they directly effect the influence of the effect of instantaneous commands on the forward velocity and turning rate of the robot. Furthermore, these gains can be used to low-pass navigation updates to remove jitter cause by command outliers generated from degenerate sensor readings.
+			where $\beta_{v}$ and $\beta_{\omega}$ are proportional-gain tuning parameters; $v_{L,min}^{r}>0$ is a small, minimum velocity used to prevent the robot from getting stuck in local minima; and $\theta_{b,z}$ is robot's yaw in $O_{0}$. The parameters $\beta_{v}$ and $\beta_{\omega}$ can be viewed as ``update-inertias," as they directly effect the influence of the effect of instantaneous commands on the forward velocity and turning rate of the robot. Furthermore, these gains can be used to low-pass navigation updates to remove jitter cause by command outliers generated from degenerate sensor readings.
 
 
 		\subsection{Results of LIDAR-based potential field navigation from simulation}
@@ -88,11 +88,11 @@
 		
 			Camera-based goal tracking is used in conjunction with the aforementioned potential fields navigation scheme to move the platform through an environment while seeking or tracking a particular target. In this case, targets take the the form of features extracted from processed camera data. The robot is guided towards these features using a visual-serving approach. 
 
-			Trackable camera features can be generated in a variety of ways. For the purpose of BlueFoot's navigation, objects with distinct shapes or color have been chosen for tracking so that shape and blob detection algorithms can be employed to detect their positions relative to BlueFoot's camera view range. Namely, Bluefoot's image processing routines make use of the Hough Transform-based shape detection and standard color-blob detection algorithms available from the Open Computer Vision (OpenCV) libraries \cite{opencv_library}. Once detected, center-positions of each feature, represented with respect to the 2D camera-viewing frame, are mapped into forward rate and turning commands to control the robot towards the relative location of the feature. These camera-based commands are then mixed with the outputs of the potential-fields navigation controller to form a hybrid navigation control law.
+			Trackable camera features can be generated in a variety of ways. For the purpose of BlueFoot's navigation, objects with distinct shapes or color have been chosen for tracking so that shape and blob detection algorithms can be employed to detect their positions relative to BlueFoot's camera view range. Namely, Bluefoot's image processing routines make use of the Hough Transform-based shape detection and standard color-blob detection algorithms available from the Open Computer Vision (OpenCV) libraries \cite{opencv_library}. Once detected, center-positions of each feature, represented with respect to the 2D camera-viewing frame, are mapped into forward rate and turning commands to control the robot towards the relative location of the feature. These camera-based commands are then mixed with the outputs of the potential-fields controller as a weighted sum to form a hybrid navigation control law.
 
 			In this visual-servoing approach, features are used to control the robot in a way that is agnostic of the type of feature being tracked. Namely, this approach relies on the relative position of the center of each features, represented as a pixel-position, $p_{Im} = [u,v]^{T} \in Z^{2}$ in the 2D image frame, $O_{Im}$, and a relative size, $r$, measured in pixels. In the case of circular features, for example, $r$ is represent the radius of the detected circle. For color-blob features, $r$ represents the radius of a circle which fully inscribes the colored object.
 
-			For the purpose of target tracking, it is desired that the robot's forward speed be controlled such that is proportional to $r$. Namely, it is desired that the robot stop when it becomes close to the target object, and move faster when the feature is in sight but the robot is further away. The position of the feature's center us used to control the robot's turning rate, as well as the commanded pitch of the robot's trunk, $\theta_{b,x}^{r}$. Trunk articulation important during feature tracking routing as it aids in keeping the tracked-target objects centered in the image frame. Provided that the target is moving slower than the what the system can achieve, this will ensure the target remains in sight at all times.
+			For the purpose of target tracking, it is desired that the robot's forward speed be controlled such that is proportional to $r$. Namely, it is desired that the robot stop when it becomes close to the target object, and move faster when the feature is in sight but the robot is further away. The position of the feature's center is used to control the robot's turning rate, as well as the commanded pitch of the robot's trunk, $\theta_{b,x}^{r}$. Trunk articulation important during feature tracking routing as it aids in keeping the tracked-target objects centered in the image frame. Provided that the target is moving slower than the what the system can achieve, this will ensure the target remains in sight at all times.
 
 			A separate set of navigation commands, $v_{C}^{r}$ and $\omega_{C}^{r}$; and an additional body-pitching command, $\theta_{b,x}^{r}$,  are generated from an extracted feature location, $p_{Im} = [u,v]^{T}$ as follows: 
 				\begin{eqnarray}
@@ -155,8 +155,7 @@
 				\begin{equation}
 					\bar{S} = \bigcup_{j=1}^{N_{s}} \bar{S}_{j}
 				\end{equation}
-				where $N_{s}$ defines the number of scans taken during the sweeping routine.
-				For the sake of simplicity, it is assumed that the trunk's position, $p_{b}$, is fixed (system is completely ridged) during a swept-scan routine. In the results to be presented, this seems to be a reasonable assumption given that the platform is at rest and the trunk is pitched sufficiently slowly over the angular sweeping range. A slow sweep rate ensures that perturbations caused by vibrations incurred by trunk rotation and foot-slip are small, and thus does not cause for significant deviations in LIDAR scan points.
+				where $N_{s}$ defines the number of scans taken during the sweeping routine. For the sake of simplicity, it is assumed that the trunk's position, $p_{b}$, is fixed (system is completely ridged) during a swept-scan routine. In the results to be presented, this seems to be a reasonable assumption given that the platform is at rest and the trunk is pitched sufficiently slowly over the angular sweeping range. A slow sweep rate ensures that perturbations caused by vibrations incurred by trunk rotation and foot-slip are small, and thus does not cause for significant deviations in LIDAR scan points.
 					\begin{figure}[h!]
 						\centering
 						\fbox{\includegraphics[width=\textwidth]{terrain_pcd3_cleaned.png}}
