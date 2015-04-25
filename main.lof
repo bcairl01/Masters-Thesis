@@ -24,24 +24,25 @@
 \contentsline {figure}{\numberline {19}{\ignorespaces CPG output and phase plots for a two-paced gait over two gait cycles.\relax }}{49}
 \contentsline {figure}{\numberline {20}{\ignorespaces CPG output transition during four-pace to two-pace gait switch.\relax }}{49}
 \contentsline {figure}{\numberline {21}{\ignorespaces Virtual foothold representation. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.\relax }}{51}
-\contentsline {figure}{\numberline {22}{\ignorespaces Foot motion generated using virtual-force foothold controller during two-pace gait sequence at $v^{r}=60\frac {mm}{s}$.\relax }}{51}
+\contentsline {figure}{\numberline {22}{\ignorespaces Foot motion generated using virtual-force foothold controller during two-pace gait sequence at $v^{r}=60\frac {mm}{s}$.\relax }}{52}
 \contentsline {figure}{\numberline {23}{\ignorespaces Foot motion generated using virtual-force foothold controller during two-pace gait sequence at $v^{r}=60\frac {mm}{s}$.\relax }}{52}
-\contentsline {figure}{\numberline {24}{\ignorespaces Foot motion generated using virtual-force foothold controlle.\relax }}{54}
-\contentsline {figure}{\numberline {25}{\ignorespaces Quadruped tipping about planted feet. \relax }}{55}
-\contentsline {figure}{\numberline {26}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.\relax }}{59}
-\contentsline {figure}{\numberline {27}{\ignorespaces NARX Network MSE convergence for trial shown in Figure 32\hbox {}\relax }}{61}
-\contentsline {figure}{\numberline {28}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.125$.\relax }}{61}
-\contentsline {figure}{\numberline {29}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.250$.\relax }}{62}
-\contentsline {figure}{\numberline {30}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.350$.\relax }}{62}
-\contentsline {figure}{\numberline {31}{\ignorespaces Trunk orientation during 80 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{63}
-\contentsline {figure}{\numberline {32}{\ignorespaces Trunk orientation during 100 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{63}
+\contentsline {figure}{\numberline {24}{\ignorespaces Body motion in the $x$-axis direction generated using the ZMP controller during a 2-pace gait.\relax }}{60}
+\contentsline {figure}{\numberline {25}{\ignorespaces Body motion in the $x$-axis direction generated using the ZMP controller during a 4-pace gait.\relax }}{60}
+\contentsline {figure}{\numberline {26}{\ignorespaces Quadruped tipping about planted feet. \relax }}{61}
+\contentsline {figure}{\numberline {27}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.\relax }}{61}
+\contentsline {figure}{\numberline {28}{\ignorespaces NARX Network MSE convergence for trial shown in Figure 33\hbox {}\relax }}{62}
+\contentsline {figure}{\numberline {29}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.125$.\relax }}{62}
+\contentsline {figure}{\numberline {30}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.250$.\relax }}{63}
+\contentsline {figure}{\numberline {31}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.350$.\relax }}{63}
+\contentsline {figure}{\numberline {32}{\ignorespaces Trunk orientation during 80 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{64}
+\contentsline {figure}{\numberline {33}{\ignorespaces Trunk orientation during 100 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{64}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {33}{\ignorespaces Composite potential field, $f(x)g(x,\psi )$ with $d_{min}=0.4m$.\relax }}{67}
-\contentsline {figure}{\numberline {34}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential fields navigation scheme.\relax }}{68}
-\contentsline {figure}{\numberline {35}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and obstacles.\relax }}{69}
-\contentsline {figure}{\numberline {36}{\ignorespaces Need sensor sweep diagram.\relax }}{71}
-\contentsline {figure}{\numberline {37}{\ignorespaces Original 3D point-cloud of terrain patch.\relax }}{73}
-\contentsline {figure}{\numberline {38}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{74}
-\contentsline {figure}{\numberline {39}{\ignorespaces Height-map showing terrain variation in the $z_{hm}$ direction.\relax }}{75}
+\contentsline {figure}{\numberline {34}{\ignorespaces Composite potential field, $f(x)g(x,\psi )$ with $d_{min}=0.4m$.\relax }}{68}
+\contentsline {figure}{\numberline {35}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential fields navigation scheme.\relax }}{69}
+\contentsline {figure}{\numberline {36}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and obstacles.\relax }}{70}
+\contentsline {figure}{\numberline {37}{\ignorespaces Need sensor sweep diagram.\relax }}{72}
+\contentsline {figure}{\numberline {38}{\ignorespaces Original 3D point-cloud of terrain patch.\relax }}{74}
+\contentsline {figure}{\numberline {39}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{75}
+\contentsline {figure}{\numberline {40}{\ignorespaces Height-map showing terrain variation in the $z_{hm}$ direction.\relax }}{76}
 \addvspace {10pt}
 \addvspace {10pt}

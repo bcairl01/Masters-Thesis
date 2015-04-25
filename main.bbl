@@ -246,6 +246,11 @@ Radu~Bogdan Rusu and Steve Cousins.
 \newblock In {\em {IEEE International Conference on Robotics and Automation
   (ICRA)}}, Shanghai, China, May 9-13 2011.
 
+\bibitem{boost_website}
+Beman Dawes.
+\newblock {B}oost {C}++ {L}ibraries, 2005.
+\newblock [Online; http://www.boost.org/].
+
 \bibitem{WX_Website}
 wx{W}idgets, {C}ross-{P}latform {GUI} {L}ibrary, 2015.
 \newblock [Online; https://www.wxwidgets.org/].
