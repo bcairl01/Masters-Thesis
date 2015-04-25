@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.19)  24 APR 2015 15:42
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.19)  23 APR 2015 16:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -695,8 +695,11 @@ Package pdftex.def Info: process_diagram.png used on input line 56.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[23] [24 <./process_diagram.png>] [25] [26]
-<comm_flow.png, id=141, 722.7pt x 469.755pt>
+[23] [24 <./process_diagram.png>] [25]
+
+LaTeX Warning: Citation `boost_website' on page 26 undefined on input line 85.
+
+[26] <comm_flow.png, id=141, 722.7pt x 469.755pt>
 File: comm_flow.png Graphic file (type png)
  <use comm_flow.png>
 Package pdftex.def Info: comm_flow.png used on input line 93.
@@ -821,99 +824,79 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[51 <./virtual_foothold.png>] <body_motion2.png, id=238, 578.16pt x 433.62pt>
-File: body_motion2.png Graphic file (type png)
-
-<use body_motion2.png>
-Package pdftex.def Info: body_motion2.png used on input line 239.
-(pdftex.def)             Requested size: 346.89731pt x 260.17401pt.
- <body_motion4.png, id=239, 578.16pt x 433.62pt>
-File: body_motion4.png Graphic file (type png)
-
-<use body_motion4.png>
-Package pdftex.def Info: body_motion4.png used on input line 241.
-(pdftex.def)             Requested size: 346.89731pt x 260.17401pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[52] [53] <tipping_robot.png, id=247, 650.43pt x 433.62pt>
+[51 <./virtual_foothold.png>] [52] [53] [54]
+<tipping_robot.png, id=248, 650.43pt x 433.62pt>
 File: tipping_robot.png Graphic file (type png)
+ <use tipping_robot.png>
+Package pdftex.def Info: tipping_robot.png used on input line 310.
+(pdftex.def)             Requested size: 346.89731pt x 231.26651pt.
 
-<use tipping_robot.png>
-Package pdftex.def Info: tipping_robot.png used on input line 313.
-(pdftex.def)             Requested size: 390.25534pt x 260.17401pt.
- [54]
+[55 <./tipping_robot.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 358.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[55]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 361.
-
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 361.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 358.
  [56] [57]
-<controller_diagram.png, id=261, 650.43pt x 433.62pt>
+<controller_diagram.png, id=259, 650.43pt x 433.62pt>
 File: controller_diagram.png Graphic file (type png)
 
 <use controller_diagram.png>
-Package pdftex.def Info: controller_diagram.png used on input line 427.
-(pdftex.def)             Requested size: 390.25534pt x 260.17401pt.
+Package pdftex.def Info: controller_diagram.png used on input line 424.
+(pdftex.def)             Requested size: 433.62pt x 289.0881pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[58] <aux_V_100mms_nN_50_nL_2_nns.png, id=265, 578.16pt x 433.62pt>
+[58] [59 <./controller_diagram.png>]
+<aux_V_100mms_nN_50_nL_2_nns.png, id=267, 578.16pt x 433.62pt>
 File: aux_V_100mms_nN_50_nL_2_nns.png Graphic file (type png)
 
 <use aux_V_100mms_nN_50_nL_2_nns.png>
-Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_nns.png used on input line 446
+Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_nns.png used on input line 443
 .
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
-<alpha0125_V_60mms_nN_50_nL_2_pos.png, id=266, 578.16pt x 433.62pt>
+<alpha0125_V_60mms_nN_50_nL_2_pos.png, id=268, 578.16pt x 433.62pt>
 File: alpha0125_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use alpha0125_V_60mms_nN_50_nL_2_pos.png>
 Package pdftex.def Info: alpha0125_V_60mms_nN_50_nL_2_pos.png used on input lin
-e 452.
+e 449.
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
-<alpha0250_V_60mms_nN_50_nL_2_pos.png, id=267, 578.16pt x 433.62pt>
+<alpha0250_V_60mms_nN_50_nL_2_pos.png, id=269, 578.16pt x 433.62pt>
 File: alpha0250_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use alpha0250_V_60mms_nN_50_nL_2_pos.png>
 Package pdftex.def Info: alpha0250_V_60mms_nN_50_nL_2_pos.png used on input lin
-e 458.
+e 455.
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
-<alpha0350_V_60mms_nN_50_nL_2_pos.png, id=268, 578.16pt x 433.62pt>
+<alpha0350_V_60mms_nN_50_nL_2_pos.png, id=270, 578.16pt x 433.62pt>
 File: alpha0350_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use alpha0350_V_60mms_nN_50_nL_2_pos.png>
 Package pdftex.def Info: alpha0350_V_60mms_nN_50_nL_2_pos.png used on input lin
-e 464.
+e 461.
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
-<aux_V_80mms_nN_50_nL_2_pos.png, id=269, 578.16pt x 433.62pt>
+<aux_V_80mms_nN_50_nL_2_pos.png, id=271, 578.16pt x 433.62pt>
 File: aux_V_80mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use aux_V_80mms_nN_50_nL_2_pos.png>
-Package pdftex.def Info: aux_V_80mms_nN_50_nL_2_pos.png used on input line 470.
+Package pdftex.def Info: aux_V_80mms_nN_50_nL_2_pos.png used on input line 467.
 
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
-<aux_V_100mms_nN_50_nL_2_pos.png, id=270, 578.16pt x 433.62pt>
+<aux_V_100mms_nN_50_nL_2_pos.png, id=272, 578.16pt x 433.62pt>
 File: aux_V_100mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use aux_V_100mms_nN_50_nL_2_pos.png>
-Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_pos.png used on input line 476
+Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_pos.png used on input line 473
 .
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 )
@@ -926,38 +909,37 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[59] [60 <./body_motion2.png (PNG copy)> <./body_motion4.png (PNG copy)>]
-[61 <./tipping_robot.png> <./controller_diagram.png>] [62 <./aux_V_100mms_nN_50
-_nL_2_nns.png (PNG copy)> <./alpha0125_V_60mms_nN_50_nL_2_pos.png (PNG copy)>]
-[63 <./alpha0250_V_60mms_nN_50_nL_2_pos.png (PNG copy)> <./alpha0350_V_60mms_nN
-_50_nL_2_pos.png (PNG copy)>] [64 <./aux_V_80mms_nN_50_nL_2_pos.png (PNG copy)>
- <./aux_V_100mms_nN_50_nL_2_pos.png (PNG copy)>]
+[60] [61 <./aux_V_100mms_nN_50_nL_2_nns.png (PNG copy)> <./alpha0125_V_60mms_nN
+_50_nL_2_pos.png (PNG copy)>] [62 <./alpha0250_V_60mms_nN_50_nL_2_pos.png (PNG 
+copy)> <./alpha0350_V_60mms_nN_50_nL_2_pos.png (PNG copy)>] [63 <./aux_V_80mms_
+nN_50_nL_2_pos.png (PNG copy)> <./aux_V_100mms_nN_50_nL_2_pos.png (PNG copy)>]
 \openout2 = `ch6_navigation.aux'.
 
- (./ch6_navigation.tex
+
+(./ch6_navigation.tex
 CHAPTER 6
-[65
+[64
 
 
 
-] [66] <potential_function.png, id=297, 578.16pt x 433.62pt>
+] [65] <potential_function.png, id=292, 578.16pt x 433.62pt>
 File: potential_function.png Graphic file (type png)
 
 <use potential_function.png>
 Package pdftex.def Info: potential_function.png used on input line 53.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
 
-<potential_field_full.png, id=298, 1084.05pt x 903.375pt>
+<potential_field_full.png, id=293, 1084.05pt x 903.375pt>
 File: potential_field_full.png Graphic file (type png)
 
 <use potential_field_full.png>
 Package pdftex.def Info: potential_field_full.png used on input line 72.
 (pdftex.def)             Requested size: 433.62pt x 361.3436pt.
- [67]
+ [66]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<potential_field_full_obstacles.png, id=302, 1084.05pt x 505.89pt>
+<potential_field_full_obstacles.png, id=297, 1084.05pt x 505.89pt>
 File: potential_field_full_obstacles.png Graphic file (type png)
 
 <use potential_field_full_obstacles.png>
@@ -968,9 +950,9 @@ Package pdftex.def Info: potential_field_full_obstacles.png used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[68 <./potential_function.png (PNG copy)>] [69 <./potential_field_full.png>]
-[70 <./potential_field_full_obstacles.png>] [71] [72]
-<terrain_pcd3_cleaned.png, id=321, 757.32938pt x 723.20187pt>
+[67 <./potential_function.png (PNG copy)>] [68 <./potential_field_full.png>]
+[69 <./potential_field_full_obstacles.png>] [70] [71]
+<terrain_pcd3_cleaned.png, id=316, 757.32938pt x 723.20187pt>
 File: terrain_pcd3_cleaned.png Graphic file (type png)
 
 <use terrain_pcd3_cleaned.png>
@@ -980,13 +962,13 @@ Package pdftex.def Info: terrain_pcd3_cleaned.png used on input line 160.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<terrain_grad_crop.png, id=322, 514.3215pt x 263.3037pt>
+<terrain_grad_crop.png, id=317, 514.3215pt x 263.3037pt>
 File: terrain_grad_crop.png Graphic file (type png)
 
 <use terrain_grad_crop.png>
 Package pdftex.def Info: terrain_grad_crop.png used on input line 171.
 (pdftex.def)             Requested size: 433.62pt x 221.98917pt.
- <terrain_4545.png, id=323, 578.16pt x 433.62pt>
+ <terrain_4545.png, id=318, 578.16pt x 433.62pt>
 File: terrain_4545.png Graphic file (type png)
 
 <use terrain_4545.png>
@@ -999,17 +981,17 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[73]
+[72]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [74 <./terrain_pcd3_cleaned.png>] [75 <./terrain_grad_crop.png>] [76 <./terra
+) [73 <./terrain_pcd3_cleaned.png>] [74 <./terrain_grad_crop.png>] [75 <./terra
 in_4545.png (PNG copy)>]
 \openout2 = `ch7_closing_remarks.aux'.
 
  (./ch7_closing_remarks.tex
 CHAPTER 7
-) [77
+) [76
 
 
 
@@ -1018,11 +1000,11 @@ CHAPTER 7
 
  (./appendix_a.tex
 Appendix 1
-[78
+[77
 
 
 
-]) [79] (./main.bbl
+]) [78] (./main.bbl
 Missing character: There is no Å in font cmr12!
 Missing character: There is no „ in font cmr12!
 Missing character: There is no Å in font cmr12!
@@ -1030,7 +1012,7 @@ Missing character: There is no „ in font cmr12!
 Missing character: There is no â in font cmti12!
 Missing character: There is no € in font cmti12!
 Missing character: There is no “ in font cmti12!
- [80
+ [79
 
 ]
 Missing character: There is no â in font cmr12!
@@ -1042,19 +1024,20 @@ Missing character: There is no ” in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
- [81]
+ [80]
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ‡ in font cmr12!
- [82] [83]
-Underfull \hbox (badness 10000) in paragraph at lines 255--257
+ [81]
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
 []\OT1/cmr/m/n/12 wxWidgets, Cross-Platform GUI Li-brary, 2015.  [On-line;
  []
 
+[82]
 Missing character: There is no Å in font cmr12!
 Missing character: There is no ™ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no  in font cmr12!
-[84]
+ [83]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ­ in font cmr12!
 Missing character: There is no Ã in font cmr12!
@@ -1062,7 +1045,7 @@ Missing character: There is no ± in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
-) [85] (./main.aux (./vita.aux) (./publications.aux)
+) [84] (./main.aux (./vita.aux) (./publications.aux)
 (./acknowledgements.aux) (./abstract.aux) (./ch1_introduction.aux)
 (./ch2_hardware.aux) (./ch3_software.aux) (./ch4_modeling.aux)
 (./ch5_gaitcontrol.aux) (./ch6_navigation.aux) (./ch7_closing_remarks.aux)
@@ -1075,10 +1058,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5676 strings out of 495028
- 85550 string characters out of 6181497
- 172240 words of memory out of 5000000
- 8659 multiletter control sequences out of 15000+600000
+ 5666 strings out of 495028
+ 85352 string characters out of 6181497
+ 172236 words of memory out of 5000000
+ 8651 multiletter control sequences out of 15000+600000
  13313 words of font info for 49 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  46i,16n,42p,2023b,331s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1094,10 +1077,10 @@ fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (93 pages, 12635803 bytes).
+Output written on main.pdf (92 pages, 12557720 bytes).
 PDF statistics:
- 413 PDF objects out of 1000 (max. 8388607)
- 247 compressed objects within 3 object streams
+ 408 PDF objects out of 1000 (max. 8388607)
+ 245 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 186 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 176 words of extra memory for PDF output out of 10000 (max. 10000000)
 

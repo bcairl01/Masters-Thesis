@@ -55,18 +55,18 @@
 \contentsline {section}{\numberline {5.4}ZMP Based Trunk-Placement Control}{52}
 \contentsline {section}{\numberline {5.5}Trunk Leveling via NARX-Network Learning Approach}{54}
 \contentsline {subsection}{\numberline {5.5.1}NARX-Neural Network}{55}
-\contentsline {subsection}{\numberline {5.5.2}NARX-NN Training Regimen}{55}
+\contentsline {subsection}{\numberline {5.5.2}NARX-NN Training Regimen}{56}
 \contentsline {subsection}{\numberline {5.5.3}Compensator Output}{57}
 \contentsline {subsection}{\numberline {5.5.4}NARX-NN Compensator Results}{58}
-\contentsline {chapter}{\numberline {VI. }Perception and Navigation}{65}
-\contentsline {section}{\numberline {6.1}Flatland navigation and goal (feature) tracking}{65}
-\contentsline {subsection}{\numberline {6.1.1}LIDAR-based Potential-Fields Algorithm}{65}
-\contentsline {subsection}{\numberline {6.1.2}Results of LIDAR-based potential field navigation from simulation}{68}
-\contentsline {subsection}{\numberline {6.1.3}Incorporation of Camera-based Feature-Tracking}{69}
-\contentsline {subsection}{\numberline {6.1.4}Hybrid Potential-Fields Navigation Results}{72}
-\contentsline {section}{\numberline {6.2}Towards Rough Terrain Navigation}{72}
-\contentsline {subsection}{\numberline {6.2.1}Terrain Mapping from 2D scans}{72}
-\contentsline {subsection}{\numberline {6.2.2}Height-map Generation from 3D point cloud}{73}
-\contentsline {subsection}{\numberline {6.2.3}Surface Reconstruction}{74}
-\contentsline {chapter}{\numberline {VII. }Concluding Remarks}{77}
-\contentsline {chapter}{\numberline {A. }Leg Jacobian with respect to frame $O_{i,0}$}{78}
+\contentsline {chapter}{\numberline {VI. }Perception and Navigation}{64}
+\contentsline {section}{\numberline {6.1}Flatland navigation and goal (feature) tracking}{64}
+\contentsline {subsection}{\numberline {6.1.1}LIDAR-based Potential-Fields Algorithm}{64}
+\contentsline {subsection}{\numberline {6.1.2}Results of LIDAR-based potential field navigation from simulation}{67}
+\contentsline {subsection}{\numberline {6.1.3}Incorporation of Camera-based Feature-Tracking}{68}
+\contentsline {subsection}{\numberline {6.1.4}Hybrid Potential-Fields Navigation Results}{71}
+\contentsline {section}{\numberline {6.2}Towards Rough Terrain Navigation}{71}
+\contentsline {subsection}{\numberline {6.2.1}Terrain Mapping from 2D scans}{71}
+\contentsline {subsection}{\numberline {6.2.2}Height-map Generation from 3D point cloud}{72}
+\contentsline {subsection}{\numberline {6.2.3}Surface Reconstruction}{73}
+\contentsline {chapter}{\numberline {VII. }Concluding Remarks}{76}
+\contentsline {chapter}{\numberline {A. }Leg Jacobian with respect to frame $O_{i,0}$}{77}
