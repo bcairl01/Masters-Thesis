@@ -15,39 +15,40 @@ A level-1 auxiliary file: ch7_closing_remarks.aux
 A level-1 auxiliary file: appendix_a.aux
 The style file: unsrt.bst
 Database file #1: refs.bib
-You're missing a field part---line 37 of file refs.bib
+You're missing a field part---line 27 of file refs.bib
  : title = 
  :         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 530 of file refs.bib
+Repeated entry---line 519 of file refs.bib
  : @article{Collins1993
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 544 of file refs.bib
+Repeated entry---line 533 of file refs.bib
  : @article{Ajallooeian2013
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 608 of file refs.bib
+Repeated entry---line 597 of file refs.bib
  : @article{Righetti2006
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 618 of file refs.bib
+Repeated entry---line 607 of file refs.bib
  : @article{Rutishauser2008
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 627 of file refs.bib
+Repeated entry---line 616 of file refs.bib
  : @article{Ijspeert2008
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 639 of file refs.bib
+Repeated entry---line 628 of file refs.bib
  : @inproceedings{Matos2010
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 665 of file refs.bib
+Repeated entry---line 654 of file refs.bib
  : @inproceedings{Fukuoka2003
  :                           ,
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "Billard2000"
+Warning--I didn't find a database entry for "boost_library"
 Too many commas in name 1 of "Wieber, P.-B., Tedrake R., Kuindersma S." for entry Wieber2015
 while executing---line 944 of file unsrt.bst
 Warning--empty school in Semini2010_PHD
@@ -60,45 +61,45 @@ Warning--empty journal in Righetti2006
 Name 1 in "Park, Hae-Won, Meng Yee (Michael) Chuah, and Sangbae Kim" has a comma at the end for entry Park2014
 while executing---line 944 of file unsrt.bst
 Warning--empty journal in Park2014
-You've used 58 entries,
+You've used 57 entries,
             1791 wiz_defined-function locations,
-            869 strings with 15360 characters,
-and the built_in function-call counts, 17051 in all, are:
-= -- 1548
-> -- 606
+            865 strings with 15288 characters,
+and the built_in function-call counts, 16924 in all, are:
+= -- 1538
+> -- 602
 < -- 42
-+ -- 224
-- -- 166
-* -- 1139
-:= -- 2396
-add.period$ -- 184
-call.type$ -- 58
-change.case$ -- 55
++ -- 222
+- -- 165
+* -- 1138
+:= -- 2377
+add.period$ -- 181
+call.type$ -- 57
+change.case$ -- 54
 chr.to.int$ -- 0
-cite$ -- 66
-duplicate$ -- 830
-empty$ -- 1725
-format.name$ -- 166
-if$ -- 4062
+cite$ -- 65
+duplicate$ -- 825
+empty$ -- 1707
+format.name$ -- 165
+if$ -- 4032
 int.to.chr$ -- 0
-int.to.str$ -- 58
+int.to.str$ -- 57
 missing$ -- 52
-newline$ -- 291
-num.names$ -- 69
-pop$ -- 234
+newline$ -- 286
+num.names$ -- 68
+pop$ -- 227
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 523
+skip$ -- 520
 stack$ -- 0
 substring$ -- 1333
-swap$ -- 330
+swap$ -- 329
 text.length$ -- 42
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 8
-while$ -- 135
-width$ -- 60
-write$ -- 648
+while$ -- 134
+width$ -- 59
+write$ -- 638
 (There were 10 error messages)
