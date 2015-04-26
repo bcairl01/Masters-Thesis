@@ -369,4 +369,12 @@ G.~Bradski and A.~Kaehler.
 \newblock {\em {L}earning {O}pen{CV}}, chapter {I}mage {M}orphology.
 \newblock {O}’{R}eilly {M}edia, 2008.
 
+\bibitem{Castillo2013}
+Edward Castillo, Jian Liang, and Hongkai Zhao.
+\newblock Point cloud segmentation and denoising via constrained nonlinear
+  least squares normal estimates.
+\newblock In Michael Breuß, Alfred Bruckstein, and Petros Maragos, editors,
+  {\em Innovations for Shape Analysis}, Mathematics and Visualization, pages
+  283--299. Springer Berlin Heidelberg, 2013.
+
 \end{thebibliography}

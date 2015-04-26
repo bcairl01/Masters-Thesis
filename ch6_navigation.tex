@@ -215,7 +215,9 @@
 
 			3D surfaces can be reconstructed from point cloud data ($\bar{S}$) by fitting a collection of flat polygonal elements to the source point cloud. Each of these estimated elements is represented by a surface-normal which emanates from a point within the source cloud. Surface normal estimation carried out by fitting planes to groups of points which exist within a neighborhood $d_{s}$ about each point $\bar{x_{i}}\in\bar{S}$. The formation of $\bar{S}$ is described in Section \ref{ssec::terrain_mapping}.
 
-			Before normal estimation, the point cloud $\bar{S}$ (which is usually dense) is down-sampled and smoothed before a normal estimation algorithm is applied. Point cloud down-sampling is performed using a voxel-grid technique, which discretizes the point cloud space into a voxel-space, which is a 3D space consisting of cuboids of a particular width, depth and height. Here, a cubic voxel space is used parameterized by a single voxel side-length dimension $d_{vox}$. The voxel grid filter and generates a single point from all points which fall within a voxel region, typically as a mean of all said points. This down-sampling technique produces a reduced-point representation of the original cloud, $\hat{S}$, which can contain up to 10 times less points than the original cloud, $\bar{S}$.
+			Before normal estimation, the point cloud $\bar{S}$ (which is usually dense) is down-sampled and smoothed before a normal estimation algorithm is applied. Point cloud down-sampling is performed using a voxel-grid technique, which discretizes the point cloud space into a voxel-space, which is a 3D space consisting of cuboids of a particular width, depth and height. Here, a cubic voxel space is used parameterized by a single voxel side-length dimension $d_{vox}$. The voxel grid filter and generates a single point from all points which fall within a voxel region, typically as a mean of all said points. This down-sampling technique produces a reduced-point representation of the original cloud, $\hat{S}$, which has shown, though empirical observation, to contain up to 10 times less points, $\bar{S}$. This reduced-point cloud representation serves to greatly reduce the computation burden of further processing the cloud.
+
+			Next, the resulting cloud, $\hat{S}$, is smoothed using a moving least-squares filter. This filter creates a smoothed point cloud by performing a sequence polynomial fits over subsets of points. As previously mentioned, normals are estimated from the smoothed point via a plane fitting method. Planes are estimated using moving neighborhoods of points using Principle Component Analysis (PCA), which provides a least-squares plane fit \cite{Castillo2013}.
 %%
 			\begin{algorithm}[!h]
 				\begin{algorithmic}
@@ -238,6 +240,6 @@
 			\begin{figure}[h!]
 				\centering
 				\fbox{\includegraphics[width=\textwidth]{surf_reconstruction.png}}
-				\caption{Point cloud with flat-surface candidates \emph{(top)} and 3D Point Cloud with normal estimation \emph{(bottom)}.}
+				\caption{Point cloud generated from sequential scans of a room showing flat-surface candidates \emph{(top)} and 3D Point Cloud with normal estimation \emph{(bottom)}.}
 				\label{fig::surface_estimation}
 			\end{figure}
