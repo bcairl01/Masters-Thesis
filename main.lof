@@ -43,5 +43,6 @@
 \contentsline {figure}{\numberline {37}{\ignorespaces Original 3D point-cloud of terrain patch.\relax }}{73}
 \contentsline {figure}{\numberline {38}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{74}
 \contentsline {figure}{\numberline {39}{\ignorespaces Height-map showing terrain variation in the $z_{hm}$ direction.\relax }}{75}
+\contentsline {figure}{\numberline {40}{\ignorespaces Point cloud with flat-surface candidates \emph {(top)} and 3D Point Cloud with normal estimation \emph {(bottom)}.\relax }}{77}
 \addvspace {10pt}
 \addvspace {10pt}

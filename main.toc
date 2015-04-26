@@ -63,10 +63,9 @@
 \contentsline {subsection}{\numberline {6.1.1}LIDAR-based Potential-Fields Algorithm}{64}
 \contentsline {subsection}{\numberline {6.1.2}Results of LIDAR-based potential field navigation from simulation}{67}
 \contentsline {subsection}{\numberline {6.1.3}Incorporation of Camera-based Feature-Tracking}{68}
-\contentsline {subsection}{\numberline {6.1.4}Hybrid Potential-Fields Navigation Results}{71}
 \contentsline {section}{\numberline {6.2}Towards Rough Terrain Navigation}{71}
 \contentsline {subsection}{\numberline {6.2.1}Terrain Mapping from 2D scans}{71}
 \contentsline {subsection}{\numberline {6.2.2}Height-map Generation from 3D point cloud}{72}
 \contentsline {subsection}{\numberline {6.2.3}Surface Reconstruction}{74}
-\contentsline {chapter}{\numberline {VII. }Concluding Remarks}{77}
-\contentsline {chapter}{\numberline {A. }Leg Jacobian with respect to frame $O_{i,0}$}{78}
+\contentsline {chapter}{\numberline {VII. }Concluding Remarks}{78}
+\contentsline {chapter}{\numberline {A. }Leg Jacobian with respect to frame $O_{i,0}$}{79}

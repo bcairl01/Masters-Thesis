@@ -246,6 +246,11 @@ Radu~Bogdan Rusu and Steve Cousins.
 \newblock In {\em {IEEE International Conference on Robotics and Automation
   (ICRA)}}, Shanghai, China, May 9-13 2011.
 
+\bibitem{boost_website}
+Beman Dawes.
+\newblock {B}oost {C}++ {L}ibraries, 2005.
+\newblock [Online; http://www.boost.org/].
+
 \bibitem{WX_Website}
 wx{W}idgets, {C}ross-{P}latform {GUI} {L}ibrary, 2015.
 \newblock [Online; https://www.wxwidgets.org/].
@@ -358,5 +363,10 @@ F.~Arambula Cosío and M.A.~Padilla Castañeda.
 \newblock Autonomous robot navigation using adaptive potential fields.
 \newblock {\em Mathematical and Computer Modelling}, 40(9–10):1141 -- 1156,
   2004.
+
+\bibitem{opencv_learn_immorph}
+G.~Bradski and A.~Kaehler.
+\newblock {\em {L}earning {O}pen{CV}}, chapter {I}mage {M}orphology.
+\newblock {O}’{R}eilly {M}edia, 2008.
 
 \end{thebibliography}

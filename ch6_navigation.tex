@@ -116,15 +116,12 @@
 			\end{eqnarray}
 			where $c_{mix}$ is a sensitivity parameter; and $r_{mix}$ defines the processed-feature size which will grant full navigation control to the camera-based navigation scheme. The reasoning for such a scheme involves a heuristic approach to obstacle aversion, which assumes that when the platform is further away from a goal, there is a higher probability that it will encounter an obstacle. Conversely, when the goal becomes closer to the platform, it assumed that the number of obstacles between the robot and the target decreases, making it safe to shift full priority to reaching the goal from the current position. It is defined that if a feature is not visible within the current view of the camera, then it is considered to be of size $r=0$.
 
-		\subsection{Hybrid Potential-Fields Navigation Results}
-		
-
-
 
 	\section{Towards Rough Terrain Navigation}
 
 
 		\subsection{Terrain Mapping from 2D scans}
+			\label{ssec::terrain_mapping}
 			\begin{figure}[h!]
 				\centering
 				\caption{Need sensor sweep diagram.}
@@ -177,13 +174,13 @@
 					\left[
 						\begin{array}{ccc|c}
 						0 &-1 & 0 & w/2 \\
-						1 & 0 & 0 & w/2 \\
+						1 & 0 & 0 & d/2 \\
 						0 & 0 & 1 &  0  \\ \hline
 						0 & 0 & 0 &  1  \\
 						\end{array}
 					\right]
 				\end{equation}
-			Depending on the density of the source point cloud, this process has the potential to produce relatively sparse height-map. To deal with this, a dilation and smoothing routine is used to complete the height-map conversion process. During dilation, each non-zero height element within the map is expanded into a region around the exiting element until. This process is performed until a semi-uniform map is produced with minimal gaps between non-zero height elements. Finally, a median filter is applied to the dilated height-map to produce smooth transitions between height elements within the height map.
+			Depending on the density of the source point cloud, this process has the potential to produce relatively sparse height-map. To deal with this, a dilation and smoothing routine is used to complete the height-map conversion process. During dilation, each non-zero height element within the map is expanded into a region around an existing element with non-zero value \cite{opencv_learn_immorph}. This process is performed until a semi-uniform map is produced with minimal gaps between non-zero height elements. Finally, a median filter is applied to the dilated height-map to produce smooth transitions between height elements within the height map. The median filter replaces all values within a window of elements (usually forming a square region) with the middle-valued element.
 				\begin{figure}[t!]
 					\centering
 					\fbox{\includegraphics[width=\textwidth]{terrain_grad_crop.png}}
@@ -216,11 +213,14 @@
 
 		\subsection{Surface Reconstruction}
 
-			3D surface reconstruction from the a point cloud $\bar{S}$ involves the estimation of a collection of flat polygonal elements which cover the area of the point cloud. Each of these elements is represented by a surface-normals which emanates from the source cloud. Surface normal estimation carried out by fitting planes to groups of points which exist within a neighborhood $d_{s}$ about each point $\bar{i}\in\bar{S}$.
+			3D surfaces can be reconstructed from point cloud data ($\bar{S}$) by fitting a collection of flat polygonal elements to the source point cloud. Each of these estimated elements is represented by a surface-normal which emanates from a point within the source cloud. Surface normal estimation carried out by fitting planes to groups of points which exist within a neighborhood $d_{s}$ about each point $\bar{x_{i}}\in\bar{S}$. The formation of $\bar{S}$ is described in Section \ref{ssec::terrain_mapping}.
+
+			Before normal estimation, the point cloud $\bar{S}$ (which is usually dense) is down-sampled and smoothed before a normal estimation algorithm is applied. Point cloud down-sampling is performed using a voxel-grid technique, which discretizes the point cloud space into a voxel-space, which is a 3D space consisting of cuboids of a particular width, depth and height. Here, a cubic voxel space is used parameterized by a single voxel side-length dimension $d_{vox}$. The voxel grid filter and generates a single point from all points which fall within a voxel region, typically as a mean of all said points. This down-sampling technique produces a reduced-point representation of the original cloud, $\hat{S}$, which can contain up to 10 times less points than the original cloud, $\bar{S}$.
+%%
 			\begin{algorithm}[!h]
 				\begin{algorithmic}
-					\State{\textbf{init} $\bar{S},\bar{S}^{*},d,\vec{u}^{r},e,e_{max}$}
-					\State{$\hat{S} = \text{voxelGridFilter}(\bar{S},d)$}
+					\State{\textbf{init} $\bar{S},\bar{S}^{*},d_{vox},\vec{u}^{r},e,e_{max}$}
+					\State{$\hat{S} = \text{voxelGridFilter}(\bar{S},d_{vox})$}
 					\State{$\hat{S} \leftarrow \text{movingLeastSquaresFilter}(\hat{S})$}
 					\State{$\hat{N} = \text{estimateNormals}(\hat{S})$}
 					\ForAll{$\vec{n}_{i} \in N$}
@@ -233,10 +233,11 @@
 				\caption{Finding good places to step from a 3D point cloud.}
 				\label{alg::goodspacestostep}
 			\end{algorithm}
+%%
 
-
-	%\subsection{Proposed Methods for determining the existence of Rough Terrain}
-
-	%\subsection{Foot-placement planning}
-
-
+			\begin{figure}[h!]
+				\centering
+				\fbox{\includegraphics[width=\textwidth]{surf_reconstruction.png}}
+				\caption{Point cloud with flat-surface candidates \emph{(top)} and 3D Point Cloud with normal estimation \emph{(bottom)}.}
+				\label{fig::surface_estimation}
+			\end{figure}
