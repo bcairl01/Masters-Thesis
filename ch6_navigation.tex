@@ -39,7 +39,7 @@
 				\end{eqnarray}
 			where $\lambda_{c,1}>0$ and $\lambda_{c,2}>0$ are tuning parameters used to specify the output range and sensitivity of the potential function output with respect to $\Delta d$, respectively. It can be observed that this potential function exhibits $f(x)<0$ when $\norm{x} < d_{min}$ and vice-verse, thus achieves the desired attractive and repulsive characteristics. Namely, this potential function favors points which are generally much further away from the robot, and applies \emph{strong} repulsive forces only when obstacles come within a close range with the platform. These characteristics offer a higher propensity for exploration when the area being navigated is very spacious with few obstacles in view (but at mid range), while encouraging \emph{tight} navigation away from potential obstacles. 
 
-			The biasing function $g(x,\psi)$ is used to weight the effect of individual points from a single scan on the final output, with respect to thier relative angular position. The biasing function is parametrized with an angular-window parameter $\psi>0$. A simple masking-type biasing function is used in BlueFoot's navigation function, which is formally defined as follows:
+			The biasing function $g(x,\psi)$ is used to weight the effect of individual points from a single scan on the final output, with respect to their relative angular position. The biasing function is parametrized with an angular-window parameter $\psi>0$. A simple masking-type biasing function is used in BlueFoot's navigation function, which is formally defined as follows:
 				\begin{equation}
 					g(x,\psi) = 
 					\begin{cases}
@@ -80,9 +80,9 @@
 					\label{fig::potential_field_results_obstacles}
 				\end{figure}
 		
-			Figure \ref{fig::potential_field_results} shows the patch resulting from a simulated trial in which the BlueFoot robot robot autonmously wandered trhough an environment, consisting of a room and several long corridors, using the previously described potential fields formulatons. A plot of the robot's trajectory shows that the robot was able to successfully navigate the region while avoiding collisions with the surrounding walls. Notably, the robot naturally avoided smaller outcove regions, which were filled with obstacles, because these regions had low relative potential. This is becuase of thier relative depth with respect to the robot's position. 
+			Figure \ref{fig::potential_field_results} shows the patch resulting from a simulated trial in which the BlueFoot robot robot autonomously wandered through an environment, consisting of a room and several long corridors, using the previously described potential fields formulations. A plot of the robot's trajectory shows that the robot was able to successfully navigate the region while avoiding collisions with the surrounding walls. Notably, the robot naturally avoided smaller out-cove regions, which were filled with obstacles, because these regions had low relative potential. This is because of their relative depth with respect to the robot's position. 
 
-			A second set of results is shown in Figure \ref{fig::potential_field_results_obstacles} shows the robot's performance in enviroments additional obstacles.
+			A second set of results is shown in Figure \ref{fig::potential_field_results_obstacles} shows the robot's performance in environments additional obstacles.
 
 		\subsection{Incorporation of Camera-based Feature-Tracking}
 		
@@ -124,7 +124,8 @@
 			\label{ssec::terrain_mapping}
 			\begin{figure}[h!]
 				\centering
-				\caption{Need sensor sweep diagram.}
+				\fbox{\includegraphics[width=\textwidth]{laser-sweep.png}}
+				\caption{LIDAR swept over a range of angles, $\theta_{b,x} \in [\theta_{b,x,1}^{r},\theta_{b,x,N}^{r}]$. }
 				\label{fig::sensor_sweep}
 			\end{figure}
 			The BlueFoot platform has the ability to compose 3D point clouds from a series of swept 2D LIDAR scans in conjunction with a trunk orientation estimates, $\hat{\theta}_{b}$, which is generated using an EKF. LIDAR articulation is achieved by slowly pitching the trunk over some angular range while keeping the platform's feet ridgedly planted. Sweeping range is limited by the kinematic-feasibility of each trunk pose that must be reached during a sweep. Given a particular set of foot and body location, kinematic feasibility is validated using the inverse kinematics solution described in Section \ref{sec::inverse_position_kinematics}. A single 2D scan is taken at each pose within the body-sweep trajectory. The newly acquired scan is transformed from the LIDAR sensor frame, $O_{L}$, to the world frame by a homogeneous transformation $H^{L}_{0}$ which is defined as follows
@@ -154,8 +155,8 @@
 			where $N_{s}$ defines the number of scans taken during the sweeping routine. For the sake of simplicity, it is assumed that the trunk's position, $p_{b}$, is fixed (system is completely ridged) during a swept-scan routine. In the results to be presented, this seems to be a reasonable assumption given that the platform is at rest and the trunk is pitched sufficiently slowly over the angular sweeping range. A slow sweep rate ensures that perturbations caused by vibrations incurred by trunk rotation and foot-slip are small, and thus does not cause for significant deviations in LIDAR scan points.
 				\begin{figure}[h!]
 					\centering
-					\fbox{\includegraphics[width=\textwidth]{terrain_pcd3_cleaned.png}}
-					\caption{Original 3D point-cloud of terrain patch.}
+					\fbox{\includegraphics[width=0.95\textwidth]{rough_terrain.png}}
+					\caption{Original 3D point-cloud of terrain patch \emph{(top)} and corresponding view from robot's on-board camera \emph{(bottom)}.}
 					\label{fig::pointcloud_terrain_patch}
 				\end{figure}
 
@@ -172,15 +173,49 @@
 			We will denote a sub-set of points within a point cloud which, collectively, represent a patch of rough-terrain as a \emph{region of interest} (ROI). Once an ROI is determine, the 3D cloud containing only points from the ROI is isolated from $\bar{S}$ and divided into $(nm)$ sub-divisions, each of which covers a $(w/m) \times (d/n)$ area. Each (\Ith, \Jth) element of $M$, $m_{i,j}$, is then populated with the highest point (largest  $z$ component) within each  (\Ith, \Jth) subdivision. The transformation from a point cloud element $\bar{x} = [\xcomp{\bar{x}},\ycomp{\bar{x}},\zcomp{\bar{x}}]^{T}$ to an element within the discretized height-map frame, $m_{i,j} = [i,j,h]^{T} \in O_{hm}$, can be described by:
 				\begin{equation}
 					\left[
-						\begin{array}{ccc|c}
-						0 &-1 & 0 & w/2 \\
-						1 & 0 & 0 & d/2 \\
-						0 & 0 & 1 &  0  \\ \hline
-						0 & 0 & 0 &  1  \\
+						\begin{array}{c}
+						i \\
+						j \\
+						h  	\\
 						\end{array}
 					\right]
+					=
+					\ciel{
+						\left[
+							\begin{array}{ccc}
+							n/d & 0 	& 0 \\
+							0 	& m/w 	& 0 \\
+							0 	& 0 	& 1 \\
+							\end{array}
+						\right]
+						\wrap{
+							\left[
+								\begin{array}{ccc}
+								0 &-1 & 0 \\
+								1 & 0 & 0 \\
+								0 & 0 & 1 \\
+								\end{array}
+							\right]
+							\left[
+								\begin{array}{c}
+								\xcomp{\bar{x}} \\
+								\ycomp{\bar{x}} \\
+								\zcomp{\bar{x}} \\
+								\end{array}
+							\right]
+							+
+							\left[
+								\begin{array}{c}
+								1.5 d \\
+								0.5 w \\
+								0 \\
+								\end{array}
+							\right]
+						}
+					}
+					\label{eq::toheightmapframe}
 				\end{equation}
-			Depending on the density of the source point cloud, this process has the potential to produce relatively sparse height-map. To deal with this, a dilation and smoothing routine is used to complete the height-map conversion process. During dilation, each non-zero height element within the map is expanded into a region around an existing element with non-zero value \cite{opencv_learn_immorph}. This process is performed until a semi-uniform map is produced with minimal gaps between non-zero height elements. Finally, a median filter is applied to the dilated height-map to produce smooth transitions between height elements within the height map. The median filter replaces all values within a window of elements (usually forming a square region) with the middle-valued element.
+			where $\ciel{*}$ is an element-wise vector ceiling function. Depending on the density of the source point cloud, this process has the potential to produce relatively sparse height-map. To deal with this, a dilation and smoothing routine is used to complete the height-map conversion process. During dilation, each non-zero height element within the map is expanded into a region around an existing element with non-zero value \cite{opencv_learn_immorph}. This process is performed until a semi-uniform map is produced with minimal gaps between non-zero height elements. Finally, a median filter is applied to the dilated height-map to produce smooth transitions between height elements within the height map. The median filter replaces all values within a window of elements (usually forming a square region) with the middle-valued element.
 				\begin{figure}[t!]
 					\centering
 					\fbox{\includegraphics[width=\textwidth]{terrain_grad_crop.png}}
@@ -193,13 +228,13 @@
 					\caption{Height-map showing terrain variation in the $z_{hm}$ direction.}
 					\label{fig::heightmap_terrain_patch_ortho}
 				\end{figure}							
-			The full 3D point cloud to height-map conversion is summarized in Algorithm \ref{alg::hmconvert}.
+			The full 3D point cloud to height-map conversion is summarized in Algorithm \ref{alg::hmconvert}. In this algorithm, $\emph{\text{isolateROI}}$ is a function which locates a region of interest within the point cloud $\bar{S}$; $\emph{\text{getBestSubdivIndex}}$ performs the transformation in $\ref{eq::toheightmapframe}$, which generates indices within the discretized space $O_{Im}$ from points in $O_{0}$; $\emph{\text{dialateFeatures}}$ performs a standard image-dilation routine; and $\emph{\text{medianFilter}}$ performs a standard image median filter routine. 
 			\begin{algorithm}[!h]
 				\begin{algorithmic}
 					\State{\textbf{init} $M = \Theta, w, d, \bar{S}$}
 					\State{$\bar{S}_{ROI} = \text{isolateROI}(\bar{S})$}
 					\ForAll{$\bar{x}_{k}\in \bar{S}_{ROI}$}
-						\State{$[i,j] = \text{getBestSubdivIndex}(\bar{x}_{k,1},\bar{x}_{k,2},w,d)$}
+						\State{$[i,j] = \text{getBestSubdivIndex}(\xcomp{\bar{x}_{k}},\ycomp{\bar{x}_{k}},w,d)$}
 						\If{$\zcomp{\bar{x}_{k}} > m_{i,j}$}
 							\State{$m_{i,j} \leftarrow \zcomp{\bar{x}_{k}}$}
 						\EndIf
@@ -217,7 +252,7 @@
 
 			Before normal estimation, the point cloud $\bar{S}$ (which is usually dense) is down-sampled and smoothed before a normal estimation algorithm is applied. Point cloud down-sampling is performed using a voxel-grid technique, which discretizes the point cloud space into a voxel-space, which is a 3D space consisting of cuboids of a particular width, depth and height. Here, a cubic voxel space is used parameterized by a single voxel side-length dimension $d_{vox}$. The voxel grid filter and generates a single point from all points which fall within a voxel region, typically as a mean of all said points. This down-sampling technique produces a reduced-point representation of the original cloud, $\hat{S}$, which has shown, though empirical observation, to contain up to 10 times less points, $\bar{S}$. This reduced-point cloud representation serves to greatly reduce the computation burden of further processing the cloud.
 
-			Next, the resulting cloud, $\hat{S}$, is smoothed using a moving least-squares filter. This filter creates a smoothed point cloud by performing a sequence polynomial fits over subsets of points. As previously mentioned, normals are estimated from the smoothed point via a plane fitting method. Planes are estimated using moving neighborhoods of points using Principle Component Analysis (PCA), which provides a least-squares plane fit \cite{Castillo2013}.
+			Next, the resulting cloud, $\hat{S}$, is smoothed using a moving least-squares filter. This filter creates a smoothed point cloud by performing a sequence polynomial fits over subsets of points. As previously mentioned, normals are estimated from the smoothed point via a plane fitting method. Planes are estimated using Principle Component Analysis (PCA) on neighborhoods of radius $d_{s}$ about each point \cite{Castillo2013}. The standard PCA algorithm provides a least-squares plane fit by way of dimensional reduction from a 3D collection of points to a 2D manifold \cite{Pearson1901}. A point cloud with estimated surface normals is shown in \ref{fig::surface_estimation}.
 %%
 			\begin{algorithm}[!h]
 				\begin{algorithmic}
