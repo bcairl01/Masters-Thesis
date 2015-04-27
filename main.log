@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  26 APR 2015 23:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  26 APR 2015 23:39
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -470,9 +470,9 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 
 
-] [2])
+])
 \tf@toc=\write3
- [3]
+ [2] [3]
 (C:\Users\Brian\Desktop\Masters-Thesis\main.lof
 Overfull \hbox (8.05205pt too wide) in paragraph at lines 5--5
  [][] []\OT1/cmr/m/n/12 The Blue-Foot Quadruped Robot: single-camera con-fig-u-
@@ -483,19 +483,14 @@ ra-tion \OT1/cmr/m/it/12 (left)\OT1/cmr/m/n/12 ; stereo-
 
 ])
 \tf@lof=\write4
- [5] (C:\Users\Brian\Desktop\Masters-Thesis\main.lot
-Overfull \hbox (21.53992pt too wide) in paragraph at lines 4--4
- [][] []\OT1/cmr/m/n/12 System com-mu-ni-ca-tion port-pairs and cor-re-spond-in
-g data trans-fer rate$[]$Refers 
- []
-
-)
+ [5] (C:\Users\Brian\Desktop\Masters-Thesis\main.lot)
 \tf@lot=\write5
  [6
 
-] (C:\Users\Brian\Desktop\Masters-Thesis\ch1_introduction.tex
+]
+(C:\Users\Brian\Desktop\Masters-Thesis\ch1_introduction.tex
 CHAPTER 1
-<on_the_rocks2.jpg, id=36, 5267.68pt x 2963.07pt>
+<on_the_rocks2.jpg, id=35, 5267.68pt x 2963.07pt>
 File: on_the_rocks2.jpg Graphic file (type jpg)
  <use on_the_rocks2.jpg>
 Package pdftex.def Info: on_the_rocks2.jpg used on input line 9.
@@ -574,7 +569,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <power_diagram.png, id=110, 1084.05pt x 722.7pt>
 File: power_diagram.png Graphic file (type png)
  <use power_diagram.png>
-Package pdftex.def Info: power_diagram.png used on input line 226.
+Package pdftex.def Info: power_diagram.png used on input line 227.
 (pdftex.def)             Requested size: 433.62pt x 289.07487pt.
 
 [19 <C:/Users/Brian/Desktop/Masters-Thesis/device_diagram.png>]
@@ -1013,7 +1008,7 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (98 pages, 14415619 bytes).
+Output written on main.pdf (98 pages, 14415272 bytes).
 PDF statistics:
  427 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -1,9 +1,9 @@
 \addvspace {10pt}
 \addvspace {10pt}
 \contentsline {table}{\numberline {1}{\ignorespaces Link and body-offset lengths for each leg.\relax }}{15}
-\contentsline {table}{\numberline {2}{\ignorespaces System communication port-pairs and corresponding data transfer rate{$^*$Refers to the on-board XBEE module which communicates with the ground station.} \relax }}{20}
-\contentsline {table}{\numberline {3}{\ignorespaces Power consumption summary by device (for single-camera with Hokuyo-URG).\relax }}{21}
-\contentsline {table}{\numberline {4}{\ignorespaces Battery power supply and estimated runtime summary, assuming low regulator losses.\relax }}{21}
+\contentsline {table}{\numberline {2}{\ignorespaces System communication port-pairs and corresponding data transfer rates\relax }}{20}
+\contentsline {table}{\numberline {3}{\ignorespaces Power consumption summary by device (for single-camera configuration).\relax }}{21}
+\contentsline {table}{\numberline {4}{\ignorespaces Battery power supply and estimated runtime summary.\relax }}{21}
 \addvspace {10pt}
 \contentsline {table}{\numberline {5}{\ignorespaces Structure of the packets sent from Ground-Station to TM4C.\relax }}{28}
 \contentsline {table}{\numberline {6}{\ignorespaces Structure of the packets sent from the TM4C to the Ground-Station.\relax }}{28}
