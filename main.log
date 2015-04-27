@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  27 APR 2015 01:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  27 APR 2015 17:46
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -656,7 +656,7 @@ sktop/Masters-Thesis/ori_rom.png>] [38]
 File: coordinate_frames.png Graphic file (type png)
  <use coordinate_frames.png>
 Package pdftex.def Info: coordinate_frames.png used on input line 334.
-(pdftex.def)             Requested size: 325.215pt x 162.60599pt.
+(pdftex.def)             Requested size: 433.62pt x 216.81168pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -854,7 +854,7 @@ CHAPTER 6
 File: potential_field.png Graphic file (type png)
 
 <use potential_field.png>
-Package pdftex.def Info: potential_field.png used on input line 46.
+Package pdftex.def Info: potential_field.png used on input line 47.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
  [67] [68 <C:/Users/Brian/Desktop/Masters-Thesis/potential_field.png (PNG copy)
 >]
@@ -862,7 +862,7 @@ Package pdftex.def Info: potential_field.png used on input line 46.
 File: potential_field_full.png Graphic file (type png)
 
 <use potential_field_full.png>
-Package pdftex.def Info: potential_field_full.png used on input line 75.
+Package pdftex.def Info: potential_field_full.png used on input line 77.
 (pdftex.def)             Requested size: 433.62pt x 361.3436pt.
 
 
@@ -873,7 +873,7 @@ File: potential_field_full_obstacles.png Graphic file (type png)
 
 <use potential_field_full_obstacles.png>
 Package pdftex.def Info: potential_field_full_obstacles.png used on input line 
-81.
+83.
 (pdftex.def)             Requested size: 433.62pt x 202.3524pt.
 
 
@@ -884,18 +884,18 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [72] <laser-sweep.png, id=325, 963.6pt x 542.025pt>
 File: laser-sweep.png Graphic file (type png)
  <use laser-sweep.png>
-Package pdftex.def Info: laser-sweep.png used on input line 134.
+Package pdftex.def Info: laser-sweep.png used on input line 136.
 (pdftex.def)             Requested size: 433.62pt x 243.90898pt.
 
 [73 <C:/Users/Brian/Desktop/Masters-Thesis/laser-sweep.png>]
 <rough_terrain.png, id=330, 722.7pt x 1084.05pt>
 File: rough_terrain.png Graphic file (type png)
  <use rough_terrain.png>
-Package pdftex.def Info: rough_terrain.png used on input line 165.
+Package pdftex.def Info: rough_terrain.png used on input line 167.
 (pdftex.def)             Requested size: 411.93767pt x 617.91493pt.
 
 
-LaTeX Warning: Float too large for page by 22.68506pt on input line 168.
+LaTeX Warning: Float too large for page by 22.68506pt on input line 170.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -904,45 +904,45 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: terrain_grad_crop.png Graphic file (type png)
 
 <use terrain_grad_crop.png>
-Package pdftex.def Info: terrain_grad_crop.png used on input line 228.
+Package pdftex.def Info: terrain_grad_crop.png used on input line 230.
 (pdftex.def)             Requested size: 433.62pt x 191.86691pt.
  <terrain_4545.png, id=335, 578.16pt x 433.62pt>
 File: terrain_4545.png Graphic file (type png)
 
 <use terrain_4545.png>
-Package pdftex.def Info: terrain_4545.png used on input line 234.
+Package pdftex.def Info: terrain_4545.png used on input line 236.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
- [75]
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[76] [77] <surf_reconstruction.png, id=346, 963.6pt x 1228.59pt>
+[75] [76] [77] [78] <surf_reconstruction.png, id=349, 963.6pt x 1228.59pt>
 File: surf_reconstruction.png Graphic file (type png)
 
 <use surf_reconstruction.png>
-Package pdftex.def Info: surf_reconstruction.png used on input line 307.
+Package pdftex.def Info: surf_reconstruction.png used on input line 329.
 (pdftex.def)             Requested size: 433.62pt x 552.8604pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [78] [79 <C:/Users/Brian/Desktop/Masters-Thesis/rough_terrain.png>] [80 <C:/U
+) [79] [80 <C:/Users/Brian/Desktop/Masters-Thesis/rough_terrain.png>] [81 <C:/U
 sers/Brian/Desktop/Masters-Thesis/terrain_grad_crop.png> <C:/Users/Brian/Deskto
-p/Masters-Thesis/terrain_4545.png (PNG copy)>] [81 <C:/Users/Brian/Desktop/Mast
+p/Masters-Thesis/terrain_4545.png (PNG copy)>] [82 <C:/Users/Brian/Desktop/Mast
 ers-Thesis/surf_reconstruction.png>]
 (C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.tex
 CHAPTER 7
-) [82
+) [83
 
 
 
 ] (C:\Users\Brian\Desktop\Masters-Thesis\appendix_a.tex
 Appendix 1
-[83
+[84
 
 
 
-]) [84] (C:\Users\Brian\Desktop\Masters-Thesis\main.bbl
+]) [85] (C:\Users\Brian\Desktop\Masters-Thesis\main.bbl
 Missing character: There is no ≈ in font cmr12!
 Missing character: There is no Ñ in font cmr12!
 Missing character: There is no ≈ in font cmr12!
@@ -950,7 +950,7 @@ Missing character: There is no Ñ in font cmr12!
 Missing character: There is no ‚ in font cmti12!
 Missing character: There is no Ä in font cmti12!
 Missing character: There is no ì in font cmti12!
- [85
+ [86
 
 ]
 Missing character: There is no ‚ in font cmr12!
@@ -962,11 +962,11 @@ Missing character: There is no î in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ì in font cmr12!
- [86]
+ [87]
 Missing character: There is no ƒ in font cmr12!
 Missing character: There is no á in font cmr12!
- [87]
-[88]
+ [88]
+[89]
 Underfull \hbox (badness 10000) in paragraph at lines 255--257
 []\OT1/cmr/m/n/12 wxWidgets, Cross-Platform GUI Li-brary, 2015.  [On-line;
  []
@@ -975,7 +975,7 @@ Missing character: There is no ≈ in font cmr12!
 Missing character: There is no ô in font cmr12!
 Missing character: There is no ƒ in font cmr12!
 Missing character: There is no ç in font cmr12!
-[89]
+[90]
 Missing character: There is no √ in font cmr12!
 Missing character: There is no ≠ in font cmr12!
 Missing character: There is no √ in font cmr12!
@@ -986,10 +986,10 @@ Missing character: There is no ì in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
- [90]
+ [91]
 Missing character: There is no √ in font cmr12!
 Missing character: There is no ü in font cmr12!
-) [91] (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
+) [92] (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
 (C:\Users\Brian\Desktop\Masters-Thesis\vita.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\publications.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\acknowledgements.aux)
@@ -1016,7 +1016,7 @@ Here is how much of TeX's memory you used:
  8438 multiletter control sequences out of 15000+200000
  13313 words of font info for 49 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 46i,16n,42p,2023b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,17n,42p,2023b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/
@@ -1030,9 +1030,9 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on main.pdf (101 pages, 14497548 bytes).
+Output written on main.pdf (102 pages, 14501138 bytes).
 PDF statistics:
- 438 PDF objects out of 1000 (max. 8388607)
+ 441 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  201 words of extra memory for PDF output out of 10000 (max. 10000000)
 
