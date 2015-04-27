@@ -287,11 +287,16 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 		and $K_{Z}, K_{F}, K_{c}, K_{\epsilon}, k_{l} > 0$ and $\dot{p}_{b}^{b',r}$ is the reference body velocity. $F_{r}$ is a boundary force added to ensure that the workspace of each manipulator, defined by the radii $r_{min}$ and $r_{max}$, is not exceeded when the body is repositioned. $k_{l}$ is picked to be adequately large such that this force is nearly zero when the body and foot positions comply with the local workspace of each leg, and large when the workspace is nearly compromised, forcing the placement of the body to comply with each leg workspace. Figure \ref{fig::body_motion} shows trunk reference trajectory, ${p}_{b}^{b',r}$ and actual body trajectory, ${p}_{b}^{b'}$ generated using the aforementioned ZMP-based body-placement controller during a gait which achieves a forward velocity of $v^{r}=60\frac{mm}{s}$.
 			\begin{figure}[h!]
 				\centering
-				%\fbox{\includegraphics[width=0.75\textwidth]{virtual_foothold.png}}
-				\caption{Foot motion generated using virtual-force foothold controlle.}
+				\fbox{\includegraphics[width=1.00\textwidth]{body_motion2.png}}
+				\caption{Foot motion generated using virtual-force foothold controller.}
 				\label{fig::body_motion}
 			\end{figure}
-%
+			\begin{figure}[h!]
+				\centering
+				\fbox{\includegraphics[width=1.00\textwidth]{body_motion4.png}}
+				\caption{Foot motion generated using virtual-force foothold controller.}
+				\label{fig::body_motion}
+			\end{figure}
 
 
 
