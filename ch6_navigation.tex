@@ -253,7 +253,7 @@
 				\label{alg::hmconvert}
 			\end{algorithm}
 
-		\subsection{Discrete Cost-map Conversion from Height-map for use in step planning}
+		\subsection{Height-map to Cost-map Conversion}
 
 			A discrete height-map space can easily be converted to a cost-space representation for the purpose of planning foot-placement during traversal over rough terrain. Here, a cost-map $C\in\Re^{n\times m\times l}$ is used in planning. The dimensions of size $n$ and $m$ directly correspond to the width and depth of the discretized height-map space. The third dimension of size represents a discretization of the robot's yaw state, $\theta_{b,z}\in[-\pi,\pi]$ into $l$ subdivisions. This cost map has been formulated with respect to two main cost elements:
 				\begin{enumerate}
