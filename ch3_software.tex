@@ -60,14 +60,14 @@
 
 		Figure \ref{fig::process_diagram} depicts how core software and associated control elements are related within the BlueFoot software macro-system. This section will detail a general description of the tasks carried out by each major software module implemented on the BlueFoot quadruped.
 
-			\subsubsection{TM4C (Lower Brain)}
+		\subsubsection{TM4C (Lower Brain)}
 
 			As previously mentioned, the TM4C processor on-board the AutoPilot module is responsible for \emph{Low-Level} tasks and can be viewed a safety/communications routing co-processor within the overall system. Within its main program loop, the TM4C polls the system's main battery voltage via ADC interface routines; handles transmit and receive (packet decoding) routines between the ground-station and the RM48 system nodes; and handles command dispatching and feedback polling with the system's 16 servo actuators. The TM4C is directly interfaced with two dual-channel power switching IC's and is used to control power supply to each leg by toggling general purpose IO pins in software. The state of these pins is administered as part of a periodic packet command/update packet sent from the ground-station. Since the TM4C has this control over the system's actuators (which consume most of the system's power) and battery monitoring capabilities, it runs a safety routine which is responsible for halting motor activity and/or cutting system power on low-battery or power-fault conditions, as well as during unexpected breaks in communication with the ground-station.
 
 			As previously mentioned, the TM4C handles communication routing between system processing modules; as well as with controllers on-board each smart-servo. Administering servo commands and collection servo feedback it the TM4C's highest priority task. This process, which involves both commanding and requesting feedback from each servo, is relatively expensive  and limits the TM4C's loop frequency to roughly 50 Hz. Thus, it is particularly important that this task is offloaded to this processor, as its other safety and communication-related tasks are much less expensive, by comparison, and allow the servo actuators to be updated quickly as possible without encumbering other system control operations.
 
 
-			\subsubsection{RM48 (Lower Brain)}
+		\subsubsection{RM48 (Lower Brain)}
 
 			The RM48 is responsible for several \emph{Low-Level} tasks, including IMU polling and handling communication with the TM4C and ODROID-XU. Each collected IMU sample is passed along to an extended Kalman Filter routine, which generates a trunk orientation estimate, $\hat{\theta}_{b}$ in the world frame, $O_{0}$. 
 
@@ -77,8 +77,7 @@
 
 			Lastly, the RM48 handles an on-board scripting engine (based on the MIT Squirrel Scripting), which interprets lexical commands. This scripting engine is capable of handling a large number of high-level commands and is complex enough to handle function and class definitions in real time \cite{Squirrel_website}. The scripting engine currently being used to evaluate BlueFoot's core user command set, ranging from simple state toggling and parameter modification, to the prescription of user-specified way-points for navigation, among other high-level command itams. Scripting commands are passed from the ground station (via terminal) and routed through the TM4C to the RM48, where they are finally evaluated.
 
-
-			\subsubsection{ODROID-XU (Upper Brain)}
+		\subsubsection{ODROID-XU (Upper Brain)}
 
 			The ODROID-XU runs software upon a Debian (Linux) operating system distribution ``Jessie." The use of an Linux operating system extends itself to a number of programmatic conveniences, such as to ability to run several tasks in parallel threads. Inbuilt USB drivers are used in functions which are used to acquire data from USB-interfaced vision sensors. Namely, the ORDOID runs sensor handling elements used for acquiring and buffering camera images and controlling camera frame-rate control; as well as LIDAR scan frames. The ORIOID uses these sensor inputs, in conjunction with orientation estimates and inertial data passed from the RM48 to perform several navigation-related tasks (\EG potential fields, mapping, localization, terrain-reconstruction). These tasks will be described in more detail in Chapter \ref{ch::navigation}.
 
@@ -140,7 +139,7 @@
 				\caption{Structure of the packets sent from the RM48 to the ODROID.}
 				\label{tab::rm48_to_odroid}
 			\end{table}
-Packets sent form the ODROID to the RM48 contain command items, such as forward velocity, turning rate and trunk-pose commands, as well as foothold-references and corrected global trunk position estimates. These packets are constructed as shown in Table \ref{tab::odroid_to_rm48} :
+		Packets sent form the ODROID to the RM48 contain command items, such as forward velocity, turning rate and trunk-pose commands, as well as foothold-references and corrected global trunk position estimates. These packets are constructed as shown in Table \ref{tab::odroid_to_rm48} :
 %
 			\begin{table}[h!]
 				\centering
@@ -157,12 +156,12 @@ Packets sent form the ODROID to the RM48 contain command items, such as forward 
 
 	\section{Ground Station}
 		
-		\begin{figure}[h!]
-			\centering
-			\fbox{\includegraphics[width=\textwidth]{terminal.png}}
-			\caption{BlueFoot ground-station GUI}
-			\label{fig::comm_flow}
-		\end{figure}
+		%\begin{figure}[h!]
+		%	\centering
+		%	\fbox{\includegraphics[width=\textwidth]{terminal.png}}
+		%	\caption{BlueFoot ground-station GUI}
+		%	\label{fig::comm_flow}
+		%\end{figure}
 		%\begin{figure}[h!]
 		%	\centering
 		%	%\fbox{\includegraphics[width=\textwidth]{wxTerminal.jpg}}

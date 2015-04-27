@@ -212,18 +212,18 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 			\dot{\tilde{p}}_{i,e}^{y} 	= { \wrap{ \alpha_{v} v^{r}+\alpha_{\omega} \omega^{r} } \dot{y}_{2,i}} \vec{h}_{i} 
 			\label{eq::FootControl}
 		\end{equation}
-		where $\alpha_{v}$ and $\alpha_{\omega}$ are scalar weighting parameters. Scaling step height relative to command parameters $v^{r}$ and $\omega^{r}$ has been seen in experimental studies to be more effective than using a fixed step-height for all gait configurations. Figures \ref{fig::foot_motion2} and \ref{fig::foot_motion4} shown foot motion patterns using the aggregate virtual-force foothold controller and CPG motion outputs during two and four-paced gaits, respectively, which achieve a forward velocity of $v^{r}=60\frac{mm}{s}$, .
+		where $\alpha_{v}$ and $\alpha_{\omega}$ are scalar weighting parameters. Scaling step height relative to command parameters $v^{r}$ and $\omega^{r}$ has been seen in experimental studies to be more effective than using a fixed step-height for all gait configurations. Figures \ref{fig::foot_motion2} and \ref{fig::foot_motion4} show stepping pattersn generated using the aggregate virtual-force foothold controller and CPG motion outputs during two and four-paced gaits, respectively, which achieve a forward velocity of $v^{r}=40\frac{mm}{s}$. The sequence of foot contacts made during each gait is enumerated in each figure. Red, green, blue, and cyan dots represent contacts made by the front-right, front-left, back-left and back-right feet, respectively.
 %
 			\begin{figure}[h!]
 				\centering
-				%\fbox{\includegraphics[width=0.75\textwidth]{virtual_foothold.png}}
-				\caption{Foot motion generated using virtual-force foothold controller during two-pace gait sequence at $v^{r}=60\frac{mm}{s}$.}
+				\fbox{\includegraphics[width=0.90\textwidth]{step_pattern_2.png}}
+				\caption{Stepping pattern generated using virtual-force foothold controller during two-pace gait sequence at $v^{r}=40\frac{mm}{s}$.}
 				\label{fig::foot_motion2}
 			\end{figure}
 			\begin{figure}[h!]
 				\centering
-				%\fbox{\includegraphics[width=0.75\textwidth]{virtual_foothold.png}}
-				\caption{Foot motion generated using virtual-force foothold controller during two-pace gait sequence at $v^{r}=60\frac{mm}{s}$.}
+				\fbox{\includegraphics[width=0.90\textwidth]{step_pattern_4.png}}
+				\caption{Stepping pattern generated using virtual-force foothold controller during four-pace gait sequence at $v^{r}=40\frac{mm}{s}$.}
 				\label{fig::foot_motion4}
 			\end{figure}
 %

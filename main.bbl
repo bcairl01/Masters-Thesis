@@ -369,6 +369,20 @@ G.~Bradski and A.~Kaehler.
 \newblock {\em {L}earning {O}pen{CV}}, chapter {I}mage {M}orphology.
 \newblock {O}’{R}eilly {M}edia, 2008.
 
+\bibitem{Rusu2009}
+Radu~Bogdan Rusu.
+\newblock {\em Semantic 3D Object Maps for Everyday Manipulation in Human
+  Living Environments}.
+\newblock PhD thesis, Computer Science department, Technische Universitaet
+  Muenchen, Germany, October 2009.
+
+\bibitem{Mitra2003}
+Niloy~J. Mitra and An~Nguyen.
+\newblock Estimating surface normals in noisy point cloud data.
+\newblock In {\em Proceedings of the Nineteenth Annual Symposium on
+  Computational Geometry}, SCG '03, pages 322--328, New York, NY, USA, 2003.
+  ACM.
+
 \bibitem{Castillo2013}
 Edward Castillo, Jian Liang, and Hongkai Zhao.
 \newblock Point cloud segmentation and denoising via constrained nonlinear
