@@ -11,7 +11,7 @@
 	
 		The BlueFoot robot is operated using a potential field-based control scheme for obstacle avoidance during navigation over flatland. Camera-based feature tracking has been incorporated into this navigation scheme for the purpose of establishing goals to which the robot attempts to travel to. Platform navigation is administered by two main command parameters, $v^{r}$ and $\omega^{r}$, which represent forward velocity and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. During navigation, the pitch of the trunk, $\theta_{b,x}$ is also controlled via its respective reference signal, $\theta_{b,x}^{r}$. Control over trunk pose allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head (trunk). 
 
-		Namely, BlueFoot's potential fields-based navigation mechanism fuses LIDAR data and features from processed camera images. This algorithm is essentially used as a ``wandering" mechanism which would normally be employed as a first-level navigation measure in an unknown environment when no information (\EG map data) is known by the robot \emph{a priori}. Camera features are used in conjunction with LIDAR scans for the purpose of assigning trackable targets, which are a particularly useful in navigation for avoid local minima faced with navigating via a potential-fields approach, alone. Moreover, image features as points of attraction, which draw the robot towards them. 
+		Namely, BlueFoot's potential fields-based navigation mechanism fuses LIDAR data and features from processed camera images. This algorithm is essentially used as a ``wandering" mechanism which would normally be employed as a first-level navigation measure in an unknown environment when no information (\IE environmental map data) is known by the robot \emph{a priori}. Camera features are used in conjunction with LIDAR scans for the purpose of assigning trackable targets, which are a particularly useful in navigation for avoid local minima faced with navigating via a potential-fields approach, alone. Moreover, image features as points of attraction, which draw the robot towards them. 
 
 		This section will first describe the base potential-fields algorithm, which utilizes only LIDAR sensor data. Results related to this navigation mechanism will be presented from simulation. Then, the incorporation of processed camera data will be described and a set of associated results will be presented from real-world trials.
 
@@ -269,16 +269,16 @@
 				\begin{equation}			
 					J(N) = \sum_{k=0}^N r_{c,k}
 				\end{equation}	
-			where  $r_{c,k} = r_{c}(\Gamma_{k},\Gamma_{k-1},M,\nabla M)$. An optimal path can be found over the discretized space using an $A^{*}$-based path planning algorithm (or some variation). Additionally, sub-optimal paths could be generated using a potential fields approach. Both of these directions have yet to be explored as part of this project. Paths generated from the cost map would be mapped back into $O_{0}$ and interpolated to generate smooth trajectories.
+			where  $r_{c,k} = r_{c}(\Gamma_{k},M,\nabla M)$. An optimal path can be found over the discretized space using an $A^{*}$-based path planning algorithm (or some variation). Additionally, sub-optimal paths could be generated using a potential fields approach. Both of these directions have yet to be explored as part of this project. Paths generated from the cost map would be mapped back into $O_{0}$ and interpolated to generate smooth trajectories.
 
-			The function cost-map generation function $r_{c}(\Gamma_{k},\Gamma_{k-1},M,\nabla M)$ represents a cost with respect to an immediate robot configuration, $\Gamma_{k}$, at the $k^{th}$ step of each planned trajectory; the previous robot configuration  $\Gamma_{k-1}$; and the cost-map $C$. The configuration parameter, $\Gamma_{k}$, is composed as follows:
+			The function cost-map generation function $r_{c}(\Gamma_{k},M,\nabla M)$ represents a cost with respect to an immediate robot configuration, $\Gamma_{k}$, at the $k^{th}$ step of each planned trajectory; a height-map $M$; and its corresponding gradient $\nabla M$. The configuration parameter, $\Gamma_{k}$, is composed as follows:
 				\begin{eqnarray}
 					a_{k} 		&=& \ciel{l\wrap{\frac{\zcomp{\theta_{b,k}}+\pi}{2\pi}}} \nonumber\\
 					\Gamma_{k} 	&=& \setwrap{p_{1,e,k}^{hm},...,p_{4,e,k}^{hm},a_{k}}
 				\end{eqnarray}
 			where $a_{k}\in\{0,...,l\}$ is an index which represent the discretized robot orientation parameter, $\theta_{b,k}$, at each \Kth step; and $p_{i,e,k}^{hm}$ represent the location of each \Ith within the height-map space (first two dimensions of the cost-space). The function $r_{c,k}$ is then defined as:
 				\begin{equation}
-					r_{c}(\Gamma_{k},\Gamma_{k-1},M,\nabla M)
+					r_{c}(\Gamma_{k},M,\nabla M)
 					= K_{v}\text{var}\wrap{h_{k}} 
 					+ K_{g}\sum_{i=1}^{4}\wrap{\delta h_{i,k}^{2}} 
 					+ K_{\theta}\wrap{\Delta a_{k}}^{2}
@@ -302,7 +302,7 @@
 
 			3D surface reconstruction is carried out according to a process for normal-estimation from 3D point cloud data detailed in \cite{Rusu2009}. According to this procedure, 3D surfaces are reconstructed from point cloud data, $\bar{S}$, by fitting a collection of flat polygonal elements to the source point cloud. Each of these estimated elements is represented by a surface-normal which emanates from a corresponding point within the source cloud. Surface normal estimation carried out by fitting planes to groups of points which exist within a neighborhood $d_{s}$ about each point $\bar{x_{i}}\in\bar{S}$.
 
-			Before normal estimation, the point cloud $\bar{S}$ (which is usually dense) is down-sampled and smoothed before a normal estimation algorithm is applied. Point cloud down-sampling is performed using a voxel-grid technique, which discretizes the point cloud space into a voxel-space, which is a 3D space consisting of cuboids of a particular width, depth and height. Here, a cubic voxel space is used parameterized by a single voxel side-length dimension $d_{vox}$. The voxel grid filter and generates a single point from all points which fall within a voxel region, typically as a mean of all such points. The location of points which occupy the voxel region is aided by a KD-tree search technique, which offers higher efficiency over a brute-force search for neighboring points. This voxel-grid down-sampling technique produces a reduced representation of the original cloud, $\hat{S}$, which has shown, though empirical observation, to contain up to ten times less points, $\bar{S}$. This reduced-point cloud representation serves to greatly reduce the computation burden of further processing the cloud.
+			Before normal estimation, the point cloud $\bar{S}$ (which is usually dense) is down-sampled and smoothed before a normal estimation algorithm is applied. Point cloud down-sampling is performed using a voxel-grid technique, which discretizes the point cloud space into a voxel-space, which is a 3D space consisting of cuboids of a particular width, depth and height. Here, a cubic voxel space is used parameterized by a single voxel side-length dimension $d_{vox}$. The voxel grid filter and generates a single point from all points which fall within a voxel region, typically as a mean of all such points. The location of points which occupy the voxel region is aided by a KD-tree search technique, which offers higher efficiency over a brute-force search for neighboring points. This voxel-grid down-sampling technique produces a reduced representation of the original cloud, $\hat{S}$, which has shown, though observation of empirical results, to contain up to ten times less points, $\bar{S}$. This reduced-point cloud representation serves to greatly reduce the computation burden of successive cloud processing operations.
 
 			Next, the resulting cloud, $\hat{S}$, is smoothed using a moving least-squares filter. This filter creates a smoothed point cloud by performing a sequence polynomial fits over subsets of points. As previously mentioned, normals are estimated from the smoothed point cloud via a plane fitting method, as described in \cite{Mitra2003}. Planes are estimated using Principle Component Analysis (PCA) on clusters of points \cite{Castillo2013}. The standard PCA algorithm provides a least-squares plane fit by way of dimensional reduction, yielding best-fit description for a set 3D points using a 2D manifold \cite{Pearson1901}. A point cloud with estimated surface normals is shown in Figure \ref{fig::surface_estimation}.
 %%
@@ -313,7 +313,7 @@
 					\State{$\hat{S} \leftarrow \text{movingLeastSquaresFilter}(\hat{S})$}
 					\State{$\hat{N} = \text{estimateNormals}(\hat{S})$}
 					\ForAll{$\vec{n}_{i} \in N$}
-						\State{$e = (\vec{u}^{r})^{T} \vec{n}_{i}$}
+						\State{$e = 1-(\vec{u}^{r})^{T} \vec{n}_{i}$}
 						\If{$e<e_{max}$}
 							\State{ $\bar{S}^{*} \leftarrow \bar{S}^{*} \cup \bar{x}_{i}$ }
 						\EndIf
@@ -323,6 +323,7 @@
 				\label{alg::goodspacestostep}
 			\end{algorithm}
 %%
+			Algorithm \ref{alg::goodspacestostep} is used to find ``flat" regions within the reconstructed surface for the purpose of footstep planning. Flat regions are located using generated surface, whose alignment is graded against a reference unit vector $\vec{u}^{r}$ by taking the dot product between  $\vec{u}^{r}$ and a surface normal to produce an alignment error $e\in[0,2]$. Points with associated normals whose alignment error is less than a scalar error bound, $e_{max}$, are selected as fit surfaces for walking. Obviously, not all surfaces which satisfy this alignment criteria represent surfaces which are fit for traversal. Post processing needs to be performed which segments the resulting point cloud clusters according their proximity to the robot.
 
 			\begin{figure}[h!]
 				\centering

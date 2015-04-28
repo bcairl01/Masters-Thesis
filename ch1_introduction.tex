@@ -145,6 +145,25 @@
 
 		\section{Navigation and 3D Reconstruction}
 
+		One method that has been selected for navigating the BlueFoot platform over flatland is a potential-fields control approach, described in \cite{Hogan1984} for the purpose of controlling robotic manipulators, and analyzed in-depth in \cite{Koren1991}. In particular \cite{Koren1991} presents shortcomings of this approach. Nonetheless, a potential fields navigation methods offers a reflatively simple and intuitive approach to robot navigation and fits well into mobile robotic tasks which involve ``wandering'' type navigation over flat regions, in which the robot has yet to aquire any knowledge of surrounding obstacles. In this thesis, a potential fields navigation approach is used to navigate BlueFoot in unknown regions, and is coupled with camera-based feature tracking to guide the robot towards potential areas of interest within an unknown, immediate space.
+
+		The potential fields approach is used in mobile robot navigation by moving the robot according to a guiding virtual force-vector, $F_{nav}$ \cite{Koren1991,ArambulaCosio2004}. This vector is comprised of a sum of virtual repuslive forces, $F^{-}$ (typically generated range-sensor data), and virtual attractive forces, $F^{+}$, which pull the robot towards known goals. Thus $F_{nav}$ formally defined as:
+		%%%
+		\begin{equation}
+			F_{nav} = F^{+} + F^{-}
+			\label{eq::sumofforces}
+		\end{equation}
+
+		The general form for the force components $F^{+}$ and $F^{-}$ (represented as $F_{c}$) is as follows:
+		%%%
+		\begin{eqnarray}
+			d_{k} 	&=& p_{POI,k} - p_{robot} \nonumber\\
+			F_{c}	&=& \alpha_{F}\sum_{k}\wrap{ f(\norm{d_{k}})\frac{d_{k}}{\norm{d_{k}}} }
+			\label{eq::sumofforces}
+		\end{eqnarray}	
+		where $p_{poi}$ and $p_{robot}$ are position of each \Kth point-of-interest (POI) and the position of the robot platform; $f(*)$ is a potential function which returns a scalar ``energy" factor with respect to a scalar distance argument $(*)$; and $\alpha_{F}$ is a scaling parameter which is positive for when POIs represent goals and negative when POIs represent obstacles to avoid. The potential function and force-scaling factors are designable for particular applications. For BlueFoot's navigation scheme, attractive and repulsive forces are generated using a single, consolidated forcing function which is used to guide through an environment even when a goal is not specified before hand. 
+
+		The aforementioned potential field navigation method is used, primarily, to handle BlueFoot's flatland navigation. Navigation over rough terrain requires a number of other considerations about the terrain of the enviroment itself, as opposed to simple POIs which can be resolved by observing the enviroment around the robot in 2D. Thus, surface reconstruction plays a large roll in the process of navigation over irregular terrain. This thesis will present two methods of surface reconstruction, which will serve as prelimaries for rough-terrain navigation and planning in futurer work with the BlueFoot platform.
 
 		\section{Overview of Thesis}
 

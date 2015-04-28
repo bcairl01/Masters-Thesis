@@ -21,7 +21,7 @@
 %
 				\begin{figure}[h!]
 					\centering
-					\fbox{\includegraphics[width=0.75\textwidth]{coordinate_frames.png}}
+					\fbox{\includegraphics[width=1.00\textwidth]{coordinate_frames.png}}
 					\caption{A visualization of BlueFoot's coordinate frame configuration.}
 					\label{fig::coordinate_frames}
 				\end{figure}
@@ -136,7 +136,7 @@
 					\label{eq::world_feet_positions}
 				\end{equation}
 
-			\subsubsection{A Note about Foot Localization in World and Robot-Relative Frames}
+			\subsubsection{A Note about Foot Localization in the Robot-Relative Frames}
 
 			Using the previously defined forward kinematics model and the relationships defined in \ref{eq::world_joint_positions} and \ref{eq::world_feet_positions}, the position of each joint and foot can be computed assuming the $p_{b}$ and $\theta_{b}$ are known (or can be estimated) in the frame $O_{0}$. Provided inertial feedback, trunk orientation, $\theta_{b}$, can be estimated by the use of a Extended Kalman Filter (EKF), or one of many other orientation estimation methods (\IE complimentary filter, etc.). $p_{b}$, however, requires more sophisticated localization measures, such as a Simultaneous Localization and Mapping (SLAM) scheme or absolute positioning via overhead camera or GPS. In lieu of an implementation for such a localization routine, it is often convenient to generate foot positions estimate in a \emph{robot-relative} frame, $O_{b^{'}}$. This frame is not rigidly attached to the robot but moves along with the robot in $O_{0}$ according to the commanded translational velocity, $v^{r}$, and turning rate. $\omega^{r}$, administered to navigate the system. These values will be described in more detail in Chapter \ref{ch::navigation}. Moreover, this frame has its own position relative to $O_{0}$, defined by the translation $p_{0}^{b'}$. $O_{b^{'}}$ is constantly aligned to $O_{0}$, with respect to rotation, making the rotation matrix which relate $O_{b^{'}}$ to $O_{0}$ the identity matrix.
 
@@ -180,12 +180,12 @@
 							1 				\\ 	
 						\end{array}
 					\right]	\nonumber\\																						\nonumber\\
-					\psi_{i} 	&\equiv&	\tan^{-1}\wrap{ \frac{({p}_{i,e}^{i,0})_{2}}{({p}_{i,e}^{i,0})_{1} } }												\nonumber\\
-					\zeta_{i,x} &\equiv& 	({p}_{i,e}^{i,0})_{2} \sin(\psi_{i}) + ({p}_{i,e}^{i,0})_{1} \cos(\psi_{i}) - a_{4} \cos(\gamma_{i}) - a_{1} 						\nonumber\\
-					\zeta_{i,y} &\equiv& 	({p}_{i,e}^{i,0})_{2} \cos(\psi_{i}) - ({p}_{i,e}^{i,0})_{1} \sin(\psi_{i}) 											\nonumber\\
-					\zeta_{i,z}	&\equiv&  	({p}_{i,e}^{i,0})_{3} - a_{4} \sin(\gamma_{i}) .
+					\psi_{i} 	&\equiv&	\tan^{-1}\wrap{ \frac{\ycomp{{p}_{i,e}^{i,0}}}{\xcomp{{p}_{i,e}^{i,0}} } }												\nonumber\\
+					\zeta_{i,x} &\equiv& 	\ycomp{{p}_{i,e}^{i,0}} \sin(\psi_{i}) + \xcomp{{p}_{i,e}^{i,0}} \cos(\psi_{i}) - a_{4} \cos(\gamma_{i}) - a_{1} 						\nonumber\\
+					\zeta_{i,y} &\equiv& 	\ycomp{{p}_{i,e}^{i,0}} \cos(\psi_{i}) - \xcomp{{p}_{i,e}^{i,0}} \sin(\psi_{i}) 											\nonumber\\
+					\zeta_{i,z}	&\equiv&  	\zcomp{{p}_{i,e}^{i,0}} - a_{4} \sin(\gamma_{i}) .
 				\end{eqnarray}
-			Here, ${p}_{i,e}^{i,0}$ represent the position of each \Ith foot with respect to the zeroth DH frame of each \Ith leg; and $({p}_{i,e}^{i,0})_{k}$ with $k\in\{1,2,3\}$ represents the \Kth element of ${p}_{i,e}^{i,0}$.
+			Here, ${p}_{i,e}^{i,0}$ represents the position of each \Ith foot with respect to the zeroth DH frame of each \Ith leg; and $\xcomp{{p}_{i,e}^{i,0}}$, $\ycomp{{p}_{i,e}^{i,0}}$ and $\zcomp{{p}_{i,e}^{i,0}}$ represent the $x$, $y$, and $z$ axis coordinates of the vector ${p}_{i,e}^{i,0}$.
 
 			It is important to note that the ankle specification,  $\gamma_{i}$, adds extra constraints on the system kinematics and, thus, reduces the number of inverse kinematics solutions per foot position to two.
 
@@ -271,11 +271,11 @@
 					\dot{q}_{i} &\approx& \sbrack{J^{i,0}_{i,e}}_{\Lambda_{j}}^{\dagger} \dot{x}^{i,0}_{i,e} \nonumber \\
 					\dot{q}_{i} &\approx& \wrap{ \wrap{J^{i,0}_{i,e}}^{T}J^{i,0}_{i,e} + \Lambda_{J} }^{-1} \wrap{J^{i,0}_{i,e}}^{T}\dot{x}^{i,0}_{i,e}
 				\end{eqnarray}
-			where $\Lambda_{J}$ is a strictly positive definite weighting that is typically chosen to have 
+			where $\Lambda_{J}$ is a strictly positive-definite weighting matrix that is typically chosen to have 
 				\begin{equation*}
 					\text{det}(\Lambda_{J}) \ll 1.
 				\end{equation*}
-			The operator $\sbrack{*}_{\Lambda_{j}}^{\dagger}$ defines a weighted pseudo-inversion off a matrix argument $*$ given a positive-definite weighting matrix $\Lambda_{j}$. A weighted pseudo-inversion is chosen over direct pseuedo-inversion to avoid a non-smooth set of solutions $\dot{q}_{i}$. Degenerate solutions for $\dot{q}_{i}$ for particlar manipulator configurations at which manipulator singularities exist and, thus, $\wrap{\wrap{J^{i,0}_{i,e}}^{T}J^{i,0}_{i,e}}$ is non-invertible.
+			The operator $\sbrack{*}_{\Lambda_{j}}^{\dagger}$ defines a weighted pseudo-inversion off a matrix argument $(*)$ given a positive-definite weighting matrix $\Lambda_{j}$. A weighted pseudo-inversion is chosen over direct pseuedo-inversion to avoid a non-smooth set of solutions $\dot{q}_{i}$. Degenerate solutions for $\dot{q}_{i}$ exist a particlar manipulator configurations where $\wrap{\wrap{J^{i,0}_{i,e}}^{T}J^{i,0}_{i,e}}$ is non-invertible.
 
 
 
@@ -331,9 +331,9 @@
 %
 		\begin{figure}[h!]
 			\centering
-			\fbox{\includegraphics[width=1.00\textwidth]{coordinate_frames.png}}
-			\caption{Coordinate frame setup.}
-			\label{fig::narx_net}
+			\fbox{\includegraphics[width=1.00\textwidth]{simulation_wide_pic.png}}
+			\caption{Visualization of the BlueFoot simulator.}
+			\label{fig::simulator_wide}
 		\end{figure}
 %
 		The BlueFoot platform is comprised of 17 rigid bodies, 16 of which are linkages between joints; and a main platform. Since each limb is formed from four revolute joints, the system has a total of 22 DOF, 16 of which are actuated. The main platform's configuration is generated through particular configurations of the legs. Furthermore, because each linkage is constrained to a rotation about a single axis, the rigid-body dynamic model of the BlueFoot quadruped is represented by 44 states. These states represent the position and velocity of each joint, $q_{i}$ and $\dot{q}_{i}$, respectively. Additionally, foot contact states are represented by binary scalars, $\mu_{i} \in \wrap{0,1}$, which describes whether the foot is not in contact or in contact, respectively.
