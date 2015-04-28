@@ -232,6 +232,32 @@ Ra\'{u}l Rojas.
 \newblock In {\em Neural Networks: A Systematic Introduction}, chapter~7.
   Springer-Verlag New York, Inc., New York, NY, USA, 1996.
 
+\bibitem{Hogan1984}
+N.~Hogan.
+\newblock Impedance control: An approach to manipulation.
+\newblock In {\em American Control Conference, 1984}, pages 304--313, June
+  1984.
+
+\bibitem{Koren1991}
+Y.~Koren and J.~Borenstein.
+\newblock Potential field methods and their inherent limitations for mobile
+  robot navigation.
+\newblock In {\em Robotics and Automation, 1991. Proceedings., 1991 IEEE
+  International Conference on}, pages 1398--1404 vol.2, Apr 1991.
+
+\bibitem{ArambulaCosio2004}
+F.~Arambula Cosío and M.A.~Padilla Castañeda.
+\newblock Autonomous robot navigation using adaptive potential fields.
+\newblock {\em Mathematical and Computer Modelling}, 40(9–10):1141 -- 1156,
+  2004.
+
+\bibitem{Krishnamurthy2007}
+P.~Krishnamurthy and F.~Khorrami.
+\newblock Godzila: A low-resource algorithm for path planning in unknown
+  environments.
+\newblock {\em Journal of Intelligent and Robotic Systems}, 48(3):357--373,
+  2007.
+
 \bibitem{Squirrel_website}
 Alberto Demichelis.
 \newblock {S}quirrel, the programming language, 2011.
@@ -357,12 +383,6 @@ G.~D. Magoulas, M.~N. Vrahatis, and G.~S. Androulakis.
 \newblock Improving the convergence of the backpropagation algorithm using
   learning rate adaptation methods.
 \newblock {\em Neural Comput.}, 11(7):1769--1796, oct 1999.
-
-\bibitem{ArambulaCosio2004}
-F.~Arambula Cosío and M.A.~Padilla Castañeda.
-\newblock Autonomous robot navigation using adaptive potential fields.
-\newblock {\em Mathematical and Computer Modelling}, 40(9–10):1141 -- 1156,
-  2004.
 
 \bibitem{opencv_learn_immorph}
 G.~Bradski and A.~Kaehler.
