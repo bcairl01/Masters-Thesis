@@ -46,6 +46,7 @@ Repeated entry---line 672 of file refs.bib
  : @inproceedings{Fukuoka2003
  :                           ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "needRefsHere"
 Warning--I didn't find a database entry for "Billard2000"
 Warning--I didn't find a database entry for "otherdudes"
 Too many commas in name 1 of "Wieber, P.-B., Tedrake R., Kuindersma S." for entry Wieber2015
@@ -62,7 +63,7 @@ while executing---line 944 of file unsrt.bst
 Warning--empty journal in Park2014
 You've used 66 entries,
             1791 wiz_defined-function locations,
-            921 strings with 16790 characters,
+            923 strings with 16814 characters,
 and the built_in function-call counts, 19398 in all, are:
 = -- 1777
 > -- 672
