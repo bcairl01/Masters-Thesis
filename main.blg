@@ -1,4 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
 A level-1 auxiliary file: vita.aux
 A level-1 auxiliary file: publications.aux
 A level-1 auxiliary file: abstract.aux
@@ -9,10 +11,6 @@ A level-1 auxiliary file: ch4_modeling.aux
 A level-1 auxiliary file: ch5_gaitcontrol.aux
 A level-1 auxiliary file: ch6_navigation.aux
 A level-1 auxiliary file: ch7_closing_remarks.aux
-White space in argument---line 2 of file ch7_closing_remarks.aux
- : \citation{other
- :                 dudes}
-I'm skipping whatever remains of this command
 A level-1 auxiliary file: appendix_a.aux
 The style file: unsrt.bst
 Database file #1: refs.bib
@@ -49,6 +47,7 @@ Repeated entry---line 672 of file refs.bib
  :                           ,
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "Billard2000"
+Warning--I didn't find a database entry for "otherdudes"
 Too many commas in name 1 of "Wieber, P.-B., Tedrake R., Kuindersma S." for entry Wieber2015
 while executing---line 944 of file unsrt.bst
 Warning--empty school in Semini2010_PHD
@@ -61,4 +60,45 @@ Warning--empty journal in Righetti2006
 Name 1 in "Park, Hae-Won, Meng Yee (Michael) Chuah, and Sangbae Kim" has a comma at the end for entry Park2014
 while executing---line 944 of file unsrt.bst
 Warning--empty journal in Park2014
-(There were 11 error messages)
+You've used 66 entries,
+            1791 wiz_defined-function locations,
+            921 strings with 16790 characters,
+and the built_in function-call counts, 19398 in all, are:
+= -- 1777
+> -- 672
+< -- 47
++ -- 249
+- -- 183
+* -- 1279
+:= -- 2720
+add.period$ -- 210
+call.type$ -- 66
+change.case$ -- 61
+chr.to.int$ -- 0
+cite$ -- 74
+duplicate$ -- 954
+empty$ -- 1967
+format.name$ -- 183
+if$ -- 4632
+int.to.chr$ -- 0
+int.to.str$ -- 66
+missing$ -- 60
+newline$ -- 331
+num.names$ -- 79
+pop$ -- 264
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 603
+stack$ -- 0
+substring$ -- 1521
+swap$ -- 379
+text.length$ -- 47
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 8
+while$ -- 156
+width$ -- 68
+write$ -- 741
+(There were 10 error messages)
