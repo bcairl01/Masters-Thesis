@@ -9,9 +9,9 @@
 
 	\section{Flatland navigation and goal (feature) tracking}
 	
-		The BlueFoot robot is operated using a potential field-based control scheme for obstacle avoidance during navigation over flatland. Camera-based feature tracking has been incorporated into this navigation scheme to allow for continuous object tracking and aid in the aversion of local minima. This hybrid navigation routine administers commands using two main parameters, $v^{r}$ and $\omega^{r}$, which represent forward velocity and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. During navigation, the pitch of the trunk, $\theta_{b,x}$ is also controlled via its respective reference signal, $\theta_{b,x}^{r}$. Control over trunk pose allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head (trunk) while tracking features or gathering LIDAR scans at various angular positions.
+		The BlueFoot robot is operated using a hybrid, potential-field control scheme for obstacle avoidance during navigation over flatland. Camera-based feature tracking has been incorporated into this navigation scheme to allow dynamic object tracking and aid in the aversion of local minima. This hybrid navigation routine administers commands using two main parameters, $v^{r}$ and $\omega^{r}$, which represent forward velocity and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. During navigation, the pitch of the trunk, $\theta_{b,x}$ is also controlled via its respective reference signal, $\theta_{b,x}^{r}$. Control over trunk pitch allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head (trunk) while tracking features or composing 3D point clouds from LIDAR scans, as will be described later in this chapter.
 
-		Namely, BlueFoot's primary navigation mechanism fuses navigation reference commands generated using both LIDAR data and features from processed camera images. This algorithm is essentially used as a ``wandering" mechanism which would normally be employed as a first-level navigation measure during situation where the robot has no information about its environment (\IE environmental map data, or landmark locations) \emph{a priori}. This section will first describe the potential-fields portion of BlueFoot's base-navigation algorithm, which utilizes only LIDAR sensor data. Results related to this navigation mechanism will be presented from simulation. The incorporation of processed camera data will then be detailed to complete the description of the full navigation controller. A set of associated results will be presented from real-world trials.
+		Namely, BlueFoot's primary navigation mechanism fuses navigation reference commands generated using both LIDAR data and features from processed camera images. This algorithm is used as a ``wandering" mechanism which would normally be employed as a first-level measure during situations where the robot has no information about its environment (\IE environmental map data, or landmark locations) \emph{a priori}. This section will first describe the potential-fields portion of BlueFoot's base-navigation algorithm, which utilizes only LIDAR sensor data. The efficacy of this navigation mechanism will be support with results from simulated trials. The incorporation of processed camera data will then be detailed to complete the description of the full navigation controller. A set of associated results will be presented from real-world trials.
 
 		\subsection{LIDAR-based Potential-Fields Algorithm}
 
@@ -222,7 +222,9 @@
 					}
 					\label{eq::toheightmapframe}
 				\end{equation}
-			where $\ciel{*}$ is an element-wise vector ceiling function. Depending on the density of the source point cloud, this height-map conversion process has the potential to produce relatively sparse height-maps. To deal with this, a dilation and smoothing routine is used to fill in gaps which exist in converted height-map. During dilation, each non-zero height element within the map is expanded into a region around an existing element with non-zero value \cite{opencv_learn_immorph}. This process is performed until a semi-uniform map is produced with minimal gaps between non-zero height elements. Finally, a median filter is applied to the dilated height-map to produce smooth transitions between height elements within the height map. The median filter replaces all values within a window of elements (usually forming a square region) with the middle-valued element.
+			where $\ciel{*}$ is an element-wise vector ceiling function.
+
+			Depending on the density of the source point cloud, this height-map conversion process has the potential to produce relatively sparse height-maps. To deal with this, a dilation and smoothing routine is used to fill in gaps which exist in converted height-map. During dilation, each non-zero height element within the map is expanded into a region around an existing element with non-zero value \cite{opencv_learn_immorph}. This process is performed until a semi-uniform map is produced with minimal gaps between non-zero height elements. Finally, a median filter is applied to the dilated height-map to produce smooth transitions between height elements within the height map. The median filter replaces all values within a window of elements (usually forming a square region) with the middle-valued element.
 				\begin{figure}[t!]
 					\centering
 					\fbox{\includegraphics[width=\textwidth]{terrain_grad_crop.png}}
@@ -255,42 +257,51 @@
 
 		\subsection{Generating a Cost-map from the Height-map}
 
-			A discrete height-map space can easily be converted to a cost-space representation for the purpose of planning foot-placement during traversal over rough terrain. Here, a cost-map $C\in\Re^{n\times m\times l}$ is used in planning. The first and second dimensions of dimensions $C$ (of size $n$ and $m$) directly correspond to the width and depth of the discretized height-map space. The third dimension of size represents a discretization of the robot's yaw state, $\theta_{b,z}\in[-\pi,\pi]$ into $l$ subdivisions, and is used to represent variations of cost associated with each height-map indices, $[i,j]^{T}$, with respect to the robot's yaw. This cost map has been formulated with respect to three main cost elements:
+			A discrete height-map space can be converted to a cost-space representation for the purpose of foot-placement planning over rough terrain in a straight-forward way. Here, a discrete cost-map is represent by ${\cal C}\in\Re^{n\times m\times l}$. The first and second dimensions of ${\cal C}$ (of size $n$ and $m$) directly correspond to the width and depth of the discretized height-map space. The third dimension represents a discretization of the robot's yaw state, $\theta_{b,z}\in[-\pi,\pi]$ into $l$ subdivisions, and is used to represent variations of the robot's yaw with respect to $O_{hm}$ in the height-map space. We define a mapping from the height-map space to a the cost-space as follows:
+				\begin{equation}
+					\setwrap{ {\cal C} = f(M,\Gamma) \Sep : \Sep \Re^{m\times n} \rightarrow \Re^{m\times n \times l} }
+					\label{eq::cost_mapping}
+				\end{equation}
+			where $\Gamma$ is a static robot configuration matrix used to describe the nominal spacing between the robot's feet. $\Gamma$ is composed as follows:
+				\begin{equation*}
+					\Gamma \equiv \setwrap{\bar{p}_{1,e}^{hm},\bar{p}_{2,e}^{hm},\bar{p}_{3,e}^{hm},\bar{p}_{4,e}^{hm}}
+					\label{eq::cost_gamma}
+				\end{equation*}
+			where $\bar{p}_{i,e}^{hm}=[i_{i},j_{i}]^{T}$ represent the position of each \Ith foot in the height-map space with $i_{i}\in \setwrap{1,...,m}$ and $j_{i}\in\setwrap{1,...,n}$.
+			
+			This cost-map conversion, $f(M,\Gamma)$ has been formulated with respect to three main cost elements:
 				\begin{enumerate}
 					\item variation in attainable foothold heights between all feet
 					\item terrain steepness around any foothold, given a particular configuration
 					\item net robot rotation performed at all step
 				\end{enumerate}
-			The first cost element is chosen to simplify to problem of ensuring the robot plans to walk over relatively level terrain by penalizing areas of the traversable terrain with larger variation in height. The second cost element is used deter the robot from attempting to travel over steep terrain. The final cost element is used to ensure the robot does not plan to perform any large changes in direction while traversing the terrain, which could cause for needless motion or loops in the planned path. 
+			The first cost element is chosen to simplify to problem of ensuring the robot plans to walk over relatively level terrain by penalizing height variation between planned foothold location. The second cost element is used deter the robot from attempting to travel over steep terrain. The final cost element is used to ensure the robot does not plan to perform any large changes in direction while traversing the terrain, which could cause for needless motion or loops in the planned path. 
 
-			$C$ is used to generate an optimal, $K$-step path, which is comprised of $K$, discrete robot configurations. Moreover path is planned over rough terrain by optimizing a finite, $N$-step cost functional defined as follows:
-				\begin{equation}			
-					J(N) = \sum_{k=0}^N r_{c,k}
-				\end{equation}	
-			where  $r_{c,k} = r_{c}(\Gamma_{k},M,\nabla M)$. An optimal path can be found over the discretized space using an $A^{*}$-based path planning algorithm (or some variation). Additionally, sub-optimal paths could be generated using a potential fields approach. Both of these directions have yet to be explored as part of this project. Paths generated from the cost map would be mapped back into $O_{0}$ and interpolated to generate smooth trajectories.
-
-			The function cost-map generation function $r_{c}(\Gamma_{k},M,\nabla M)$ represents a cost with respect to an immediate robot configuration, $\Gamma_{k}$, at the $k^{th}$ step of each planned trajectory; a height-map $M$; and its corresponding gradient $\nabla M$. The configuration parameter, $\Gamma_{k}$, is composed as follows:
-				\begin{eqnarray}
-					a_{k} 		&=& \ciel{l\wrap{\frac{\zcomp{\theta_{b,k}}+\pi}{2\pi}}} \nonumber\\
-					\Gamma_{k} 	&=& \setwrap{p_{1,e,k}^{hm},...,p_{4,e,k}^{hm},a_{k}}
-				\end{eqnarray}
-			where $a_{k}\in\{0,...,l\}$ is an index which represent the discretized robot orientation parameter, $\theta_{b,k}$, at each \Kth step; and $p_{i,e,k}^{hm}$ represent the location of each \Ith within the height-map space (first two dimensions of the cost-space). The function $r_{c,k}$ is then defined as:
+			To define perform the conversion between $M$ and ${\cal C}$, we first define a \emph{moving} foothold matrix $\Gamma'(p^{hm},u)$, as follows:
 				\begin{equation}
-					r_{c}(\Gamma_{k},M,\nabla M)
-					= K_{v}\text{var}\wrap{h_{k}} 
-					+ K_{g}\sum_{i=1}^{4}\wrap{\delta h_{i,k}^{2}} 
-					+ K_{\theta}\wrap{\Delta a_{k}}^{2}
+					\Gamma'(p^{hm},u) = \ciel{ R_{z}^{hm}(\gamma(u))\Gamma } + p^{hm} B \\
 				\end{equation}
-			where
-				\begin{eqnarray*}
-					h_{k} 			&=& \{h_{1,k},...,h_{4,k}\} \nonumber\\
-					h_{i,k}			&\equiv& {m_{i_{i},j_{i}}}  \nonumber\\
-					\delta h_{i,k}	&\equiv& {d_{i_{i},j_{i}}}  \nonumber\\
-					\{i_{i},j_{i}\} &\equiv& \{ \wrap{p_{i,e,k}^{hm}}_{1}, \wrap{p_{i,e,k}^{hm}}_{2} \}
-				\end{eqnarray*}
-			$d_{i_{i},j_{i}}$ is the $(i_{i}^{th},j_{i}^{th})$ element of the height map gradient matrix, $\nabla M$; $K_{v},K_{g},K_{\theta}$ are weighting parameters.
-%%
-			
+			where  $p^{hm} = [i,j]^T$ and $u \in \setwrap{1,...,l}$ are used as a discrete representation of the robot's position and yaw configuration within the cost space, respectively; $\setwrap{\gamma(u) : Z \rightarrow \Re }$ represents a mapping from the index $u$ to a robot yaw in $O_{hm}$; $R_{z}^{hm}(\gamma(u))\in\Re^{2\times2}$ represents a rotation matrix about the $z$-axis in $O_{hm}$; and $B = [1,1,1,1]$. 
+
+			The cost-map is then generated as follows:
+				\begin{eqnarray}
+					\Gamma'	 				&\equiv& \Gamma'(p^{hm},u) \nonumber \\
+					{\cal H}_{v} 			&=& M(\col{\Gamma'}{v})	 \nonumber\\
+					%%
+					\delta {\cal H}_{v} 	&=& \nabla M(\col{\Gamma'}{v}) \nonumber\\
+					%%
+					{\cal C}(p^{hm},u) 		&=& k_{var} var({\cal H}) + k_{\delta}\sum_{v=1}^{4} \delta {\cal H}_{v}^{2} + k_{\theta} \gamma(u) \nonumber \\
+											&\forall& p^{hm} , u , v \in {1,2,3,4}
+				\end{eqnarray}
+			where ${\cal H}$ is a collection heights at each foothold position; $\Nabla{\cal H}$ is a collection of corresponding gradient elements from $\Nabla M$; $k_{var}$, $k_{\delta}$ and $k_{\theta}$ are scalar weighting parameters; and $\col{*}{v}$ is extracts the $v^{th}$ column from the matrix argument $(*)$.
+
+			${\cal C}$ is used to generate an optimal, $K$-step path, which is comprised of $K$, discrete robot configurations. Moreover path is planned over rough terrain by optimizing a finite, $N$-step cost functional defined as follows:
+				\begin{equation}			
+					J(N) = \sum_{k=0}^N {\cal C}\wrap{p^{hm}_{k},u_{k}}
+				\end{equation}	
+			An optimal path can be found over the discretized space using an $A^{*}$-based path planning algorithm, for example. Additionally, sub-optimal paths could be generated using a potential fields approach. Both of these directions have yet to be fully explored as part of this project. Paths generated from the cost map would be mapped back into $O_{0}$ and interpolated to generate smooth trajectories.
+
+
 
 
 
