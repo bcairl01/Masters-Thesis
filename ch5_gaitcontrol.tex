@@ -322,11 +322,11 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 		\subsection{NARX-Neural Network}
 
 
-			Using a NARX-NN (introduced in Chapter \ref{ch::introduction}), the dynamical estimate $\hat{\Phi}_{k}$ is generated as a prediction of the sampled system dynamics, $\hat{\psi}_{k+1}$. The relationship between $\hat{\Phi}_{k}$ and the network prediction $\hat{\psi}_{k+1}$will be made clear in the description of the network training signal given in \ref{eq::training_signal}. The general input-output relationship of the NARX-NN predictor, $\emph{N}$, is described as follows:
+			Using a NARX-NN (introduced in Chapter \ref{ch::introduction}), the dynamical estimate $\hat{\Phi}_{k}$ is generated as a prediction of the sampled system dynamics, $\hat{\psi}_{k+1}$. The relationship between $\hat{\Phi}_{k}$ and the network prediction $\hat{\psi}_{k+1}$will be made clear in the description of the network training signal given in \ref{eq::training_signal}. The general input-output relationship of the NARX-NN predictor, ${\cal N}$, is described as follows:
 			%%%
 			%%%
 				\begin{eqnarray}
-					\hat{\psi}_{k+1}	&=& \emph{N}(\hat{\Psi}_{k}^{N},{U}_{k}^{N}) \nonumber\\
+					\hat{\psi}_{k+1}	&=& {\cal N}(\hat{\Psi}_{k}^{N},{U}_{k}^{N}) \nonumber\\
 					\hat{\Psi}_{k}^{N}	&=& [\hat{\psi}_{k},\hat{\psi}_{k-1},...,\hat{\psi}_{k-N+1}]  \nonumber\\
 					{U}_{k}^{N}		&=& [u_{k}   ,u_{k-1}   ,...,u_{k-N+1}   ]
 					\label{eq::narx_model}
@@ -362,7 +362,7 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 
 			Since $\hat{\psi}_{k+1}$ is non-causal, training is performed one time-step after a prediction is made using the input-output pair $\hat{\psi}_{k}$ and \{${\Psi}_{k-1}^{N}$, ${U}_{k-1}^{N}$\}. Note that $\hat{\psi}_{k}$ can calculated directly using \ref{eq::training_signal} where all component signals are time-delayed by one time-step. Training can then be described by:
 				\begin{equation}
-					\psi_{k} \xrightarrow{BP(\gamma^{lr})} \emph{N}({\Psi}_{k-1}^{N},{U}_{k-1}^{N})
+					\psi_{k} \xrightarrow{BP(\gamma^{lr})} {\cal N}({\Psi}_{k-1}^{N},{U}_{k-1}^{N})
 					\label{eq::training}
 				\end{equation}
 			where $\gamma^{lr} _{min} < \gamma^{lr} < \gamma^{lr} _{max}$ is a learning rate adapted using a \emph{bold-driver} update routine. Bold-driver learning-rate adaptation is a  heuristic method for speeding up the rate of convergence of back-propagation training regimes \cite{Battiti1992,Magoulas1999}. This $\gamma^{lr}$ update law is parameterized by $\beta \in (0,1)$ and $\zeta \in (0,1)$ which are selected to specify the amount by which $\gamma^{lr}$ increases or decreases per update, and $\gamma^{lr} _{min}$ and $\gamma^{lr} _{max}$ which are used to saturate $\gamma^{lr}$.  The bold-driver scheme utilizes the current and previous mean-squared network output error values ($MSE_{k}$ and $MSE_{k-1}$, respectively) to adjust $\gamma^{lr}$ as follows:
@@ -373,10 +373,10 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 				    \gamma^{lr} (1+\zeta \beta),& \text{otherwise}.
 					\end{cases}
 				\end{equation}
-			Since network training is being performed on-line as an incremental routine, the effective mean-squared NARX-NN  output error is low-passed by a factor $\lambda \in (0,1)$. This update technique has been selected to ensure that outliers presented during training do not affect network learning updates as significantly as ``nominal" training pairs. Network output error, $e_{\emph{N},k}$, and its associated MSE values are calculated after each prediction by:
+			Since network training is being performed on-line as an incremental routine, the effective mean-squared NARX-NN  output error is low-passed by a factor $\lambda \in (0,1)$. This update technique has been selected to ensure that outliers presented during training do not affect network learning updates as significantly as ``nominal" training pairs. Network output error, $e_{{\cal N},k}$, and its associated MSE values are calculated after each prediction by:
 				\begin{eqnarray}
-					e_{\emph{N},k} 	&=& \hat{\psi}_{k} - \psi_{k} \nonumber\\
-					MSE_{k} 		&\leftarrow& \lambda \|e_{\emph{N},k}\|_{2}^{2} + MSE_{k-1}(1-\lambda).
+					e_{{\cal N},k} 	&=& \hat{\psi}_{k} - \psi_{k} \nonumber\\
+					MSE_{k} 		&\leftarrow& \lambda \|e_{{\cal N},k}\|_{2}^{2} + MSE_{k-1}(1-\lambda).
 				\end{eqnarray}
 
 
