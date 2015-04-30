@@ -141,6 +141,14 @@ Shinkichi Inagaki, Hideo Yuasa, Takanori Suzuki, and Tamio Arai.
 \newblock Intelligent Autonomous Systems 8th Conference on Intelligent
   Autonomous Systems (IAS-8).
 
+\bibitem{Billard2000}
+A.~Billard and A.J. Ijspeert.
+\newblock Biologically inspired neural controllers for motor control in a
+  quadruped robot.
+\newblock In {\em Neural Networks, 2000. IJCNN 2000, Proceedings of the
+  IEEE-INNS-ENNS International Joint Conference on}, volume~6, pages 637--641
+  vol.6, 2000.
+
 \bibitem{Brambilla2006}
 Giorgio Brambilla, Jonas Buchli, and AukeJan Ijspeert.
 \newblock Adaptive four legged locomotion control based on nonlinear dynamical

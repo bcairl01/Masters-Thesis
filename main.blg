@@ -18,35 +18,34 @@ You're missing a field part---line 37 of file refs.bib
  : title = 
  :         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 537 of file refs.bib
+Repeated entry---line 548 of file refs.bib
  : @article{Collins1993
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 551 of file refs.bib
+Repeated entry---line 562 of file refs.bib
  : @article{Ajallooeian2013
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 615 of file refs.bib
+Repeated entry---line 626 of file refs.bib
  : @article{Righetti2006
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 625 of file refs.bib
+Repeated entry---line 636 of file refs.bib
  : @article{Rutishauser2008
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 634 of file refs.bib
+Repeated entry---line 645 of file refs.bib
  : @article{Ijspeert2008
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 646 of file refs.bib
+Repeated entry---line 657 of file refs.bib
  : @inproceedings{Matos2010
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 672 of file refs.bib
+Repeated entry---line 683 of file refs.bib
  : @inproceedings{Fukuoka2003
  :                           ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Billard2000"
 Warning--I didn't find a database entry for "otherdudes"
 Too many commas in name 1 of "Wieber, P.-B., Tedrake R., Kuindersma S." for entry Wieber2015
 while executing---line 944 of file unsrt.bst
@@ -60,45 +59,45 @@ Warning--empty year in opencv_library
 Name 1 in "Park, Hae-Won, Meng Yee (Michael) Chuah, and Sangbae Kim" has a comma at the end for entry Park2014
 while executing---line 944 of file unsrt.bst
 Warning--empty journal in Park2014
-You've used 66 entries,
+You've used 67 entries,
             1791 wiz_defined-function locations,
-            921 strings with 16794 characters,
-and the built_in function-call counts, 19398 in all, are:
-= -- 1777
-> -- 672
-< -- 47
-+ -- 249
-- -- 183
-* -- 1279
-:= -- 2720
-add.period$ -- 210
-call.type$ -- 66
-change.case$ -- 61
+            925 strings with 17018 characters,
+and the built_in function-call counts, 19811 in all, are:
+= -- 1817
+> -- 680
+< -- 49
++ -- 252
+- -- 185
+* -- 1304
+:= -- 2769
+add.period$ -- 213
+call.type$ -- 67
+change.case$ -- 62
 chr.to.int$ -- 0
-cite$ -- 74
-duplicate$ -- 954
-empty$ -- 1967
-format.name$ -- 183
-if$ -- 4632
+cite$ -- 75
+duplicate$ -- 975
+empty$ -- 2011
+format.name$ -- 185
+if$ -- 4736
 int.to.chr$ -- 0
-int.to.str$ -- 66
-missing$ -- 60
-newline$ -- 331
-num.names$ -- 79
-pop$ -- 264
+int.to.str$ -- 67
+missing$ -- 61
+newline$ -- 336
+num.names$ -- 80
+pop$ -- 269
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 603
+skip$ -- 621
 stack$ -- 0
-substring$ -- 1521
-swap$ -- 379
-text.length$ -- 47
+substring$ -- 1567
+swap$ -- 391
+text.length$ -- 49
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 8
-while$ -- 156
-width$ -- 68
-write$ -- 741
+while$ -- 159
+width$ -- 69
+write$ -- 753
 (There were 10 error messages)

@@ -12,7 +12,7 @@
 	\section{Kinematic Model}
 	\label{sec::system_kinematics}
 
-		The kinematic model of the BlueFoot platform is paramount for foot/body trajectory planning, localization, and adaptation. In particular, inverse position and velocity solutions are used to prescribe joint-space commands from particular foot trajectories planned within the world coordinate frame. Additionally, forward kinematic solutions are utilized to localize the position of each foot using a combination of localized trunk position/orientation and joint position feedback. This section will fully describe the forward and inverse kinematic models which describe the BlueFoot platform and are how these models are used in motion planning and control tasks.
+		The kinematic model of the BlueFoot platform is paramount for trajectory planning, localization, and adaptation in the robot task-space. In particular, inverse position and velocity solutions are used to prescribe joint-space commands from particular foot trajectories planned within the world coordinate frame. Additionally, forward kinematic solutions are utilized to localize the position of each foot using a combination of localized trunk position/orientation and joint position feedback. This section will fully describe the forward and inverse kinematic models which describe the BlueFoot platform and are how these models are used in motion planning and control tasks.
 
 		\subsection{Forward Position Kinematics}
 		\label{ch::system_modeling_pos_kin}
@@ -51,7 +51,6 @@
 					\right].
 				\end{equation}
 
-			\noindent
 			The kinematics of each leg are identical. Thus, the transformations $H^{i,0}_{i,j}$ are of the same form and are derived by the DH parameters given by Table \ref{tab::dh_params}. Actual values for the link lengths $a_{1-4}$ and body-offset, $\nu$, are provided in Table \ref{tab::link_lens}.
 
 
@@ -68,7 +67,7 @@
 				\label{tab::dh_params}
 			\end{table}
 			
-			\noindent
+
 			Using these DH parameters, the transformations $H^{i,0}_{i,1}$, $H^{i,0}_{i,2}$, $H^{i,0}_{i,3}$, and $H^{i,0}_{i,4}$ can be computed explicitly as follows:
 				%% Manipulator Base to Frame 1 %%
 				\begin{equation} 
@@ -115,7 +114,6 @@
 					\right]
 				\end{equation}
 
-			\noindent
 			The position of joint 1 of leg \emph{i} in $O_{0}$, ${p}_{i,1}$ may now be computed with respect to frame $O_{0}$ by:
 				\begin{equation}
 					{p}_{i,1} \equiv E_{p} H_{0}^{i,0} e_{p}.
@@ -191,6 +189,7 @@
 
 
 		\subsubsection{Range of Motion}
+
 			The range of articulation of BlueFoot's main body has been characterized with respect to a set of imposed joint limits (see \ref{tab::JointLimits}) and has been performed with all feet fixed in a default stance (see \ref{tab::DefaultStance}). These limits have been selected according to the range of feasible angular position outputs of inverse position kinematics solution.
 			\begin{table}[h]
 				\centering
@@ -328,14 +327,14 @@
 
 
 	\section{BlueFoot Simulator}
-%
+
 		\begin{figure}[h!]
 			\centering
 			\fbox{\includegraphics[width=1.00\textwidth]{simulation_wide_pic.png}}
 			\caption{Visualization of the BlueFoot simulator.}
 			\label{fig::simulator_wide}
 		\end{figure}
-%
+
 		The BlueFoot platform is comprised of 17 rigid bodies, 16 of which are linkages between joints; and a main platform. Since each limb is formed from four revolute joints, the system has a total of 22 DOF, 16 of which are actuated. The main platform's configuration is generated through particular configurations of the legs. Furthermore, because each linkage is constrained to a rotation about a single axis, the rigid-body dynamic model of the BlueFoot quadruped is represented by 44 states. These states represent the position and velocity of each joint, $q_{i}$ and $\dot{q}_{i}$, respectively. Additionally, foot contact states are represented by binary scalars, $\mu_{i} \in \wrap{0,1}$, which describes whether the foot is not in contact or in contact, respectively.
 
 		The dynamics of this system are somewhat complex because the quadruped's legs continuously make and break contact with the ground during gaiting. Additionally, the surface attributes and contact effects may vary significantly during gaiting and for various environments. A numerical dynamics engine, Open Dynamics Engine (ODE) \cite{ODE_Website}, has been utilized to implement a dynamics simulator for the BlueFoot platform. The simulator allows for various reconfigurations of environmental parameters, such as joint-friction, body-contact friction, and physical obstacles. Additionally, this simulation environment is implemented with a variety of geometric collision solvers and and efficient collision search method.

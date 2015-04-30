@@ -185,14 +185,14 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 		\begin{eqnarray}
 			\dot{\tilde{\theta}}_{c}	& = & \omega^{r} 	\nonumber\\
 			\dot{\tilde{p}}_{c}			& = & v^{r}			\nonumber\\
-			\dot{\tilde{p}}_{i,e} 		& = & v^{r} + \Skew{\omega^{r}\vec{h}_P} \tilde{R}_{P} \wrap{\tilde{p}_{i,e}-\tilde{p}_{c} } 
+			\dot{\tilde{p}}_{i,e} 		& = & v^{r} + \Skew{\omega^{r}\vec{h}_P} \tilde{R}_{b} \wrap{\tilde{p}_{i,e}-\tilde{p}_{c} } 
 			\label{eq::virtual_foothold_control}
 		\end{eqnarray}
 		where $\vec{h}_P$ is a unit vector that is orthogonal and pointed outward from the surface beneath the robot and $\Skew{\omega^{r}\vec{h}_P}\text{ }\in \Real^{3\times3}$ forms a skew-symmetric matrix from the vector argument $\omega^{r}\vec{h}_P$. The virtual foothold dynamics progress the target footholds at a commanded translational (forward) and rotational velocity, $v^{r}$ and $\omega^{r}$, respectively. The robot follows the virtual model at nearly the same velocities with minimal lag so long as system bandwidth is not exceeded. Using this virtual-foothold method is convenient as it allows for foot-placement planning to be independent of foot-trajectory planning. For example, terrain adaptation can be incorporated by modifying the location of virtual foot positions such that they conform to an upcoming surface. The robot's gait will then track these adaptations without any explicit modification of foot trajectories. In the event of contact with unperceived terrain, virtual-foothold positions will reset with respect to the position of the contact.
 %
 			\begin{figure}[h!]
 				\centering
-				\fbox{\includegraphics[width=0.75\textwidth]{virtual_foothold.png}}
+				\fbox{\includegraphics[width=1.00\textwidth]{virtual_foothold.png}}
 				\caption{ Virtual foothold representation. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.}
 				\label{fig::virtial_foothold}
 			\end{figure}
@@ -250,7 +250,7 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 			\end{equation}
 		where
 			\begin{eqnarray*}
-					\tau_{legs}		& = & \Sum{i}{1}{4} (1-\mu_{i})  \Sum{i}{1}{4}   \wrap{ m_{i,j}^{J} d_{i,j}^{J} + m_{i,j}^{L} d_{i,j}^{L} }	\times \vec{g} \nonumber \\
+					\tau_{legs}		& = & \Sum{i}{1}{4} (1-\mu_{i}) \wrap{ m_{i,e} p_{i,e}^{b'} + \Sum{i}{1}{4}   \wrap{ m_{i,j}^{J} d_{i,j}^{J} + m_{i,j}^{L} d_{i,j}^{L} } } \times \vec{g} \nonumber \\
 					d_{i,j}^{J} 	& = & {{p}_{i,j}^{b'}-\hat{p}_{COG}^{b'}.} \nonumber \\														
 					d_{i,j}^{L} 	& = &
 					\begin{cases}
@@ -259,7 +259,7 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 					\end{cases} \nonumber
 				\label{eq::Levers}
 			\end{eqnarray*}
-		with $m_{b}$, $m_{i,j}^{J}$ and $m_{i,j}^{L}$ represent the mass of the main body; the mass of each joint; and the mass of each link, respectively. $\mu_{i}$ is included in the above formulation such that only stepping legs contribute to  $\tau_{legs}$. It should be noted that the superscript ${b'}$ denotes that each particle considered in this controller is defined with respect to the robot-relative frame $O_{b'}$ define in Section \ref{sec::system_kinematics}. This allows the control routine to be performed without explicit knowledge of the system in space. The estimated center of gravity in $O_{b'}$, $\hat{p}_{COG}^{b'}$, is generated as follows:
+		with $m_{b}$, $m_{i,j}^{J}$, $m_{i,j}^{L}$, $m_{i,e}$ represent the mass of the main body; the mass of each joint; the mass of each link; the mass of each foot, respectively. $\mu_{i}$ is included in the above formulation such that only stepping (non-contacting) legs contribute to  $\tau_{legs}$. It should be noted that the superscript ${b'}$ denotes that each particle considered in this controller is defined with respect to the robot-relative frame $O_{b'}$ define in Section \ref{sec::system_kinematics}. This allows the control routine to be performed without explicit knowledge of the system in space. The estimated center of gravity in $O_{b'}$, $\hat{p}_{COG}^{b'}$, is generated as follows:
 			\begin{eqnarray*}
 				\hat{p}_{COG}^{b'} 	& = & \frac{1}{m_{T}}\wrap{ m_{b}p_{b}^{b'} + \sum_{i=1}^{4} \wrap{m_{i,e}{p}_{i,e}^{b'} + \sum_{j=1}^{4} \wrap{  m_{i,j}^{J}{p}_{i,j}^{b'} +  m_{i,j}^{L}{p}_{i,j}^{b',L} } }} 	\nonumber \\
 				{p}_{i,j}^{L} 	& = & 
@@ -273,7 +273,8 @@ Figure \ref{fig::cpg_transition} shows the change in output state patterns durin
 			\begin{equation}
 				m_{T} = m_{b} + \sum_{i=1}^{4} \wrap{m_{i,e} + \sum_{j=1}^{4} \wrap{  m_{i,j}^{J} +  m_{i,j}^{L} } }
 			\end{equation}
-
+		Here, the the local COG of each linkage, ${p}_{i,j}^{L}$, is assumed to be at the midpoint along the length of each link, half-way between two successive joints.
+		
 		Setting $\tau_{net}=0$, \ref{eq::net_moment} is manipulated to a derived solution for the ZMP as follows:
 			\begin{equation}
 				{p}_{ZMP}^{b'} = R_{z_P} \wrap{\frac{\pi}{2}}  \wrap{ \frac{\norm{g}}{m_{b}}} \tau_{legs} + \hat{p}_{COG}^{b'}.
