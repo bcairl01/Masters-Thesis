@@ -70,13 +70,13 @@
 
 		\subsection{Simulated potential field navigation results}
 
-				\begin{figure}[h!]
+				\begin{figure}[!h]
 					\centering
 					\fbox{\includegraphics[width=\textwidth]{potential_field_full.png}}
 					\caption{Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential fields navigation scheme.}
 					\label{fig::potential_field_results}
 				\end{figure}
-				\begin{figure}[h!]
+				\begin{figure}[!h]
 					\centering
 					\fbox{\includegraphics[width=\textwidth]{potential_field_full_obstacles.png}}
 					\caption{Path (shown in yellow) taken by robot through a simulated set of rooms and obstacles.}
@@ -129,7 +129,7 @@
 
 		\subsection{Terrain Mapping from 2D scans}
 			\label{ssec::terrain_mapping}
-			\begin{figure}[h!]
+			\begin{figure}[!h]
 				\centering
 				\fbox{\includegraphics[width=\textwidth]{laser-sweep.png}}
 				\caption{LIDAR swept over a range of angles, $\theta_{b,x} \in [\theta_{b,x,1}^{r},\theta_{b,x,N}^{r}]$. }
@@ -160,9 +160,9 @@
 				\bar{S} = \bigcup_{j=1}^{N_{s}} \bar{S}_{j}
 			\end{equation}
 			where $N_{s}$ defines the number of scans taken during the sweeping routine. For the sake of simplicity, it is assumed that the trunk's position, $p_{b}$, is fixed (system is completely ridged) during a swept-scan routine. In the results to be presented, this seems to be a reasonable assumption given that the platform is at rest and the trunk is pitched sufficiently slowly over the angular sweeping range. A slow sweep rate ensures that perturbations caused by vibrations incurred by trunk rotation and foot-slip are small, and thus do not cause for significant deviations in LIDAR scan points.
-				\begin{figure}[h!]
+				\begin{figure}[!h]
 					\centering
-					\fbox{\includegraphics[width=0.95\textwidth]{rough_terrain.png}}
+					\fbox{\includegraphics[width=0.8\textwidth]{rough_terrain.png}}
 					\caption{Original 3D point-cloud of terrain patch \emph{(top)} and corresponding view from robot's on-board camera \emph{(bottom)}.}
 					\label{fig::pointcloud_terrain_patch}
 				\end{figure}
@@ -234,7 +234,7 @@
 					\caption{Relative height-map \emph{(left)} and its corresponding gradient \emph{(right)}.}
 					\label{fig::heightmap_terrain_patch}
 				\end{figure}
-				\begin{figure}[h!]
+				\begin{figure}[!h]
 					\centering
 					\fbox{\includegraphics[width=\textwidth]{terrain_4545.png}}
 					\caption{Height-map showing terrain variation in the $z_{M}$ direction.}
@@ -300,14 +300,21 @@
 					%%
 					{\cal C}(\bar{p}^{M}_{b},u) 		&=& k_{\text{var}} \text{var}(\mmathcal{H}) + k_{\delta}\sum_{v=1}^{4} \delta \mmathcal{H}_{v}^{2} + k_{\theta} \gamma^{2}(u) 
 				\end{eqnarray}
-			$\forall \bar{p}^{M}_{b} \in \mathbb{Z}^{M}$, $\forall u \in \setwrap{1,...,l}$, and  $v \in \setwrap{1,2,3,4}$, where $\mmathcal{H}$ is a collection heights at each foothold position; $\delta\mmathcal{H}$ is a collection of corresponding elements from the gradient matrix $\nabla M$; $\text{var}(*)$ is generates the variance between the elements of a vector argument $(*)$; $k_{\text{var}}$, $k_{\delta}$ and $k_{\theta}$ are scalar weighting parameters; and $\col{*}{v}$ extracts the $v^{th}$ column from the matrix argument $(*)$.
+			$\forall \bar{p}^{M}_{b} \in \mathbb{Z}^{M}$, $\forall u \in \setwrap{1,...,l}$, and  $v \in \setwrap{1,2,3,4}$, where $\mmathcal{H}$ is a collection heights at each foothold position; $\delta\mmathcal{H}$ is a collection of corresponding elements from the gradient matrix $\nabla M$; $\text{var}(*)$ is generates the variance between the elements of a vector argument $(*)$; $k_{\text{var}}$, $k_{\delta}$ and $k_{\theta}$ are scalar weighting parameters; and $\col{*}{v}$ extracts the $v^{th}$ column from the matrix argument $(*)$. Figure \ref{fig::cost_map} shows sample cost-map visualizations for fixed robot orientations of $\theta_{z}=0$ and $\theta_{z}=\pi/4$. This cost map was generated using the height-map and corresponding height-map gradient shown in \ref{fig::heightmap_terrain_patch}.
+
+				\begin{figure}[!h]
+					\centering
+					\fbox{\includegraphics[width=1.00\textwidth]{cost_map.png}}
+					\caption{Projections of a sample cost map generated from the height-map shown in Figure \ref{fig::heightmap_terrain_patch}.}
+					\label{fig::cost_map}
+				\end{figure}
 
 			${\cal C}$ is used to generate an optimal, $N$-step path, which is comprised of $N$, discrete robot configurations. Moreover path is planned over rough terrain by optimizing a finite, $N$-step cost functional defined as follows:
 				\begin{equation}			
 					J(N) = \sum_{k=0}^N {\cal C}\wrap{\bar{p}^{M}_{b,k},u_{k}}
 				\end{equation}	
 			An optimal path can be found over the discretized space using an $A^{*}$-based path planning algorithm, for example. Additionally, sub-optimal paths could be generated using a potential fields approach. Both of these directions have yet to be fully explored as part of this project. Paths generated from the cost map would be mapped back into $O_{0}$, using the corresponding inverse mappings of \ref{eq::toheightmapframe} and $\gamma\wrap{u}$, and interpolated to generate smooth trajectories.
-
+				
 
 
 		\subsection{Surface Reconstruction}
@@ -315,9 +322,7 @@
 			3D surface reconstruction is carried out according to a process for normal-estimation from 3D point cloud data detailed in \cite{Rusu2009}. According to this procedure, 3D surfaces are reconstructed from point cloud data, $\bar{S}$, by fitting a collection of flat polygonal elements to the source point cloud. Each of these estimated elements is represented by a surface-normal which emanates from a corresponding point within the source cloud. Surface normal estimation carried out by fitting planes to groups of points which exist within a neighborhood $d_{s}$ about each point $\bar{x_{i}}\in\bar{S}$.
 
 			Before normal estimation, the point cloud $\bar{S}$ (which is usually dense) is down-sampled and smoothed before a normal estimation algorithm is applied. Point cloud down-sampling is performed using a voxel-grid technique, which discretizes the point cloud space into a voxel-space. The voxel-space consists of cuboids of a particular width, depth and height. Here, a cubic voxel space is used parameterized by a single voxel side-length dimension $d_{vox}$. The voxel grid filter and generates a single point from all points which fall within the volume of a voxel region, typically as a mean of all such points. The location of points which occupy the voxel region is aided by a KD-tree search technique, which offers higher efficiency over a brute-force search for neighboring points. This voxel-grid down-sampling technique produces a reduced representation of the original cloud, $\hat{S}$, which has shown, though observation of empirical results, to contain up to ten times less points, $\bar{S}$. This reduced-point cloud representation serves to greatly reduce the computational burden of successive cloud processing operations.
-
-			Next, the resulting cloud, $\hat{S}$, is regularized using a moving least-squares filter. This filter creates a smoothed point cloud by performing a sequence polynomial fits over a moving subset of points. As previously mentioned, normals are estimated from the smoothed point cloud via a plane fitting method, as described in \cite{Mitra2003}. Planes are estimated using Principle Component Analysis (PCA) on clusters of points \cite{Castillo2013}. The standard PCA algorithm provides a least-squares plane fit by way of dimensional reduction, yielding best-fit description for a set 3D points by way of a 2D manifold \cite{Pearson1901}. A point cloud with estimated surface normals is shown in Figure \ref{fig::surface_estimation}.
-%%
+			
 			\begin{algorithm}[!h]
 				\begin{algorithmic}
 					\State{\textbf{init} $\bar{S},\bar{S}^{*},d_{vox},\vec{u}^{r},e,e_{max}$}
@@ -334,10 +339,12 @@
 				\caption{Finding good places to step from a 3D point cloud.}
 				\label{alg::goodspacestostep}
 			\end{algorithm}
-%%
-			Algorithm \ref{alg::goodspacestostep} is used convert a 3D point cloud into a point-cloud with normal vectors, which is then used to find ``flat" regions within the reconstructed surface. This is performed for the purpose of footstep planning. Flat regions are located using generated surface, whose alignment is graded against a reference unit vector $\vec{u}^{r}$ by taking the dot product between  $\vec{u}^{r}$ and a surface normal. This dot-product operation produces an alignment error $e\in[0,2]$. Points with associated normals whose alignment error is less than a scalar error bound, $e_{max}$, are selected as fit surfaces for walking. Obviously, not all surfaces which satisfy this alignment criteria represent surfaces which are fit for traversal. Beyond normal estimation, several post processing operations will be performed to segments the resulting cloud into near-by surfaces over which the robot can walk. 
 
-			\begin{figure}[h!]
+			Next, the resulting cloud, $\hat{S}$, is regularized using a moving least-squares filter. This filter creates a smoothed point cloud by performing a sequence polynomial fits over a moving subset of points. As previously mentioned, normals are estimated from the smoothed point cloud via a plane fitting method, as described in \cite{Mitra2003}. Planes are estimated using Principle Component Analysis (PCA) on clusters of points \cite{Castillo2013}. The standard PCA algorithm provides a least-squares plane fit by way of dimensional reduction, yielding best-fit description for a set 3D points by way of a 2D manifold \cite{Pearson1901}. A point cloud with estimated surface normals is shown in Figure \ref{fig::surface_estimation}.
+
+			Algorithm \ref{alg::goodspacestostep} is used convert a 3D point cloud into a point-cloud with normal vectors, which is then used to find ``flat" regions within the reconstructed surface. This is performed for the purpose of footstep planning. Flat regions are located using generated surface, whose alignment is graded against a reference unit vector $\vec{u}^{r}$ by taking the dot product between  $\vec{u}^{r}$ and a surface normal. This dot-product operation produces an alignment error $e\in[0,2]$. Points with associated normals whose alignment error is less than a scalar error bound, $e_{max}$, are selected as fit surfaces for walking. Obviously, not all surfaces which satisfy this alignment criteria represent surfaces which are fit for traversal. Beyond normal estimation, several post processing operations will be performed to segment the resulting cloud into near-by surfaces over which the robot can walk. 
+
+			\begin{figure}[!h]
 				\centering
 				\fbox{\includegraphics[width=\textwidth]{surf_reconstruction.png}}
 				\caption{Point cloud generated from sequential scans of a room showing flat-surface candidates \emph{(top)} and 3D Point Cloud with normal estimation \emph{(bottom)}.}
