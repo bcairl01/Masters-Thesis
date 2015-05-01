@@ -1,6 +1,6 @@
 \contentsline {chapter}{VITA}{ii}
-\contentsline {chapter}{LIST OF FIGURES}{v}
-\contentsline {chapter}{LIST OF TABLES}{viii}
+\contentsline {chapter}{LIST OF FIGURES}{iii}
+\contentsline {chapter}{LIST OF TABLES}{iv}
 \contentsline {chapter}{\numberline {I. }Introduction}{1}
 \contentsline {section}{\numberline {1.1}Central Pattern Generators for Gait Control}{2}
 \contentsline {section}{\numberline {1.2}Zero Moment Point Body Placement Control}{5}

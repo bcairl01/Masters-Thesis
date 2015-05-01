@@ -29,7 +29,7 @@
 \contentsline {figure}{\numberline {24}{\ignorespaces Body motion generated using ZMP controller during 4-pace.\relax }}{59}
 \contentsline {figure}{\numberline {25}{\ignorespaces Quadruped tipping about planted feet. \relax }}{60}
 \contentsline {figure}{\numberline {26}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.\relax }}{64}
-\contentsline {figure}{\numberline {27}{\ignorespaces NARX Network MSE convergence for trial shown in Figure 32\hbox {}\relax }}{65}
+\contentsline {figure}{\numberline {27}{\ignorespaces NARX Network MSE convergence for trial shown in Figure \G@refundefinedtrue \text {\normalfont \bfseries ??}\GenericWarning { }{LaTeX Warning: Reference `fig::narx100_a35' on page 65 undefined}\relax }}{65}
 \contentsline {figure}{\numberline {28}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.125$.\relax }}{66}
 \contentsline {figure}{\numberline {29}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.250$.\relax }}{66}
 \contentsline {figure}{\numberline {30}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.350$.\relax }}{67}
@@ -42,8 +42,8 @@
 \contentsline {figure}{\numberline {36}{\ignorespaces LIDAR swept over a range of angles, $\theta _{b,x} \in [\theta _{b,x,1}^{r},\theta _{b,x,N}^{r}]$. \relax }}{76}
 \contentsline {figure}{\numberline {37}{\ignorespaces Original 3D point-cloud of terrain patch \emph {(top)} and corresponding view from robot's on-board camera \emph {(bottom)}.\relax }}{78}
 \contentsline {figure}{\numberline {38}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{80}
-\contentsline {figure}{\numberline {39}{\ignorespaces Height-map showing terrain variation in the $z_{M}$ direction.\relax }}{80}
-\contentsline {figure}{\numberline {40}{\ignorespaces Projections of a sample cost map generated from the height-map shown in Figure 38\hbox {}.\relax }}{83}
+\contentsline {figure}{\numberline {39}{\ignorespaces Height-map showing terrain variation in the $z_{{\cal M}}$ direction.\relax }}{80}
+\contentsline {figure}{\numberline {40}{\ignorespaces Projections of a sample cost map generated from the height-map shown in Figure \G@refundefinedtrue \text {\normalfont \bfseries ??}\GenericWarning { }{LaTeX Warning: Reference `fig::heightmap_terrain_patch' on page 83 undefined}.\relax }}{83}
 \contentsline {figure}{\numberline {41}{\ignorespaces Point cloud generated from sequential scans of a room showing flat-surface candidates \emph {(top)} and 3D Point Cloud with normal estimation \emph {(bottom)}.\relax }}{86}
 \addvspace {10pt}
 \addvspace {10pt}
