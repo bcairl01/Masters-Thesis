@@ -267,7 +267,7 @@
 
 			A discrete height-map space can be converted to a cost-space representation for the purpose of foot-placement planning over rough terrain in a straight-forward way. Here, a discrete cost-map is represent by ${\cal C}\in\Re^{n\times m\times l}$. The first and second dimensions of ${\cal C}$ (of size $n$ and $m$) directly correspond to the width and depth of the discretized height-map space $\mathbb{Z}^{\mmathcal{M}}$. The third dimension represents a discretization of the robot's yaw state, $\theta_{b,z}\in[-\pi,\pi]$ into $l$ subdivisions, and is used to represent variations of the robot's yaw with respect to $O_{\mmathcal{M}}$ in the height-map space. We define a mapping from the height-map space to a the cost-space as follows:
 				\begin{equation}
-					\setwrap{ {\cal C} = f(\mmathcal{M},\Gamma) \Sep : \Sep \Re^{m\times n} \rightarrow \Re^{m\times n \times l} }
+					\setwrap{ {\cal C} = f(\mmathcal{M},\Gamma) \SSep : \SSep \Re^{n\times m} \rightarrow \Re^{n\times m \times l} }
 					\label{eq::cost_mapping}
 				\end{equation}
 			where $\Gamma$ is a static robot configuration matrix used to describe the nominal spacing between the robot's feet. $\Gamma$ is composed as follows:
@@ -277,7 +277,7 @@
 				\end{equation*}
 			where $\bar{p}_{v,e}^{\mmathcal{M}}=[i_{v},j_{v}]^{T}\in\mmathbb{Z}^{\mmathcal{M}}$ represent the position of each $v^{th}$ foot in the height-map space with $i_{v}\in \setwrap{1,...,m}$ and $j_{v}\in\setwrap{1,...,n}$. By formulating a cost assignment based on the location of all of the robot's feet at any instant, the 
 			
-			This cost-map conversion mapping, $f(\mmathcal{M},\Gamma)$, has been formulated with respect to three main cost elements:
+			This conversion mapping, $f(\mmathcal{M},\Gamma)$, has been formulated with respect to three main cost elements:
 				\begin{enumerate}
 					\item variation in attainable foothold heights between all feet
 					\item terrain steepness around any foothold, given a particular configuration

@@ -404,13 +404,6 @@ Radu~Bogdan Rusu.
 \newblock PhD thesis, Computer Science department, Technische Universitaet
   Muenchen, Germany, October 2009.
 
-\bibitem{Mitra2003}
-Niloy~J. Mitra and An~Nguyen.
-\newblock Estimating surface normals in noisy point cloud data.
-\newblock In {\em Proceedings of the Nineteenth Annual Symposium on
-  Computational Geometry}, SCG '03, pages 322--328, New York, NY, USA, 2003.
-  ACM.
-
 \bibitem{Castillo2013}
 Edward Castillo, Jian Liang, and Hongkai Zhao.
 \newblock Point cloud segmentation and denoising via constrained nonlinear
@@ -423,5 +416,11 @@ Edward Castillo, Jian Liang, and Hongkai Zhao.
 K.~Pearson.
 \newblock {On lines and planes of closest fit to systems of points in space}.
 \newblock {\em Philosophical Magazine}, 2(6):559--572, 1901.
+
+\bibitem{Kolter2009}
+J.Z. Kolter, Youngjun Kim, and A.Y. Ng.
+\newblock Stereo vision and terrain modeling for quadruped robots.
+\newblock In {\em Robotics and Automation, 2009. ICRA '09. IEEE International
+  Conference on}, pages 1557--1564, May 2009.
 
 \end{thebibliography}
