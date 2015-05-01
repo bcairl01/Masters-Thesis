@@ -133,6 +133,13 @@
 					{p}_{i,e} \equiv E_{p} H_{0}^{i,0} {H}^{i,0}_{i,4} e_{p}.
 					\label{eq::world_feet_positions}
 				\end{equation}
+			As a previously mentioned, BlueFoot's forward kinematic solution is used most prevalently in the estimating the position of each foot. Given estimates for body position and orientation, $\hat{p}_{b}$ and $\hat{\theta}_{b}$, a foot position estimate is formally as a random variable as follows:
+				\begin{equation}
+					\hat{p}_{i,e} = {p}_{i,e} + \Delta {p}_{i,e}
+					\label{eq::foot_position_esitmate}
+				\end{equation}
+			where $\Delta {p}_{i,e}$ is a random error which arises from variations due to noise in sensed joint positions, as well as error in the estimates $\hat{p}_{b}$ and $\hat{\theta}_{b}$.
+
 
 			\subsubsection{A Note about Foot Localization in the Robot-Relative Frames}
 
@@ -152,6 +159,7 @@
 			which follows the same definitions in \ref{eq::world_to_dh}.
 			The transformation defined in \ref{eq::rr_to_dh} is used as a direct replacement for the matrix $H_{0}^{i,0}$ in \ref{eq::world_joint_positions} and \ref{eq::world_feet_positions} in computing the corresponding particles, ${p}_{i,j}^{b'}$ and ${p}_{i,e}^{b'}$. Knowledge of the position of each respective particle is useful for planning foot and body-placements which depend directly on the location other foot positions and the relative body location, but do not necessarily depend on the position of the robot in the world coordinate frame.
  
+
 		\subsection{Inverse Position Kinematics}
 			\label{sec::inverse_position_kinematics}
 			
@@ -252,18 +260,18 @@
 				\end{equation}
 			where $\vec{o}_{\nu} = [\nu,0,0]^{T}$, $R^{0}_{i,0}$ is the rotation-matrix component of the transformation $H^{0}_{i,0}$ defined in \ref{eq::world_to_dh}, and $\Skew{*}$ is the standard skew-symmetric matrix operator, which takes a $3\times1$ vector input. The corresponding rotational velocity of each \Ith foot  can be computed with respect to $O_{i,0}$ by:
 				\begin{equation}
-					\Theta^{i} \equiv \wrap{ R^{0}_{i,0} }^{T} \Skew{ \dot{\theta}_{i,e} - \dot{\theta}_{b} } R^{0}_{i,0}  = \Skew{ \dot{\theta}^{i,0}_{i,e} }
+					\Theta^{i,0} \equiv \wrap{ R^{0}_{i,0} }^{T} \Skew{ \dot{\theta}_{i,e} - \dot{\theta}_{b} } R^{0}_{i,0}  = \Skew{ \dot{\theta}^{i,0}_{i,e} }
 				\label{eq::velocity_skew}
 				\end{equation}
 			where the rotational velocity of each foot, described by $\dot{\theta}^{i,0}_{i,e}$, is recovered by:
 				\begin{equation}
 					\dot{\theta}^{i,0}_{i,e} \equiv \sbrack{ 
-						-\Theta^{i}_{1,2},
-						 \Theta^{i}_{1,3},
-						-\Theta^{i}_{2,3}
+						-\Theta^{i,0}_{1,2},
+						 \Theta^{i,0}_{1,3},
+						-\Theta^{i,0}_{2,3}
 					}^{T}
 				\end{equation}
-			with $\Theta^{i}_{i,j}$ being the (\Ith, \Jth) element of the skew symmetric matrix $\Theta^{i}$ which results from \ref{eq::velocity_skew}.
+			with $\Theta^{i,0}_{j,k}$ being the \Kth element in the \Jth row of the skew symmetric matrix $\Theta^{i,0}_{j,k}$ which results from \ref{eq::velocity_skew}.
 
 			Joint velocities required to attain $\dot{x}^{i,0}_{i,e}$ can be computed using $J^{i,0}_{i,e}$. However, since each of BlueFoot's of legs had 4 degrees of freedom, $J^{i,0}_{i,e}$ is rank deficient and $\dot{q}_{i}$ cannot be obtained by direct inversion. Instead, $\dot{q}_{i}$ can be approximated from $\dot{x}^{i,0}_{i,e}$ by a weighted, Penrose-Moore psuedo-inverse of $J^{i,0}_{i,e}$, which is defined as follows:
 				\begin{eqnarray}

@@ -20,7 +20,7 @@
 
 	\section{Central Pattern Generator (CPG) Based Gaiting}
 
-		A central pattern generator (CPG), which includes a reflexive mechanism using sensory feedback, is utilized as the core of the robot's gait generation algorithm. CPGs are a form of neural oscillator network which mimic biological mechanisms for repetitive motor tasks \cite{Ijspeert2008,Collins1993}. CPGs commonly consist of a network of multi-state unit-oscillators. These unit-oscillators are coupled such that the motion of one oscillator drives or attenuates the motion of other oscillators it is connected to, creating phase-locked limit cycles.
+		A central pattern generator (CPG), which includes a reflexive mechanism using sensory feedback, is utilized as the core of the robot's gait generation algorithm. As previously introduced, CPGs are a form of neural oscillator network which mimic biological mechanisms for repetitive motor tasks \cite{Ijspeert2008,Collins1993}. CPGs commonly consist of a network of multi-state unit-oscillators. These unit-oscillators are coupled such that the motion of one oscillator drives or attenuates the motion of other oscillators it is connected to, creating phase-locked limit cycles.
 
 		In this context, the limit-cycles generated with a CPG will be utilized to drive a quadruped  walking gait by mapping oscillator outputs to foot position controls. CPGs are widely used in this way as they provide a compact method for prescribing rhythmic gaits with variable stepping sequences \cite{Righetti2006,Castro2008,Li2014}. CPG-driven gait controllers are convenient as they allow for continuous transitioning between gaiting patterns through the modification of oscillator coupling. Reflexes are built into the oscillators which use IMU measurements to modulate the CPGs unit oscillators, as will be outlined later in this section.
 
@@ -119,9 +119,11 @@
 						\right]
 					\label{eq::cpg_W_matrix_def}
 				\end{equation}
-			and $\zeta$ being a sensitivity tuning parameter. A linear mapping between commanded platform velocity, $v^{r}$, and $\omega_{s}$ is prescribed such that stepping-cycle frequency is adjusted proportionally with respect to the desired velocity of the system, \IE $\omega_{s} = a_{v}v^{r}$.
-
-			In BlueFoot's CPG implementation, the coupling matrix $K$ takes on the values $k_{i,j} \in \sbrack{-1,1}$. Each element of the coupling matrix, $k_{i,j}$, is utilized to adjust the phase offsets between the unit-oscillators.Furthermore, setting $k_{i,j}=1$ causes the \Jth oscillator to attract the \Ith oscillator  towards a  positive peak, and vice-versa. Setting $k_{i,j}=0$ effectively disconnects \Ith and \Jth oscillators. 
+			and $\zeta$ being a sensitivity tuning parameter. A linear mapping between commanded platform velocity, $v^{r}$, and $\omega_{s}$ is prescribed such that stepping-cycle frequency is adjusted proportionally with respect to the desired velocity and turning rate of the system, as follows:
+				\begin{equation}
+					\omega_{s} = a_{v}v^{r} + a_{\omega}\abs{\omega^{r}}
+				\end{equation}
+			where $a_{v}$ and $a_{\omega}$ are scalar gains. In BlueFoot's CPG implementation, the coupling matrix $K$ takes on the values $k_{i,j} \in \sbrack{-1,1}$. Each element of the coupling matrix, $k_{i,j}$, is utilized to adjust the phase offsets between the unit-oscillators.Furthermore, setting $k_{i,j}=1$ causes the \Jth oscillator to attract the \Ith oscillator  towards a  positive peak, and vice-versa. Setting $k_{i,j}=0$ effectively disconnects \Ith and \Jth oscillators. 
 
 			Figures~\ref{fig::cpg_phase2_45} and \ref{fig::cpg_phase4_45} depict the CPG output, $y_{2}$, and corresponding unit-oscillator phase portraits of the oscillator dynamics, given by \ref{eq::cpg_ss_def} with the feedback mechanism given in \ref{eq::cpg_modulations} used during simulations of BlueFoot's default two-pace trotting and four-pace walking gaits, respectively. The associated $K$ matrix prescribing this gaiting pattern is a modified version of $K$ for a 2-pace trot gait presented in \cite{Rutishauser2008}, since this generates a more effective and fluid gait when applied to BlueFoot's gait controller
 				\begin{equation}
@@ -177,22 +179,28 @@
 	\section{Foot Placement Control}
 
 
-		A foot placement controller has been implemented which utilizes CPG outputs (defined in equation \ref{eq::cpg_ss_def}) in concert with a virtual-force controller. This controller is designed such that each foothold of the robot tracks the foot positions of a virtual robot generated through a model reference. The virtual robot is described by the foot positions, $\tilde{p}_{i,e}$, a virtual reference configuration corresponding to the position, $\tilde{p}_{c}$, and orientation, $\tilde{\theta}_{c}$, of the main body in $O_{0}$. The robot follows the foot placement of the virtual robot to achieve a commanded ground velocity $v^{r} \InRe{3} $; and turning velocity $\omega^{r} \InRe{}$. Each virtual point is updated by:
+		A foot placement controller has been implemented which utilizes CPG outputs (defined in equation \ref{eq::cpg_ss_def}) in concert with a virtual-force controller. This controller is designed such that each foothold of the robot tracks the foot positions of a virtual robot generated through a model reference. The virtual robot is described by the foot positions, $\tilde{p}_{i,e}$, a virtual reference configuration corresponding to the return-position, $\tilde{p}_{c}$, and orientation, $\tilde{\theta}_{c}$, of the main body in $O_{0}$. The robot follows the foot placement of the virtual robot to achieve a commanded ground speed $v^{r} > 0$ in a unit-vector direction $\vec{u}^{r} \in \Re^{3}$; and turning velocity $\omega^{r} \in \Re$. Each virtual point is updated by:
 		\begin{eqnarray}
-			\dot{\tilde{\theta}}_{c}	& = & \omega^{r} 	\nonumber\\
-			\dot{\tilde{p}}_{c}			& = & v^{r}			\nonumber\\
-			\dot{\tilde{p}}_{i,e} 		& = & v^{r} + \Skew{\omega^{r}\vec{h}_P} \tilde{R}_{b} \wrap{\tilde{p}_{i,e}-\tilde{p}_{c} } 
+			\dot{\tilde{\theta}}_{c}	& = & \omega^{r} 				\nonumber\\
+			\dot{\tilde{p}}_{c}			& = & v^{r}\vec{u}^{r}			\nonumber\\
+			\dot{\tilde{p}}_{i,e} 		& = & v^{r}\vec{u}^{r} + \Skew{\omega^{r}\vec{h}_P} \tilde{R}_{b} \wrap{\tilde{p}_{i,e}-\tilde{p}_{c} } 
 			\label{eq::virtual_foothold_control}
 		\end{eqnarray}
-		where $\vec{h}_P$ is a unit vector that is orthogonal and pointed outward from the surface beneath the robot and $\Skew{\omega^{r}\vec{h}_P}\text{ }\in \Real^{3\times3}$ forms a skew-symmetric matrix from the vector argument $\omega^{r}\vec{h}_P$. The virtual foothold dynamics progress the target footholds at a commanded translational (forward) and rotational velocity, $v^{r}$ and $\omega^{r}$, respectively. The robot follows the virtual model at nearly the same velocities with minimal lag so long as system bandwidth is not exceeded. Using this virtual-foothold method is convenient as it allows for foot-placement planning to be independent of foot-trajectory planning. For example, terrain adaptation can be incorporated by modifying the location of virtual foot positions such that they conform to an upcoming surface. The robot's gait will then track these adaptations without any explicit modification of foot trajectories. In the event of contact with unperceived terrain, virtual-foothold positions will reset with respect to the position of the contact.
-%
+		where $\vec{h}_P$ is a unit vector that is orthogonal and pointed outward from the surface beneath the robot and $\Skew{\omega^{r}\vec{h}_P}\text{ }\in \Real^{3\times3}$ forms a skew-symmetric matrix from the vector argument $\omega^{r}\vec{h}_P$. The virtual foothold dynamics progress the target footholds at a commanded translational (forward) and rotational velocity, $v^{r}$ and $\omega^{r}$, respectively. The robot follows the virtual model at nearly the same velocities with minimal lag so long as system bandwidth is not exceeded. Using this virtual-foothold method is convenient as it allows for foot-placement planning to be independent of foot-trajectory planning. For example, terrain adaptation can be incorporated by modifying the location of virtual foot positions such that they conform to an upcoming surface. The robot's gait will then track these adaptations without any explicit modification of foot trajectories. In the event of contact with unperceived terrain, virtual-foothold positions will reset with respect to an estimated of position of the position of each \Ith contacting foot \IE:
+			\begin{algorithm}[!h]
+				\begin{algorithmic}
+				\If{step not complete \textbf{and} $\mu_{i}==1$}
+				\State{$\tilde{p}_{i,e} = \hat{p}_{i,e}$}
+				\EndIf
+				\end{algorithmic}
+			\end{algorithm}
+		where $\hat{p}_{i,e}$ is as it is defined in \ref{eq::foot_position_esitmate}.
 			\begin{figure}[h!]
 				\centering
 				\fbox{\includegraphics[width=1.00\textwidth]{virtual_foothold.png}}
 				\caption{ Virtual foothold representation. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.}
 				\label{fig::virtial_foothold}
 			\end{figure}
-%
 		The full foothold controller represented by 
 			\begin{equation}
 				\dot{p}_{i,e} = \dot{\tilde{p}}_{i,e}^{v} + \dot{\tilde{p}}_{i,e}^{y}, \SSep i = 1,...,4
@@ -362,7 +370,7 @@
 			where 	$\hat{M}_{bb}\RealMat{6}{6}$, 
 					$\hat{M}_{bq}=\hat{M}_{qb}^{T} \RealMat{6}{16}$, and  
 					$\hat{M}_{qq}\RealMat{16}{16}$. 
-			It is particularly important that $\hat{M}_{bq}\neq0$ to reflect some degree of coupling between the joint states $q$ and the trunk states ${p}_{b}$ and $\theta_{b}$. In general, if $\hat{M}_{nom}$ should be selected to reflect the \emph{average} system mass matrix over the range of configurations, $z_{1}$, seen during gaiting. This approximation has shown to be adequate from our results, and depends on the assumption that changes in $\hat{M}_{1,k}$ are small  over the subset of state $z_{1}$ experiences during a periodic gaiting sequence. Future improvements of this controller involve the formulation of a separate estimator for $M(z_{1})$, or a control/learning scheme with no direct dependence on $M(z_{1})$.
+			It is particularly important that $\hat{M}_{bq}\neq0$ to reflect some degree of coupling between the joint states $q$ and the trunk states ${p}_{b}$ and $\theta_{b}$. In general, if $\hat{M}_{nom}$ should be selected to reflect the \emph{average} system mass matrix over the range of configurations, $z_{1}$, seen during gaiting. This approximation has shown to be adequate from our results, and depends on the assumption that changes in $\hat{M}_{1,k}$ are small  over the subset of state $z_{1}$ experiences during a periodic gaiting sequence. Future improvements of this controller involve the formulation of a separate estimator for $M(z_{1})$, or a control / learning scheme with no direct dependence on $M(z_{1})$.
 
 			Since $\hat{\psi}_{k+1}$ is non-causal, training is performed one time-step after a prediction is made using the input-output pair $\hat{\psi}_{k}$ and \{${\Psi}_{k-1}^{N}$, ${U}_{k-1}^{N}$\}. Note that $\hat{\psi}_{k}$ can calculated directly using \ref{eq::training_signal} where all component signals are time-delayed by one time-step. Training can then be described by:
 				\begin{equation}
