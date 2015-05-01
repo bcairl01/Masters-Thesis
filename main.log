@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  1 MAY 2015 00:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  1 MAY 2015 02:16
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -714,19 +714,19 @@ CHAPTER 5
 File: cpg_phase2_45.png Graphic file (type png)
 
 <use cpg_phase2_45.png>
-Package pdftex.def Info: cpg_phase2_45.png used on input line 162.
+Package pdftex.def Info: cpg_phase2_45.png used on input line 157.
 (pdftex.def)             Requested size: 433.62pt x 216.80946pt.
  <cpg_phase4_45.png, id=235, 867.24pt x 433.62pt>
 File: cpg_phase4_45.png Graphic file (type png)
 
 <use cpg_phase4_45.png>
-Package pdftex.def Info: cpg_phase4_45.png used on input line 168.
+Package pdftex.def Info: cpg_phase4_45.png used on input line 163.
 (pdftex.def)             Requested size: 433.62pt x 216.80946pt.
  <cpg_transition.png, id=236, 578.16pt x 433.62pt>
 File: cpg_transition.png Graphic file (type png)
 
 <use cpg_transition.png>
-Package pdftex.def Info: cpg_transition.png used on input line 174.
+Package pdftex.def Info: cpg_transition.png used on input line 169.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
 
 
@@ -744,7 +744,7 @@ ers/Brian/Desktop/Masters-Thesis/cpg_transition.png (PNG copy)>]
 <virtual_foothold.png, id=244, 722.7pt x 361.35pt>
 File: virtual_foothold.png Graphic file (type png)
  <use virtual_foothold.png>
-Package pdftex.def Info: virtual_foothold.png used on input line 195.
+Package pdftex.def Info: virtual_foothold.png used on input line 191.
 (pdftex.def)             Requested size: 433.62pt x 216.81168pt.
 
 
@@ -754,13 +754,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: step_pattern_2.png Graphic file (type png)
 
 <use step_pattern_2.png>
-Package pdftex.def Info: step_pattern_2.png used on input line 226.
+Package pdftex.def Info: step_pattern_2.png used on input line 222.
 (pdftex.def)             Requested size: 390.25534pt x 195.1272pt.
  <step_pattern_4.png, id=249, 867.24pt x 433.62pt>
 File: step_pattern_4.png Graphic file (type png)
 
 <use step_pattern_4.png>
-Package pdftex.def Info: step_pattern_4.png used on input line 232.
+Package pdftex.def Info: step_pattern_4.png used on input line 228.
 (pdftex.def)             Requested size: 390.25534pt x 195.1272pt.
 
 
@@ -775,13 +775,13 @@ sktop/Masters-Thesis/step_pattern_4.png (PNG copy)>] [56]
 <body_motion2.png, id=260, 578.16pt x 433.62pt>
 File: body_motion2.png Graphic file (type png)
  <use body_motion2.png>
-Package pdftex.def Info: body_motion2.png used on input line 298.
+Package pdftex.def Info: body_motion2.png used on input line 294.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
 
 <body_motion4.png, id=261, 578.16pt x 433.62pt>
 File: body_motion4.png Graphic file (type png)
  <use body_motion4.png>
-Package pdftex.def Info: body_motion4.png used on input line 304.
+Package pdftex.def Info: body_motion4.png used on input line 300.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
  [57]
 
@@ -791,7 +791,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <tipping_robot.png, id=269, 650.43pt x 433.62pt>
 File: tipping_robot.png Graphic file (type png)
  <use tipping_robot.png>
-Package pdftex.def Info: tipping_robot.png used on input line 323.
+Package pdftex.def Info: tipping_robot.png used on input line 319.
 (pdftex.def)             Requested size: 346.89731pt x 231.26651pt.
 
 
@@ -799,20 +799,20 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [59 <C:/Users/Brian/Desktop/Masters-Thesis/body_motion4.png (PNG copy)>]
 [60 <C:/Users/Brian/Desktop/Masters-Thesis/tipping_robot.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 371.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 367.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 371.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 367.
  [61] [62]
 <controller_diagram.png, id=282, 650.43pt x 433.62pt>
 File: controller_diagram.png Graphic file (type png)
 
 <use controller_diagram.png>
-Package pdftex.def Info: controller_diagram.png used on input line 437.
+Package pdftex.def Info: controller_diagram.png used on input line 433.
 (pdftex.def)             Requested size: 433.62pt x 289.0881pt.
 
 
@@ -822,7 +822,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: aux_V_100mms_nN_50_nL_2_nns.png Graphic file (type png)
 
 <use aux_V_100mms_nN_50_nL_2_nns.png>
-Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_nns.png used on input line 456
+Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_nns.png used on input line 452
 .
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
@@ -831,7 +831,7 @@ File: alpha0125_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use alpha0125_V_60mms_nN_50_nL_2_pos.png>
 Package pdftex.def Info: alpha0125_V_60mms_nN_50_nL_2_pos.png used on input lin
-e 462.
+e 458.
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
 <alpha0250_V_60mms_nN_50_nL_2_pos.png, id=289, 578.16pt x 433.62pt>
@@ -839,7 +839,7 @@ File: alpha0250_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use alpha0250_V_60mms_nN_50_nL_2_pos.png>
 Package pdftex.def Info: alpha0250_V_60mms_nN_50_nL_2_pos.png used on input lin
-e 468.
+e 464.
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
 <alpha0350_V_60mms_nN_50_nL_2_pos.png, id=290, 578.16pt x 433.62pt>
@@ -847,14 +847,14 @@ File: alpha0350_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use alpha0350_V_60mms_nN_50_nL_2_pos.png>
 Package pdftex.def Info: alpha0350_V_60mms_nN_50_nL_2_pos.png used on input lin
-e 474.
+e 470.
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
 <aux_V_80mms_nN_50_nL_2_pos.png, id=291, 578.16pt x 433.62pt>
 File: aux_V_80mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use aux_V_80mms_nN_50_nL_2_pos.png>
-Package pdftex.def Info: aux_V_80mms_nN_50_nL_2_pos.png used on input line 480.
+Package pdftex.def Info: aux_V_80mms_nN_50_nL_2_pos.png used on input line 476.
 
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 
@@ -862,7 +862,7 @@ Package pdftex.def Info: aux_V_80mms_nN_50_nL_2_pos.png used on input line 480.
 File: aux_V_100mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use aux_V_100mms_nN_50_nL_2_pos.png>
-Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_pos.png used on input line 486
+Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_pos.png used on input line 482
 .
 (pdftex.def)             Requested size: 368.57964pt x 276.43074pt.
 ) [64 <C:/Users/Brian/Desktop/Masters-Thesis/controller_diagram.png>]
@@ -889,7 +889,7 @@ CHAPTER 6
 File: potential_field.png Graphic file (type png)
 
 <use potential_field.png>
-Package pdftex.def Info: potential_field.png used on input line 45.
+Package pdftex.def Info: potential_field.png used on input line 46.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
  [70] [71 <C:/Users/Brian/Desktop/Masters-Thesis/potential_field.png (PNG copy)
 >]
@@ -897,7 +897,7 @@ Package pdftex.def Info: potential_field.png used on input line 45.
 File: potential_field_full.png Graphic file (type png)
 
 <use potential_field_full.png>
-Package pdftex.def Info: potential_field_full.png used on input line 75.
+Package pdftex.def Info: potential_field_full.png used on input line 76.
 (pdftex.def)             Requested size: 433.62pt x 361.3436pt.
 
 
@@ -908,7 +908,7 @@ File: potential_field_full_obstacles.png Graphic file (type png)
 
 <use potential_field_full_obstacles.png>
 Package pdftex.def Info: potential_field_full_obstacles.png used on input line 
-81.
+82.
 (pdftex.def)             Requested size: 433.62pt x 202.3524pt.
 
 
@@ -919,14 +919,14 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [75] <laser-sweep.png, id=338, 963.6pt x 542.025pt>
 File: laser-sweep.png Graphic file (type png)
  <use laser-sweep.png>
-Package pdftex.def Info: laser-sweep.png used on input line 134.
+Package pdftex.def Info: laser-sweep.png used on input line 135.
 (pdftex.def)             Requested size: 433.62pt x 243.90898pt.
 
 [76 <C:/Users/Brian/Desktop/Masters-Thesis/laser-sweep.png>]
 <rough_terrain.png, id=343, 722.7pt x 1084.05pt>
 File: rough_terrain.png Graphic file (type png)
  <use rough_terrain.png>
-Package pdftex.def Info: rough_terrain.png used on input line 165.
+Package pdftex.def Info: rough_terrain.png used on input line 166.
 (pdftex.def)             Requested size: 346.89731pt x 520.33809pt.
 
 
@@ -937,36 +937,41 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: terrain_grad_crop.png Graphic file (type png)
 
 <use terrain_grad_crop.png>
-Package pdftex.def Info: terrain_grad_crop.png used on input line 233.
+Package pdftex.def Info: terrain_grad_crop.png used on input line 234.
 (pdftex.def)             Requested size: 433.62pt x 186.97829pt.
  <terrain_4545.png, id=352, 578.16pt x 433.62pt>
 File: terrain_4545.png Graphic file (type png)
 
 <use terrain_4545.png>
-Package pdftex.def Info: terrain_4545.png used on input line 239.
+Package pdftex.def Info: terrain_4545.png used on input line 240.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
+ [79]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[79] [80 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_grad_crop.png> <C:/User
-s/Brian/Desktop/Masters-Thesis/terrain_4545.png (PNG copy)>] [81]
-<cost_map.png, id=364, 771.1209pt x 365.4453pt>
+[80 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_grad_crop.png>] [81 <C:/User
+s/Brian/Desktop/Masters-Thesis/terrain_4545.png (PNG copy)>] [82]
+<cost_map.png, id=367, 771.1209pt x 365.4453pt>
 File: cost_map.png Graphic file (type png)
  <use cost_map.png>
-Package pdftex.def Info: cost_map.png used on input line 307.
+Package pdftex.def Info: cost_map.png used on input line 308.
 (pdftex.def)             Requested size: 433.62pt x 205.50113pt.
- [82]
-[83 <C:/Users/Brian/Desktop/Masters-Thesis/cost_map.png>]
+ [83 <C:/Users/Brian/Desktop/Masters-Thesis/cost_map.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 LaTeX Warning: Citation `{\cal M}itra2003' on page 84 undefined on input line 3
-43.
+44.
 
 [84] <surf_reconstruction.png, id=375, 963.6pt x 1228.59pt>
 File: surf_reconstruction.png Graphic file (type png)
 
 <use surf_reconstruction.png>
-Package pdftex.def Info: surf_reconstruction.png used on input line 349.
+Package pdftex.def Info: surf_reconstruction.png used on input line 350.
 (pdftex.def)             Requested size: 433.62pt x 552.8604pt.
 
 
@@ -1059,11 +1064,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  5645 strings out of 493921
  86610 string characters out of 3144877
- 161994 words of memory out of 3000000
+ 160994 words of memory out of 3000000
  8725 multiletter control sequences out of 15000+200000
  14548 words of font info for 55 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 46i,17n,42p,1682b,327s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,17n,42p,1699b,327s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/
@@ -1078,7 +1083,7 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (107 pages, 15420267 bytes).
+Output written on main.pdf (107 pages, 15420745 bytes).
 PDF statistics:
  465 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
