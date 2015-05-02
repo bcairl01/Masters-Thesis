@@ -25,25 +25,24 @@
 \contentsline {figure}{\numberline {20}{\ignorespaces Virtual foothold representation. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.\relax }}{55}
 \contentsline {figure}{\numberline {21}{\ignorespaces Stepping pattern generated using virtual-force foothold controller during two-pace gait sequence at $v^{r}=40\frac {mm}{s}$.\relax }}{56}
 \contentsline {figure}{\numberline {22}{\ignorespaces Stepping pattern generated using virtual-force foothold controller during four-pace gait sequence at $v^{r}=40\frac {mm}{s}$.\relax }}{57}
-\contentsline {figure}{\numberline {23}{\ignorespaces Body motion generated using ZMP controller during 2-pace.\relax }}{60}
-\contentsline {figure}{\numberline {24}{\ignorespaces Body motion generated using ZMP controller during 4-pace.\relax }}{61}
-\contentsline {figure}{\numberline {25}{\ignorespaces Quadruped tipping about planted feet. \relax }}{62}
-\contentsline {figure}{\numberline {26}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.\relax }}{65}
-\contentsline {figure}{\numberline {27}{\ignorespaces NARX Network MSE convergence for trial shown in Figure 32\hbox {}\relax }}{67}
-\contentsline {figure}{\numberline {28}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.125$.\relax }}{67}
-\contentsline {figure}{\numberline {29}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.250$.\relax }}{68}
-\contentsline {figure}{\numberline {30}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.350$.\relax }}{68}
-\contentsline {figure}{\numberline {31}{\ignorespaces Trunk orientation during 80 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{69}
-\contentsline {figure}{\numberline {32}{\ignorespaces Trunk orientation during 100 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{69}
+\contentsline {figure}{\numberline {23}{\ignorespaces Body motion generated using ZMP controller during two-pace \emph {(top)} and four-pace \emph {(bottom)} gaiting sequence.\relax }}{60}
+\contentsline {figure}{\numberline {24}{\ignorespaces Quadruped tipping about planted feet. \relax }}{61}
+\contentsline {figure}{\numberline {25}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.\relax }}{65}
+\contentsline {figure}{\numberline {26}{\ignorespaces NARX Network MSE convergence for trial shown in Figure 31\hbox {}\relax }}{66}
+\contentsline {figure}{\numberline {27}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with $\alpha = 0.125$.\relax }}{67}
+\contentsline {figure}{\numberline {28}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with $\alpha = 0.250$.\relax }}{67}
+\contentsline {figure}{\numberline {29}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with $\alpha = 0.350$.\relax }}{68}
+\contentsline {figure}{\numberline {30}{\ignorespaces Trunk orientation during 80 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{68}
+\contentsline {figure}{\numberline {31}{\ignorespaces Trunk orientation during 100 $\frac {mm}{s}$ gait with $\alpha = 0.35$\relax }}{69}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {33}{\ignorespaces Potential field, $f(x)$ with $d_{min}=0.4m$ given an environment with with obstacles. Objects are located at $(0.5,0.1)\text { m}$ and $(0.1,-0.1)\text { m}$ from the robot. \relax }}{72}
-\contentsline {figure}{\numberline {34}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential fields navigation scheme.\relax }}{74}
-\contentsline {figure}{\numberline {35}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and obstacles.\relax }}{75}
-\contentsline {figure}{\numberline {36}{\ignorespaces LIDAR swept over a range of angles, $\theta _{b,x} \in [\theta _{b,x,1}^{r},\theta _{b,x,N}^{r}]$. \relax }}{77}
-\contentsline {figure}{\numberline {37}{\ignorespaces Original 3D point-cloud of terrain patch \emph {(top)} and corresponding view from robot's on-board camera \emph {(bottom)}.\relax }}{79}
-\contentsline {figure}{\numberline {38}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{81}
-\contentsline {figure}{\numberline {39}{\ignorespaces Height-map showing terrain variation in the $z_{{\cal M}}$ direction.\relax }}{82}
-\contentsline {figure}{\numberline {40}{\ignorespaces Projections of a sample cost map generated from the height-map shown in Figure\nobreakspace {}38\hbox {}.\relax }}{84}
-\contentsline {figure}{\numberline {41}{\ignorespaces Point cloud generated from sequential scans of a room showing flat-surface candidates \emph {(top)} and 3D Point Cloud with normal estimation \emph {(bottom)}.\relax }}{87}
+\contentsline {figure}{\numberline {32}{\ignorespaces Potential field, $f(x)$ with $d_{min}=0.4m$ given an environment with with obstacles. Objects are located at $(0.5,0.1)\text { m}$ and $(0.1,-0.1)\text { m}$ from the robot. \relax }}{72}
+\contentsline {figure}{\numberline {33}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential fields navigation scheme.\relax }}{74}
+\contentsline {figure}{\numberline {34}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and obstacles.\relax }}{75}
+\contentsline {figure}{\numberline {35}{\ignorespaces LIDAR swept over a range of angles, $\theta _{b,x} \in [\theta _{b,x,1}^{r},\theta _{b,x,N}^{r}]$. \relax }}{77}
+\contentsline {figure}{\numberline {36}{\ignorespaces Original 3D point-cloud of terrain patch \emph {(top)} and corresponding view from robot's on-board camera \emph {(bottom)}.\relax }}{79}
+\contentsline {figure}{\numberline {37}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{81}
+\contentsline {figure}{\numberline {38}{\ignorespaces Height-map showing terrain variation in the $z_{{\cal M}}$ direction.\relax }}{82}
+\contentsline {figure}{\numberline {39}{\ignorespaces Projections of a sample cost map generated from the height-map shown in Figure\nobreakspace {}37\hbox {}.\relax }}{84}
+\contentsline {figure}{\numberline {40}{\ignorespaces Point cloud generated from sequential scans of a room showing flat-surface candidates \emph {(top)} and 3D Point Cloud with normal estimation \emph {(bottom)}.\relax }}{87}
 \addvspace {10pt}
 \addvspace {10pt}

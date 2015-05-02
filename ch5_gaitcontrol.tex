@@ -154,19 +154,19 @@
 			%The output state, $y_{i}$ and phase portrait form from $x_{i},y_{i}$ of each \Ith oscillator are shown in Figures \ref{fig::cpg_phase2_45} and \ref{fig::cpg_phase3_45} for a two-paced and four-paced gait, respectively. The two-paced gait was produced using the coupling matrix defined in\ref{eq::K_two_pace} and the four-paced gait was produced using the coupling matrix defined in \ref{eq::K_four_pace}. 
 			Figure \ref{fig::cpg_transition} shows the change in output state patterns during a transition from a four-paced to a two-paced gait.	
 			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-				\begin{figure}[h!]
+				\begin{figure}[!h]
 					\centering
 					\fbox{\includegraphics[width=1.00\textwidth]{cpg_phase2_45.png}}
 					\caption{CPG output and phase plots for a two-paced gait over two gait cycles.}
 					\label{fig::cpg_phase2_45}
 				\end{figure}
-				\begin{figure}[h!]
+				\begin{figure}[!h]
 					\centering
 					\fbox{\includegraphics[width=1.00\textwidth]{cpg_phase4_45.png}}
 					\caption{CPG output and phase plots for a two-paced gait over two gait cycles.}
 					\label{fig::cpg_phase4_45}
 				\end{figure}
-				\begin{figure}[h!]
+				\begin{figure}[!h]
 					\centering
 					\fbox{\includegraphics[width=1.00\textwidth]{cpg_transition.png}}
 					\caption{CPG output transition during four-pace to two-pace gait switch.}
@@ -199,7 +199,7 @@
 
 		\noindent To clarify, $y_{2,i}>0$ indicates that \Ith foot is in flight, as per the definition of the foot-height controller to be defined in~\ref{eq::foot_height_control}. The foot-position estimate $\hat{p}_{i,e}$ is defined in~\ref{eq::foot_position_esitmate}.
 
-			\begin{figure}[h!]
+			\begin{figure}[!h]
 				\centering
 				\fbox{\includegraphics[width=1.00\textwidth]{virtual_foothold.png}}
 				\caption{ Virtual foothold representation. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.}
@@ -224,18 +224,18 @@
 
 		The controller component $\dot{\tilde{p}}_{i,e}^{y}$ is defined from the CPG output signal $\dot{y}_{2,i}$. The height of each step is made proportional to the magnitude of desired platform velocity.
 			\begin{equation}
-				\dot{\tilde{p}}_{i,e}^{y} 	= { \wrap{ \alpha_{v} v^{r}+\alpha_{\omega} \omega^{r} } \dot{y}_{2,i}} \vec{h}_{i} 
+				\dot{\tilde{p}}_{i,e}^{y} 	= { \wrap{ \alpha_{v} v^{r}g + \alpha_{\omega} \omega^{r} } \dot{y}_{2,i}} \vec{h}_{i} 
 				\label{eq::foot_height_control}
 			\end{equation}
 		where $\alpha_{v}$ and $\alpha_{\omega}$ are scalar weighting parameters. Scaling step height relative to command parameters $v^{r}$ and $\omega^{r}$ has been seen in experimental studies to be more effective than using a fixed step-height for all gait configurations. Figures \ref{fig::foot_motion2} and \ref{fig::foot_motion4} show stepping patterns generated using the aggregate virtual-force foothold controller and CPG motion outputs during two and four-paced gaits, respectively, which achieve a forward velocity of $v^{r}=40\frac{mm}{s}$. The sequence of foot contacts made during each gait is enumerated in each figure. Red, green, blue, and cyan dots represent contacts made by the front-right, front-left, back-left and back-right feet, respectively.
 %
-			\begin{figure}[h!]
+			\begin{figure}[!h]
 				\centering
 				\fbox{\includegraphics[width=0.90\textwidth]{step_pattern_2.png}}
 				\caption{Stepping pattern generated using virtual-force foothold controller during two-pace gait sequence at $v^{r}=40\frac{mm}{s}$.}
 				\label{fig::foot_motion2}
 			\end{figure}
-			\begin{figure}[h!]
+			\begin{figure}[!h]
 				\centering
 				\fbox{\includegraphics[width=0.90\textwidth]{step_pattern_4.png}}
 				\caption{Stepping pattern generated using virtual-force foothold controller during four-pace gait sequence at $v^{r}=40\frac{mm}{s}$.}
@@ -300,18 +300,12 @@
 				r_{i}^{+}	& = & \norm{{p}_{i,e}^{b'}- {p}_{b}^{b'}} - r_{max} \nonumber \\
 				r_{i}^{-}	& = & r_{min} - \norm{{p}_{i,e}^{b'}- {p}_{b}^{b'}} \nonumber
 			\end{eqnarray*}
-		and $K_{Z}, K_{F}, K_{c}, K_{\epsilon}, k_{l} > 0$ and $\dot{p}_{b}^{b',r}$ is the reference body velocity. $F_{r}$ is a boundary force added to ensure that the workspace of each manipulator, defined by the radii $r_{min}$ and $r_{max}$, is not exceeded when the body is repositioned. $k_{l}$ is picked to be adequately large such that this force is nearly zero when the body and foot positions comply with the local workspace of each leg, and large when the workspace is nearly compromised, forcing the placement of the body to comply with each leg workspace. Figures \ref{fig::body_motion2} and \ref{fig::body_motion4} show trunk reference trajectory, ${p}_{b}^{b',r}$ and actual body trajectory, ${p}_{b}^{b'}$ generated using the aforementioned ZMP-based body-placement controller during a gait which achieves a forward velocity of $v^{r}=40\frac{mm}{s}$.
-			\begin{figure}[h!]
+		and $K_{Z}, K_{F}, K_{c}, K_{\epsilon}, k_{l} > 0$ and $\dot{p}_{b}^{b',r}$ is the reference body velocity. $F_{r}$ is a boundary force added to ensure that the workspace of each manipulator, defined by the radii $r_{min}$ and $r_{max}$, is not exceeded when the body is repositioned. $k_{l}$ is picked to be adequately large such that this force is nearly zero when the body and foot positions comply with the local workspace of each leg, and large when the workspace is nearly compromised, forcing the placement of the body to comply with each leg workspace. Figure~\ref{fig::body_motion} shows a trajectory for the trunk position reference, ${p}_{b}^{b',r}$, and actual body trajectory, ${p}_{b}^{b'}$ generated using the aforementioned ZMP-based body-placement controller during a gait which achieves a forward velocity of $v^{r}=40\frac{mm}{s}$.
+			\begin{figure}[!h]
 				\centering
-				\fbox{\includegraphics[width=1.00\textwidth]{body_motion2.png}}
-				\caption{Body motion generated using ZMP controller during 2-pace.}
-				\label{fig::body_motion2}
-			\end{figure}
-			\begin{figure}[h!]
-				\centering
-				\fbox{\includegraphics[width=1.00\textwidth]{body_motion4.png}}
-				\caption{Body motion generated using ZMP controller during 4-pace.}
-				\label{fig::body_motion4}
+				\fbox{\includegraphics[width=1.00\textwidth]{body_motion.png}}
+				\caption{Body motion generated using ZMP controller during two-pace \emph{(top)} and four-pace \emph{(bottom)} gaiting sequence.}
+				\label{fig::body_motion}
 			\end{figure}
 		Here, results are shown for the $x$-axis motion of the body. This is because during forward motion, the most significant alterations to the location of the body are seen along the $x$-axis.
 
@@ -326,7 +320,7 @@
 			\end{enumerate}
 		Additionally, these gaits feature the utilization of two or fewer legs to support the trunk at any given time, causing the system to enter an under-actuated state where the body is free to rock about the planted feet, as shown in Figure \ref{fig::quadruped_walking}.
 		%%
-			\begin{figure}[h!]
+			\begin{figure}[!h]
 			\centering
 				\fbox{\includegraphics[width=0.80\textwidth]{tipping_robot.png}}
 				\caption{ Quadruped tipping about planted feet. }
@@ -440,7 +434,7 @@
 				\end{equation}
 			where  $\alpha \in (0,1)$ is a uniform mixing parameter. The parameter $\alpha$ must be tuned with respect to the stability margins of the gait being compensated. The resultant $\tilde{q}_{k}^{r}$ is then applied  to each joint controller in place of the original reference signal,  ${q}_{k}^{r}$,  generated by the gait controller. Selection of the parameter $\alpha$ is crucial for achieving good performance. 
 
-				\begin{figure}[h!]
+				\begin{figure}[!h]
 					\centering
 					\fbox{\includegraphics[width=1.00\textwidth]{controller_diagram.png}}
 					\caption{Full system diagram with NARX-NN compensator mechanism.}
@@ -468,19 +462,19 @@
 				\begin{figure}
 					\centering
 					\fbox{ \includegraphics[width=0.85\textwidth]{alpha0125_V_60mms_nN_50_nL_2_pos.png} }
-					\caption{Trunk orientation during 60 $\frac{mm}{s}$ gait with mixing parameter set to $\alpha = 0.125$.}
+					\caption{Trunk orientation during 60 $\frac{mm}{s}$ gait with $\alpha = 0.125$.}
 					\label{fig::narx60_a125_nne}
 				\end{figure}
 				\begin{figure}
 					\centering
 					\fbox{ \includegraphics[width=0.85\textwidth]{alpha0250_V_60mms_nN_50_nL_2_pos.png} }
-					\caption{Trunk orientation during 60 $\frac{mm}{s}$ gait with mixing parameter set to $\alpha = 0.250$.}
+					\caption{Trunk orientation during 60 $\frac{mm}{s}$ gait with $\alpha = 0.250$.}
 					\label{fig::narx60_a250_nne}
 				\end{figure}
 				\begin{figure}
 					\centering
 					\fbox{ \includegraphics[width=0.85\textwidth]{alpha0350_V_60mms_nN_50_nL_2_pos.png} }
-					\caption{Trunk orientation during 60 $\frac{mm}{s}$ gait with mixing parameter set to $\alpha = 0.350$.}
+					\caption{Trunk orientation during 60 $\frac{mm}{s}$ gait with $\alpha = 0.350$.}
 					\label{fig::narx60_a350_nne}
 				\end{figure}
 				\begin{figure}[!h]
@@ -492,6 +486,6 @@
 				\begin{figure}[!h]
 					\centering
 					\fbox{\includegraphics[width=0.85\textwidth]{aux_V_100mms_nN_50_nL_2_pos.png}}
-					\caption{Trunk orientation during 100 $\frac{mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$} 
+					\caption{Trunk orientation during 100 $\frac{mm}{s}$ gait with $\alpha = 0.35$} 
 					\label{fig::narx100_a35}
 				\end{figure}

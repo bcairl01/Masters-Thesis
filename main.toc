@@ -1,6 +1,6 @@
 \contentsline {chapter}{VITA}{ii}
 \contentsline {chapter}{LIST OF FIGURES}{v}
-\contentsline {chapter}{LIST OF TABLES}{viii}
+\contentsline {chapter}{LIST OF TABLES}{vii}
 \contentsline {chapter}{\numberline {I. }Introduction}{1}
 \contentsline {section}{\numberline {1.1}Central Pattern Generators for Gait Control}{2}
 \contentsline {section}{\numberline {1.2}Zero Moment Point Body Placement Control}{5}
@@ -58,7 +58,7 @@
 \contentsline {subsection}{\numberline {5.5.1}NARX-Neural Network}{61}
 \contentsline {subsection}{\numberline {5.5.2}NARX-NN Training Regimen}{62}
 \contentsline {subsection}{\numberline {5.5.3}Compensator Output}{63}
-\contentsline {subsection}{\numberline {5.5.4}NARX-NN Compensator Results}{65}
+\contentsline {subsection}{\numberline {5.5.4}NARX-NN Compensator Results}{64}
 \contentsline {chapter}{\numberline {VI. }Perception and Navigation}{70}
 \contentsline {section}{\numberline {6.1}Flatland navigation and goal (feature) tracking}{70}
 \contentsline {subsection}{\numberline {6.1.1}LIDAR-based Potential-Fields Algorithm}{71}

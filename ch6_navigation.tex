@@ -241,13 +241,13 @@
 					\caption{Height-map showing terrain variation in the $z_{\mmathcal{M}}$ direction.}
 					\label{fig::heightmap_terrain_patch_ortho}
 				\end{figure}							
-			The full 3D point cloud to height-map conversion is summarized in Algorithm \ref{alg::hmconvert}. In this algorithm, $\emph{\text{isolateROI}}$ represents a function which locates a region of interest within the point cloud $\bar{S}$; $\emph{\text{getBestSubdivIndex}}$ performs the transformation in $\ref{eq::toheightmapframe}$, which generates indices within the discretized space $O_{\mmathcal{M}}$ from points in $O_{0}$; $\emph{\text{dialateFeatures}}$ performs a tuned image-dilation routine; and $\emph{\text{medianFilter}}$ performs a standard image median filter routine with a $w\times w$ window size. Once a height-map has been generated, a corresponding gradient, as shown in Figure~\ref{fig::heightmap_terrain_patch}, is generated using a Sobel image gradient operation (from OpenCV).
+			The full 3D point cloud to height-map conversion is summarized in Algorithm \ref{alg::hmconvert}. In this algorithm, $\emph{\text{isolateROI}}$ represents a function which locates a region of interest within the point cloud $\bar{S}$; $\emph{\text{subdivIndex}}$ performs the transformation in $\ref{eq::toheightmapframe}$, which generates indices within the discretized space $O_{\mmathcal{M}}$ from points in $O_{0}$; $\emph{\text{dialateFeatures}}$ performs a tuned image-dilation routine; and $\emph{\text{medianFilter}}$ performs a standard image median filter routine with a $w\times w$ window size. Once a height-map has been generated, a corresponding gradient, as shown in Figure~\ref{fig::heightmap_terrain_patch}, is generated using a Sobel image gradient operation (from OpenCV).
 			\begin{algorithm}[!h]
 				\begin{algorithmic}
 					\State{\textbf{init} $\mmathcal{M} = \Theta, w, d, \bar{S}$}
 					\State{$\bar{S}_{ROI} = \text{isolateROI}(\bar{S})$}
 					\ForAll{$\bar{x}_{k}\in \bar{S}_{ROI}$}
-						\State{$[i,j] = \text{getBestSubdivIndex}(\xcomp{\bar{x}_{k}},\ycomp{\bar{x}_{k}},w,d)$}
+						\State{$[i,j] = \text{subdivIndex}(\xcomp{\bar{x}_{k}},\ycomp{\bar{x}_{k}},w,d)$}
 						\If{$\zcomp{\bar{x}_{k}} > m_{i,j}$}
 							\State{$m_{i,j} \leftarrow \zcomp{\bar{x}_{k}}$}
 						\EndIf
