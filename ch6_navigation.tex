@@ -241,7 +241,7 @@
 					\caption{Height-map showing terrain variation in the $z_{\mmathcal{M}}$ direction.}
 					\label{fig::heightmap_terrain_patch_ortho}
 				\end{figure}							
-			The full 3D point cloud to height-map conversion is summarized in Algorithm \ref{alg::hmconvert}. In this algorithm, $\emph{\text{isolateROI}}$ represents a function which locates a region of interest within the point cloud $\bar{S}$; $\emph{\text{subdivIndex}}$ performs the transformation in $\ref{eq::toheightmapframe}$, which generates indices within the discretized space $O_{\mmathcal{M}}$ from points in $O_{0}$; $\emph{\text{dialateFeatures}}$ performs a tuned image-dilation routine; and $\emph{\text{medianFilter}}$ performs a standard image median filter routine with a $w\times w$ window size. Once a height-map has been generated, a corresponding gradient, as shown in Figure~\ref{fig::heightmap_terrain_patch}, is generated using a Sobel image gradient operation (from OpenCV).
+			The full 3D point cloud to height-map conversion is summarized in Algorithm \ref{alg::hmconvert}. In this algorithm, $\emph{\text{isolateROI}}$ represents a function which locates a region of interest within the point cloud $\bar{S}$; $\emph{\text{subdivIndex}}$ performs the transformation in $\ref{eq::toheightmapframe}$, which generates indices within the frame $O_{\mmathcal{M}}$ from points in $O_{0}$; $\emph{\text{dialateFeatures}}$ performs a tuned image-dilation routine; and $\emph{\text{medianFilter}}$ performs a standard image median filter routine with a $w\times w$ window size. Once a height-map has been generated, a corresponding gradient, as shown in Figure~\ref{fig::heightmap_terrain_patch}, is generated using a Sobel image gradient operation (from OpenCV).
 			\begin{algorithm}[!h]
 				\begin{algorithmic}
 					\State{\textbf{init} $\mmathcal{M} = \Theta, w, d, \bar{S}$}
@@ -282,7 +282,7 @@
 				\begin{enumerate}
 					\item variation in attainable foothold heights between all feet
 					\item terrain steepness around any foothold, given a particular configuration
-					\item net robot rotation performed at all step
+					\item and net robot rotation performed at each path-step.
 				\end{enumerate}
 			The first cost element is chosen to simplify to problem of ensuring the robot plans to walk over relatively level terrain by penalizing height variation between planned foothold location. This also aids in ensuring that the kinematic workspace of each leg is not compromised by reducing the amount of ``stretching" the robot has to do to attain particular configuration upon the terrain. The second cost element is used deter the robot from attempting to travel atop overly steep terrain. The final cost element is used to ensure the robot does not plan to perform any large changes in direction while traversing the terrain, which could cause for needless motion (perhaps even loops) in the planned path. 
 
