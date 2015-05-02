@@ -3,19 +3,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Introduction}
 	\label{ch::introduction}
-	
-	\begin{figure}[h!]
-		\centering
-		\fbox{\includegraphics[width=0.85\textwidth]{on_the_rocks2.jpg}}
-		\caption{The BlueFoot Quadruped Robot}
-		\label{fig::bluefoot_glamour}
-	\end{figure}
 
 		The design of legged robots and associated methods of locomotion control has been an area of interest spanning the past several decades, as shown by \cite{McGhee1965,Hodgins1991,Altendorfer2001,Kolter2008,Wieber2015}. Quadruped robotic systems have gained popularity in studies pertaining to variable terrain navigation and full-body stability adaptation. Well known examples of this from the past 15 years are the Tekken \cite{Fukuoka2003}, Kolt \cite{Estremera2006}, BigDog \cite{BigDog2008}, and HyQ \cite{Semini2010_PHD} quadrupeds. Many of these systems have been implemented on a larger scale so that they can carry substantial payloads while maintaining adequate system bandwidth for fast gaits and robustness to rough terrains. Few, however, have been implemented on the scale of a hobby-robot platform while still maintaining an aptitude for rough terrain navigation and comparable sensory prowess.
 
 		The BlueFoot quadruped is a self-contained, fully-actuated platform with the dexterity to perform stabilization and repositioning maneuvers on variable terrains along the same lines as the LittleDog platform \cite{Rebula2007}. Namely, BlueFoot has been designed with 16 actuated degrees of freedom to allow for the execution of a wide range of body and leg articulations. Moreover, BlueFoot's range of articulation allows it to take on a large range of poses during motion. This level of dexterity grants the BlueFoot platform the several notable abilities, including the ability to overcome raised or uneven terrain. Additionally, BlueFoot can articulate (\IE pitch and yaw) its on-board vision sensors, which are mounted to its trunk (main body), by reposing using aggregate leg motion controls. BlueFoot also includes a sizable array of other on-board sensors for feedback and control, including joint position, velocity and loading sensors; an inertial measurement unit (IMU); and foot-contact sensors. Using the computational, sensory and motor capacities at hand, BlueFoot has the ability to utilize similar control mechanisms to those implemented on larger quadruped systems. 
 
 		The BlueFoot platform inherently demands a variety of control routines to achieve locomotion and system stability, making this robot an ample platform for studies related to gait design and motion planning. In particular, BlueFoot's controller considers the systems kinematic model; and involves open-loop gait design and stabilization for the purpose of achieving dynamic locomotion control. In particular, BlueFoot is gaited via a central pattern generator (CPG) based gaiting technique which is augmented with a foothold controller along the same lines as \cite{Ajallooeian2013} and \cite{Rutishauser2008}. Additionally, active platform stabilization is performed via a zero-moment point (ZMP) based body placement controller which stabilizes the system using planar trunk motions during arbitrary gaiting sequences. Both such controllers make use of virtual-forces to drive system reference commands. These controller make significant use of the system's forward kinematic model for the purpose estimating the positions of the robot's joints and feet. Finally, outer-loop control routines are implemented to supply commands and corrections used in system navigation control. Among these controllers are a potential fields navigation controller which incorporates image features as targets to track; and 3D point-cloud processing routines for surface reconstruction and foot-placement planning.
+	
+	\begin{figure}[h!]
+		\centering
+		\fbox{\includegraphics[width=1.00\textwidth]{on_the_rocks2.jpg}}
+		\caption{The BlueFoot Quadruped Robot}
+		\label{fig::bluefoot_glamour}
+	\end{figure}
 
 	\section{Central Pattern Generators for Gait Control}
 
@@ -206,10 +206,52 @@
 
 	\section{3D Surface Reconstruction for Rough Terrain Planning}
 
-		The previously introduced navigation scheme is utilized, exclusively, for flatland navigation. As such, it relies on 2D LIDAR scans. For navigation and planning over rough terrain, knowledge of 3D surfaces in the robot’s environment (with high feature detail) must be acquired. This thesis will provide the preliminaries for rough-terrain navigation and planning by way of several surface reconstruction methods from point-cloud data. First, a method for composing 3D point clouds from successive 2D LIDAR scans will be described. Then, algorithms for generating 3D height-maps and approximate surfaces from raw point-cloud data will be described. Finally, a simple approach for planning over the perceived terrain using generated height-maps will be offered.
+		The previously introduced navigation scheme is utilized for flatland navigation, exclusively. As such, it is generally insufficient for navigation and planning over rough terrain. Specifically, navigation and footstep planning over rough terrain requires teh acquisition of 3D surfaces in the robot’s environment (with high feature detail). This thesis will provide the preliminaries for rough-terrain navigation by way of several surface reconstruction / representation methods from point-cloud data. First, a method for composing 3D point clouds from successive 2D LIDAR scans will be described. Then, algorithms for generating 3D height-maps will be described and a method for cost assignment based on the generated height-map will be offered for use in rough terrain foot-placement planning. Finally, surface reconstruction from raw point-cloud data will be described.
 
+		Work related to height-map generation and associated cost-assignment (used in generating discrete cost-maps) from 3D point cloud data is born from a general intuition about the problem of rough-terrain planning. This work should be viewed as the initial steps of an approach towards formal rough terrain planning which will later be merged with existing research which relate to this method of terrain representation. On the other hand, implementations related to true 3D surface reconstruction from 3D point clouds rely heavily on well-defined algorithms originally outlined in \cite{Rusu2009} and formally implemented in the OpenPCL library \cite{openpcl_library}. 
 
+		Here, surface estimation from 3D point cloud data is approached by way of successive plane-fitting (normal estimation) via Principle Component Analysis (PCA) on a moving subset of points \cite{Pearson1901}. Specifically, a normal vector is associated with each point, $\bar{x}_{i}$, within the point cloud,  $\bar{\mmathcal{S}}$,  by fitting a plane to a subset of neighboring points which fall within a unit-ball (of radius $d_{s}$) around $\bar{x}_{i}$. Here, $\bar{\mmathcal{S}}$ represents a raw 3D point cloud. This point cloud is pre-conditioned to generate a sparser point cloud, $\hat{\mmathcal{S}}$. Preconditioning involves a voxel-grid filter, which is used to down-sample the original point cloud; and a moving-least-squares (MLS) smoothing filter, which is used to regularize points and remove outliers. These preconditioning routines aid in the normal estimation process by decreasing computational burden in surface normal estimation and improving the relative smoothness of the reconstructed surface. 
 
+		To estimate a local plane (via PCA) about the point $\bar{x}_{i}$, we define a moving-neighborhood, $\mmathcal{B}_{\bar{x}_{i}}$, as follows:
+			\newcommand{\xball}{\mmathcal{B}_{\bar{x}_{i}}}
+			\begin{equation}
+				\setwrap{ \bar{x}_{j} \in \xball \SSep : \SSep \norm{\bar{x}_{j}-\bar{x}_{i}} < d_{s}\SSep , \SSep i\neq j \SSep , \SSep \xball \subset \bar{S}}
+				\label{eq::pca_ball}
+			\end{equation}
+		Additionally, the covariance matrix, $C_{\bar{x}_{i}} \in \Re^{3\times3}$, of the subset $\xball$ is defined as:
+			\begin{equation}
+				C_{\bar{x}_{i}} =
+				\frac{1}{S(\xball)} \sum_{\bar{x}_{j} \in \xball } ( \bar{x}_{j} - \bar{x}_{c,i} ) ( \bar{x}_{j} - \bar{x}_{c,i} )^{T}
+				\label{eq::pca_cov}
+			\end{equation}
+		where the centroid, $\bar{x}_{c,i} \in \Re^{3}$, of the subset $\xball$ is defined as:
+			\begin{equation}
+				\bar{x}_{c,i} = 
+				\frac{1}{S(\xball)} \sum_{\bar{x}_{j} \in \xball } \bar{x}_{j}
+				\label{eq::pca_centroid}
+			\end{equation}
+		and $S(\xball)$ defines the number of points within the subset $\xball$. Note that $C_{\bar{x}_{i}}$ is a positive semi-definite matrix with all eigenvalues, $\lambda_{x_{i},j}\geq0\text{ }\forall\text{ }j\in\{1,2,3\}$ such that $\lambda_{x_{i},0}\leq\lambda_{x_{i},1}\leq\lambda_{x_{i},2}$. The unit-eigenvectors $v_{x_{i},j} \text{ }\forall\text{ }j\in\{1,2,3\}$ represent the principal components of the local subspace $\xball$, and are defined by:
+			\begin{equation}
+				\setwrap{ v_{x_{i},j}\text{ }:\text{ }C_{\bar{x}_{i}} v_{x_{i},j} = \lambda_{x_{i},j} v_{x_{i},j}\text{ }\forall\text{ }j\in\{1,2,3\}}
+				\label{eq::pca_eigen}
+			\end{equation}
+		The eigenvector $v_{x_{i},1}$ with corresponding smallest eigenvalue $\lambda_{x_{i},1}$ represents a unit-normal which emanates a 2D manifold of $\xball$ whose origin is located $x_{i}$. This manifold represents a planar best-fit for the information contained in $\xball$, in a least-squares sense. To fortify this definition, we can also consider that the minimum eigenvalue $\lambda_{x_{i},1}$ $v_{x_{i},1}$ indicates that $v_{x_{i},1}$ is a direction in $\xball$ with the lowest variational \emph{energy}. Hence, the sum of the square-errors between all points in $\xball$ and the plane defined by $v_{x_{i},1}$ is a minimized, with respect to the space.
+
+		Assuming a preprocessed point cloud $\hat{\mmathcal{S}}$ (generated from a raw point cloud $\bar{\mmathcal{S}}$), the full normal-estimation algorithm is then implemented using the PCA formulation defined from \ref{eq::pca_ball}-\ref{eq::pca_eigen} in Algorithm~\ref{alg::normal_estimation}. Here, $\vec{n}_{i} \in \hat{N}_{\mmathcal{S}}$ represents a normal emanating from each \Ith point, $\hat{x}_{i} \in \hat{\mmathcal{S}}$.
+
+			\begin{algorithm}[!h]
+				\begin{algorithmic}
+				\State{\textbf{init:} $\hat{\mmathcal{S}}, \hat{N}_{\mmathcal{S}}=\phi$}
+				\ForAll{$\hat{x}_{i}\in\hat{\mmathcal{S}}$}
+					\State{$\xball = \text{getNearestNeighbors}\wrap{\hat{\mmathcal{S}},\hat{x}_{i},d_{s}}$}
+					\State{$\vec{n}_{i} = \text{performPCA}\wrap{\xball} $}
+					\State{$\hat{N}_{\mmathcal{S}} \leftarrow \hat{N}_{\mmathcal{S}}\bigcup\vec{n}_{i}$}
+				\EndFor
+				\end{algorithmic}
+				\caption{Surface-normal estimation from a preprocessed 3D point cloud.}
+				\label{alg::normal_estimation}
+			\end{algorithm}
+		
 
 	\section{Overview of Thesis}
 

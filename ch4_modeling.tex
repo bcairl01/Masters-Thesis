@@ -117,6 +117,7 @@
 			The position of joint 1 of leg \emph{i} in $O_{0}$, ${p}_{i,1}$ may now be computed with respect to frame $O_{0}$ by:
 				\begin{equation}
 					{p}_{i,1} \equiv E_{p} H_{0}^{i,0} e_{p}.
+					\label{eq::world_joint1_position}
 				\end{equation}
 			where
 				\begin{eqnarray}
@@ -125,7 +126,7 @@
 				\end{eqnarray}
 			The position of joints 2-4 of leg \emph{i}, may now be computed with respect to frame $O_{0}$ by:
 				\begin{equation}
-					{p}_{i,j} \equiv E_{p} H_{0}^{i,0} {H}^{i,0}_{i,(j-1)} e_{p}. \Sep \forall \Sep j\in{2,3,4}
+					{p}_{i,j} \equiv E_{p} H_{0}^{i,0} {H}^{i,0}_{i,(j-1)} e_{p}. \Sep \forall \Sep j\in\{2,3,4\}
 					\label{eq::world_joint_positions}
 				\end{equation}
 			Finally, the position of the end-effector (foot) of \Ith leg. ${p}_{i,e}$, is achieved as follows:
@@ -133,7 +134,7 @@
 					{p}_{i,e} \equiv E_{p} H_{0}^{i,0} {H}^{i,0}_{i,4} e_{p}.
 					\label{eq::world_feet_positions}
 				\end{equation}
-			As a previously mentioned, BlueFoot's forward kinematic solution is used most prevalently in the estimating the position of each foot. Given estimates for body position and orientation, $\hat{p}_{b}$ and $\hat{\theta}_{b}$, a foot position estimate is formally as a random variable as follows:
+			As a previously mentioned, BlueFoot's forward kinematic solution is used most prevalently in the estimating the position of each foot. Given estimates for body position and orientation, $\hat{p}_{b}$ and $\hat{\theta}_{b}$, a foot position estimate is explicitly define as a random variable:
 				\begin{equation}
 					\hat{p}_{i,e} = {p}_{i,e} + \Delta {p}_{i,e}
 					\label{eq::foot_position_esitmate}
@@ -157,7 +158,7 @@
 					\label{eq::rr_to_dh}
 				\end{equation}
 			which follows the same definitions in \ref{eq::world_to_dh}.
-			The transformation defined in \ref{eq::rr_to_dh} is used as a direct replacement for the matrix $H_{0}^{i,0}$ in \ref{eq::world_joint_positions} and \ref{eq::world_feet_positions} in computing the corresponding particles, ${p}_{i,j}^{b'}$ and ${p}_{i,e}^{b'}$. Knowledge of the position of each respective particle is useful for planning foot and body-placements which depend directly on the location other foot positions and the relative body location, but do not necessarily depend on the position of the robot in the world coordinate frame.
+			The transformation defined in \ref{eq::rr_to_dh} is used as a direct replacement for the matrix $H_{0}^{i,0}$ in \ref{eq::world_joint_positions} and \ref{eq::world_feet_positions} in computing the corresponding particles, ${p}_{i,j}^{b'}$ and ${p}_{i,e}^{b'}$. Knowledge of the position of each respective particle is useful for planning foot and body-placements which depend directly on the location relative foot and body positions, but do not necessarily depend on the position of the robot in the world coordinate frame.
  
 
 		\subsection{Inverse Position Kinematics}
@@ -191,14 +192,14 @@
 					\zeta_{i,y} &\equiv& 	\ycomp{{p}_{i,e}^{i,0}} \cos(\psi_{i}) - \xcomp{{p}_{i,e}^{i,0}} \sin(\psi_{i}) 											\nonumber\\
 					\zeta_{i,z}	&\equiv&  	\zcomp{{p}_{i,e}^{i,0}} - a_{4} \sin(\gamma_{i}) .
 				\end{eqnarray}
-			Here, ${p}_{i,e}^{i,0}$ represents the position of each \Ith foot with respect to the zeroth DH frame of each \Ith leg; and $\xcomp{{p}_{i,e}^{i,0}}$, $\ycomp{{p}_{i,e}^{i,0}}$ and $\zcomp{{p}_{i,e}^{i,0}}$ represent the $x$, $y$, and $z$ axis coordinates of the vector ${p}_{i,e}^{i,0}$.
+			Here, ${p}_{i,e}^{i,0}$ represents the position of each \Ith foot with respect to the zeroth DH frame of each \Ith leg; and $\xcomp{{p}_{i,e}^{i,0}}$, $\ycomp{{p}_{i,e}^{i,0}}$ and $\zcomp{{p}_{i,e}^{i,0}}$ represent the $x$, $y$, and $z$ axis coordinates of the vector ${p}_{i,e}^{i,0}$. The selection matrix $E_{p}$ is defined as it is in \ref{eq::world_joint1_position}-\ref{eq::world_feet_positions}.
 
 			It is important to note that the ankle specification,  $\gamma_{i}$, adds extra constraints on the system kinematics and, thus, reduces the number of inverse kinematics solutions per foot position to two.
 
 
 		\subsubsection{Range of Motion}
 
-			The range of articulation of BlueFoot's main body has been characterized with respect to a set of imposed joint limits (see \ref{tab::JointLimits}) and has been performed with all feet fixed in a default stance (see \ref{tab::DefaultStance}). These limits have been selected according to the range of feasible angular position outputs of inverse position kinematics solution.
+			The range of articulation of BlueFoot's main body has been characterized with respect to a set of imposed joint limits (see Table \ref{tab::JointLimits}) and has been performed with all feet fixed in a default stance (see Table \ref{tab::DefaultStance}). These limits have been selected according to the range of feasible angular position outputs of inverse position kinematics solution.
 			\begin{table}[h]
 				\centering
 				\begin{tabularx}{\textwidth}{|C{0.25}|C{0.1875}|C{0.1875}|C{0.1875}|C{0.1875}|} \hline
