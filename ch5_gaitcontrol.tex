@@ -186,15 +186,19 @@
 			\dot{\tilde{p}}_{i,e} 		& = & v^{r}\vec{u}^{r} + \Skew{\omega^{r}\vec{h}_P} \tilde{R}_{b} \wrap{\tilde{p}_{i,e}-\tilde{p}_{c} } 
 			\label{eq::virtual_foothold_control}
 		\end{eqnarray}
-		where $\vec{h}_P$ is a unit vector that is orthogonal and pointed outward from the surface beneath the robot and $\Skew{\omega^{r}\vec{h}_P}\text{ }\in \Real^{3\times3}$ forms a skew-symmetric matrix from the vector argument $\omega^{r}\vec{h}_P$. The virtual foothold dynamics progress the target footholds at a commanded translational (forward) and rotational velocity, $v^{r}$ and $\omega^{r}$, respectively. The robot follows the virtual model at nearly the same velocities with minimal lag so long as system bandwidth is not exceeded. Using this virtual-foothold method is convenient as it allows for foot-placement planning to be independent of foot-trajectory planning. For example, terrain adaptation can be incorporated by modifying the location of virtual foot positions such that they conform to an upcoming surface. The robot's gait will then track these adaptations without any explicit modification of foot trajectories. In the event of contact with unperceived terrain, virtual-foothold positions will reset with respect to an estimated of position of the position of each \Ith contacting foot \IE:
+		where $\vec{h}_P$ is a unit vector that is orthogonal and pointed outward from the surface beneath the robot and $\Skew{\omega^{r}\vec{h}_P}\text{ }\in\text{ }\Real^{3\times3}$ forms a skew-symmetric matrix from the vector argument $\omega^{r}\vec{h}_P$. The virtual foothold dynamics progress the target footholds at a commanded translational (forward) and rotational velocity, $v^{r}$ and $\omega^{r}$, respectively. The robot follows the virtual model at nearly the same velocities with minimal lag so long as system bandwidth is not exceeded. Using this virtual-foothold method is convenient as it allows for foot-placement planning to be independent of foot-trajectory planning. For example, terrain adaptation can be incorporated by modifying the location of virtual foot positions such that they conform to an upcoming surface. The robot's gait will then track these adaptations without any explicit modification of foot trajectories. In the event of contact with unperceived terrain, virtual-foothold positions will reset with respect to an estimated point of contact for each \Ith contacting foot, \IE:
 			\begin{algorithm}[!h]
 				\begin{algorithmic}
-				\If{step not complete \textbf{and} $\mu_{i}==1$}
-				\State{$\tilde{p}_{i,e} = \hat{p}_{i,e}$}
-				\EndIf
+				\ForAll{$i$ \textbf{in} $i = \{1,...,4\}$}
+					\If{ $y_{2,i}>0$ \textbf{and} $\mu_{i}=1$}
+						\State{$\tilde{p}_{i,e} = \hat{p}_{i,e}$}
+					\EndIf
+				\EndFor
 				\end{algorithmic}
 			\end{algorithm}
-		where $\hat{p}_{i,e}$ is as it is defined in \ref{eq::foot_position_esitmate}.
+
+		\noindent To clarify, $y_{2,i}>0$ indicates that \Ith foot is in flight, as per the definition of the foot-height controller to be defined in~\ref{eq::foot_height_control}. The foot-position estimate $\hat{p}_{i,e}$ is defined in~\ref{eq::foot_position_esitmate}.
+
 			\begin{figure}[h!]
 				\centering
 				\fbox{\includegraphics[width=1.00\textwidth]{virtual_foothold.png}}
@@ -203,27 +207,27 @@
 			\end{figure}
 		The full foothold controller represented by 
 			\begin{equation}
-				\dot{p}_{i,e} = \dot{\tilde{p}}_{i,e}^{v} + \dot{\tilde{p}}_{i,e}^{y}, \SSep i = 1,...,4
+				\dot{p}_{i,e} = \dot{\tilde{p}}_{i,e}^{v} + \dot{\tilde{p}}_{i,e}^{y}, \SSep i = \{1,...,4\}
 			\end{equation} 
 		is a composite of a foot-repositioning and step-height controller which are formulated in terms of the dynamics of the signals $\dot{\tilde{p}}_{i,e}^{v}$ and $\dot{\tilde{p}}_{i,e}^{y}$, respectively. Each foot is treated as a point mass attracted to their corresponding virtual foothold by an over-damped mass-attractor system. $\dot{\tilde{p}}_{i,e}^{v}$ is defined by
 			\begin{equation}
-				\label{eq::FootControl}
 				\dot{\tilde{p}}_{i,e}^{v} 		= \frac{1}{m_{i}} \int^t{{P}_{\vec{h}_{i}} \wrap{ F_{s,i}  -b_{c} \dot{p}_{i,e} + F_{\epsilon,i} } d\tau}
+				\label{eq::foot_place_control}
 			\end{equation}
 		where
 			\begin{eqnarray*}
 				F_{s,i} 			& = & k_{c}  \mu_{i} \wrap{ \tilde{p}_{i} - {p}_{i,e} } \Unit{y_{2,i}}		\nonumber\\
 				F_{\epsilon,i}		& = & a_{\epsilon}\dot{\epsilon}_{\theta} \Unit{y_{2,i}}						\nonumber
 			\end{eqnarray*}
-	 	with $k_{c},b_{c},a_{\epsilon},m_{i} \InRe{}$.
-		$k_{c}$ and $b_{c}$ represent  attraction and viscous damping constants for the virtual force system. ${P}_{\vec{h}_{i}}(*)$ projects the sum of  forces, $(*)$, onto the surface beneath the \Ith foot orthogonal to $\vec{h}_{i}$. $\Unit{y_{2,i}}$ is a standard unit step function. The force $F_{\epsilon,i}$ is a compensatory force to adjust for the inertial disturbance,  $\dot{\epsilon}_{\theta}$. For instance, if the robot was pushed from the side of its body, this force would induce a side stepping motion in attempt to compensate for the disturbance. Because of $\Unit{y_{2,i}}$, $F_{s,i}$ and $F_{\epsilon,i}$ are nonzero only when $y_{2,i}$ is positive.
+	 	with $k_{c},b_{c},a_{\epsilon},m_{i} \in \Real$.
+		$k_{c}$ and $b_{c}$ represent  attraction and viscous damping constants for the virtual force system. ${P}_{\vec{h}_{i}}(*)$ projects the sum of  forces, $(*)$, onto the surface beneath the \Ith foot orthogonal to $\vec{h}_{i}$. $\Unit{y_{2,i}}$ is a standard unit step function. The force $F_{\epsilon,i}$ is a compensatory force to adjust for the inertial disturbance,  $\dot{\epsilon}_{\theta}$. For instance, if the robot was pushed from the side of its body, this force would induce a side-stepping motion in attempt to catch the robot from falling in the direction of the push, and thus compensate for the disturbance. Because of $\Unit{y_{2,i}}$, $F_{s,i}$ and $F_{\epsilon,i}$ are nonzero only when $y_{2,i}$ is positive.
 
 		The controller component $\dot{\tilde{p}}_{i,e}^{y}$ is defined from the CPG output signal $\dot{y}_{2,i}$. The height of each step is made proportional to the magnitude of desired platform velocity.
-		\begin{equation}
-			\dot{\tilde{p}}_{i,e}^{y} 	= { \wrap{ \alpha_{v} v^{r}+\alpha_{\omega} \omega^{r} } \dot{y}_{2,i}} \vec{h}_{i} 
-			\label{eq::FootControl}
-		\end{equation}
-		where $\alpha_{v}$ and $\alpha_{\omega}$ are scalar weighting parameters. Scaling step height relative to command parameters $v^{r}$ and $\omega^{r}$ has been seen in experimental studies to be more effective than using a fixed step-height for all gait configurations. Figures \ref{fig::foot_motion2} and \ref{fig::foot_motion4} show stepping pattersn generated using the aggregate virtual-force foothold controller and CPG motion outputs during two and four-paced gaits, respectively, which achieve a forward velocity of $v^{r}=40\frac{mm}{s}$. The sequence of foot contacts made during each gait is enumerated in each figure. Red, green, blue, and cyan dots represent contacts made by the front-right, front-left, back-left and back-right feet, respectively.
+			\begin{equation}
+				\dot{\tilde{p}}_{i,e}^{y} 	= { \wrap{ \alpha_{v} v^{r}+\alpha_{\omega} \omega^{r} } \dot{y}_{2,i}} \vec{h}_{i} 
+				\label{eq::foot_height_control}
+			\end{equation}
+		where $\alpha_{v}$ and $\alpha_{\omega}$ are scalar weighting parameters. Scaling step height relative to command parameters $v^{r}$ and $\omega^{r}$ has been seen in experimental studies to be more effective than using a fixed step-height for all gait configurations. Figures \ref{fig::foot_motion2} and \ref{fig::foot_motion4} show stepping patterns generated using the aggregate virtual-force foothold controller and CPG motion outputs during two and four-paced gaits, respectively, which achieve a forward velocity of $v^{r}=40\frac{mm}{s}$. The sequence of foot contacts made during each gait is enumerated in each figure. Red, green, blue, and cyan dots represent contacts made by the front-right, front-left, back-left and back-right feet, respectively.
 %
 			\begin{figure}[h!]
 				\centering
