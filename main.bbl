@@ -279,6 +279,24 @@ P.~Krishnamurthy and F.~Khorrami.
 \newblock {\em Journal of Intelligent and Robotic Systems}, 48(3):357--373,
   2007.
 
+\bibitem{Rusu2009}
+Radu~Bogdan Rusu.
+\newblock {\em Semantic 3D Object Maps for Everyday Manipulation in Human
+  Living Environments}.
+\newblock PhD thesis, Computer Science department, Technische Universitaet
+  Muenchen, Germany, October 2009.
+
+\bibitem{openpcl_library}
+Radu~Bogdan Rusu and Steve Cousins.
+\newblock {3D is here: Point Cloud Library (PCL)}.
+\newblock In {\em {IEEE International Conference on Robotics and Automation
+  (ICRA)}}, Shanghai, China, May 9-13 2011.
+
+\bibitem{Pearson1901}
+K.~Pearson.
+\newblock {On lines and planes of closest fit to systems of points in space}.
+\newblock {\em Philosophical Magazine}, 2(6):559--572, 1901.
+
 \bibitem{Squirrel_website}
 Alberto Demichelis.
 \newblock {S}quirrel, the programming language, 2011.
@@ -286,12 +304,6 @@ Alberto Demichelis.
 \bibitem{opencv_library}
 G.~Bradski.
 \newblock {\em Dr. Dobb's Journal of Software Tools}.
-
-\bibitem{openpcl_library}
-Radu~Bogdan Rusu and Steve Cousins.
-\newblock {3D is here: Point Cloud Library (PCL)}.
-\newblock In {\em {IEEE International Conference on Robotics and Automation
-  (ICRA)}}, Shanghai, China, May 9-13 2011.
 
 \bibitem{boost_website}
 Beman Dawes.
@@ -397,13 +409,6 @@ G.~Bradski and A.~Kaehler.
 \newblock {\em {L}earning {O}pen{CV}}, chapter {I}mage {M}orphology.
 \newblock {O}’{R}eilly {M}edia, 2008.
 
-\bibitem{Rusu2009}
-Radu~Bogdan Rusu.
-\newblock {\em Semantic 3D Object Maps for Everyday Manipulation in Human
-  Living Environments}.
-\newblock PhD thesis, Computer Science department, Technische Universitaet
-  Muenchen, Germany, October 2009.
-
 \bibitem{Mitra2003}
 Niloy~J. Mitra and An~Nguyen.
 \newblock Estimating surface normals in noisy point cloud data.
@@ -418,11 +423,6 @@ Edward Castillo, Jian Liang, and Hongkai Zhao.
 \newblock In Michael Breuß, Alfred Bruckstein, and Petros Maragos, editors,
   {\em Innovations for Shape Analysis}, Mathematics and Visualization, pages
   283--299. Springer Berlin Heidelberg, 2013.
-
-\bibitem{Pearson1901}
-K.~Pearson.
-\newblock {On lines and planes of closest fit to systems of points in space}.
-\newblock {\em Philosophical Magazine}, 2(6):559--572, 1901.
 
 \bibitem{Kolter2009}
 J.Z. Kolter, Youngjun Kim, and A.Y. Ng.

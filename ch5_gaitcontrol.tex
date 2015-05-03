@@ -202,7 +202,7 @@
 			\begin{figure}[!h]
 				\centering
 				\fbox{\includegraphics[width=1.00\textwidth]{virtual_foothold.png}}
-				\caption{ Virtual foothold representation. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.}
+				\caption{Virtual foothold representation. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.}
 				\label{fig::virtial_foothold}
 			\end{figure}
 		The full foothold controller represented by 
@@ -231,13 +231,13 @@
 %
 			\begin{figure}[!h]
 				\centering
-				\fbox{\includegraphics[width=0.90\textwidth]{step_pattern_2.png}}
+				\fbox{\includegraphics[width=1.00\textwidth]{step_pattern_2.png}}
 				\caption{Stepping pattern generated using virtual-force foothold controller during two-pace gait sequence at $v^{r}=40\frac{mm}{s}$.}
 				\label{fig::foot_motion2}
 			\end{figure}
 			\begin{figure}[!h]
 				\centering
-				\fbox{\includegraphics[width=0.90\textwidth]{step_pattern_4.png}}
+				\fbox{\includegraphics[width=1.00\textwidth]{step_pattern_4.png}}
 				\caption{Stepping pattern generated using virtual-force foothold controller during four-pace gait sequence at $v^{r}=40\frac{mm}{s}$.}
 				\label{fig::foot_motion4}
 			\end{figure}
@@ -312,7 +312,8 @@
 
 
 	\section{Trunk Leveling via NARX-Network Learning Approach}
-
+		\label{sec::trunk_leveling_NARX}
+		
 		Suppressing disturbances which enter a quadruped system during gaiting is a matter which requires special handling, given the the general dynamical complexity of both the robot and its interactions with the its environment. This complexity can be handled, in part, by a learning-based approach. This section will focus on the formulation of a learning controller used to reject disturbances from the orientation states of the trunk of a legged robot. Disturbance rejection from the trunk sub-system of a legged platform has practical significance when carrying a payload (such as cameras, optical systems, armaments, etc.) rigidly fixed to their main body. Disturbances are imparted upon the trunk during gaiting in two main ways: 
 		\begin{enumerate}
 			\item instantaneous changes in force distribution when feet make and break contact with the ground 
@@ -322,8 +323,8 @@
 		%%
 			\begin{figure}[!h]
 			\centering
-				\fbox{\includegraphics[width=0.80\textwidth]{tipping_robot.png}}
-				\caption{ Quadruped tipping about planted feet. }
+				\fbox{\includegraphics[width=1.00\textwidth]{tipping_robot.png}}
+				\caption{Quadruped tipping about planted feet. }
 				\label{fig::quadruped_walking}
 			\end{figure}
 		%%

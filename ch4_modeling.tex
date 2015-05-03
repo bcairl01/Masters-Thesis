@@ -5,17 +5,17 @@
 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{System Modeling}
-\label{ch::system_modeling}
+	\label{ch::system_modeling}
 
 	%Analysis and control of the BlueFoot quadruped requires the utilization of both kinematic and dynamical system models.
 	
 	\section{Kinematic Model}
-	\label{sec::system_kinematics}
+		\label{sec::system_kinematics}
 
-		The kinematic model of the BlueFoot platform is paramount for trajectory planning, localization, and adaptation in the robot task-space. In particular, inverse position and velocity solutions are used to prescribe joint-space commands from particular foot trajectories planned within the world coordinate frame. Additionally, forward kinematic solutions are utilized to estimate the position of each foot using the position and orientation of the trunk; and joint position feedback. This section will fully describe the forward and inverse kinematic models which describe the BlueFoot platform and are how these models are used in motion planning and control tasks.
+		The kinematic model of the BlueFoot platform is paramount for trajectory planning, localization, and adaptation in the robot task-space. In particular, inverse position and velocity solutions are used to prescribe joint-space commands from particular foot trajectories planned in the world coordinate frame. Additionally, BlueFoot's forward kinematic model is utilized to estimate the position of each foot using the position and orientation of the trunk; and joint position feedback. This section will describe BlueFoot's forward and inverse kinematic models, as well as how these models are used in motion planning and control tasks.
 
 		\subsection{Forward Position Kinematics}
-		\label{ch::system_modeling_pos_kin}
+			\label{ch::system_modeling_pos_kin}
 
 			To formulate the kinematics model, a set of coordinate systems have been defined and are described by Figure~\ref{fig::coordinate_frames}. Note that the frame $O_{0}$ represents the world coordinate frame; and $O_{b}$ is the coordinate frame, centered at  ${p}_{b}$ attached to the platform and is always aligned with $O_{0}$. $O_{b}$ represents a body frame rigidly attached to the center of the trunk. The orientation and position of the trunk are defined by vectors of $\theta_{b}\InRe{3}$ and ${p}_{b}\InRe{3}$, which relate the frame $O_{b}$ to the world frame $O_{0}$. Coordinate frames $O_{i,0}$ are attached to the first joint of each \Ith leg.
 %
@@ -282,7 +282,7 @@
 				\begin{equation*}
 					\text{det}(\Lambda_{J}) \ll 1.
 				\end{equation*}
-			The operator $\sbrack{*}_{\Lambda_{j}}^{\dagger}$ defines a weighted pseudo-inversion off a matrix argument $(*)$ given a positive-definite weighting matrix $\Lambda_{j}$. A weighted pseudo-inversion is chosen over direct pseuedo-inversion to avoid a non-smooth set of solutions $\dot{q}_{i}$. Degenerate solutions for $\dot{q}_{i}$ exist a particlar manipulator configurations where $\wrap{\wrap{J^{i,0}_{i,e}}^{T}J^{i,0}_{i,e}}$ is non-invertible.
+			The operator $\sbrack{*}_{\Lambda_{j}}^{\dagger}$ defines a weighted pseudo-inversion off a matrix argument $(*)$ given a positive-definite weighting matrix $\Lambda_{j}$. A weighted pseudo-inversion is chosen over direct pseuedo-inversion to avoid a non-smooth set of solutions $\dot{q}_{i}$. Degenerate solutions for $\dot{q}_{i}$ exist at particular manipulator configurations where $\wrap{\wrap{J^{i,0}_{i,e}}^{T}J^{i,0}_{i,e}}$ is non-invertible.
 
 
 
