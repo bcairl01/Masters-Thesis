@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  2 MAY 2015 06:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  3 MAY 2015 01:04
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -510,29 +510,25 @@ CHAPTER 1
 ] <on_the_rocks2.jpg, id=42, 5267.68pt x 2963.07pt>
 File: on_the_rocks2.jpg Graphic file (type jpg)
  <use on_the_rocks2.jpg>
-Package pdftex.def Info: on_the_rocks2.jpg used on input line 15.
+Package pdftex.def Info: on_the_rocks2.jpg used on input line 17.
 (pdftex.def)             Requested size: 433.62pt x 243.87756pt.
 
 [2 <C:/Users/Brian/Desktop/Masters-Thesis/on_the_rocks2.jpg>] [3] [4] [5]
-<narx_network_diagram.png, id=57, 650.43pt x 433.62pt>
+[6] <narx_network_diagram.png, id=60, 650.43pt x 433.62pt>
 File: narx_network_diagram.png Graphic file (type png)
 
 <use narx_network_diagram.png>
-Package pdftex.def Info: narx_network_diagram.png used on input line 100.
-(pdftex.def)             Requested size: 346.89731pt x 231.26651pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[6] [7 <C:/Users/Brian/Desktop/Masters-Thesis/narx_network_diagram.png>]
-Overfull \hbox (2.90755pt too wide) in paragraph at lines 144--147
+Package pdftex.def Info: narx_network_diagram.png used on input line 105.
+(pdftex.def)             Requested size: 433.62pt x 289.0881pt.
+ [7 <C:/Users/Brian/Desktop/Masters-Thesis/narx_network_diagram.png>]
+Overfull \hbox (2.90755pt too wide) in paragraph at lines 149--152
 \OT1/cmr/m/n/12 Hence the gra-di-ent which arises for the ac-ti-va-tion map-pin
 g at each hid-den layer, $\OMS/cmsy/m/n/12 r[]\OML/cmm/m/it/12 []\OT1/cmr/m/n/
 12 (\OML/cmm/m/it/12 y[]\OT1/cmr/m/n/12 )$,
  []
 
 [8]
-Overfull \hbox (5.46214pt too wide) in paragraph at lines 176--177
+Overfull \hbox (5.46214pt too wide) in paragraph at lines 184--185
 []\OT1/cmr/m/n/12 The method se-lected for nav-i-gat-ing the Blue-Foot plat-for
 m over flat-land is a potential-
  []
@@ -636,7 +632,7 @@ Package pdftex.def Info: process_diagram.png used on input line 56.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [28] [29 <C:/Users/Brian/Desktop/Masters-Thesis/process_diagram.png>] [30]
-[31] <comm_flow.png, id=160, 722.7pt x 469.755pt>
+<comm_flow.png, id=157, 722.7pt x 469.755pt>
 File: comm_flow.png Graphic file (type png)
  <use comm_flow.png>
 Package pdftex.def Info: comm_flow.png used on input line 92.
@@ -645,8 +641,11 @@ Package pdftex.def Info: comm_flow.png used on input line 92.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[32 <C:/Users/Brian/Desktop/Masters-Thesis/comm_flow.png>] [33] [34]) [35]
-(C:\Users\Brian\Desktop\Masters-Thesis\ch4_modeling.tex
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[31] [32 <C:/Users/Brian/Desktop/Masters-Thesis/comm_flow.png>] [33] [34])
+[35] (C:\Users\Brian\Desktop\Masters-Thesis\ch4_modeling.tex
 CHAPTER 4
 <coordinate_frames.png, id=175, 1084.05pt x 722.7pt>
 File: coordinate_frames.png Graphic file (type png)
@@ -674,13 +673,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <pos_rom.png, id=193, 578.16pt x 433.62pt>
 File: pos_rom.png Graphic file (type png)
  <use pos_rom.png>
-Package pdftex.def Info: pos_rom.png used on input line 241.
+Package pdftex.def Info: pos_rom.png used on input line 240.
 (pdftex.def)             Requested size: 214.63977pt x 160.97943pt.
 
 <ori_rom.png, id=194, 578.16pt x 433.62pt>
 File: ori_rom.png Graphic file (type png)
  <use ori_rom.png>
-Package pdftex.def Info: ori_rom.png used on input line 242.
+Package pdftex.def Info: ori_rom.png used on input line 241.
 (pdftex.def)             Requested size: 214.63977pt x 160.97943pt.
 
 
@@ -692,18 +691,21 @@ sktop/Masters-Thesis/ori_rom.png>] [43] [44]
 File: simulation_wide_pic.png Graphic file (type png)
 
 <use simulation_wide_pic.png>
-Package pdftex.def Info: simulation_wide_pic.png used on input line 342.
+Package pdftex.def Info: simulation_wide_pic.png used on input line 341.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
  [45 <C:/Users/Brian/Desktop/Masters-Thesis/simulation_wide_pic.png>] <sim_comp
 arison.png, id=214, 578.16pt x 433.62pt>
 File: sim_comparison.png Graphic file (type png)
 
 <use sim_comparison.png>
-Package pdftex.def Info: sim_comparison.png used on input line 359.
+Package pdftex.def Info: sim_comparison.png used on input line 356.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
- [46]) [47] [48 <C:/Users/Brian/Desktop/Masters-Thesis/sim_comparison.png (PNG 
-copy)>]
-(C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.tex
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[46] [47 <C:/Users/Brian/Desktop/Masters-Thesis/sim_comparison.png (PNG copy)>]
+) [48] (C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.tex
 CHAPTER 5
 [49
 
@@ -911,29 +913,29 @@ Package pdftex.def Info: laser-sweep.png used on input line 135.
 (pdftex.def)             Requested size: 433.62pt x 243.90898pt.
 
 [78 <C:/Users/Brian/Desktop/Masters-Thesis/laser-sweep.png>]
-<rough_terrain.png, id=345, 722.7pt x 1084.05pt>
+<rough_terrain.png, id=345, 722.7pt x 867.24pt>
 File: rough_terrain.png Graphic file (type png)
  <use rough_terrain.png>
 Package pdftex.def Info: rough_terrain.png used on input line 166.
-(pdftex.def)             Requested size: 346.89731pt x 520.33809pt.
+(pdftex.def)             Requested size: 433.62pt x 520.34802pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[79] [80 <C:/Users/Brian/Desktop/Masters-Thesis/rough_terrain.png>]
-<terrain_grad_crop.png, id=353, 523.4757pt x 225.7233pt>
+[79] [80 <C:/Users/Brian/Desktop/Masters-Thesis/rough_terrain.png>] [81]
+<terrain_grad_crop.png, id=356, 523.4757pt x 225.7233pt>
 File: terrain_grad_crop.png Graphic file (type png)
 
 <use terrain_grad_crop.png>
-Package pdftex.def Info: terrain_grad_crop.png used on input line 234.
+Package pdftex.def Info: terrain_grad_crop.png used on input line 235.
 (pdftex.def)             Requested size: 433.62pt x 186.97829pt.
- <terrain_4545.png, id=354, 578.16pt x 433.62pt>
+ <terrain_4545.png, id=357, 578.16pt x 433.62pt>
 File: terrain_4545.png Graphic file (type png)
 
 <use terrain_4545.png>
-Package pdftex.def Info: terrain_4545.png used on input line 240.
+Package pdftex.def Info: terrain_4545.png used on input line 242.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
- [81]
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -945,7 +947,7 @@ s/Brian/Desktop/Masters-Thesis/terrain_4545.png (PNG copy)>] [84]
 <cost_map.png, id=369, 771.1209pt x 365.4453pt>
 File: cost_map.png Graphic file (type png)
  <use cost_map.png>
-Package pdftex.def Info: cost_map.png used on input line 308.
+Package pdftex.def Info: cost_map.png used on input line 311.
 (pdftex.def)             Requested size: 433.62pt x 205.50113pt.
  [85 <C:/Users/Brian/Desktop/Masters-Thesis/cost_map.png>]
 
@@ -955,7 +957,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: surf_reconstruction.png Graphic file (type png)
 
 <use surf_reconstruction.png>
-Package pdftex.def Info: surf_reconstruction.png used on input line 350.
+Package pdftex.def Info: surf_reconstruction.png used on input line 353.
 (pdftex.def)             Requested size: 433.62pt x 552.8604pt.
 
 
@@ -1043,10 +1045,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5649 strings out of 493921
- 86671 string characters out of 3144877
- 162091 words of memory out of 3000000
- 8730 multiletter control sequences out of 15000+200000
+ 5650 strings out of 493921
+ 86694 string characters out of 3144877
+ 160103 words of memory out of 3000000
+ 8731 multiletter control sequences out of 15000+200000
  14548 words of font info for 55 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  46i,17n,42p,1699b,327s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1064,7 +1066,7 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (108 pages, 15407116 bytes).
+Output written on main.pdf (108 pages, 15605767 bytes).
 PDF statistics:
  467 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

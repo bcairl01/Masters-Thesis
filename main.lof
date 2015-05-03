@@ -17,7 +17,7 @@
 \contentsline {figure}{\numberline {13}{\ignorespaces A visualization of BlueFoot's coordinate frame configuration.\relax }}{37}
 \contentsline {figure}{\numberline {14}{\ignorespaces Range of motion for body's planar position (\emph {left}) and body pitch and roll (\emph {right}) while in the default stance.\relax }}{42}
 \contentsline {figure}{\numberline {15}{\ignorespaces Visualization of the BlueFoot simulator.\relax }}{45}
-\contentsline {figure}{\numberline {16}{\ignorespaces Joint position comparison between the simulated and real quadruped while performing a gait which achieves a forward velocity of $60\frac {mm}{s}$\relax }}{48}
+\contentsline {figure}{\numberline {16}{\ignorespaces Joint position comparison between the simulated and real quadruped while performing a gait which achieves a forward velocity of $60\frac {mm}{s}$\relax }}{47}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {17}{\ignorespaces CPG output and phase plots for a two-paced gait over two gait cycles.\relax }}{53}
 \contentsline {figure}{\numberline {18}{\ignorespaces CPG output and phase plots for a two-paced gait over two gait cycles.\relax }}{54}
