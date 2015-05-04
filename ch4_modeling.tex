@@ -258,7 +258,7 @@
 				\begin{equation}
 					\dot{p}_{i,e}^{i,0} \equiv \wrap{R^{0}_{i,0}}^{T} \wrap{ \dot{p}_{i,e} - \dot{p}_{b} - \Skew{ \dot{\theta}_{b} } \wrap{ {p}_{i,e} - {p}_{b} - R^{0}_{i,0} \vec{o}_{\nu} } }
 				\end{equation}
-			where $\vec{o}_{\nu} = [\nu,0,0]^{T}$, $R^{0}_{i,0}$ is the rotation-matrix component of the transformation $H^{0}_{i,0}$ defined in \ref{eq::world_to_dh}, and $\Skew{*}$ is the standard skew-symmetric matrix operator, which takes a $3\times1$ vector input. The corresponding rotational velocity of each \Ith foot  can be computed with respect to $O_{i,0}$ by:
+			where $\vec{o}_{\nu} = [\nu,0,0]^{T}$, $R^{0}_{i,0}$ is the rotation-matrix component of the transformation $H^{0}_{i,0}$ defined in \ref{eq::world_to_dh}, and $\Skew{*}$ is a skew-symmetric matrix operator, which takes a $3\times1$ vector input. The corresponding rotational velocity of each \Ith foot  can be computed with respect to $O_{i,0}$ by:
 				\begin{equation}
 					\Theta^{i,0} \equiv \wrap{ R^{0}_{i,0} }^{T} \Skew{ \dot{\theta}_{i,e} - \dot{\theta}_{b} } R^{0}_{i,0}  = \Skew{ \dot{\theta}^{i,0}_{i,e} }
 				\label{eq::velocity_skew}

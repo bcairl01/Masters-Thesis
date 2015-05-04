@@ -95,9 +95,7 @@
 			with $\{w_{i}, c_{i}\} \InRe{}$ and $\{A_{\mu}, A_{\omega}\}   \InRe{4\times4}.$ $\Sig{*}$ represents the standard
 			sigmoid step function. The signal $\emph{T}_{i}$ represents a projection of $\dot{\epsilon}_{\theta}$ into the unit-vector emanating from ${p}_{b}$ to each \Ith foot. This projection delegates the level of adjustment to each \Ith oscillator as a result of $\dot{\epsilon}_{\theta}$. 		
 
-			Adjusting $\Psi_{\omega}$ by the method delineated in \ref{eq::cpg_modulations} serves to shorten the stepping period of a leg in-flight given greater values of $\dot{\epsilon}_{\theta}$. Likewise, $\Psi_{M}$ is adjusted to decrease the height of each foot in-flight. 
-
-			The frequency of a full gaiting cycle is prescribed via $\omega_{s}$ and duty-factor $\alpha \in \sbrack{0,1}$ \cite{Matos2010}. The matrix $W$ is formed from  $\omega_{s}$ and $\alpha$ as a follows:
+			Adjusting $\Psi_{\omega}$ by the method delineated in \ref{eq::cpg_modulations} serves to shorten the stepping period of a leg in-flight given greater values of $\dot{\epsilon}_{\theta}$. Likewise, $\Psi_{M}$ is adjusted to decrease the height of each foot in-flight. The frequency of a full gaiting cycle is prescribed via $\omega_{s}$ and duty-factor $\alpha \in \sbrack{0,1}$ \cite{Matos2010}. The matrix $W$ is formed from  $\omega_{s}$ and $\alpha$ as a follows:
 				\newcommand{\Wel}[1]{\frac{1}{1+e^{#1}}}
 				\begin{equation}
 						W = 
@@ -183,10 +181,10 @@
 		\begin{eqnarray}
 			\dot{\tilde{\theta}}_{c}	& = & \omega^{r} 				\nonumber\\
 			\dot{\tilde{p}}_{c}			& = & v^{r}\vec{u}^{r}			\nonumber\\
-			\dot{\tilde{p}}_{i,e} 		& = & v^{r}\vec{u}^{r} + \Skew{\omega^{r}\vec{h}_P} \tilde{R}_{b} \wrap{\tilde{p}_{i,e}-\tilde{p}_{c} } 
+			\dot{\tilde{p}}_{i,e} 		& = & v^{r}\vec{u}^{r} + \Skew{\omega^{r}\vec{h}_{b}} \tilde{R}_{b} \wrap{\tilde{p}_{i,e}-\tilde{p}_{c} } 
 			\label{eq::virtual_foothold_control}
 		\end{eqnarray}
-		where $\vec{h}_P$ is a unit vector that is orthogonal and pointed outward from the surface beneath the robot and $\Skew{\omega^{r}\vec{h}_P}\text{ }\in\text{ }\Real^{3\times3}$ forms a skew-symmetric matrix from the vector argument $\omega^{r}\vec{h}_P$. The virtual foothold dynamics progress the target footholds at a commanded translational (forward) and rotational velocity, $v^{r}$ and $\omega^{r}$, respectively. The robot follows the virtual model at nearly the same velocities with minimal lag so long as system bandwidth is not exceeded. Using this virtual-foothold method is convenient as it allows for foot-placement planning to be independent of foot-trajectory planning. For example, terrain adaptation can be incorporated by modifying the location of virtual foot positions such that they conform to an upcoming surface. The robot's gait will then track these adaptations without any explicit modification of foot trajectories. In the event of contact with unperceived terrain, virtual-foothold positions will reset with respect to an estimated point of contact for each \Ith contacting foot, \IE:
+		where $\vec{h}_{b}$ is a unit vector that is orthogonal and pointed outward from the surface beneath the robot and $\Skew{\omega^{r}\vec{h}_{b}}\text{ }\in\text{ }\Real^{3\times3}$ forms a skew-symmetric matrix from the vector argument $\omega^{r}\vec{h}_{b}$. The virtual foothold dynamics progress the target footholds at a commanded translational (forward) and rotational velocity, $v^{r}$ and $\omega^{r}$, respectively. The robot follows the virtual model at nearly the same velocities with minimal lag so long as system bandwidth is not exceeded. Using this virtual-foothold method is convenient as it allows for foot-placement planning to be independent of foot-trajectory planning. For example, terrain adaptation can be incorporated by modifying the location of virtual foot positions such that they conform to an upcoming surface. The robot's gait will then track these adaptations without any explicit modification of foot trajectories. In the event of contact with unperceived terrain, virtual-foothold positions will reset with respect to an estimated point of contact for each \Ith contacting foot, \IE:
 			\begin{algorithm}[!h]
 				\begin{algorithmic}
 				\ForAll{$i$ \textbf{in} $i = \{1,...,4\}$}
@@ -220,11 +218,11 @@
 				F_{\epsilon,i}		& = & a_{\epsilon}\dot{\epsilon}_{\theta} \Unit{y_{2,i}}						\nonumber
 			\end{eqnarray*}
 	 	with $k_{c},b_{c},a_{\epsilon},m_{i} \in \Real$.
-		$k_{c}$ and $b_{c}$ represent  attraction and viscous damping constants for the virtual force system. ${P}_{\vec{h}_{i}}(*)$ projects the sum of  forces, $(*)$, onto the surface beneath the \Ith foot orthogonal to $\vec{h}_{i}$. $\Unit{y_{2,i}}$ is a standard unit step function. The force $F_{\epsilon,i}$ is a compensatory force to adjust for the inertial disturbance,  $\dot{\epsilon}_{\theta}$. For instance, if the robot was pushed from the side of its body, this force would induce a side-stepping motion in attempt to catch the robot from falling in the direction of the push, and thus compensate for the disturbance. Because of $\Unit{y_{2,i}}$, $F_{s,i}$ and $F_{\epsilon,i}$ are nonzero only when $y_{2,i}$ is positive.
+		$k_{c}$ and $b_{c}$ represent  attraction and viscous damping constants for the virtual force system. ${P}_{\vec{h}_{i}}(*)$ projects the sum of  forces, $(*)$, onto the surface beneath the \Ith foot orthogonal to $\vec{h}_{i}$. $\Unit{y_{2,i}}$ is a standard unit step function. The force $F_{\epsilon,i}$ is a compensatory force to adjust for the inertial disturbance,  $\dot{\epsilon}_{\theta}$. For instance, if the robot was pushed from the side of its body, this force would induce a side-stepping motion in attempt to catch the robot from falling in the direction of the push. Because of $\Unit{y_{2,i}}$, $F_{s,i}$ and $F_{\epsilon,i}$ are nonzero only when $y_{2,i}$ is positive.
 
 		The controller component $\dot{\tilde{p}}_{i,e}^{y}$ is defined from the CPG output signal $\dot{y}_{2,i}$. The height of each step is made proportional to the magnitude of desired platform velocity.
 			\begin{equation}
-				\dot{\tilde{p}}_{i,e}^{y} 	= { \wrap{ \alpha_{v} v^{r}g + \alpha_{\omega} \omega^{r} } \dot{y}_{2,i}} \vec{h}_{i} 
+				\dot{\tilde{p}}_{i,e}^{y} 	= { \wrap{ \alpha_{v} v^{r}g + \alpha_{\omega} \abs{\omega^{r}} } \dot{y}_{2,i}} \vec{h}_{i} 
 				\label{eq::foot_height_control}
 			\end{equation}
 		where $\alpha_{v}$ and $\alpha_{\omega}$ are scalar weighting parameters. Scaling step height relative to command parameters $v^{r}$ and $\omega^{r}$ has been seen in experimental studies to be more effective than using a fixed step-height for all gait configurations. Figures \ref{fig::foot_motion2} and \ref{fig::foot_motion4} show stepping patterns generated using the aggregate virtual-force foothold controller and CPG motion outputs during two and four-paced gaits, respectively, which achieve a forward velocity of $v^{r}=40\frac{mm}{s}$. The sequence of foot contacts made during each gait is enumerated in each figure. Red, green, blue, and cyan dots represent contacts made by the front-right, front-left, back-left and back-right feet, respectively.
@@ -282,7 +280,12 @@
 				m_{T} = m_{b} + \sum_{i=1}^{4} \wrap{m_{i,e} + \sum_{j=1}^{4} \wrap{  m_{i,j}^{J} +  m_{i,j}^{L} } }
 			\end{equation}
 		Here, the the local COG of each linkage, ${p}_{i,j}^{L}$, is assumed to be at the midpoint along the length of each link, half-way between two successive joints.
-		
+			\begin{figure}[!h]
+				\centering
+				\fbox{\includegraphics[width=1.00\textwidth]{body_motion.png}}
+				\caption{Body motion generated using ZMP controller during two-pace \emph{(top)} and four-pace \emph{(bottom)} gaiting sequence.}
+				\label{fig::body_motion}
+			\end{figure}
 		Setting $\tau_{net}=0$, \ref{eq::net_moment} is manipulated to a derived solution for the ZMP as follows:
 			\begin{equation}
 				{p}_{ZMP}^{b'} = R_{z_P} \wrap{\frac{\pi}{2}}  \wrap{ \frac{\norm{g}}{m_{b}}} \tau_{legs} + \hat{p}_{COG}^{b'}.
@@ -300,14 +303,7 @@
 				r_{i}^{+}	& = & \norm{{p}_{i,e}^{b'}- {p}_{b}^{b'}} - r_{max} \nonumber \\
 				r_{i}^{-}	& = & r_{min} - \norm{{p}_{i,e}^{b'}- {p}_{b}^{b'}} \nonumber
 			\end{eqnarray*}
-		and $K_{Z}, K_{F}, K_{c}, K_{\epsilon}, k_{l} > 0$ and $\dot{p}_{b}^{b',r}$ is the reference body velocity. $F_{r}$ is a boundary force added to ensure that the workspace of each manipulator, defined by the radii $r_{min}$ and $r_{max}$, is not exceeded when the body is repositioned. $k_{l}$ is picked to be adequately large such that this force is nearly zero when the body and foot positions comply with the local workspace of each leg, and large when the workspace is nearly compromised, forcing the placement of the body to comply with each leg workspace. Figure~\ref{fig::body_motion} shows a trajectory for the trunk position reference, ${p}_{b}^{b',r}$, and actual body trajectory, ${p}_{b}^{b'}$ generated using the aforementioned ZMP-based body-placement controller during a gait which achieves a forward velocity of $v^{r}=40\frac{mm}{s}$.
-			\begin{figure}[!h]
-				\centering
-				\fbox{\includegraphics[width=1.00\textwidth]{body_motion.png}}
-				\caption{Body motion generated using ZMP controller during two-pace \emph{(top)} and four-pace \emph{(bottom)} gaiting sequence.}
-				\label{fig::body_motion}
-			\end{figure}
-		Here, results are shown for the $x$-axis motion of the body. This is because during forward motion, the most significant alterations to the location of the body are seen along the $x$-axis.
+		and $K_{Z}, K_{F}, K_{c}, K_{\epsilon}, k_{l} > 0$ and $\dot{p}_{b}^{b',r}$ is the reference body velocity. $F_{r}$ is a boundary force added to ensure that the workspace of each manipulator, defined by the radii $r_{min}$ and $r_{max}$, is not exceeded when the body is repositioned. $k_{l}$ is picked to be adequately large such that this force is nearly zero when the body and foot positions comply with the local workspace of each leg, and large when the workspace is nearly compromised, forcing the placement of the body to comply with each leg workspace. Figure~\ref{fig::body_motion} shows a trajectory for the trunk position reference, ${p}_{b}^{b',r}$, and actual body trajectory, ${p}_{b}^{b'}$ generated using the aforementioned ZMP-based body-placement controller during a gait which achieves a forward velocity of $v^{r}=40\frac{mm}{s}$. Here, results are shown for the $x$-axis motion of the body. This is because during forward motion, the most significant alterations to the location of the body are seen along the $x$-axis.
 
 
 
@@ -454,6 +450,7 @@
 
 			All simulated trials are performed over a period of 60 seconds each. During the first 10 seconds of each simulation, the robot moves from sitting position to a standing position and initiates walking. During each simulation period, the NARX-NN compensator is activated (not training)  and deactivated (training)  every 10 seconds. Figures~\ref{fig::narx60_a125_nne}, \ref{fig::narx60_a250_nne} and \ref{fig::narx60_a350_nne} depict an initial set of simulation results showing the effect of varying  the mixing parameter $\alpha\in\{0.125, 0.25, 0.35\}$. For all such trials, the robot performs a trot-gait which achieves a forward speed of 60 $\frac{mm}{s}$. It is expected that as $\alpha$ increases, the compensator will have greater authority over trunk stabilization. From these results, we observe that for all $\alpha$, disturbance magnitude is decreased to some extent. However, for smaller $\alpha$, the compensator is less effectual due to the fact that it has less authority over joint reference signals.  From the results in Figure~\ref{fig::narx60_a250_nne}, it is shown that the compensator improves pitch stability by more than roughly 50\% and roll stability by more than 60\%. Figure~\ref{fig::narx80_a35} shows the compensator's performance at higher gaiting speeds of 80 $\frac{mm}{s}$ and 100 $\frac{mm}{s}$. Here the controller improves both pitch and roll by nearly 50\% and 40\% of the  uncompensated signal magnitude, respectively.
 %%%
+			\newpage
 				\begin{figure}[!h]
 					\centering
 					\fbox{\includegraphics[width=0.85\textwidth]{aux_V_100mms_nN_50_nL_2_nns.png}}
