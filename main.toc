@@ -74,4 +74,6 @@
 \contentsline {chapter}{\numberline {VII. }Concluding Remarks}{92}
 \contentsline {chapter}{\numberline {A. }Leg Jacobian with respect to frame $O_{i,0}$}{95}
 \contentsline {chapter}{\numberline {B. }C-code implementation of NARX-NN}{96}
+\contentsline {subsubsection}{Header}{96}
+\contentsline {subsubsection}{Implementation}{99}
 \contentsline {chapter}{\numberline {C. }C++ code Implementations for Surface Reconstruction}{107}

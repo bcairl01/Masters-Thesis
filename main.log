@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  4 MAY 2015 15:55
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  4 MAY 2015 15:59
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -457,7 +457,8 @@ LaTeX Warning: Label `fig::dev_diagram' multiply defined.
 LaTeX Warning: Label `eq::leg_jacobian' multiply defined.
 
 ) (C:\Users\Brian\Desktop\Masters-Thesis\appendix_b.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\appendix_c.aux))
+(C:\Users\Brian\Desktop\Masters-Thesis\appendix_c.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\appendix_d.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
@@ -1080,15 +1081,15 @@ File: lstlang1.sty 2014/09/06 1.5e listings language file
 File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
 )
 (C:\Users\Brian\Desktop\Masters-Thesis\ccode_narximpl.tex
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 8.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 9.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 8.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 9.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 17.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
  [96
 
 
@@ -1176,13 +1177,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7389 strings out of 493921
- 114077 string characters out of 3144877
- 374077 words of memory out of 3000000
- 10398 multiletter control sequences out of 15000+200000
+ 7392 strings out of 493921
+ 114194 string characters out of 3144877
+ 364839 words of memory out of 3000000
+ 10399 multiletter control sequences out of 15000+200000
  21905 words of font info for 84 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 46i,17n,51p,1853b,1726s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,17n,51p,1853b,1728s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
@@ -1199,7 +1200,7 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (126 pages, 18061281 bytes).
+Output written on main.pdf (126 pages, 18061243 bytes).
 PDF statistics:
  536 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
