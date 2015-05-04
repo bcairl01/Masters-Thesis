@@ -67,7 +67,7 @@
 \contentsline {section}{\numberline {6.2}Towards Rough Terrain Navigation}{81}
 \contentsline {subsection}{\numberline {6.2.1}Terrain Mapping from 2D scans}{81}
 \contentsline {subsection}{\numberline {6.2.2}Height-map Generation from 3D point cloud}{82}
-\contentsline {subsection}{\numberline {6.2.3}Generating a Cost-map from the Height-map}{85}
+\contentsline {subsection}{\numberline {6.2.3}Generating a Cost-map from the Height-map}{86}
 \contentsline {subsection}{\numberline {6.2.4}Surface Reconstruction}{88}
 \contentsline {chapter}{\numberline {VII. }Concluding Remarks}{92}
 \contentsline {chapter}{\numberline {A. }Leg Jacobian with respect to frame $O_{i,0}$}{95}
