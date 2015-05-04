@@ -150,7 +150,7 @@
 						\label{eq::K_four_pace}
 				\end{equation}
 			%The output state, $y_{i}$ and phase portrait form from $x_{i},y_{i}$ of each \Ith oscillator are shown in Figures \ref{fig::cpg_phase2_45} and \ref{fig::cpg_phase3_45} for a two-paced and four-paced gait, respectively. The two-paced gait was produced using the coupling matrix defined in\ref{eq::K_two_pace} and the four-paced gait was produced using the coupling matrix defined in \ref{eq::K_four_pace}. 
-			Figure \ref{fig::cpg_transition} shows the change in output state patterns during a transition from a four-paced to a two-paced gait.	
+			Figure \ref{fig::cpg_transition} shows the change in output state patterns during a transition from a four-paced to a two-paced gait. Figure~\ref{fig::real_cpg_joints} shows joint angle feedback from the actual robot platform during the execution of a CPG driven gait which achieves a ground-speed of $65 \frac{mm}{s}$.
 			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 				\begin{figure}[!h]
 					\centering
@@ -169,6 +169,12 @@
 					\fbox{\includegraphics[width=1.00\textwidth]{cpg_transition.png}}
 					\caption{CPG output transition during four-pace to two-pace gait switch.}
 					\label{fig::cpg_transition}
+				\end{figure}	
+				\begin{figure}[!h]
+					\centering
+					\fbox{\includegraphics[width=1.00\textwidth]{real_cpg_joints.png}}
+					\caption{Real joint angles during a gait at $65 \frac{mm}{s}$.}
+					\label{fig::real_cpg_joints}
 				\end{figure}	
 			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -265,7 +271,7 @@
 					\end{cases} \nonumber
 				\label{eq::Levers}
 			\end{eqnarray*}
-		with $m_{b}$, $m_{i,j}^{J}$, $m_{i,j}^{L}$, $m_{i,e}$ represent the mass of the main body; the mass of each joint; the mass of each link; the mass of each foot, respectively. $\mu_{i}$ is included in the above formulation such that only stepping (non-contacting) legs contribute to  $\tau_{legs}$. It should be noted that the superscript ${b'}$ denotes that each particle considered in this controller is defined with respect to the robot-relative frame $O_{b'}$ define in Section \ref{sec::system_kinematics}. This allows the control routine to be performed without explicit knowledge of the system in space. The estimated center of gravity in $O_{b'}$, $\hat{p}_{COG}^{b'}$, is generated as follows:
+		with $m_{b}$, $m_{i,j}^{J}$, $m_{i,j}^{L}$, $m_{i,e}$ represent the mass of the main body; the mass of each joint; the mass of each link; the mass of each foot, respectively. $\mu_{i}$ is included in the above formulation such that only stepping (non-contacting) legs contribute to  $\tau_{legs}$. It should be noted that the superscript ${b'}$ denotes that each particle considered in this controller is defined with respect to the robot-relative frame $O_{b'}$ defined in Section \ref{sec::system_kinematics}. This allows the control routine to be performed without explicit knowledge of robot's absolute position in $O_{0}$. The estimated center of gravity in $O_{b'}$, $\hat{p}_{COG}^{b'}$, is generated as follows:
 			\begin{eqnarray*}
 				\hat{p}_{COG}^{b'} 	& = & \frac{1}{m_{T}}\wrap{ m_{b}p_{b}^{b'} + \sum_{i=1}^{4} \wrap{m_{i,e}{p}_{i,e}^{b'} + \sum_{j=1}^{4} \wrap{  m_{i,j}^{J}{p}_{i,j}^{b'} +  m_{i,j}^{L}{p}_{i,j}^{b',L} } }} 	\nonumber \\
 				{p}_{i,j}^{L} 	& = & 
@@ -449,41 +455,44 @@
 			foot (a value $\mu_{i}=1$ represents contact); $\vec{g}$ is the gravity vector; and $\ddot{p}_{b}$ is the trunk acceleration in the world frame. Ideally, the measurement of ${f}_{i}$ would be obtained via a 3-axis force-torque sensor placed at each foot.
 
 			All simulated trials are performed over a period of 60 seconds each. During the first 10 seconds of each simulation, the robot moves from sitting position to a standing position and initiates walking. During each simulation period, the NARX-NN compensator is activated (not training)  and deactivated (training)  every 10 seconds. Figures~\ref{fig::narx60_a125_nne}, \ref{fig::narx60_a250_nne} and \ref{fig::narx60_a350_nne} depict an initial set of simulation results showing the effect of varying  the mixing parameter $\alpha\in\{0.125, 0.25, 0.35\}$. For all such trials, the robot performs a trot-gait which achieves a forward speed of 60 $\frac{mm}{s}$. It is expected that as $\alpha$ increases, the compensator will have greater authority over trunk stabilization. From these results, we observe that for all $\alpha$, disturbance magnitude is decreased to some extent. However, for smaller $\alpha$, the compensator is less effectual due to the fact that it has less authority over joint reference signals.  From the results in Figure~\ref{fig::narx60_a250_nne}, it is shown that the compensator improves pitch stability by more than roughly 50\% and roll stability by more than 60\%. Figure~\ref{fig::narx80_a35} shows the compensator's performance at higher gaiting speeds of 80 $\frac{mm}{s}$ and 100 $\frac{mm}{s}$. Here the controller improves both pitch and roll by nearly 50\% and 40\% of the  uncompensated signal magnitude, respectively.
-%%%
+
 			\newpage
-				\begin{figure}[!h]
-					\centering
-					\fbox{\includegraphics[width=0.85\textwidth]{aux_V_100mms_nN_50_nL_2_nns.png}}
-					\caption{NARX Network MSE convergence for trial shown in Figure \ref{fig::narx100_a35}} 
-					\label{fig::narx100_a35_nne}
-				\end{figure}
-				\begin{figure}
-					\centering
-					\fbox{ \includegraphics[width=0.85\textwidth]{alpha0125_V_60mms_nN_50_nL_2_pos.png} }
-					\caption{Trunk orientation during 60 $\frac{mm}{s}$ gait with $\alpha = 0.125$.}
-					\label{fig::narx60_a125_nne}
-				\end{figure}
-				\begin{figure}
-					\centering
-					\fbox{ \includegraphics[width=0.85\textwidth]{alpha0250_V_60mms_nN_50_nL_2_pos.png} }
-					\caption{Trunk orientation during 60 $\frac{mm}{s}$ gait with $\alpha = 0.250$.}
-					\label{fig::narx60_a250_nne}
-				\end{figure}
-				\begin{figure}
-					\centering
-					\fbox{ \includegraphics[width=0.85\textwidth]{alpha0350_V_60mms_nN_50_nL_2_pos.png} }
-					\caption{Trunk orientation during 60 $\frac{mm}{s}$ gait with $\alpha = 0.350$.}
-					\label{fig::narx60_a350_nne}
-				\end{figure}
-				\begin{figure}[!h]
-					\centering
-					\fbox{\includegraphics[width=0.85\textwidth]{aux_V_80mms_nN_50_nL_2_pos.png}}
-					\caption{Trunk orientation during 80 $\frac{mm}{s}$ gait with mixing  parameter set to $\alpha = 0.35$}
-					\label{fig::narx80_a35}
-				\end{figure}
-				\begin{figure}[!h]
-					\centering
-					\fbox{\includegraphics[width=0.85\textwidth]{aux_V_100mms_nN_50_nL_2_pos.png}}
-					\caption{Trunk orientation during 100 $\frac{mm}{s}$ gait with $\alpha = 0.35$} 
-					\label{fig::narx100_a35}
-				\end{figure}
+
+			\begin{figure}
+				\centering
+				\fbox{\includegraphics[width=0.825\textwidth]{aux_V_100mms_nN_50_nL_2_nns.png}}
+				\caption{NARX Network MSE convergence for trial shown in Figure \ref{fig::narx100_a35}} 
+				\label{fig::narx100_a35_nne}
+			\end{figure}
+			\begin{figure}
+				\centering
+				\fbox{ \includegraphics[width=0.825\textwidth]{alpha0125_V_60mms_nN_50_nL_2_pos.png} }
+				\caption{Trunk orientation during 60 $\frac{mm}{s}$ gait with $\alpha = 0.125$.}
+				\label{fig::narx60_a125_nne}
+			\end{figure}
+
+			\begin{figure}
+				\centering
+				\fbox{ \includegraphics[width=0.825\textwidth]{alpha0250_V_60mms_nN_50_nL_2_pos.png} }
+				\caption{Trunk orientation during 60 $\frac{mm}{s}$ gait with $\alpha = 0.250$.}
+				\label{fig::narx60_a250_nne}
+			\end{figure}
+			\begin{figure}
+				\centering
+				\fbox{ \includegraphics[width=0.825\textwidth]{alpha0350_V_60mms_nN_50_nL_2_pos.png} }
+				\caption{Trunk orientation during 60 $\frac{mm}{s}$ gait with $\alpha = 0.350$.}
+				\label{fig::narx60_a350_nne}
+			\end{figure}
+
+			\begin{figure}
+				\centering
+				\fbox{\includegraphics[width=0.825\textwidth]{aux_V_80mms_nN_50_nL_2_pos.png}}
+				\caption{Trunk orientation during 80 $\frac{mm}{s}$ gait with mixing  parameter set to $\alpha = 0.35$}
+				\label{fig::narx80_a35}
+			\end{figure}
+			\begin{figure}
+				\centering
+				\fbox{\includegraphics[width=0.825\textwidth]{aux_V_100mms_nN_50_nL_2_pos.png}}
+				\caption{Trunk orientation during 100 $\frac{mm}{s}$ gait with $\alpha = 0.35$} 
+				\label{fig::narx100_a35}
+			\end{figure}
