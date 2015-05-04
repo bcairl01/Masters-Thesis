@@ -329,9 +329,9 @@
 			where $k_{s}>0$ is a constant, scalar gain and $q^{r}$ is a joint position reference. The servos being utilized to drive the leg joints of the BlueFoot quadruped have high-gain position feedback which allows us to model the motors, simply, as a static block which transform reference trajectories to torque outputs. All of these servos are identical, and thus have identical gains. One could instead consider the full motor dynamics for computing reference positions given a desired torque. The simple model stated above was adequate for achieving desired results with all proposed control schemes which use this torque-generator model.
 
 
-		%\subsection{Single Leg Dynamics}
+		\subsection{Single Leg Dynamics}
 			
-		%	The dynamics of each independent leg (with each base-frame fixed) can be derived in closed form. These dynamics have been included in Appendix [B] using the previously defined notations.
+			The dynamics of each independent leg (with each base-frame fixed) can be derived in closed form using a Lagrangian formulated from the total potential and kinetic energy. Here, the dynamics of the kinematic chain are formulated via a minimization of energy. Masses $m_{i,j}$ are taken to be centered at each \Jth joint. These dynamics have been included as auxiliary matter in Appendix~\ref{appendix::b} using the previously defined notations.
 
 
 	\section{BlueFoot Simulator}
