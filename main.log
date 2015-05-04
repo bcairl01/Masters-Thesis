@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  4 MAY 2015 14:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  4 MAY 2015 15:55
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -378,25 +378,58 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
+\lst@mode=\count141
+\lst@gtempboxa=\box32
+\lst@token=\toks25
+\lst@length=\count142
+\lst@currlwidth=\dimen149
+\lst@column=\count143
+\lst@pos=\count144
+\lst@lostspace=\dimen150
+\lst@width=\dimen151
+\lst@newlines=\count145
+\lst@lineno=\count146
+\lst@maxwidth=\dimen152
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+\c@lstnumber=\count147
+\lst@skipnumbers=\count148
+\lst@framebox=\box33
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+File: listings.cfg 2014/09/06 1.5e listings configuration
+))
+Package: listings 2014/09/06 1.5e (Carsten Heinz)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
 (C:\Users\Brian\Desktop\Masters-Thesis\preamble.tex)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\epsf\epsf.tex"
 This is `epsf.tex' v2.7.4 <14 February 2011>
 \epsffilein=\read2
-\epsfframemargin=\dimen149
-\epsfframethickness=\dimen150
-\epsfrsize=\dimen151
-\epsftmp=\dimen152
-\epsftsize=\dimen153
-\epsfxsize=\dimen154
-\epsfysize=\dimen155
-\pspoints=\dimen156
+\epsfframemargin=\dimen153
+\epsfframethickness=\dimen154
+\epsfrsize=\dimen155
+\epsftmp=\dimen156
+\epsftsize=\dimen157
+\epsfxsize=\dimen158
+\epsfysize=\dimen159
+\pspoints=\dimen160
 )
-\c@theorem=\count141
-\c@definition=\count142
-\c@lemma=\count143
-\c@remark=\count144
-\c@example=\count145
-\c@assumption=\count146
+\c@theorem=\count149
+\c@definition=\count150
+\c@lemma=\count151
+\c@remark=\count152
+\c@example=\count153
+\c@assumption=\count154
  (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
 (C:\Users\Brian\Desktop\Masters-Thesis\vita.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\publications.aux)
@@ -423,7 +456,8 @@ LaTeX Warning: Label `fig::dev_diagram' multiply defined.
 
 LaTeX Warning: Label `eq::leg_jacobian' multiply defined.
 
-))
+) (C:\Users\Brian\Desktop\Masters-Thesis\appendix_b.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\appendix_c.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
@@ -436,24 +470,27 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count147
-\scratchdimen=\dimen157
-\scratchbox=\box32
-\nofMPsegments=\count148
-\nofMParguments=\count149
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count150
-\MPscratchDim=\dimen158
-\MPnumerator=\count151
-\makeMPintoPDFobject=\count152
-\everyMPtoPDFconversion=\toks26
+\scratchcounter=\count155
+\scratchdimen=\dimen161
+\scratchbox=\box34
+\nofMPsegments=\count156
+\nofMParguments=\count157
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count158
+\MPscratchDim=\dimen162
+\MPnumerator=\count159
+\makeMPintoPDFobject=\count160
+\everyMPtoPDFconversion=\toks27
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count161
  [1
 
 {C:/Users/Brian/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
@@ -856,7 +893,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: aux_V_100mms_nN_50_nL_2_nns.png Graphic file (type png)
 
 <use aux_V_100mms_nN_50_nL_2_nns.png>
-Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_nns.png used on input line 463
+Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_nns.png used on input line 470
 .
 (pdftex.def)             Requested size: 357.73517pt x 268.29907pt.
 
@@ -865,7 +902,7 @@ File: alpha0125_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use alpha0125_V_60mms_nN_50_nL_2_pos.png>
 Package pdftex.def Info: alpha0125_V_60mms_nN_50_nL_2_pos.png used on input lin
-e 469.
+e 476.
 (pdftex.def)             Requested size: 357.73517pt x 268.29907pt.
 
 <alpha0250_V_60mms_nN_50_nL_2_pos.png, id=314, 578.16pt x 433.62pt>
@@ -873,7 +910,7 @@ File: alpha0250_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use alpha0250_V_60mms_nN_50_nL_2_pos.png>
 Package pdftex.def Info: alpha0250_V_60mms_nN_50_nL_2_pos.png used on input lin
-e 476.
+e 483.
 (pdftex.def)             Requested size: 357.73517pt x 268.29907pt.
 
 <alpha0350_V_60mms_nN_50_nL_2_pos.png, id=315, 578.16pt x 433.62pt>
@@ -881,14 +918,14 @@ File: alpha0350_V_60mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use alpha0350_V_60mms_nN_50_nL_2_pos.png>
 Package pdftex.def Info: alpha0350_V_60mms_nN_50_nL_2_pos.png used on input lin
-e 482.
+e 489.
 (pdftex.def)             Requested size: 357.73517pt x 268.29907pt.
 
 <aux_V_80mms_nN_50_nL_2_pos.png, id=316, 578.16pt x 433.62pt>
 File: aux_V_80mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use aux_V_80mms_nN_50_nL_2_pos.png>
-Package pdftex.def Info: aux_V_80mms_nN_50_nL_2_pos.png used on input line 489.
+Package pdftex.def Info: aux_V_80mms_nN_50_nL_2_pos.png used on input line 496.
 
 (pdftex.def)             Requested size: 357.73517pt x 268.29907pt.
 
@@ -896,7 +933,7 @@ Package pdftex.def Info: aux_V_80mms_nN_50_nL_2_pos.png used on input line 489.
 File: aux_V_100mms_nN_50_nL_2_pos.png Graphic file (type png)
 
 <use aux_V_100mms_nN_50_nL_2_pos.png>
-Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_pos.png used on input line 495
+Package pdftex.def Info: aux_V_100mms_nN_50_nL_2_pos.png used on input line 502
 .
 (pdftex.def)             Requested size: 357.73517pt x 268.29907pt.
 ) [70 <C:/Users/Brian/Desktop/Masters-Thesis/aux_V_100mms_nN_50_nL_2_nns.png (P
@@ -1028,11 +1065,45 @@ CHAPTER 7
 
 ] [93]) [94] (C:\Users\Brian\Desktop\Masters-Thesis\appendix_a.tex
 Appendix 1
-[95
+) [95
 
 
 
-]) [96] (C:\Users\Brian\Desktop\Masters-Thesis\main.bbl
+]
+No file appendix_b.tex.
+(C:\Users\Brian\Desktop\Masters-Thesis\appendix_c.tex
+Appendix 2
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2014/09/06 1.5e listings language file
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+)
+(C:\Users\Brian\Desktop\Masters-Thesis\ccode_narximpl.tex
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 8.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 8.
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 17.
+ [96
+
+
+
+
+
+] [97]
+[98] [99] [100] [101] [102] [103] [104] [105])) [106]
+(C:\Users\Brian\Desktop\Masters-Thesis\appendix_d.tex
+Appendix 3
+) [107
+
+
+
+] (C:\Users\Brian\Desktop\Masters-Thesis\main.bbl
 Missing character: There is no ≈ in font cmr12!
 Missing character: There is no Ñ in font cmr12!
 Missing character: There is no ≈ in font cmr12!
@@ -1040,7 +1111,7 @@ Missing character: There is no Ñ in font cmr12!
 Missing character: There is no ‚ in font cmti12!
 Missing character: There is no Ä in font cmti12!
 Missing character: There is no ì in font cmti12!
- [97
+ [108
 
 ]
 Missing character: There is no ‚ in font cmr12!
@@ -1052,11 +1123,11 @@ Missing character: There is no î in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ì in font cmr12!
- [98]
+ [109]
 Missing character: There is no ƒ in font cmr12!
 Missing character: There is no á in font cmr12!
- [99]
-[100]
+ [110]
+[111]
 Missing character: There is no √ in font cmr12!
 Missing character: There is no ≠ in font cmr12!
 Missing character: There is no √ in font cmr12!
@@ -1069,18 +1140,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 314--316
 []\OT1/cmr/m/n/12 wxWidgets, Cross-Platform GUI Li-brary, 2015.  [On-line;
  []
 
-[101]
+[112]
 Missing character: There is no ≈ in font cmr12!
 Missing character: There is no ô in font cmr12!
 Missing character: There is no ƒ in font cmr12!
 Missing character: There is no ç in font cmr12!
- [102]
+ [113]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
 Missing character: There is no √ in font cmr12!
 Missing character: There is no ü in font cmr12!
-) [103] (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
+) [114] (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
 (C:\Users\Brian\Desktop\Masters-Thesis\vita.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\publications.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\acknowledgements.aux)
@@ -1093,7 +1164,10 @@ Missing character: There is no ü in font cmr12!
 (C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\appendix_a.aux))
+(C:\Users\Brian\Desktop\Masters-Thesis\appendix_a.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\appendix_b.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\appendix_c.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\appendix_d.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -1102,30 +1176,32 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5680 strings out of 493921
- 87794 string characters out of 3144877
- 161554 words of memory out of 3000000
- 8745 multiletter control sequences out of 15000+200000
- 14548 words of font info for 55 fonts, out of 3000000 for 9000
+ 7389 strings out of 493921
+ 114077 string characters out of 3144877
+ 374077 words of memory out of 3000000
+ 10398 multiletter control sequences out of 15000+200000
+ 21905 words of font info for 84 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 46i,17n,42p,1853b,327s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,17n,51p,1853b,1726s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (115 pages, 17971489 bytes).
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (126 pages, 18061281 bytes).
 PDF statistics:
- 494 PDF objects out of 1000 (max. 8388607)
+ 536 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  216 words of extra memory for PDF output out of 10000 (max. 10000000)
 

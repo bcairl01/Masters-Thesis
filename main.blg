@@ -1,8 +1,8 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: main.aux
+This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 A level-1 auxiliary file: vita.aux
 A level-1 auxiliary file: publications.aux
+A level-1 auxiliary file: acknowledgements.aux
+A level-1 auxiliary file: dedications.aux
 A level-1 auxiliary file: abstract.aux
 A level-1 auxiliary file: ch1_introduction.aux
 A level-1 auxiliary file: ch2_hardware.aux
@@ -14,35 +14,35 @@ A level-1 auxiliary file: ch7_closing_remarks.aux
 A level-1 auxiliary file: appendix_a.aux
 The style file: unsrt.bst
 Database file #1: refs.bib
-You're missing a field part---line 37 of file refs.bib
+You're missing a field part---line 44 of file refs.bib
  : title = 
  :         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 558 of file refs.bib
+Repeated entry---line 565 of file refs.bib
  : @article{Collins1993
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 572 of file refs.bib
+Repeated entry---line 579 of file refs.bib
  : @article{Ajallooeian2013
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 636 of file refs.bib
+Repeated entry---line 643 of file refs.bib
  : @article{Righetti2006
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 646 of file refs.bib
+Repeated entry---line 653 of file refs.bib
  : @article{Rutishauser2008
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 655 of file refs.bib
+Repeated entry---line 662 of file refs.bib
  : @article{Ijspeert2008
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 667 of file refs.bib
+Repeated entry---line 674 of file refs.bib
  : @inproceedings{Matos2010
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 693 of file refs.bib
+Repeated entry---line 700 of file refs.bib
  : @inproceedings{Fukuoka2003
  :                           ,
 I'm skipping whatever remains of this entry
@@ -60,45 +60,4 @@ while executing---line 944 of file unsrt.bst
 Warning--empty journal in Park2014
 Name 2 in "Kolter, J.Z. and Youngjun Kim, and Ng, A.Y." has a comma at the end for entry Kolter2009
 while executing---line 944 of file unsrt.bst
-You've used 68 entries,
-            1791 wiz_defined-function locations,
-            930 strings with 17208 characters,
-and the built_in function-call counts, 20212 in all, are:
-= -- 1855
-> -- 691
-< -- 50
-+ -- 256
-- -- 188
-* -- 1327
-:= -- 2817
-add.period$ -- 216
-call.type$ -- 68
-change.case$ -- 63
-chr.to.int$ -- 0
-cite$ -- 76
-duplicate$ -- 998
-empty$ -- 2052
-format.name$ -- 188
-if$ -- 4838
-int.to.chr$ -- 0
-int.to.str$ -- 68
-missing$ -- 62
-newline$ -- 341
-num.names$ -- 81
-pop$ -- 275
-preamble$ -- 1
-purify$ -- 0
-quote$ -- 0
-skip$ -- 640
-stack$ -- 0
-substring$ -- 1603
-swap$ -- 404
-text.length$ -- 50
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
-warning$ -- 8
-while$ -- 162
-width$ -- 70
-write$ -- 764
 (There were 11 error messages)
