@@ -16,7 +16,7 @@
 \addvspace {10pt}
 \contentsline {figure}{\numberline {13}{\ignorespaces A visualization of BlueFoot's coordinate frame configuration.\relax }}{38}
 \contentsline {figure}{\numberline {14}{\ignorespaces Range of motion for body's planar position (\emph {left}) and body pitch and roll (\emph {right}) while in the default stance.\relax }}{43}
-\contentsline {figure}{\numberline {15}{\ignorespaces Visualization of the BlueFoot simulator.\relax }}{46}
+\contentsline {figure}{\numberline {15}{\ignorespaces Visualization of the BlueFoot simulator.\relax }}{47}
 \contentsline {figure}{\numberline {16}{\ignorespaces Joint position comparison between the simulated and real quadruped while performing a gait which achieves a forward velocity of $60\frac {mm}{s}$\relax }}{48}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {17}{\ignorespaces CPG output and phase plots for a two-paced gait over two gait cycles.\relax }}{54}
@@ -46,6 +46,8 @@
 \contentsline {figure}{\numberline {40}{\ignorespaces Height-map showing terrain variation in the $z_{{\cal M}}$ direction.\relax }}{85}
 \contentsline {figure}{\numberline {41}{\ignorespaces Projections of a sample cost map generated from the height-map shown in Figure\nobreakspace {}39\hbox {}.\relax }}{88}
 \contentsline {figure}{\numberline {42}{\ignorespaces Point cloud generated from sequential scans of a room showing flat-surface candidates \emph {(top)} and 3D Point Cloud with normal estimation \emph {(bottom)}.\relax }}{91}
+\addvspace {10pt}
+\addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

@@ -181,7 +181,7 @@
 
 
 	\section{Foot Placement Control}
-
+		\label{sec::foot_placement_control}
 
 		A foot placement controller has been implemented which utilizes CPG outputs (defined in equation \ref{eq::cpg_ss_def}) in concert with a virtual-force controller. This controller is designed such that each foothold of the robot tracks the foot positions of a virtual robot generated through a model reference. The virtual robot is described by the foot positions, $\tilde{p}_{i,e}$, a virtual reference configuration corresponding to the return-position, $\tilde{p}_{c}$, and orientation, $\tilde{\theta}_{c}$, of the main body in $O_{0}$. The robot follows the foot placement of the virtual robot to achieve a commanded ground speed $v^{r} > 0$ in a unit-vector direction $\vec{u}^{r} \in \Re^{3}$; and turning velocity $\omega^{r} \in \Re$. Each virtual point is updated by:
 		\begin{eqnarray}
@@ -447,7 +447,7 @@
 
 		\subsection{NARX-NN Implementation}
 
-			The NARX-NN was implemented as a C code library based on the Fast Artificial Neural Network (FANN) library, which provides structures and interfaces for implementing fully-configurable, feed-forward neural networks natively implemented in C \cite{Nissen03}. This library was selected for the implementation of the feed-forward portion of the NARX network for its speed and flexibility. The full NARX implementation, shown in \ref{appendix::c} is written to handle recurrence and incremental training regimens for both parallel and series-parallel NARX network architectures.
+			The NARX-NN was implemented as a collection of C code functions. These functions make use of the Fast Artificial Neural Network (FANN) library, which provides structures and interfaces for implementing fully-configurable, feed-forward neural networks natively implemented in C \cite{Nissen03}. This library was selected for the implementation of the feed-forward portion of the NARX network for its speed and flexibility. The full NARX implementation, shown in \ref{appendix::c} is written to automate the handling of network input-output recurrence and incremental training regimens for both parallel and series-parallel NARX network architectures.
 
 
 		\subsection{NARX-NN Compensator Results}

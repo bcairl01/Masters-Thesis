@@ -9,7 +9,7 @@
 
 	\section{Flatland navigation and goal (feature) tracking}
 	
-		The BlueFoot robot is operated using a hybrid, potential-field control scheme for obstacle avoidance during navigation over flatland. Camera-based feature tracking has been incorporated into this navigation scheme to allow for dynamic object tracking and aid in the aversion of local minima. This hybrid navigation routine administers commands to the robot's gaiting controller using two main parameters, $v^{r}$ and $\omega^{r}$, which represent forward velocity and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. The way these signals influence BlueFoot's gait control is covered in Chapter~\ref{ch::gait_control}. During navigation, the pitch of the trunk, $\theta_{b,x}$ is also controlled via its respective reference signal, $\theta_{b,x}^{r}$, via an outer-loop proportional control scheme. Control over trunk pitch allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head (trunk) while tracking features or composing 3D point clouds from LIDAR scans, as will be described later in this chapter.
+		The BlueFoot robot is operated using a hybrid, potential-field control scheme for obstacle avoidance during navigation over flatland. Camera-based feature tracking has been incorporated into this navigation scheme to allow for dynamic object tracking and aid in the aversion of local minima. This hybrid navigation routine administers commands to the robot's gaiting controller using two main parameters, $v^{r}$ and $\omega^{r}$, which represent forward velocity and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. An explanation of how these parameters are used to influence BlueFoot's gait control and foot-placement is covered in Section~\ref{sec::foot_placement_control}. During navigation, the pitch of the trunk, $\theta_{b,x}$ is also controlled via its respective reference signal, $\theta_{b,x}^{r}$, via an outer-loop proportional control scheme. Control over trunk pitch allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head (trunk) while tracking features or composing 3D point clouds from LIDAR scans, as will be described later in this chapter.
 
 		Namely, BlueFoot's primary navigation mechanism fuses navigation reference commands generated using both LIDAR data and features from processed camera images. This algorithm is used as a \emph{wandering} mechanism which would normally be employed as a first-level measure during situations where the robot has no information about its environment (\IE environmental map data, or landmark locations) \emph{a priori}. This section will first describe the potential-fields portion of BlueFoot's base-navigation algorithm, which utilizes only LIDAR sensor data. The efficacy of this navigation mechanism will be supported with results from simulated trials. The incorporation of processed camera data will then be detailed to complete the description of the full navigation controller. A set of associated results will be presented from real-world trials.
 
@@ -18,10 +18,11 @@
 
 			The potential-fields portion of BlueFoot's navigation routines takes planar LIDAR scans as an input and generates a set of navigation outputs, $\vec{u}^{r}_{L} \in \Re^{3}$, which represents a direction of travel relative to the world frame, $O_{0}$, and $P_{L}$, which represents a total positive (attractive) potential. Each point from a LIDAR scan is mapped to a corresponding scalar \emph{potential} which is used to influence the direction of the newly generated command. Given a LIDAR scan, $S^{L}$, with 2D scan points, $x_{i}^{L}\in\emph{S}^{L}$, relative to the LIDAR's local coordinate frame $O_{L}$, first-level command elements are generated using a potential function $\{ f(x) : \Re^{3}\rightarrow \Re^{1} \}$, and a biasing function, $\{ g(x,\psi) : \Re^{3}\rightarrow \Re^{1} \}$, as follows:
 				\begin{eqnarray}
-				%x_{i}  &=& P_{ \vec{z} } \wrap{ H_{b}^{0} H_{L}^{b} \Gamma_{L} x_{i}^{L} } \nonumber\\
-				%\bar{x}_{b,i} &=&  x_{i}-p_{b} \nonumber \\
-				\vec{u}^{r}_{L} &=&  { \sum_{x_{i}^{L} \in \emph{S}} g( x_{i}^{L},\psi)  f( x_{i}^{L} ) \frac{x_{i}^{L}}{\norm{x_{i}^{L}}} } \nonumber \\
-				P_{L} & = & \alpha_{p}\sum_{x_{i}^{L} \in \emph{S}^{L}} g( x_{i}^{L},\psi)  f( x_{i}^{L} ) U\wrap{f( x_{i}^{L} )}
+					%x_{i}  &=& P_{ \vec{z} } \wrap{ H_{b}^{0} H_{L}^{b} \Gamma_{L} x_{i}^{L} } \nonumber\\
+					%\bar{x}_{b,i} &=&  x_{i}-p_{b} \nonumber \\
+					\vec{u}^{r}_{L} &=&  { \sum_{x_{i}^{L} \in \emph{S}} g( x_{i}^{L},\psi)  f( x_{i}^{L} ) \frac{x_{i}^{L}}{\norm{x_{i}^{L}}} } \nonumber \\
+					P_{L} & = & \alpha_{p}\sum_{x_{i}^{L} \in \emph{S}^{L}} g( x_{i}^{L},\psi)  f( x_{i}^{L} ) U\wrap{f( x_{i}^{L} )}
+					\label{eq::full_potential_fields}
 				\end{eqnarray}
 			%where $H_{b}^{0}$ defines a homogeneous transformation between $O_{0}$ and $O_{b}$; $H_{L}^{b}$ defines a homogeneous transformation which relates the LIDAR's pose to the frame $O_{b}$; $\emph{S}\subset \Re^{3}$ is the set of newly transformed points, $x_{i}^{L} \in \emph{S}$, relative to the current LIDAR scan in the world coordinate system; 
 			%where $U(*)$ is the standard unit-step function;  $\alpha_{p}$ is a scalar tuning parameter; and 
@@ -30,7 +31,7 @@
 			%	\end{equation*}
 			%Since we are assuming navigation over flat ground, the operator $P_{ \vec{z} }\wrap{*}$ is used to project each transformed LIDAR scan-point's onto the plane defined by the unit vector pointing in the unit-vector direction of the $z$-axis in the frame $O_{0}$.
 
-			The piecewise potential function, defined in \ref{eq::min_dis_potential_function}, is used in BlueFoot's navigation scheme. This function is designed to repel the platform from objects which are closer to the robot than some minimum distance, $d_{min}$, and attract the robot toward objects that are further away. The form of this potential function was guided by several candidate force-field functions presented in \cite{ArambulaCosio2004}. The intention of \ref{eq::min_dis_potential_function} is to draw the robot towards long apertures, such as corridors or openings, and away from close-by obstructions. It is written as follows:
+			The piecewise potential function, defined in \ref{eq::min_dis_potential_function}, is used in BlueFoot's navigation scheme. This function is designed to repel the platform from objects which are closer to the robot than some minimum distance, $d_{min}$, and attract the robot toward objects that are further away. The form of this potential function was guided by several candidate force-field functions presented in \cite{ArambulaCosio2004}. Without explicitly directing the robot towards a known target location, the intention of \ref{eq::min_dis_potential_function} is to draw the robot towards long apertures, such as corridors or openings, and away from close-by obstructions. It is written as follows:
 				\begin{eqnarray}
 					\Delta d &\equiv& \norm{x}-d_{min} \nonumber \\
 					f(x) &=& 
@@ -40,7 +41,7 @@
 					\end{cases}
 				\label{eq::min_dis_potential_function}
 				\end{eqnarray}
-			where $\lambda_{c,1}>0$ and $\lambda_{c,2}>0$ are tuning parameters used to specify the output range and sensitivity of the potential function output with respect to $\Delta d$, respectively. It can be observed that this potential function exhibits $f(x)<0$ when $\norm{x} < d_{min}$ and vice-verse, thus achieves the desired attractive and repulsive characteristics. Namely, this potential function favors points which are generally much further away from the robot, and applies \emph{strong} repulsive forces only when obstacles come within a close range with the platform. These characteristics offer a higher propensity for exploration when the area being navigated is very spacious (with few obstacles in view), while encouraging \emph{tight} navigation around from potential obstacles. A visualization of the potential field, $f(x)$, generated around two cylindrical obstacles (located at $(0.5,0.1)\text{ m}$ and $(0.1,-0.1)\text{ m}$ from the robot) is shown in Figure~\ref{fig::potential_field} for a $2$-by-$2$ meter area about the robot. It is notable that there exists largely negative potential values around the neighborhood of each obstacle, which result in repulsive force contributions.
+			where $\lambda_{c,1}>0$ and $\lambda_{c,2}>0$ are tuning parameters used to specify the output range and sensitivity of the potential function output with respect to $\Delta d$, respectively. It can be observed that this potential function exhibits $f(x)<0$ when $\norm{x} < d_{min}$ and vice-verse, thus achieving the desired attractive and repulsive characteristics. Namely, this potential function favors points which are generally much further away from the robot, and applies \emph{strong} repulsive forces only when obstacles come within a close range with the platform. These characteristics offer a higher propensity for exploration when the area being navigated is very spacious (with few obstacles in view), while incurring tighter navigation around obstacles which are nearby. A visualization of the potential field, $f(x)$, generated around two cylindrical obstacles (located at $(0.5,0.1)\text{ m}$ and $(0.1,-0.1)\text{ m}$ from the robot) is shown in Figure~\ref{fig::potential_field} for a $2$-by-$2$ meter area about the robot. It is notable that there exists largely negative potential values around the neighborhood of each obstacle, which result in repulsive force contributions.
 				\begin{figure}[t!]
 					\centering
 					\fbox{\includegraphics[width=\textwidth]{potential_field.png}}
@@ -48,7 +49,7 @@
 					\label{fig::potential_field}
 				\end{figure}
 
-			The biasing function $g(x,\psi)$ is used to weight the effect of individual points from a single scan on the final output, with respect to their relative angular position in $O_{L}$. The biasing function is parametrized with an angular-window parameter $\psi>0$. The function is used in BlueFoot's navigation function, which is defined as follows:
+			The biasing function $g(x,\psi)$ is used to weight the effect of individual scan points, with respect to their relative angular position in $O_{L}$. The biasing function is parametrized by $\psi>0$, which defines a symmetric angular-window. In \ref{eq::full_potential_fields}, $g(x,\psi)$ is selected as follows:
 				\begin{eqnarray}
 					\text{ang}\wrap{x} &=& \tan^{-1}\wrap{ \frac{\xcomp{x}}{\ycomp{x}} } \nonumber\\
 					g(x,\psi) &=& 
@@ -66,7 +67,7 @@
 					\dot{v}_{L}^{r} 		&=& \beta_{v} \wrap{ P_{L} + v_{L,min}^{r} - v_{L}^{r} } \nonumber \\
 					\dot{\omega}_{L}^{r} 	&=& \beta_{\omega} \wrap{ \wrap{ \frac{ \omega_{L}^{r,max} }{\pi} } \wrap{  \theta_{L}^{r} - \theta_{b,z} } - \omega_{L}^{r} }
 				\end{eqnarray}
-			where $\beta_{v}$ and $\beta_{\omega}$ are proportional-gain tuning parameters; $v_{L,min}^{r}>0$ is a small, minimum velocity used to prevent the robot from getting stuck in local minima; and $\theta_{b,z}$ is robot's yaw in $O_{0}$. The parameters $\beta_{v}$ and $\beta_{\omega}$ can be viewed as \emph{update-inertias}, as they directly effect the influence of instantaneous commands on the forward velocity and turning rate of the robot. Furthermore, these gains can be used to low-pass updates to navigation parameters so as to remove jitter caused by degenerate LIDAR scans.
+			where $\beta_{v}$ and $\beta_{\omega}$ are proportional-gain tuning parameters; $v_{L,min}^{r}>0$ is a small, minimum velocity used to prevent the robot from getting stuck in local minima; and $\theta_{b,z}$ is robot's yaw in $O_{0}$. The parameters $\beta_{v}$ and $\beta_{\omega}$ can be viewed as \emph{update-inertias}, as they directly effect the influence of instantaneous commands on the forward velocity and turning rate of the robot. Furthermore, these gains can be used to low-pass updates to navigation parameters so as to remove jitter caused by degenerate LIDAR scans or noise.
 
 
 		\subsection{Simulated potential field navigation results}
@@ -95,7 +96,7 @@
 
 			The visual-servoing approach to be described is agnostic of the type of feature being tracked. Namely, this approach relies on the relative position of the center of each feature, represented as a pixel-position, $p_{Im} = [u,v]^{T} \in \mmathbb{Z}^{2}$ in the 2D image frame, $O_{Im}$, and a relative size, $r$, measured in pixels. In the case of circular features, for example, $r$ represents the radius of the detected circle. For color-blob features, $r$ represents the radius of a circle which fully inscribes the colored object.
 
-			For the purpose of target tracking, it is desired that the robot's forward speed be controlled such that is proportional to $r$. Namely, it is desired that the robot stops when it becomes \emph{close enough} to the target object, and faster towards the goal when the feature is in sight but the robot is further away. The position of the feature's center is used to control the robot's turning rate, as well as the commanded pitch of the robot's trunk, $\theta_{b,x}^{r}$. Trunk articulation important during feature tracking routing as it aids in keeping the tracked-target objects centered in the image frame. Provided that the target is moving slower than the what the system can track, this will ensure the target remains in sight at all times.
+			For the purpose of target tracking, it is desired that the robot's forward speed be controlled such that is proportional to $r$. Namely, it is desired that the robot stops when it becomes \emph{close enough} to the target object, and faster towards the goal when the feature is in sight but the robot is further away. This control is imposed to prevent the robot from crashing into the target being track. The position of the feature's center is used to control the robot's turning rate, as well as the commanded pitch of the robot's trunk, $\theta_{b,x}^{r}$. Trunk articulation important during feature tracking routing as it aids in keeping the tracked-target objects centered in the image frame. Provided that the target is moving slower than the what the system can track, this will ensure the target remains in sight at all times.
 
 			A separate set of navigation commands, $v_{C}^{r}$ and $\omega_{C}^{r}$; and an additional body-pitching command, $\theta_{b,x}^{r}$,  are generated from an extracted feature location, $p_{Im} = [u,v]^{T}$ as follows: 
 				\begin{eqnarray}
@@ -103,7 +104,7 @@
 					\omega_{C}^{r} 	& = & \omega_{C}^{r,max} \wrap{\frac{ w_{Im} - 2 u  }{ w_{Im} } }		\nonumber 	\\
 					\theta_{b,x}^{r}	& = & \theta_{b,x}^{r,max} \wrap{ \frac{ 2 v - h_{Im} }{ h_{Im} } } 		
 				\end{eqnarray}
-			where $v_{C}^{r,max}$, $\omega_{C}^{r,max}$ and $\theta_{b,x}^{r,max}$ are the maximum magnitudes of forward velocity, turning rate, and body-pitching commands, respectively; $c_{r}$ is a sensitivity parameter; $r_{min}$ defines a minimum feature size which will result in the administration of a zero velocity command to the platform (and thus the distance from the feature at which to halt forward motion); and $w_{Im}$ and $h_{Im}$ define the width and height, respectively, of the image being processed. Having now established a formulation for how a single, distinct, feature is used to guide the platform towards a target, a means of fusing the LIDAR-based command signals and the camera-based command signals will be defined.
+			where $v_{C}^{r,max}$, $\omega_{C}^{r,max}$ and $\theta_{b,x}^{r,max}$ are the maximum magnitudes of forward velocity, turning rate, and body-pitching commands, respectively; $c_{r}$ is a sensitivity parameter; $r_{min}$ defines a minimum feature size which will result in the administration of a zero velocity command, $v_{C}^{r,max}=0$, to the platform; and $w_{Im}$ and $h_{Im}$ define the width and height, respectively, of the image being processed. Having now established a formulation for how a single, distinct, feature is used to guide the platform towards a target, a means of fusing the LIDAR-based command signals and the camera-based command signals will be defined.
 
 				\begin{figure}[!h]
 					\centering
@@ -360,3 +361,5 @@
 				\caption{Point cloud generated from sequential scans of a room showing flat-surface candidates \emph{(top)} and 3D Point Cloud with normal estimation \emph{(bottom)}.}
 				\label{fig::surface_estimation}
 			\end{figure}
+
+			C++ implementations for the aforementioned surface reconstruction algorithms using the OpenPCL framework have been included in Appendix~\ref{appendix::d}.
