@@ -46,6 +46,7 @@
 \contentsline {figure}{\numberline {40}{\ignorespaces Height-map showing terrain variation in the $z_{{\cal M}}$ direction.\relax }}{85}
 \contentsline {figure}{\numberline {41}{\ignorespaces Projections of a sample cost map generated from the height-map shown in Figure\nobreakspace {}39\hbox {}.\relax }}{88}
 \contentsline {figure}{\numberline {42}{\ignorespaces Point cloud generated from sequential scans of a room showing flat-surface candidates \emph {(top)} and 3D Point Cloud with normal estimation \emph {(bottom)}.\relax }}{91}
+\contentsline {figure}{\numberline {43}{\ignorespaces Point cloud generated from sequential scans of a floor with obstacles showing flat-surface candidates \emph {(top)} and 3D Point Cloud with normal estimation \emph {(bottom)}.\relax }}{92}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

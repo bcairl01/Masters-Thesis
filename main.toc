@@ -70,11 +70,11 @@
 \contentsline {subsection}{\numberline {6.2.2}Height-map Generation from 3D point cloud}{82}
 \contentsline {subsection}{\numberline {6.2.3}Generating a Cost-map from the Height-map}{86}
 \contentsline {subsection}{\numberline {6.2.4}Surface Reconstruction}{88}
-\contentsline {chapter}{\numberline {VII. }Concluding Remarks}{92}
-\contentsline {chapter}{\numberline {A. }Leg Jacobian with respect to frame $O_{i,0}$}{95}
-\contentsline {chapter}{\numberline {B. }Fixed-base Leg Dynamics}{96}
-\contentsline {subsubsection}{General Form}{96}
-\contentsline {subsubsection}{Mass Matrix, $M\left (q_{i}\right )$}{96}
-\contentsline {subsubsection}{Correolis Matrix, $C\left (q_{i},\mathaccentV {dot}05F{q}_{i}\right )$}{97}
-\contentsline {subsubsection}{Gravity Matrix, $G\left (q_{i},\mathaccentV {vec}17E{g}\right )$}{98}
-\contentsline {chapter}{\numberline {C. }Summary of Trignometric Abbreviations}{99}
+\contentsline {chapter}{\numberline {VII. }Concluding Remarks}{93}
+\contentsline {chapter}{\numberline {A. }Leg Jacobian with respect to frame $O_{i,0}$}{96}
+\contentsline {chapter}{\numberline {B. }Fixed-base Leg Dynamics}{97}
+\contentsline {subsubsection}{General Form}{97}
+\contentsline {subsubsection}{Mass Matrix, $M\left (q_{i}\right )$}{97}
+\contentsline {subsubsection}{Correolis Matrix, $C\left (q_{i},\mathaccentV {dot}05F{q}_{i}\right )$}{98}
+\contentsline {subsubsection}{Gravity Matrix, $G\left (q_{i},\mathaccentV {vec}17E{g}\right )$}{99}
+\contentsline {chapter}{\numberline {C. }Summary of Trignometric Abbreviations}{100}
