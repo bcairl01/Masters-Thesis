@@ -15,8 +15,6 @@ A level-1 auxiliary file: ch6_navigation.aux
 A level-1 auxiliary file: ch7_closing_remarks.aux
 A level-1 auxiliary file: appendix_a.aux
 A level-1 auxiliary file: appendix_b.aux
-A level-1 auxiliary file: appendix_c.aux
-A level-1 auxiliary file: appendix_d.aux
 A level-1 auxiliary file: appendix_e.aux
 The style file: unsrt.bst
 Database file #1: refs.bib
@@ -66,36 +64,36 @@ while executing---line 944 of file unsrt.bst
 Warning--empty journal in Park2014
 Name 2 in "Kolter, J.Z. and Youngjun Kim, and Ng, A.Y." has a comma at the end for entry Kolter2009
 while executing---line 944 of file unsrt.bst
-You've used 69 entries,
+You've used 68 entries,
             1791 wiz_defined-function locations,
-            942 strings with 17469 characters,
-and the built_in function-call counts, 20342 in all, are:
-= -- 1869
-> -- 695
+            934 strings with 17271 characters,
+and the built_in function-call counts, 20212 in all, are:
+= -- 1855
+> -- 691
 < -- 50
-+ -- 258
-- -- 189
-* -- 1329
-:= -- 2844
-add.period$ -- 220
-call.type$ -- 69
-change.case$ -- 65
++ -- 256
+- -- 188
+* -- 1327
+:= -- 2817
+add.period$ -- 216
+call.type$ -- 68
+change.case$ -- 63
 chr.to.int$ -- 0
-cite$ -- 77
-duplicate$ -- 1004
-empty$ -- 2064
-format.name$ -- 189
-if$ -- 4866
+cite$ -- 76
+duplicate$ -- 998
+empty$ -- 2052
+format.name$ -- 188
+if$ -- 4838
 int.to.chr$ -- 0
-int.to.str$ -- 69
+int.to.str$ -- 68
 missing$ -- 62
-newline$ -- 347
-num.names$ -- 82
-pop$ -- 276
+newline$ -- 341
+num.names$ -- 81
+pop$ -- 275
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 641
+skip$ -- 640
 stack$ -- 0
 substring$ -- 1603
 swap$ -- 404
@@ -104,7 +102,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 8
-while$ -- 163
-width$ -- 71
-write$ -- 777
+while$ -- 162
+width$ -- 70
+write$ -- 764
 (There were 11 error messages)
