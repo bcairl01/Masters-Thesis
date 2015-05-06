@@ -278,7 +278,7 @@
 				\end{equation}
 			with $\Theta^{i,0}_{j,k}$ being the \Kth element in the \Jth row of the skew symmetric matrix $\Theta^{i,0}_{j,k}$ which results from \ref{eq::velocity_skew}.
 
-			Joint velocities required to attain $\dot{x}^{i,0}_{i,e}$ can be computed using $J^{i,0}_{i,e}$. However, since each of BlueFoot's of legs had 4 degrees of freedom, $J^{i,0}_{i,e}$ is rank deficient and $\dot{q}_{i}$ cannot be obtained by direct inversion. Instead, $\dot{q}_{i}$ can be approximated from $\dot{x}^{i,0}_{i,e}$ by a weighted, Penrose-Moore psuedo-inverse of $J^{i,0}_{i,e}$, which is defined as follows:
+			Joint velocities required to attain $\dot{x}^{i,0}_{i,e}$ can be computed using $J^{i,0}_{i,e}$. However, since each of BlueFoot's of legs has 4 degrees of freedom, $J^{i,0}_{i,e}$ is rank deficient and $\dot{q}_{i}$ cannot be obtained by direct inversion. Instead, $\dot{q}_{i}$ can be approximated from $\dot{x}^{i,0}_{i,e}$ by a weighted, Penrose-Moore psuedo-inverse of $J^{i,0}_{i,e}$, which is defined as follows:
 				\begin{eqnarray}
 					\dot{q}_{i} &\approx& \sbrack{J^{i,0}_{i,e}}_{\Lambda_{j}}^{\dagger} \dot{x}^{i,0}_{i,e} \nonumber \\
 					\dot{q}_{i} &\approx& \wrap{ \wrap{J^{i,0}_{i,e}}^{T}J^{i,0}_{i,e} + \Lambda_{J} }^{-1} \wrap{J^{i,0}_{i,e}}^{T}\dot{x}^{i,0}_{i,e}

@@ -205,7 +205,7 @@
 			\begin{equation}
 				\bar{S} = \bigcup_{k=1}^{N_{s}} \bar{S}_{k}
 			\end{equation}
-			where $N_{s}$ defines the number of scans taken during the sweeping routine. For the sake of simplicity, it is assumed that the trunk's position, $p_{b}$, is fixed and the body is completely ridged during a 3D scanning routine. In the results to be presented, this seems to be a reasonable assumption given that the platform is not performing any walking manuevers and the trunk is pitched sufficiently slowly over the angular sweeping range. A slow sweep rate ensures that perturbations caused by vibrations incurred by trunk rotation and foot-slip are small, and thus do not cause for significant deviations in LIDAR scan points.
+			where $N_{s}$ defines the number of scans taken during the sweeping routine. For the sake of simplicity, it is assumed that the trunk's position, $p_{b}$, is fixed and the body is completely ridged during a 3D scanning routine. In the results to be presented, it will be shown that this is a reasonable assumtion, as the robot is not walking and the trunk is pitched sufficiently slowly over the angular sweeping range. A slow sweep rate ensures that perturbations caused by vibrations which that occur during trunk rotation are small, and thus do not cause for significant deviations in LIDAR scan points. These vibrations result mainly from foot slippage.
 				\begin{figure}[!h]
 					\centering
 					\fbox{\includegraphics[width=1.0\textwidth]{rough_terrain.png}}
@@ -216,15 +216,15 @@
 
 		\subsection{Height-map Generation from a 3D point cloud}
 			
-			3D point clouds can be represented as height-map. Here height-maps will be represented in a discrete space $\mmathbb{Z}^{\mmathcal{M}}\subset\mmathbb{Z}^{2}$ with an associated coordinate system, $O_{\mmathcal{M}}$. These representations are convenient for use in planning as they can be used to assign costs to robot transitions in straightforward way. Height-map information is represented as a matrix $\mmathcal{M}\in \Re^{n\times m}$ with height elements $m_{i,j}$. A set of indices $\bar{p} = \{i,j\}\in\mmathbb{Z}^{\mmathcal{M}}$ is used to represent the element $m_{i,j}$ and a planar location with respect to the $O_{\mmathcal{M}}$ frame. In the sections to follow, the notations $m_{i,j}$ and $\mmathcal{M}(\bar{p})$ will be used interchangeably to represent a height value from the height-map matrix $\mmathcal{M}$.
+			3D point clouds can be converted into height-maps to represent surfaces. Here a height-map will be represented with an associated discrete space $\mmathbb{Z}^{\mmathcal{M}}\subset\mmathbb{Z}^{2}$ with a coordinate system $O_{\mmathcal{M}}$. Height-map representations are convenient for use in planning as they can be used to assign costs to path transitions in a straightforward way. Height-map information is represented as a matrix $\mmathcal{M}\in \Re^{n\times m}$ with height elements $m_{i,j}$. A set of indices $\bar{p} = \{i,j\}\in\mmathbb{Z}^{\mmathcal{M}}$ is used to refer to the element $m_{i,j}$ in $\mmathcal{M}$ and, simultaneously, a planar location with respect to the $O_{\mmathcal{M}}$ frame. Thus, the notations $m_{i,j}$ and $\mmathcal{M}(\bar{p})$ will be used interchangeably to represent a height value from the height-map matrix $\mmathcal{M}$.
 
-			To create the height-map, a $w\times d$ region of interest (ROI) with a relative location $\bar{p}_{0}^{ROI}$ is first selected. This region is then discretized in $(nm)$ subregions. The dimensions $w$ and $d$ of the ROI represent lengths along $x$-axis and $y$-axis respectively. The notation $\mmathbb{R}^{\mmathcal{M}}\subset \Re^{3}$ will be used to represent the set of points contained within the ROI.  Moreover, the space $\mmathbb{Z}^{\mmathcal{M}}$ is used to represent a discretized analogue to $\mmathbb{R}^{\mmathcal{M}}$, where each position $\{i,j\}\in\mmathbb{Z}^{\mmathcal{M}}$ represents the \Ith, \Jth subregion of the ROI which has a height of $m_{i,j}$. An ROI from a source point cloud $\bar{S}$ will be represented as $\bar{S}_{ROI}\subset\Re^{3}$. It is assumed that the location, $\bar{p}_{0}^{ROI}$, and size of this ROI is determined via some auxiliary ROI detection algorithm. Such an algorithm must accomplish the following subtasks:
+			To create the height-map, a $w\times d$ region of interest (ROI) with a relative location $\bar{p}_{0}^{ROI}$ in $O_{0}$ is first selected. This region is then discretized in $(nm)$ subregions. The dimensions $w$ and $d$ of the ROI represent lengths along $x$-axis and $y$-axis respectively. The notation $\mmathbb{R}^{\mmathcal{M}}\subset \Re^{3}$ will be used to represent the set of points contained within the ROI.  Moreover, the space $\mmathbb{Z}^{\mmathcal{M}}$ is used to represent a discretized analogue to $\mmathbb{R}^{\mmathcal{M}}$, where each position $\{i,j\}\in\mmathbb{Z}^{\mmathcal{M}}$ represents the \Ith, \Jth subregion of the ROI. Moreover, each subregion has an associated height of $m_{i,j}$ stored in $\mmathcal{M}$. An ROI from a source point cloud $\bar{S}$ will be represented as $\bar{S}_{ROI}\subset\Re^{3}$. It is assumed that the location, $\bar{p}_{0}^{ROI}$, and size of this ROI are determined via some auxiliary detection algorithm. Such a detection algorithm: 
 			\begin{enumerate}
-				\item select an area with appropriately high terrain variation (large changes in gradient),
-				\item determine $\bar{p}_{0}^{ROI}$,
-				\item and determine the bounding region of the ROI.
+				\item selects an area with appropriately high terrain variation (large changes in gradient),
+				\item determines $\bar{p}_{0}^{ROI}$,
+				\item and determines the bounding region of the ROI.
 			\end{enumerate}
-			For the results shown in this section, the evaluated ROI has been manually selected after an inspection of an existing 3D point cloud, as an algorithm which fulfills the above mentioned detection tasks has yet to be explored under the scope of this project. %Such an algorithm would need to involve mechanisms for point cloud segmentation and feature evaluation. Additionally, images of the the robot's immediate terrain could be used to aid in this process by locating areas with high feature density incurred by terrain variations.
+			For the results shown in this section, an exemplary ROI has been manually selected from an existing 3D point cloud. An algorithm which fulfills the above mentioned detection requirements has yet to be fully explored under the scope of this project. %Such an algorithm would need to involve mechanisms for point cloud segmentation and feature evaluation. Additionally, images of the the robot's immediate terrain could be used to aid in this process by locating areas with high feature density incurred by terrain variations.
 
 			The point $\bar{p}\in\mmathbb{Z}^{\mmathcal{M}}$ is used to represent the location of a discrete subregion that is $(w/m) \times (d/n)$ area. A corresponding height for that subregion is stored in $m_{i,j}$, and is selected as the largest $z$-component of any point that falls within said subregion. The transformation from a point cloud element, $\bar{x}$, to an element within the discretized height-map frame can be described by:
 				\begin{equation}
@@ -274,7 +274,7 @@
 				\end{equation}
 			where $\ciel{*}$ is an element-wise vector ceiling function.
 
-			Depending on the density of the source point cloud, the basic height-map conversion process has the potential to produce relatively sparse height-maps. To deal with this, a dilation and smoothing routine is used to fill in gaps in $\mmathcal{M}$. During dilation, each non-zero height element within the map is expanded into a region around an existing element with non-zero value \cite{opencv_learn_immorph}. Dilation parameters are tuned so that uniform surface representation with minimal gaps between non-zero height elements is achieved. Finally, a median filter is applied to the dilated height-map to smooth transitions between height elements.
+			Depending on the density of the source point cloud, the basic height-map conversion process has the potential to produce relatively sparse height-maps. To deal with this, a dilation and smoothing routine is used to fill in gaps in $\mmathcal{M}$. During dilation, each non-zero height element within the map is expanded into a region around an existing element with non-zero value \cite{opencv_learn_immorph}. Dilation parameters are tuned so that uniform surface representation with minimal gaps between non-zero height elements is achieved. Finally, a median filter is applied to the dilated height-map to smooth transitions between elements.
 			\afterpage{%
 				\begin{figure}[!t]
 					\centering
@@ -289,20 +289,21 @@
 					\label{fig::heightmap_terrain_patch_ortho}
 				\end{figure}
 			\clearpage}
-					
-			The full 3D point cloud to height-map conversion is summarized in Algorithm \ref{alg::hmconvert}. In this algorithm, $\emph{\text{isolateROI}}$ represents a function which locates a region of interest within the point cloud $\bar{S}$; $\emph{\text{subdivIndex}}$ performs the transformation in $\ref{eq::toheightmapframe}$, which generates indices $(i,j)\in\mmathbb{Z}^{\mmathcal{M}}$ corresponding to a point in $O_{0}$; $\emph{\text{dialateFeatures}}$ performs a callibrated image-dilation routine; and $\emph{\text{medianFilter}}$ performs a standard image median filter routine with a $w\times w$ window size. Once a height-map has been generated, a corresponding gradient, as shown in Figure~\ref{fig::heightmap_terrain_patch}, is generated using a Sobel image gradient operation (from OpenCV).
+
+			The full height-map conversion process (from a 3D point cloud) is summarized in Algorithm~\ref{alg::hmconvert}. In this algorithm, $\emph{\text{isolateROI}}$ represents a function which locates a region of interest within the point cloud $\bar{S}$; $\emph{\text{subdivIndex}}$ performs the transformation in $\ref{eq::toheightmapframe}$, which generates indices $(i,j)\in\mmathbb{Z}^{\mmathcal{M}}$ corresponding to a point in $O_{0}$; $\emph{\text{dialateFeatures}}$ performs a calibrated image-dilation routine; and $\emph{\text{medianFilter}}$ performs a standard image median filter routine with a $w\times w$ window size. Once a height-map has been generated, a corresponding gradient, as shown in Figure~\ref{fig::heightmap_terrain_patch}, is generated using a Sobel image gradient operation (from OpenCV). The image gradient operation is represented by the function $\emph{\text{imageGradientSobel}}$.
 			\begin{algorithm}[!h]
 				\begin{algorithmic}
-					\State{\textbf{init} $\mmathcal{M} = 0, m, n, w, d, \bar{S}$}
-					\State{$\bar{S}_{ROI} = \text{isolateROI}(\bar{S})$}
+					\State{\textbf{init} $\mmathcal{M} = 0, \nabla\mmathcal{M}, m, n, w, d, \bar{S},\bar{p}_{0}^{ROI}$}
+					\State{$\{\bar{S}_{ROI},\bar{p}_{0}^{ROI}\} = \text{isolateROI}(\bar{S})$}
 					\ForAll{$\bar{x}_{k}\in \bar{S}_{ROI}$}
-						\State{$[i,j] = \text{subdivIndex}(\xcomp{\bar{x}_{k}},\ycomp{\bar{x}_{k}},w,d,m,n)$}
+						\State{$[i,j] = \text{subdivIndex}(\xcomp{\bar{x}_{k}},\ycomp{\bar{x}_{k}},\bar{p}_{0}^{ROI},w,d,m,n)$}
 						\If{$\zcomp{\bar{x}_{k}} > m_{i,j}$}
 							\State{$m_{i,j} \leftarrow \zcomp{\bar{x}_{k}}$}
 						\EndIf
 					\EndFor
 					\State{$\mmathcal{M} \leftarrow \text{dialateFeatures}(\mmathcal{M})$}
 					\State{$\mmathcal{M} \leftarrow \text{medianFilter}(\mmathcal{M},w)$}
+					\State{$\nabla\mmathcal{M} = \text{imageGradientSobel}(\mmathcal{M})$}
 				\end{algorithmic}	
 				\caption{3D ROI point cloud to height-map conversion.}
 				\label{alg::hmconvert}
@@ -315,10 +316,10 @@
 
 		\subsection{An approach for cost assignment from a height-map}
 
-			A discrete height-map space can be converted to a cost-space representation for the purpose of foot-placement planning over rough terrain. Here, a cost-tensor, represented by $\mmathcal{C}\in\Re^{n\times m\times l}$ tensor, is used to represent a discrete cost space, \IE each element, $c_{i,j,u}$ in $\mmathcal{C}$ represents a transition cost for a particular location $(i,j,u)$. The first and second dimensions of $\mmathcal{C}$ (of size $n$ and $m$) directly correspond to the width and depth of the discretized height-map space $\mathbb{Z}^{\mmathcal{M}}$. The third dimension represents a discretization of the robot's yaw state, $\theta_{b,z}\in[-\pi,\pi]$ into $l$ subdivisions, and is used to represent variations of the robot's yaw with respect to $O_{\mmathcal{0}}$.  In the sections to follow, the notation $\mmathcal{C}(\bar{p}^{\mmathcal{M}},u)$ and $\mmathcal{C}(i,j,u)$ will be used interchangeably to refer to a cost-element, $c_{i,j,u}$, from the transition-cost tensor $\mmathcal{C}$.
+			A discrete height-map space can be converted to a cost-space representation for the purpose of foot-placement planning over rough terrain. Here, a cost-tensor, $\mmathcal{C}\in\Re^{n\times m\times l}$, is used to represent a discrete cost space. Each element $c_{i,j,u}$ in $\mmathcal{C}$ represents a transition cost for a particular location $(i,j,u)$. The first and second dimensions of $\mmathcal{C}$ (of size $n$ and $m$) directly correspond to the width and depth of the discretized height-map space $\mathbb{Z}^{\mmathcal{M}}$. The third dimension represents a discretization of the robot's yaw state, $\theta_{b,z}\in[-\pi,\pi]$ into $l$ subdivisions.  In the sections to follow, the notation $\mmathcal{C}(\bar{p}^{\mmathcal{M}},u)$ and $\mmathcal{C}(i,j,u)$ will be used interchangeably to refer to a cost-element, $c_{i,j,u}$, from the transition-cost tensor $\mmathcal{C}$.
 
 
-			The mapping between a hieght-map,  $\mmathcal{M}$, and cost-tensor, $\mmathcal{C}$, is represented as follows:
+			The mapping between a height-map,  $\mmathcal{M}$, and cost-tensor, $\mmathcal{C}$, is represented as follows:
 				\begin{equation}
 					\setwrap{ \mmathcal{C} = f(\mmathcal{M},\Gamma)\text{ }:\text{ }\Re^{n\times m} \rightarrow \Re^{n\times m \times l} }
 					\label{eq::cost_mapping}
@@ -328,20 +329,20 @@
 					\Gamma \equiv \setwrap{\bar{p}_{1,e}^{\mmathcal{M}},\bar{p}_{2,e}^{\mmathcal{M}},\bar{p}_{3,e}^{\mmathcal{M}},\bar{p}_{4,e}^{\mmathcal{M}}}
 					\label{eq::cost_gamma}
 				\end{equation*}
-			where $\bar{p}_{v,e}^{\mmathcal{M}}=[i_{v},j_{v}]^{T}\in\mmathbb{Z}^{\mmathcal{M}}$ represent the position of each $v^{th}$ foot in the height-map space with $i_{v}\in \setwrap{1,...,m}$ and $j_{v}\in\setwrap{1,...,n}$. By formulating cost with respect to static foot configurations, planning is simplified to finding a trajectory for body position. Target leg positions are then generated relative to planned body locations using $\Gamma$ and \ref{eq::rel_feet}, to follow. The mapping, $f(\mmathcal{M},\Gamma)$, has been formulated with respect to three main cost elements:
+			where $\bar{p}_{v,e}^{\mmathcal{M}}=[i_{v},j_{v}]^{T}\in\mmathbb{Z}^{\mmathcal{M}}$ represent the position of each $v^{th}$ foot in the height-map space with $i_{v}\in \setwrap{1,...,m}$ and $j_{v}\in\setwrap{1,...,n}$. By formulating cost with respect to static foot configurations, planning is simplified to finding a trajectory for body position. Target foot positions are then generated relative to planned body locations using $\Gamma$ and \ref{eq::rel_feet}, to follow. The mapping, $f(\mmathcal{M},\Gamma)$, has been formulated with respect to three main cost elements:
 				\begin{enumerate}
 					\item variation in height between all foothold
 					\item terrain steepness around any foothold
-					\item and net robot rotation performed at each path-step.
+					\item and net robot rotation at each path-step.
 				\end{enumerate}
-			The first cost element is chosen to penalize configurations in which the robot must stand on non-level terrain. This aids in ensuring that the kinematic workspace of each leg is not compromised by reducing the amount of ``stretching" the robot has to perform inorder to attain a particular configuration atop the terrain. The second cost element is used deter the robot from attempting to plan foothols atop overly steep terrain. The final cost element is used to ensure the robot does not plan to perform any large changes in direction while traversing the terrain, which could cause for needless motion (perhaps even loops) in the planned path. 
+			The first cost element is chosen to penalize configurations in which the robot must stand on non-level terrain. This aids in ensuring that the kinematic workspace of each leg is not compromised by reducing the amount of ``stretching" the robot has to perform in order to attain a particular configuration atop the terrain. The second cost element is used deter the robot from attempting to plan footholds atop overly steep terrain. The final cost element is used to ensure the robot does not plan to perform any large changes in direction while traversing the terrain, which could cause for needless motion (perhaps even loops) in the planned path. 
 
 			To perform the conversion between $\mmathcal{M}$ and $\mmathcal{C}$, a \emph{moving} foothold matrix $\Gamma'(\bar{p}^{\mmathcal{M}}_{b},u) \in \mmathbb{Z}^{2\times4}$ is first defined as follows:
 				\begin{equation}
 					\Gamma'(\bar{p}^{\mmathcal{M}}_{b},u) = \ciel{ R_{z}^{\mmathcal{M}}(\gamma(u))\Gamma } + \bar{p}^{\mmathcal{M}}_{b} B \\
 					\label{eq::rel_feet}
 				\end{equation}
-			where  $\bar{p}^{\mmathcal{M}}_{b} = [i,j]^T\in\mmathbb{Z}^{\mmathcal{M}}$ and $u \in \setwrap{1,...,l}$ arediscrete representations of the robot's trunk position and yaw within the cost-space, respectively; $R_{z}^{\mmathcal{M}}(\gamma(u))\in\Re^{2\times2}$ represents a rotation in the $O_{\mmathcal{M}}$ frame; and $B = [1,1,1,1]$. $\setwrap{\gamma(u) : \mmathbb{Z} \rightarrow \Re }$ represents a linear mapping from the index $u$ to a robot yaw in $O_{\mmathcal{M}}$, which is defined explictly as follows:
+			where  $\bar{p}^{\mmathcal{M}}_{b} = [i,j]^T\in\mmathbb{Z}^{\mmathcal{M}}$ and $u \in \setwrap{1,...,l}$ are discrete representations of the robot's trunk position and yaw within the cost-space, respectively; $R_{z}^{\mmathcal{M}}(\gamma(u))\in\Re^{2\times2}$ represents a rotation in the $\mmathbb{Z}^{\mmathcal{M}}$ plane; and $B = [1,1,1,1]$. $\setwrap{\gamma(u) : \mmathbb{Z} \rightarrow \Re }$ represents a linear mapping from the index $u$ to a robot yaw in $O_{\mmathcal{M}}$, which is defined explicitly as follows:
 				\begin{equation} 
 					\gamma(u) = 2\pi\wrap{\frac{u}{l}} - \pi \SSep \in [-\pi,\pi]
 					\label{eq::gamma}
@@ -355,8 +356,7 @@
 						\mmathcal{C}(\bar{p}^{\mmathcal{M}}_{b},u) 	&= k_{\text{var}} \text{var}(\mmathcal{H}) + k_{\delta}\sum_{v=1}^{4} \delta \mmathcal{H}_{v}^{2} + k_{\theta} \gamma^{2}(u) 
 					\end{split}
 				\end{equation}
-
-			$\forall \bar{p}^{\mmathcal{M}}_{b} \in \mathbb{Z}^{\mmathcal{M}}$, $\forall u \in \setwrap{1,...,l}$, and  $v \in \setwrap{1,2,3,4}$, where $\mmathcal{H}$ is a collection heights at each foothold position in $\mmathcal{M}$; $\delta\mmathcal{H}$ is a collection of corresponding elements from the gradient matrix $\nabla \mmathcal{M}$; $\text{var}(*)$ computes the variance between the elements of a vector argument $(*)$; $k_{\text{var}}$, $k_{\delta}$ and $k_{\theta}$ are scalar weighting parameters; and $\col{*}{v}$ extracts the $v^{th}$ column from the matrix argument $(*)$. Figure~\ref{fig::cost_map} shows sample cost-tensor visualizations for fixed robot orientations of $\theta_{z}=0$ and $\theta_{z}=\pi/4$. The configuration matrix, $\Gamma$, is setup such that feet of the robot are spaced $330\text{ mm}$ apart, with respect to $O_{0}$. This is corresponds to the nominal foot spacing of BlueFoot's default stance. The cost-tensor shown was generated using the height-map and corresponding height-map gradient shown in Figure~\ref{fig::heightmap_terrain_patch}.
+			$\forall \bar{p}^{\mmathcal{M}}_{b} \in \mathbb{Z}^{\mmathcal{M}}$, $\forall u \in \setwrap{1,...,l}$, and  $v \in \setwrap{1,2,3,4}$, where $\mmathcal{H}$ is a set of heights at each foothold position in $\mmathcal{M}$; $\delta\mmathcal{H}$ is a set of corresponding elements from the gradient matrix $\nabla \mmathcal{M}$; $\text{var}(*)$ computes the variance between the elements of a vector argument $(*)$; $k_{\text{var}}$, $k_{\delta}$ and $k_{\theta}$ are scalar weighting parameters; and $\col{*}{v}$ extracts the $v^{th}$ column from the matrix argument $(*)$. Figure~\ref{fig::cost_map} shows two manifolds of the sample cost-tensor for fixed robot orientations of $\theta_{z}=0$ and $\theta_{z}=\pi/4$. The configuration matrix, $\Gamma$, is setup such that feet of the robot are spaced $330\text{ mm}$ apart, with respect to $O_{0}$. This is corresponds to the nominal foot spacing of BlueFoot's default stance. The cost-tensor depicted is generated using the height-map and corresponding gradient shown in Figure~\ref{fig::heightmap_terrain_patch}.
 
 				\begin{figure}
 					\centering
@@ -365,23 +365,24 @@
 					\label{fig::cost_map}
 				\end{figure}
 
-			$\mmathcal{C}$ is used to generate an optimal, $N$-step path, which is comprised of $N$ discrete robot configurations. Moreover, the problem of planning a path over rough terrain is setup as an minimization of an $N$-step cost functional defined as follows:
+			$\mmathcal{C}$ is used to generate an optimal, $N$-step path, which is comprised of $N$ discrete robot configurations. Moreover, the problem of planning a path over rough terrain is setup as a minimization of an $N$-step cost functional defined as follows:
 				\begin{equation}			
 					J(N) = \sum_{k=0}^N \mmathcal{C}\wrap{\bar{p}^{\mmathcal{M}}_{b,k},u_{k}}
 				\end{equation}
-			Here, $\mmathcal{C}\wrap{\bar{p}^{\mmathcal{M}}_{b,k},u_{k}}$ plays the role of a tabular objective function. An optimal path can be found from $\mmathcal{C}$ using an $A^{*}$-based path planning algorithm, for example \cite{Hart1968}. This method has yet to be fully explored, but is widely accepted as a standard technique for path planning in discrete spaces. Here, a sub-optimal approach is taken, which will be presented next.  Paths generated planned in the cost-tensor space can be mapped back into $O_{0}$ using the corresponding inverse mappings of \ref{eq::toheightmapframe} and $\gamma\wrap{u}$, and interpolated to generate smooth trajectories.
+			Here, $\mmathcal{C}\wrap{\bar{p}^{\mmathcal{M}}_{b,k},u_{k}}$ plays the role of a tabular objective function. An optimal path can be found from $\mmathcal{C}$ using an $A^{*}$-based path planning algorithm, for example \cite{Hart1968}. This method has yet to be fully explored, but is widely accepted as a standard technique for path planning in discrete spaces. Here, a sub-optimal approach is taken, which will be presented next.  Paths generated in the cost-tensor space can be mapped back into $O_{0}$ using the corresponding inverse mappings of \ref{eq::toheightmapframe} and $\gamma\wrap{u}$, and interpolated to generate smooth trajectories.
 			
 
 
 		\subsection{A sliding-window approach for sub-optimal rough terrain planning}
 
-			A sub-optimal planning algorithm is formulated as a preliminary method for terrain planning using the cost-tensor $\mmathcal{C}$. In this algorithm, navigation way-points are generated through a series of successive optimizations upon a finite window about a current location in the cost-space, starting from an arbitrary initial position, $\bar{p}^{\mmathcal{M}}_{b,0}$ and orientation $u_{0}$ in $O_{\mmathcal{M}}$. Each optimization step takes the form:
+			A sub-optimal planning algorithm is formulated as a preliminary method for terrain planning using the cost-tensor $\mmathcal{C}$. In this algorithm, navigation way-points are generated through a series of successive optimizations within finite windows of  $\mmathcal{C}$. Each optimization step is used to plan a body position $\bar{p}^{\mmathcal{M}}_{b,k}$ way-point and an orientation $u_{k}$, starting from an arbitrary initial position, $\bar{p}^{\mmathcal{M}}_{b,0}$ and orientation $u_{0}$. Each optimization step takes the form:
 				\begin{equation}
 					\begin{split}
 							&	\min_{\psi_{k},\lambda_{k}}\mmathcal{C}\wrap{\psi_{k},\lambda_{k}} 	\\
 					\text{s.t. }&	\psi_{k}=\{i_{\psi,k},j_{\psi,k}\}\in\mmathbb{Z}^{w}_{k}							\\
 							&	\lambda_{k}\in\mmathbb{Z}^{u}_{k}
 					\end{split}
+					\label{eq::local_min}
 				\end{equation}
 			where $\mmathbb{Z}^{w}_{k}\subset\mmathbb{Z}^{\mmathcal{M}}$ and $\mmathbb{Z}^{u}_{k}\subset \{ 1,...,l \}$ are moving windows about the $(k-1)^{th}$ position and orientation, respectively, defined as follows:
 				\begin{equation}
@@ -395,12 +396,12 @@
 					\end{split}
 					\label{eq::windows}
 				\end{equation}			
-			with $\psi_{k} = \wrap{i_{\psi,k},i_{\psi,k}}$; $p_{b_k-1}^{\mmathcal{M}} = \wrap{i_{b,k-1},j_{b,k-1}} \in \mmathbb{Z}^{\mmathcal{M}}$, as previously defined, and $d_{w}>0$ and $d_{u}>0$ being integer window-size parameters. The optimizers $\psi_{k}^{*}$ and $\lambda_{k}^{*}$, are then used to generate a \Kth trajectory way-point by:
+			with $\psi_{k} = \wrap{i_{\psi,k},i_{\psi,k}}$; $p_{b,k-1}^{\mmathcal{M}} = \wrap{i_{b,k-1},j_{b,k-1}} \in \mmathbb{Z}^{\mmathcal{M}}$, as previously defined; and $d_{w}>0$ and $d_{u}>0$ being integer window-size parameters. The local optimizers $\psi_{k}^{*}$ and $\lambda_{k}^{*}$, represent the coordinates at which the objective function in \ref{eq::local_min} is minimized. They are used to generate a \Kth trajectory way-point by:
 				\begin{equation}
 					\begin{split}
-						i_{b,k} &= i_{b,k-1} 	+ \text{sign}(i_{\psi,k}^{*} -d_{w}/2) 	\\
-						j_{b,k} &= j_{b,k-1} 	+ \text{sign}(j_{\psi,k}^{*}) 			\\
-						u_{k} 	&= u_{k-1} 		+ \text{sign}(\lambda_{k}^{*}-d_{u}/2) 	\\
+						i_{b,k} &= i_{b,k-1} 	+ \text{sign}(i_{\psi,k}^{*} -d_{w}/2 - 1) 	\\
+						j_{b,k} &= j_{b,k-1} 	+ \text{sign}(j_{\psi,k}^{*}-1) 			\\
+						u_{k} 	&= u_{k-1} 		+ \text{sign}(\lambda_{k}^{*}-d_{u}/2-1) 	\\
 					\end{split}
 				\end{equation}
 			where $\text{sign}(n)$ is an operator such that:
@@ -412,7 +413,21 @@
 					\end{cases}
 				\end{equation}
 
-			Figures~\ref{fig::terrain_path_1} through \ref{fig::terrain_path_4} show some simulated path-planning results over the terrain originally depected in Figure~\ref{fig::pointcloud_terrain_patch}. The simulation configured such that a path is planned from a starting point near the $x=0$ in the real-world coordinate from, to the other side of the terrain patch moving in the $y$-axis direction. Here, planned paths and the height-map surface are shown with respect to real-world coordinates. Each planned path is smoothed using a moving-average filter.
+			Figures~\ref{fig::terrain_path_1} through \ref{fig::terrain_path_4} show simulated path-planning results over the terrain originally depicted in Figure~\ref{fig::pointcloud_terrain_patch}. Simulations were configured such that a path is planned from a starting point near the $y=0$ in the real-world coordinate from, to the other side of the terrain patch moving in the $y$-axis direction. In each simulation group the $x$-coordinate of the initial position $p_{b,k-1}^{0}$ and initial orientation, $u_{0}$, are varied for each trial. A single window size for $d_{w}$ and $d_{u}$ is configured for each simulation group. The resulting planned paths are displayed with respect real-world coordinates, mapped from the $O_{\mmathcal{M}}$ frame. Each planned path is smoothed using a moving-average filter. Table~\ref{tab::cost_tabulation} summarizes the total cost of each path taken for each trial, with respect to a selected window size. 
+
+				\begin{table}
+					\centering
+					\begin{tabularx}{\textwidth}{|C{0.25}||C{0.15}|C{0.15}|C{0.15}|C{0.15}|C{0.15}|}\hline
+									& 	\textbf{T1}		&	\textbf{T2} &	\textbf{T3} &	\textbf{T4} \\ \hline \hline
+						$d_{w}=d_{u}=1$ 	&	24.9012		& 	25.1534	& 	28.9889	& 	29.9231	\\ \hline
+						$d_{w}=d_{u}=5$ 	&	20.2524		& 	21.8537	& 	23.8874	& 	20.7319	\\ \hline
+						$d_{w}=d_{u}=15$ 	&	16.8602		& 	21.8307	& 	19.4236	& 	23.5314	\\ \hline
+						$d_{w}=d_{u}=30$ 	&	19.3791		& 	19.0536	& 	23.6496	& 	23.6142	\\ \hline
+					\end{tabularx}
+					\caption{Sum of costs for four different initial conditions with various optimization windows.}
+					\label{tab::cost_tabulation}
+				\end{table}		
+
 				\begin{figure}
 					\centering
 					\fbox{\includegraphics[width=1.00\textwidth]{terrain_path_1.png}}
@@ -437,29 +452,18 @@
 					\caption{Path planned over rough terrain with $d_{w}=d_{u}=30$.}
 					\label{fig::terrain_path_4}
 				\end{figure}
-				\begin{table}
-					\centering
-					\begin{tabularx}{\textwidth}{|C{0.25}||C{0.15}|C{0.15}|C{0.15}|C{0.15}|C{0.15}|}\hline
-									& 	Trial-1		&	Trial-2 &	Trial-3 &	Trial-4 \\ \hline \hline
-						$d_{w}=d_{u}=1$ 	&	24.9012		& 	25.1534	& 	28.9889	& 	29.9231	\\ \hline
-						$d_{w}=d_{u}=5$ 	&	20.2524		& 	21.8537	& 	23.8874	& 	20.7319	\\ \hline
-						$d_{w}=d_{u}=15$ 	&	16.8602		& 	21.8307	& 	19.4236	& 	23.5314	\\ \hline
-						$d_{w}=d_{u}=30$ 	&	19.3791		& 	19.0536	& 	23.6496	& 	23.6142	\\ \hline
-					\end{tabularx}
-					\caption{Sum of costs for four different initial conditions with various optimization windows.}
-					\label{tab::DefaultStance}
-				\end{table}		
+
 
 
 		\subsection{Surface Reconstruction}
 
 			3D surface reconstruction is carried out according to a process for normal-estimation from 3D point cloud data detailed in \cite{Rusu2009}. According to this procedure, 3D surfaces are reconstructed from point cloud data, $\bar{S}$, by fitting a collection of flat polygonal elements to the source point cloud. Each of these estimated elements is represented by a surface-normal which emanates from a corresponding point within the source cloud. Surface normal estimation carried out by fitting planes to groups of points which exist within a neighborhood $d_{s}$ about each point $\bar{x_{i}}\in\bar{S}$.
 
-			Before normal estimation, the point cloud $\bar{S}$ (which is usually dense) is down-sampled and smoothed before a normal estimation algorithm is applied. Point cloud down-sampling is performed using a voxel-grid technique, which discretizes the point cloud space into a voxel-space. The voxel-space consists of cuboids of a particular width, depth and height. Here, a cubic voxel space is used parameterized by a single voxel side-length dimension $d_{vox}$. The voxel grid filter and generates a single point from all points which fall within the volume of a voxel region, typically as a mean of all such points. The location of points which occupy the voxel region is aided by a KD-tree search technique, which offers higher efficiency over a brute-force search for neighboring points. This voxel-grid down-sampling technique produces a reduced representation of the original cloud, $\hat{S}$, which has shown to contain up to ten to twenty times less points than the original cloud, $\bar{S}$. This reduced-point cloud representation greatly reduces the computational effort needed to process the point cloud.
+			The raw 3D point cloud, $\bar{S}$, which is typically dense, is down-sampled and smoothed before a normal estimation algorithm is applied. Point cloud down-sampling is performed using a voxel-grid technique, which discretizes the point cloud space into a voxel-space. The voxel-space consists of cuboids of a particular side-length. Each cubic unit of the voxel space is parameterized by a single voxel side-length dimension $d_{vox}$. The voxel-grid filter generates a single-point representation from all the points which fall within the volume of a voxel region. A KD-tree search technique is used to find point which fall within each voxel region. This technique offers higher efficiency over a brute-force search for neighboring points. This voxel-grid down-sampling technique produces a reduced representation of the original cloud, $\hat{S}$. Empirical results have shown that $\hat{S}$ can contain up to ten to twenty times less points than the original cloud, $\bar{S}$. This reduced-point cloud representation greatly reduces the computational effort needed to process the point cloud $\hat{S}$.
 			
 			\begin{algorithm}
 				\begin{algorithmic}
-					\State{\textbf{init} $\bar{S},\bar{S}^{*},d_{vox},\vec{u}^{r},e,e_{max}$}
+					\State{\textbf{init} $\hat{S},\bar{S},\bar{S}^{*},d_{vox},\vec{u}^{r},e,e_{max}$}
 					\State{$\hat{S} = \text{voxelGridFilter}(\bar{S},d_{vox})$}
 					\State{$\hat{S} \leftarrow \text{movingLeastSquaresFilter}(\hat{S})$}
 					\State{$\hat{N} = \text{estimateNormals}(\hat{S})$}
@@ -474,9 +478,9 @@
 				\label{alg::goodspacestostep}
 			\end{algorithm}
 
-			Next, the resulting cloud, $\hat{S}$, is regularized using a moving least-squares filter. This filter creates a smoothed point cloud by performing a sequence polynomial fits over a moving subset of points. As previously mentioned, normals are estimated from the smoothed point cloud via a plane fitting method, as described in \cite{Mitra2003}. Planes are estimated using Principle Component Analysis (PCA) on clusters of points \cite{Castillo2013}. The standard PCA algorithm provides a least-squares plane fit by way of dimensional reduction, yielding best-fit description for a set 3D points by way of a 2D manifold \cite{Pearson1901}. The full surface-normal estimation algorithm is provided in Algorithm~\ref{alg::normal_estimation}. A point cloud with estimated surface normals is shown in Figure~\ref{fig::surface_estimation}.
+			Next, the resulting cloud, $\hat{S}$, is regularized using a moving least-squares filter. This filter creates a smoothed point cloud by performing a sequence polynomial fits over a moving subset of points. Once regularized, normals are estimated from the point cloud via a plane fitting method, as described in \cite{Mitra2003}. Planes are estimated using Principle Component Analysis (PCA) on clusters of points \cite{Castillo2013}. The standard PCA algorithm provides a least-squares plane fit by way of dimensional reduction, yielding best-fit description for a set 3D points by way of a 2D manifold \cite{Pearson1901}. The full surface-normal estimation algorithm is provided in Algorithm~\ref{alg::normal_estimation}. A point cloud with estimated surface normals is shown in Figures~\ref{fig::surface_estimation} and \ref{fig::surface_estimation2}.
 
-			Algorithm~\ref{alg::goodspacestostep} is used convert a 3D point cloud into a point-cloud with normal vectors, which is then used to find ``flat" regions within the reconstructed surface. This is performed for the purpose of footstep planning. Flat regions are located using the computed surface normals. The alignment of each \Ith normal, $\vec{n}_{i}$, is compared to a reference unit vector, $\vec{u}^{r}$, by taking a dot product. This dot-product operation produces an alignment error $e\in[0,2]$. Points with associated normals whose alignment error is less than a scalar error bound, $e_{max}$, are selected as fit surfaces for walking (\IE flat). Obviously, not all surfaces which satisfy this alignment criteria represent surfaces which are fit for traversal. Beyond normal estimation, several post processing operations are necessary, including an operation which associates segements of the point-cloud which are nearby the robot and represent a surface upon which the robot can actually walk. 
+			Algorithm~\ref{alg::goodspacestostep} is used convert a 3D point cloud into a point-cloud with normal vectors, which is then used to find ``flat" regions within the reconstructed surface. This is performed for the purpose of footstep planning. Flat regions are located using the computed surface normals. The alignment of each \Ith normal, $\vec{n}_{i}$, is compared to a reference unit vector, $\vec{u}^{r}$, by taking a dot product. This dot-product operation produces an alignment error $e\in[0,2]$. Points with associated normals whose alignment error is less than a scalar error bound, $e_{max}$, are selected as fit surfaces for walking (\IE flat). Obviously, not all surfaces which satisfy this alignment criteria represent surfaces which are fit for traversal. Beyond normal estimation, several post processing operations are necessary. For example, the resulting point cloud must be segmented into regions which are traversable by the robot.
 
 			\begin{figure}[!h]
 				\centering
@@ -488,6 +492,6 @@
 				\centering
 				\fbox{\includegraphics[width=\textwidth]{surf_reconstruction2.png}}
 				\caption{Point cloud generated from sequential scans of a floor with obstacles showing flat-surface candidates \emph{(top)} and 3D Point Cloud with normal estimation \emph{(bottom)}.}
-				\label{fig::surface_estimation}
+				\label{fig::surface_estimation2}
 			\end{figure}
 			%C++ implementations for the aforementioned surface reconstruction algorithms using the OpenPCL framework have been included in Appendix~\ref{appendix::d}.
