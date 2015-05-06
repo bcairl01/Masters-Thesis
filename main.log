@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  6 MAY 2015 00:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  6 MAY 2015 01:49
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -1045,40 +1045,46 @@ Package pdftex.def Info: cost_map.png used on input line 350.
 <terrain_path_1.png, id=402, 1084.05pt x 1084.05pt>
 File: terrain_path_1.png Graphic file (type png)
  <use terrain_path_1.png>
-Package pdftex.def Info: terrain_path_1.png used on input line 367.
+Package pdftex.def Info: terrain_path_1.png used on input line 384.
 (pdftex.def)             Requested size: 433.62pt x 433.61232pt.
 
 <terrain_path_2.png, id=403, 1084.05pt x 1084.05pt>
 File: terrain_path_2.png Graphic file (type png)
  <use terrain_path_2.png>
-Package pdftex.def Info: terrain_path_2.png used on input line 373.
+Package pdftex.def Info: terrain_path_2.png used on input line 390.
 (pdftex.def)             Requested size: 433.62pt x 433.61232pt.
 
 <terrain_path_3.png, id=404, 1084.05pt x 1084.05pt>
 File: terrain_path_3.png Graphic file (type png)
  <use terrain_path_3.png>
-Package pdftex.def Info: terrain_path_3.png used on input line 379.
+Package pdftex.def Info: terrain_path_3.png used on input line 396.
 (pdftex.def)             Requested size: 433.62pt x 433.61232pt.
 
 <terrain_path_4.png, id=405, 1084.05pt x 1084.05pt>
 File: terrain_path_4.png Graphic file (type png)
  <use terrain_path_4.png>
-Package pdftex.def Info: terrain_path_4.png used on input line 385.
+Package pdftex.def Info: terrain_path_4.png used on input line 402.
 (pdftex.def)             Requested size: 433.62pt x 433.61232pt.
 
-Underfull \hbox (badness 10000) in alignment at lines 398--398
+Underfull \hbox (badness 10000) in alignment at lines 415--415
 [][][][][][]
  []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [90] [91 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_path_1.png>] [92 <C:/Us
 ers/Brian/Desktop/Masters-Thesis/terrain_path_2.png>] [93 <C:/Users/Brian/Deskt
 op/Masters-Thesis/terrain_path_3.png>] [94 <C:/Users/Brian/Desktop/Masters-Thes
-is/terrain_path_4.png>] [95]
-<surf_reconstruction.png, id=429, 963.6pt x 1228.59pt>
+is/terrain_path_4.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[95] <surf_reconstruction.png, id=429, 963.6pt x 1228.59pt>
 File: surf_reconstruction.png Graphic file (type png)
 
 <use surf_reconstruction.png>
-Package pdftex.def Info: surf_reconstruction.png used on input line 433.
+Package pdftex.def Info: surf_reconstruction.png used on input line 450.
 (pdftex.def)             Requested size: 433.62pt x 552.8604pt.
 
 
@@ -1088,7 +1094,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: surf_reconstruction2.png Graphic file (type png)
 
 <use surf_reconstruction2.png>
-Package pdftex.def Info: surf_reconstruction2.png used on input line 439.
+Package pdftex.def Info: surf_reconstruction2.png used on input line 456.
 (pdftex.def)             Requested size: 433.62pt x 552.8604pt.
 
 
@@ -1210,7 +1216,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  6968 strings out of 493921
  107594 string characters out of 3144877
- 191300 words of memory out of 3000000
+ 191304 words of memory out of 3000000
  9993 multiletter control sequences out of 15000+200000
  17683 words of font info for 67 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -1231,7 +1237,7 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (126 pages, 20317062 bytes).
+Output written on main.pdf (126 pages, 20310485 bytes).
 PDF statistics:
  546 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

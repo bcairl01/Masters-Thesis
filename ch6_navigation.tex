@@ -165,12 +165,12 @@
 						\wrap{\theta_{s,max}-\theta_{s,min}}
 							\wrap{\frac{k}{K}} + 
 								\theta_{s,min} \nonumber \\
-					\dot{\theta}_{b,x}^{r} &= 
+					\dot{\theta}_{b,x}^{r} &=
 						\alpha_{\theta}
 							(\theta_{b,x,k}^{*} - \hat{\theta}_{b,x} ) \nonumber\\
 							&\forall \SSep k = \{1,...,K\}
 				\end{eqnarray}
-			where $k$ is a step-counter which is incremented each time the LIDAR completes a full scan; and $\alpha_{\theta}$ is a scalar, proportional gain factor. The approximate rate of completion for a full 3D-scan, $\tilde{f}_{scan}$, is as follows:
+			where $k$ is a step-counter which is incremented each time the LIDAR completes a full scan; and $\alpha_{\theta}$ is a scalar, proportional gain factor. Given this formulation, the approximate rate of completion for a full 3D-scan, $\tilde{f}_{scan}$, is as follows:
 				\begin{equation}
 					\tilde{f}_{scan}\approx\frac{1}{K}\frac{\Delta\theta_{LIDAR}}{\omega_{LIDAR}}
 				\end{equation}
@@ -343,7 +343,7 @@
 					%%
 					\mmathcal{C}(\bar{p}^{\mmathcal{M}}_{b},u) 		&=& k_{\text{var}} \text{var}(\mmathcal{H}) + k_{\delta}\sum_{v=1}^{4} \delta \mmathcal{H}_{v}^{2} + k_{\theta} \gamma^{2}(u) 
 				\end{eqnarray}
-			$\forall \bar{p}^{\mmathcal{M}}_{b} \in \mathbb{Z}^{\mmathcal{M}}$, $\forall u \in \setwrap{1,...,l}$, and  $v \in \setwrap{1,2,3,4}$, where $\mmathcal{H}$ is a collection heights at each foothold position in $\mmathcal{M}$; $\delta\mmathcal{H}$ is a collection of corresponding elements from the gradient matrix $\nabla \mmathcal{M}$; $\text{var}(*)$ is generates the variance between the elements of a vector argument $(*)$; $k_{\text{var}}$, $k_{\delta}$ and $k_{\theta}$ are scalar weighting parameters; and $\col{*}{v}$ extracts the $v^{th}$ column from the matrix argument $(*)$. Figure~\ref{fig::cost_map} shows sample cost-map visualizations for fixed robot orientations of $\theta_{z}=0$ and $\theta_{z}=\pi/4$. The configuration matrix, $\Gamma$, is setup such that feet of the robot are spaced $330\text{ mm}$ apart, with respect to $O_{0}$. This is corresponds to the nominal foot spacing of BlueFoot's default stance. The cost map was generated using the height-map and corresponding height-map gradient shown in Figure~\ref{fig::heightmap_terrain_patch}.
+			$\forall \bar{p}^{\mmathcal{M}}_{b} \in \mathbb{Z}^{\mmathcal{M}}$, $\forall u \in \setwrap{1,...,l}$, and  $v \in \setwrap{1,2,3,4}$, where $\mmathcal{H}$ is a collection heights at each foothold position in $\mmathcal{M}$; $\delta\mmathcal{H}$ is a collection of corresponding elements from the gradient matrix $\nabla \mmathcal{M}$; $\text{var}(*)$ is generates the variance between the elements of a vector argument $(*)$; $k_{\text{var}}$, $k_{\delta}$ and $k_{\theta}$ are scalar weighting parameters; and $\col{*}{v}$ extracts the $v^{th}$ column from the matrix argument $(*)$. Figure~\ref{fig::cost_map} shows sample cost-map visualizations for fixed robot orientations of $\theta_{z}=0$ and $\theta_{z}=\pi/4$. The configuration matrix, $\Gamma$, is setup such that feet of the robot are spaced $330\text{ mm}$ apart, with respect to $O_{0}$. This is corresponds to the nominal foot spacing of BlueFoot's default stance. The cost map was generated using the height-map and corresponding height-map gradient shown in Figure~\ref{fig::heightmap_terrain_patch}. In the sections to follow, the notation $\mmathcal{C}(\bar{p}^{\mmathcal{M}}_{b},u)$ and $\mmathcal{C}(i_{b},j_{b},u)$ will be used interchangeably the reference a cost from the transition-cost tensor $\mmathcal{C}$.
 
 				\begin{figure}[!h]
 					\centering
@@ -356,34 +356,51 @@
 				\begin{equation}			
 					J(N) = \sum_{k=0}^N \mmathcal{C}\wrap{\bar{p}^{\mmathcal{M}}_{b,k},u_{k}}
 				\end{equation}	
-			An optimal path can be found over the discretized space using an $A^{*}$-based path planning algorithm, for example. This method has yet to be fully explored. Here, a sub-optimal approach will be utilized to  Paths generated from the cost map would be mapped back into $O_{0}$, using the corresponding inverse mappings of \ref{eq::toheightmapframe} and $\gamma\wrap{u}$, and interpolated to generate smooth trajectories.
+			An optimal path can be found over the discretized space using an $A^{*}$-based path planning algorithm, for example. This method has yet to be fully explored. Here, a sub-optimal approach is taken, which will be presented next.  Paths generated planned in the cost-map space can be mapped back into $O_{0}$, using the corresponding inverse mappings of \ref{eq::toheightmapframe} and $\gamma\wrap{u}$, and interpolated to generate smooth trajectories.
 			
 
-			\subsection{A sliding-window approach for sub-optimal rough terrain planning}
+		\subsection{A sliding-window approach for sub-optimal rough terrain planning}
 
+			A sub-optimal planning algorithm is formulated as a preliminary method method for terrain planning. In this algorithm, navigation way-points are generated through a series of successive optimizations upon a finite window about a current location in the cost space, starting from an arbitrary initial position, $\bar{p}^{\mmathcal{M}}_{b,0}$ and orientation $u_{0}$ in $O_{\mmathcal{M}}$. Each optimization step takes the form:
+				\begin{eqnarray}
+							&	\min_{a_{k},b_{k}}\mmathcal{C}\wrap{a_{k},b_{k}} 	\nonumber\\
+					s.t.	&	a_{k}\in\mmathbb{Z}^{w}_{k}							\nonumber\\
+							&	b_{k}\in\mmathbb{Z}^{u}_{k}
+				\end{eqnarray}
+			where $\mmathbb{Z}^{w}_{k}\subset\mmathbb{Z}^{\mmathcal{M}}$ and $\mmathbb{Z}^{u}_{k}\subset\{1,...,l\}$, which are formed as symmetric windows of sizes $d_{w}$ and $d_{u}$, respectively, centered at the $(k-1)^{th}$ position and orientation. The optimal solutions to this problem $a_{k}^{*}$ and $b_{k}^{*}$, are then used to generate each \Kth trajectory way-point by:
+				\begin{eqnarray}
+					{\Delta p} &= a_{k}^{*}-\bar{p}^{\mmathcal{M}}_{b,k-1} \nonumber\\
+					\bar{p}^{\mmathcal{M}}_{b,k} &= \bar{p}^{\mmathcal{M}}_{b,k-1} + \ciel{\frac{\Delta p}{\norm{\Delta p}}} \nonumber\\
+					u_{k} & = u_{k-1} +
+					\begin{cases}
+						1 &	\text{if } b_{k}^{*}-\frac{l}{2} > 0 \\
+					   -1 &	\text{otherwise}
+					\end{cases}
+				\end{eqnarray}
 
+			Here, planned paths and the height-map surface are shown with respect to real-wolrd coordinates.
 				\begin{figure}
 					\centering
 					\fbox{\includegraphics[width=1.00\textwidth]{terrain_path_1.png}}
-					\caption{Path planned over $\mmathcal{M}$ with $d_{w}=1$.}
+					\caption{Path planned over $\mmathcal{M}$ with $d_{w}=d_{u}=1$.}
 					\label{fig::terrain_path_1}
 				\end{figure}
 				\begin{figure}
 					\centering
 					\fbox{\includegraphics[width=1.00\textwidth]{terrain_path_2.png}}
-					\caption{Path planned over $\mmathcal{M}$ with $d_{w}=5$.}
+					\caption{Path planned over $\mmathcal{M}$ with $d_{w}=d_{u}=5$.}
 					\label{fig::terrain_path_2}
 				\end{figure}
 				\begin{figure}
 					\centering
 					\fbox{\includegraphics[width=1.00\textwidth]{terrain_path_3.png}}
-					\caption{Path planned over $\mmathcal{M}$ with $d_{w}=15$.}
+					\caption{Path planned over $\mmathcal{M}$ with $d_{w}=d_{u}=15$.}
 					\label{fig::terrain_path_3}
 				\end{figure}
 				\begin{figure}
 					\centering
 					\fbox{\includegraphics[width=1.00\textwidth]{terrain_path_4.png}}
-					\caption{Path planned over $\mmathcal{M}$ with $d_{w}=30$.}
+					\caption{Path planned over $\mmathcal{M}$ with $d_{w}=d_{u}=30$.}
 					\label{fig::terrain_path_4}
 				\end{figure}
 
@@ -391,10 +408,10 @@
 					\centering
 					\begin{tabularx}{\textwidth}{|C{0.25}||C{0.15}|C{0.15}|C{0.15}|C{0.15}|C{0.15}|}\hline
 									& 	Trial-1		&	Trial-2 &	Trial-3 &	Trial-4 \\ \hline \hline
-						$d_{w}=1$ 	&	24.9012		& 	25.1534	& 	28.9889	& 	29.9231	\\ \hline
-						$d_{w}=5$ 	&	20.2524		& 	21.8537	& 	23.8874	& 	20.7319	\\ \hline
-						$d_{w}=15$ 	&	16.8602		& 	21.8307	& 	19.4236	& 	23.5314	\\ \hline
-						$d_{w}=30$ 	&	19.3791		& 	19.0536	& 	23.6496	& 	23.6142	\\ \hline
+						$d_{w}=d_{u}=1$ 	&	24.9012		& 	25.1534	& 	28.9889	& 	29.9231	\\ \hline
+						$d_{w}=d_{u}=5$ 	&	20.2524		& 	21.8537	& 	23.8874	& 	20.7319	\\ \hline
+						$d_{w}=d_{u}=15$ 	&	16.8602		& 	21.8307	& 	19.4236	& 	23.5314	\\ \hline
+						$d_{w}=d_{u}=30$ 	&	19.3791		& 	19.0536	& 	23.6496	& 	23.6142	\\ \hline
 					\end{tabularx}
 					\caption{Sum of costs, $J(N)$ for four different initial conditions for various optimization windows, $d_{w}$.}
 					\label{tab::DefaultStance}

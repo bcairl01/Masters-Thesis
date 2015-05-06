@@ -71,7 +71,7 @@
 \contentsline {subsection}{\numberline {6.2.2}Height-map Generation from a 3D point cloud}{83}
 \contentsline {subsection}{\numberline {6.2.3}An approach for cost assignment from a Height-map}{86}
 \contentsline {subsection}{\numberline {6.2.4}A sliding-window approach for sub-optimal rough terrain planning}{90}
-\contentsline {subsection}{\numberline {6.2.5}Surface Reconstruction}{90}
+\contentsline {subsection}{\numberline {6.2.5}Surface Reconstruction}{95}
 \contentsline {chapter}{\numberline {VII. }Concluding Remarks}{99}
 \contentsline {chapter}{\numberline {A. }Leg Jacobian with respect to frame $O_{i,0}$}{102}
 \contentsline {chapter}{\numberline {B. }Fixed-base Leg Dynamics}{103}

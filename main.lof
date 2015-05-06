@@ -45,10 +45,10 @@
 \contentsline {figure}{\numberline {39}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{86}
 \contentsline {figure}{\numberline {40}{\ignorespaces Height-map showing terrain variation in the $z_{{\cal M}}$ direction.\relax }}{87}
 \contentsline {figure}{\numberline {41}{\ignorespaces Projections of a sample cost map generated from the height-map shown in Figure\nobreakspace {}39\hbox {}.\relax }}{89}
-\contentsline {figure}{\numberline {42}{\ignorespaces Path planned over ${\cal M}$ with $d_{w}=1$.\relax }}{91}
-\contentsline {figure}{\numberline {43}{\ignorespaces Path planned over ${\cal M}$ with $d_{w}=5$.\relax }}{92}
-\contentsline {figure}{\numberline {44}{\ignorespaces Path planned over ${\cal M}$ with $d_{w}=15$.\relax }}{93}
-\contentsline {figure}{\numberline {45}{\ignorespaces Path planned over ${\cal M}$ with $d_{w}=30$.\relax }}{94}
+\contentsline {figure}{\numberline {42}{\ignorespaces Path planned over ${\cal M}$ with $d_{w}=d_{u}=1$.\relax }}{91}
+\contentsline {figure}{\numberline {43}{\ignorespaces Path planned over ${\cal M}$ with $d_{w}=d_{u}=5$.\relax }}{92}
+\contentsline {figure}{\numberline {44}{\ignorespaces Path planned over ${\cal M}$ with $d_{w}=d_{u}=15$.\relax }}{93}
+\contentsline {figure}{\numberline {45}{\ignorespaces Path planned over ${\cal M}$ with $d_{w}=d_{u}=30$.\relax }}{94}
 \contentsline {figure}{\numberline {46}{\ignorespaces Point cloud generated from sequential scans of a room showing flat-surface candidates \emph {(top)} and 3D Point Cloud with normal estimation \emph {(bottom)}.\relax }}{97}
 \contentsline {figure}{\numberline {47}{\ignorespaces Point cloud generated from sequential scans of a floor with obstacles showing flat-surface candidates \emph {(top)} and 3D Point Cloud with normal estimation \emph {(bottom)}.\relax }}{98}
 \addvspace {10pt}
