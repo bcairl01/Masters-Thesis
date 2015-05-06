@@ -69,7 +69,7 @@
 \contentsline {section}{\numberline {6.2}Towards Rough Terrain Navigation}{81}
 \contentsline {subsection}{\numberline {6.2.1}Terrain Mapping from 2D scans}{81}
 \contentsline {subsection}{\numberline {6.2.2}Height-map Generation from a 3D point cloud}{83}
-\contentsline {subsection}{\numberline {6.2.3}An approach for cost assignment from a Height-map}{86}
+\contentsline {subsection}{\numberline {6.2.3}An approach for cost assignment from a height-map}{86}
 \contentsline {subsection}{\numberline {6.2.4}A sliding-window approach for sub-optimal rough terrain planning}{90}
 \contentsline {subsection}{\numberline {6.2.5}Surface Reconstruction}{95}
 \contentsline {chapter}{\numberline {VII. }Concluding Remarks}{99}

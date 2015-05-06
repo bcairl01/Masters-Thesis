@@ -416,6 +416,12 @@ G.~Bradski and A.~Kaehler.
 \newblock {\em {L}earning {O}pen{CV}}, chapter {I}mage {M}orphology.
 \newblock {O}’{R}eilly {M}edia, 2008.
 
+\bibitem{Hart1968}
+P.E. Hart, N.J. Nilsson, and B.~Raphael.
+\newblock A formal basis for the heuristic determination of minimum cost paths.
+\newblock {\em Systems Science and Cybernetics, IEEE Transactions on},
+  4(2):100--107, July 1968.
+
 \bibitem{Mitra2003}
 Niloy~J. Mitra and An~Nguyen.
 \newblock Estimating surface normals in noisy point cloud data.

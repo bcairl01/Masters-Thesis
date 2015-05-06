@@ -44,7 +44,7 @@
 \contentsline {figure}{\numberline {38}{\ignorespaces Original 3D point-cloud of terrain patch \emph {(top)} and corresponding view from robot's on-board camera \emph {(bottom)}.\relax }}{84}
 \contentsline {figure}{\numberline {39}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{86}
 \contentsline {figure}{\numberline {40}{\ignorespaces Height-map showing terrain variation in the $z_{{\cal M}}$ direction.\relax }}{87}
-\contentsline {figure}{\numberline {41}{\ignorespaces Projections of a sample cost map generated from the height-map shown in Figure\nobreakspace {}39\hbox {}.\relax }}{89}
+\contentsline {figure}{\numberline {41}{\ignorespaces Projections of a sample cost-tensor generated from the height-map shown in Figure\nobreakspace {}39\hbox {}.\relax }}{89}
 \contentsline {figure}{\numberline {42}{\ignorespaces Path planned over ${\cal M}$ with $d_{w}=d_{u}=1$.\relax }}{91}
 \contentsline {figure}{\numberline {43}{\ignorespaces Path planned over ${\cal M}$ with $d_{w}=d_{u}=5$.\relax }}{92}
 \contentsline {figure}{\numberline {44}{\ignorespaces Path planned over ${\cal M}$ with $d_{w}=d_{u}=15$.\relax }}{93}
