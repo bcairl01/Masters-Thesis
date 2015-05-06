@@ -40,7 +40,7 @@
 \contentsline {chapter}{\numberline {IV. }System Modeling}{37}
 \contentsline {section}{\numberline {4.1}Kinematic Model}{37}
 \contentsline {subsection}{\numberline {4.1.1}Forward Position Kinematics}{37}
-\contentsline {subsubsection}{A Note about Foot Localization in the Robot-Relative Frames}{40}
+\contentsline {subsubsection}{A Note about foot localization in the robot-relative frame, $O_{b^{'}}$}{40}
 \contentsline {subsection}{\numberline {4.1.2}Inverse Position Kinematics}{41}
 \contentsline {subsubsection}{Range of Motion}{42}
 \contentsline {subsection}{\numberline {4.1.3}Velocity Kinematics}{43}
@@ -71,12 +71,12 @@
 \contentsline {subsection}{\numberline {6.2.2}Height-map Generation from a 3D point cloud}{83}
 \contentsline {subsection}{\numberline {6.2.3}An approach for cost assignment from a height-map}{87}
 \contentsline {subsection}{\numberline {6.2.4}A sliding-window approach for sub-optimal rough terrain planning}{90}
-\contentsline {subsection}{\numberline {6.2.5}Surface Reconstruction}{95}
-\contentsline {chapter}{\numberline {VII. }Concluding Remarks}{99}
-\contentsline {chapter}{\numberline {A. }Leg Jacobian with respect to frame $O_{i,0}$}{102}
-\contentsline {chapter}{\numberline {B. }Fixed-base Leg Dynamics}{103}
-\contentsline {subsubsection}{General Form}{103}
-\contentsline {subsubsection}{Mass Matrix, $M\left (q_{i}\right )$}{103}
-\contentsline {subsubsection}{Correolis Matrix, $C\left (q_{i},\mathaccentV {dot}05F{q}_{i}\right )$}{104}
-\contentsline {subsubsection}{Gravity Matrix, $G\left (q_{i},\mathaccentV {vec}17E{g}\right )$}{105}
-\contentsline {chapter}{\numberline {C. }Summary of Trignometric Abbreviations}{106}
+\contentsline {subsection}{\numberline {6.2.5}Surface Reconstruction}{91}
+\contentsline {chapter}{\numberline {VII. }Concluding Remarks}{100}
+\contentsline {chapter}{\numberline {A. }Leg Jacobian with respect to frame $O_{i,0}$}{103}
+\contentsline {chapter}{\numberline {B. }Fixed-base Leg Dynamics}{104}
+\contentsline {subsubsection}{General Form}{104}
+\contentsline {subsubsection}{Mass Matrix, $M\left (q_{i}\right )$}{104}
+\contentsline {subsubsection}{Correolis Matrix, $C\left (q_{i},\mathaccentV {dot}05F{q}_{i}\right )$}{105}
+\contentsline {subsubsection}{Gravity Matrix, $G\left (q_{i},\mathaccentV {vec}17E{g}\right )$}{106}
+\contentsline {chapter}{\numberline {C. }Summary of Trignometric Abbreviations}{107}

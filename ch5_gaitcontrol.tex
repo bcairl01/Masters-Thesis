@@ -272,15 +272,15 @@
 				\label{eq::Levers}
 			\end{eqnarray*}
 		with $m_{b}$, $m_{i,j}^{J}$, $m_{i,j}^{L}$, $m_{i,e}$ represent the mass of the main body; the mass of each joint; the mass of each link; the mass of each foot, respectively. $\mu_{i}$ is included in the above formulation such that only stepping (non-contacting) legs contribute to  $\tau_{legs}$. It should be noted that the superscript ${b'}$ denotes that each particle considered in this controller is defined with respect to the robot-relative frame $O_{b'}$ defined in Section \ref{sec::system_kinematics}. This allows the control routine to be performed without explicit knowledge of robot's absolute position in $O_{0}$. The estimated center of gravity in $O_{b'}$, $\hat{p}_{COG}^{b'}$, is generated as follows:
-			\begin{eqnarray*}
+			\begin{eqnarray}
 				\hat{p}_{COG}^{b'} 	& = & \frac{1}{m_{T}}\wrap{ m_{b}p_{b}^{b'} + \sum_{i=1}^{4} \wrap{m_{i,e}{p}_{i,e}^{b'} + \sum_{j=1}^{4} \wrap{  m_{i,j}^{J}{p}_{i,j}^{b'} +  m_{i,j}^{L}{p}_{i,j}^{b',L} } }} 	\nonumber \\
 				{p}_{i,j}^{L} 	& = & 
 					\begin{cases}
 					{ 0.5  \wrap{{p}_{i,j+1}^{b'}-{p}_{i,j}^{b'}} + {p}_{i,j}^{b'} } 	&\text{if } j < 4 \\
 					{ 0.5  \wrap{{p}_{i,e}^{b'}-{p}_{i,j}^{b'}} + {p}_{i,j}^{b'} } 		&\text{if } j = 4
-					\end{cases} \nonumber
+					\end{cases}
 				\label{eq::cog_estimate}
-			\end{eqnarray*}
+			\end{eqnarray}
 		where
 			\begin{equation}
 				m_{T} = m_{b} + \sum_{i=1}^{4} \wrap{m_{i,e} + \sum_{j=1}^{4} \wrap{  m_{i,j}^{J} +  m_{i,j}^{L} } }

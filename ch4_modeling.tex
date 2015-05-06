@@ -147,7 +147,7 @@
 			where $\Delta {p}_{i,e}$ is a random error which arises from variations due to noise in sensed joint positions, as well as error in the estimates $\hat{p}_{b}$ and $\hat{\theta}_{b}$.
 
 
-			\subsubsection{A Note about Foot Localization in the Robot-Relative Frames}
+			\subsubsection{A Note about foot localization in the robot-relative frame, $O_{b^{'}}$}
 
 			Using the previously defined forward kinematics model and the relationships defined in \ref{eq::world_joint_positions} and \ref{eq::world_feet_positions}, the position of each joint and foot can be computed assuming the $p_{b}$ and $\theta_{b}$ are known (or can be estimated) in the frame $O_{0}$. Provided inertial feedback, trunk orientation, $\theta_{b}$, can be estimated by the use of an Extended Kalman Filter (EKF). $p_{b}$, however, requires more sophisticated localization measures, such as a Simultaneous Localization and Mapping (SLAM) scheme or absolute positioning via overhead camera or GPS. In lieu of an implementation for such a localization routine, it is convenient to generate foot positions estimate in a \emph{robot-relative} frame, $O_{b^{'}}$. This frame is not rigidly attached to the robot but moves along with the robot in $O_{0}$ according to the commanded translational velocity, $v^{r}$, and turning rate. $\omega^{r}$, administered to navigate the system. These values will be described in more detail in Chapter~\ref{ch::navigation}. Moreover, this frame has its own position relative to $O_{0}$, defined by the translation $p_{0}^{b'}$. $O_{b^{'}}$ is constantly aligned to $O_{0}$, with respect to rotation, making the rotation matrix which relates $O_{b^{'}}$ to $O_{0}$ the identity matrix.
 
