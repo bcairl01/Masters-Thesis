@@ -40,13 +40,13 @@
 \contentsline {figure}{\numberline {34}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential fields navigation scheme.\relax }}{77}
 \contentsline {figure}{\numberline {35}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and obstacles.\relax }}{78}
 \contentsline {figure}{\numberline {36}{\ignorespaces Path (shown in yellow) taken by robot through a real-life lab setting showing the robot's view of the goal marker.\relax }}{80}
-\contentsline {figure}{\numberline {37}{\ignorespaces LIDAR swept over a range of angles, $\theta _{b,x} \in [\theta _{b,x,1}^{r},\theta _{b,x,N}^{r}]$. \relax }}{81}
-\contentsline {figure}{\numberline {38}{\ignorespaces Original 3D point-cloud of terrain patch \emph {(top)} and corresponding view from robot's on-board camera \emph {(bottom)}.\relax }}{83}
-\contentsline {figure}{\numberline {39}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{85}
-\contentsline {figure}{\numberline {40}{\ignorespaces Height-map showing terrain variation in the $z_{{\cal M}}$ direction.\relax }}{85}
-\contentsline {figure}{\numberline {41}{\ignorespaces Projections of a sample cost map generated from the height-map shown in Figure\nobreakspace {}39\hbox {}.\relax }}{88}
-\contentsline {figure}{\numberline {42}{\ignorespaces Point cloud generated from sequential scans of a room showing flat-surface candidates \emph {(top)} and 3D Point Cloud with normal estimation \emph {(bottom)}.\relax }}{91}
-\contentsline {figure}{\numberline {43}{\ignorespaces Point cloud generated from sequential scans of a floor with obstacles showing flat-surface candidates \emph {(top)} and 3D Point Cloud with normal estimation \emph {(bottom)}.\relax }}{92}
+\contentsline {figure}{\numberline {37}{\ignorespaces LIDAR swept over a range of angles, $\theta _{b,x} \in [\theta _{b,x,1}^{r},\theta _{b,x,N}^{r}]$. \relax }}{82}
+\contentsline {figure}{\numberline {38}{\ignorespaces Original 3D point-cloud of terrain patch \emph {(top)} and corresponding view from robot's on-board camera \emph {(bottom)}.\relax }}{84}
+\contentsline {figure}{\numberline {39}{\ignorespaces Relative height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{86}
+\contentsline {figure}{\numberline {40}{\ignorespaces Height-map showing terrain variation in the $z_{{\cal M}}$ direction.\relax }}{87}
+\contentsline {figure}{\numberline {41}{\ignorespaces Projections of a sample cost map generated from the height-map shown in Figure\nobreakspace {}39\hbox {}.\relax }}{89}
+\contentsline {figure}{\numberline {42}{\ignorespaces Point cloud generated from sequential scans of a room showing flat-surface candidates \emph {(top)} and 3D Point Cloud with normal estimation \emph {(bottom)}.\relax }}{92}
+\contentsline {figure}{\numberline {43}{\ignorespaces Point cloud generated from sequential scans of a floor with obstacles showing flat-surface candidates \emph {(top)} and 3D Point Cloud with normal estimation \emph {(bottom)}.\relax }}{93}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
