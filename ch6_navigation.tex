@@ -159,7 +159,7 @@
 				\caption{LIDAR swept over a range of angles, $\theta_{b,x} \in [\theta_{b,x,1}^{r},\theta_{b,x,N}^{r}]$. }
 				\label{fig::sensor_sweep}
 			\end{figure}
-			The BlueFoot platform composes 3D point clouds from a series of swept 2D LIDAR scans and associated trunk orientation estimates, $\hat{\theta}_{b}$, which are generated using a calibrated EKF routine. LIDAR articulation is achieved by slowly pitching the trunk over an angular range $\theta_{b,x}\in[-\theta_{s,min},\theta_{s,max}]$ while keeping the platform's feet planted ($\theta_{b,x}=\xcomp{\theta_{b}}$). The angular trajectory of $\theta_{b,x}$ during sweeping is discretized into $K$ divisions, which defines the number scan-levels (angular resolution in about the $x$-axis) used in composing a 3D cloud. The rate of scan completion is dependent upon the single-scan rate of the LIDAR. Thus, the pitch of the trunk is controlled during a scanning routine as follows:
+			The BlueFoot platform composes 3D point clouds from a series of swept 2D LIDAR scans and associated trunk orientation estimates, $\hat{\theta}_{b}$, which are generated using a calibrated EKF routine. LIDAR articulation is achieved by slowly pitching the trunk over an angular range $\theta_{b,x}\in[-\theta_{s,min},\theta_{s,max}]$ while keeping the platform's feet planted ($\theta_{b,x}=\xcomp{\theta_{b}}$). The angular trajectory of $\theta_{b,x}$ is discretized into $K$ divisions, which defines the number scan-levels used in composing a 3D cloud, and further, an angular scan resolution about the $x$-axis. The rate of scan completion is dependent upon the spinning rate of the LIDAR. Thus, the pitch of the trunk is controlled during a scanning routine as follows:
 				\begin{equation}
 					\begin{split}
 					\theta_{b,x,k}^{*} &= 
@@ -172,20 +172,21 @@
 							\forall k &\in \{1,...,K\}
 					\end{split}
 				\end{equation}
-			where $k$ is a step-counter which is incremented each time the LIDAR completes a full scan; and $\alpha_{\theta}$ is a scalar, proportional gain factor. Given this formulation, the approximate rate of completion for a full 3D-scan, $\tilde{f}_{scan}$, is as follows:
+			where $k$ is a step-counter which is incremented each time the LIDAR completes a full scan cycle; and $\alpha_{\theta}$ is a scalar, proportional gain factor. Given this formulation, the approximate rate of completion for a full 3D-scan, $\tilde{f}_{scan}$, is as follows:
 				\begin{equation}
-					\tilde{f}_{scan}\approx\frac{1}{K}\frac{\Delta\theta_{LIDAR}}{\omega_{LIDAR}}
+					\tilde{f}_{scan}\approx\frac{1}{K}\frac{\Delta\theta_{L}}{\omega_{L}}
+					\label{eq::point_cloud_collection_rate}
 				\end{equation}
-			where $\Delta\theta_{LIDAR}$ and $\omega_{LIDAR}$ are the angular range and 2D scan-rate of the LIDAR, respectively.
+			where $\Delta\theta_{L}$ and $\omega_{L}$ are the angular range and spinning rate of the LIDAR, respectively.
 
-			As previously mentioned, particular trunk configurations are achieved as a aggregation of leg configurations. The inverse kinematics solution for each leg is solved, incorporating a desired trunk position and orientation, which can be used to yield particular trunk pose, as defined in Section~\ref{sec::inverse_position_kinematics}. Moreover, the sweeping (pitching) range which BlueFoot can achieve during a scanning sequence is limited by the kinematic-feasibility of each trunk pose that must be performed during the said sequence. For example, BlueFoot can pitch which cover a range of $\pm 30\text{ degrees}$ when configured in the default stance (see Table~\ref{tab::DefaultStance}).
+			As previously mentioned, particular trunk configurations are achieved as a aggregation of leg configurations. The inverse kinematics solution for each leg is solved, incorporating a desired trunk position and orientation, which can be used to yield particular trunk pose, as defined in Section~\ref{sec::inverse_position_kinematics}. Moreover, the sweeping (pitching) range which BlueFoot can achieve during a scanning sequence is limited by the kinematic-feasibility of each trunk \Kth pose that must be attained. For example, BlueFoot can pitch which cover a range of around $\pm 30\text{ degrees}$ when configured in its default stance (see Table~\ref{tab::DefaultStance}).
 
-			A single 2D scan is taken at each \Kth pose within the body-sweep trajectory. The newly acquired scan is transformed from the LIDAR sensor frame, $O_{L}$, to the world frame by a homogeneous transformation $H^{L}_{0}$ which is defined as follows
+			A single scan is taken at each \Kth pose of the sweeping trajectory. The newly acquired scan is transformed from the LIDAR sensor frame, $O_{L}$, to the world frame by a homogeneous transformation $H^{L}_{0}$ which is defined as follows
 				\begin{equation}
 					H^{L}_{0} = H^{L}_{b} H^{b}_{0}
 					\label{eq::world_to_sensor}
 				\end{equation}
-			where $H^{b}_{0}$ is a transformation from $O_{0}$ to the trunk frame $O_{b}$, as defined in Chapter \ref{ch::system_modeling}; and $H^{L}_{b}$ defines a transformation from the frame $O_{b}$ to the LIDAR frame, $O_{L}$. $H^{L}_{b}$ is necessary for knowing the position of the LIDAR head with respect world frame, as the sensor itself has some offset and rotation relative to the robot's body. Each 2D point from $x_{i} \in \emph{S}$ from the initial scan, $\emph{S}\subset \Re^{2}$, can then be transformed into a 3D scan segment, $\bar{S}_{k} \subset \Re^{3}$, in $O_{0}$ by:
+			where $H^{b}_{0}$ is a transformation from $O_{0}$ to the trunk frame $O_{b}$, as defined in Chapter \ref{ch::system_modeling}; and $H^{L}_{b}$ defines a transformation from the frame $O_{b}$ to the LIDAR frame, $O_{L}$. $H^{L}_{b}$ is necessary for knowing the position of the LIDAR head with respect world frame, as the sensor itself has some offset and rotation relative to the robot's body. Each 2D point from $x_{i} \in \emph{S}$ from a raw LIDAR scan, $\emph{S} \subset \Re^{2}$, is transformed into a 3D scan segment, $\bar{S}_{k} \subset \Re^{3}$, with respect to the frame $O_{0}$ by:
 				\begin{equation}
 					\left[
 						\begin{array}{c}
@@ -204,7 +205,7 @@
 			\begin{equation}
 				\bar{S} = \bigcup_{k=1}^{N_{s}} \bar{S}_{k}
 			\end{equation}
-			where $N_{s}$ defines the number of scans taken during the sweeping routine. For the sake of simplicity, it is assumed that the trunk's position, $p_{b}$, is fixed (system is completely ridged) during a swept-scan routine. In the results to be presented, this seems to be a reasonable assumption given that the platform is at rest and the trunk is pitched sufficiently slowly over the angular sweeping range. A slow sweep rate ensures that perturbations caused by vibrations incurred by trunk rotation and foot-slip are small, and thus do not cause for significant deviations in LIDAR scan points.
+			where $N_{s}$ defines the number of scans taken during the sweeping routine. For the sake of simplicity, it is assumed that the trunk's position, $p_{b}$, is fixed and the body is completely ridged during a 3D scanning routine. In the results to be presented, this seems to be a reasonable assumption given that the platform is not performing any walking manuevers and the trunk is pitched sufficiently slowly over the angular sweeping range. A slow sweep rate ensures that perturbations caused by vibrations incurred by trunk rotation and foot-slip are small, and thus do not cause for significant deviations in LIDAR scan points.
 				\begin{figure}[!h]
 					\centering
 					\fbox{\includegraphics[width=1.0\textwidth]{rough_terrain.png}}
@@ -215,14 +216,15 @@
 
 		\subsection{Height-map Generation from a 3D point cloud}
 			
-			3D point clouds can be represented as height-maps in a fictitious height-map coordinate system, $O_{\mmathcal{M}}$. These representations are convenient for use in planning as they can be used to assign costs to particular robot configurations during terrain traversal straightforward way. In implementation, height-maps are represented as a matrix $\mmathcal{M}\in \Re^{n\times m}$ with height elements $m_{i,j}$. A set of indices $\bar{p} = \{i,j\}$ represents a discrete, planar location with respect to the $O_{\mmathcal{M}}$ frame. In the sections to follow, the notations $m_{i,j}$ and $\mmathcal{M}(\bar{p})$ will be used interchangeably to represent a height value. 
+			3D point clouds can be represented as height-map. Here height-maps will be represented in a discrete space $\mmathbb{Z}^{\mmathcal{M}}\subset\mmathbb{Z}^{2}$ with an associated coordinate system, $O_{\mmathcal{M}}$. These representations are convenient for use in planning as they can be used to assign costs to robot transitions in straightforward way. Height-map information is represented as a matrix $\mmathcal{M}\in \Re^{n\times m}$ with height elements $m_{i,j}$. A set of indices $\bar{p} = \{i,j\}\in\mmathbb{Z}^{\mmathcal{M}}$ is used to represent the element $m_{i,j}$ and a planar location with respect to the $O_{\mmathcal{M}}$ frame. In the sections to follow, the notations $m_{i,j}$ and $\mmathcal{M}(\bar{p})$ will be used interchangeably to represent a height value from the height-map matrix $\mmathcal{M}$.
 
-			To create the height-map, a $w\times d$ region of interest (ROI),  with a relative origin $\bar{p}_{0}^{\bar{S}}$, is discretized in $(nm)$ subregions. The dimensions $w$ and $d$ represent lengths along $x$-axis and $y$-axis respectively. The notation $\mmathbb{R}^{\mmathcal{M}}\subset \Re^{3}$ will be used to represent the set of points contained within the ROI, and $\mmathbb{Z}^{\mmathcal{M}}$ will be used to represent its discretized analogue. An ROI from the source point cloud, $\bar{S}$, will be represented as $\bar{S}_{ROI}\subset\Re^{3}$. The location and size of this ROI would have to be determined with some auxiliary detection process. Such an algorithm must accomplish the following subtasks:
+			To create the height-map, a $w\times d$ region of interest (ROI) with a relative location $\bar{p}_{0}^{ROI}$ is first selected. This region is then discretized in $(nm)$ subregions. The dimensions $w$ and $d$ of the ROI represent lengths along $x$-axis and $y$-axis respectively. The notation $\mmathbb{R}^{\mmathcal{M}}\subset \Re^{3}$ will be used to represent the set of points contained within the ROI.  Moreover, the space $\mmathbb{Z}^{\mmathcal{M}}$ is used to represent a discretized analogue to $\mmathbb{R}^{\mmathcal{M}}$, where each position $\{i,j\}\in\mmathbb{Z}^{\mmathcal{M}}$ represents the \Ith, \Jth subregion of the ROI which has a height of $m_{i,j}$. An ROI from a source point cloud $\bar{S}$ will be represented as $\bar{S}_{ROI}\subset\Re^{3}$. It is assumed that the location, $\bar{p}_{0}^{ROI}$, and size of this ROI is determined via some auxiliary ROI detection algorithm. Such an algorithm must accomplish the following subtasks:
 			\begin{enumerate}
-				\item select an area with appropriately high terrain variation (large changes in gradient)
-				\item and determine the bounding region where this area.
+				\item select an area with appropriately high terrain variation (large changes in gradient),
+				\item determine $\bar{p}_{0}^{ROI}$,
+				\item and determine the bounding region of the ROI.
 			\end{enumerate}
-			For the results shown in this section, the evaluated ROI has been manually selected after an inspection of an existing 3D point cloud, as an adequate algorithm has yet to be implemented which fulfills the requirements of the detection task described. Such an algorithm would need to involve mechanisms for point cloud segmentation and feature evaluation. Additionally, images of the the robot's immediate terrain could be used to aid in this process by locating areas with high feature density incurred by terrain variations.
+			For the results shown in this section, the evaluated ROI has been manually selected after an inspection of an existing 3D point cloud, as an algorithm which fulfills the above mentioned detection tasks has yet to be explored under the scope of this project. %Such an algorithm would need to involve mechanisms for point cloud segmentation and feature evaluation. Additionally, images of the the robot's immediate terrain could be used to aid in this process by locating areas with high feature density incurred by terrain variations.
 
 			The point $\bar{p}\in\mmathbb{Z}^{\mmathcal{M}}$ is used to represent the location of a discrete subregion that is $(w/m) \times (d/n)$ area. A corresponding height for that subregion is stored in $m_{i,j}$, and is selected as the largest $z$-component of any point that falls within said subregion. The transformation from a point cloud element, $\bar{x}$, to an element within the discretized height-map frame can be described by:
 				\begin{equation}
@@ -257,7 +259,7 @@
 								0 & 0 & 1 \\
 								\end{array}
 							\right]
-							\wrap{\bar{x}-\bar{p}_{0}^{\bar{S}}}
+							\wrap{\bar{x}-\bar{p}_{0}^{ROI}}
 							+
 							\left[
 								\begin{array}{c}
@@ -272,7 +274,7 @@
 				\end{equation}
 			where $\ciel{*}$ is an element-wise vector ceiling function.
 
-			Depending on the density of the source point cloud, the aforementioned conversion process can produce relatively sparse height-maps. To deal with this, a dilation and smoothing routine is used to fill in gaps in $\mmathcal{M}$. During dilation, each non-zero height element within the map is expanded into a region around an existing element with non-zero value \cite{opencv_learn_immorph}. Dilation parameters are tuned so that semi-uniform map with minimal gaps between non-zero height elements is achieved. Finally, a median filter is applied to the dilated height-map to smooth transitions between height elements. The smoothing operation performed by the median filter is performed by replacing all values within a window of elements (usually forming a square region) with the middle-valued element within said window.
+			Depending on the density of the source point cloud, the basic height-map conversion process has the potential to produce relatively sparse height-maps. To deal with this, a dilation and smoothing routine is used to fill in gaps in $\mmathcal{M}$. During dilation, each non-zero height element within the map is expanded into a region around an existing element with non-zero value \cite{opencv_learn_immorph}. Dilation parameters are tuned so that uniform surface representation with minimal gaps between non-zero height elements is achieved. Finally, a median filter is applied to the dilated height-map to smooth transitions between height elements.
 				\begin{figure}[t!]
 					\centering
 					\fbox{\includegraphics[width=\textwidth]{terrain_grad_crop.png}}
