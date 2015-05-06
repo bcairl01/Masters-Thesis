@@ -69,13 +69,14 @@
 \contentsline {section}{\numberline {6.2}Towards Rough Terrain Navigation}{81}
 \contentsline {subsection}{\numberline {6.2.1}Terrain Mapping from 2D scans}{81}
 \contentsline {subsection}{\numberline {6.2.2}Height-map Generation from a 3D point cloud}{83}
-\contentsline {subsection}{\numberline {6.2.3}Generating a Cost-map from the Height-map}{86}
-\contentsline {subsection}{\numberline {6.2.4}Surface Reconstruction}{90}
-\contentsline {chapter}{\numberline {VII. }Concluding Remarks}{94}
-\contentsline {chapter}{\numberline {A. }Leg Jacobian with respect to frame $O_{i,0}$}{97}
-\contentsline {chapter}{\numberline {B. }Fixed-base Leg Dynamics}{98}
-\contentsline {subsubsection}{General Form}{98}
-\contentsline {subsubsection}{Mass Matrix, $M\left (q_{i}\right )$}{98}
-\contentsline {subsubsection}{Correolis Matrix, $C\left (q_{i},\mathaccentV {dot}05F{q}_{i}\right )$}{99}
-\contentsline {subsubsection}{Gravity Matrix, $G\left (q_{i},\mathaccentV {vec}17E{g}\right )$}{100}
-\contentsline {chapter}{\numberline {C. }Summary of Trignometric Abbreviations}{101}
+\contentsline {subsection}{\numberline {6.2.3}An approach for cost assignment from a Height-map}{86}
+\contentsline {subsection}{\numberline {6.2.4}A sliding-window approach for sub-optimal rough terrain planning}{90}
+\contentsline {subsection}{\numberline {6.2.5}Surface Reconstruction}{90}
+\contentsline {chapter}{\numberline {VII. }Concluding Remarks}{99}
+\contentsline {chapter}{\numberline {A. }Leg Jacobian with respect to frame $O_{i,0}$}{102}
+\contentsline {chapter}{\numberline {B. }Fixed-base Leg Dynamics}{103}
+\contentsline {subsubsection}{General Form}{103}
+\contentsline {subsubsection}{Mass Matrix, $M\left (q_{i}\right )$}{103}
+\contentsline {subsubsection}{Correolis Matrix, $C\left (q_{i},\mathaccentV {dot}05F{q}_{i}\right )$}{104}
+\contentsline {subsubsection}{Gravity Matrix, $G\left (q_{i},\mathaccentV {vec}17E{g}\right )$}{105}
+\contentsline {chapter}{\numberline {C. }Summary of Trignometric Abbreviations}{106}

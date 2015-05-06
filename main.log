@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  5 MAY 2015 21:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  6 MAY 2015 00:01
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -452,6 +452,9 @@ LaTeX Warning: Label `fig::dev_diagram' multiply defined.
 (C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.aux
 
+LaTeX Warning: Label `tab::DefaultStance' multiply defined.
+
+
 LaTeX Warning: Label `fig::surface_estimation' multiply defined.
 
 ) (C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.aux)
@@ -562,18 +565,9 @@ ra-tion \OT1/cmr/m/it/12 (left)\OT1/cmr/m/n/12 ; stereo-
 
 [7
 
-]
-
-LaTeX Warning: Reference `fig::narx100_a35' on page 70 undefined on input line 
-32.
-
-
-LaTeX Warning: Reference `fig::heightmap_terrain_patch' on page 89 undefined on
- input line 47.
-
-)
+] [8])
 \tf@lof=\write4
- [8] [9] (C:\Users\Brian\Desktop\Masters-Thesis\main.lot)
+ [9] (C:\Users\Brian\Desktop\Masters-Thesis\main.lot)
 \tf@lot=\write5
  [10
 
@@ -899,9 +893,6 @@ Package pdftex.def Info: controller_diagram.png used on input line 442.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Citation `Nissen03' on page 67 undefined on input line 450.
-
 [67] [68 <C:/Users/Brian/Desktop/Masters-Thesis/controller_diagram.png>]
 [69] <aux_V_100mms_nN_50_nL_2_nns.png, id=315, 578.16pt x 433.62pt>
 File: aux_V_100mms_nN_50_nL_2_nns.png Graphic file (type png)
@@ -1051,47 +1042,76 @@ File: cost_map.png Graphic file (type png)
 Package pdftex.def Info: cost_map.png used on input line 350.
 (pdftex.def)             Requested size: 433.62pt x 205.50113pt.
  [89 <C:/Users/Brian/Desktop/Masters-Thesis/cost_map.png>]
+<terrain_path_1.png, id=402, 1084.05pt x 1084.05pt>
+File: terrain_path_1.png Graphic file (type png)
+ <use terrain_path_1.png>
+Package pdftex.def Info: terrain_path_1.png used on input line 367.
+(pdftex.def)             Requested size: 433.62pt x 433.61232pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+<terrain_path_2.png, id=403, 1084.05pt x 1084.05pt>
+File: terrain_path_2.png Graphic file (type png)
+ <use terrain_path_2.png>
+Package pdftex.def Info: terrain_path_2.png used on input line 373.
+(pdftex.def)             Requested size: 433.62pt x 433.61232pt.
 
-[90] <surf_reconstruction.png, id=406, 963.6pt x 1228.59pt>
+<terrain_path_3.png, id=404, 1084.05pt x 1084.05pt>
+File: terrain_path_3.png Graphic file (type png)
+ <use terrain_path_3.png>
+Package pdftex.def Info: terrain_path_3.png used on input line 379.
+(pdftex.def)             Requested size: 433.62pt x 433.61232pt.
+
+<terrain_path_4.png, id=405, 1084.05pt x 1084.05pt>
+File: terrain_path_4.png Graphic file (type png)
+ <use terrain_path_4.png>
+Package pdftex.def Info: terrain_path_4.png used on input line 385.
+(pdftex.def)             Requested size: 433.62pt x 433.61232pt.
+
+Underfull \hbox (badness 10000) in alignment at lines 398--398
+[][][][][][]
+ []
+
+[90] [91 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_path_1.png>] [92 <C:/Us
+ers/Brian/Desktop/Masters-Thesis/terrain_path_2.png>] [93 <C:/Users/Brian/Deskt
+op/Masters-Thesis/terrain_path_3.png>] [94 <C:/Users/Brian/Desktop/Masters-Thes
+is/terrain_path_4.png>] [95]
+<surf_reconstruction.png, id=429, 963.6pt x 1228.59pt>
 File: surf_reconstruction.png Graphic file (type png)
 
 <use surf_reconstruction.png>
-Package pdftex.def Info: surf_reconstruction.png used on input line 392.
+Package pdftex.def Info: surf_reconstruction.png used on input line 433.
 (pdftex.def)             Requested size: 433.62pt x 552.8604pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<surf_reconstruction2.png, id=407, 963.6pt x 1228.59pt>
+<surf_reconstruction2.png, id=430, 963.6pt x 1228.59pt>
 File: surf_reconstruction2.png Graphic file (type png)
 
 <use surf_reconstruction2.png>
-Package pdftex.def Info: surf_reconstruction2.png used on input line 398.
+Package pdftex.def Info: surf_reconstruction2.png used on input line 439.
 (pdftex.def)             Requested size: 433.62pt x 552.8604pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [91]
+) [96]
 
-LaTeX Warning: Text page 92 contains only floats.
+LaTeX Warning: Text page 97 contains only floats.
 
-[92 <C:/Users/Brian/Desktop/Masters-Thesis/surf_reconstruction.png>]
+[97 <C:/Users/Brian/Desktop/Masters-Thesis/surf_reconstruction.png>]
 
-LaTeX Warning: Text page 93 contains only floats.
+LaTeX Warning: Text page 98 contains only floats.
 
-[93 <C:/Users/Brian/Desktop/Masters-Thesis/surf_reconstruction2.png>]
+[98 <C:/Users/Brian/Desktop/Masters-Thesis/surf_reconstruction2.png>]
 (C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.tex
 CHAPTER 7
-[94
+[99
 
 
 
-] [95]) [96] (C:\Users\Brian\Desktop\Masters-Thesis\appendix_a.tex
+] [100]) [101] (C:\Users\Brian\Desktop\Masters-Thesis\appendix_a.tex
 Appendix 1
-) [97
+) [102
 
 
 
@@ -1105,17 +1125,17 @@ Overfull \hbox (10.66757pt too wide) in paragraph at lines 75--75
 [] 
  []
 
-[98
+[103
 
 
 
 ]
 LaTeX Font Warning: Command \small invalid in math mode on input line 78.
- [99]) [100] (C:\Users\Brian\Desktop\Masters-Thesis\appendix_e.tex
+ [104]) [105] (C:\Users\Brian\Desktop\Masters-Thesis\appendix_e.tex
 Appendix 3
 LaTeX Font Warning: Command \small invalid in math mode on input line 20.
 LaTeX Font Warning: Command \small invalid in math mode on input line 20.
-) [101
+) [106
 
 
 
@@ -1127,7 +1147,7 @@ Missing character: There is no „ in font cmr12!
 Missing character: There is no â in font cmti12!
 Missing character: There is no € in font cmti12!
 Missing character: There is no “ in font cmti12!
- [102
+ [107
 
 ]
 Missing character: There is no â in font cmr12!
@@ -1139,11 +1159,11 @@ Missing character: There is no ” in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
- [103]
+ [108]
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ‡ in font cmr12!
- [104]
-[105]
+ [109]
+[110]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ­ in font cmr12!
 Missing character: There is no Ã in font cmr12!
@@ -1156,18 +1176,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 314--316
 []\OT1/cmr/m/n/12 wxWidgets, Cross-Platform GUI Li-brary, 2015.  [On-line;
  []
 
-[106]
+[111]
 Missing character: There is no Å in font cmr12!
 Missing character: There is no ™ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no  in font cmr12!
- [107]
+ [112]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no Ÿ in font cmr12!
-) [108] (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
+) [113] (C:\Users\Brian\Desktop\Masters-Thesis\main.aux
 (C:\Users\Brian\Desktop\Masters-Thesis\vita.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\publications.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\acknowledgements.aux)
@@ -1184,17 +1204,14 @@ Missing character: There is no Ÿ in font cmr12!
 (C:\Users\Brian\Desktop\Masters-Thesis\appendix_b.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\appendix_e.aux))
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6944 strings out of 493921
- 107074 string characters out of 3144877
- 191076 words of memory out of 3000000
- 9973 multiletter control sequences out of 15000+200000
+ 6968 strings out of 493921
+ 107594 string characters out of 3144877
+ 191300 words of memory out of 3000000
+ 9993 multiletter control sequences out of 15000+200000
  17683 words of font info for 67 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  46i,17n,42p,1853b,338s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1214,9 +1231,9 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (121 pages, 18468412 bytes).
+Output written on main.pdf (126 pages, 20317062 bytes).
 PDF statistics:
- 523 PDF objects out of 1000 (max. 8388607)
+ 546 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 221 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 241 words of extra memory for PDF output out of 10000 (max. 10000000)
 

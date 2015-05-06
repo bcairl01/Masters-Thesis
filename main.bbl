@@ -404,6 +404,13 @@ G.~D. Magoulas, M.~N. Vrahatis, and G.~S. Androulakis.
   learning rate adaptation methods.
 \newblock {\em Neural Comput.}, 11(7):1769--1796, oct 1999.
 
+\bibitem{Nissen03}
+S.~Nissen.
+\newblock Implementation of a fast artificial neural network library (fann).
+\newblock Technical report, Department of Computer Science University of
+  Copenhagen (DIKU), 2003.
+\newblock http://fann.sf.net.
+
 \bibitem{opencv_learn_immorph}
 G.~Bradski and A.~Kaehler.
 \newblock {\em {L}earning {O}pen{CV}}, chapter {I}mage {M}orphology.

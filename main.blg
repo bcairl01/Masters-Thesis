@@ -1,6 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: main.aux
+This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 A level-1 auxiliary file: vita.aux
 A level-1 auxiliary file: publications.aux
 A level-1 auxiliary file: acknowledgements.aux
@@ -64,45 +62,4 @@ while executing---line 944 of file unsrt.bst
 Warning--empty journal in Park2014
 Name 2 in "Kolter, J.Z. and Youngjun Kim, and Ng, A.Y." has a comma at the end for entry Kolter2009
 while executing---line 944 of file unsrt.bst
-You've used 68 entries,
-            1791 wiz_defined-function locations,
-            934 strings with 17271 characters,
-and the built_in function-call counts, 20212 in all, are:
-= -- 1855
-> -- 691
-< -- 50
-+ -- 256
-- -- 188
-* -- 1327
-:= -- 2817
-add.period$ -- 216
-call.type$ -- 68
-change.case$ -- 63
-chr.to.int$ -- 0
-cite$ -- 76
-duplicate$ -- 998
-empty$ -- 2052
-format.name$ -- 188
-if$ -- 4838
-int.to.chr$ -- 0
-int.to.str$ -- 68
-missing$ -- 62
-newline$ -- 341
-num.names$ -- 81
-pop$ -- 275
-preamble$ -- 1
-purify$ -- 0
-quote$ -- 0
-skip$ -- 640
-stack$ -- 0
-substring$ -- 1603
-swap$ -- 404
-text.length$ -- 50
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
-warning$ -- 8
-while$ -- 162
-width$ -- 70
-write$ -- 764
 (There were 11 error messages)

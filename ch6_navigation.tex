@@ -60,7 +60,7 @@
 					0 	& \text{otherwise}.
 					\end{cases}
 				\end{eqnarray}
-			where $\xcomp{x}$ and $\ycomp{x}$ are the $x$-axis and $y$-axis coordinates of the vector argument $x\in\Re^{3}$; and $\alpha_{g}\leq1$ such that $g(x,\psi)$ is concave with respect to $\alpha_{g}$. This function is used to give priority points which exists in a frontward facing angular window, spanning $2 \psi$, centered at the $y$-axis which emanates from $O_{L}$. The reasoning for incoperating $g(x,\psi)$ is as follows: if the robot is roaming in a particular direction and detects close-by obstructions which exist at its sides, it is not necessary to perform an manuvers to avoid these obstacles as they will not impede upon the robot's immediate foward motion. The same is true for obstacles which are behind the robot, which will be completely disregarded according to the definition of $g(x,\psi)$ provided above. Only if the robot faces an obstacle which is directly ahead of it should it turn away to avert a potential collision. Thus, the parameter $\alpha_{g}$ in $g(x,\psi)$ is tuned to adjust the amount to which points located to the left and right sides of the robot are ``ignored" with respect to thier angular position from the front of the LIDAR head.
+			where $\xcomp{x}$ and $\ycomp{x}$ are the $x$-axis and $y$-axis coordinates of the vector argument $x\in\Re^{3}$; and $\alpha_{g}\leq1$ such that $g(x,\psi)$ is concave with respect to $\alpha_{g}$. This function is used to give priority points which exists in a frontward facing angular window, spanning $2 \psi$, centered at the $y$-axis which emanates from $O_{L}$. The reasoning for incorporating $g(x,\psi)$ is as follows: if the robot is roaming in a particular direction and detects close-by obstructions which exist at its sides, it is not necessary to perform an maneuvers to avoid these obstacles as they will not impede upon the robot's immediate forward motion. The same is true for obstacles which are behind the robot, which will be completely disregarded according to the definition of $g(x,\psi)$ provided above. Only if the robot faces an obstacle which is directly ahead of it should it turn away to avert a potential collision. Thus, the parameter $\alpha_{g}$ in $g(x,\psi)$ is tuned to adjust the amount to which points located to the left and right sides of the robot are ``ignored" with respect to their angular position from the front of the LIDAR head.
 
 			%Considering only frontward points serves to reduce the potential for getting stuck in local minima, namely when the robot moves into an area where it faces equal potential from all sides. 
 			%In the event that the robot does get stuck in a potential minima, a ``stuck" detection algorithm has been implemented. As the name suggests, this algorithm first detects if the robot is stuck in a local minima of the potential field based on a window of command histories.
@@ -306,11 +306,11 @@
 
 
 
-		\subsection{Generating a Cost-map from the Height-map}
+		\subsection{An approach for cost assignment from a Height-map}
 
-			A discrete height-map space can be converted to a cost-space representation for the purpose of foot-placement planning over rough terrain. Here, a discrete cost-map is represented by ${\cal C}\in\Re^{n\times m\times l}$ tensor, where each tensor element represents a cost-to-go, or a transition cost. The first and second dimensions of ${\cal C}$ (of size $n$ and $m$) directly correspond to the width and depth of the discretized height-map space $\mathbb{Z}^{\mmathcal{M}}$. The third dimension represents a discretization of the robot's yaw state, $\theta_{b,z}\in[-\pi,\pi]$ into $l$ subdivisions, and is used to represent variations of the robot's yaw with respect to $O_{\mmathcal{M}}$ in the height-map space. We define a mapping from the height-map space to a the cost-space as follows:
+			A discrete height-map space can be converted to a cost-space representation for the purpose of foot-placement planning over rough terrain. Here, a discrete cost-map is represented by $\mmathcal{C}\in\Re^{n\times m\times l}$ tensor, where each tensor element represents a cost-to-go, or a transition cost. The first and second dimensions of $\mmathcal{C}$ (of size $n$ and $m$) directly correspond to the width and depth of the discretized height-map space $\mathbb{Z}^{\mmathcal{M}}$. The third dimension represents a discretization of the robot's yaw state, $\theta_{b,z}\in[-\pi,\pi]$ into $l$ subdivisions, and is used to represent variations of the robot's yaw with respect to $O_{\mmathcal{M}}$ in the height-map space. A cost-map is generated from a height-map, $\mmathcal{M}$, as follows:
 				\begin{equation}
-					\setwrap{ {\cal C} = f(\mmathcal{M},\Gamma)\text{ }:\text{ }\Re^{n\times m} \rightarrow \Re^{n\times m \times l} }
+					\setwrap{ \mmathcal{C} = f(\mmathcal{M},\Gamma)\text{ }:\text{ }\Re^{n\times m} \rightarrow \Re^{n\times m \times l} }
 					\label{eq::cost_mapping}
 				\end{equation}
 			where $\Gamma$ is a static configuration matrix used to describe the nominal spacing between the robot's feet. $\Gamma$ is composed as follows:
@@ -320,7 +320,7 @@
 				\end{equation*}
 			where $\bar{p}_{v,e}^{\mmathcal{M}}=[i_{v},j_{v}]^{T}\in\mmathbb{Z}^{\mmathcal{M}}$ represent the position of each $v^{th}$ foot in the height-map space with $i_{v}\in \setwrap{1,...,m}$ and $j_{v}\in\setwrap{1,...,n}$. By formulating cost with respect to static foot configurations, planning is simplified to finding a trajectory for body position. Target leg positions are then generated from planned body locations by $\Gamma$.
 
-			This conversion mapping, $f(\mmathcal{M},\Gamma)$, has been formulated with respect to three main cost elements:
+			This mapping, $f(\mmathcal{M},\Gamma)$, has been formulated with respect to three main cost elements:
 				\begin{enumerate}
 					\item variation in attainable foothold heights between all feet
 					\item terrain steepness around any foothold, given a particular configuration
@@ -328,7 +328,7 @@
 				\end{enumerate}
 			The first cost element is chosen to simplify to problem of ensuring the robot plans to walk over relatively level terrain by penalizing height variation between planned foothold location. This also aids in ensuring that the kinematic workspace of each leg is not compromised by reducing the amount of ``stretching" the robot has to do to attain particular configuration upon the terrain. The second cost element is used deter the robot from attempting to travel atop overly steep terrain. The final cost element is used to ensure the robot does not plan to perform any large changes in direction while traversing the terrain, which could cause for needless motion (perhaps even loops) in the planned path. 
 
-			To define perform the conversion between $\mmathcal{M}$ and ${\cal C}$, we first define a \emph{moving} foothold matrix $\Gamma'(\bar{p}^{\mmathcal{M}}_{b},u) \in \mmathbb{Z}^{2\times4}$, as follows:
+			To define perform the conversion between $\mmathcal{M}$ and $\mmathcal{C}$, we first define a \emph{moving} foothold matrix $\Gamma'(\bar{p}^{\mmathcal{M}}_{b},u) \in \mmathbb{Z}^{2\times4}$, as follows:
 				\begin{equation}
 					\Gamma'(\bar{p}^{\mmathcal{M}}_{b},u) = \ciel{ R_{z}^{\mmathcal{M}}(\gamma(u))\Gamma } + \bar{p}^{\mmathcal{M}}_{b} B \\
 				\end{equation}
@@ -341,9 +341,9 @@
 					%%
 					\delta \mmathcal{H}_{v} 	&=& \nabla \mmathcal{M}(\col{\Gamma'}{v}) \nonumber\\
 					%%
-					{\cal C}(\bar{p}^{\mmathcal{M}}_{b},u) 		&=& k_{\text{var}} \text{var}(\mmathcal{H}) + k_{\delta}\sum_{v=1}^{4} \delta \mmathcal{H}_{v}^{2} + k_{\theta} \gamma^{2}(u) 
+					\mmathcal{C}(\bar{p}^{\mmathcal{M}}_{b},u) 		&=& k_{\text{var}} \text{var}(\mmathcal{H}) + k_{\delta}\sum_{v=1}^{4} \delta \mmathcal{H}_{v}^{2} + k_{\theta} \gamma^{2}(u) 
 				\end{eqnarray}
-			$\forall \bar{p}^{\mmathcal{M}}_{b} \in \mathbb{Z}^{\mmathcal{M}}$, $\forall u \in \setwrap{1,...,l}$, and  $v \in \setwrap{1,2,3,4}$, where $\mmathcal{H}$ is a collection heights at each foothold position in $\mmathcal{M}$; $\delta\mmathcal{H}$ is a collection of corresponding elements from the gradient matrix $\nabla \mmathcal{M}$; $\text{var}(*)$ is generates the variance between the elements of a vector argument $(*)$; $k_{\text{var}}$, $k_{\delta}$ and $k_{\theta}$ are scalar weighting parameters; and $\col{*}{v}$ extracts the $v^{th}$ column from the matrix argument $(*)$. Figure~\ref{fig::cost_map} shows sample cost-map visualizations for fixed robot orientations of $\theta_{z}=0$ and $\theta_{z}=\pi/4$. This cost map was generated using the height-map and corresponding height-map gradient shown in Figure~\ref{fig::heightmap_terrain_patch}.
+			$\forall \bar{p}^{\mmathcal{M}}_{b} \in \mathbb{Z}^{\mmathcal{M}}$, $\forall u \in \setwrap{1,...,l}$, and  $v \in \setwrap{1,2,3,4}$, where $\mmathcal{H}$ is a collection heights at each foothold position in $\mmathcal{M}$; $\delta\mmathcal{H}$ is a collection of corresponding elements from the gradient matrix $\nabla \mmathcal{M}$; $\text{var}(*)$ is generates the variance between the elements of a vector argument $(*)$; $k_{\text{var}}$, $k_{\delta}$ and $k_{\theta}$ are scalar weighting parameters; and $\col{*}{v}$ extracts the $v^{th}$ column from the matrix argument $(*)$. Figure~\ref{fig::cost_map} shows sample cost-map visualizations for fixed robot orientations of $\theta_{z}=0$ and $\theta_{z}=\pi/4$. The configuration matrix, $\Gamma$, is setup such that feet of the robot are spaced $330\text{ mm}$ apart, with respect to $O_{0}$. This is corresponds to the nominal foot spacing of BlueFoot's default stance. The cost map was generated using the height-map and corresponding height-map gradient shown in Figure~\ref{fig::heightmap_terrain_patch}.
 
 				\begin{figure}[!h]
 					\centering
@@ -352,12 +352,53 @@
 					\label{fig::cost_map}
 				\end{figure}
 
-			${\cal C}$ is used to generate an optimal, $N$-step path, which is comprised of $N$, discrete robot configurations. Moreover path is planned over rough terrain by optimizing a finite, $N$-step cost functional defined as follows:
+			$\mmathcal{C}$ is used to generate an optimal, $N$-step path, which is comprised of $N$, discrete robot configurations. Moreover path is planned over rough terrain by optimizing a finite, $N$-step cost functional defined as follows:
 				\begin{equation}			
-					J(N) = \sum_{k=0}^N {\cal C}\wrap{\bar{p}^{\mmathcal{M}}_{b,k},u_{k}}
+					J(N) = \sum_{k=0}^N \mmathcal{C}\wrap{\bar{p}^{\mmathcal{M}}_{b,k},u_{k}}
 				\end{equation}	
 			An optimal path can be found over the discretized space using an $A^{*}$-based path planning algorithm, for example. This method has yet to be fully explored. Here, a sub-optimal approach will be utilized to  Paths generated from the cost map would be mapped back into $O_{0}$, using the corresponding inverse mappings of \ref{eq::toheightmapframe} and $\gamma\wrap{u}$, and interpolated to generate smooth trajectories.
-				
+			
+
+			\subsection{A sliding-window approach for sub-optimal rough terrain planning}
+
+
+				\begin{figure}
+					\centering
+					\fbox{\includegraphics[width=1.00\textwidth]{terrain_path_1.png}}
+					\caption{Path planned over $\mmathcal{M}$ with $d_{w}=1$.}
+					\label{fig::terrain_path_1}
+				\end{figure}
+				\begin{figure}
+					\centering
+					\fbox{\includegraphics[width=1.00\textwidth]{terrain_path_2.png}}
+					\caption{Path planned over $\mmathcal{M}$ with $d_{w}=5$.}
+					\label{fig::terrain_path_2}
+				\end{figure}
+				\begin{figure}
+					\centering
+					\fbox{\includegraphics[width=1.00\textwidth]{terrain_path_3.png}}
+					\caption{Path planned over $\mmathcal{M}$ with $d_{w}=15$.}
+					\label{fig::terrain_path_3}
+				\end{figure}
+				\begin{figure}
+					\centering
+					\fbox{\includegraphics[width=1.00\textwidth]{terrain_path_4.png}}
+					\caption{Path planned over $\mmathcal{M}$ with $d_{w}=30$.}
+					\label{fig::terrain_path_4}
+				\end{figure}
+
+				\begin{table}[h]
+					\centering
+					\begin{tabularx}{\textwidth}{|C{0.25}||C{0.15}|C{0.15}|C{0.15}|C{0.15}|C{0.15}|}\hline
+									& 	Trial-1		&	Trial-2 &	Trial-3 &	Trial-4 \\ \hline \hline
+						$d_{w}=1$ 	&	24.9012		& 	25.1534	& 	28.9889	& 	29.9231	\\ \hline
+						$d_{w}=5$ 	&	20.2524		& 	21.8537	& 	23.8874	& 	20.7319	\\ \hline
+						$d_{w}=15$ 	&	16.8602		& 	21.8307	& 	19.4236	& 	23.5314	\\ \hline
+						$d_{w}=30$ 	&	19.3791		& 	19.0536	& 	23.6496	& 	23.6142	\\ \hline
+					\end{tabularx}
+					\caption{Sum of costs, $J(N)$ for four different initial conditions for various optimization windows, $d_{w}$.}
+					\label{tab::DefaultStance}
+				\end{table}		
 
 
 		\subsection{Surface Reconstruction}
