@@ -37,7 +37,7 @@
 \contentsline {figure}{\numberline {32}{\ignorespaces Trunk orientation during 100 $\frac {mm}{s}$ gait with $\alpha = 0.35$\relax }}{72}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {33}{\ignorespaces Potential field, $f(x)$ with $d_{min}=0.4\text { m}$ around environmental obstacles.\relax }}{75}
-\contentsline {figure}{\numberline {34}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential fields navigation scheme.\relax }}{77}
+\contentsline {figure}{\numberline {34}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential-fields navigation scheme.\relax }}{77}
 \contentsline {figure}{\numberline {35}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and obstacles.\relax }}{78}
 \contentsline {figure}{\numberline {36}{\ignorespaces Path (shown in yellow) taken by robot through a real-life lab setting showing the robot's view of the goal marker.\relax }}{80}
 \contentsline {figure}{\numberline {37}{\ignorespaces LIDAR swept over a range of angles, $\theta _{b,x} \in [\theta _{b,x,1}^{r},\theta _{b,x,N}^{r}]$. \relax }}{82}
