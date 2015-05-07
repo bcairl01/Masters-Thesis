@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  6 MAY 2015 19:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  6 MAY 2015 23:04
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -456,11 +456,8 @@ LaTeX Warning: Label `fig::dev_diagram' multiply defined.
 ) (C:\Users\Brian\Desktop\Masters-Thesis\ch3_software.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\ch4_modeling.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\ch5_gaitcontrol.aux)
-(C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.aux
-
-LaTeX Warning: Label `fig::surface_estimation' multiply defined.
-
-) (C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\ch6_navigation.aux)
+(C:\Users\Brian\Desktop\Masters-Thesis\ch7_closing_remarks.aux)
 (C:\Users\Brian\Desktop\Masters-Thesis\appendix_a.aux
 
 LaTeX Warning: Label `eq::leg_jacobian' multiply defined.
@@ -509,17 +506,17 @@ Package caption Info: End \AtBeginDocument code.
 ]
 No file publications.tex.
 (C:\Users\Brian\Desktop\Masters-Thesis\acknowledgements.tex
-LaTeX Font Info:    Try loading font information for U+lasy on input line 12.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 11.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 12.
+LaTeX Font Info:    Try loading font information for U+msa on input line 11.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 12.
+LaTeX Font Info:    Try loading font information for U+msb on input line 11.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -986,12 +983,15 @@ File: potential_field_full_real.png Graphic file (type png)
 <use potential_field_full_real.png>
 Package pdftex.def Info: potential_field_full_real.png used on input line 124.
 (pdftex.def)             Requested size: 433.62pt x 289.07487pt.
- [79] [80 <C:/Users/Brian/Desktop/Masters-Thesis/potential_field_full_real.png>
-]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[79] [80 <C:/Users/Brian/Desktop/Masters-Thesis/potential_field_full_real.png>]
 <laser-sweep.png, id=365, 963.6pt x 542.025pt>
 File: laser-sweep.png Graphic file (type png)
  <use laser-sweep.png>
-Package pdftex.def Info: laser-sweep.png used on input line 158.
+Package pdftex.def Info: laser-sweep.png used on input line 161.
 (pdftex.def)             Requested size: 433.62pt x 243.90898pt.
 
 
@@ -1001,7 +1001,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <rough_terrain.png, id=373, 722.7pt x 867.24pt>
 File: rough_terrain.png Graphic file (type png)
  <use rough_terrain.png>
-Package pdftex.def Info: rough_terrain.png used on input line 211.
+Package pdftex.def Info: rough_terrain.png used on input line 215.
 (pdftex.def)             Requested size: 433.62pt x 520.34802pt.
 
 
@@ -1012,13 +1012,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: terrain_grad_crop.png Graphic file (type png)
 
 <use terrain_grad_crop.png>
-Package pdftex.def Info: terrain_grad_crop.png used on input line 292.
+Package pdftex.def Info: terrain_grad_crop.png used on input line 296.
 (pdftex.def)             Requested size: 433.62pt x 186.97829pt.
  <terrain_4545.png, id=386, 578.16pt x 433.62pt>
 File: terrain_4545.png Graphic file (type png)
 
 <use terrain_4545.png>
-Package pdftex.def Info: terrain_4545.png used on input line 292.
+Package pdftex.def Info: terrain_4545.png used on input line 296.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
  [86 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_grad_crop.png> <C:/Users/Br
 ian/Desktop/Masters-Thesis/terrain_4545.png (PNG copy)>]
@@ -1027,36 +1027,36 @@ ian/Desktop/Masters-Thesis/terrain_4545.png (PNG copy)>]
 ] [88] <cost_map.png, id=397, 771.1209pt x 365.4453pt>
 File: cost_map.png Graphic file (type png)
  <use cost_map.png>
-Package pdftex.def Info: cost_map.png used on input line 363.
+Package pdftex.def Info: cost_map.png used on input line 368.
 (pdftex.def)             Requested size: 433.62pt x 205.50113pt.
 
 [89] [90 <C:/Users/Brian/Desktop/Masters-Thesis/cost_map.png>]
-Underfull \hbox (badness 10000) in alignment at lines 426--426
+Underfull \hbox (badness 10000) in alignment at lines 435--435
 [][][][][][]
  []
 
 <terrain_path_1.png, id=406, 1084.05pt x 1084.05pt>
 File: terrain_path_1.png Graphic file (type png)
  <use terrain_path_1.png>
-Package pdftex.def Info: terrain_path_1.png used on input line 433.
+Package pdftex.def Info: terrain_path_1.png used on input line 442.
 (pdftex.def)             Requested size: 433.62pt x 433.61232pt.
 
 <terrain_path_2.png, id=407, 1084.05pt x 1084.05pt>
 File: terrain_path_2.png Graphic file (type png)
  <use terrain_path_2.png>
-Package pdftex.def Info: terrain_path_2.png used on input line 439.
+Package pdftex.def Info: terrain_path_2.png used on input line 448.
 (pdftex.def)             Requested size: 433.62pt x 433.61232pt.
 
 <terrain_path_3.png, id=408, 1084.05pt x 1084.05pt>
 File: terrain_path_3.png Graphic file (type png)
  <use terrain_path_3.png>
-Package pdftex.def Info: terrain_path_3.png used on input line 445.
+Package pdftex.def Info: terrain_path_3.png used on input line 454.
 (pdftex.def)             Requested size: 433.62pt x 433.61232pt.
 
 <terrain_path_4.png, id=409, 1084.05pt x 1084.05pt>
 File: terrain_path_4.png Graphic file (type png)
  <use terrain_path_4.png>
-Package pdftex.def Info: terrain_path_4.png used on input line 451.
+Package pdftex.def Info: terrain_path_4.png used on input line 460.
 (pdftex.def)             Requested size: 433.62pt x 433.61232pt.
 
 [91] [92 <C:/Users/Brian/Desktop/Masters-Thesis/terrain_path_1.png>] [93 <C:/Us
@@ -1067,7 +1067,7 @@ is/terrain_path_4.png>] [96]
 File: surf_reconstruction.png Graphic file (type png)
 
 <use surf_reconstruction.png>
-Package pdftex.def Info: surf_reconstruction.png used on input line 487.
+Package pdftex.def Info: surf_reconstruction.png used on input line 496.
 (pdftex.def)             Requested size: 433.62pt x 552.8604pt.
 
 
@@ -1077,7 +1077,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: surf_reconstruction2.png Graphic file (type png)
 
 <use surf_reconstruction2.png>
-Package pdftex.def Info: surf_reconstruction2.png used on input line 493.
+Package pdftex.def Info: surf_reconstruction2.png used on input line 502.
 (pdftex.def)             Requested size: 433.62pt x 552.8604pt.
 
 
@@ -1098,7 +1098,7 @@ CHAPTER 7
 
 
 
-] [101]) [102] (C:\Users\Brian\Desktop\Masters-Thesis\appendix_a.tex
+]) [101] [102] (C:\Users\Brian\Desktop\Masters-Thesis\appendix_a.tex
 Appendix 1
 ) [103
 
@@ -1197,13 +1197,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6996 strings out of 493921
- 108049 string characters out of 3144877
- 191919 words of memory out of 3000000
- 10018 multiletter control sequences out of 15000+200000
+ 6998 strings out of 493921
+ 108097 string characters out of 3144877
+ 191943 words of memory out of 3000000
+ 10020 multiletter control sequences out of 15000+200000
  17683 words of font info for 67 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 46i,18n,42p,1683b,338s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,18n,42p,1682b,338s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
@@ -1220,7 +1220,7 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (127 pages, 20312118 bytes).
+Output written on main.pdf (127 pages, 20311377 bytes).
 PDF statistics:
  550 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
