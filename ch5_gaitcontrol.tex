@@ -82,18 +82,17 @@
 				\end{equation}
 			is non-zero. $\dot{\epsilon}_{\theta}$ represents a measure of translational drift recovered from gyroscopic sensor measurements. ${R}_{z_{b}}{\frac{\pi}{2}}$ represents a rotation by $\frac{\pi}{2}$ about the z-axis of the body frame $O_{b}$. $\dot{\epsilon}_{\theta}$ is mapped to the parameters $\Psi_{\omega}$ and $\Psi_{M}$ by
 				\begin{eqnarray}
-					\psi_{i} 			&=& \Sig{  w_{i} \emph{T}_{i} - w_{i} c_{i} } {\mu}_{i} 	\nonumber\\
+					\psi_{i} 			&=& \Sig{  w_{i} \upsilon_{i} - w_{i} c_{i} } {\mu}_{i} 	\nonumber\\
 					\Psi_{\omega} 		&=& I + A_{\omega}\DiagMat{ \psi_{i} } 						\nonumber\\
 					\Psi_{M}			&=& I - A_{\mu} \DiagMat{  \psi_{i} } 
 					\label{eq::cpg_modulations}
 				\end{eqnarray}
 			where
 				\begin{eqnarray}
-					\emph{T}_{i} 		&=& \norm{ \dot{\epsilon}_{\theta} } \wrap{1 + \Normalize{\Delta x_{i}}^T  \Normalize{ \dot{\epsilon}_{\theta}  } }	\nonumber\\\
-					\Delta x_{i}		&=& {p}_{e} - {p}_{b}
+					\upsilon_{i} 		&=& \norm{ \dot{\epsilon}_{\theta} } \wrap{1 + \Normalize{\Delta x_{i}}^T  \Normalize{ \dot{\epsilon}_{\theta}  } }	\nonumber\\\
+					\Delta x_{i}		&=& {p}_{i,e} - {p}_{b}
 				\end{eqnarray}
-			with $\{w_{i}, c_{i}\} \InRe{}$ and $\{A_{\mu}, A_{\omega}\}   \InRe{4\times4}.$ $\Sig{*}$ represents the standard
-			sigmoid step function. The signal $\emph{T}_{i}$ represents a projection of $\dot{\epsilon}_{\theta}$ into the unit-vector emanating from ${p}_{b}$ to each \Ith foot. This projection delegates the level of adjustment to each \Ith oscillator as a result of $\dot{\epsilon}_{\theta}$. 		
+			with $\{w_{i}, c_{i}\} \InRe{}$ and $\{A_{\mu}, A_{\omega}\} \InRe{4\times4}$ being tunable gains. ${\mu}_{i}$ is used to represent the contact state of each \Ith foot, and takes on a value of ${\mu}_{i}=1$ when a foot is in contact and ${\mu}_{i}=0$ when it is not. $\Sig{*}$ represents the standard sigmoid step function which takes a scalar argument $(*)$. The signal $\upsilon_{i}$ represents a projection of $\dot{\epsilon}_{\theta}$ into the unit-vector emanating from ${p}_{b}$ to each \Ith foot. This projection delegates the level of adjustment to each \Ith oscillator as a result of $\dot{\epsilon}_{\theta}$. Finally, $\DiagMat{  \psi_{i} } \in \Re^{4\times4}$ defines a diagonal matrix whose \Ith diagonal element is $\psi_{i}\SSep\forall i\in\{1,2,3,4\}$.	
 
 			Adjusting $\Psi_{\omega}$ by the method delineated in \ref{eq::cpg_modulations} serves to shorten the stepping period of a leg in-flight given greater values of $\dot{\epsilon}_{\theta}$. Likewise, $\Psi_{M}$ is adjusted to decrease the height of each foot in-flight. The frequency of a full gaiting cycle is prescribed via $\omega_{s}$ and duty-factor $\alpha \in \sbrack{0,1}$ \cite{Matos2010}. The matrix $W$ is formed from  $\omega_{s}$ and $\alpha$ as a follows:
 				\newcommand{\Wel}[1]{\frac{1}{1+e^{#1}}}
@@ -121,7 +120,7 @@
 				\begin{equation}
 					\omega_{s} = a_{v}v^{r} + a_{\omega}\abs{\omega^{r}}
 				\end{equation}
-			where $a_{v}$ and $a_{\omega}$ are scalar gains. In BlueFoot's CPG implementation, the coupling matrix $K$ takes on the values $k_{i,j} \in \sbrack{-1,1}$. Each element of the coupling matrix, $k_{i,j}$, is utilized to adjust the phase offsets between the unit-oscillators.Furthermore, setting $k_{i,j}=1$ causes the \Jth oscillator to attract the \Ith oscillator  towards a  positive peak, and vice-versa. Setting $k_{i,j}=0$ effectively disconnects \Ith and \Jth oscillators. 
+			where $a_{v}$ and $a_{\omega}$ are scalar gains. In BlueFoot's CPG implementation, the coupling matrix $K$ takes on the values $k_{i,j} \in \sbrack{-1,1}$. Each element of the coupling matrix, $k_{i,j}$, is utilized to adjust the phase offsets between the unit-oscillators. Furthermore, setting $k_{i,j}=1$ causes the \Jth oscillator to attract the \Ith oscillator  towards a  positive peak, and vice-versa. Setting $k_{i,j}=0$ effectively disconnects \Ith and \Jth oscillators. 
 
 			Figures~\ref{fig::cpg_phase2_45} and \ref{fig::cpg_phase4_45} depict the CPG output, $y_{2}$, and corresponding unit-oscillator phase portraits of the oscillator dynamics, given by \ref{eq::cpg_ss_def} with the feedback mechanism given in \ref{eq::cpg_modulations} used during simulations of BlueFoot's default two-pace trotting and four-pace walking gaits, respectively. The associated $K$ matrix prescribing this gaiting pattern is a modified version of $K$ for a 2-pace trot gait presented in \cite{Rutishauser2008}, since this generates a more effective and fluid gait when applied to BlueFoot's gait controller
 				\begin{equation}
@@ -152,25 +151,25 @@
 			%The output state, $y_{i}$ and phase portrait form from $x_{i},y_{i}$ of each \Ith oscillator are shown in Figures \ref{fig::cpg_phase2_45} and \ref{fig::cpg_phase3_45} for a two-paced and four-paced gait, respectively. The two-paced gait was produced using the coupling matrix defined in\ref{eq::K_two_pace} and the four-paced gait was produced using the coupling matrix defined in \ref{eq::K_four_pace}. 
 			Figure \ref{fig::cpg_transition} shows the change in output state patterns during a transition from a four-paced to a two-paced gait. Figure~\ref{fig::real_cpg_joints} shows joint angle feedback from the actual robot platform during the execution of a CPG driven gait which achieves a ground-speed of $65 \frac{mm}{s}$.
 			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-				\begin{figure}[!h]
+				\begin{figure}
 					\centering
 					\fbox{\includegraphics[width=1.00\textwidth]{cpg_phase2_45.png}}
 					\caption{CPG output and phase plots for a two-paced gait over two gait cycles.}
 					\label{fig::cpg_phase2_45}
 				\end{figure}
-				\begin{figure}[!h]
+				\begin{figure}
 					\centering
 					\fbox{\includegraphics[width=1.00\textwidth]{cpg_phase4_45.png}}
-					\caption{CPG output and phase plots for a two-paced gait over two gait cycles.}
+					\caption{CPG output and phase plots for a four-paced gait over two gait cycles.}
 					\label{fig::cpg_phase4_45}
 				\end{figure}
-				\begin{figure}[!h]
+				\begin{figure}
 					\centering
 					\fbox{\includegraphics[width=1.00\textwidth]{cpg_transition.png}}
 					\caption{CPG output transition during four-pace to two-pace gait switch.}
 					\label{fig::cpg_transition}
 				\end{figure}	
-				\begin{figure}[!h]
+				\begin{figure}
 					\centering
 					\fbox{\includegraphics[width=1.00\textwidth]{real_cpg_joints.png}}
 					\caption{Real joint angles during a gait at $65 \frac{mm}{s}$.}
@@ -190,7 +189,8 @@
 			\dot{\tilde{p}}_{i,e} 		& = & v^{r}\vec{u}^{r} + \Skew{\omega^{r}\vec{h}_{b}} \tilde{R}_{b} \wrap{\tilde{p}_{i,e}-\tilde{p}_{c} } 
 			\label{eq::virtual_foothold_control}
 		\end{eqnarray}
-		where $\vec{h}_{b}$ is a unit vector that is orthogonal and pointed outward from the surface beneath the robot and $\Skew{\omega^{r}\vec{h}_{b}}\text{ }\in\text{ }\Real^{3\times3}$ forms a skew-symmetric matrix from the vector argument $\omega^{r}\vec{h}_{b}$. The virtual foothold dynamics progress the target footholds at a commanded translational (forward) and rotational velocity, $v^{r}$ and $\omega^{r}$, respectively. The robot follows the virtual model at nearly the same velocities with minimal lag so long as system bandwidth is not exceeded. Using this virtual-foothold method is convenient as it allows for foot-placement planning to be independent of foot-trajectory planning. For example, terrain adaptation can be incorporated by modifying the location of virtual foot positions such that they conform to an upcoming surface. The robot's gait will then track these adaptations without any explicit modification of foot trajectories. In the event of contact with unperceived terrain, virtual-foothold positions will reset with respect to an estimated point of contact for each \Ith contacting foot, \IE:
+		where $\vec{h}_{b}$ is a unit vector that is orthogonal and pointed outward from the surface beneath the robot and $\Skew{\omega^{r}\vec{h}_{b}}\text{ }\in\text{ }\Real^{3\times3}$ forms a skew-symmetric matrix from the vector argument $\omega^{r}\vec{h}_{b}$. The virtual foothold dynamics progress the target footholds at a commanded translational (forward) and rotational velocity, $v^{r}$ and $\omega^{r}$, respectively. The robot follows the virtual model at nearly the same velocities with minimal lag so long as system bandwidth is not exceeded. Using this virtual-foothold method is convenient as it allows for foot-placement planning to be independent of foot-trajectory planning. For example, terrain adaptation can be incorporated by modifying the location of virtual foot positions such that they conform to an upcoming surface. The robot's gait will then track these adaptations without any explicit modification of foot trajectories. In the event of contact with unperceived terrain, virtual-foothold positions will reset with respect to an estimated point of contact for each \Ith contacting foot (see Algorithm~\ref{alg::foot_reset}). In Algorithm~\ref{alg::foot_reset}, $y_{2,i}>0$ indicates that the \Ith foot is in flight, as per the definition of the foot-height controller to be defined in~\ref{eq::foot_height_control}. The foot-position estimate $\hat{p}_{i,e}$ is defined in~\ref{eq::foot_position_esitmate}.
+
 			\begin{algorithm}[!h]
 				\begin{algorithmic}
 				\ForAll{$i$ \textbf{in} $i = \{1,...,4\}$}
@@ -199,16 +199,16 @@
 					\EndIf
 				\EndFor
 				\end{algorithmic}
+				\caption{Virtual foothold reset routine.}
+				\label{alg::foot_reset}
 			\end{algorithm}
-
-		\noindent To clarify, $y_{2,i}>0$ indicates that the \Ith foot is in flight, as per the definition of the foot-height controller to be defined in~\ref{eq::foot_height_control}. The foot-position estimate $\hat{p}_{i,e}$ is defined in~\ref{eq::foot_position_esitmate}.
-
 			\begin{figure}[!h]
 				\centering
 				\fbox{\includegraphics[width=1.00\textwidth]{virtual_foothold.png}}
 				\caption{Virtual foothold representation. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.}
 				\label{fig::virtial_foothold}
 			\end{figure}
+
 		The full foothold controller represented by 
 			\begin{equation}
 				\dot{p}_{i,e} = \dot{\tilde{p}}_{i,e}^{v} + \dot{\tilde{p}}_{i,e}^{y}, \SSep i = \{1,...,4\}

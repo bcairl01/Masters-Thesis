@@ -63,11 +63,11 @@
 					\label{fig::root_module}
 				\end{figure}
 
-				The Root module, consists of three plates, as shown in Figure \ref{fig::root_module}. Each plate is designed with a central opening to allow for wired connections to pass to other trunk modules. Two such plates directly interface with four servos, which are mounted to four symmetric arms which extend from the center of each plate. These servos are the first joint (hip-joint) of each leg. Each servo mounts to the top a bottom plates via mounting holes located at the top and underside of each servo chassis. The assembly is mated with small steel bolts. A third, smaller plate is attached to the bottom of the module to provide more space for power components and associated wiring. This plate is attached to the bottom of the module via plastic standoffs. An opening in the middle of this plate provides access to the system's main power switches, as well as a removable XBEE wireless radio unit.
+				The Root module, consists of three plates, as shown in Figure~\ref{fig::root_module}. Each plate is designed with a central opening to allow for wired connections to pass to other trunk modules. Two such plates directly interface with four servos, which are mounted to four symmetric arms which extend from the center of each plate. These servos are the first joint (hip-joint) of each leg. Each servo mounts to the top a bottom plates via mounting holes located at the top and underside of each servo chassis. The assembly is mated with small steel bolts. A third, smaller plate is attached to the bottom of the module to provide more space for power components and associated wiring. This plate is attached to the bottom of the module via plastic standoffs. An opening in the middle of this plate provides access to the system's main power switches, as well as a removable XBEE wireless radio unit.
 
 			\subsubsection{The Main Module}
 		
-				The Main module of BlueFoot's trunk includes compartments for an in-house designed AutoPilot unit and a main computer unit, an ODROID-XU. The Main module is designed such that the AutoPilot and ODROID-XU computer slide in and out of the body. The computer payloads are locked into position when the Head module is added to the assembly. The Main body section is designed to fit both computers when stacked upon one another, as depicted in Figure \ref{fig::main_module}. The computer stack is positioned directly in the center of the module when inserted.
+				The Main module of BlueFoot's trunk includes compartments for an in-house designed AutoPilot unit and a main computer unit, an ODROID-XU. The Main module is designed such that the AutoPilot and ODROID-XU computer slide in and out of the body. The computer payloads are locked into position when the Head module is added to the assembly. The Main body section is designed to fit both computers when stacked upon one another, as depicted in Figure~\ref{fig::main_module}. The computer stack is positioned directly in the center of the module when inserted.
 %
 				\begin{figure}[h!]
 					\centering
@@ -81,7 +81,7 @@
 		
 			\subsubsection{The Head Module}
 
-				Two separate Head modules have been designed for the BlueFoot system : one of which features a stereo camera pair and a Piccolo LIDAR sensor (PLDS); and a monocular design, which features a camera and a Hokuyo-URG LIDAR sensor, as shown in Figure \ref{fig::head_module}. Each head module is attached to Main module via four plastic mounting screws. In the stereo-camera design, two adjustable wings are attached to either side of a top platform which hold cameras. These wings were designed to be adjustable to aid in stereo-camera configuration and calibration. The position of each camera on the trunk allows for a persistent field of view by each camera during mobilization. The PLDS unit is positioned such that the center of its rotating laser head is aligned to the center of the trunk. 
+				Two separate Head modules have been designed for the BlueFoot system : one of which features a stereo camera pair and a Piccolo LIDAR sensor (PLDS); and a monocular design, which features a camera and a Hokuyo-URG LIDAR sensor, as shown in Figure~\ref{fig::head_module}. Each head module is attached to Main module via four plastic mounting screws. In the stereo-camera design, two adjustable wings are attached to either side of a top platform which hold cameras. These wings were designed to be adjustable to aid in stereo-camera configuration and calibration. The position of each camera on the trunk allows for a persistent field of view by each camera during mobilization. The PLDS unit is positioned such that the center of its rotating laser head is aligned to the center of the trunk. 
 
 				\begin{figure}[h!]
 					\centering
@@ -101,7 +101,7 @@
 				\label{fig::leg_labeled}
 			\end{figure}
 				
-			Each of BlueFoot's legs are identical and are comprised of four Dynamixel AX12a smart-servo actuators (see Figure \ref{fig::leg_labeled}). These actuators are connected via dedicated Dynamixel mounting brackets. Feet are attached to the ends of each leg which contain an embedded, two-state contact sensors. Each foot is designed with a spherical tip, which is rubberized to provide extra grip. The ankle joint of the platform has been added such that the platform can reconfigure its foot orientation while retaining a constant spatial position during gaiting. Additionally, this configuration allows for a considerable amount of independent body re-orientation and repositioning. This capability extends itself to the stabilization and gimbaling of vision sensors mounted on the upper body of the platform while the platform is in motion.
+			Each of BlueFoot's legs are identical and are comprised of four Dynamixel AX12a smart-servo actuators (see Figure~\ref{fig::leg_labeled}). These actuators are connected via dedicated Dynamixel mounting brackets. Feet are attached to the ends of each leg which contain an embedded, two-state contact sensors. Each foot is designed with a spherical tip, which is rubberized to provide extra grip. The ankle joint of the platform has been added such that the platform can reconfigure its foot orientation while retaining a constant spatial position during gaiting. Additionally, this configuration allows for a considerable amount of independent body re-orientation and repositioning. This capability extends itself to the stabilization and gimbaling of vision sensors mounted on the upper body of the platform while the platform is in motion.
 		
 			\begin{figure}[h!]
 				\centering
@@ -110,9 +110,9 @@
 				\label{fig::sea_bracket}
 			\end{figure}
 
-			Though not kept in the system's final design, some experimentation was performed with the incorporation of series elastic joints, which were designed to relieve joint impact during gaiting. Series elastic actuation was achieved by replacing bracket interfacing the first and second hip joints of each leg with an elastic-compliant mounting bracket. This bracket includes spring loaded member which was mounted to the horn of the second hip servo on each leg, as shown in Figure \ref{fig::sea_bracket} and allowed the leg to deflect a small amount at the lateral hip (second joint).
+			Though not kept in the system's final design, some experimentation was performed with the incorporation of series elastic joints, which were designed to relieve joint impact during gaiting. Series elastic actuation was achieved by replacing bracket interfacing the first and second hip joints of each leg with an elastic-compliant mounting bracket. This bracket includes spring loaded member which was mounted to the horn of the second hip servo on each leg, as shown in Figure~\ref{fig::sea_bracket} and allowed the leg to deflect a small amount at the lateral hip (second joint).
 
-			Link lengths, $a_{1}, a_{2}, a_{3}$ and $a_{4}$; and offset from the center for the Root module to the first joint of each leg, $\nu$ are defined in Table \ref{tab::link_lens}. These parameters are identical for each leg, and are corresponded with physical leg members labeled in Figure \ref{fig::leg_labeled}.
+			Link lengths, $a_{1}, a_{2}, a_{3}$ and $a_{4}$; and offset from the center for the Root module to the first joint of each leg, $\nu$, are defined in Table~\ref{tab::link_lens}. These parameters are identical for each leg, and are corresponded with physical leg members labeled in Figure~\ref{fig::leg_labeled}.
 
 			\begin{table}[h!]
 				\centering
@@ -197,9 +197,10 @@
 			\end{figure}
 			
 			
-			Figure \ref{fig::dev_diagram} depicts how each major device is connected within the system and details the communication rates ($f_{com}$) between networked devices. Accompanying specifications are detailed in Table \ref{tab::comm_port_pairs}, which summarizes all device communication pairs and their corresponding baud rates.
+			Figure~\ref{fig::dev_diagram} depicts how each major device is connected within the system and details the communication rates ($f_{com}$) between networked devices. Accompanying specifications are detailed in Table~\ref{tab::comm_port_pairs}, which summarizes all device communication pairs and their corresponding baud rates.
 
 			\begin{table}[h!]
+				{\footnotesize XBEE$^*$ refers to the on-board XBEE module which communicates with the ground station.}
 				\centering
 				\begin{tabularx}{\textwidth}{|C{0.2}|C{0.2}||C{0.2}|C{0.2}||C{0.2}|} 	
 					\hline
@@ -212,7 +213,6 @@
 					USB			&	ODROID-XU		&	USB			&	Cameras	 		& 	No Spec.			\\	\hline
 				\end{tabularx} 
 				\caption{System communication port-pairs and corresponding data transfer rates}
-				{XBEE$^*$ refers to the on-board XBEE module which communicates with the ground station.}
 				\label{tab::comm_port_pairs}
 			\end{table}
 
@@ -233,7 +233,7 @@
 			\subsection{Energy Requirements and Runtime}
 
 			
-			The power consumptions of BlueFoot's component device's are summarized in Table \ref{tab::power_summary}, which provides the operating voltage, $V_{op}$, and nominal current draw, $I_{nom}$, of each active, on-board component. Table \ref{tab::runtime_summary} details battery specifications (output voltage and amp-hour rating) and BlueFoot's estimated run-time under nominal operating conditions.
+			The power consumptions of BlueFoot's component device's are summarized in Table~\ref{tab::power_summary}, which provides the operating voltage, $V_{op}$, and nominal current draw, $I_{nom}$, of each active, on-board component. Table~\ref{tab::runtime_summary} details battery specifications (output voltage and amp-hour rating) and BlueFoot's estimated run-time under nominal operating conditions.
 		
 		
 			\begin{table}[h!]

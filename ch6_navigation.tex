@@ -47,7 +47,7 @@
 				\begin{figure}[t!]
 					\centering
 					\fbox{\includegraphics[width=\textwidth]{potential_field.png}}
-					\caption{Potential field, $f(x)$ with $d_{min}=0.4\text{ m}$ around environmental obstacles.}
+					\caption{Potential-field around environmental obstacles.}
 					\label{fig::potential_field}
 				\end{figure}
 
@@ -122,7 +122,7 @@
 				\begin{figure}[!h]
 					\centering
 					\fbox{\includegraphics[width=\textwidth]{potential_field_full_real.png}}
-					\caption{Path (shown in yellow) taken by robot through a real-life lab setting showing the robot's view of the goal marker.}
+					\caption{Path (shown in yellow) taken by robot through a real-world lab setting showing the robot's view of the goal marker.}
 					\label{fig::potential_field_results_real}
 				\end{figure}
 
@@ -226,7 +226,7 @@
 
 			To create the height-map, a $w\times d$ region of interest (ROI) with a relative location $\bar{p}_{0}^{ROI}$ in $O_{0}$ is first selected. This region is then discretized in $(nm)$ subregions. The dimensions $w$ and $d$ of the ROI represent lengths along $x$-axis and $y$-axis respectively. The notation $\mmathbb{R}^{\mmathcal{M}}\subset \Re^{3}$ will be used to represent the set of points contained within the ROI.  Moreover, the space $\mmathbb{Z}^{\mmathcal{M}}$ is used to represent a discretized analogue to $\mmathbb{R}^{\mmathcal{M}}$, where each position $\{i,j\}\in\mmathbb{Z}^{\mmathcal{M}}$ represents the \Ith, \Jth subregion of the ROI. Moreover, each subregion has an associated height of $m_{i,j}$ stored in $\mmathcal{M}$. An ROI selected from a source point cloud $\bar{S}$ will be represented as $\bar{S}_{ROI}\subset\Re^{3}$. It is assumed that the location, $\bar{p}_{0}^{ROI}$, and size of this ROI are determined via some auxiliary detection algorithm. Such a detection algorithm: 
 			\begin{enumerate}
-				\item selects an area with appropriately high terrain variation (large changes in gradient),
+				\item selects an area with high terrain variation (large changes in gradient),
 				\item determines $\bar{p}_{0}^{ROI}$,
 				\item and determines the bounding region of the ROI.
 			\end{enumerate}%%%
@@ -363,7 +363,7 @@
 						\mmathcal{C}(\bar{p}^{\mmathcal{M}}_{b},u) 	&= k_{\text{var}} \text{var}(\mmathcal{H}) + k_{\delta}\sum_{v=1}^{4} \delta \mmathcal{H}_{v}^{2} + k_{\theta} \gamma^{2}(u) 
 					\end{split}
 				\end{equation}
-			$\forall \bar{p}^{\mmathcal{M}}_{b} \in \mathbb{Z}^{\mmathcal{M}}$, $\forall u \in \setwrap{1,...,l}$, and  $v \in \setwrap{1,2,3,4}$, where $\mmathcal{H}$ is a set of heights at each moving-foothold position in $\mmathcal{M}$; $\delta\mmathcal{H}$ is a set of corresponding elements from the gradient matrix $\nabla \mmathcal{M}$; $\text{var}(*)$ computes the variance between the elements of a vector argument $(*)$; $k_{\text{var}}$, $k_{\delta}$ and $k_{\theta}$ are scalar weighting parameters; and $\col{*}{v}$ extracts the $v^{th}$ column from the matrix argument $(*)$. Figure~\ref{fig::cost_map} shows two manifolds of the sample cost-tensor for fixed robot orientations of $\theta_{z}=0$ and $\theta_{z}=\pi/4$. The configuration matrix, $\Gamma$, is setup such that feet of the robot are spaced $330\text{ mm}$ apart, with respect to $O_{0}$. This corresponds to the nominal foot spacing of BlueFoot's default stance. The cost-tensor shown in Figure~\ref{fig::cost_map} was generated using the height-map and corresponding gradient shown in Figure~\ref{fig::heightmap_terrain_patch}.
+			$\forall \bar{p}^{\mmathcal{M}}_{b} \in \mathbb{Z}^{\mmathcal{M}}$, $\forall u \in \setwrap{1,...,l}$, and  $v \in \setwrap{1,2,3,4}$, where $\mmathcal{H}$ is a set of heights at each moving-foothold position in $\mmathcal{M}$; $\delta\mmathcal{H}$ is a set of corresponding elements from the gradient matrix $\nabla \mmathcal{M}$; $\text{var}(*)$ computes the variance between the elements of a vector argument $(*)$; $k_{\text{var}}$, $k_{\delta}$ and $k_{\theta}$ are scalar weighting parameters; and $\col{*}{v}$ extracts the $v^{th}$ column from the matrix argument $(*)$. Figure~\ref{fig::cost_map} shows two projections of the sample cost-tensor for fixed robot orientations of $\theta_{z}=0$ and $\theta_{z}=\pi/4$. The configuration matrix, $\Gamma$, is setup such that feet of the robot are spaced $330\text{ mm}$ apart, with respect to $O_{0}$. This corresponds to the nominal foot spacing of BlueFoot's default stance. The cost-tensor shown in Figure~\ref{fig::cost_map} was generated using the height-map and corresponding gradient shown in Figure~\ref{fig::heightmap_terrain_patch}.
 
 				\begin{figure}
 					\centering
@@ -390,19 +390,17 @@
 				\begin{equation}
 					\begin{split}
 							&	\min_{\psi_{k},\lambda_{k}}\mmathcal{C}\wrap{\psi_{k},\lambda_{k}} 	\\
-					\text{s.t. }&	\psi_{k}=\{i_{\psi,k},j_{\psi,k}\}\in\mmathbb{Z}^{w}_{k}							\\
-							&	\lambda_{k}\in\mmathbb{Z}^{u}_{k}
+					\text{s.t. }	\psi_{k}&\in\mmathbb{Z}^{w}_{k}							\\
+									\lambda_{k}&\in\mmathbb{Z}^{u}_{k}
 					\end{split}
 					\label{eq::local_min}
 				\end{equation}
-			where $\mmathbb{Z}^{w}_{k}\subset\mmathbb{Z}^{\mmathcal{M}}$ and $\mmathbb{Z}^{u}_{k}\subset \{ 1,...,l \}$ are moving windows about each $(k-1)^{th}$ way-point position and orientation, respectively, defined as follows:
+			where $\psi_{k}=\{i_{\psi,k},j_{\psi,k}\}$; and $\mmathbb{Z}^{w}_{k}\subset\mmathbb{Z}^{\mmathcal{M}}$ and $\mmathbb{Z}^{u}_{k}\subset \{ 1,...,l \}$ are moving windows about each $(k-1)^{th}$ way-point position and orientation, respectively, defined as follows:
 				\begin{equation}
 					\begin{split}
-						\psi_{k}	& \in \mmathbb{Z}^{w}_{k} \\
+						\mmathbb{Z}^{w}_{k} & \text{ s.t.}  \\
 						i_{\psi,k} 	& \in \{ \wrap{i_{b,k-1}-d_{w}},\wrap{i_{b,k-1}-d_{w}+1},...,\wrap{i_{b,k-1}+d_{w}} \} 	\\
 						j_{\psi,k} 	& \in \{ \wrap{j_{b,k-1}+1},...,\wrap{j_{b,k-1}+d_{w}} \} 	\\
-									& \\
-						\lambda_{k}	& \in \mmathbb{Z}^{u}_{k}\\
 						\mmathbb{Z}^{u}_{k}	&\equiv   \{ \wrap{u_{k-1}-d_{u}}, \wrap{u_{k-1}-d_{u}+1}, ... , \wrap{u_{k-1}+d_{u}} \}
 					\end{split}
 					\label{eq::windows}
@@ -435,7 +433,7 @@
 						$d_{w}=d_{u}=15$ 	&	16.8602		& 	21.8307	& 	19.4236	& 	23.5314	\\ \hline
 						$d_{w}=d_{u}=30$ 	&	19.3791		& 	19.0536	& 	23.6496	& 	23.6142	\\ \hline
 					\end{tabularx}
-					\caption{Sum of costs for four different initial conditions with various optimization windows.}
+					\caption{Sum of costs for four path-planning trials different initial conditions and varying optimization windows.}
 					\label{tab::cost_tabulation}
 				\end{table}		
 
@@ -496,13 +494,13 @@
 			\begin{figure}[!h]
 				\centering
 				\fbox{\includegraphics[width=\textwidth]{surf_reconstruction.png}}
-				\caption{Point cloud generated from sequential scans of a room showing flat-surface candidates \emph{(top)} and 3D Point Cloud with normal estimation \emph{(bottom)}.}
+				\caption{Point cloud generated from sequential scans of a room showing flat-surface candidates \emph{(top)} and 3D point cloud with estimated normals \emph{(bottom)}.}
 				\label{fig::surface_estimation}
 			\end{figure}
 			\begin{figure}[!h]
 				\centering
 				\fbox{\includegraphics[width=\textwidth]{surf_reconstruction2.png}}
-				\caption{Point cloud generated from sequential scans of a floor with obstacles showing flat-surface candidates \emph{(top)} and 3D Point Cloud with normal estimation \emph{(bottom)}.}
+				\caption{Point cloud generated from sequential scans of a floor with obstacles showing flat-surface candidates \emph{(top)} and 3D point cloud with estimated normals \emph{(bottom)}.}
 				\label{fig::surface_estimation2}
 			\end{figure}
 			%C++ implementations for the aforementioned surface reconstruction algorithms using the OpenPCL framework have been included in Appendix~\ref{appendix::d}.
