@@ -52,9 +52,7 @@
 				\end{equation}
 
 			The kinematics of each leg are identical. Thus, the transformations $H^{i,0}_{i,j}$ are of the same form and are derived by the DH parameters given by Table \ref{tab::dh_params}. Actual values for the link lengths $a_{1-4}$ and body-offset, $\nu$, are provided in Table \ref{tab::link_lens}.
-
-
-			\begin{table}[h]
+			\begin{table}[!h]
 				\centering
 				\begin{tabularx}{150mm}{|C{0.2}|C{0.2}|C{0.2}|C{0.2}|C{0.2}|} \hline
 					\textbf{Link}	&\textbf{$a_i$} &	\textbf{$\alpha_i$}	&	\textbf{$d_i$}	&	\textbf{$\theta_i$} \\ \hline \hline
@@ -69,6 +67,7 @@
 			
 
 			Using these DH parameters, the transformations $H^{i,0}_{i,1}$, $H^{i,0}_{i,2}$, $H^{i,0}_{i,3}$, and $H^{i,0}_{i,4}$ can be computed explicitly as follows:
+
 				%% Manipulator Base to Frame 1 %%
 				\begin{equation} 
 					H^{i,0}_{i,1} =\left[ 
@@ -117,7 +116,7 @@
 					\right]
 					\label{eq::transform4}
 				\end{equation}
-			A summary of the abbreviations used to represent trigonometric terms found in \ref{eq::transform1}-\ref{eq::transform4} are summarized in.
+			A summary of abbreviations for trigonometric terms in \ref{eq::transform1}-\ref{eq::transform4} is included in Appendix~\ref{appendix::e}.
 
 			The position of joint 1 of leg \emph{i} in $O_{0}$, ${p}_{i,1}$ may now be computed with respect to frame $O_{0}$ by:
 				\begin{equation}
