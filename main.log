@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  9 MAY 2015 17:34
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  9 MAY 2015 18:32
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -620,57 +620,65 @@ CHAPTER 2
 ] <robot_selfies.png, id=104, 722.7pt x 361.35pt>
 File: robot_selfies.png Graphic file (type png)
  <use robot_selfies.png>
-Package pdftex.def Info: robot_selfies.png used on input line 40.
+Package pdftex.def Info: robot_selfies.png used on input line 66.
 (pdftex.def)             Requested size: 433.62pt x 216.81168pt.
 
 [16 <C:/Users/Brian/Desktop/Masters-Thesis/robot_selfies.png>]
 <root_full.png, id=110, 1084.05pt x 361.35pt>
 File: root_full.png Graphic file (type png)
  <use root_full.png>
-Package pdftex.def Info: root_full.png used on input line 61.
+Package pdftex.def Info: root_full.png used on input line 87.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
- [17 <C:/Users/Brian/Desktop/Masters-Thesis/root_full.png>]
-<main_full.png, id=115, 1084.05pt x 361.35pt>
-File: main_full.png Graphic file (type png)
- <use main_full.png>
-Package pdftex.def Info: main_full.png used on input line 74.
-(pdftex.def)             Requested size: 433.62pt x 144.53743pt.
- [18 <C:/Users/Brian/Desktop/Masters-Thesis/main_full.png>]
-<head_full.png, id=121, 1084.05pt x 361.35pt>
-File: head_full.png Graphic file (type png)
- <use head_full.png>
-Package pdftex.def Info: head_full.png used on input line 88.
-(pdftex.def)             Requested size: 433.62pt x 144.53743pt.
-
-<leg.png, id=122, 1084.05pt x 361.35pt>
-File: leg.png Graphic file (type png)
- <use leg.png>
-Package pdftex.def Info: leg.png used on input line 99.
-(pdftex.def)             Requested size: 433.62pt x 144.53743pt.
- [19 <C:/Users/Brian/Desktop/Masters-Thesis/head_full.png>]
-<sea_full.jpg, id=127, 1129.21875pt x 368.1253pt>
-File: sea_full.jpg Graphic file (type jpg)
- <use sea_full.jpg>
-Package pdftex.def Info: sea_full.jpg used on input line 108.
-(pdftex.def)             Requested size: 433.62pt x 141.36075pt.
- [20 <C:/Users/Brian/Desktop/Masters-Thesis/leg.png> <C:/Users/Brian/Desktop/Ma
-sters-Thesis/sea_full.jpg>] [21] [22] [23] [24]
-<device_diagram.png, id=145, 1084.05pt x 722.7pt>
-File: device_diagram.png Graphic file (type png)
- <use device_diagram.png>
-Package pdftex.def Info: device_diagram.png used on input line 194.
-(pdftex.def)             Requested size: 433.62pt x 289.07487pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<power_diagram.png, id=146, 1084.05pt x 722.7pt>
-File: power_diagram.png Graphic file (type png)
- <use power_diagram.png>
-Package pdftex.def Info: power_diagram.png used on input line 228.
+[17] <main_full.png, id=114, 1084.05pt x 361.35pt>
+File: main_full.png Graphic file (type png)
+ <use main_full.png>
+Package pdftex.def Info: main_full.png used on input line 100.
+(pdftex.def)             Requested size: 433.62pt x 144.53743pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[18 <C:/Users/Brian/Desktop/Masters-Thesis/root_full.png>]
+<head_full.png, id=120, 1084.05pt x 361.35pt>
+File: head_full.png Graphic file (type png)
+ <use head_full.png>
+Package pdftex.def Info: head_full.png used on input line 114.
+(pdftex.def)             Requested size: 433.62pt x 144.53743pt.
+ [19 <C:/Users/Brian/Desktop/Masters-Thesis/main_full.png> <C:/Users/Brian/Desk
+top/Masters-Thesis/head_full.png>] <leg.png, id=126, 1084.05pt x 361.35pt>
+File: leg.png Graphic file (type png)
+ <use leg.png>
+Package pdftex.def Info: leg.png used on input line 125.
+(pdftex.def)             Requested size: 433.62pt x 144.53743pt.
+
+<sea_full.jpg, id=127, 1129.21875pt x 368.1253pt>
+File: sea_full.jpg Graphic file (type jpg)
+ <use sea_full.jpg>
+Package pdftex.def Info: sea_full.jpg used on input line 134.
+(pdftex.def)             Requested size: 433.62pt x 141.36075pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[20 <C:/Users/Brian/Desktop/Masters-Thesis/leg.png>] [21 <C:/Users/Brian/Deskto
+p/Masters-Thesis/sea_full.jpg>] [22] [23] [24]
+<device_diagram.png, id=145, 1084.05pt x 722.7pt>
+File: device_diagram.png Graphic file (type png)
+ <use device_diagram.png>
+Package pdftex.def Info: device_diagram.png used on input line 220.
 (pdftex.def)             Requested size: 433.62pt x 289.07487pt.
 
 [25 <C:/Users/Brian/Desktop/Masters-Thesis/device_diagram.png>]
+<power_diagram.png, id=150, 1084.05pt x 722.7pt>
+File: power_diagram.png Graphic file (type png)
+ <use power_diagram.png>
+Package pdftex.def Info: power_diagram.png used on input line 254.
+(pdftex.def)             Requested size: 433.62pt x 289.07487pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1210,7 +1218,7 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX
 nts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (128 pages, 20326700 bytes).
+Output written on main.pdf (128 pages, 20327014 bytes).
 PDF statistics:
  557 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

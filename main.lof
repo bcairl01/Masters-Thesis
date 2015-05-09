@@ -3,11 +3,11 @@
 \contentsline {figure}{\numberline {2}{\ignorespaces Parallel NARX-network model with a linear output layer.\relax }}{7}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {3}{\ignorespaces The BlueFoot Quadruped Robot: single-camera configuration \emph {(left)}; stereo-camera configuration \emph {(right)}.\relax }}{16}
-\contentsline {figure}{\numberline {4}{\ignorespaces Root section of trunk. Call-out in top-right shows main-switch access through the bottom of the root module.\relax }}{17}
-\contentsline {figure}{\numberline {5}{\ignorespaces Main section of trunk. Call-out in the top-right shows how the ODROID-XU and AutoPilot computers fit within the module.\relax }}{18}
+\contentsline {figure}{\numberline {4}{\ignorespaces Root section of trunk. Call-out in top-right shows main-switch access through the bottom of the root module.\relax }}{18}
+\contentsline {figure}{\numberline {5}{\ignorespaces Main section of trunk. Call-out in the top-right shows how the ODROID-XU and AutoPilot computers fit within the module.\relax }}{19}
 \contentsline {figure}{\numberline {6}{\ignorespaces Head section of trunk. Monocular camera configuration with Hokuyo-URG \emph {(left)}; and Stereo configuration with PLDS \emph {(right)}. \relax }}{19}
 \contentsline {figure}{\numberline {7}{\ignorespaces Closeup of BlueFoot's leg. \emph {(left)} shows effective link lengths and the location of defined joint positions.\relax }}{20}
-\contentsline {figure}{\numberline {8}{\ignorespaces Series elastic brackets.\relax }}{20}
+\contentsline {figure}{\numberline {8}{\ignorespaces Series elastic brackets.\relax }}{21}
 \contentsline {figure}{\numberline {9}{\ignorespaces BlueFoot device networking diagram.\relax }}{25}
 \contentsline {figure}{\numberline {10}{\ignorespaces BlueFoot power routing.\relax }}{27}
 \addvspace {10pt}

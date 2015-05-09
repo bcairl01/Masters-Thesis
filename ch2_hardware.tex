@@ -24,23 +24,33 @@
 
 	The implementation of a legged robot which meets these general specification is inherently bottlenecked by several well-known shortcomings which plague legged robot design. These drawbacks can be summarized as follows: relatively low payload capacity, as leg joints are often subjected to substantial dynamic torque loading during gaiting; and higher power consumption due to a, typically, larger number of total actuators. Thus, a general-purpose, multi-legged system like the BlueFoot platform must ultimately achieve a balance between payload-carrying capacity (i.e. maximum joint-servo output torque); actual on-board payload; and on-board energy supply. It is desirable that the sensory and computational power; as well as overall mobility of a legged system are simultaneously maximized along with the aforementioned characteristics. 
 	
-	The design goals which have guided the implementation of the BlueFoot quadruped have been tailored to a yield an overall system design which is both feature rich, computationally powerful, and exploits the natural dexterity and terrain handling of legged robotic systems. Namely, the core design requirements which have guided BlueFoot's development can be summarized as follows:
-		\begin{itemize}
-			\item{The use of legs with joint redundancy for improved dexterity}
-			\item{The use of smart servos for extended joint feedback and control}
-			\item{A distributed on-board and computing architecture for hierarchal task handling}
-			\item{A vision sensor array including a camera and laser-ranging sensors}
-			\item{30+ minutes of total battery life}
-		\end{itemize}
-	
+	The design goals which have guided the implementation of the BlueFoot quadruped have been tailored to a yield a system design which is both feature rich, computationally powerful, and exploits the natural dexterity and terrain handling of legged robotic systems. 
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% Removed 5/9/2015
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%Namely, the core design requirements which have guided BlueFoot's development can be summarized as follows:
+	%	\begin{itemize}
+	%		\item{The use of legs with joint redundancy for improved dexterity}
+	%		\item{The use of smart servos for extended joint feedback and control}
+	%		\item{A distributed on-board and computing architecture for hierarchal task handling}
+	%		\item{A vision sensor array including a camera and laser-ranging sensors}
+	%		\item{30+ minutes of total battery life}
+	%	\end{itemize}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%% Added 5/9/2015
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	%
+	Design process to facilitate these goals consisted of four interdependent decision phases, which were as follows:
+		\begin{enumerate}
+			\item{deciding what type of sensor/computational components would be included on the platform} 
+			\item{deciding the intended runtime}
+			\item{deciding the robot's kinematic/structural configuration}
+			\item{deciding what type of servo actuators would be used.} 
+		\end{enumerate}
 
-	
-
-
-
+	BlueFoot's payloads were planned first. BlueFoot was originally designed to incorporate an in-house designed AutoPilot unit and a high-duty computer unit, which were initially estimated to make up roughly 0.25 kg of the system's total weight and consume approximately 15 Watts of power during nominal operation. Additionally, BlueFoot was to be outfitted with 1-2 web cameras and a LIDAR unit. These sensors were, collectively, estimated to add an additional 0.34 kg and consume 3.5 Watts.
 
 
 
@@ -68,7 +78,7 @@
 
 		\subsection{Main Body (Trunk) Design}
 		
-			BlueFoot's trunk consists of the three main sections: a lower module which interfaces the legs with the main body; a center chassis, designed to  hold computational and battery payloads; and a top platform, which interfaces the system's visions sensors to the trunk. These sections will be referred to as the \emph{Root} module, the \emph{Main} module, and the \emph{Head}module, respectively. The full trunk (not including sensor dimensions) fits within a 21.6 by 21.6 by 15.3 cm bounding box. 
+			BlueFoot's trunk consists of the three main sections: a lower module which interfaces the legs with the main body; a center chassis, designed to  hold computational and battery payloads; and a top platform, which interfaces the system's visions sensors to the trunk. These sections will be referred to as the \emph{Root} module, the \emph{Main} module, and the \emph{Head} module, respectively. The full trunk (not including sensor dimensions) fits within a 21.6 by 21.6 by 15.3 cm bounding box. 
 
 			\subsubsection{The Root Module}
 
@@ -183,7 +193,7 @@
 
 				The Piccolo Laser distance sensor (PLDS), which is used in BlueFoot's stereo-camera type configuration, is a 4 meter spinning-head laser range finder. The PLDS has a resolution of a point per degree and covers a range of 360 degrees. Ranging frames (which covers a full rotation) are acquired at a rate of 5 Hz, and are dispatched over a serial connection at 115200 baud. An FTDI break-out board is used to convert the sensor's raw serial output to USB protocol so that the sensor can be interfaced with the UB unit. The PLDS is powered via and external power 5 V source, which is regulated to a 3.3 V voltage level for powering the motor which spins the laser head, and 1.8 V for internal logic. Regulation is performed by an auxiliary power circuit.
 
-				The Hokuyo-URG Laser Distance sensor, which is used in BlueFoot's single-camera head configuration, has a a range of 5.6 metets and an angular resolution of 0.38 degrees per point (628 points per scan). This scanner covers a total angular range of 240 degrees. Ranging frames are acquired at a rate of approximately 10 Hz and dispatched directly over a USB connection at 115200 baud. The unit is powered directly over USB.
+				The Hokuyo-URG Laser Distance sensor, which is used in BlueFoot's single-camera head configuration, has a a range of 5.6 meters and an angular resolution of 0.38 degrees per point (628 points per scan). This scanner covers a total angular range of 240 degrees. Ranging frames are acquired at a rate of approximately 10 Hz and dispatched directly over a USB connection at 115200 baud. The unit is powered directly over USB.
 
 			\subsubsection{Foot Contact Sensors}
 
