@@ -42,8 +42,8 @@
 \contentsline {subsection}{\numberline {4.1.1}Forward Position Kinematics}{37}
 \contentsline {subsubsection}{A Note about foot localization in the robot-relative frame, $O_{b^{'}}$}{40}
 \contentsline {subsection}{\numberline {4.1.2}Inverse Position Kinematics}{41}
-\contentsline {subsubsection}{Range of Motion}{42}
-\contentsline {subsection}{\numberline {4.1.3}Velocity Kinematics}{43}
+\contentsline {subsection}{\numberline {4.1.3}Range of Motion}{42}
+\contentsline {subsection}{\numberline {4.1.4}Velocity Kinematics}{43}
 \contentsline {section}{\numberline {4.2}Dynamical Model}{45}
 \contentsline {subsection}{\numberline {4.2.1}System State Vector and General-Form Dynamics}{45}
 \contentsline {subsection}{\numberline {4.2.2}Joint-Servo Dynamics}{46}
@@ -71,7 +71,7 @@
 \contentsline {subsection}{\numberline {6.2.2}Height-map Generation from a 3D point cloud}{84}
 \contentsline {subsection}{\numberline {6.2.3}An approach for cost assignment from a height-map}{88}
 \contentsline {subsection}{\numberline {6.2.4}A sliding-window approach for sub-optimal rough terrain planning}{91}
-\contentsline {subsection}{\numberline {6.2.5}Surface Reconstruction}{92}
+\contentsline {subsection}{\numberline {6.2.5}Surface Reconstruction}{97}
 \contentsline {chapter}{\numberline {VII. }Concluding Remarks}{101}
 \contentsline {chapter}{\numberline {A. }Leg Jacobian with respect to frame $O_{i,0}$}{104}
 \contentsline {chapter}{\numberline {B. }Fixed-base Leg Dynamics}{105}

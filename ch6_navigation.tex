@@ -395,7 +395,7 @@
 					\end{split}
 					\label{eq::local_min}
 				\end{equation}
-			where $\psi_{k}=\{i_{\psi,k},j_{\psi,k}\}$; and $\mmathbb{Z}^{w}_{k}\subset\mmathbb{Z}^{\mmathcal{M}}$ and $\mmathbb{Z}^{u}_{k}\subset \{ 1,...,l \}$ are moving windows about each $(k-1)^{th}$ way-point position and orientation, respectively, defined as follows:
+			where $\psi_{k}=\{i_{\psi,k},j_{\psi,k}\}$; and $\mmathbb{Z}^{w}_{k}\subset\mmathbb{Z}^{\mmathcal{M}}$ and $\mmathbb{Z}^{u}_{k}\subset \{ 1,...,l \}$ are moving, asymmetric windows about each $(k-1)^{th}$ way-point position and orientation, respectively, defined as follows:
 				\begin{equation}
 					\begin{split}
 						\mmathbb{Z}^{w}_{k} & \text{ s.t.}  \\
@@ -405,7 +405,7 @@
 					\end{split}
 					\label{eq::windows}
 				\end{equation}			
-			with $\psi_{k} = \wrap{i_{\psi,k},i_{\psi,k}}$; $p_{b,k-1}^{\mmathcal{M}} = \wrap{i_{b,k-1},j_{b,k-1}} \in \mmathbb{Z}^{\mmathcal{M}}$, as previously defined; and $d_{w}>0$ and $d_{u}>0$ being integer window-size parameters. The local optimizers $\psi_{k}^{*}$ and $\lambda_{k}^{*}$, represent the coordinates at which the objective function in \ref{eq::local_min} is minimized. They are used to generate a \Kth trajectory way-point by:
+			with $\psi_{k} = \wrap{i_{\psi,k},i_{\psi,k}}$; $p_{b,k-1}^{\mmathcal{M}} = \wrap{i_{b,k-1},j_{b,k-1}} \in \mmathbb{Z}^{\mmathcal{M}}$, as previously defined; and $d_{w}>0$ and $d_{u}>0$ being integer window-size parameters. The asymmetry of these windows in the $j_{\psi,k}$ coordinate direction ensures that the \Kth way point is planned forward from the $(k-1)^{th}$ way-point in the $y$-axis direction (\IE such that there is no back-tracking). The local optimizers $\psi_{k}^{*}$ and $\lambda_{k}^{*}$, represent the coordinates at which the objective function in \ref{eq::local_min} is minimized. They are used to generate a \Kth trajectory way-point by:
 				\begin{equation}
 					\begin{split}
 						i_{b,k} &= i_{b,k-1} 	+ \text{sign}(i_{\psi,k}^{*} -d_{w}/2 - 1) 	\\
@@ -433,7 +433,7 @@
 						$d_{w}=d_{u}=15$ 	&	16.8602		& 	21.8307	& 	19.4236	& 	23.5314	\\ \hline
 						$d_{w}=d_{u}=30$ 	&	19.3791		& 	19.0536	& 	23.6496	& 	23.6142	\\ \hline
 					\end{tabularx}
-					\caption{Sum of costs for four path-planning trials different initial conditions and varying optimization windows.}
+					\caption{Sum of costs for four path-planning trials with varying initial positions varying optimization windows.}
 					\label{tab::cost_tabulation}
 				\end{table}		
 
@@ -487,7 +487,7 @@
 				\label{alg::goodspacestostep}
 			\end{algorithm}
 
-			Next, the resulting cloud, $\hat{S}$, is regularized using a moving least-squares filter. This filter creates a smoothed point cloud by performing a sequence polynomial fits over a moving subset of points. Once regularized, normals are estimated from the point cloud via a plane fitting method, as described in \cite{Mitra2003}. Planes are estimated using Principle Component Analysis (PCA) on clusters of points \cite{Castillo2013}. The standard PCA algorithm provides a least-squares plane fit by way of dimensional reduction, yielding best-fit description for a set 3D points by way of a 2D manifold \cite{Pearson1901}. The full surface-normal estimation algorithm is provided in Algorithm~\ref{alg::normal_estimation}. A point cloud with estimated surface normals is shown in Figures~\ref{fig::surface_estimation} and \ref{fig::surface_estimation2}.
+			Next, the resulting cloud, $\hat{S}$, is regularized using a moving least-squares filter. This filter creates a smoothed point cloud by performing a sequence polynomial fits over a moving subset of points. Once regularized, normals are estimated from the point cloud via a plane fitting method, as described in \cite{Mitra2003}. Planes are estimated using Principle Component Analysis (PCA) on clusters of points \cite{Castillo2013}. The standard PCA algorithm provides a least-squares plane fit by way of dimensional reduction, yielding best-fit description for a set 3D points as a 2D manifold \cite{Pearson1901}. The full surface-normal estimation algorithm is provided in Algorithm~\ref{alg::normal_estimation}. A point cloud with estimated surface normals is shown in Figures~\ref{fig::surface_estimation} and \ref{fig::surface_estimation2}.
 
 			Algorithm~\ref{alg::goodspacestostep} is used convert a 3D point cloud into an augmented point-cloud with normal vectors. This augmented cloud is then used to find ``flat" regions within the reconstructed surface. This is performed for the purpose of footstep planning. Flat regions are located using the computed surface normals. The alignment of each \Ith normal, $\vec{n}_{i}$, is compared to a reference unit vector, $\vec{u}^{r}$, by taking a dot product. This dot-product operation produces an alignment error $e\in[0,2]$. Points with associated normals whose alignment error is less than a scalar error bound, $e_{max}$, are selected as surfaces fit for walking (\IE flat). Obviously, not all surfaces which satisfy this alignment criteria represent surfaces which are fit for traversal. Beyond normal estimation, several additional post processing operations are necessary. Namely, the resulting point cloud must be segmented into regions which are traversable by the robot.
 
