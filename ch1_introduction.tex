@@ -8,7 +8,7 @@
 
 		The BlueFoot quadruped is a self-contained, fully-actuated platform with the dexterity to perform stabilization and repositioning maneuvers on variable terrains along the same lines as the LittleDog platform \cite{Rebula2007}. BlueFoot has been designed with sixteen actuated degrees of freedom to allow for the execution of a wide range of body and leg articulations. This level of dexterity grants the BlueFoot platform the ability to articulate its trunk (main body) over a range of poses, as well as overcome raised or uneven terrain. 
 
-		BlueFoot is outfitted with several on-board vision sensors, including a LIDAR and camera, which are mounted to its trunk (main body). BlueFoot can articulate (\IE pitch and yaw) these sensors by posing its trunk using aggregate leg motion controls. BlueFoot also includes a sizable array of other on-board sensors for feedback and control, including joint position, velocity and loading sensors; an inertial measurement unit (IMU); a magnetometer; GPS; humidity and temperature sensors; and foot-contact sensors. Using the computational, sensory and motor capacities at hand, BlueFoot has the ability to utilize similar control mechanisms to those implemented on larger quadruped systems. 
+		BlueFoot is outfitted with several on-board vision sensors, including a LIDAR and camera, which are mounted to its trunk (main body). BlueFoot can articulate (\IE pitch and yaw) these sensors by posing its trunk using aggregate leg motion controls. BlueFoot also includes a sizable array of other on-board sensors for feedback and control, including joint position, velocity and loading sensors; an inertial measurement unit (IMU); a magnetometer; a GPS unit; humidity and temperature sensors; and foot-contact sensors. Using the computational, sensory and motor capacities at hand, BlueFoot has the ability to utilize similar control mechanisms to those implemented on larger quadruped systems. 
 
 		The BlueFoot platform inherently demands active control to achieve locomotion and system stability, making this robot an ample platform for studies related to gait design and motion planning. In particular, BlueFoot's controllers make direct use of the system's kinematic model and involve applications of open-loop gait design and stabilization for the purpose of achieving dynamic locomotion control. In particular, BlueFoot is gaited via a central pattern generator (CPG) based technique which is augmented with a foothold controller along the same lines as \cite{Ajallooeian2013} and \cite{Rutishauser2008}. Active platform stabilization is performed via a zero-moment point (ZMP) based body placement controller which stabilizes the system using planar trunk motions during arbitrary gaiting sequences. Both such controllers make use of virtual-forces to drive system reference commands. These controllers apply BlueFoot's forward kinematic model for the purpose estimating joint and foot positions. Finally, outer-loop control routines are implemented to supply commands and corrections used in system navigation control. Among these controllers are a potential-fields navigation controller, which incorporates image-feature tracking; and 3D point-cloud processing routines for surface reconstruction and foot-placement planning.
 	
@@ -48,7 +48,7 @@
 
 		The zero-moment point (ZMP), which is equivalent to the center of pressure (CoP), is formally defined as a point on the ground beneath a walking system at which the net moment acting upon the trunk (referred to as the \emph{tipping moment}) is zero \cite{Sardain2004}. The concept of ZMP and its application to legged robotics was originally introduced by \cite{Vuko1972} and expanded upon in \cite{Goswami1999}. Both such studies apply ZMP theory towards the control of biped robots.
 
-		Formally, the ZMP can be defined using a formulation for the CoP wherein the moments about $\tau_{x}$ and $\tau_{y}$, the lateral tipping-moments applied to the robot's body in the world frame, are equal to zero. It will be denoted $p_{ZMP}$. The solution for $p_{ZMP}\in\Re^{3}$, with respect to a set of $N$ foot contact points $p_{i,e}\in\Re^{3}$ and $N$ associated applied foot-contact forces $f_{i,e}\in\Re^{3}$, arises as a bounded set of solutions to the equation
+		Formally, the ZMP can be defined using a formulation for the CoP wherein the moments about $\tau_{x}$ and $\tau_{y}$, the lateral tipping-moments applied to the robot's body in the world frame, are equal to zero. It will be denoted $p_{ZMP}$. The solution for $p_{ZMP}\in\RRe^{3}$, with respect to a set of $N$ foot contact points $p_{i,e}\in\RRe^{3}$ and $N$ associated applied foot-contact forces $f_{i,e}\in\RRe^{3}$, arises as a bounded set of solutions to the equation
 			\begin{equation}
 				\sum^{N}_{i=1}\wrap{p_{i,e}-p_{ZMP}}\times f_{i,e} 
 				= 
@@ -118,10 +118,10 @@
 
 			\begin{equation}
 				\begin{split}
-					W^{i} &\leftarrow W^{i} + 
-						-\gamma^{lr} \wrap{ \frac{ \partial o^{i} }{\partial {W^{i} } }  o^{i-1} }^{T}  + \mu \Delta W^{i} \\
-					W^{i} &\leftarrow W^{i} + 
-						-\gamma^{lr} \delta^{i} \wrap{o^{i-1}}^{T}  + \mu \Delta W^{i}
+					%W^{i} &\leftarrow W^{i} + 
+					%	-\gamma^{lr} \wrap{ \frac{ \partial o^{i} }{\partial {W^{i} } }  o^{i-1} }^{T}  + \mu \Delta W^{i} \\
+					\Delta W^{i} &\leftarrow -\gamma^{lr} \delta^{i} \wrap{o^{i-1}}^{T}  + \mu \Delta W^{i} \\
+					W^{i} &\leftarrow W^{i} + \Delta W^{i}
 				\end{split}
 				\label{eq::bp_weight_update}
 			\end{equation} 
@@ -140,12 +140,12 @@
 				e^{i} =  \wrap{ W^{i} }^{T} \delta^{i+1} \hspace{2mm} \forall \hspace{2mm} i\neq n,
 			\end{equation*}
 %%
-		and $\gamma^{lr} \in [0,1]$ defines the learning rate;  $\mu \in [0,1]$ defines the learning momentum; $W^{i} \in \Re^{N_{O}^{i}\times N_{I}^{i}}$, define the weighting matrix between the \Ith layer (of size $N_{I}^{i}$ nodes) and $(i+1)^{th}$ layer (of size $N_{O}^{i}=N_{I}^{i-1}$); $\Delta W^{i}$, defines the corresponding weight update to $W^{i}$; and $e^{i}$ is the output error for each \Ith layer. For the output ($n^{th}$) layer, $e^{n}$ is equal to the difference between the network output and the network output target, which will be defined later. For all other layers, $e^{i}$ represents a \emph{back-propagated} error. from the $(i+1)^{th}$ layer.
+		and $\gamma^{lr} \in [0,1]$ defines the learning rate;  $\mu \in [0,1]$ defines the learning momentum; $W^{i} \in \RRe^{N_{O}^{i}\times N_{I}^{i}}$, define the weighting matrix between the \Ith layer (of size $N_{I}^{i}$ nodes) and $(i+1)^{th}$ layer (of size $N_{O}^{i}=N_{I}^{i-1}$); $\Delta W^{i}$, defines the corresponding weight update to $W^{i}$; and $e^{i}$ is the output error for each \Ith layer. For the output ($n^{th}$) layer, $e^{n}$ is equal to the difference between the network output and the network output target, which will be defined later. For all other layers, $e^{i}$ represents a \emph{back-propagated} error. from the $(i+1)^{th}$ layer.
 
 
 		$\sigma^{i}(y^{i})$ is an element-wise activation function which outputs a vector of activation outputs, $\sigma_{j}^{i}(y_{j}^{i}) $ for each \Jth, weighted input, $y_{j}^{i}$, defined as follows:
 			\begin{equation}
-				\setwrap{ \sigma^{i}(y^{i}) = \sbrack{ \sigma_{1}^{i}(y_{1}^{i}),...,\sigma_{N_{I}^{i}}^{i}(y_{N_{I}^{i}}^{i}) }^{T} \text{ } : \text{ } \Re^{N_{I}^{i}} \rightarrow \Re^{N_{I}^{i}}}
+				\setwrap{ \sigma^{i}(y^{i}) = \sbrack{ \sigma_{1}^{i}(y_{1}^{i}),...,\sigma_{N_{I}^{i}}^{i}(y_{N_{I}^{i}}^{i}) }^{T} \text{ } : \text{ } \RRe^{N_{I}^{i}} \rightarrow \RRe^{N_{I}^{i}}}
 			\end{equation}
 
 
@@ -170,7 +170,7 @@
 			\end{equation} 
 		\ref{eq::bp_sigmoid_deriv} results from the derivative properties of the $\tanh\wrap{*}$ function.For the output layer, a linear activation function is used to avoid output scaling issues. This activation function is defined simply as:
 			\begin{equation}
-				\sigma^{O}(y^{O}) = y^{O} \in \Re
+				\sigma^{O}(y^{O}) = y^{O} \in \RRe
 				\label{eq::output_activation_function}
 			\end{equation}
 		with $\nabla_{y}\sigma^{O}(y^{O})$ defined as:
@@ -208,7 +208,7 @@
 
 		According to \cite{Koren1991} the main pitfall with potential-fields navigation is susceptivity to local minima within the global force-field. At a local minimum, the $F^{+}$ and $F^{-}$ are of nearly equal magnitude, causing the magnitude of the total guiding force vector, $F_{c}$, to be close to zero. In practice, reaching a point at which robot will be completely stationary is unlikely, as sensor readings used to observe environmental obstructions are corrupted by noise. In turn, this noise induces random perturbations in the robot's motion. In fact, perturbations due to sensor noise could actually aid in relieving a situation in which a robot is stuck in a local minima. However, the gradient of the force-field around a minimum point could be very steep over a large area around the aforementioned singularity. These type of potential-sink regions could cause the robot to exhibit limit-cycle behavior as it periodically overshoots and re-attracts to the location of the force-minimum. 
 
-		This can be overcome, in part, by adding an artificial \emph{inertia} (essentially a tunable gain parameter) when updating the robot's navigation reference signals. Given a set of robot navigation command parameters, $v^{r}$ and $\omega^{r}$, and potential reference outputs, $v^{r}_{L}$ and $\omega^{r}_{L}$ (which are generated from $F_{nav}$), navigation updates with an added update-inertia, $B^{r}\in\Re^{2\times2}$, exhibit the follow controller dynamics:
+		This can be overcome, in part, by adding an artificial \emph{inertia} (essentially a tunable gain parameter) when updating the robot's navigation reference signals. Given a set of robot navigation command parameters, $v^{r}$ and $\omega^{r}$, and potential reference outputs, $v^{r}_{L}$ and $\omega^{r}_{L}$ (which are generated from $F_{nav}$), navigation updates with an added update-inertia, $B^{r}\in\RRe^{2\times2}$, exhibit the following controller dynamics:
 			\begin{equation}
 				\left[
 					\begin{array}{c}
@@ -235,7 +235,7 @@
 			\end{equation}
 		where $B^{r}$ is a strictly positive definite, diagonal ``inertia" matrix. This control formulation is equivalent to an outer-loop P-control scheme. Using this update scheme may cause the robot platform to sufficiently overshoot minimum points such that it leaves the local attraction field. Care must be taken in the selection of $B$, however, so that system still exhibits stable behavior during navigation control. A more sophisticated approach to escaping local minima is mentioned in \cite{Krishnamurthy2007}, which involves a ``stuck" detection algorithm. The idea behind such an algorithm involves a deduction about whether or not the robot is captured in a local minima based on samples of the robot’s motion state (\IE position and velocity). Once the robot has determined that is it stuck, it executes a small random-walk as a means of escape. 
 
-		The local minima problem is addressed through the use of auxiliary (possibly dynamic) target points, as done in \cite{ArambulaCosio2004} via a hybrid navigation potential-fields / visual-servoing scheme. Instead of incorporating goal points directly into the potential-fields scheme, goals (in this case, image features) are tracked using an entirely separate navigation scheme. Here, a separate set of navigation reference commands, $v^{r}_{C}$ and $\omega^{r}_{C}$, are mixed with commands generated via the potential-fields algorithm. The amount of influence either command scheme has over the final navigation command parameters, $v^{r}$ and $\omega^{r}$, depends on relative measure of ``closeness" to the object being tracked, which the robot determines in an image processing routine. The specifics of this will be described in \ref{ch::navigation}. 
+		The local minima problem is addressed through the use of auxiliary (possibly dynamic) target points, as done in \cite{ArambulaCosio2004} via a hybrid navigation potential-fields/visual-servoing scheme. Instead of incorporating goal points directly into the potential-fields scheme, goals (in this case, image features) are tracked using an entirely separate navigation scheme. A separate set of navigation reference commands, $v^{r}_{C}$ and $\omega^{r}_{C}$, are mixed with commands generated via the potential-fields algorithm. The amount of influence either command scheme has over the final navigation command parameters, $v^{r}$ and $\omega^{r}$, depends on relative measure of ``closeness" to the object being tracked, which the robot determines from an image processing routine. The specifics of the visual-servoing controller will be described in \ref{ch::navigation}. 
 
 		Hence, the potential-fields portion of this control scheme is used only for the purpose of avoiding potential obstructions, sensed via LIDAR range data. Image-features are used in a visual-servoing routine which guides the robot toward features-of-interest which fall within the robot’s camera gaze. This approach offers the ability to manually guide the robot during navigation, by either a human overseer, or a partner robot (which could wear trackable markers), as it performs an independent obstacle avoidance routine. The advantage of this approach lives in its simplicity, as it relies only on immediate environmental samples and, thus, has relatively minimal implementation demands.  As a mechanism for partially-guided wandering-type (random) navigation within an unknown region, this approach is certainly adequate as a will be shown via empirical results from real-world trials.
 
@@ -244,38 +244,38 @@
 
 	\section{3D Surface Reconstruction for Rough Terrain Planning}
 
-		The previously introduced navigation scheme is utilized for flatland navigation, exclusively. As such, it is generally insufficient for navigation and planning over rough terrain. Navigation and footstep planning over rough terrain require the acquisition of 3D surface data from the robot’s immediate environment, generally with high feature detail. This thesis will provide the preliminaries for rough-terrain navigation by way of several surface reconstruction / representation methods from point-cloud data. First, a method for composing 3D point clouds from successive 2D LIDAR scans will be described. Then, algorithms for generating 3D height-maps will be described and a method for cost assignment based on generated height-maps will be presented for use in rough terrain foot-placement planning. Finally, an implementation for surface reconstruction from raw point-cloud data will be described.
+		The previously introduced navigation scheme is utilized for navigation over flatland, exclusively. As such, it is generally insufficient for navigation and planning over rough terrain. Navigation and footstep planning over rough terrain require the acquisition of 3D surface data from the robot’s immediate environment, generally with high feature detail. This thesis will provide the preliminaries for rough-terrain navigation by way of several surface reconstruction/representation methods from point-cloud data. First, a method for composing 3D point clouds from successive 2D LIDAR scans will be described. Then, algorithms for generating 3D height-maps will be described and a method for cost assignment based on generated height-maps will be presented for use in rough terrain foot-placement planning. Finally, an implementation for surface reconstruction from raw point-cloud data will be described.
 
 		Work related to height-map generation and associated cost-assignment (used in generating discrete cost-maps) from 3D point cloud data is formulated from an intuitive evaluation of the problem of rough-terrain planning. This work should be viewed as the initial steps towards formal rough terrain planning which will later be solidified with existing research. On the other hand, implementations related to 3D surface reconstruction from 3D point clouds rely heavily on algorithms originally outlined in \cite{Rusu2009} and formally implemented in the OpenPCL library \cite{openpcl_library}. 
 
-		Here, surface estimation from 3D point cloud data is approached by way of successive plane-fitting (normal estimation) via Principle Component Analysis (PCA) on a moving subset of points \cite{Rusu2009,Pearson1901}. Specifically, a normal vector is associated with each point, $\bar{x}_{i}$, within the point cloud,  $\bar{\mmathcal{S}}$,  by fitting a plane to a subset of neighboring points which fall within a unit-ball (of radius $d_{s}$) around $\bar{x}_{i}$. Here, $\bar{\mmathcal{S}}$ represents a raw 3D point cloud. This point cloud is pre-conditioned to generate a sparser point cloud, $\hat{\mmathcal{S}}$, which estimates the collection of points $\bar{\mmathcal{S}}$. Preconditioning involves a voxel-grid filter, which is used to down-sample the original point cloud; and a moving-least-squares (MLS) filter, which is used to regularize points and remove outliers. These preconditioning routines aid in the normal estimation process by decreasing computational burden of the estimation algorithm. This is achieved by reducing the density of the space which must be searched for nearest neighbor points about each $\bar{x}_{i}$. Preconditioning also improves the relative smoothness of the reconstructed surface \cite{Rusu2009}. 
+		Surface estimation from 3D point cloud data is approached by way of successive plane-fitting (normal estimation) via Principle Component Analysis (PCA) on a moving subset of points \cite{Rusu2009,Pearson1901}. Specifically, a normal vector is associated with each point, $\bar{x}_{i}$, within the point cloud,  $\bar{\mmathcal{S}}$,  by fitting a plane to a subset of neighboring points which fall within a unit-ball (of radius $d_{s}$) around $\bar{x}_{i}$. Here, $\bar{\mmathcal{S}}$ represents a raw 3D point cloud. This point cloud is pre-conditioned to generate a sparser point cloud, $\hat{\mmathcal{S}}$, which estimates the collection of points $\bar{\mmathcal{S}}$. Preconditioning involves a voxel-grid filter, which is used to down-sample the original point cloud; and a moving-least-squares (MLS) filter, which is used to regularize points and remove outliers. These preconditioning routines aid in the normal estimation process by decreasing computational burden of the estimation algorithm. This is achieved by reducing the density of the space which must be searched for nearest neighbor points about each $\bar{x}_{i}$. Preconditioning also improves the relative smoothness of the reconstructed surface \cite{Rusu2009}. 
 
 		To estimate a local plane (via PCA) about the point $\bar{x}_{i}$, we define a moving-neighborhood, $\mmathcal{B}_{\bar{x}_{i}}$, as follows:
 			\newcommand{\xball}{\mmathcal{B}_{\bar{x}_{i}}}
 			\begin{equation}
-				\setwrap{ \bar{x}_{j} \in \xball \SSep : \SSep \norm{\bar{x}_{j}-\bar{x}_{i}} < d_{s}\SSep , \SSep \forall \SSep i\neq j \SSep }\SSep,\SSep \xball \subset \bar{S}
+				\setwrap{ \bar{x}_{j} \in \xball \SSep : \SSep \norm{\bar{x}_{j}-\bar{x}_{i}} < d_{s}\SSep , \SSep \forall \SSep i\neq j \SSep }\SSep,\SSep \xball \subset \bar{S}.
 				\label{eq::pca_ball}
 			\end{equation}
-		Additionally, the covariance matrix, $C_{\bar{x}_{i}} \in \Re^{3\times3}$, of the subset $\xball$ is defined as:
+		Additionally, the covariance matrix, $C_{\bar{x}_{i}} \in \RRe^{3\times3}$, of the subset $\xball$ is defined as:
 			\begin{equation}
 				C_{\bar{x}_{i}} =
 				\frac{1}{S(\xball)} \sum_{\bar{x}_{j} \in \xball } ( \bar{x}_{j} - \bar{x}_{c,i} ) ( \bar{x}_{j} - \bar{x}_{c,i} )^{T}
 				\label{eq::pca_cov}
 			\end{equation}
-		where the centroid, $\bar{x}_{c,i} \in \Re^{3}$, of the subspace $\xball$ is defined as:
+		where the centroid, $\bar{x}_{c,i} \in \RRe^{3}$, of the subspace $\xball$ is defined as:
 			\begin{equation}
 				\bar{x}_{c,i} = 
 				\frac{1}{S(\xball)} \sum_{\bar{x}_{j} \in \xball } \bar{x}_{j}
 				\label{eq::pca_centroid}
 			\end{equation}
-		and $S(\xball)$ defines the number of points within the subspace $\xball$. Note that $C_{\bar{x}_{i}}$ is a positive semi-definite matrix with all eigenvalues, $\lambda_{x_{i},j}\geq0\text{ }\forall\text{ }j\in\{1,2,3\}$ such that $\lambda_{x_{i},0}\leq\lambda_{x_{i},1}\leq\lambda_{x_{i},2}$. The unit-eigenvectors $v_{x_{i},j} \text{ }\forall\text{ }j\in\{1,2,3\}$ represent the principal components of the local subspace $\xball$, and are defined by:
+		and $S(\xball)$ defines the number of points within $\xball$. Note that $C_{\bar{x}_{i}}$ is a positive semi-definite matrix with all eigenvalues, $\lambda_{x_{i},j}\geq\text{ for }j\in\{1,2,3\}$ such that $\lambda_{x_{i},1}\leq\lambda_{x_{i},2}\leq\lambda_{x_{i},3}$. The unit-eigenvectors $v_{x_{i},j}\text{ for }j\in\{1,2,3\}$ represent the principal components of the local subspace $\xball$, and are defined by:
 			\begin{equation}
-				\setwrap{ v_{x_{i},j}\text{ }\Re^{3}\text{ }:\text{ }C_{\bar{x}_{i}} v_{x_{i},j} = \lambda_{x_{i},j} v_{x_{i},j}\text{ }\forall\text{ }j\in\{1,2,3\}}
+				\setwrap{ v_{x_{i},j}\text{ }\RRe^{3}\text{ }:\text{ }C_{\bar{x}_{i}} v_{x_{i},j} = \lambda_{x_{i},j} v_{x_{i},j}\text{ }\forall\text{ }j\in\{1,2,3\}}.
 				\label{eq::pca_eigen}
 			\end{equation}
-		The eigenvector $v_{x_{i},1}$ with corresponding smallest eigenvalue $\lambda_{x_{i},1}$ represents a unit-normal which emanates from a 2D manifold of $\xball$ whose origin is located $x_{i}$. This manifold represents a planar least-squares best-fit for the information contained in $\xball$. To fortify this definition, we can also consider that the minimum eigenvalue $\lambda_{x_{i},1}$ $v_{x_{i},1}$ indicates that $v_{x_{i},1}$ is a direction in $\xball$ with the lowest variational \emph{energy}. Hence, the sum of the square-errors between all points in $\xball$ is minimized in the $v_{x_{i},1}$ direction.
+		The eigenvector $v_{x_{i},1}$ with corresponding smallest eigenvalue $\lambda_{x_{i},1}$ represents a unit-normal which emanates from a 2D manifold of $\xball$ whose origin is located at $x_{i}$. This manifold represents a planar least-squares best-fit for the information contained in $\xball$. To fortify this definition, we can also consider that the minimum eigenvalue $\lambda_{x_{i},1}$ indicates that $v_{x_{i},1}$ is a direction in $\xball$ with the lowest variational \emph{energy}. Hence, the sum of the square-errors among all points in $\xball$ is minimized in the $v_{x_{i},1}$ direction.
 
-		Given a preprocessed point cloud $\hat{\mmathcal{S}}$ (generated from a raw point cloud $\bar{\mmathcal{S}}$), the full normal-estimation algorithm is then implemented using the PCA formulation defined from \ref{eq::pca_ball}-\ref{eq::pca_eigen} in Algorithm~\ref{alg::normal_estimation}. Here, $\vec{n}_{i} \in \hat{N}_{\mmathcal{S}}$ represents a normal emanating from each \Ith point, $\hat{x}_{i} \in \hat{\mmathcal{S}}$.
+		Given a preprocessed point cloud $\hat{\mmathcal{S}}$ (generated from a raw point cloud $\bar{\mmathcal{S}}$), the full normal-estimation algorithm is then implemented using the PCA formulation defined from \ref{eq::pca_ball}-\ref{eq::pca_eigen} in Algorithm~\ref{alg::normal_estimation}, to follow. Here, $\vec{n}_{i} \in \hat{N}_{\mmathcal{S}}$ represents a normal emanating from each \Ith point, $\hat{x}_{i} \in \hat{\mmathcal{S}}$.
 
 			\begin{algorithm}[!h]
 				\begin{algorithmic}
@@ -293,4 +293,4 @@
 
 	\section{Overview of Thesis}
 
-		This thesis will first detail the major hardware components; design considerations; and construction of the BlueFoot platform. Next, BlueFoot's software and processing architecture, applied in the control the BlueFoot platform, will be described. The main content of this report will then be presented. This will include the kinematic and dynamical models of the BlueFoot system will be described, followed by control routines which are presently implemented to gait, stabilize, and navigate the BlueFoot platform. The main content will also include preliminary approaches for rough-terrain planning. The final section of this thesis will contain concluding statements about the system's design and control, including remarks about possible future directions of study related to the BlueFoot platform and legged robotics as extensions of the existing work.
+		This thesis will first detail the major hardware components; design considerations; and construction of the BlueFoot platform in Chapter~\ref{ch::hardware_and_design}. Next, BlueFoot's software and processing architecture, applied in the control the BlueFoot platform, will be described in Chapter~\ref{ch::software}. The kinematic and dynamical models of the BlueFoot system will be described in Chapter~\ref{ch::system_modeling}, followed by descriptions of the controllers which are presently implemented to gait and stabilize the platform in Chapter~\ref{ch::gait_control}. Chapter~\ref{ch::navigation} will cover navigation algorithms applied to the BlueFoot platform, including preliminary approaches for rough-terrain planning. Finally, Chapter~\ref{ch::conclusion} will contain concluding statements about the system's design and control, including remarks about possible future directions of study related to the BlueFoot platform and legged robotics as extensions of the existing work.
