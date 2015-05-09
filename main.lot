@@ -1,22 +1,22 @@
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {table}{\numberline {1}{\ignorespaces Link and body-offset lengths for each leg.\relax }}{21}
+\contentsline {table}{\numberline {1}{\ignorespaces Link and body-offset lengths for each leg.\relax }}{22}
 \contentsline {table}{\numberline {2}{\ignorespaces System communication port-pairs and corresponding data transfer rates\relax }}{26}
-\contentsline {table}{\numberline {3}{\ignorespaces Power consumption summary by device (for single-camera configuration).\relax }}{27}
-\contentsline {table}{\numberline {4}{\ignorespaces Battery power supply and estimated runtime summary.\relax }}{27}
+\contentsline {table}{\numberline {3}{\ignorespaces Power consumption summary by device (for single-camera configuration).\relax }}{28}
+\contentsline {table}{\numberline {4}{\ignorespaces Battery power supply and estimated runtime summary.\relax }}{28}
 \addvspace {10pt}
-\contentsline {table}{\numberline {5}{\ignorespaces Structure of the packets sent from Ground-Station to TM4C.\relax }}{33}
-\contentsline {table}{\numberline {6}{\ignorespaces Structure of the packets sent from the TM4C to the Ground-Station.\relax }}{34}
-\contentsline {table}{\numberline {7}{\ignorespaces Structure of the packets sent from the RM48 to the ODROID.\relax }}{34}
-\contentsline {table}{\numberline {8}{\ignorespaces Structure of the packets sent from the ODROID-XU to the RM48.\relax }}{35}
+\contentsline {table}{\numberline {5}{\ignorespaces Structure of the packets sent from Ground-Station to TM4C.\relax }}{34}
+\contentsline {table}{\numberline {6}{\ignorespaces Structure of the packets sent from the TM4C to the Ground-Station.\relax }}{35}
+\contentsline {table}{\numberline {7}{\ignorespaces Structure of the packets sent from the RM48 to the ODROID.\relax }}{35}
+\contentsline {table}{\numberline {8}{\ignorespaces Structure of the packets sent from the ODROID-XU to the RM48.\relax }}{36}
 \addvspace {10pt}
-\contentsline {table}{\numberline {9}{\ignorespaces DH parameters for all legs.\relax }}{39}
-\contentsline {table}{\numberline {10}{\ignorespaces Imposed joint limits.\relax }}{42}
-\contentsline {table}{\numberline {11}{\ignorespaces Physical joint limits.\relax }}{43}
-\contentsline {table}{\numberline {12}{\ignorespaces Locations for the platform and feet when in the default stance, written with respect to the frame $O_{b'}$.\relax }}{43}
+\contentsline {table}{\numberline {9}{\ignorespaces DH parameters for all legs.\relax }}{40}
+\contentsline {table}{\numberline {10}{\ignorespaces Imposed joint limits.\relax }}{43}
+\contentsline {table}{\numberline {11}{\ignorespaces Physical joint limits.\relax }}{44}
+\contentsline {table}{\numberline {12}{\ignorespaces Locations for the platform and feet when in the default stance, written with respect to the frame $O_{b'}$.\relax }}{44}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {table}{\numberline {13}{\ignorespaces Sum of costs for four path-planning trials with varying initial positions varying optimization windows.\relax }}{92}
+\contentsline {table}{\numberline {13}{\ignorespaces Sum of costs for four path-planning trials with varying initial positions varying optimization windows.\relax }}{93}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

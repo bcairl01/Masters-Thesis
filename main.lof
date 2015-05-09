@@ -2,55 +2,55 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces The BlueFoot Quadruped Robot\relax }}{2}
 \contentsline {figure}{\numberline {2}{\ignorespaces Parallel NARX-network model with a linear output layer.\relax }}{7}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {3}{\ignorespaces The BlueFoot Quadruped Robot: single-camera configuration \emph {(left)}; stereo-camera configuration \emph {(right)}.\relax }}{16}
+\contentsline {figure}{\numberline {3}{\ignorespaces The BlueFoot Quadruped Robot: single-camera configuration \emph {(left)}; stereo-camera configuration \emph {(right)}.\relax }}{17}
 \contentsline {figure}{\numberline {4}{\ignorespaces Root section of trunk. Call-out in top-right shows main-switch access through the bottom of the root module.\relax }}{18}
 \contentsline {figure}{\numberline {5}{\ignorespaces Main section of trunk. Call-out in the top-right shows how the ODROID-XU and AutoPilot computers fit within the module.\relax }}{19}
-\contentsline {figure}{\numberline {6}{\ignorespaces Head section of trunk. Monocular camera configuration with Hokuyo-URG \emph {(left)}; and Stereo configuration with PLDS \emph {(right)}. \relax }}{19}
-\contentsline {figure}{\numberline {7}{\ignorespaces Closeup of BlueFoot's leg. \emph {(left)} shows effective link lengths and the location of defined joint positions.\relax }}{20}
+\contentsline {figure}{\numberline {6}{\ignorespaces Head section of trunk. Monocular camera configuration with Hokuyo-URG \emph {(left)}; and Stereo configuration with PLDS \emph {(right)}. \relax }}{20}
+\contentsline {figure}{\numberline {7}{\ignorespaces Closeup of BlueFoot's leg. \emph {(left)} shows effective link lengths and the location of defined joint positions.\relax }}{21}
 \contentsline {figure}{\numberline {8}{\ignorespaces Series elastic brackets.\relax }}{21}
-\contentsline {figure}{\numberline {9}{\ignorespaces BlueFoot device networking diagram.\relax }}{25}
+\contentsline {figure}{\numberline {9}{\ignorespaces BlueFoot device networking diagram.\relax }}{26}
 \contentsline {figure}{\numberline {10}{\ignorespaces BlueFoot power routing.\relax }}{27}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {11}{\ignorespaces BlueFoot's on-board processes / signals and their relationships.\relax }}{30}
-\contentsline {figure}{\numberline {12}{\ignorespaces Communication flow between processors on the BlueFoot Platform.\relax }}{33}
+\contentsline {figure}{\numberline {11}{\ignorespaces BlueFoot's on-board processes / signals and their relationships.\relax }}{31}
+\contentsline {figure}{\numberline {12}{\ignorespaces Communication flow between processors on the BlueFoot Platform.\relax }}{34}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {13}{\ignorespaces A visualization of BlueFoot's coordinate frame configuration.\relax }}{38}
-\contentsline {figure}{\numberline {14}{\ignorespaces Range of motion for body's planar position (\emph {left}) and body pitch and roll (\emph {right}) while in the default stance.\relax }}{43}
-\contentsline {figure}{\numberline {15}{\ignorespaces Visualization of the BlueFoot simulator.\relax }}{47}
-\contentsline {figure}{\numberline {16}{\ignorespaces Joint position comparison between the simulated and real quadruped while performing a gait which achieves a forward velocity of $60\frac {mm}{s}$\relax }}{48}
+\contentsline {figure}{\numberline {13}{\ignorespaces A visualization of BlueFoot's coordinate frame configuration.\relax }}{39}
+\contentsline {figure}{\numberline {14}{\ignorespaces Range of motion for body's planar position (\emph {left}) and body pitch and roll (\emph {right}) while in the default stance.\relax }}{44}
+\contentsline {figure}{\numberline {15}{\ignorespaces Visualization of the BlueFoot simulator.\relax }}{48}
+\contentsline {figure}{\numberline {16}{\ignorespaces Joint position comparison between the simulated and real quadruped while performing a gait which achieves a forward velocity of $60\frac {mm}{s}$\relax }}{49}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {17}{\ignorespaces CPG output and phase plots for a two-paced gait over two gait cycles.\relax }}{55}
-\contentsline {figure}{\numberline {18}{\ignorespaces CPG output and phase plots for a four-paced gait over two gait cycles.\relax }}{55}
-\contentsline {figure}{\numberline {19}{\ignorespaces CPG output transition during four-pace to two-pace gait switch.\relax }}{56}
-\contentsline {figure}{\numberline {20}{\ignorespaces Real joint angles during a gait at $65 \frac {mm}{s}$.\relax }}{57}
-\contentsline {figure}{\numberline {21}{\ignorespaces Virtual foothold representation. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.\relax }}{59}
-\contentsline {figure}{\numberline {22}{\ignorespaces Stepping pattern generated using virtual-force foothold controller during two-pace gait sequence at $v^{r}=40\frac {mm}{s}$.\relax }}{60}
-\contentsline {figure}{\numberline {23}{\ignorespaces Stepping pattern generated using virtual-force foothold controller during four-pace gait sequence at $v^{r}=40\frac {mm}{s}$.\relax }}{61}
-\contentsline {figure}{\numberline {24}{\ignorespaces Body motion generated using ZMP controller during two-pace \emph {(top)} and four-pace \emph {(bottom)} gaiting sequence.\relax }}{63}
-\contentsline {figure}{\numberline {25}{\ignorespaces Quadruped tipping about planted feet. \relax }}{65}
-\contentsline {figure}{\numberline {26}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.\relax }}{69}
-\contentsline {figure}{\numberline {27}{\ignorespaces NARX Network MSE convergence for trial shown in Figure 32\hbox {}\relax }}{71}
-\contentsline {figure}{\numberline {28}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with $\alpha = 0.125$.\relax }}{71}
-\contentsline {figure}{\numberline {29}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with $\alpha = 0.250$.\relax }}{72}
-\contentsline {figure}{\numberline {30}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with $\alpha = 0.350$.\relax }}{72}
-\contentsline {figure}{\numberline {31}{\ignorespaces Trunk orientation during 80 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{73}
-\contentsline {figure}{\numberline {32}{\ignorespaces Trunk orientation during 100 $\frac {mm}{s}$ gait with $\alpha = 0.35$\relax }}{73}
+\contentsline {figure}{\numberline {17}{\ignorespaces CPG output and phase plots for a two-paced gait over two gait cycles.\relax }}{56}
+\contentsline {figure}{\numberline {18}{\ignorespaces CPG output and phase plots for a four-paced gait over two gait cycles.\relax }}{56}
+\contentsline {figure}{\numberline {19}{\ignorespaces CPG output transition during four-pace to two-pace gait switch.\relax }}{57}
+\contentsline {figure}{\numberline {20}{\ignorespaces Real joint angles during a gait at $65 \frac {mm}{s}$.\relax }}{58}
+\contentsline {figure}{\numberline {21}{\ignorespaces Virtual foothold representation. Blue arrows represent an attractive ``force" between the feet and their corresponding virtual foothold.\relax }}{60}
+\contentsline {figure}{\numberline {22}{\ignorespaces Stepping pattern generated using virtual-force foothold controller during two-pace gait sequence at $v^{r}=40\frac {mm}{s}$.\relax }}{61}
+\contentsline {figure}{\numberline {23}{\ignorespaces Stepping pattern generated using virtual-force foothold controller during four-pace gait sequence at $v^{r}=40\frac {mm}{s}$.\relax }}{62}
+\contentsline {figure}{\numberline {24}{\ignorespaces Body motion generated using ZMP controller during two-pace \emph {(top)} and four-pace \emph {(bottom)} gaiting sequence.\relax }}{64}
+\contentsline {figure}{\numberline {25}{\ignorespaces Quadruped tipping about planted feet. \relax }}{66}
+\contentsline {figure}{\numberline {26}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.\relax }}{70}
+\contentsline {figure}{\numberline {27}{\ignorespaces NARX Network MSE convergence for trial shown in Figure 32\hbox {}\relax }}{72}
+\contentsline {figure}{\numberline {28}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with $\alpha = 0.125$.\relax }}{72}
+\contentsline {figure}{\numberline {29}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with $\alpha = 0.250$.\relax }}{73}
+\contentsline {figure}{\numberline {30}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with $\alpha = 0.350$.\relax }}{73}
+\contentsline {figure}{\numberline {31}{\ignorespaces Trunk orientation during 80 $\frac {mm}{s}$ gait with mixing parameter set to $\alpha = 0.35$\relax }}{74}
+\contentsline {figure}{\numberline {32}{\ignorespaces Trunk orientation during 100 $\frac {mm}{s}$ gait with $\alpha = 0.35$\relax }}{74}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {33}{\ignorespaces Potential-field around environmental obstacles.\relax }}{76}
-\contentsline {figure}{\numberline {34}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential-fields navigation scheme.\relax }}{78}
-\contentsline {figure}{\numberline {35}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and obstacles.\relax }}{79}
-\contentsline {figure}{\numberline {36}{\ignorespaces Path (shown in yellow) taken by robot through a real-world lab setting showing the robot's view of the goal marker.\relax }}{81}
-\contentsline {figure}{\numberline {37}{\ignorespaces LIDAR swept over a range of angles, $\theta _{b,x} \in [\theta _{b,x,1}^{r},\theta _{b,x,N}^{r}]$. \relax }}{83}
-\contentsline {figure}{\numberline {38}{\ignorespaces Original 3D point-cloud of terrain patch \emph {(top)} and corresponding view from robot's on-board camera \emph {(bottom)}.\relax }}{85}
-\contentsline {figure}{\numberline {39}{\ignorespaces A height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{87}
-\contentsline {figure}{\numberline {40}{\ignorespaces Height-map showing terrain variation.\relax }}{87}
-\contentsline {figure}{\numberline {41}{\ignorespaces Projections of a sample cost-tensor generated from the height-map shown in Figure\nobreakspace {}39\hbox {}.\relax }}{91}
-\contentsline {figure}{\numberline {42}{\ignorespaces Path planned over rough terrain with $d_{w}=d_{u}=1$.\relax }}{93}
-\contentsline {figure}{\numberline {43}{\ignorespaces Path planned over rough terrain with $d_{w}=d_{u}=5$.\relax }}{94}
-\contentsline {figure}{\numberline {44}{\ignorespaces Path planned over rough terrain with $d_{w}=d_{u}=15$.\relax }}{95}
-\contentsline {figure}{\numberline {45}{\ignorespaces Path planned over rough terrain with $d_{w}=d_{u}=30$.\relax }}{96}
-\contentsline {figure}{\numberline {46}{\ignorespaces Point cloud generated from sequential scans of a room showing flat-surface candidates \emph {(top)} and 3D point cloud with estimated normals \emph {(bottom)}.\relax }}{99}
-\contentsline {figure}{\numberline {47}{\ignorespaces Point cloud generated from sequential scans of a floor with obstacles showing flat-surface candidates \emph {(top)} and 3D point cloud with estimated normals \emph {(bottom)}.\relax }}{100}
+\contentsline {figure}{\numberline {33}{\ignorespaces Potential-field around environmental obstacles.\relax }}{77}
+\contentsline {figure}{\numberline {34}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential-fields navigation scheme.\relax }}{79}
+\contentsline {figure}{\numberline {35}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and obstacles.\relax }}{80}
+\contentsline {figure}{\numberline {36}{\ignorespaces Path (shown in yellow) taken by robot through a real-world lab setting showing the robot's view of the goal marker.\relax }}{82}
+\contentsline {figure}{\numberline {37}{\ignorespaces LIDAR swept over a range of angles, $\theta _{b,x} \in [\theta _{b,x,1}^{r},\theta _{b,x,N}^{r}]$. \relax }}{84}
+\contentsline {figure}{\numberline {38}{\ignorespaces Original 3D point-cloud of terrain patch \emph {(top)} and corresponding view from robot's on-board camera \emph {(bottom)}.\relax }}{86}
+\contentsline {figure}{\numberline {39}{\ignorespaces A height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{88}
+\contentsline {figure}{\numberline {40}{\ignorespaces Height-map showing terrain variation.\relax }}{88}
+\contentsline {figure}{\numberline {41}{\ignorespaces Projections of a sample cost-tensor generated from the height-map shown in Figure\nobreakspace {}39\hbox {}.\relax }}{92}
+\contentsline {figure}{\numberline {42}{\ignorespaces Path planned over rough terrain with $d_{w}=d_{u}=1$.\relax }}{94}
+\contentsline {figure}{\numberline {43}{\ignorespaces Path planned over rough terrain with $d_{w}=d_{u}=5$.\relax }}{95}
+\contentsline {figure}{\numberline {44}{\ignorespaces Path planned over rough terrain with $d_{w}=d_{u}=15$.\relax }}{96}
+\contentsline {figure}{\numberline {45}{\ignorespaces Path planned over rough terrain with $d_{w}=d_{u}=30$.\relax }}{97}
+\contentsline {figure}{\numberline {46}{\ignorespaces Point cloud generated from sequential scans of a room showing flat-surface candidates \emph {(top)} and 3D point cloud with estimated normals \emph {(bottom)}.\relax }}{100}
+\contentsline {figure}{\numberline {47}{\ignorespaces Point cloud generated from sequential scans of a floor with obstacles showing flat-surface candidates \emph {(top)} and 3D point cloud with estimated normals \emph {(bottom)}.\relax }}{101}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

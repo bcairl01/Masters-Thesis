@@ -42,7 +42,7 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%
 	%
-	Design process to facilitate these goals consisted of four interdependent decision phases, which were as follows:
+	The design process followed to facilitate these goals consisted of four interdependent decision phases, which were as follows:
 		\begin{enumerate}
 			\item{deciding what type of sensor/computational components would be included on the platform} 
 			\item{deciding the intended runtime}
@@ -50,7 +50,9 @@
 			\item{deciding what type of servo actuators would be used.} 
 		\end{enumerate}
 
-	BlueFoot's payloads were planned first. BlueFoot was originally designed to incorporate an in-house designed AutoPilot unit and a high-duty computer unit, which were initially estimated to make up roughly 0.25 kg of the system's total weight and consume approximately 15 Watts of power during nominal operation. Additionally, BlueFoot was to be outfitted with 1-2 web cameras and a LIDAR unit. These sensors were, collectively, estimated to add an additional 0.34 kg and consume 3.5 Watts.
+	Following the aforementioned design process, BlueFoot's sensor/computational payloads were  planned first. BlueFoot was originally designed to incorporate an in-house designed AutoPilot unit and a high-duty computer unit, which were initially estimated to make up roughly 0.25 kg of the system's total weight and consume approximately 15 Watts of power during nominal operation. Additionally, BlueFoot was to be outfitted with up to two web cameras and a LIDAR unit. These sensors were, collectively, estimated to add an additional 0.35 kg and consume 3.5 Watts. The weight of all other payloads (\IE circuit board, wireless radios, cables) was estimated to make up roughly 0.50 kg of the robot's total weight. An additional 4 Watts was factored into the systems overall power requirement to account for the power consumption of on-board radios and losses due to voltage regulation, etc. A battery pack consisting of four parallel LIPO batteries was chosen to accommodate the total power requirements of all payloads (approximately 20 Watts), along with an additional 150 Watts predicted to be consumed by the robot's legs, so that the system could run for more than 30 minutes under normal operating conditions. 
+
+	It was decided that each leg of the BlueFoot platform would have four degrees of freedom (\IE 4 servo actuators) so as to facilitate high overall dexterity for all-terrain navigation and a highly posable trunk. Having more actuators in series per leg meant that the robot's legs would be longer. As a result, the link lengths of each leg had to be smaller so as to minimize the static/dynamic torques which would be applied to each joint during gaiting. Thus, a compact bracketing system was selected for composing each legs. A commercially available servo-motor was then chosen to actuate each leg joint. The resulting leg configuration was estimated to yield approximately 2.5 kg of carrying capacity, making it adequate for supporting BlueFoot's 2 kg of on-board payloads (including the mass of the batteries) and an additional 0.1 kg contributed by its structural elements.
 
 
 
@@ -59,7 +61,7 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-	This chapter will outline how an implementation meeting these design goals is achieved, starting with the structural layout of the system. Next, major system payloads and the associated interfacing of major devices will be described. This section which will include details about BlueFoot's actuators, computational modules, and sensory mechanisms. Lastly, the system power routing, energy requirements, and runtime will be detailed.
+	This chapter will outline the specifics of BlueFoot's implementation, resulting from the aforementioned design process, starting with the structural layout of the system. Next, major system payloads and the associated interfacing of major devices will be described. This section which will include details about BlueFoot's actuators, computational modules, and sensory mechanisms. Lastly, the system power routing, energy requirements, and runtime will be detailed.
 
 		\begin{figure}[h!]
 			\centering
@@ -256,12 +258,13 @@
 					\label{fig::dev_diagram}
 				\end{figure}
 		
+			\newpage
 			\subsection{Energy Requirements and Runtime}
 
 			
 			The power consumptions of BlueFoot's component device's are summarized in Table~\ref{tab::power_summary}, which provides the operating voltage, $V_{op}$, and nominal current draw, $I_{nom}$, of each active, on-board component. Table~\ref{tab::runtime_summary} details battery specifications (output voltage and amp-hour rating) and BlueFoot's estimated run-time under nominal operating conditions.
 		
-		
+			
 			\begin{table}[h!]
 				\centering
 				\begin{tabularx}{\textwidth}{|C{0.1}|C{0.4}||C{0.25}|C{0.25}|} 
@@ -273,6 +276,11 @@
 					1				&	Logitech-9000			&	5.0						&	0.1						\\ 	\hline
 					1				&	Hokuyo-URG				&	5.0						&	0.5 					\\	\hline
 					2				&	AX12a Servos (x16)		&	12.0 					&	9.6	($~$0.6 ea.)		\\	\hline
+				\end{tabularx} 
+				\begin{tabularx}{\textwidth}{|C{0.5}|C{0.5}|} 
+					\hline
+					\textbf{Total Power Consumption} 		& 	137.8250 W \\\hline
+					\textbf{Worst-Case Power Consumption}  	& 	$\approx$200.000 W \\\hline
 				\end{tabularx} 
 				\caption{Power consumption summary by device (for single-camera configuration).}
 				\label{tab::power_summary}
@@ -287,11 +295,11 @@
 					1				&	3S LiPo Pack (x1)		& 	12.0						&	2.0	 					\\	\hline
 					2				&	3S LiPo Pack (x3)		&	12.0						&	6.0						\\ 	\hline
 				\end{tabularx}
-
-				\begin{tabularx}{\textwidth}{|C{0.5}|C{0.5}|}
+				\begin{tabularx}{\textwidth}{|C{0.5}|C{0.5}|} 
 					\hline
-					\textbf{Total Estimated Runtime}													&	35-40 minutes			\\ 	\hline
-				\end{tabularx}
+					\textbf{Average Runtime}  		& 	$\approx$41 minutes \\\hline
+					\textbf{Worst-Case Runtime}  	& 	$\approx$28 minutes \\\hline
+				\end{tabularx} 
 				\caption{Battery power supply and estimated runtime summary.}
 				\label{tab::runtime_summary}
 			\end{table}
