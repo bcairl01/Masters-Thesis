@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.19)  11 MAY 2015 03:53
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.19)  11 MAY 2015 04:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -825,13 +825,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <pos_rom.png, id=216, 578.16pt x 433.62pt>
 File: pos_rom.png Graphic file (type png)
  <use pos_rom.png>
-Package pdftex.def Info: pos_rom.png used on input line 243.
+Package pdftex.def Info: pos_rom.png used on input line 240.
 (pdftex.def)             Requested size: 214.63977pt x 160.97943pt.
 
 <ori_rom.png, id=217, 578.16pt x 433.62pt>
 File: ori_rom.png Graphic file (type png)
  <use ori_rom.png>
-Package pdftex.def Info: ori_rom.png used on input line 244.
+Package pdftex.def Info: ori_rom.png used on input line 241.
 (pdftex.def)             Requested size: 214.63977pt x 160.97943pt.
 
 
@@ -842,7 +842,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: simulation_wide_pic.png Graphic file (type png)
 
 <use simulation_wide_pic.png>
-Package pdftex.def Info: simulation_wide_pic.png used on input line 344.
+Package pdftex.def Info: simulation_wide_pic.png used on input line 341.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
 
 
@@ -852,7 +852,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <sim_comparison.png, id=241, 578.16pt x 433.62pt>
 File: sim_comparison.png Graphic file (type png)
  <use sim_comparison.png>
-Package pdftex.def Info: sim_comparison.png used on input line 359.
+Package pdftex.def Info: sim_comparison.png used on input line 356.
 (pdftex.def)             Requested size: 433.62pt x 325.2142pt.
 
 [49 <./sim_comparison.png (PNG copy)>]) [50]
@@ -1278,7 +1278,7 @@ hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (129 pages, 20277407 bytes).
+Output written on main.pdf (129 pages, 20277364 bytes).
 PDF statistics:
  565 PDF objects out of 1000 (max. 8388607)
  338 compressed objects within 4 object streams

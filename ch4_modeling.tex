@@ -50,7 +50,7 @@
 					\right].
 				\end{equation}
 
-			The kinematics of each leg are identical. Thus, the transformations $H^{i,0}_{i,j}$ are of the same form and are derived by the DH parameters given by Table \ref{tab::dh_params}. Actual values for the link lengths $a_{1}$ through $a_{1}$ and body-offset, $\nu$, are provided in Table \ref{tab::link_lens}.
+			The kinematics of each leg are identical. Thus, the transformations $H^{i,0}_{i,j}$ are of the same form and are derived by the DH parameters given by Table~\ref{tab::dh_params}. Actual values for the link lengths $a_{1}$ through $a_{1}$ and body-offset, $\nu$, are provided in Table~\ref{tab::link_lens}.
 			\begin{table}[!h]
 				\centering
 				\begin{tabularx}{150mm}{|C{0.2}|C{0.2}|C{0.2}|C{0.2}|C{0.2}|} \hline
@@ -127,29 +127,29 @@
 					E_{p} = [I_{3\times3},0_{3\times1}]	\nonumber 	\\
 					e_{p} = [0_{1\times3},1]^T.			\nonumber 	
 				\end{eqnarray}
-			The position of joints 2-4 of leg \emph{i}, may now be computed with respect to frame $O_{0}$ by:
+			The position of joints 2-4 of leg \emph{i} may now be computed with respect to frame $O_{0}$ by:
 				\begin{equation}
-					{p}_{i,j} \equiv E_{p} H_{0}^{i,0} {H}^{i,0}_{i,(j-1)} e_{p}. \Sep \forall \Sep j\in\{2,3,4\}
+					{p}_{i,j} = E_{p} H_{0}^{i,0} {H}^{i,0}_{i,(j-1)} e_{p} \Sep \forall \Sep j\in\{2,3,4\}.
 					\label{eq::world_joint_positions}
 				\end{equation}
-			Finally, the position of the end-effector (foot) of \Ith leg. ${p}_{i,e}$, is achieved as follows:
+			Finally, the position of the end-effector (foot) of \Ith leg, ${p}_{i,e}$, is given as follows:
 				\begin{equation}
-					{p}_{i,e} \equiv E_{p} H_{0}^{i,0} {H}^{i,0}_{i,4} e_{p}.
+					{p}_{i,e} = E_{p} H_{0}^{i,0} {H}^{i,0}_{i,4} e_{p}.
 					\label{eq::world_feet_positions}
 				\end{equation}
-			As a previously mentioned, BlueFoot's forward kinematic solution is used most prevalently in the estimating the position of each foot. Given estimates for body position and orientation, $\hat{p}_{b}$ and $\hat{\theta}_{b}$, a foot position estimate is explicitly define as a random variable:
+			As previously mentioned, BlueFoot's forward kinematic solution is used most prevalently in the estimating the position of each foot. Given estimates for body position and orientation, $\hat{p}_{b}$ and $\hat{\theta}_{b}$, a foot position estimate is explicitly defined as a random variable:
 				\begin{equation}
 					\hat{p}_{i,e} = {p}_{i,e} + \Delta {p}_{i,e}
 					\label{eq::foot_position_esitmate}
 				\end{equation}
-			where $\Delta {p}_{i,e}$ is a random error which arises from variations due to noise in sensed joint positions, as well as error in the estimates $\hat{p}_{b}$ and $\hat{\theta}_{b}$.
+			where $\Delta {p}_{i,e}$ is a Gaussian-random error which arises from variations due to noise in sensed joint positions as well as error in the estimates $\hat{p}_{b}$ and $\hat{\theta}_{b}$.
 
 
 			\subsubsection{A Note about foot localization in the robot-relative frame, $O_{b^{'}}$}
 
-			Using the previously defined forward kinematics model and the relationships defined in \ref{eq::world_joint_positions} and \ref{eq::world_feet_positions}, the position of each joint and foot can be computed assuming the $p_{b}$ and $\theta_{b}$ are known (or can be estimated) in the frame $O_{0}$. Provided inertial feedback, trunk orientation, $\theta_{b}$, can be estimated by the use of an Extended Kalman Filter (EKF). $p_{b}$, however, requires more sophisticated localization measures, such as a Simultaneous Localization and Mapping (SLAM) scheme or absolute positioning via overhead camera or GPS. In lieu of an implementation for such a localization routine, it is convenient to generate foot position estimates in a \emph{robot-relative} frame, $O_{b^{'}}$. This frame is not rigidly attached to the robot but moves along with the robot in $O_{0}$ according to the commanded translational velocity, $v^{r}$, and turning rate. $\omega^{r}$, administered to navigate the system. These values will be described in more detail in Chapters~\ref{ch::gait_control} and \ref{ch::navigation}. Moreover, this frame has its own position relative to $O_{0}$, defined by the translation $p_{0}^{b'}$. $O_{b^{'}}$ is constantly aligned to $O_{0}$, with respect to rotation, making the rotation matrix which relates $O_{b^{'}}$ to $O_{0}$ the identity matrix.
+			Using the previously defined forward kinematics model and the relationships defined in \ref{eq::world_joint_positions} and \ref{eq::world_feet_positions}, the position of each joint and foot can be computed assuming the $p_{b}$ and $\theta_{b}$ are known (or can be estimated) in the frame $O_{0}$. Provided inertial feedback, trunk orientation, $\theta_{b}$, can be estimated by the use of an Extended Kalman Filter (EKF). $p_{b}$, however, requires more sophisticated localization measures, such as a Simultaneous Localization and Mapping (SLAM) scheme or absolute positioning via overhead camera or GPS. In lieu of an implementation for such a localization routine, it is convenient to generate foot position estimates in a \emph{robot-relative} frame, $O_{b^{'}}$. This frame is not rigidly attached to the robot but moves along with the robot in $O_{0}$ according to the commanded translational velocity, $v^{r}$, and turning rate, $\omega^{r}$, administered to navigate the system. These values will be described in more detail in Chapters~\ref{ch::gait_control} and \ref{ch::navigation}. Moreover, this frame has its own position relative to $O_{0}$, defined by the translation $p_{0}^{b'}$. $O_{b^{'}}$ is constantly aligned to $O_{0}$, with respect to rotation, making the rotation matrix which relates $O_{b^{'}}$ to $O_{0}$ the identity matrix.
 
-			In this frame, the trunk position is regarded as an offset from the origin of $O_{b^{'}}$, $p_{b}^{b'}$. Since there is zero rotation between $O_{0}$ and $O_{b^{'}}$, the trunk rotation vector $\theta_{b}^{b'}$ is directly equivalent to $\theta_{b}$ in $O_{0}$. Using these translation and rotation definitions in place of their world frame counterparts, the robot-relative joint and foot-positions, ${p}_{i,j}^{b'}$ and ${p}_{i,e}^{b'}$ of each \Ith leg can be computed by defining a transformation from the robot relative frame to the first DH-frame for each leg, as follows:
+			The trunk position in $O_{b^{'}}$ is regarded as an offset from the origin of $O_{b^{'}}$, $p_{b}^{b'}$. Since there is zero rotation between $O_{0}$ and $O_{b^{'}}$, the trunk rotation vector $\theta_{b}^{b'}$ is directly equivalent to $\theta_{b}$ in $O_{0}$. Using these translation and rotation definitions in place of their world frame counterparts, the robot-relative joint and foot-positions, ${p}_{i,j}^{b'}$ and ${p}_{i,e}^{b'}$ of each \Ith leg can be computed by defining a transformation from the robot relative frame to the first DH-frame for each leg, as follows:
 				\begin{equation}
 					H_{b^{'}}^{i,0} = 
 					\left[ 
@@ -160,13 +160,13 @@
 					\right]
 					\label{eq::rr_to_dh}
 				\end{equation}
-			which follows the same definitions in \ref{eq::world_to_dh}. The transformation defined in \ref{eq::rr_to_dh} is used as a direct replacement for the matrix $H_{0}^{i,0}$ in \ref{eq::world_joint_positions} and \ref{eq::world_feet_positions} in computing the corresponding positions, ${p}_{i,j}^{b'}$ and ${p}_{i,e}^{b'}$. Knowledge of these positions is useful for planning foot and body-placement which depend directly on the location relative foot and body positions, but do not necessarily depend on the position of the robot in the world coordinate frame.
+			which follows along \ref{eq::world_to_dh}. The transformation defined in \ref{eq::rr_to_dh} is used as a direct replacement for the matrix $H_{0}^{i,0}$ in \ref{eq::world_joint_positions} and \ref{eq::world_feet_positions} in computing the corresponding positions, ${p}_{i,j}^{b'}$ and ${p}_{i,e}^{b'}$. Knowledge of these positions is useful for planning which depends directly on the relative locations of the trunk and feet, but does not depend on the position of the robot in the world coordinate frame.
  
 
 		\subsection{Inverse Position Kinematics}
 			\label{sec::inverse_position_kinematics}
 			
-			A foot configuration is specified by its coordinates ${p}_{e}$ and an ankle orientation, $\gamma_{i}$,  which represents a rotation about the axis of rotation of the second joint (lateral hip). Given a desired platform configuration, $\{ {p}_{b}, \theta_{b} \}$,  and desired \Ith foot configuration,  $\{ {p}_{i,e} , \gamma_{i} \}$, the inverse kinematics solution for each \Ith leg, ${q}_{i}$, is derived to be:
+			A foot configuration is specified by its coordinates ${p}_{i,e}$ and an ankle orientation, $\gamma_{i}$,  which represents a rotation about the axis of rotation of the second joint (lateral hip). Given a desired platform configuration, $\{ {p}_{b}, \theta_{b} \}$,  and desired \Ith foot configuration,  $\{ {p}_{i,e} , \gamma_{i} \}$, the inverse kinematics solution for each \Ith leg, ${q}_{i}$, is derived to be:
 
 				\begin{eqnarray}
 					q_{i,1} &=& \cos(i\pi) \wrap{ \frac{\pi}{4} - \psi_{i} } \nonumber\\
@@ -192,16 +192,16 @@
 					\psi_{i} 	&\equiv&	\tan^{-1}\wrap{ \frac{\ycomp{{p}_{i,e}^{i,0}}}{\xcomp{{p}_{i,e}^{i,0}} } }												\nonumber\\
 					\zeta_{i,x} &\equiv& 	\ycomp{{p}_{i,e}^{i,0}} \sin(\psi_{i}) + \xcomp{{p}_{i,e}^{i,0}} \cos(\psi_{i}) - a_{4} \cos(\gamma_{i}) - a_{1} 						\nonumber\\
 					\zeta_{i,y} &\equiv& 	\ycomp{{p}_{i,e}^{i,0}} \cos(\psi_{i}) - \xcomp{{p}_{i,e}^{i,0}} \sin(\psi_{i}) 											\nonumber\\
-					\zeta_{i,z}	&\equiv&  	\zcomp{{p}_{i,e}^{i,0}} - a_{4} \sin(\gamma_{i}) .
+					\zeta_{i,z}	&\equiv&  	\zcomp{{p}_{i,e}^{i,0}} - a_{4} \sin(\gamma_{i})
 				\end{eqnarray}
-			Here, ${p}_{i,e}^{i,0}$ represents the position of each \Ith foot with respect to the zeroth DH frame of each \Ith leg; and $\xcomp{{p}_{i,e}^{i,0}}$, $\ycomp{{p}_{i,e}^{i,0}}$ and $\zcomp{{p}_{i,e}^{i,0}}$ represent the $x$, $y$, and $z$ axis coordinates of the vector ${p}_{i,e}^{i,0}$. The selection matrix $E_{p}$ is the same as in \ref{eq::world_joint1_position}-\ref{eq::world_feet_positions}.
+			with ${p}_{i,e}^{i,0}$ representing the position of each \Ith foot with respect to the zeroth DH frame of each \Ith leg; and $\xcomp{{p}_{i,e}^{i,0}}$, $\ycomp{{p}_{i,e}^{i,0}}$ and $\zcomp{{p}_{i,e}^{i,0}}$ representing the $x$, $y$, and $z$ axis coordinates of the vector ${p}_{i,e}^{i,0}$. The selection matrix $E_{p}$ is the same as in \ref{eq::world_joint1_position}-\ref{eq::world_feet_positions}.
 
 			It is important to note that the ankle specification,  $\gamma_{i}$, adds extra constraints on the system kinematics and, thus, reduces the number of inverse kinematics solutions per foot position to two.
 
 
 		\subsection{Range of Motion}
 
-			The range of articulation of BlueFoot's main body has been characterized with respect to a set of imposed joint limits (see Table \ref{tab::JointLimits}) and has been performed with all feet fixed in a default stance (see Table \ref{tab::DefaultStance}). These limits have been selected according to the range of feasible angular position outputs of inverse position kinematics solution.
+			The range of articulation of BlueFoot's main body has been characterized with respect to a set of imposed joint limits (see Table~\ref{tab::JointLimits}) and has been performed with all feet fixed in a default stance (see Table~\ref{tab::DefaultStance}). These limits have been selected according to the range of feasible angular position outputs of inverse position kinematics solution.It should be noted that the imposed joint limits are soft limits that have been chosen because of the typical range of motion executed by each joint during locomotion. Physical joint limits are tabulated in Table~\ref{tab::HardJointLimits}.
 			\begin{table}[h]
 				\centering
 				\begin{tabularx}{\textwidth}{|C{0.25}|C{0.1875}|C{0.1875}|C{0.1875}|C{0.1875}|} \hline
@@ -212,9 +212,6 @@
 				\caption{Imposed joint limits.}
 				\label{tab::JointLimits}
 			\end{table}
-			%%
-			It should be noted that the imposed joint limits are soft limits that have been chosen because of the
-			typical range of motion executed by each joint during locomotion. Physical joint limits are tabulated in Table \ref{tab::HardJointLimits}.
 			\begin{table}[h]
 				\centering
 				\begin{tabularx}{\textwidth}{|C{0.25}|C{0.1875}|C{0.1875}|C{0.1875}|C{0.1875}|} \hline
@@ -237,7 +234,7 @@
 				\label{tab::DefaultStance}
 			\end{table}
 
-			Figures \ref{fig::pos_and_ori_rom} depicts the maximum pitch and roll and region of planar motion that the main body can reach while in the default stance. The blue shaded region of each figure (labeled \emph{Region of Failure}) depicts points at which joint positions exceed the imposed limits.
+			Figure~\ref{fig::pos_and_ori_rom} depicts the maximum pitch and roll and region of planar motion that the main body can reach while in the default stance. The blue shaded region of each figure (labeled \emph{Region of Failure}) depicts points at which joint positions exceed the imposed limits.
 			\begin{figure}[h!]
 				\centering
 				\fbox{\includegraphics[width=0.495\textwidth]{pos_rom.png}}
@@ -250,16 +247,16 @@
 
 		\subsection{Velocity Kinematics}
 
-			Using the DH-coordinate transformation, ${H}^{i,0}_{i,4}$, the velocity kinematics of each \Ith leg are derived as the Jacobian $J^{i,0}_{i,e} \InRe{6\times4}$ where 
+			Using the DH-coordinate transformation, ${H}^{i,0}_{i,4}$, the velocity kinematics of each \Ith leg are derived using the Jacobian $J^{i,0}_{i,e} \InRe{6\times4}$ as 
 				\begin{equation}
 					\dot{x}^{i,0}_{i,e} = J^{i,0}_{i,e}  \dot{q}_{i}
 					\label{eq::leg_jacobian}
 				\end{equation}
 			with $\dot{x}^{i,0}_{i,e} \InRe{6}$ being stacked vector of translational and rotational velocities, $\dot{p}_{i,e}^{i,0} \InRe{3}$ and $\dot{\theta}_{i,e}^{i,0}\InRe{3}$, respectively, of each \Ith foot with respect to frame $O_{i,0}$. The matrix $J^{i,0}_{i,e}$ is defined explicitly in Appendix \ref{appendix::a}.
 
-			Assuming the translational and rotational velocity of the trunk, $\dot{p}_{b}$ and $\dot{\theta}_{b}$, respectively; and the translational and rotational of each \Ith foot, $\dot{p}_{i,e} \InRe{3}$ and $\dot{\theta}_{i,e} \InRe{3}$, respectively, are known, the translation velocity of each \Ith foot can be written with respect to frame $O_{i,0}$ by:
+			Assuming knowledge of the translational and rotational velocities of the trunk, $\dot{p}_{b}$ and $\dot{\theta}_{b}$, respectively; and the translational and rotational velocity of each \Ith foot, $\dot{p}_{i,e} \InRe{3}$ and $\dot{\theta}_{i,e} \InRe{3}$, respectively, (in $O_{0}$) the translational velocity of each \Ith foot can be written with respect to frame $O_{i,0}$ by:
 				\begin{equation}
-					\dot{p}_{i,e}^{i,0} \equiv \wrap{R^{0}_{i,0}}^{T} \wrap{ \dot{p}_{i,e} - \dot{p}_{b} - \Skew{ \dot{\theta}_{b} } \wrap{ {p}_{i,e} - {p}_{b} - R^{0}_{i,0} \vec{o}_{\nu} } }
+					\dot{p}_{i,e}^{i,0} = \wrap{R^{0}_{i,0}}^{T} \sbrack{ \dot{p}_{i,e} - \dot{p}_{b} - \Skew{ \dot{\theta}_{b} } \wrap{ {p}_{i,e} - {p}_{b} - R^{0}_{i,0} \vec{o}_{\nu} } }
 				\end{equation}
 			where $\vec{o}_{\nu} = [\nu,0,0]^{T}$, $R^{0}_{i,0}$ is the rotation-matrix component of the transformation $H^{0}_{i,0}$ defined in \ref{eq::world_to_dh}, and $\Skew{*}$ is a skew-symmetric matrix operator, which takes a $3\times1$ vector input. The corresponding rotational velocity of each \Ith foot  can be computed with respect to $O_{i,0}$ by:
 				\begin{equation}
@@ -285,7 +282,7 @@
 				\begin{equation*}
 					\text{det}(\Lambda_{J}) \ll 1.
 				\end{equation*}
-			The operator $\sbrack{*}_{\Lambda_{j}}^{\dagger}$ defines a weighted pseudo-inversion off a matrix argument $(*)$ given a positive-definite weighting matrix $\Lambda_{j}$. A weighted pseudo-inversion is chosen over direct pseuedo-inversion to avoid a non-smooth set of solutions $\dot{q}_{i}$. Degenerate solutions for $\dot{q}_{i}$ exist at particular manipulator configurations where $\wrap{\wrap{J^{i,0}_{i,e}}^{T}J^{i,0}_{i,e}}$ is non-invertible.
+			The operator $\sbrack{*}_{\Lambda_{j}}^{\dagger}$ defines a weighted pseudo-inversion of a matrix argument $(*)$ given a positive-definite weighting matrix $\Lambda_{j}$. A weighted pseudo-inversion is chosen over direct pseuedo-inversion to avoid a non-smooth set of solutions $\dot{q}_{i}$. Degenerate solutions for $\dot{q}_{i}$ exist at particular manipulator configurations where $\wrap{\wrap{J^{i,0}_{i,e}}^{T}J^{i,0}_{i,e}}$ is non-invertible.
 
 
 
@@ -293,14 +290,14 @@
 	\section{Dynamical Model}
 	
 
-		\subsection{System State Vector and General-Form Dynamics}
+		\subsection{System State Vector and Dynamics}
 		
-			The dynamical model of the BlueFoot platform is treated a general, free-floating body with four ridged legs, each of which have four degrees of freedom. This system is fully described by the state vector $z \equiv [\eta^{T}, \dot{\eta}^{T}]^{T} \RRealVec{44}$ and its dynamics are:
+			The dynamical model of the BlueFoot platform derived by considering a free-floating body with four ridged legs, each of which have four degrees of freedom. This system is fully described by the state vector $z \equiv [\eta^{T}, \dot{\eta}^{T}]^{T} \RRealVec{44}$ and its dynamics are:
 				\begin{equation}
 					M(\eta)\ddot{\eta} + C(\eta,\dot{\eta})\dot{\eta} + G(\eta) + \Delta{H} = \tau + J^T(\eta) f_{ext} %
 					\label{eq::normal_form_dynamics}
 				\end{equation}
-			where $M(\eta)$, $C(\eta,\dot{\eta}$), $G(\eta)$ and $J(\eta)$ represent the system mass matrix, Coriolis matrix, gravity matrix and Jacobian, respectively \cite{Wieber2006}. $\Delta{H}$ has been included as a lump term to account for dynamical uncertainties, such as friction or unmodeled coupling effects. Additionally, $f_{ext} = [ f_{1,ext}^{T},f_{2,ext}^{T},f_{3,ext}^{T},f_{4,ext}^{T}]^{T} \RRealVec{24}$ represents a stacked vector of force-wrenches, $f_{i,ext} \RRealVec{6}$, applied to the system through each \Ith foot. The state vector, $\eta$, can be partitioned as follows: $\eta = [ {p}_{b}^{T}, \theta_{b}^{T}, q^{T} ]^{T}$ with ${p}_{b} \RRealVec{3}$ and $\theta_{b} \RRealVec{3}$ representing the position and orientation, respectively, of the quadruped's trunk in an arbitrarily placed world coordinate frame, and $q \RRealVec{16}$ is a vector of joint variables, $m$ of which are contributed by each leg. $\tau \RRealVec{22}$ represents a vector of generalized torque inputs and takes the form $\tau = [ 0_{1x6}, \tau_{q}^{T} ]^{T}$ where $\tau_{q}$ represents a set of torque inputs to each joint. It is important to note that the states we are most interested in controlling, ${p}_{b}$ and $\theta_{b}$, are not directly actuated, and must be controlled via composite leg joint motions.		
+			where $M(\eta)$, $C(\eta,\dot{\eta}$), $G(\eta)$ and $J(\eta)$ represent the system mass matrix, Coriolis matrix, gravity matrix and Jacobian, respectively \cite{Wieber2006}. $\Delta{H}$ has been included as a lump term to account for dynamical uncertainties, such as friction or unmodeled coupling effects. Additionally, $f_{ext} = [ f_{1,ext}^{T},f_{2,ext}^{T},f_{3,ext}^{T},f_{4,ext}^{T}]^{T} \RRealVec{24}$ represents a stacked vector of force-wrenches, $f_{i,ext} \RRealVec{6}$, applied to the system through each \Ith foot. The state vector, $\eta$, can be partitioned as follows: $\eta = [ {p}_{b}^{T}, \theta_{b}^{T}, q^{T} ]^{T}$ with ${p}_{b} \RRealVec{3}$ and $\theta_{b} \RRealVec{3}$ representing the position and orientation, respectively, of the quadruped's trunk in an arbitrarily placed world coordinate frame, and $q \RRealVec{16}$ is a vector of joint variables, $4$ of which are contributed by each leg. $\tau \RRealVec{22}$ represents a vector of generalized torque inputs and takes the form $\tau = [ 0_{1x6}, \tau_{q}^{T} ]^{T}$ where $\tau_{q}$ represents a set of torque inputs to each joint. It is important to note that the states we are most interested in controlling, ${p}_{b}$ and $\theta_{b}$, are not directly actuated and must be controlled via composite leg joint motions.		
 
 			BlueFoot's dynamics, from \ref{eq::normal_form_dynamics}, can be realized in a general, compact, state-space form by:
 				\begin{equation}
@@ -329,12 +326,12 @@
 					\tau_{q} = k_{s}(q^{r}-q)
 					\label{eq::servo_control_dynamics}
 				\end{equation}
-			where $k_{s}>0$ is a constant, scalar gain and $q^{r}$ is a joint position reference. The servos being utilized to drive the leg joints of the BlueFoot quadruped have high-gain position feedback which allows us to model the motors, simply, as a static block which transform reference trajectories to torque outputs. All of these servos are identical, and thus have identical gains. One could instead consider the full motor dynamics for computing reference positions given a desired torque. The simple model stated above was adequate for achieving desired results with all proposed control schemes which use this torque-generator model.
+			where $k_{s}>0$ is a constant scalar gain and $q^{r}$ is a joint position reference. The servos being utilized to drive the leg joints of the BlueFoot quadruped have high-gain position feedback which allows us to model the motors, simply, as a static block which transform reference trajectories to torque outputs. All of these servos are identical, and thus have identical gains. One could instead consider the full motor dynamics for computing reference positions given a desired torque. The simple model stated above was adequate for achieving desired results with all proposed control schemes which use this torque-generator model.
 
 
 		\subsection{Single Leg Dynamics}
 			
-			The dynamics of each independent leg (with each base-frame fixed) can be derived in closed form using a Lagrangian formulated using the total potential and kinetic energy. Here, the dynamics of each leg is formulated via a minimization of energy. Masses $m_{i,j}$ along each \Ith leg are taken to be centered at each \Jth joint. These dynamics have been included as auxiliary matter in Appendix~\ref{appendix::b} using the previously defined notations.
+			The dynamics of each independent leg (with each base-frame fixed) can be derived in closed form using a Lagrangian formulation using the total potential and kinetic energy. Masses $m_{i,j}$ along each \Ith leg are taken to be centered at each \Jth joint. These dynamics have been included as auxiliary matter in Appendix~\ref{appendix::b} using the previously defined notations.
 
 
 	\section{BlueFoot Simulator}
@@ -357,12 +354,12 @@
 			\begin{figure}[!h]
 				\centering
 				\fbox{\includegraphics[width=1.00\textwidth]{sim_comparison.png}}
-				\caption{Joint position comparison between the simulated and real quadruped while performing a gait which achieves a forward velocity of $60\frac{mm}{s}$}
+				\caption{Joint position comparison between the simulated and real quadruped while performing a gait which achieves a forward velocity of $60\frac{mm}{s}$.}
 				\label{fig::sim_performance_comparison}
 			\end{figure}
 
-		Careful, manual tuning was performed on simulated robot parameters, including joint update gains, joint-friction and surface-friction model coefficients to achieve closer matches between simulated results and the actual robot motions. A performance comparison can be seen in \ref{fig::sim_performance_comparison}, which shows joint position outputs for all joints of the front-right leg of the actual and simulated robot while performing a forward gait at $0.060$ m/s. It can be seen in  that the simulator provides and approximate representation true system performance within some margin of error. The discrepancies between the two data sets can be seen to usually occur at the minima of each series when the robot makes contact with the ground after a step. These differences can be attributed to ground-contact model inaccuracies. Work is still left to be done in improving the simulator's contact model, but this is more the fault of the simulation software libraries being used, namely in its low-order contact models. These contact models are very simplistic for the sake of simulation speed. Contact models could certainly be improved such that they more closely matches the effects of real-world surfaces. Additionally, discrepancies could also be attributed to the low-order joint model being used to represent the system's servo motors at each joint, described in \ref{eq::servo_control_dynamics}. This model neglects the effects of higher-order frictional effects which modify the rotation profile at each joint. All of the other simulated leg joints exhibited similar results to the actual motions.
+		Careful, manual tuning was performed on simulated robot parameters, including joint update gains, joint-friction and surface-friction model coefficients to achieve closer matches between simulated results and the actual robot motions. A performance comparison can be seen in Figure~\ref{fig::sim_performance_comparison}, which shows joint position outputs for all joints of the front-right leg of the actual and simulated robot while performing a forward gait at $0.060$ m/s. It can be seen that the simulator provides an approximate representation true system performance within some margin of error. The discrepancies between the two data sets can be seen to usually occur at the minima of each series when the robot makes contact with the ground after a step. These differences can be attributed to ground-contact model inaccuracies. Further tuning may be performed to improve the accuracy of simulated contacts, but this is more the fault of the simulation software libraries being used due to their limited low-order contact models. These contact models are usually simplistic for the sake of simulation speed. Contact models could certainly be improved such that they more closely matches the effects of real-world surfaces. Additionally, discrepancies could also be attributed to the low-order joint model being used to represent the system's servo motors at each joint, described in \ref{eq::servo_control_dynamics}. This model neglects the impact of higher-order frictional effects and joint compliance which modify the rotation profile at each joint. All of the other simulated leg joints exhibited similar results to the actual motions.
 
 		Despite these discrepancies, this simulation platform has proven to be adequate for use in testing gaiting and control algorithms which have been implemented on the real system. Moreover, all motion control algorithms which were first developed in this simulated environment have been ported to the real robot platform and performed in a highly comparable manner.
 
-		The simulator has also been utilized to model BlueFoot's on-board LIDAR unit for use in testing navigation and terrain mapping algorithms and associated motion routines. Laser hits are modeled as force-less collisions between a ray-type geometry, used to represent the laser beam of the LIDAR, and environmental elements. Because the ray geometry can penetrate environmental elements in multiple places, or even multiple elements within the environment at a single instance, some post processing is performed on collision point returned by the simulator such that the point of intersection \emph{closest} to the robot is taken as a laser-beam hit. Additionally, sensor realism is imposed by limiting the data access frequency to buffered laser data to a rate of 10 Hz, which matches the scan rate of BlueFoot's on-board LIDAR. The angular velocity of the spinning laser head and the maximum depth of each laser beam hit are corrupted by zero-mean Gaussian random noise to match actual sensor performance.
+		The simulator has also been utilized to model BlueFoot's on-board LIDAR unit for use in testing navigation and terrain mapping algorithms and associated motion routines. Laser hits are modeled as force-less collisions between a ray-type geometry, used to represent the laser beam of the LIDAR, and environmental elements. Considering that the ray geometry can penetrate environmental elements in multiple places, or even multiple elements within the environment at a single instance, some post processing is performed on collision point returned by the simulator such that the point of intersection \emph{closest} to the robot is taken as a laser-beam hit. Additionally, sensor realism is imposed by limiting the data access frequency to buffered laser data to a rate of 10 Hz, which matches the scan rate of BlueFoot's on-board LIDAR. The angular velocity of the spinning laser head and the maximum depth of each laser beam hit are corrupted by zero-mean Gaussian random noise to match actual sensor performance.

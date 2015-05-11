@@ -45,7 +45,7 @@
 \contentsline {subsection}{\numberline {4.1.3}Range of Motion}{43}
 \contentsline {subsection}{\numberline {4.1.4}Velocity Kinematics}{44}
 \contentsline {section}{\numberline {4.2}Dynamical Model}{46}
-\contentsline {subsection}{\numberline {4.2.1}System State Vector and General-Form Dynamics}{46}
+\contentsline {subsection}{\numberline {4.2.1}System State Vector and Dynamics}{46}
 \contentsline {subsection}{\numberline {4.2.2}Joint-Servo Dynamics}{47}
 \contentsline {subsection}{\numberline {4.2.3}Single Leg Dynamics}{47}
 \contentsline {section}{\numberline {4.3}BlueFoot Simulator}{47}
