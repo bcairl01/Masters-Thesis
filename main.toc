@@ -1,6 +1,6 @@
-\contentsline {chapter}{VITA}{ii}
-\contentsline {chapter}{LIST OF FIGURES}{vii}
-\contentsline {chapter}{LIST OF TABLES}{x}
+\contentsline {chapter}{VITA}{i}
+\contentsline {chapter}{LIST OF FIGURES}{ix}
+\contentsline {chapter}{LIST OF TABLES}{xii}
 \contentsline {chapter}{\numberline {I. }Introduction}{1}
 \contentsline {section}{\numberline {1.1}Central Pattern Generators for Gait Control}{3}
 \contentsline {section}{\numberline {1.2}Zero Moment Point Body Placement Control}{5}
@@ -35,7 +35,7 @@
 \contentsline {subsubsection}{TM4C (Lower Brain)}{30}
 \contentsline {subsubsection}{RM48 (Lower Brain)}{32}
 \contentsline {subsubsection}{ODROID-XU (Upper Brain)}{33}
-\contentsline {subsection}{\numberline {3.1.2}Inter-processor Communication}{33}
+\contentsline {subsection}{\numberline {3.1.2}Inter-Processor Communication}{33}
 \contentsline {section}{\numberline {3.2}Ground Station}{36}
 \contentsline {chapter}{\numberline {IV. }System Modeling}{38}
 \contentsline {section}{\numberline {4.1}Kinematic Model}{38}

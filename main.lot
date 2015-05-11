@@ -7,7 +7,7 @@
 \addvspace {10pt}
 \contentsline {table}{\numberline {5}{\ignorespaces Structure of the packets sent from Ground-Station to TM4C.\relax }}{34}
 \contentsline {table}{\numberline {6}{\ignorespaces Structure of the packets sent from the TM4C to the Ground-Station.\relax }}{35}
-\contentsline {table}{\numberline {7}{\ignorespaces Structure of the packets sent from the RM48 to the ODROID.\relax }}{35}
+\contentsline {table}{\numberline {7}{\ignorespaces Structure of the packets sent from the RM48 to the ODROID.\relax }}{36}
 \contentsline {table}{\numberline {8}{\ignorespaces Structure of the packets sent from the ODROID-XU to the RM48.\relax }}{36}
 \addvspace {10pt}
 \contentsline {table}{\numberline {9}{\ignorespaces DH parameters for all legs.\relax }}{40}

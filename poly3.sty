@@ -364,43 +364,77 @@
 \@namedef{table*}{\@dblfloat{table}}
 \@namedef{endtable*}{\end@dblfloat}
 \gdef\committee#1{\def\@committee{#1}}
-\def\mstitlepage{\thispagestyle{empty}\vspace*{28pt}
-	\begin{center} \large\@title\\[.5in plus 1fill]\normalsize
-	A Thesis\\
-	Submitted in Partial Fulfillment\\
-        of the Requirements for the\\
-	Degree of\\
-        Master of Science (Electrical Engineering)\\
-        at the NYU Polytechnic School of Engineering\\[0pt plus .3fill]
-	by\\[0pt plus .3fill]
+
+\def\mscoverpage{\thispagestyle{empty}\vspace*{-15mm}
+  \begin{center}\large\@title\\\vspace{8mm}\normalsize
+  THESIS\\
+  \vspace{8mm}
+  Submitted in Partial Fulfillment of\\\vspace{2mm}
+        the Requirements for\\\vspace{2mm}
+        the Degree of\\
+        \vspace{8mm}
+        MASTER OF SCIENCE (Electrical Engineering)\\ 
+        \vspace{8mm}
+        at the\\
+        \vspace{2mm}
+        NEW YORK UNIVERSITY\\
+        POLYTECHNIC SCHOOL OF ENGINEERING\\
+  \vspace{6mm}
+  by\\
+  \vspace{6mm}
+  \@author \\
+  \vspace{4mm}
+  May 2015
+  \end{center}
+}
+
+
+\def\mstitlepage{\thispagestyle{empty}\vspace*{-15mm}
+	\begin{center}\large\@title\\\vspace{8mm}\normalsize
+	THESIS\\
+  \vspace{8mm}
+	Submitted in Partial Fulfillment of\\\vspace{2mm}
+        the Requirements for\\\vspace{2mm}
+        the Degree of\\
+        \vspace{8mm}
+        MASTER OF SCIENCE (Electrical Engineering)\\ 
+        \vspace{8mm}
+        at the\\
+        \vspace{2mm}
+        NEW YORK UNIVERSITY\\
+        POLYTECHNIC SCHOOL OF ENGINEERING\\
+  \vspace{6mm}
+	by\\
+  \vspace{5mm}
 	\@author \\
-%	\vspace*{5pt}{* * * * *\\}
-%	NYU Polytechnic School of Engineering\\
-%	\def\today{\ifcase\month\or
-%  January\or February\or March\or April\or May\or June\or
-%  July\or August\or September\or October\or November\or December\fi
-%  \space\number\day, \number\year}
-        May 2015
-%\number\year
+  \vspace{5mm}
+  May 2015
 	\end{center}\vskip 20pt 
-\begin{minipage}[t]{240pt}{
-	\begin{flushleft}
-	Master's Examination Committee:\\ \@committee
-	\end{flushleft}}
-\end{minipage} \hspace{10pt}
-\begin{minipage}[t]{150pt}{
-	\begin{center} \spacingset{1}
-	Approved by:\\[18pt]
-	\rule{150pt}{1pt} \\
-	Advisor\\[18pt]
+\hspace{275pt}
+\begin{minipage}[t]{150pt}
+	\begin{raggedright}\spacingset{1}
+	Approved:\\[18pt]
+  \end{raggedright}
+  \begin{center}\spacingset{1}
+	      \rule{150pt}{1pt} \\
+	      Advisor\\[18pt]
         \rule{150pt}{1pt} \\
         Date\\[18pt]
         \rule{150pt}{1pt}\\
-        Department Head\\[18pt]
+        Department Head Signature\\[18pt]
         \rule{150pt}{1pt}\\
-	Date \\
-	\end{center}}
-\end{minipage}}
+	Date\\
+	\end{center}
+\end{minipage}
+
+\vspace{-5mm}
+\begin{flushleft}
+Copy No.          \hspace{8.25mm}\noindent\underline{\makebox[2.0in][l]{\hspace{10pt}\# \@committee}}\\
+University ID:    \hspace{0.10mm}\noindent\underline{\makebox[2.0in][l]{\hspace{10pt}N14463743}}\\
+\end{flushleft}
+\addtocounter{page}{-1}
+}
+
 \def\endmstitlepage{\newpage}
 %
 \def\phdtitlepage{\thispagestyle{empty}
@@ -413,8 +447,8 @@
 			     Engineering) \\ \vspace*{0.3cm} 
 			     at  the\\\vspace*{0.3cm}
 	NYU POLYTECHNIC SCHOOL OF ENGINEERING \\\vspace*{0.4cm}
-	by\\\vspace*{0.4cm}
-	\@author \\\vspace*{0.4cm}
+	by\\\vspace*{0.2cm}
+	\@author \\\vspace*{0.6cm}
 	May 2001
 	\end{center}
 	\vfill
@@ -438,29 +472,33 @@
 \end{minipage}}
 \def\endphdtitlepage{\newpage}
 %
-\def\msabstract#1#2#3#4{
-	\newpage\spacingset{1}\thispagestyle{empty}\vspace*{50pt}
-	\begin{center}{\bf THESIS ABSTRACT\\[18pt]
-	\bf NYU POLYTECHNIC SCHOOL OF ENGINEERING\\
-	\bf GRADUATE SCHOOL\par }\end{center}\vskip 30pt
-	{\bf NAME: }#1 \hfill {\bf QUARTER/YEAR: }#2\\[.8cm]
-	{\bf DEPARTMENT: }Electrical and Computer Engineering \hfill 
-				{\bf DEGREE: }M.S.\\[.8cm]
-	{\bf ADVISER'S NAME: }#3\\[.8cm]
-	\newlength{\ttbox}
-	\settowidth\ttbox{\bf TITLE OF THESIS: }
-	\newlength{\titlebox}\setlength{\titlebox}{\textwidth}
-	\addtolength{\titlebox}{-\ttbox}
-	{\bf TITLE OF THESIS: }\parbox[t]{\titlebox}{#4}
-	\vskip 1.2cm}
-
-\def\endmsabstract{\par \vskip 0pt plus 1fill
-	\hfill	\parbox[t]{2.2in}{\centering
-		\rule{2.1in}{1pt}\\
-		Adviser's Signature \\
-		Department of Electrical and\\
-		Computer Engineering}
-	\newpage \addtocounter{page}{-1}}
+\def\msabstract#1{
+\newpage\spacingset{1}\thispagestyle{empty}\vspace*{50pt}
+\begin{center}\vspace{-20mm}
+    {\bf ABSTRACT}\\
+    \vspace{6mm}
+    \spacingset{2}
+    {\bf\large\@title}\\
+    \spacingset{1}
+    \normalsize
+    \vspace{12mm}
+    {\bf\large by}\\
+    \vspace{12mm}
+    {\bf\large \@author}\\
+    \vspace{12mm}
+    {\bf\large Advisor: #1}\\
+    \vspace{12mm}
+    {\bf
+          Submitted in Partial Fulfillment of the Requirements for\\
+          \vspace{4mm}
+          the Degree of Master of Science (Electrical Engineering)
+    }\\
+    \vspace{12mm}
+    {\bf May 2015}
+    \vspace{8mm}
+\end{center}
+}
+\def\endmsabstract{\newpage}
 
 
 \mark{{}{}}   % Initializes TeX's marks

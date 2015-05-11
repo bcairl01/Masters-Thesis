@@ -12,7 +12,7 @@
 \contentsline {figure}{\numberline {10}{\ignorespaces BlueFoot power routing.\relax }}{27}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {11}{\ignorespaces BlueFoot's on-board processes/signals and their relationships.\relax }}{31}
-\contentsline {figure}{\numberline {12}{\ignorespaces Communication flow between processors on the BlueFoot platform.\relax }}{34}
+\contentsline {figure}{\numberline {12}{\ignorespaces Communication flow among processors on the BlueFoot platform.\relax }}{34}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {13}{\ignorespaces A visualization of BlueFoot's coordinate frame configuration.\relax }}{39}
 \contentsline {figure}{\numberline {14}{\ignorespaces Range of motion for body's planar position (\emph {left}) and body pitch and roll (\emph {right}) while in the default stance.\relax }}{44}
