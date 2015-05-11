@@ -73,10 +73,10 @@
 \contentsline {subsection}{\numberline {6.2.4}A Sliding-Window Approach for Sub-Optimal Rough Terrain Planning}{92}
 \contentsline {subsection}{\numberline {6.2.5}Surface Reconstruction}{98}
 \contentsline {chapter}{\numberline {VII. }Concluding Remarks}{102}
-\contentsline {chapter}{\numberline {A. }Leg Jacobian with Respect to Frame $O_{i,0}$}{105}
-\contentsline {chapter}{\numberline {B. }Fixed-Base Leg Dynamics}{106}
-\contentsline {subsubsection}{General Form}{106}
-\contentsline {subsubsection}{Mass Matrix, $M\left (q_{i}\right )$}{106}
-\contentsline {subsubsection}{Correolis Matrix, $C\left (q_{i},\mathaccentV {dot}05F{q}_{i}\right )$}{107}
-\contentsline {subsubsection}{Gravity Matrix, $G\left (q_{i},\mathaccentV {vec}17E{g}\right )$}{108}
-\contentsline {chapter}{\numberline {C. }Summary of Trignometric Abbreviations}{109}
+\contentsline {chapter}{\numberline {A. }Summary of Trignometric Abbreviations}{105}
+\contentsline {chapter}{\numberline {B. }Leg Jacobian with Respect to Frame $O_{i,0}$}{106}
+\contentsline {chapter}{\numberline {C. }Fixed-Base Leg Dynamics}{107}
+\contentsline {subsubsection}{Dynamics of an Each \hspace {0.1mm}$i^{th}$\hspace {0.5mm}Leg}{107}
+\contentsline {subsubsection}{Mass Matrix, $M\left (q_{i}\right )$}{107}
+\contentsline {subsubsection}{Coriolis Matrix, $C\left (q_{i},\mathaccentV {dot}05F{q}_{i}\right )$}{108}
+\contentsline {subsubsection}{Gravity Matrix, $G\left (q_{i},\mathaccentV {vec}17E{g}\right )$}{109}
