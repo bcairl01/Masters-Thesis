@@ -5,13 +5,13 @@
 	\vspace{-5mm}
 
 
-	\subsubsection{Dynamics of an Each \Ith Leg}
+	\subsubsection{Dynamics of Leg \emph{i}}
 
 	The dynamics of each \Ith leg, represented as a fixed-base kinematic chain, are described as follows:	
-	\begin{equation*}
-		\tau = M(q_{i})\ddot{q}_{i} + C(q_{i},\dot{q}_{i})\dot{q}_{i} + G(q_{i},\vec{g})
-	\end{equation*}
-	where $M(q_{i})$ represents the mass matrix; $C(q_{i},\dot{q}_{i})$ represents the Coriolis matrix; and $G(q_{i},\vec{g})$ represents the gravity matrix. %$M(q_{i})$, $C(q_{i},\dot{q}_{i})$  and  $G(q_{i},\vec{g})$ are defined explicitly in the sections to follow.
+		\begin{equation*}
+			\tau_{i} = M(q_{i})\ddot{q}_{i} + C(q_{i},\dot{q}_{i})\dot{q}_{i} + G(q_{i},\vec{g})
+		\end{equation*}
+	where $M(q_{i})$ represents the mass matrix; $C(q_{i},\dot{q}_{i})$ represents the Coriolis matrix; $G(q_{i},\vec{g})$ represents the gravity matrix; and $\tau_{i}\in\RRe^{4}$ represents a generalized torque input. %$M(q_{i})$, $C(q_{i},\dot{q}_{i})$  and  $G(q_{i},\vec{g})$ are defined explicitly in the sections to follow.
 
 	\subsubsection{Mass Matrix, $M\wrap{q_{i}}$}
 	\vspace{-5mm}
