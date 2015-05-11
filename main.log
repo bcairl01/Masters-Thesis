@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  10 MAY 2015 20:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  10 MAY 2015 21:16
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -506,17 +506,17 @@ Package caption Info: End \AtBeginDocument code.
 ]
 No file publications.tex.
 (C:\Users\Brian\Desktop\Masters-Thesis\acknowledgements.tex
-LaTeX Font Info:    Try loading font information for U+lasy on input line 11.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 13.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 11.
+LaTeX Font Info:    Try loading font information for U+msa on input line 13.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 11.
+LaTeX Font Info:    Try loading font information for U+msb on input line 13.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1178,11 +1178,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7039 strings out of 493921
- 108575 string characters out of 3144877
- 192005 words of memory out of 3000000
- 10055 multiletter control sequences out of 15000+200000
- 25040 words of font info for 96 fonts, out of 3000000 for 9000
+ 7040 strings out of 493921
+ 108592 string characters out of 3144877
+ 192074 words of memory out of 3000000
+ 10056 multiletter control sequences out of 15000+200000
+ 25347 words of font info for 97 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  46i,18n,42p,1682b,336s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
@@ -1202,7 +1202,7 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX
 nts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (129 pages, 20329004 bytes).
+Output written on main.pdf (129 pages, 20329186 bytes).
 PDF statistics:
  560 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

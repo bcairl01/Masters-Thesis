@@ -7,14 +7,14 @@
 \label{ch::navigation}
 
 
-	\section{Flatland navigation and goal (feature) tracking}
+	\section{Flatland Navigation and Goal (Feature) Tracking}
 	
 		The BlueFoot robot is operated using a hybrid, potential-field control scheme for obstacle avoidance during navigation over flatland. Camera-based feature tracking has been incorporated into this navigation scheme to allow for dynamic object tracking and aid in the aversion of local minima. This hybrid navigation routine administers commands to the robot's gaiting controller using two main parameters, $v^{r}$ and $\omega^{r}$, which represent forward velocity and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. An explanation of how these parameters are used to influence BlueFoot's gait control and foot-placement is covered in Section~\ref{sec::foot_placement_control}. During navigation, the pitch of the trunk, $\theta_{b,x}$ is also controlled via its respective reference signal, $\theta_{b,x}^{r}$, using an outer-loop proportional control scheme. Control over trunk pitch allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head (trunk) while tracking features. Trunk articulation control is also paramount for composing 3D point clouds from LIDAR scans, as will be described later in this chapter.
 
 		Namely, BlueFoot's primary navigation mechanism fuses navigation reference commands generated from two separate control laws: a LIDAR-based potential-fields controller; and a camera-based visual servoing controller. The collective navigation law is used as a \emph{wandering} mechanism which would normally be employed as a first-level measure during situations where the robot has no information about its environment (\IE environmental map data, or knowledge of landmark locations) \emph{a priori}. This section will first describe the potential-fields portion of BlueFoot's navigation algorithm, which utilizes only LIDAR sensor data. The efficacy of this navigation mechanism will be supported with results from simulated trials. The incorporation of processed camera data will then be detailed to complete the description of the full navigation controller. Associated results will be presented from a real-world trial.
 
 
-		\subsection{LIDAR-based Potential-Fields Algorithm}
+		\subsection{LIDAR-Based Potential-Fields Algorithm}
 
 			The potential-fields portion of BlueFoot's navigation routines takes planar LIDAR scans as an input and generates a set of navigation outputs, $\vec{u}^{r}_{L} \in \RRe^{3}$, which represents a direction of travel relative to the LIDAR frame, $O_{L}$, and $P_{L}$, which represents a total positive (attractive) potential. Each point from a LIDAR scan is mapped to a corresponding scalar \emph{potential} which is used to influence the commanded direction of travel. Given a LIDAR scan, $S^{L}$, with 2D scan points, $x_{i}^{L}\in\emph{S}^{L}$, relative to the LIDAR's local coordinate frame $O_{L}$, command elements are generated using a potential function $\{ f(x) : \RRe^{3}\rightarrow \RRe^{1} \}$, and a biasing function, $\{ g_{\psi}(x) : \RRe^{3}\rightarrow \RRe^{1} \}$, as follows:
 				\begin{eqnarray}
@@ -101,7 +101,7 @@
 				$\beta_{v}=\beta_{\omega}=0.1$.
 
 
-		\subsection{Incorporation of Camera-based Feature Tracking}
+		\subsection{Incorporation of Camera-Based Feature Tracking}
 		
 			Camera-based goal tracking is used in conjunction with the aforementioned potential-fields navigation scheme to move the platform through an environment while dynamically tracking targets which come into view of its camera. In this case, targets take the the form of features extracted from acquired images. The robot is guided towards these features using a visual-serving approach. 
 
@@ -154,7 +154,7 @@
 
 	\section{Towards Rough Terrain Navigation}
 
-		\subsection{Terrain Mapping from 2D scans}
+		\subsection{Terrain Mapping from 2D Scans}
 			\label{ssec::terrain_mapping}
 			\begin{figure}[!h]
 				\centering
@@ -220,7 +220,7 @@
 
 
 
-		\subsection{Height-map Generation from a 3D point cloud}
+		\subsection{Height-Map Generation from a 3D Point Cloud}
 			
 			3D point clouds can be converted into height-maps to represent surfaces. Here a height-map will be represented via an associated discrete space $\mmathbb{Z}^{\mmathcal{M}}\subset\mmathbb{Z}^{2}$ with a coordinate system $O_{\mmathcal{M}}$. Height-map representations are convenient for use in planning as they can be used to assign costs to path transitions in a straightforward way. Height-map information is represented as a matrix $\mmathcal{M}\in \RRe^{n\times m}$ with height elements $m_{i,j}$. A set of indices $\bar{p} = \{i,j\}\in\mmathbb{Z}^{\mmathcal{M}}$ is used to refer to the element $m_{i,j}$ in $\mmathcal{M}$ and, simultaneously, a planar location with respect to the $O_{\mmathcal{M}}$ frame. Thus, the notations $m_{i,j}$ and $\mmathcal{M}(\bar{p})$ will be used interchangeably to represent a height stored in the height-map matrix $\mmathcal{M}$.
 
@@ -321,7 +321,7 @@
 
 
 
-		\subsection{An approach for cost assignment from a height-map}
+		\subsection{An Approach for Cost Assignment from a Height-Map}
 
 			A discrete height-map space can be converted to a cost representation for the purpose of foot-placement planning over rough terrain. Here, a cost-tensor, $\mmathcal{C}\in\RRe^{n\times m\times l}$, is used to represent a discrete cost space. Each element $c_{i,j,u}$ in $\mmathcal{C}$ represents a transition cost for a particular location $(i,j,u)$. The first and second dimensions of $\mmathcal{C}$ (of size $n$ and $m$) directly correspond to the width and depth of the discretized height-map space $\mathbb{Z}^{\mmathcal{M}}$. The third dimension represents a discretization of the robot's yaw state, $\theta_{b,z}\in[-\pi,\pi]$ into $l$ subdivisions.  In the sections to follow, the notation $\mmathcal{C}(\bar{p}^{\mmathcal{M}},u)$ and $\mmathcal{C}(i,j,u)$ will be used interchangeably to refer to a cost-element, $c_{i,j,u}$, from the transition-cost tensor $\mmathcal{C}$.
 
@@ -384,7 +384,7 @@
 
 
 
-		\subsection{A sliding-window approach for sub-optimal rough terrain planning}
+		\subsection{A Sliding-Window Approach for Sub-Optimal Rough Terrain Planning}
 
 			A sub-optimal planning algorithm is formulated as a preliminary method for terrain planning using the cost-tensor $\mmathcal{C}$. In this algorithm, navigation way-points are generated through a series of successive optimizations upon finite windows of  $\mmathcal{C}$. Each optimization step is used to plan a body position $\bar{p}^{\mmathcal{M}}_{b,k}$ way-point and an orientation $u_{k}$, starting from an arbitrary initial position, $\bar{p}^{\mmathcal{M}}_{b,0}$ and orientation $u_{0}$. Each optimization step takes the form:
 				\begin{equation}
