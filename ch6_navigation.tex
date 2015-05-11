@@ -336,7 +336,7 @@
 					\Gamma \equiv \setwrap{\bar{p}_{1,e}^{\mmathcal{M}},\bar{p}_{2,e}^{\mmathcal{M}},\bar{p}_{3,e}^{\mmathcal{M}},\bar{p}_{4,e}^{\mmathcal{M}}}
 					\label{eq::cost_gamma}
 				\end{equation*}
-			where $\bar{p}_{v,e}^{\mmathcal{M}}=[i_{v},j_{v}]^{T}\in\mmathbb{Z}^{\mmathcal{M}}$ represents the position of each $v^{th}$ foot in the height-map space with $i_{v}\in \setwrap{1,...,m}$ and $j_{v}\in\setwrap{1,...,n}$. By formulating cost with respect to static foot configurations, planning is simplified to finding a trajectory for body position. Target foot positions are then generated relative to planned body locations during trajectory execution using $\Gamma$ and \ref{eq::rel_feet}, to follow. The mapping, $f(\mmathcal{M},\Gamma)$, has been formulated with respect to three main cost elements:
+			where $\bar{p}_{v,e}^{\mmathcal{M}}=[i_{v},j_{v}]^{T}\in\mmathbb{Z}^{\mmathcal{M}}$ represents the position of each $v^{th}$ foot in the height-map space with $i_{v}\in \setwrap{1,...,n}$ and $j_{v}\in\setwrap{1,...,m}$. By formulating cost with respect to static foot configurations, planning is simplified to finding a trajectory for body position. Target foot positions are then generated relative to planned body locations during trajectory execution using $\Gamma$ and \ref{eq::rel_feet}, to follow. The mapping, $f(\mmathcal{M},\Gamma)$, has been formulated with respect to three main cost elements:
 				\begin{enumerate}
 					\item variation in height between all current footholds
 					\item terrain steepness around any foothold
