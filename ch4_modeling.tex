@@ -31,13 +31,13 @@
 				\begin{equation}
 					H_{0}^{i,0} = \left[ 
 					\begin{array}{c|c}
-						R_{zyx}(\theta_{b}) R_{z}(\sigma_{i})	&R_{zyx}(\theta_{b}) \nu + {p}_{b} 	\\ \hline
+						R_{zyx}(\theta_{b}) R_{z}(\sigma_{i})	&R_{zyx}(\theta_{b})\vec{\beta}_{i} + {p}_{b} 	\\ \hline
 						0										&	1											\\
 					\end{array} 
 					\right]
 					\label{eq::world_to_dh}
 				\end{equation}
-			where $\sigma_{i} \equiv \frac{\pi}{2}(i-1) + \frac{\pi}{4} $ and $\nu \equiv  R_{z}(\sigma_{i}) \beta$ with $\beta$ defining an offset from $O_{b}$ to where the first joint of each leg is attached to the body. $R_{zyx}$ represents a rotation associated with the pitch (x-axis), roll (y-axis), and yaw (z-axis) angles of the main body about the platform frame, $\theta_{b}$. $R_{z}$ represents a rotation about the (z-axis) of the frame $O_{b}$. 
+			where $\sigma_{i} = \frac{\pi}{2}(i-1) + \frac{\pi}{4} $; $\vec{o}_{\nu}= [\nu,0,0]^{T}$; and $\vec{\beta}_{i}=  R_{z}(\sigma_{i})\vec{o}_{\nu}$ with $\nu$ defining an offset from $O_{b}$ to where the first joint of each leg is attached to the body. $R_{zyx}$ represents a rotation associated with the pitch (x-axis), roll (y-axis), and yaw (z-axis) angles of the main body about the platform frame, $\theta_{b}$. $R_{z}$ represents a rotation about the (z-axis) of the frame $O_{b}$. 
 
 			A transformation from the zeroth DH frame of the to the $(j+1)^{th}$ joint of leg \emph{i} is described, in general, by
 				\begin{equation}
@@ -189,10 +189,10 @@
 							1 				\\ 	
 						\end{array}
 					\right]	\nonumber\\																						\nonumber\\
-					\psi_{i} 	&\equiv&	\tan^{-1}\wrap{ \frac{\ycomp{{p}_{i,e}^{i,0}}}{\xcomp{{p}_{i,e}^{i,0}} } }												\nonumber\\
-					\zeta_{i,x} &\equiv& 	\ycomp{{p}_{i,e}^{i,0}} \sin(\psi_{i}) + \xcomp{{p}_{i,e}^{i,0}} \cos(\psi_{i}) - a_{4} \cos(\gamma_{i}) - a_{1} 						\nonumber\\
-					\zeta_{i,y} &\equiv& 	\ycomp{{p}_{i,e}^{i,0}} \cos(\psi_{i}) - \xcomp{{p}_{i,e}^{i,0}} \sin(\psi_{i}) 											\nonumber\\
-					\zeta_{i,z}	&\equiv&  	\zcomp{{p}_{i,e}^{i,0}} - a_{4} \sin(\gamma_{i})
+					\psi_{i} 	&=&	\tan^{-1}\wrap{ \frac{\ycomp{{p}_{i,e}^{i,0}}}{\xcomp{{p}_{i,e}^{i,0}} } }												\nonumber\\
+					\zeta_{i,x} &=& 	\ycomp{{p}_{i,e}^{i,0}} \sin(\psi_{i}) + \xcomp{{p}_{i,e}^{i,0}} \cos(\psi_{i}) - a_{4} \cos(\gamma_{i}) - a_{1} 						\nonumber\\
+					\zeta_{i,y} &=& 	\ycomp{{p}_{i,e}^{i,0}} \cos(\psi_{i}) - \xcomp{{p}_{i,e}^{i,0}} \sin(\psi_{i}) 											\nonumber\\
+					\zeta_{i,z}	&=&  	\zcomp{{p}_{i,e}^{i,0}} - a_{4} \sin(\gamma_{i})
 				\end{eqnarray}
 			with ${p}_{i,e}^{i,0}$ representing the position of each \Ith foot with respect to the zeroth DH frame of each \Ith leg; and $\xcomp{{p}_{i,e}^{i,0}}$, $\ycomp{{p}_{i,e}^{i,0}}$ and $\zcomp{{p}_{i,e}^{i,0}}$ representing the $x$, $y$, and $z$ axis coordinates of the vector ${p}_{i,e}^{i,0}$. The selection matrix $E_{p}$ is the same as in \ref{eq::world_joint1_position}-\ref{eq::world_feet_positions}.
 
@@ -252,7 +252,7 @@
 					\dot{x}^{i,0}_{i,e} = J^{i,0}_{i,e}  \dot{q}_{i}
 					\label{eq::leg_jacobian}
 				\end{equation}
-			with $\dot{x}^{i,0}_{i,e} \InRe{6}$ being stacked vector of translational and rotational velocities, $\dot{p}_{i,e}^{i,0} \InRe{3}$ and $\dot{\theta}_{i,e}^{i,0}\InRe{3}$, respectively, of each \Ith foot with respect to frame $O_{i,0}$. The matrix $J^{i,0}_{i,e}$ is defined explicitly in Appendix \ref{appendix::a}.
+			with $\dot{x}^{i,0}_{i,e} = [ (\dot{p}_{i,e}^{i,0})^{T}, (\dot{p}_{i,e}^{i,0})^{T} ]^{T} \InRe{6}$ being stacked vector of translational and rotational velocities, $\dot{p}_{i,e}^{i,0} \InRe{3}$ and $\dot{\theta}_{i,e}^{i,0}\InRe{3}$, respectively, of each \Ith foot with respect to frame $O_{i,0}$. The matrix $J^{i,0}_{i,e}$ is defined explicitly in Appendix \ref{appendix::a}.
 
 			Assuming knowledge of the translational and rotational velocities of the trunk, $\dot{p}_{b}$ and $\dot{\theta}_{b}$, respectively; and the translational and rotational velocity of each \Ith foot, $\dot{p}_{i,e} \InRe{3}$ and $\dot{\theta}_{i,e} \InRe{3}$, respectively, (in $O_{0}$) the translational velocity of each \Ith foot can be written with respect to frame $O_{i,0}$ by:
 				\begin{equation}
@@ -260,12 +260,12 @@
 				\end{equation}
 			where $\vec{o}_{\nu} = [\nu,0,0]^{T}$, $R^{0}_{i,0}$ is the rotation-matrix component of the transformation $H^{0}_{i,0}$ defined in \ref{eq::world_to_dh}, and $\Skew{*}$ is a skew-symmetric matrix operator, which takes a $3\times1$ vector input. The corresponding rotational velocity of each \Ith foot  can be computed with respect to $O_{i,0}$ by:
 				\begin{equation}
-					\Theta^{i,0} \equiv \wrap{ R^{0}_{i,0} }^{T} \Skew{ \dot{\theta}_{i,e} - \dot{\theta}_{b} } R^{0}_{i,0}  = \Skew{ \dot{\theta}^{i,0}_{i,e} }
+					\Theta^{i,0} = \wrap{ R^{0}_{i,0} }^{T} \Skew{ \dot{\theta}_{i,e} - \dot{\theta}_{b} } R^{0}_{i,0}  = \Skew{ \dot{\theta}^{i,0}_{i,e} }
 				\label{eq::velocity_skew}
 				\end{equation}
 			where the rotational velocity of each foot, described by $\dot{\theta}^{i,0}_{i,e}$, is recovered by:
 				\begin{equation}
-					\dot{\theta}^{i,0}_{i,e} \equiv \sbrack{ 
+					\dot{\theta}^{i,0}_{i,e} = \sbrack{ 
 						-\Theta^{i,0}_{1,2},
 						 \Theta^{i,0}_{1,3},
 						-\Theta^{i,0}_{2,3}
@@ -292,7 +292,7 @@
 
 		\subsection{System State Vector and Dynamics}
 		
-			The dynamical model of the BlueFoot platform derived by considering a free-floating body with four ridged legs, each of which have four degrees of freedom. This system is fully described by the state vector $z \equiv [\eta^{T}, \dot{\eta}^{T}]^{T} \RRealVec{44}$ and its dynamics are:
+			The dynamical model of the BlueFoot platform derived by considering a free-floating body with four ridged legs, each of which have four degrees of freedom. This system is fully described by the state vector $z = [\eta^{T}, \dot{\eta}^{T}]^{T} \RRealVec{44}$ and its dynamics are:
 				\begin{equation}
 					M(\eta)\ddot{\eta} + C(\eta,\dot{\eta})\dot{\eta} + G(\eta) + \Delta{H} = \tau + J^T(\eta) f_{ext} %
 					\label{eq::normal_form_dynamics}
@@ -317,7 +317,7 @@
 					\end{split}
 					\label{eq::sampled_dynamics}
 				\end{equation}
-			where $M_{1,k} = M(z_{1,k})$ and $\Delta_{s} \equiv (f_{s})^{-1}$ with $f_{s}$ defining a uniform sampling frequency in Hz. The terms ${e}_{1,k}^{\Delta_{s}}$ and ${e}_{2,k}^{\Delta_{s}}$ are used to explicitly account for system discretization errors, which vary with respect to the step-size, $\Delta_{s}$. 
+			where $M_{1,k} = M(z_{1,k})$ and $\Delta_{s} = (f_{s})^{-1}$ with $f_{s}$ defining a uniform sampling frequency in Hz. The terms ${e}_{1,k}^{\Delta_{s}}$ and ${e}_{2,k}^{\Delta_{s}}$ are used to explicitly account for system discretization errors, which vary with respect to the step-size, $\Delta_{s}$. 
 
 		\subsection{Joint-Servo Dynamics}
 
