@@ -37,7 +37,7 @@
 \contentsline {subsubsection}{ODROID-XU (Upper Brain)}{33}
 \contentsline {subsection}{\numberline {3.1.2}Inter-Processor Communication}{33}
 \contentsline {section}{\numberline {3.2}Ground Station}{36}
-\contentsline {chapter}{\numberline {IV. }System Modeling}{38}
+\contentsline {chapter}{\numberline {IV. }Kinematic and Dynamical Modeling}{38}
 \contentsline {section}{\numberline {4.1}Kinematic Model}{38}
 \contentsline {subsection}{\numberline {4.1.1}Forward Position Kinematics}{38}
 \contentsline {subsubsection}{A Note about foot localization in the robot-relative frame, $O_{b^{'}}$}{41}

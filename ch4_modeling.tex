@@ -4,7 +4,7 @@
 %%% NEED TO FIX NOTATIONS
 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{System Modeling}
+\chapter{Kinematic and Dynamical Modeling}
 	\label{ch::system_modeling}
 
 	%Analysis and control of the BlueFoot quadruped requires the utilization of both kinematic and dynamical system models.
@@ -12,12 +12,12 @@
 	\section{Kinematic Model}
 		\label{sec::system_kinematics}
 
-		The kinematic model of the BlueFoot platform is paramount for trajectory planning, localization, and adaptation in the robot task-space. In particular, inverse position and velocity solutions are used to prescribe joint-space commands from particular foot trajectories planned in the world coordinate frame. Additionally, BlueFoot's forward kinematic model is utilized to estimate the position of each foot using the position and orientation of the trunk; and joint position feedback. This section will describe BlueFoot's forward and inverse kinematic models, as well as how these models are used in motion planning and control tasks.
+		The kinematic model of the BlueFoot platform is paramount for trajectory planning, localization, and adaptation in the robot task-space. In particular, inverse position and velocity solutions are used to prescribe joint-space commands from particular foot trajectories planned in the world coordinate frame. Additionally, BlueFoot's forward kinematic model is utilized to estimate the position of each foot using the position and orientation of the trunk and joint position feedback. This section will describe BlueFoot's forward and inverse kinematic models as well as how these models are used in motion planning and control tasks.
 
 		\subsection{Forward Position Kinematics}
 			\label{ch::system_modeling_pos_kin}
 
-			To formulate the kinematics model, a set of coordinate systems have been defined and are described by Figure~\ref{fig::coordinate_frames}. Note that the frame $O_{0}$ represents the world coordinate frame; and $O_{b}$ is the coordinate frame, centered at  ${p}_{b}$ attached to the platform and is always aligned with $O_{0}$. $O_{b}$ represents a body frame rigidly attached to the center of the trunk. The orientation and position of the trunk are defined by vectors of $\theta_{b}\InRe{3}$ and ${p}_{b}\InRe{3}$, which relate the frame $O_{b}$ to the world frame $O_{0}$. Coordinate frames $O_{i,0}$ are attached to the first joint of each \Ith leg.
+			To formulate the kinematics model, a set of coordinate systems have been defined and are depicted in Figure~\ref{fig::coordinate_frames}. Note that the frame $O_{0}$ represents the world coordinate frame; and $O_{b}$ is the coordinate frame centered at  ${p}_{b}$ and rigidly attached to the center of the trunk. The orientation and position of the trunk are defined by vectors $\theta_{b}\InRe{3}$ and ${p}_{b}\InRe{3}$, which relate the frame $O_{b}$ to the world frame $O_{0}$. Coordinate frames $O_{i,0}$ are attached to the first joint of each \Ith leg at the point of connection to the main body. The \Jth joint position of each \Ith leg is represented  by the points ${p}_{i,j}$ in the frame $O_{0}$. These spatial locations are generated from a combination of the body orientation, $\theta_{b}$, and joint positions for each \Ith leg, $q_{i} = [q_{i,1}, q_{i,2}, q_{i,3}, q_{i,4}]^T$. $q_{i,1}$ represents the position of the hip-joint (joint closest to the trunk), which rotates the transverse body plane. The joint variables $q_{i,2}, q_{i,3}$ and $q_{i,4}$ represent the lateral-hip, knee and ankle joint rotations, respectively.
 %
 				\begin{figure}[h!]
 					\centering
@@ -26,7 +26,6 @@
 					\label{fig::coordinate_frames}
 				\end{figure}
 %
-			The \Jth joint position of each \Ith leg is represented  by the points ${p}_{i,j}$ in the frame $O_{0}$. These spatial locations are generated from a combination of the body orientation, $\theta_{b}$, and joint positions for each \Ith leg, $q_{i} = [q_{i,1}, q_{i,2}, q_{i,3}, q_{i,4}]^T$. $q_{i,1}$ represents the position of the hip-joint (joint closest to the center platform), which rotates in the direction of the transverse body plane. The joint variables $q_{i,2}, q_{i,3}$ and $q_{i,4}$ represent the lateral-hip, knee and ankle joint rotations, respectively.
 
 			The coordinate transformation between world coordinate frame, $O_{0}$, and the zeroth Denavit-Hartenberg (DH) coordinate frame of leg \emph{i}, $O_{i,0}$ (located at the origin of joint-1), is given by
 				\begin{equation}
@@ -51,7 +50,7 @@
 					\right].
 				\end{equation}
 
-			The kinematics of each leg are identical. Thus, the transformations $H^{i,0}_{i,j}$ are of the same form and are derived by the DH parameters given by Table \ref{tab::dh_params}. Actual values for the link lengths $a_{1-4}$ and body-offset, $\nu$, are provided in Table \ref{tab::link_lens}.
+			The kinematics of each leg are identical. Thus, the transformations $H^{i,0}_{i,j}$ are of the same form and are derived by the DH parameters given by Table \ref{tab::dh_params}. Actual values for the link lengths $a_{1}$ through $a_{1}$ and body-offset, $\nu$, are provided in Table \ref{tab::link_lens}.
 			\begin{table}[!h]
 				\centering
 				\begin{tabularx}{150mm}{|C{0.2}|C{0.2}|C{0.2}|C{0.2}|C{0.2}|} \hline
@@ -113,14 +112,14 @@
 						s_{234,i} 		&  		c_{234,i}		& 		0			&		a_2 s_{2,i} + a_3 s_{23,i} + a_4 s_{234,i}					\\ \hline
 						0 			& 		0			& 		0			&		1 															\\
 					\end{array} 
-					\right]
+					\right].
 					\label{eq::transform4}
 				\end{equation}
 			A summary of abbreviations for trigonometric terms in \ref{eq::transform1}-\ref{eq::transform4} is included in Appendix~\ref{appendix::e}.
 
-			The position of joint 1 of leg \emph{i} in $O_{0}$, ${p}_{i,1}$ may now be computed with respect to frame $O_{0}$ by:
+			The position of joint 1 of leg \emph{i} in $O_{0}$, ${p}_{i,1}$, may now be computed with respect to frame $O_{0}$ by:
 				\begin{equation}
-					{p}_{i,1} \equiv E_{p} H_{0}^{i,0} e_{p}.
+					{p}_{i,1} = E_{p} H_{0}^{i,0} e_{p}
 					\label{eq::world_joint1_position}
 				\end{equation}
 			where
