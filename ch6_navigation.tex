@@ -33,7 +33,7 @@
 
 			A piecewise potential function, defined in \ref{eq::min_dis_potential_function}, is used in BlueFoot's navigation scheme. This function is designed to repel the platform from objects which are closer to the robot than some minimum distance, $d_{min}$, and attract the robot toward objects which are further away. The form of this potential function was guided by several candidate force-field functions presented in \cite{ArambulaCosio2004}. Without explicitly directing the robot towards known goals, the intention of \ref{eq::min_dis_potential_function} is to draw the robot towards long apertures, such as corridors or openings, and away from close-by obstructions. It is written as follows:
 				\begin{eqnarray}
-					\Delta d &\equiv& \norm{x}-d_{min} \nonumber \\
+					\Delta d &=& \norm{x}-d_{min} \nonumber \\
 					f(x) &=& 
 					\begin{cases}	
 					 	 -\lambda_{c,1} \wrap{\Delta d}^{2} &  \text{if } \Delta d < 0 \\
@@ -133,7 +133,7 @@
 				\end{enumerate}
 			Moreover, camera-based tracking commands will have a greater influence on system navigation (through the variables $v^{r}$ and $\omega^{r}$) as the platform becomes closer to the desired target. A straight-forward way to achieve this is to use the relative size, $r$, of tracked features in the image frame, as will be described. With this in mind, a command-mixing scheme is defined as follows:
 			\begin{eqnarray}
-				v(r) &\equiv&
+				v(r) &=&
 				\begin{cases}
 				e^{ -c_{mix} \wrap{ r - r_{mix}}^{2} } 	& \text{if } r < r_{mix}	\\
 				1											& \text{otherwise}
@@ -333,10 +333,10 @@
 				\end{equation}
 			where $\Gamma$ is a static configuration matrix used to describe the nominal spacing between the robot's feet. $\Gamma$ is composed as follows:
 				\begin{equation*}
-					\Gamma \equiv \setwrap{\bar{p}_{1,e}^{\mmathcal{M}},\bar{p}_{2,e}^{\mmathcal{M}},\bar{p}_{3,e}^{\mmathcal{M}},\bar{p}_{4,e}^{\mmathcal{M}}}
+					\Gamma = \setwrap{\bar{p}_{1,e}^{\mmathcal{M}},\bar{p}_{2,e}^{\mmathcal{M}},\bar{p}_{3,e}^{\mmathcal{M}},\bar{p}_{4,e}^{\mmathcal{M}}}
 					\label{eq::cost_gamma}
 				\end{equation*}
-			where $\bar{p}_{v,e}^{\mmathcal{M}}=[i_{v},j_{v}]^{T}\in\mmathbb{Z}^{\mmathcal{M}}$ represents the position of each $v^{th}$ foot in the height-map space with $i_{v}\in \setwrap{1,...,m}$ and $j_{v}\in\setwrap{1,...,n}$. By formulating cost with respect to static foot configurations, planning is simplified to finding a trajectory for body position. Target foot positions are then generated relative to planned body locations during trajectory execution using $\Gamma$ and \ref{eq::rel_feet}, to follow. The mapping, $f(\mmathcal{M},\Gamma)$, has been formulated with respect to three main cost elements:
+			where $\bar{p}_{v,e}^{\mmathcal{M}}=[i_{v},j_{v}]^{T}\in\mmathbb{Z}^{\mmathcal{M}}$ represents the position of each $v^{th}$ foot in the height-map space with $i_{v}\in \setwrap{1,...,n}$ and $j_{v}\in\setwrap{1,...,m}$. By formulating cost with respect to static foot configurations, planning is simplified to finding a trajectory for body position. Target foot positions are then generated relative to planned body locations during trajectory execution using $\Gamma$ and \ref{eq::rel_feet}, to follow. The mapping, $f(\mmathcal{M},\Gamma)$, has been formulated with respect to three main cost elements:
 				\begin{enumerate}
 					\item variation in height between all current footholds
 					\item terrain steepness around any foothold
@@ -357,7 +357,7 @@
 			The cost-tensor is then generated as follows:
 				\begin{equation}
 					\begin{split}
-						\Gamma'	 					&\equiv \Gamma'(\bar{p}^{\mmathcal{M}}_{b},u)  \\
+						\Gamma'	 					&= \Gamma'(\bar{p}^{\mmathcal{M}}_{b},u)  \\
 						\mmathcal{H}_{v} 			&=		\mmathcal{M}(\col{\Gamma'}{v})	 \\
 						\delta \mmathcal{H}_{v} 	&= 		\nabla \mmathcal{M}(\col{\Gamma'}{v}) \\
 						\mmathcal{C}(\bar{p}^{\mmathcal{M}}_{b},u) 	&= k_{\text{var}} \text{var}(\mmathcal{H}) + k_{\delta}\sum_{v=1}^{4} \delta \mmathcal{H}_{v}^{2} + k_{\theta} \gamma^{2}(u) 
@@ -401,7 +401,7 @@
 						\mmathbb{Z}^{w}_{k} & \text{ s.t.}  \\
 						i_{\psi,k} 	& \in \{ \wrap{i_{b,k-1}-d_{w}},\wrap{i_{b,k-1}-d_{w}+1},...,\wrap{i_{b,k-1}+d_{w}} \} 	\\
 						j_{\psi,k} 	& \in \{ \wrap{j_{b,k-1}+1},...,\wrap{j_{b,k-1}+d_{w}} \} 	\\
-						\mmathbb{Z}^{u}_{k}	&\equiv   \{ \wrap{u_{k-1}-d_{u}}, \wrap{u_{k-1}-d_{u}+1}, ... , \wrap{u_{k-1}+d_{u}} \}
+						\mmathbb{Z}^{u}_{k}	&=   \{ \wrap{u_{k-1}-d_{u}}, \wrap{u_{k-1}-d_{u}+1}, ... , \wrap{u_{k-1}+d_{u}} \}
 					\end{split}
 					\label{eq::windows}
 				\end{equation}			
@@ -415,7 +415,7 @@
 				\end{equation}
 			where $\text{sign}(n)$ is an operator such that:
 				\begin{equation}
-					\text{sign}(n) \equiv
+					\text{sign}(n) =
 					\begin{cases}
 							+1 &	\text{if } n > 0 \\
 						    -1 &	\text{otherwise}
