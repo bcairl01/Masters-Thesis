@@ -61,8 +61,8 @@
 \contentsline {subsection}{\numberline {5.5.3}Compensator Output}{68}
 \contentsline {subsection}{\numberline {5.5.4}NARX-NN Implementation}{69}
 \contentsline {subsection}{\numberline {5.5.5}NARX-NN Compensator Results}{69}
-\contentsline {chapter}{\numberline {VI. }Perception and Navigation}{75}
-\contentsline {section}{\numberline {6.1}Flatland Navigation and Goal (Feature) Tracking}{75}
+\contentsline {chapter}{\numberline {VI. }Perception and Navigation:}{75}
+\contentsline {section}{\numberline {6.1}Flatland Navigation and Target/Leader Tracking}{75}
 \contentsline {subsection}{\numberline {6.1.1}LIDAR-Based Potential-Fields Algorithm}{76}
 \contentsline {subsection}{\numberline {6.1.2}Simulated Potential-Fields Navigation Results}{79}
 \contentsline {subsection}{\numberline {6.1.3}Incorporation of Camera-Based Feature Tracking}{80}
