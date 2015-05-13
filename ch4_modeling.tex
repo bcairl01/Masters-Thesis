@@ -205,7 +205,7 @@
 			\begin{table}[h]
 				\centering
 				\begin{tabularx}{\textwidth}{|C{0.25}|C{0.1875}|C{0.1875}|C{0.1875}|C{0.1875}|} \hline
-					Joint Var.	&	${\theta_{i,1}}_{}$, rad		&		${\theta_{i,2}}_{}$, rad		&		${\theta_{i,3}}_{}$, rad		&		${\theta_{i,4}}_{}$, rad 	\\ \hline \hline
+					Joint Var.	&	${q_{i,1}}_{}$, rad		&		${q_{i,2}}_{}$, rad		&		${q_{i,3}}_{}$, rad		&		${q_{i,4}}_{}$, rad 	\\ \hline \hline
 					Max Range	&	45$^o$				&		90$^o$				&		90$^o$				&		90$^o$			\\ \hline
 					Min Range	&  -45$^o$				&	   -90$^o$				&	   -90$^o$				&	   -90$^o$			\\ \hline
 				\end{tabularx}
@@ -252,7 +252,7 @@
 					\dot{x}^{i,0}_{i,e} = J^{i,0}_{i,e}  \dot{q}_{i}
 					\label{eq::leg_jacobian}
 				\end{equation}
-			with $\dot{x}^{i,0}_{i,e} = [ (\dot{p}_{i,e}^{i,0})^{T}, (\dot{p}_{i,e}^{i,0})^{T} ]^{T} \InRe{6}$ being stacked vector of translational and rotational velocities, $\dot{p}_{i,e}^{i,0} \InRe{3}$ and $\dot{\theta}_{i,e}^{i,0}\InRe{3}$, respectively, of each \Ith foot with respect to frame $O_{i,0}$. The matrix $J^{i,0}_{i,e}$ is defined explicitly in Appendix \ref{appendix::a}.
+			with $\dot{x}^{i,0}_{i,e} = [ (\dot{p}_{i,e}^{i,0})^{T}, (\dot{\theta}_{i,e}^{i,0})^{T} ]^{T} \InRe{6}$ being stacked vector of translational and rotational velocities, $\dot{p}_{i,e}^{i,0} \InRe{3}$ and $\dot{\theta}_{i,e}^{i,0}\InRe{3}$, respectively, of each \Ith foot with respect to frame $O_{i,0}$. The matrix $J^{i,0}_{i,e}$ is defined explicitly in Appendix \ref{appendix::a}.
 
 			Assuming knowledge of the translational and rotational velocities of the trunk, $\dot{p}_{b}$ and $\dot{\theta}_{b}$, respectively; and the translational and rotational velocity of each \Ith foot, $\dot{p}_{i,e} \InRe{3}$ and $\dot{\theta}_{i,e} \InRe{3}$, respectively, (in $O_{0}$) the translational velocity of each \Ith foot can be written with respect to frame $O_{i,0}$ by:
 				\begin{equation}

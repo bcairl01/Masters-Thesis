@@ -82,7 +82,7 @@
 				\end{equation}
 			is non-zero. $\dot{\epsilon}_{\theta}$ represents a measure of translational drift recovered from gyroscopic sensor measurements. ${R}_{z_{b}}\wrap{\frac{\pi}{2}}$ represents a rotation by $\frac{\pi}{2}$ about the z-axis of the body frame $O_{b}$. $\dot{\epsilon}_{\theta}$ is mapped to the parameters $\Psi_{\omega}$ and $\Psi_{M}$ by
 				\begin{eqnarray}
-					\psi_{i} 			&=& \Sig{  w_{i} \upsilon_{i} - w_{i} c_{i} } {\mu}_{i} 	\nonumber\\
+					\psi_{i} 			&=& \Sig{  w_{i} \upsilon_{i} - w_{i} c_{i} } (1-{\mu}_{i}) 	\nonumber\\
 					\Psi_{\omega} 		&=& I + A_{\omega}\DiagMat{ \psi_{i} } 						\nonumber\\
 					\Psi_{M}			&=& I - A_{\mu} \DiagMat{  \psi_{i} } 
 					\label{eq::cpg_modulations}
@@ -215,12 +215,12 @@
 			\end{equation} 
 		is a composite of a foot-repositioning and step-height controller which are formulated in terms of the dynamics of the signals $\dot{\tilde{p}}_{i,e}^{v}$ and $\dot{\tilde{p}}_{i,e}^{y}$, respectively. $\dot{p}_{i,e}^{r}$ is a reference position command for each \Ith foot. Each foot is treated as a point mass attracted to the corresponding virtual foothold by an over-damped mass-attractor system. $\dot{\tilde{p}}_{i,e}^{v}$ is defined by
 			\begin{equation}
-				\dot{\tilde{p}}_{i,e}^{v} 		= \frac{1}{m_{i}} \int^{t}_{0}{{P}_{\vec{h}_{i}} \wrap{ F_{s,i}  -b_{c} \dot{p}_{i,e} + F_{\epsilon,i} } d\tau}
+				\dot{\tilde{p}}_{i,e}^{v} 		= \frac{1}{m_{i}} \int^{t}_{0}{{P}_{\vec{h}_{i}} \wrap{ F_{s,i}  -b_{c} \dot{p}_{i,e}^{r} + F_{\epsilon,i} } d\tau}
 				\label{eq::foot_place_control}
 			\end{equation}
 		where
 			\begin{eqnarray*}
-				F_{s,i} 			& = & k_{c}  \mu_{i} \wrap{ \tilde{p}_{i,e} - {p}_{i,e} } \Unit{y_{2,i}}		\nonumber\\
+				F_{s,i} 			& = & k_{c} \wrap{ \tilde{p}_{i,e} - {p}_{i,e}^{r} } \Unit{y_{2,i}}		\nonumber\\
 				F_{\epsilon,i}		& = & a_{\epsilon}\dot{\epsilon}_{\theta} \Unit{y_{2,i}}						\nonumber
 			\end{eqnarray*}
 	 	with $k_{c},b_{c},a_{\epsilon},m_{i} \in \RReal$.
