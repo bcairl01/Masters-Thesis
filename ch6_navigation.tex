@@ -20,7 +20,7 @@
 				\begin{eqnarray}
 					%x_{i}  &=& P_{ \vec{z} } \wrap{ H_{b}^{0} H_{L}^{b} \Gamma_{L} x_{i}^{L} } \nonumber\\
 					%\bar{x}_{b,i} &=&  x_{i}-p_{b} \nonumber \\
-					\vec{u}^{r}_{L} &=&  { \sum_{x_{i}^{L} \in \emph{S}} g_{\psi}(x_{i}^{L})  f( x_{i}^{L} ) \frac{x_{i}^{L}}{\norm{x_{i}^{L}}} } \nonumber \\
+					\vec{u}^{r}_{L} &=&  { \sum_{x_{i}^{L} \in \emph{S}^{L}} g_{\psi}(x_{i}^{L})  f( x_{i}^{L} ) \frac{x_{i}^{L}}{\norm{x_{i}^{L}}} } \nonumber \\
 					P_{L} & = & \alpha_{p}\sum_{x_{i}^{L} \in \emph{S}^{L}} g_{\psi}(x_{i}^{L})  f( x_{i}^{L} ) U\wrap{f( x_{i}^{L} )}
 					\label{eq::full_potential_fields}
 				\end{eqnarray}
@@ -189,7 +189,7 @@
 					H^{L}_{0} = H^{L}_{b} H^{b}_{0}
 					\label{eq::world_to_sensor}
 				\end{equation}
-			where $H^{b}_{0}$ is a transformation from $O_{0}$ to the trunk frame $O_{b}$, as defined in Chapter~\ref{ch::system_modeling}; and $H^{L}_{b}$ defines a transformation from the frame $O_{b}$ to the LIDAR frame, $O_{L}$. $H^{L}_{b}$ is necessary for knowing the position of the LIDAR head with respect world frame, as the sensor itself has some offset and rotation relative to the robot's body. Each 2D point from $x_{i} \in \emph{S}$ from a raw LIDAR scan, $\emph{S} \subset \RRe^{2}$, is transformed into a 3D scan segment, $\bar{S}_{k} \subset \RRe^{3}$, with respect to the frame $O_{0}$ by:
+			where $H^{b}_{0}$ is a transformation from $O_{0}$ to the trunk frame $O_{b}$, as defined in Chapter~\ref{ch::system_modeling}; and $H^{L}_{b}$ defines a transformation from the frame $O_{b}$ to the LIDAR frame, $O_{L}$. $H^{L}_{b}$ is necessary for knowing the position of the LIDAR head with respect world frame, as the sensor itself has some offset and rotation relative to the robot's body. Each 2D point from $x_{i}^{L} \in \emph{S}^{L}$ from a raw LIDAR scan, $\emph{S}^{L} \subset \RRe^{2}$, is transformed into a 3D scan segment, $\bar{S}_{k} \subset \RRe^{3}$, with respect to the frame $O_{0}$ by:
 				\begin{equation}
 					\left[
 						\begin{array}{c}
@@ -199,9 +199,9 @@
 				 = H^{L}_{b} H^{b}_{0}	
 					\left[
 						\begin{array}{c}
-							x_{i} \\ 0 \\ 1
+							x_{i}^{L} \\ 0 \\ 1
 						\end{array}
-					\right] \forall x_{i} \in \emph{S}
+					\right] \forall x_{i}^{L} \in \emph{S}^{L}
 					\label{eq::scan_to_segment}
 				\end{equation}
 			where $\bar{x}_{i,k} \in \bar{S}_{k}$ is a point within the \Kth 3D scan segment $\bar{S}_{k}$. After the sweeping routine is complete, 3D scan segments are composed into a final point cloud, $\bar{S}$ by:
