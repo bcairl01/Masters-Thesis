@@ -285,7 +285,7 @@
 			\begin{equation}
 				m_{T} = m_{b} + \sum_{i=1}^{4} \wrap{m_{i,e} + \sum_{j=1}^{4} \wrap{  m_{i,j}^{J} +  m_{i,j}^{L} } }.
 			\end{equation}
-		Here, the the local COG of each linkage, ${p}_{i,j}^{L}$, is assumed to be at the midpoint along the length of each link, half-way between two successive joints.
+		Here, the local COG of each linkage, ${p}_{i,j}^{L}$, is assumed to be at the midpoint along the length of each link, half-way between two successive joints.
 			\begin{figure}[!h]
 				\centering
 				\fbox{\includegraphics[width=1.00\textwidth]{body_motion.png}}
@@ -316,7 +316,7 @@
 	\section{Trunk Leveling via NARX-Network Learning Approach}
 		\label{sec::trunk_leveling_NARX}
 		
-		Suppressing disturbances which enter a quadruped system during gaiting is a matter which requires special handling, given the the dynamical complexity of both the robot and its interactions with the environment. This complexity can be handled, in part, by a learning-based approach. This section will focus on the formulation of a learning controller used to reject disturbances from the orientation states of the trunk of a legged robot. Disturbance rejection from the trunk sub-system of a legged platform has practical significance when carrying a payload (such as cameras, optical systems, armaments, etc.) rigidly fixed to their main body. Disturbances are imparted upon the trunk during gaiting in two main ways: 
+		Suppressing disturbances which enter a quadruped system during gaiting is a matter which requires special handling, given the dynamical complexity of both the robot and its interactions with the environment. This complexity can be handled, in part, by a learning-based approach. This section will focus on the formulation of a learning controller used to reject disturbances from the orientation states of the trunk of a legged robot. Disturbance rejection from the trunk sub-system of a legged platform has practical significance when carrying a payload (such as cameras, optical systems, armaments, etc.) rigidly fixed to their main body. Disturbances are imparted upon the trunk during gaiting in two main ways: 
 		\begin{enumerate}
 			\item instantaneous changes in force distribution when feet make and break contact with the ground 
 			\item under-actuation that occurs during certain dynamic gaits. During dynamic gaits, such as trot gaits, the state of contact between the feet and the ground is changed often so as to prevent the walking robot from tipping past a recoverable configuration. 
