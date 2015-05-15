@@ -29,7 +29,7 @@
 \contentsline {figure}{\numberline {24}{\ignorespaces Body motion generated using ZMP controller during two-pace \emph {(top)} and four-pace \emph {(bottom)} gaiting sequence.\relax }}{64}
 \contentsline {figure}{\numberline {25}{\ignorespaces Quadruped tipping about planted feet.\relax }}{66}
 \contentsline {figure}{\numberline {26}{\ignorespaces Full system diagram with NARX-NN compensator mechanism.\relax }}{70}
-\contentsline {figure}{\numberline {27}{\ignorespaces NARX Network MSE convergence for trial shown in Figure 32\hbox {}.\relax }}{72}
+\contentsline {figure}{\numberline {27}{\ignorespaces NARX Network MSE convergence for trial shown in Figure \G@refundefinedtrue \text {\normalfont \bfseries ??}\GenericWarning { }{LaTeX Warning: Reference `fig::narx100_a35' on page 72 undefined}.\relax }}{72}
 \contentsline {figure}{\numberline {28}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with $\alpha = 0.125$.\relax }}{72}
 \contentsline {figure}{\numberline {29}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with $\alpha = 0.250$.\relax }}{73}
 \contentsline {figure}{\numberline {30}{\ignorespaces Trunk orientation during 60 $\frac {mm}{s}$ gait with $\alpha = 0.350$.\relax }}{73}
@@ -44,7 +44,7 @@
 \contentsline {figure}{\numberline {38}{\ignorespaces Original 3D point-cloud of terrain patch \emph {(top)} and corresponding view from robot's on-board camera \emph {(bottom)}.\relax }}{86}
 \contentsline {figure}{\numberline {39}{\ignorespaces A height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{88}
 \contentsline {figure}{\numberline {40}{\ignorespaces Height-map showing terrain variation.\relax }}{88}
-\contentsline {figure}{\numberline {41}{\ignorespaces Projections of a sample cost-tensor generated from the height-map shown in Figure\nobreakspace {}39\hbox {}.\relax }}{91}
+\contentsline {figure}{\numberline {41}{\ignorespaces Projections of a sample cost-tensor generated from the height-map shown in Figure\nobreakspace {}\G@refundefinedtrue \text {\normalfont \bfseries ??}\GenericWarning { }{LaTeX Warning: Reference `fig::heightmap_terrain_patch' on page 91 undefined}.\relax }}{91}
 \contentsline {figure}{\numberline {42}{\ignorespaces Path planned over rough terrain with $d_{w}=d_{u}=1$.\relax }}{94}
 \contentsline {figure}{\numberline {43}{\ignorespaces Path planned over rough terrain with $d_{w}=d_{u}=5$.\relax }}{95}
 \contentsline {figure}{\numberline {44}{\ignorespaces Path planned over rough terrain with $d_{w}=d_{u}=15$.\relax }}{96}
