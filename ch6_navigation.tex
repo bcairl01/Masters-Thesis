@@ -4,9 +4,9 @@
 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Perception and Navigation:}
-\label{ch::navigation}
+	\label{ch::navigation}
+
 	\section{Flatland Navigation and Target/Leader Tracking}
-	
 		
 		In order to track a leader, \IE a mobile agent wearing a distinct tracking marker, a camera-based visual-servoing scheme is employed to generate navigation commands. A LIDAR-based potential-fields navigation strategy is used in tandem with the aforementioned scheme in order to ensure that BlueFoot does not collide with obstacles in its path or with the tracked leader. This hybrid navigation approach administers commands to the robot's gaiting controller using two main parameters, $v^{r}$ and $\omega^{r}$, which represent forward velocity and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. An explanation of how these parameters are used to influence BlueFoot's gait control and foot-placement is covered in Section~\ref{sec::foot_placement_control}. During navigation, the pitch of the trunk, $\theta_{b,x}$, is also controlled via its respective reference signal, $\theta_{b,x}^{r}$, using an outer-loop proportional control scheme. Control over trunk pitch allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head (trunk) while tracking features. Trunk articulation control is also paramount for composing 3D point clouds from LIDAR scans as will be described later in this chapter.
 
@@ -398,8 +398,8 @@
 				\begin{equation}
 					\begin{split}
 						\mmathbb{Z}^{w}_{k} & \text{ s.t.}  \\
-						i_{\psi,k} 	& \in \{ \wrap{i_{b,k-1}-d_{w}},\wrap{i_{b,k-1}-d_{w}+1},...,\wrap{i_{b,k-1}+d_{w}} \} 	\\
-						j_{\psi,k} 	& \in \{ \wrap{j_{b,k-1}+1},...,\wrap{j_{b,k-1}+d_{w}} \} 	\\
+						\text{   } i_{\psi,k} 	& \in \{ \wrap{i_{b,k-1}-d_{w}},\wrap{i_{b,k-1}-d_{w}+1},...,\wrap{i_{b,k-1}+d_{w}} \} 	\\
+						\text{   } j_{\psi,k} 	& \in \{ \wrap{j_{b,k-1}+1},...,\wrap{j_{b,k-1}+d_{w}} \} 	\\
 						\mmathbb{Z}^{u}_{k}	&=   \{ \wrap{u_{k-1}-d_{u}}, \wrap{u_{k-1}-d_{u}+1}, ... , \wrap{u_{k-1}+d_{u}} \}
 					\end{split}
 					\label{eq::windows}
