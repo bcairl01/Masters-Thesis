@@ -40,11 +40,11 @@
 \contentsline {figure}{\numberline {34}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and halls using the LIDAR-based potential-fields navigation scheme.\relax }}{79}
 \contentsline {figure}{\numberline {35}{\ignorespaces Path (shown in yellow) taken by robot through a simulated set of rooms and obstacles.\relax }}{80}
 \contentsline {figure}{\numberline {36}{\ignorespaces Path (shown in yellow) taken by robot through a real-world lab setting showing the robot's view of the goal marker.\relax }}{82}
-\contentsline {figure}{\numberline {37}{\ignorespaces LIDAR swept over a range of angles, $\theta _{b,x} \in [\theta _{b,x,1}^{r},\theta _{b,x,N}^{r}]$. \relax }}{84}
+\contentsline {figure}{\numberline {37}{\ignorespaces LIDAR scan over a range of angles, $\theta _{b,x} \in [\theta _{b,x,1}^{r},\theta _{b,x,N}^{r}]$. \relax }}{84}
 \contentsline {figure}{\numberline {38}{\ignorespaces Original 3D point-cloud of terrain patch \emph {(top)} and corresponding view from robot's on-board camera \emph {(bottom)}.\relax }}{86}
 \contentsline {figure}{\numberline {39}{\ignorespaces A height-map \emph {(left)} and its corresponding gradient \emph {(right)}.\relax }}{88}
 \contentsline {figure}{\numberline {40}{\ignorespaces Height-map showing terrain variation.\relax }}{88}
-\contentsline {figure}{\numberline {41}{\ignorespaces Projections of a sample cost-tensor generated from the height-map shown in Figure\nobreakspace {}39\hbox {}.\relax }}{92}
+\contentsline {figure}{\numberline {41}{\ignorespaces Projections of a sample cost-tensor generated from the height-map shown in Figure\nobreakspace {}39\hbox {}.\relax }}{91}
 \contentsline {figure}{\numberline {42}{\ignorespaces Path planned over rough terrain with $d_{w}=d_{u}=1$.\relax }}{94}
 \contentsline {figure}{\numberline {43}{\ignorespaces Path planned over rough terrain with $d_{w}=d_{u}=5$.\relax }}{95}
 \contentsline {figure}{\numberline {44}{\ignorespaces Path planned over rough terrain with $d_{w}=d_{u}=15$.\relax }}{96}

@@ -71,7 +71,7 @@
 \contentsline {subsection}{\numberline {6.2.2}Height-Map Generation from a 3D Point Cloud}{85}
 \contentsline {subsection}{\numberline {6.2.3}An Approach for Cost Assignment from a Height-Map}{89}
 \contentsline {subsection}{\numberline {6.2.4}A Sliding-Window Approach for Sub-Optimal Rough Terrain Planning}{92}
-\contentsline {subsection}{\numberline {6.2.5}Surface Reconstruction}{98}
+\contentsline {subsection}{\numberline {6.2.5}Surface Reconstruction}{93}
 \contentsline {chapter}{\numberline {VII. }Concluding Remarks}{102}
 \contentsline {chapter}{\numberline {A. }Summary of Trigonometric Abbreviations}{105}
 \contentsline {chapter}{\numberline {B. }Leg Jacobian with Respect to Frame $O_{i,0}$}{106}

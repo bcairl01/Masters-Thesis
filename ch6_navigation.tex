@@ -4,13 +4,13 @@
 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Perception and Navigation:}
-\label{ch::navigon
-	\section{Flatland Navigation anarget/der Tracking}
+\label{ch::navigation}
+	\section{Flatland Navigation and Target/Leader Tracking}
 	
 		
-		In order to track a leader, \IE a mobile agent wearing a distinct tracking marker, a camera-based visual-servoing scheme is employed to generate navigation commands. A LIDAR-based potential-fields navigation strategy is used in tandem with the aforementioned scheme in order to ensure the robot does not collide with obstacles in its path, or with the tracked leader. This hybrid navigation approach administers commands to the robot's gaiting controller using two main parameters, $v^{r}$ and $\omega^{r}$, which represent forward velocity and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. An explanation of how these parameters are used to influence BlueFoot's gait control and foot-placement is covered in Section~\ref{sec::foot_placement_control}. During navigation, the pitch of the trunk, $\theta_{b,x}$, is also controlled via its respective reference signal, $\theta_{b,x}^{r}$, using an outer-loop proportional control scheme. Control over trunk pitch allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head (trunk) while tracking features. Trunk articulation control is also paramount for composing 3D point clouds from LIDAR scans as will be described later in this chapter.
+		In order to track a leader, \IE a mobile agent wearing a distinct tracking marker, a camera-based visual-servoing scheme is employed to generate navigation commands. A LIDAR-based potential-fields navigation strategy is used in tandem with the aforementioned scheme in order to ensure that BlueFoot does not collide with obstacles in its path or with the tracked leader. This hybrid navigation approach administers commands to the robot's gaiting controller using two main parameters, $v^{r}$ and $\omega^{r}$, which represent forward velocity and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. An explanation of how these parameters are used to influence BlueFoot's gait control and foot-placement is covered in Section~\ref{sec::foot_placement_control}. During navigation, the pitch of the trunk, $\theta_{b,x}$, is also controlled via its respective reference signal, $\theta_{b,x}^{r}$, using an outer-loop proportional control scheme. Control over trunk pitch allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head (trunk) while tracking features. Trunk articulation control is also paramount for composing 3D point clouds from LIDAR scans as will be described later in this chapter.
 
-		BlueFoot's primary navigation mechanism fuses navigation reference commands generated from two separate control laws: a LIDAR-based 5otential-fields controller; and a camera-based visual servoing controller. The collective navigation law is used as a \emph{wandering} mechanism which would normally be employed as a first-level measure during situations where the robot has no \emph{a priori} information about its environment (\IE environmental map data, or knowledge of landmark locations). This section will first describe the potential-fields portion of BlueFoot's navigation algorithm, which utilizes only LIDAR sensor data. The efficacy of this navigation mechanism will be supported with results from simulated trials. The incorporation of processed camera data will then be detailed to complete the description of the full navigation controller. Associated results will be presented from a real-world trial.
+		BlueFoot's primary navigation mechanism fuses navigation reference commands generated from two separate control laws: a LIDAR-based potential-fields controller; and a camera-based visual-servoing controller. The collective navigation law is used as a \emph{wandering} mechanism which would normally be employed as a first-level measure during situations where the robot has no \emph{a priori} information about its environment (\IE environmental map data, or knowledge of landmark locations). This section will first describe the potential-fields portion of BlueFoot's navigation algorithm, which utilizes only LIDAR sensor data. The efficacy of this navigation mechanism will be supported with results from simulated trials. The incorporation of processed camera data will then be detailed to complete the description of the full navigation controller. Associated results will be presented from a real-world trial.
 
 
 		\subsection{LIDAR-Based Potential-Fields Algorithm}
@@ -70,7 +70,7 @@
 					\dot{v}_{L}^{r} 		&=& \beta_{v} \wrap{ P_{L} + v_{L,min}^{r} - v_{L}^{r} } \nonumber \\
 					\dot{\omega}_{L}^{r} 	&=& \beta_{\omega} \sbrack{ \wrap{ \frac{ \omega_{L}^{r,max} }{\pi} } \wrap{  \theta_{L}^{r} - \theta_{b,z} } - \omega_{L}^{r} }
 				\end{eqnarray}
-			where $\beta_{v}$ and $\beta_{\omega}$ are proportional-gain tuning parameters; $v_{L,min}^{r}>0$ is a small, minimum velocity used to prevent the robot from getting stuck in local minima; and $\theta_{b,z}$ is the robot's yaw in $O_{0}$. The parameters $\beta_{v}$ and $\beta_{\omega}$ can be viewed as \emph{update-inertias}, as they directly affect the influence of immediate commands on the overall forward velocity and turning rate of the robot. Furthermore, these gains can be used to low-pass updates to navigation parameters so as to remove jitter caused by degenerate LIDAR scans or sensor noise.
+			where $\beta_{v}$ and $\beta_{\omega}$ are proportional-gain tuning parameters; $v_{L,min}^{r}>0$ is a small, minimum velocity used to prevent the robot from getting stuck in local minima; and $\theta_{b,z}$ is the robot's yaw in $O_{0}$. The parameters $\beta_{v}$ and $\beta_{\omega}$ can be viewed as \emph{update-inertias}, as they directly affect the influence of immediate commands on the overall forward velocity and turning rate of the robot. Furthermore, these gains can be used to low-pass filter updates to navigation parameters so as to remove jitter caused by degenerate LIDAR scans or sensor noise.
 
 
 		\subsection{Simulated Potential-Fields Navigation Results}
@@ -170,7 +170,7 @@
 					\dot{\theta}_{b,x}^{r} &=
 						\alpha_{\theta}
 							(\theta_{b,x,k}^{*} - \hat{\theta}_{b,x} ) \SSep
-							\forall \SSep k &\in \{1,...,N_{s}\}
+							\forall \SSep k \in \{1,...,N_{s}\}
 					\end{split}
 				\end{equation}
 			where $k$ is a step-counter which is incremented each time the LIDAR completes a full scan cycle; and $\alpha_{\theta}$ is a scalar proportional gain factor. Given this formulation, the approximate rate of completion for a full 3D-scan, $\tilde{f}_{scan}$, is as follows:
