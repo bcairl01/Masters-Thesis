@@ -8,7 +8,7 @@
 
 	\section{Flatland Navigation and Target/Leader Tracking}
 		
-		In order to track a leader, \IE a mobile agent wearing a distinct tracking marker, a camera-based visual-servoing scheme is employed to generate navigation commands. A LIDAR-based potential-fields navigation strategy is used in tandem with the aforementioned scheme in order to ensure that BlueFoot does not collide with obstacles in its path or with the tracked leader. This hybrid navigation approach administers commands to the robot's gaiting controller using two main parameters, $v^{r}$ and $\omega^{r}$, which represent forward velocity and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. An explanation of how these parameters are used to influence BlueFoot's gait control and foot-placement is covered in Section~\ref{sec::foot_placement_control}. During navigation, the pitch of the trunk, $\theta_{b,x}$, is also controlled via its respective reference signal, $\theta_{b,x}^{r}$, using an outer-loop proportional control scheme. Control over trunk pitch allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head (trunk) while tracking features. Trunk articulation control is also paramount for composing 3D point clouds from LIDAR scans as will be described later in this chapter.
+		A camera-based visual-servoing scheme is utilized to make BlueFoot track a \emph{leader}, \IE a mobile agent wearing a distinct tracking marker. A LIDAR-based potential-fields navigation strategy is used in tandem with the aforementioned scheme in order to ensure that BlueFoot does not collide with obstacles in its path or with the tracked leader. This hybrid navigation approach administers commands to the robot's gaiting controller using two main parameters, $v^{r}$ and $\omega^{r}$, which represent forward velocity and turning rate of the platform with respect to the robot's trunk frame $O_{b}$. An explanation of how these parameters are used to influence BlueFoot's gait control and foot-placement is covered in Section~\ref{sec::foot_placement_control}. During navigation, the pitch of the trunk, $\theta_{b,x}$, is also controlled via its respective reference signal, $\theta_{b,x}^{r}$, using an outer-loop proportional control scheme. Control over trunk pitch allows for additional articulation of the LIDAR and camera sensors mounted to BlueFoot's head (trunk) while tracking features. Trunk articulation control is also paramount for composing 3D point clouds from LIDAR scans as will be described later in this chapter.
 
 		BlueFoot's primary navigation mechanism fuses navigation reference commands generated from two separate control laws: a LIDAR-based potential-fields controller; and a camera-based visual-servoing controller. The collective navigation law is used as a \emph{wandering} mechanism which would normally be employed as a first-level measure during situations where the robot has no \emph{a priori} information about its environment (\IE environmental map data, or knowledge of landmark locations). This section will first describe the potential-fields portion of BlueFoot's navigation algorithm, which utilizes only LIDAR sensor data. The efficacy of this navigation mechanism will be supported with results from simulated trials. The incorporation of processed camera data will then be detailed to complete the description of the full navigation controller. Associated results will be presented from a real-world trial.
 
@@ -220,9 +220,9 @@
 
 		\subsection{Height-Map Generation from a 3D Point Cloud}
 			
-			3D point clouds can be converted into height-maps to represent surfaces. A height-map will be represented via an associated discrete space $\mmathbb{Z}^{\mmathcal{M}}\subset\mmathbb{Z}^{2}$ with a coordinate system $O_{\mmathcal{M}}$. Height-map representations are convenient for use in planning as they can be used to assign costs to path transitions in a straightforward way. Height-map information is represented as a matrix $\mmathcal{M}\in \RRe^{n\times m}$ with height elements $m_{i,j}$. A set of indices $\bar{p} = \{i,j\}\in\mmathbb{Z}^{\mmathcal{M}}$ is used to refer to the element $m_{i,j}$ in $\mmathcal{M}$ and, simultaneously, a planar location with respect to the $O_{\mmathcal{M}}$ frame. Thus, the notations $m_{i,j}$ and $\mmathcal{M}(\bar{p})$ will be used interchangeably to represent a height stored in the height-map matrix $\mmathcal{M}$.
+			3D point clouds can be converted into height-maps to represent surfaces. A height-map will be represented using a discrete space $\mmathbb{Z}^{\mmathcal{M}}\subset\mmathbb{Z}^{2}$ with an associated coordinate system $O_{\mmathcal{M}}$. Height-map representations are convenient for use in planning as they can be utilized to assign costs to transitions in path in a straightforward way. Height-map information is represented as a matrix $\mmathcal{M}\in\RRe^{n\times m}$ with height elements $m_{i,j}$. A vector of indices $\bar{p}^{\mmathcal{M}} = [i,j]^{T}\in\mmathbb{Z}^{\mmathcal{M}}$ is used to refer to an element, $m_{i,j}$, in $\mmathcal{M}$ and, simultaneously, a planar location with respect to the $O_{\mmathcal{M}}$ frame. Thus, the notations $m_{i,j}$ and $\mmathcal{M}(\bar{p})$ will be used interchangeably to reference a height stored in the matrix (height-map) $\mmathcal{M}$.
 
-			To create the height-map, a $w\times d$ region of interest (ROI) with a relative location $\bar{p}_{0}^{ROI}$ in $O_{0}$ is first selected. This region is then discretized in $(nm)$ subregions. The dimensions $w$ and $d$ of the ROI represent lengths along $x$-axis and $y$-axis respectively. The notation $\mmathbb{R}^{\mmathcal{M}}\subset \RRe^{3}$ will be used to represent the set of points contained within the ROI.  The space $\mmathbb{Z}^{\mmathcal{M}}$ is used to represent a discretized analogue to $\mmathbb{R}^{\mmathcal{M}}$, where each position $\bar{p}^{\mmathcal{M}}=[i,j]^{T}\in\mmathbb{Z}^{\mmathcal{M}}$ represents the \Ith, \Jth subregion of the ROI. Each subregion has an associated height of $m_{i,j}$ stored in $\mmathcal{M}$. The ROI selected from a source point cloud $\bar{S}$ will be represented as $\bar{S}_{ROI}\subset\RRe^{3}$. The location, $\bar{p}_{0}^{ROI}$, and size of this ROI are determined via an auxiliary detection algorithm. This detection algorithm: 
+			To create the height-map, a $w\times d$ region of interest (ROI) with a relative location $\bar{p}_{0}^{ROI}$ in $O_{0}$ is first selected. This region is then discretized in $(n\times m)$ subregions. The dimensions $w$ and $d$ of the ROI represent lengths along $x$-axis and $y$-axis respectively. The notation $\mmathbb{R}^{\mmathcal{M}}\subset \RRe^{3}$ will be used to represent the set of points contained within the ROI.  The ROI, selected from a source point cloud $\bar{S}$, will be represented as $\bar{S}_{ROI}\subset\RRe^{3}$. The location, $\bar{p}_{0}^{ROI}$, and size of this ROI are determined via an auxiliary detection algorithm. This detection algorithm: 
 			\begin{enumerate}
 				\item selects an area with high terrain variation (large changes in gradient),
 				\item determines $\bar{p}_{0}^{ROI}$,
@@ -279,6 +279,27 @@
 			where $\ciel{*}$ is an element-wise ceiling function which takes a vector argument $(*)$.
 
 			Depending on the density of the source point cloud, the basic height-map conversion process has the potential to produce relatively sparse height-maps with discontinuities. To deal with this, a dilation and smoothing routine is used to fill in erroneous gaps in $\mmathcal{M}$. During dilation, each non-zero height element within the map is expanded into a region around an existing element \cite{opencv_learn_immorph}. Dilation parameters are tuned so that uniform surface representation is achieved. Finally, a median filter is applied to the dilated height-map to smooth transitions between elements.
+
+
+			The full height-map conversion process (from a 3D point cloud) is summarized in Algorithm~\ref{alg::hmconvert}. In this algorithm, $\emph{\text{isolateROI}}$ represents a function which locates a region of interest within the point cloud $\bar{S}$; $\emph{\text{subdivIndex}}$ performs the transformation in $\ref{eq::toheightmapframe}$, which generates a vector of indices, $[i,j]^{T}\in\mmathbb{Z}^{\mmathcal{M}}$, corresponding to a point in $O_{0}$; $\emph{\text{dialateFeatures}}$ performs a calibrated image-dilation routine; and $\emph{\text{medianFilter}}$ performs a standard image median filter routine with a $w\times w$ window size. Once a height-map has been generated, a corresponding gradient, as shown in Figure~\ref{fig::heightmap_terrain_patch}, is generated using a Sobel image gradient operation (from OpenCV). The image gradient operation is represented by the function $\emph{\text{imageGradientSobel}}$.
+			\begin{algorithm}
+				\begin{algorithmic}
+					\State{\textbf{init} $\mmathcal{M} = 0, \nabla\mmathcal{M}, m, n,w,d,\bar{S},\bar{p}_{0}^{ROI}$}
+					\State{$\{\bar{S}_{ROI},\bar{p}_{0}^{ROI}\} = \text{isolateROI}(\bar{S})$}
+					\ForAll{$\bar{x}_{k}\in \bar{S}_{ROI}$}
+						\State{$[i,j] = \text{subdivIndex}(\xcomp{\bar{x}_{k}},\ycomp{\bar{x}_{k}},\bar{p}_{0}^{ROI},w,d,m,n)$}
+						\If{$\zcomp{\bar{x}_{k}} > m_{i,j}$}
+							\State{$m_{i,j} \leftarrow \zcomp{\bar{x}_{k}}$}
+						\EndIf 
+					\EndFor
+					\State{$\mmathcal{M} \leftarrow \text{dialateFeatures}(\mmathcal{M})$}
+					\State{$\mmathcal{M} \leftarrow \text{medianFilter}(\mmathcal{M},w)$}
+					\State{$\nabla\mmathcal{M} = \text{imageGradientSobel}(\mmathcal{M})$}
+				\end{algorithmic}	
+				\caption{3D ROI point cloud to height-map conversion.}
+				\label{alg::hmconvert}
+			\end{algorithm}
+
 			\afterpage{%
 				\begin{figure}[!t]
 					\centering
@@ -293,28 +314,6 @@
 					\label{fig::heightmap_terrain_patch_ortho}
 				\end{figure}
 			\clearpage}
-
-			The full height-map conversion process (from a 3D point cloud) is summarized in Algorithm~\ref{alg::hmconvert}. In this algorithm, $\emph{\text{isolateROI}}$ represents a function which locates a region of interest within the point cloud $\bar{S}$; $\emph{\text{subdivIndex}}$ performs the transformation in $\ref{eq::toheightmapframe}$, which generates a vector of indices, $[i,j]^{T}\in\mmathbb{Z}^{\mmathcal{M}}$, corresponding to a point in $O_{0}$; $\emph{\text{dialateFeatures}}$ performs a calibrated image-dilation routine; and $\emph{\text{medianFilter}}$ performs a standard image median filter routine with a $w\times w$ window size. Once a height-map has been generated, a corresponding gradient, as shown in Figure~\ref{fig::heightmap_terrain_patch}, is generated using a Sobel image gradient operation (from OpenCV). The image gradient operation is represented by the function $\emph{\text{imageGradientSobel}}$.
-
-			\begin{algorithm}[!h]
-				\begin{algorithmic}
-					\State{\textbf{init} $\mmathcal{M} = 0, \nabla\mmathcal{M}, m, n, w, d, \bar{S},\bar{p}_{0}^{ROI}$}
-					\State{$\{\bar{S}_{ROI},\bar{p}_{0}^{ROI}\} = \text{isolateROI}(\bar{S})$}
-					\ForAll{$\bar{x}_{k}\in \bar{S}_{ROI}$}
-						\State{$[i,j] = \text{subdivIndex}(\xcomp{\bar{x}_{k}},\ycomp{\bar{x}_{k}},\bar{p}_{0}^{ROI},w,d,m,n)$}
-						\If{$\zcomp{\bar{x}_{k}} > m_{i,j}$}
-							\State{$m_{i,j} \leftarrow \zcomp{\bar{x}_{k}}$}
-						\EndIf
-					\EndFor
-					\State{$\mmathcal{M} \leftarrow \text{dialateFeatures}(\mmathcal{M})$}
-					\State{$\mmathcal{M} \leftarrow \text{medianFilter}(\mmathcal{M},w)$}
-					\State{$\nabla\mmathcal{M} = \text{imageGradientSobel}(\mmathcal{M})$}
-				\end{algorithmic}	
-				\caption{3D ROI point cloud to height-map conversion.}
-				\label{alg::hmconvert}
-			\end{algorithm}
-
-
 
 
 
@@ -347,7 +346,7 @@
 					\Gamma'(\bar{p}^{\mmathcal{M}}_{b},u) = \ciel{ R_{z}^{\mmathcal{M}}(\gamma(u))\Gamma } + \bar{p}^{\mmathcal{M}}_{b} B \\
 					\label{eq::rel_feet}
 				\end{equation}
-			where  $\bar{p}^{\mmathcal{M}}_{b} = [i,j]^T\in\mmathbb{Z}^{\mmathcal{M}}$ and $u \in \setwrap{1,...,l}$ are discrete representations of the robot's trunk position and yaw within the cost-space, respectively; $R_{z}^{\mmathcal{M}}(\gamma(u))\in\RRe^{2\times2}$ represents a rotation in the $\mmathbb{Z}^{\mmathcal{M}}$ plane; and $B = [1,1,1,1]$. $\setwrap{\gamma(u) : \mmathbb{Z} \rightarrow \RRe }$ represents a linear mapping from the index $u$ to a robot yaw in $O_{\mmathcal{M}}$, which is defined explicitly as follows:
+			where  $\bar{p}^{\mmathcal{M}}_{b} = [i,j]^{T}\in\mmathbb{Z}^{\mmathcal{M}}$ and $u \in \setwrap{1,...,l}$ are discrete representations of the robot's trunk position and yaw within the cost-space, respectively; $R_{z}^{\mmathcal{M}}(\gamma(u))\in\RRe^{2\times2}$ represents a rotation in the $\mmathbb{Z}^{\mmathcal{M}}$ plane; and $B = [1,1,1,1]$. $\setwrap{\gamma(u) : \mmathbb{Z} \rightarrow \RRe }$ represents a linear mapping from the index $u$ to a robot yaw in $O_{\mmathcal{M}}$, which is defined explicitly as follows:
 				\begin{equation} 
 					\gamma(u) = 2\pi\wrap{\frac{u}{l}} - \pi \SSep \in [-\pi,\pi].
 					\label{eq::gamma}
@@ -468,7 +467,7 @@
 			3D surface reconstruction is carried out according to a process for normal-estimation detailed in \cite{Rusu2009}. According to this procedure, 3D surfaces are reconstructed from point cloud, $\bar{S}$, by fitting a collection of flat polygonal elements to successive point clusters which fall within a range $d_{s}$ of each point in $\bar{x_{i}}\in\bar{S}$. Each of these estimated elements is represented by a surface-normal which emanates from each $\bar{x_{i}}$ within the source cloud.
 
 			The raw 3D point cloud, $\bar{S}$, which is typically dense, is down-sampled and smoothed before a normal estimation algorithm is applied. Point cloud down-sampling is performed using a voxel-grid technique, which discretizes the point cloud space into a voxel-space. The voxel-space consists of stacked cuboids of a particular side-length. Each cubic unit of the voxel space is parameterized by a single voxel side-length dimension $d_{vox}$. The voxel-grid filter generates a single-point from all points which fall within a voxel region. A KD-tree search technique is used to find points which are contained by a particular voxel region. This technique offers higher efficiency over a brute-force search for neighboring points. This voxel-grid down-sampling technique produces a reduced representation of the original cloud, $\hat{S}$. Empirical results have shown that $\hat{S}$ can contain up to ten to twenty times less points than the original cloud, $\bar{S}$. This reduced-point cloud representation greatly reduces the computational effort needed to process the point cloud $\hat{S}$.
-			
+
 			\begin{algorithm}
 				\begin{algorithmic}
 					\State{\textbf{init} $\hat{S},\bar{S},\bar{S}^{*},d_{vox},\vec{u}^{r},e,e_{max}$}

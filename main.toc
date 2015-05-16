@@ -1,6 +1,6 @@
-\contentsline {chapter}{VITA}{i}
-\contentsline {chapter}{LIST OF FIGURES}{vii}
-\contentsline {chapter}{LIST OF TABLES}{viii}
+\contentsline {chapter}{VITA}{ii}
+\contentsline {chapter}{LIST OF FIGURES}{x}
+\contentsline {chapter}{LIST OF TABLES}{xiii}
 \contentsline {chapter}{\numberline {I. }Introduction}{1}
 \contentsline {section}{\numberline {1.1}Central Pattern Generators for Gait Control}{3}
 \contentsline {section}{\numberline {1.2}Zero Moment Point Body Placement Control}{5}
@@ -69,7 +69,7 @@
 \contentsline {section}{\numberline {6.2}Towards Rough Terrain Navigation}{83}
 \contentsline {subsection}{\numberline {6.2.1}Terrain Mapping from 2D Scans}{83}
 \contentsline {subsection}{\numberline {6.2.2}Height-Map Generation from a 3D Point Cloud}{85}
-\contentsline {subsection}{\numberline {6.2.3}An Approach for Cost Assignment from a Height-Map}{89}
+\contentsline {subsection}{\numberline {6.2.3}An Approach for Cost Assignment from a Height-Map}{88}
 \contentsline {subsection}{\numberline {6.2.4}A Sliding-Window Approach for Sub-Optimal Rough Terrain Planning}{92}
 \contentsline {subsection}{\numberline {6.2.5}Surface Reconstruction}{93}
 \contentsline {chapter}{\numberline {VII. }Concluding Remarks}{102}

@@ -389,7 +389,7 @@
 }
 
 
-\def\mstitlepage{\thispagestyle{empty}\vspace*{-15mm}
+\def\mstitlepage{\addtocounter{page}{-1}\thispagestyle{empty}\vspace*{-15mm}
 	\begin{center}\large\@title\\\vspace{8mm}\normalsize
 	THESIS\\
   \vspace{8mm}
@@ -432,7 +432,6 @@
 Copy No.          \hspace{8.25mm}\noindent\underline{\makebox[2.0in][l]{\hspace{10pt}\# \@committee}}\\
 University ID:    \hspace{0.10mm}\noindent\underline{\makebox[2.0in][l]{\hspace{10pt}N14463743}}\\
 \end{flushleft}
-\addtocounter{page}{-1}
 }
 
 \def\endmstitlepage{\newpage}
