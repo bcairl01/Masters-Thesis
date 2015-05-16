@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  15 MAY 2015 22:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  15 MAY 2015 22:51
 entering extended mode
 **main.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\main.tex
@@ -537,6 +537,7 @@ No file publications.tex.
 
 ] [6])
 (C:\Users\Brian\Desktop\Masters-Thesis\main.toc [7
+
 
 
 ] [8])
@@ -1181,7 +1182,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  7042 strings out of 493921
  108650 string characters out of 3144877
- 192626 words of memory out of 3000000
+ 192617 words of memory out of 3000000
  10058 multiletter control sequences out of 15000+200000
  25040 words of font info for 96 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -1203,7 +1204,7 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX
 nts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (129 pages, 20303864 bytes).
+Output written on main.pdf (129 pages, 20303877 bytes).
 PDF statistics:
  563 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

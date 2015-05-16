@@ -1,0 +1,83 @@
+\contentsline {chapter}{VITA}{ii}
+\contentsline {chapter}{LIST OF FIGURES}{x}
+\contentsline {chapter}{LIST OF TABLES}{xiii}
+\contentsline {chapter}{\numberline {I. }Introduction}{1}
+\contentsline {section}{\numberline {1.1}Central Pattern Generators for Gait Control}{3}
+\contentsline {section}{\numberline {1.2}Zero Moment Point Body Placement Control}{5}
+\contentsline {section}{\numberline {1.3}Trunk Stabilization}{6}
+\contentsline {section}{\numberline {1.4}Potential-Fields Navigation}{9}
+\contentsline {section}{\numberline {1.5}3D Surface Reconstruction for Rough Terrain Planning}{12}
+\contentsline {section}{\numberline {1.6}Overview of Thesis}{14}
+\contentsline {chapter}{\numberline {II. }Hardware and Design}{15}
+\contentsline {section}{\numberline {2.1}Overview and Design Goals}{15}
+\contentsline {section}{\numberline {2.2}Robot Structure}{17}
+\contentsline {subsection}{\numberline {2.2.1}Main Body (Trunk) Design}{18}
+\contentsline {subsubsection}{The Root Module}{18}
+\contentsline {subsubsection}{The Main Module}{19}
+\contentsline {subsubsection}{The Head Module}{19}
+\contentsline {subsection}{\numberline {2.2.2}Leg Designs}{20}
+\contentsline {section}{\numberline {2.3}Computational and Sensory Hardware}{22}
+\contentsline {subsection}{\numberline {2.3.1}Device Descriptions}{23}
+\contentsline {subsubsection}{AutoPilot}{23}
+\contentsline {subsubsection}{ODROID-XU}{23}
+\contentsline {subsubsection}{Logitech 9000 Web Cameras}{23}
+\contentsline {subsubsection}{Laser Distance Sensors (PLDS and Hokuyo-URG)}{24}
+\contentsline {subsubsection}{Foot Contact Sensors}{24}
+\contentsline {subsubsection}{Dynamixel AX12a Smart Serial Servos}{24}
+\contentsline {subsubsection}{XBEE Wireless Radio}{25}
+\contentsline {subsection}{\numberline {2.3.2}Device Networking}{26}
+\contentsline {section}{\numberline {2.4}System Power}{27}
+\contentsline {subsection}{\numberline {2.4.1}Power Routing}{27}
+\contentsline {subsection}{\numberline {2.4.2}Energy Requirements and Runtime}{28}
+\contentsline {chapter}{\numberline {III. }Software}{29}
+\contentsline {section}{\numberline {3.1}System Software Architecture}{29}
+\contentsline {subsection}{\numberline {3.1.1}System Task Allocation}{30}
+\contentsline {subsubsection}{TM4C (Lower Brain)}{30}
+\contentsline {subsubsection}{RM48 (Lower Brain)}{32}
+\contentsline {subsubsection}{ODROID-XU (Upper Brain)}{33}
+\contentsline {subsection}{\numberline {3.1.2}Inter-Processor Communication}{33}
+\contentsline {section}{\numberline {3.2}Ground Station}{36}
+\contentsline {chapter}{\numberline {IV. }Kinematic and Dynamical Modeling}{38}
+\contentsline {section}{\numberline {4.1}Kinematic Model}{38}
+\contentsline {subsection}{\numberline {4.1.1}Forward Position Kinematics}{38}
+\contentsline {subsubsection}{A Note about foot localization in the robot-relative frame, $O_{b^{'}}$}{41}
+\contentsline {subsection}{\numberline {4.1.2}Inverse Position Kinematics}{42}
+\contentsline {subsection}{\numberline {4.1.3}Range of Motion}{43}
+\contentsline {subsection}{\numberline {4.1.4}Velocity Kinematics}{44}
+\contentsline {section}{\numberline {4.2}Dynamical Model}{46}
+\contentsline {subsection}{\numberline {4.2.1}System State Vector and Dynamics}{46}
+\contentsline {subsection}{\numberline {4.2.2}Joint-Servo Dynamics}{47}
+\contentsline {subsection}{\numberline {4.2.3}Single Leg Dynamics}{47}
+\contentsline {section}{\numberline {4.3}BlueFoot Simulator}{47}
+\contentsline {chapter}{\numberline {V. }Gaiting and Gait-Stability Control}{51}
+\contentsline {section}{\numberline {5.1}Overview}{51}
+\contentsline {section}{\numberline {5.2}Central Pattern Generator (CPG) Based Gaiting}{51}
+\contentsline {subsection}{\numberline {5.2.1}Reflexive Gait Adaptations}{53}
+\contentsline {section}{\numberline {5.3}Foot Placement Control}{55}
+\contentsline {section}{\numberline {5.4}ZMP Based Trunk-Placement Control}{61}
+\contentsline {section}{\numberline {5.5}Trunk Leveling via NARX-Network Learning Approach}{65}
+\contentsline {subsection}{\numberline {5.5.1}NARX-Neural Network}{66}
+\contentsline {subsection}{\numberline {5.5.2}NARX-NN Training Regimen}{67}
+\contentsline {subsection}{\numberline {5.5.3}Compensator Output}{68}
+\contentsline {subsection}{\numberline {5.5.4}NARX-NN Implementation}{69}
+\contentsline {subsection}{\numberline {5.5.5}NARX-NN Compensator Results}{69}
+\contentsline {chapter}{\numberline {VI. }Perception and Navigation:}{75}
+\contentsline {section}{\numberline {6.1}Flatland Navigation and Target/Leader Tracking}{75}
+\contentsline {subsection}{\numberline {6.1.1}LIDAR-Based Potential-Fields Algorithm}{76}
+\contentsline {subsection}{\numberline {6.1.2}Simulated Potential-Fields Navigation Results}{79}
+\contentsline {subsection}{\numberline {6.1.3}Incorporation of Camera-Based Feature Tracking}{80}
+\contentsline {section}{\numberline {6.2}Towards Rough Terrain Navigation}{83}
+\contentsline {subsection}{\numberline {6.2.1}Terrain Mapping from 2D Scans}{83}
+\contentsline {subsection}{\numberline {6.2.2}Height-Map Generation from a 3D Point Cloud}{85}
+\contentsline {subsection}{\numberline {6.2.3}An Approach for Cost Assignment from a Height-Map}{88}
+\contentsline {subsection}{\numberline {6.2.4}A Sliding-Window Approach for Sub-Optimal Rough Terrain Planning}{92}
+\contentsline {subsection}{\numberline {6.2.5}Surface Reconstruction}{93}
+\contentsline {chapter}{\numberline {VII. }Concluding Remarks}{102}
+\contentsline {chapter}{\numberline {A. }Summary of Trigonometric Abbreviations}{105}
+\contentsline {chapter}{\numberline {B. }Leg Jacobian with Respect to Frame $O_{i,0}$}{106}
+\contentsline {chapter}{\numberline {C. }Fixed-Base Leg Dynamics}{107}
+\contentsline {subsubsection}{Dynamics of Leg \emph {i}}{107}
+\contentsline {subsubsection}{Mass Matrix, $M\left (q_{i}\right )$}{107}
+\contentsline {subsubsection}{Coriolis Matrix, $C\left (q_{i},\mathaccentV {dot}05F{q}_{i}\right )$}{108}
+\contentsline {subsubsection}{Gravity Matrix, $G\left (q_{i},\mathaccentV {vec}17E{g}\right )$}{109}
+\contentsline {chapter}{References}{110}

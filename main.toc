@@ -80,3 +80,4 @@
 \contentsline {subsubsection}{Mass Matrix, $M\left (q_{i}\right )$}{107}
 \contentsline {subsubsection}{Coriolis Matrix, $C\left (q_{i},\mathaccentV {dot}05F{q}_{i}\right )$}{108}
 \contentsline {subsubsection}{Gravity Matrix, $G\left (q_{i},\mathaccentV {vec}17E{g}\right )$}{109}
+\contentsline {chapter}{References}{110}
