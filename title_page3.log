@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  15 MAY 2015 22:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.7)  17 MAY 2015 20:47
 entering extended mode
 **title_page3.tex
 (C:\Users\Brian\Desktop\Masters-Thesis\title_page3.tex
@@ -436,8 +436,7 @@ This is `epsf.tex' v2.7.4 <14 February 2011>
 \c@remark=\count152
 \c@example=\count153
 \c@assumption=\count154
-
-No file title_page3.aux.
+ (C:\Users\Brian\Desktop\Masters-Thesis\title_page3.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
@@ -450,6 +449,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count155
@@ -488,8 +488,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/Brian/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 (C:\Users\Brian\Desktop\Masters-Thesis\title_page3.aux) ) 
 Here is how much of TeX's memory you used:
- 6345 strings out of 493921
- 91923 string characters out of 3144877
+ 6347 strings out of 493921
+ 92029 string characters out of 3144877
  159867 words of memory out of 3000000
  9542 multiletter control sequences out of 15000+200000
  14548 words of font info for 55 fonts, out of 3000000 for 9000
